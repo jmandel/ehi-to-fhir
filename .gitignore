@@ -52,3 +52,6 @@ feedback/
 # temp regression-snapshot dirs (build oracles, not source)
 out-golden/
 out-answerkey-golden/
+compare/CODING-FLOOR-AUDIT.md
+compare/TRIAGE.md
+compare/DELTAS.md

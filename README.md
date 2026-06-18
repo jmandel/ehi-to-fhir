@@ -34,7 +34,7 @@ bun tools/cdp-test.ts            # headless-chromium smoke test (optional)
 
 It is auto-built and deployed to **GitHub Pages** by `.github/workflows/pages.yml` on every push to
 `main` (it bundles the committed `report/viewer/data*.json`, so CI needs no raw source). Design notes:
-`report-design.md`.
+`docs/report-design.md`.
 
 ## Data & privacy
 
@@ -79,7 +79,7 @@ Regenerating `report/viewer/data*.json` requires the private source, which stays
    so before declaring a datum absent, search the **whole** export (`tools/find-concept.ts`), across
    domains (billing/claim/order/`V_EHI_*` tables), not just the obvious column. This gate recovered
    **16 fields** previously mislabeled "not in export" (CPT in `SVC_LN_INFO`, marital status in
-   `CLM_VALUES`, …). See `ROOT-CAUSE.md` + `FALSE-ABSENCE-REGISTER.md`.
+   `CLM_VALUES`, …). See `docs/ROOT-CAUSE.md` + `docs/FALSE-ABSENCE-REGISTER.md`.
 
 3. **Codings are best-effort and tracked.** The EHI ships categorical values as `_C_NAME` text with no
    code columns and no terminology crosswalks, so LOINC/SNOMED/RxNorm/CVX/ICD are *normally absent*. We
@@ -90,7 +90,7 @@ Regenerating `report/viewer/data*.json` requires the private source, which stays
    unrecoverable, so we mint deterministic ids from EHI keys (`enc-<CSN>`, `prac-<SER_ID>`). The
    invariant is that every reference **resolves within our bundle** and points at an allowed type
    (`tools/refcheck.ts`, wired as a build gate), and that our reference graph is **isomorphic** to
-   Epic's by *natural key*. See `REFERENCE-INTEGRITY.md`.
+   Epic's by *natural key*. See `docs/REFERENCE-INTEGRITY.md`.
 
 5. **The specificity principle.** Prefer the most specific *real* EHI entity as a *resolvable* reference
    over omitting or hardcoding a brand. Applied everywhere via a target-derived census; a "naked-display"
@@ -101,7 +101,7 @@ Regenerating `report/viewer/data*.json` requires the private source, which stays
    reference target FHIR. `bun build.ts --apply-crosswalk` layers these on (additive, idempotent, no fabrication) →
    `out-crosswalk/`, lifting coding coverage 10% → 71%. We verified the missing codes have **no EHI home**
    (the master files ship bare), so the CSV sidecar — not a shadow overlay — is the right delivery
-   (`shadow/DECISION.md`, `crosswalk/SOURCE-FEASIBILITY.md`).
+   (`docs/shadow-DECISION.md`, `crosswalk/SOURCE-FEASIBILITY.md`).
 
 7. **Honest comparison via reviewed tolerances.** Because we deliberately diverge (isomorphic refs,
    specific-over-brand, truthful displays), a naive "match the target" comparison would miscount. The
@@ -167,13 +167,13 @@ Principles decay; tools don't. Each rule is backed by a runnable gate so an agen
 ### The coordinator loop: a TODO-driven `/goal` cycle to a *justified* residual
 
 The intended way to run or extend this is a **coordinator agent under a persistent `/goal`** that does
-**not** stop at "looks done." Its backbone is a **durable TODO log** (`TODO.md`): every iteration reads
+**not** stop at "looks done." Its backbone is a **durable TODO log** (`docs/TODO.md`): every iteration reads
 the log, batches what's ready into workflow round(s), executes, checks items off, and appends whatever the
 round newly surfaced. The log is simultaneously the **backlog**, the **progress ledger** (checked-off items
 with what moved), and the **residual register** (each remaining gap with the proof that it's irreducible).
 
 ```
-LOOP (until TODO.md has no actionable item AND every residual carries its proof):
+LOOP (until docs/TODO.md has no actionable item AND every residual carries its proof):
   1. MEASURE  — build (± --apply-crosswalk); run the gates (refcheck, validate, compare/classify).
   2. PARTITION & TRIAGE — bucket every delta: EXACT / TOLERATED / GAP{recoverable | approximatable |
                 tolerance-candidate | truly-unrecoverable}. Turn each actionable bucket into a TODO
@@ -186,7 +186,7 @@ LOOP (until TODO.md has no actionable item AND every residual carries its proof)
                     runs go in a FOUNDATIONS phase first; dependents (a generator using a new id minter)
                     run after;
                   • avoid out/ + build.ts races — don't run two workflows that both rebuild out/ at once;
-                  • a doc only one agent owns at a time (e.g. RESIDUAL-DEEPDIVE.md, TODO.md).
+                  • a doc only one agent owns at a time (e.g. docs/RESIDUAL-DEEPDIVE.md, docs/TODO.md).
                 Order within the round by dependency; fan the independent items in parallel.
   4. EXECUTE  — run the round; every fix adversarially reviewed; re-run the gates after.
   5. JUSTIFY  — for anything still in GAP, demand the PROOF before it may be called residual:
@@ -268,7 +268,7 @@ turning each lesson into a gate. The honest version:
   pressed on whether there was a *natural home* for those codes — and the investigation showed the master
   files ship bare (no code columns, even aspirationally), so there were **zero** real homes to fill. On
   the user's "keep it simple unless there's critical mass" call, we retired the entire mechanism and kept
-  the plain crosswalk CSV. Not everything we built survived contact with the evidence; `shadow/DECISION.md`
+  the plain crosswalk CSV. Not everything we built survived contact with the evidence; `docs/shadow-DECISION.md`
   is the tombstone.
 
 - **Validating the whole caught bugs every per-piece check missed.** Shape-comparison and per-type checks
@@ -307,13 +307,13 @@ decorations** — narrative, `meta.*`, Epic-resolved reference labels — and **
 physical-exam **SmartData** store is the dominant known set-aside; its clinical content survives as
 narrative in the linked notes); **(3) computed cross-links** (panel↔member, order→result). The
 `unsure` bucket (semantic-linkage choices) and a full recoverable-vs-unrecoverable breakdown of the
-crosswalk-enabled residual are analyzed in `RESIDUAL-DEEPDIVE.md`.
+crosswalk-enabled residual are analyzed in `docs/RESIDUAL-DEEPDIVE.md`.
 
 ## Document map
 
-`GAPS.md` (gap register) · `SHAPE-GAPS.md` (missing-path trends) · `VALIDATION.md` (FHIR validator) ·
-`REFERENCE-INTEGRITY.md` · `CROSSWALK-EVAL.md` (coding coverage with/without) · `NEW-RESOURCES.md`
-(comms+billing) · `FALSE-ABSENCE-REGISTER.md` + `ROOT-CAUSE.md` (the recovery sweep) · `AUDIT.md`
-(anti-cheat) · `HARVEST.md` (better-data candidates) · `crosswalk/*` · `compare/TOLERANCES.md` ·
-`shadow/DECISION.md` (overlay evaluated, not adopted) · `design/*` (per-resource element→EHI mapping) ·
-`RESIDUAL-DEEPDIVE.md` (the crosswalk-enabled residual analysis).
+`docs/GAPS.md` (gap register) · `docs/SHAPE-GAPS.md` (missing-path trends) · `docs/VALIDATION.md` (FHIR validator) ·
+`docs/REFERENCE-INTEGRITY.md` · `docs/CROSSWALK-EVAL.md` (coding coverage with/without) · `docs/NEW-RESOURCES.md`
+(comms+billing) · `docs/FALSE-ABSENCE-REGISTER.md` + `docs/ROOT-CAUSE.md` (the recovery sweep) · `docs/AUDIT.md`
+(anti-cheat) · `docs/HARVEST.md` (better-data candidates) · `crosswalk/*` · `compare/TOLERANCES.md` ·
+`docs/shadow-DECISION.md` (overlay evaluated, not adopted) · `design/*` (per-resource element→EHI mapping) ·
+`docs/RESIDUAL-DEEPDIVE.md` (the crosswalk-enabled residual analysis).
