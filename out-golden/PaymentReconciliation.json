@@ -1,0 +1,1809 @@
+[
+  {
+    "resourceType": "PaymentReconciliation",
+    "id": "pmtrec-61020663",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "61020663"
+      },
+      {
+        "value": "2018241CN0502"
+      }
+    ],
+    "status": "active",
+    "created": "2018-09-08",
+    "paymentIssuer": {
+      "reference": "Organization/org-1302",
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "outcome": "complete",
+    "disposition": "Processed as Primary",
+    "paymentDate": "2018-09-08",
+    "paymentAmount": {
+      "value": 230.73,
+      "currency": "USD"
+    },
+    "paymentIdentifier": {
+      "value": "2018241CN0502"
+    },
+    "detail": [
+      {
+        "identifier": {
+          "value": "2018241CN0502-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2018-09-08",
+        "amount": {
+          "value": 230.73,
+          "currency": "USD"
+        }
+      }
+    ],
+    "processNote": [
+      {
+        "type": "display",
+        "text": "45 $104.27 (Contractual Obligation)"
+      }
+    ]
+  },
+  {
+    "resourceType": "PaymentReconciliation",
+    "id": "pmtrec-61020664",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "61020664"
+      },
+      {
+        "value": "2018241CN0503"
+      }
+    ],
+    "status": "active",
+    "created": "2018-09-08",
+    "paymentIssuer": {
+      "reference": "Organization/org-1302",
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "outcome": "complete",
+    "disposition": "Processed as Primary",
+    "paymentDate": "2018-09-08",
+    "paymentAmount": {
+      "value": 23.52,
+      "currency": "USD"
+    },
+    "paymentIdentifier": {
+      "value": "2018241CN0503"
+    },
+    "detail": [
+      {
+        "identifier": {
+          "value": "2018241CN0503-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2018-09-08",
+        "amount": {
+          "value": 19.52,
+          "currency": "USD"
+        }
+      },
+      {
+        "identifier": {
+          "value": "2018241CN0503-2"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2018-09-08",
+        "amount": {
+          "value": 4,
+          "currency": "USD"
+        }
+      }
+    ],
+    "processNote": [
+      {
+        "type": "display",
+        "text": "45 $94.48 (Contractual Obligation)"
+      },
+      {
+        "type": "display",
+        "text": "45 $33.00 (Contractual Obligation)"
+      }
+    ]
+  },
+  {
+    "resourceType": "PaymentReconciliation",
+    "id": "pmtrec-85777291",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "85777291"
+      },
+      {
+        "value": "2020010DE9628"
+      }
+    ],
+    "status": "active",
+    "created": "2020-01-27",
+    "paymentIssuer": {
+      "reference": "Organization/org-1302",
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "outcome": "complete",
+    "disposition": "Processed as Primary",
+    "paymentDate": "2020-01-27",
+    "paymentAmount": {
+      "value": 0,
+      "currency": "USD"
+    },
+    "paymentIdentifier": {
+      "value": "2020010DE9628"
+    },
+    "detail": [
+      {
+        "identifier": {
+          "value": "2020010DE9628-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2020-01-27",
+        "amount": {
+          "value": 0,
+          "currency": "USD"
+        }
+      }
+    ],
+    "processNote": [
+      {
+        "type": "display",
+        "text": "45 $31.71 (Contractual Obligation)"
+      },
+      {
+        "type": "display",
+        "text": "1 $133.29 (Patient Responsibility)"
+      }
+    ]
+  },
+  {
+    "resourceType": "PaymentReconciliation",
+    "id": "pmtrec-103811458",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "103811458"
+      },
+      {
+        "value": "2020228BN6036"
+      }
+    ],
+    "status": "active",
+    "created": "2020-09-17",
+    "paymentIssuer": {
+      "reference": "Organization/org-1302",
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "outcome": "complete",
+    "disposition": "Processed as Primary",
+    "paymentDate": "2020-09-17",
+    "paymentAmount": {
+      "value": 113.3,
+      "currency": "USD"
+    },
+    "paymentIdentifier": {
+      "value": "2020228BN6036"
+    },
+    "detail": [
+      {
+        "identifier": {
+          "value": "2020228BN6036-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2020-09-17",
+        "amount": {
+          "value": 113.3,
+          "currency": "USD"
+        }
+      }
+    ],
+    "processNote": [
+      {
+        "type": "display",
+        "text": "45 $56.70 (Contractual Obligation)"
+      }
+    ]
+  },
+  {
+    "resourceType": "PaymentReconciliation",
+    "id": "pmtrec-163701585",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "163701585"
+      },
+      {
+        "value": "2022105BL4618"
+      }
+    ],
+    "status": "active",
+    "created": "2022-04-25",
+    "outcome": "complete",
+    "disposition": "Processed as Primary",
+    "paymentDate": "2022-04-25",
+    "paymentAmount": {
+      "value": 121.73,
+      "currency": "USD"
+    },
+    "paymentIdentifier": {
+      "value": "2022105BL4618"
+    },
+    "detail": [
+      {
+        "identifier": {
+          "value": "2022105BL4618-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2022-04-25",
+        "amount": {
+          "value": 121.73,
+          "currency": "USD"
+        }
+      },
+      {
+        "identifier": {
+          "value": "2022105BL4618-2"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2022-04-25",
+        "amount": {
+          "value": 0,
+          "currency": "USD"
+        }
+      },
+      {
+        "identifier": {
+          "value": "2022105BL4618-3"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2022-04-25",
+        "amount": {
+          "value": 0,
+          "currency": "USD"
+        }
+      }
+    ],
+    "processNote": [
+      {
+        "type": "display",
+        "text": "94 $-121.73 (Other Adjustment)"
+      },
+      {
+        "type": "display",
+        "text": "1 $216.27 (Patient Responsibility)"
+      },
+      {
+        "type": "display",
+        "text": "97 $557.47 (Contractual Obligation)"
+      },
+      {
+        "type": "display",
+        "text": "45 $527.08 (Contractual Obligation)"
+      },
+      {
+        "type": "display",
+        "text": "1 $338.00 (Patient Responsibility)"
+      }
+    ]
+  },
+  {
+    "resourceType": "PaymentReconciliation",
+    "id": "pmtrec-182080752",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "182080752"
+      },
+      {
+        "value": "2022264BT5584"
+      }
+    ],
+    "status": "active",
+    "created": "2022-10-02",
+    "paymentIssuer": {
+      "reference": "Organization/org-1302",
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "outcome": "complete",
+    "disposition": "Processed as Primary",
+    "paymentDate": "2022-10-02",
+    "paymentAmount": {
+      "value": 272.89,
+      "currency": "USD"
+    },
+    "paymentIdentifier": {
+      "value": "2022264BT5584"
+    },
+    "detail": [
+      {
+        "identifier": {
+          "value": "2022264BT5584-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2022-10-02",
+        "amount": {
+          "value": 209.89,
+          "currency": "USD"
+        }
+      },
+      {
+        "identifier": {
+          "value": "2022264BT5584-2"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2022-10-02",
+        "amount": {
+          "value": 63,
+          "currency": "USD"
+        }
+      }
+    ],
+    "processNote": [
+      {
+        "type": "display",
+        "text": "45 $84.11 (Contractual Obligation)"
+      },
+      {
+        "type": "display",
+        "text": "45 $152.01 (Contractual Obligation)"
+      },
+      {
+        "type": "display",
+        "text": "2 $6.99 (Patient Responsibility)"
+      }
+    ]
+  },
+  {
+    "resourceType": "PaymentReconciliation",
+    "id": "pmtrec-182080857",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "182080857"
+      },
+      {
+        "value": "2022266BM7967"
+      }
+    ],
+    "status": "active",
+    "created": "2022-10-02",
+    "paymentIssuer": {
+      "reference": "Organization/org-1302",
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "outcome": "complete",
+    "disposition": "Processed as Primary",
+    "paymentDate": "2022-10-02",
+    "paymentAmount": {
+      "value": 7.57,
+      "currency": "USD"
+    },
+    "paymentIdentifier": {
+      "value": "2022266BM7967"
+    },
+    "detail": [
+      {
+        "identifier": {
+          "value": "2022266BM7967-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2022-10-02",
+        "amount": {
+          "value": 5.64,
+          "currency": "USD"
+        }
+      },
+      {
+        "identifier": {
+          "value": "2022266BM7967-2"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2022-10-02",
+        "amount": {
+          "value": 1.93,
+          "currency": "USD"
+        }
+      }
+    ],
+    "processNote": [
+      {
+        "type": "display",
+        "text": "45 $133.74 (Contractual Obligation)"
+      },
+      {
+        "type": "display",
+        "text": "2 $0.62 (Patient Responsibility)"
+      },
+      {
+        "type": "display",
+        "text": "45 $30.86 (Contractual Obligation)"
+      },
+      {
+        "type": "display",
+        "text": "2 $0.21 (Patient Responsibility)"
+      }
+    ]
+  },
+  {
+    "resourceType": "PaymentReconciliation",
+    "id": "pmtrec-192950267",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "192950267"
+      },
+      {
+        "value": "2022341BT5497"
+      }
+    ],
+    "status": "active",
+    "period": {
+      "start": "2022-12-01"
+    },
+    "created": "2022-12-18",
+    "paymentIssuer": {
+      "reference": "Organization/org-1302",
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "outcome": "error",
+    "disposition": "Denied",
+    "paymentDate": "2022-12-18",
+    "paymentAmount": {
+      "value": 0,
+      "currency": "USD"
+    },
+    "paymentIdentifier": {
+      "value": "2022341BT5497"
+    },
+    "detail": [
+      {
+        "identifier": {
+          "value": "2022341BT5497-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2022-12-18",
+        "amount": {
+          "value": 0,
+          "currency": "USD"
+        }
+      }
+    ],
+    "processNote": [
+      {
+        "type": "display",
+        "text": "16 $315.00 (Contractual Obligation)"
+      }
+    ]
+  },
+  {
+    "resourceType": "PaymentReconciliation",
+    "id": "pmtrec-192950366",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "192950366"
+      },
+      {
+        "value": "2022341BT5497"
+      }
+    ],
+    "status": "active",
+    "period": {
+      "start": "2022-12-01"
+    },
+    "created": "2022-12-18",
+    "paymentIssuer": {
+      "reference": "Organization/org-1302",
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "outcome": "error",
+    "disposition": "Denied",
+    "paymentDate": "2022-12-18",
+    "paymentAmount": {
+      "value": 0,
+      "currency": "USD"
+    },
+    "paymentIdentifier": {
+      "value": "2022341BT5497"
+    },
+    "detail": [
+      {
+        "identifier": {
+          "value": "2022341BT5497-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2022-12-18",
+        "amount": {
+          "value": 0,
+          "currency": "USD"
+        }
+      }
+    ],
+    "processNote": [
+      {
+        "type": "display",
+        "text": "16 $315.00 (Contractual Obligation)"
+      }
+    ]
+  },
+  {
+    "resourceType": "PaymentReconciliation",
+    "id": "pmtrec-195454935",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "195454935"
+      },
+      {
+        "value": "2022341BT5497"
+      }
+    ],
+    "status": "active",
+    "period": {
+      "start": "2022-12-01"
+    },
+    "created": "2023-01-08",
+    "paymentIssuer": {
+      "reference": "Organization/org-1302",
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "outcome": "complete",
+    "disposition": "Processed as Primary",
+    "paymentDate": "2023-01-08",
+    "paymentAmount": {
+      "value": 179.02,
+      "currency": "USD"
+    },
+    "paymentIdentifier": {
+      "value": "2022341BT5497"
+    },
+    "detail": [
+      {
+        "identifier": {
+          "value": "2022341BT5497-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2023-01-08",
+        "amount": {
+          "value": 179.02,
+          "currency": "USD"
+        }
+      }
+    ],
+    "processNote": [
+      {
+        "type": "display",
+        "text": "45 $116.09 (Contractual Obligation)"
+      },
+      {
+        "type": "display",
+        "text": "2 $19.89 (Patient Responsibility)"
+      }
+    ]
+  },
+  {
+    "resourceType": "PaymentReconciliation",
+    "id": "pmtrec-195454936",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "195454936"
+      },
+      {
+        "value": "2022341BT5497"
+      }
+    ],
+    "status": "active",
+    "period": {
+      "start": "2022-12-01"
+    },
+    "created": "2023-01-08",
+    "paymentIssuer": {
+      "reference": "Organization/org-1302",
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "outcome": "complete",
+    "disposition": "Reversal of previous payment",
+    "paymentDate": "2023-01-08",
+    "paymentAmount": {
+      "value": 0,
+      "currency": "USD"
+    },
+    "paymentIdentifier": {
+      "value": "2022341BT5497"
+    },
+    "detail": [
+      {
+        "identifier": {
+          "value": "2022341BT5497-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2023-01-08",
+        "amount": {
+          "value": 0,
+          "currency": "USD"
+        }
+      }
+    ],
+    "processNote": [
+      {
+        "type": "display",
+        "text": "16 $-315.00 (Contractual Obligation)"
+      }
+    ]
+  },
+  {
+    "resourceType": "PaymentReconciliation",
+    "id": "pmtrec-204543235",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "204543235"
+      },
+      {
+        "value": "2023072DV0514"
+      }
+    ],
+    "status": "active",
+    "period": {
+      "start": "2023-03-02"
+    },
+    "created": "2023-03-27",
+    "paymentIssuer": {
+      "reference": "Organization/org-1302",
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "outcome": "complete",
+    "disposition": "Processed as Primary",
+    "paymentDate": "2023-03-27",
+    "paymentAmount": {
+      "value": 0,
+      "currency": "USD"
+    },
+    "paymentIdentifier": {
+      "value": "2023072DV0514"
+    },
+    "detail": [
+      {
+        "identifier": {
+          "value": "2023072DV0514-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2023-03-27",
+        "amount": {
+          "value": 0,
+          "currency": "USD"
+        }
+      }
+    ],
+    "processNote": [
+      {
+        "type": "display",
+        "text": "45 $86.03 (Contractual Obligation)"
+      },
+      {
+        "type": "display",
+        "text": "1 $139.97 (Patient Responsibility)"
+      }
+    ]
+  },
+  {
+    "resourceType": "PaymentReconciliation",
+    "id": "pmtrec-204543258",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "204543258"
+      },
+      {
+        "value": "2023072DV0514"
+      }
+    ],
+    "status": "active",
+    "period": {
+      "start": "2023-03-02"
+    },
+    "created": "2023-03-27",
+    "paymentIssuer": {
+      "reference": "Organization/org-1302",
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "outcome": "complete",
+    "disposition": "Processed as Primary",
+    "paymentDate": "2023-03-27",
+    "paymentAmount": {
+      "value": 0,
+      "currency": "USD"
+    },
+    "paymentIdentifier": {
+      "value": "2023072DV0514"
+    },
+    "detail": [
+      {
+        "identifier": {
+          "value": "2023072DV0514-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2023-03-27",
+        "amount": {
+          "value": 0,
+          "currency": "USD"
+        }
+      }
+    ],
+    "processNote": [
+      {
+        "type": "display",
+        "text": "45 $86.03 (Contractual Obligation)"
+      },
+      {
+        "type": "display",
+        "text": "1 $139.97 (Patient Responsibility)"
+      }
+    ]
+  },
+  {
+    "resourceType": "PaymentReconciliation",
+    "id": "pmtrec-228893273",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "228893273"
+      },
+      {
+        "value": "2023277DI2086"
+      }
+    ],
+    "status": "active",
+    "period": {
+      "start": "2023-09-28"
+    },
+    "created": "2023-10-18",
+    "paymentIssuer": {
+      "reference": "Organization/org-1302",
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "outcome": "complete",
+    "disposition": "Processed as Primary",
+    "paymentDate": "2023-10-18",
+    "paymentAmount": {
+      "value": 19.25,
+      "currency": "USD"
+    },
+    "paymentIdentifier": {
+      "value": "2023277DI2086"
+    },
+    "detail": [
+      {
+        "identifier": {
+          "value": "2023277DI2086-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2023-10-18",
+        "amount": {
+          "value": 7.19,
+          "currency": "USD"
+        }
+      },
+      {
+        "identifier": {
+          "value": "2023277DI2086-2"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2023-10-18",
+        "amount": {
+          "value": 9.92,
+          "currency": "USD"
+        }
+      },
+      {
+        "identifier": {
+          "value": "2023277DI2086-3"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2023-10-18",
+        "amount": {
+          "value": 2.14,
+          "currency": "USD"
+        }
+      }
+    ],
+    "processNote": [
+      {
+        "type": "display",
+        "text": "45 $42.81 (Contractual Obligation)"
+      },
+      {
+        "type": "display",
+        "text": "45 $110.08 (Contractual Obligation)"
+      },
+      {
+        "type": "display",
+        "text": "45 $30.86 (Contractual Obligation)"
+      }
+    ]
+  },
+  {
+    "resourceType": "PaymentReconciliation",
+    "id": "pmtrec-228893334",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "228893334"
+      },
+      {
+        "value": "2023277DI2086"
+      }
+    ],
+    "status": "active",
+    "period": {
+      "start": "2023-09-28"
+    },
+    "created": "2023-10-18",
+    "paymentIssuer": {
+      "reference": "Organization/org-1302",
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "outcome": "complete",
+    "disposition": "Processed as Primary",
+    "paymentDate": "2023-10-18",
+    "paymentAmount": {
+      "value": 19.25,
+      "currency": "USD"
+    },
+    "paymentIdentifier": {
+      "value": "2023277DI2086"
+    },
+    "detail": [
+      {
+        "identifier": {
+          "value": "2023277DI2086-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2023-10-18",
+        "amount": {
+          "value": 7.19,
+          "currency": "USD"
+        }
+      },
+      {
+        "identifier": {
+          "value": "2023277DI2086-2"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2023-10-18",
+        "amount": {
+          "value": 9.92,
+          "currency": "USD"
+        }
+      },
+      {
+        "identifier": {
+          "value": "2023277DI2086-3"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2023-10-18",
+        "amount": {
+          "value": 2.14,
+          "currency": "USD"
+        }
+      }
+    ],
+    "processNote": [
+      {
+        "type": "display",
+        "text": "45 $42.81 (Contractual Obligation)"
+      },
+      {
+        "type": "display",
+        "text": "45 $110.08 (Contractual Obligation)"
+      },
+      {
+        "type": "display",
+        "text": "45 $30.86 (Contractual Obligation)"
+      }
+    ]
+  },
+  {
+    "resourceType": "PaymentReconciliation",
+    "id": "pmtrec-228893430",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "228893430"
+      },
+      {
+        "value": "2023278BR8828"
+      }
+    ],
+    "status": "active",
+    "period": {
+      "start": "2023-09-28"
+    },
+    "created": "2023-10-18",
+    "paymentIssuer": {
+      "reference": "Organization/org-1302",
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "outcome": "complete",
+    "disposition": "Processed as Primary",
+    "paymentDate": "2023-10-18",
+    "paymentAmount": {
+      "value": 38.85,
+      "currency": "USD"
+    },
+    "paymentIdentifier": {
+      "value": "2023278BR8828"
+    },
+    "detail": [
+      {
+        "identifier": {
+          "value": "2023278BR8828-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2023-10-18",
+        "amount": {
+          "value": 21,
+          "currency": "USD"
+        }
+      },
+      {
+        "identifier": {
+          "value": "2023278BR8828-2"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2023-10-18",
+        "amount": {
+          "value": 17.85,
+          "currency": "USD"
+        }
+      }
+    ],
+    "processNote": [
+      {
+        "type": "display",
+        "text": "45 $33.00 (Contractual Obligation)"
+      },
+      {
+        "type": "display",
+        "text": "45 $42.15 (Contractual Obligation)"
+      }
+    ]
+  },
+  {
+    "resourceType": "PaymentReconciliation",
+    "id": "pmtrec-228893501",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "228893501"
+      },
+      {
+        "value": "2023278BR8828"
+      }
+    ],
+    "status": "active",
+    "period": {
+      "start": "2023-09-28"
+    },
+    "created": "2023-10-18",
+    "paymentIssuer": {
+      "reference": "Organization/org-1302",
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "outcome": "complete",
+    "disposition": "Processed as Primary",
+    "paymentDate": "2023-10-18",
+    "paymentAmount": {
+      "value": 38.85,
+      "currency": "USD"
+    },
+    "paymentIdentifier": {
+      "value": "2023278BR8828"
+    },
+    "detail": [
+      {
+        "identifier": {
+          "value": "2023278BR8828-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2023-10-18",
+        "amount": {
+          "value": 21,
+          "currency": "USD"
+        }
+      },
+      {
+        "identifier": {
+          "value": "2023278BR8828-2"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2023-10-18",
+        "amount": {
+          "value": 17.85,
+          "currency": "USD"
+        }
+      }
+    ],
+    "processNote": [
+      {
+        "type": "display",
+        "text": "45 $33.00 (Contractual Obligation)"
+      },
+      {
+        "type": "display",
+        "text": "45 $42.15 (Contractual Obligation)"
+      }
+    ]
+  },
+  {
+    "resourceType": "PaymentReconciliation",
+    "id": "pmtrec-229308484",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "229308484"
+      },
+      {
+        "value": "2023286CD3233"
+      }
+    ],
+    "status": "active",
+    "period": {
+      "start": "2023-09-28"
+    },
+    "created": "2023-10-21",
+    "paymentIssuer": {
+      "reference": "Organization/org-1302",
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "outcome": "complete",
+    "disposition": "Processed as Primary",
+    "paymentDate": "2023-10-21",
+    "paymentAmount": {
+      "value": 223.42,
+      "currency": "USD"
+    },
+    "paymentIdentifier": {
+      "value": "2023286CD3233"
+    },
+    "detail": [
+      {
+        "identifier": {
+          "value": "2023286CD3233-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2023-10-21",
+        "amount": {
+          "value": 223.42,
+          "currency": "USD"
+        }
+      }
+    ],
+    "processNote": [
+      {
+        "type": "display",
+        "text": "45 $106.58 (Contractual Obligation)"
+      }
+    ]
+  },
+  {
+    "resourceType": "PaymentReconciliation",
+    "id": "pmtrec-261081785",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "261081785"
+      },
+      {
+        "value": "2024191CL6984"
+      }
+    ],
+    "status": "active",
+    "period": {
+      "start": "2024-07-02"
+    },
+    "created": "2024-07-20",
+    "paymentIssuer": {
+      "reference": "Organization/org-1302",
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "outcome": "complete",
+    "disposition": "Processed as Primary",
+    "paymentDate": "2024-07-20",
+    "paymentAmount": {
+      "value": 0,
+      "currency": "USD"
+    },
+    "paymentIdentifier": {
+      "value": "2024191CL6984"
+    },
+    "detail": [
+      {
+        "identifier": {
+          "value": "2024191CL6984-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2024-07-20",
+        "amount": {
+          "value": 0,
+          "currency": "USD"
+        }
+      },
+      {
+        "identifier": {
+          "value": "2024191CL6984-2"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2024-07-20",
+        "amount": {
+          "value": 0,
+          "currency": "USD"
+        }
+      }
+    ],
+    "processNote": [
+      {
+        "type": "display",
+        "text": "45 $130.85 (Contractual Obligation)"
+      },
+      {
+        "type": "display",
+        "text": "1 $204.15 (Patient Responsibility)"
+      },
+      {
+        "type": "display",
+        "text": "234 $48.00 (Contractual Obligation)"
+      }
+    ]
+  },
+  {
+    "resourceType": "PaymentReconciliation",
+    "id": "pmtrec-261081793",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "261081793"
+      },
+      {
+        "value": "2024191CL7455"
+      }
+    ],
+    "status": "active",
+    "period": {
+      "start": "2024-07-02"
+    },
+    "created": "2024-07-20",
+    "paymentIssuer": {
+      "reference": "Organization/org-1302",
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "outcome": "complete",
+    "disposition": "Processed as Primary",
+    "paymentDate": "2024-07-20",
+    "paymentAmount": {
+      "value": 0,
+      "currency": "USD"
+    },
+    "paymentIdentifier": {
+      "value": "2024191CL7455"
+    },
+    "detail": [
+      {
+        "identifier": {
+          "value": "2024191CL7455-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2024-07-20",
+        "amount": {
+          "value": 0,
+          "currency": "USD"
+        }
+      }
+    ],
+    "processNote": [
+      {
+        "type": "display",
+        "text": "45 $90.75 (Contractual Obligation)"
+      },
+      {
+        "type": "display",
+        "text": "1 $38.25 (Patient Responsibility)"
+      }
+    ]
+  },
+  {
+    "resourceType": "PaymentReconciliation",
+    "id": "pmtrec-278435887",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "278435887"
+      },
+      {
+        "value": "2024318BL0495"
+      }
+    ],
+    "status": "active",
+    "period": {
+      "start": "2024-11-07"
+    },
+    "created": "2024-11-23",
+    "paymentIssuer": {
+      "reference": "Organization/org-1302",
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "outcome": "complete",
+    "disposition": "Processed as Primary",
+    "paymentDate": "2024-11-23",
+    "paymentAmount": {
+      "value": 198.19,
+      "currency": "USD"
+    },
+    "paymentIdentifier": {
+      "value": "2024318BL0495"
+    },
+    "detail": [
+      {
+        "identifier": {
+          "value": "2024318BL0495-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2024-11-23",
+        "amount": {
+          "value": 198.19,
+          "currency": "USD"
+        }
+      }
+    ],
+    "processNote": [
+      {
+        "type": "display",
+        "text": "45 $159.81 (Contractual Obligation)"
+      }
+    ]
+  },
+  {
+    "resourceType": "PaymentReconciliation",
+    "id": "pmtrec-300690232",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "300690232"
+      },
+      {
+        "value": "2025119BP9768"
+      }
+    ],
+    "status": "active",
+    "period": {
+      "start": "2025-04-23"
+    },
+    "created": "2025-05-10",
+    "paymentIssuer": {
+      "reference": "Organization/org-1302",
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "outcome": "complete",
+    "disposition": "Processed as Primary",
+    "paymentDate": "2025-05-10",
+    "paymentAmount": {
+      "value": 0,
+      "currency": "USD"
+    },
+    "paymentIdentifier": {
+      "value": "2025119BP9768"
+    },
+    "detail": [
+      {
+        "identifier": {
+          "value": "2025119BP9768-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2025-05-10",
+        "amount": {
+          "value": 0,
+          "currency": "USD"
+        }
+      },
+      {
+        "identifier": {
+          "value": "2025119BP9768-2"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2025-05-10",
+        "amount": {
+          "value": 0,
+          "currency": "USD"
+        }
+      }
+    ],
+    "processNote": [
+      {
+        "type": "display",
+        "text": "45 $88.50 (Contractual Obligation)"
+      },
+      {
+        "type": "display",
+        "text": "1 $88.50 (Patient Responsibility)"
+      },
+      {
+        "type": "display",
+        "text": "97 $48.00 (Contractual Obligation)"
+      }
+    ]
+  },
+  {
+    "resourceType": "PaymentReconciliation",
+    "id": "pmtrec-321121571",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "321121571"
+      },
+      {
+        "value": "2025339CJ8368"
+      }
+    ],
+    "status": "active",
+    "period": {
+      "start": "2025-12-04"
+    },
+    "created": "2025-12-13",
+    "paymentIssuer": {
+      "reference": "Organization/org-1302",
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "outcome": "complete",
+    "disposition": "Processed as Primary",
+    "paymentDate": "2025-12-13",
+    "paymentAmount": {
+      "value": 198.19,
+      "currency": "USD"
+    },
+    "paymentIdentifier": {
+      "value": "2025339CJ8368"
+    },
+    "detail": [
+      {
+        "identifier": {
+          "value": "2025339CJ8368-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2025-12-13",
+        "amount": {
+          "value": 198.19,
+          "currency": "USD"
+        }
+      }
+    ],
+    "processNote": [
+      {
+        "type": "display",
+        "text": "45 $159.81 (Contractual Obligation)"
+      }
+    ]
+  },
+  {
+    "resourceType": "PaymentReconciliation",
+    "id": "pmtrec-321682889",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "321682889"
+      },
+      {
+        "value": "2025343CQ3952"
+      }
+    ],
+    "status": "active",
+    "period": {
+      "start": "2025-12-04"
+    },
+    "created": "2025-12-20",
+    "paymentIssuer": {
+      "reference": "Organization/org-1302",
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "outcome": "complete",
+    "disposition": "Processed as Primary",
+    "paymentDate": "2025-12-20",
+    "paymentAmount": {
+      "value": 25.51,
+      "currency": "USD"
+    },
+    "paymentIdentifier": {
+      "value": "2025343CQ3952"
+    },
+    "detail": [
+      {
+        "identifier": {
+          "value": "2025343CQ3952-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2025-12-20",
+        "amount": {
+          "value": 6.26,
+          "currency": "USD"
+        }
+      },
+      {
+        "identifier": {
+          "value": "2025343CQ3952-2"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2025-12-20",
+        "amount": {
+          "value": 7.19,
+          "currency": "USD"
+        }
+      },
+      {
+        "identifier": {
+          "value": "2025343CQ3952-3"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2025-12-20",
+        "amount": {
+          "value": 9.92,
+          "currency": "USD"
+        }
+      },
+      {
+        "identifier": {
+          "value": "2025343CQ3952-4"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+              "code": "payment",
+              "display": "Payment"
+            }
+          ]
+        },
+        "date": "2025-12-20",
+        "amount": {
+          "value": 2.14,
+          "currency": "USD"
+        }
+      }
+    ],
+    "processNote": [
+      {
+        "type": "display",
+        "text": "45 $138.74 (Contractual Obligation)"
+      },
+      {
+        "type": "display",
+        "text": "45 $44.81 (Contractual Obligation)"
+      },
+      {
+        "type": "display",
+        "text": "45 $114.08 (Contractual Obligation)"
+      },
+      {
+        "type": "display",
+        "text": "45 $31.86 (Contractual Obligation)"
+      }
+    ]
+  }
+]

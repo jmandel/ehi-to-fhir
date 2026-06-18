@@ -10,11 +10,11 @@ import { resolve } from "path";
 const SRC = resolve(import.meta.dir, "src");
 const OUT = resolve(import.meta.dir, "out");
 
-// OPT-IN: `bun build.ts --answer-key` runs the non-destructive answer-key
-// enrichment pass AFTER the baseline build, populating out-answerkey/ (a SEPARATE
-// dir) so baseline (out/) and enriched (out-answerkey/) both exist for WITH-vs-
-// WITHOUT comparison. Plain `bun build.ts` stays baseline-only.
-const APPLY_ANSWER_KEY = process.argv.includes("--answer-key");
+// OPT-IN: `bun build.ts --apply-crosswalk` runs the non-destructive terminology
+// crosswalk enrichment pass AFTER the baseline build, populating out-crosswalk/ (a
+// SEPARATE dir) so baseline (out/) and enriched (out-crosswalk/) both exist for
+// WITH-vs-WITHOUT comparison. Plain `bun build.ts` stays baseline-only.
+const APPLY_CROSSWALK = process.argv.includes("--apply-crosswalk");
 
 // OPT-IN: `bun build.ts --embed-attachments` ALSO runs src/binary.ts to materialize
 // out/Binary.json (the EXACT note/document bytes from the export) and includes those
@@ -84,16 +84,16 @@ console.error(`\nbundle.json: ${entries.length} resources`);
   );
 }
 
-// OPT-IN ANSWER-KEY LAYER — only when --answer-key was passed. Runs the additive,
+// OPT-IN CROSSWALK LAYER — only when --apply-crosswalk was passed. Runs the additive,
 // idempotent enrichment pass that layers the recovered standard codings from
 // crosswalk/ALL.csv onto the baseline output, writing ENRICHED copies to
-// out-answerkey/. The baseline out/ (and its refcheck gate above) are untouched,
-// so output gaps can be scored WITH vs WITHOUT the answer key.
-if (APPLY_ANSWER_KEY) {
-  console.error("\n### applying answer-key layer -> out-answerkey/");
-  const ak = Bun.spawnSync(["bun", resolve(import.meta.dir, "tools", "apply-answer-key.ts")], {
+// out-crosswalk/. The baseline out/ (and its refcheck gate above) are untouched,
+// so output gaps can be scored WITH vs WITHOUT the crosswalk.
+if (APPLY_CROSSWALK) {
+  console.error("\n### applying crosswalk layer -> out-crosswalk/");
+  const ak = Bun.spawnSync(["bun", resolve(import.meta.dir, "tools", "apply-crosswalk.ts")], {
     stdout: "inherit",
     stderr: "inherit",
   });
-  if (ak.exitCode !== 0) console.error(`!!! apply-answer-key exited ${ak.exitCode}`);
+  if (ak.exitCode !== 0) console.error(`!!! apply-crosswalk exited ${ak.exitCode}`);
 }

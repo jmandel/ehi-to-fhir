@@ -204,14 +204,14 @@ export const content = {
     },
     "standard-vs-proprietary-code": {
       title: "We used the standard code where Epic used its own",
-      short: "Encounter class: standard FHIR value set vs Epic's proprietary code.",
+      short: "Encounter class: standard v3-ActCode vs Epic's proprietary code.",
       what:
-        "FHIR *requires* the encounter `class` to come from a specific standard value set (ambulatory, inpatient, …). Epic's API returns its own proprietary code there instead. We emit the required standard value.",
+        "The encounter `class` field has an *extensible* binding to FHIR's standard value set (ambulatory, inpatient, …) — meaning you should use a standard code when a suitable one fits. Epic returns its own proprietary code (`HOV`, `Appointment`); we emit the standard `AMB` (ambulatory).",
       why:
-        "Ours is the spec-conformant value; Epic's is a local extension of the field. We derive the standard value from the patient-class information in the export, so it's the correct mapping, not a guess.",
+        "Both are valid FHIR — Epic's proprietary code is permitted (the official validator flags it as a *warning*, not an error, since the binding is extensible). But because a suitable standard code clearly applies here, the standard one is the more conformant choice, so we emit it, derived from the encounter's recorded patient class.",
       soWhat:
-        "Ours is arguably *more* correct for a generic FHIR consumer, since it's the value the specification asks for.",
-      example: "encounter class: ours `AMB` (ambulatory, the standard) vs Epic's proprietary code “HOV”.",
+        "A generic FHIR client gets a code from the value set it expects. Epic's value isn't wrong, just Epic-specific; ours is the portable equivalent.",
+      example: "encounter class: ours `AMB` (standard ambulatory) vs Epic's proprietary `HOV`.",
       guardOrProof:
         "We re-derive the standard code from the encounter's own recorded patient class; a wrong class would mismatch and be reported as a difference.",
     },

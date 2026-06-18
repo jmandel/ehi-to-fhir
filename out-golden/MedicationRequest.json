@@ -1,0 +1,1770 @@
+[
+  {
+    "resourceType": "MedicationRequest",
+    "id": "medreq-772179261",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "772179261"
+      }
+    ],
+    "status": "stopped",
+    "intent": "order",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+            "code": "community",
+            "display": "Community"
+          }
+        ],
+        "text": "Community"
+      }
+    ],
+    "medicationReference": {
+      "reference": "Medication/med-772179261",
+      "display": "LISINOPRIL 10 MG PO TABS"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-948004323",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "948004323"
+      }
+    },
+    "authoredOn": "2022-08-29",
+    "requester": {
+      "reference": "Practitioner/prac-144590",
+      "type": "Practitioner",
+      "display": "RAMMELKAMP, ZOE L"
+    },
+    "recorder": {
+      "reference": "Practitioner/prac-144590",
+      "type": "Practitioner",
+      "display": "RAMMELKAMP, ZOE L"
+    },
+    "reasonCode": [
+      {
+        "text": "Primary hypertension"
+      }
+    ],
+    "dosageInstruction": [
+      {
+        "text": "Take 1 (one) tablet by mouth daily., Starting Mon 8/29/2022, Until Thu 9/28/2023, Normal",
+        "patientInstruction": "Take 1 (one) tablet by mouth daily.",
+        "timing": {
+          "repeat": {
+            "boundsPeriod": {
+              "start": "2022-08-29",
+              "end": "2023-09-28"
+            },
+            "timeOfDay": [
+              "09:00:00"
+            ]
+          },
+          "code": {
+            "text": "daily"
+          }
+        },
+        "asNeededBoolean": false,
+        "route": {
+          "text": "Oral"
+        },
+        "method": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "419652001",
+              "display": "Take"
+            }
+          ],
+          "text": "Take"
+        },
+        "doseAndRate": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://epic.com/CodeSystem/dose-rate-type",
+                  "code": "calculated",
+                  "display": "calculated"
+                }
+              ],
+              "text": "calculated"
+            },
+            "doseQuantity": {
+              "value": 10,
+              "unit": "mg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg"
+            }
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://epic.com/CodeSystem/dose-rate-type",
+                  "code": "admin-amount",
+                  "display": "admin-amount"
+                }
+              ],
+              "text": "admin-amount"
+            },
+            "doseQuantity": {
+              "value": 1,
+              "unit": "tablet",
+              "system": "http://unitsofmeasure.org",
+              "code": "{tbl}"
+            }
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://epic.com/CodeSystem/dose-rate-type",
+                  "code": "ordered",
+                  "display": "ordered"
+                }
+              ],
+              "text": "ordered"
+            },
+            "doseQuantity": {
+              "value": 10,
+              "unit": "mg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg"
+            }
+          }
+        ]
+      }
+    ],
+    "dispenseRequest": {
+      "validityPeriod": {
+        "start": "2022-08-29",
+        "end": "2023-09-28"
+      },
+      "numberOfRepeatsAllowed": 1,
+      "quantity": {
+        "value": 90,
+        "unit": "tablet"
+      },
+      "expectedSupplyDuration": {
+        "value": 90,
+        "unit": "Day",
+        "system": "http://unitsofmeasure.org",
+        "code": "d"
+      }
+    }
+  },
+  {
+    "resourceType": "MedicationRequest",
+    "id": "medreq-772179266",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "772179266"
+      }
+    ],
+    "status": "stopped",
+    "intent": "order",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+            "code": "community",
+            "display": "Community"
+          }
+        ],
+        "text": "Community"
+      }
+    ],
+    "medicationReference": {
+      "reference": "Medication/med-772179266",
+      "display": "NORTRIPTYLINE HCL 10 MG PO CAPS"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-974614965",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "974614965"
+      }
+    },
+    "authoredOn": "2022-12-01",
+    "requester": {
+      "reference": "Practitioner/prac-144590",
+      "type": "Practitioner",
+      "display": "RAMMELKAMP, ZOE L"
+    },
+    "recorder": {
+      "reference": "Practitioner/prac-144590",
+      "type": "Practitioner",
+      "display": "RAMMELKAMP, ZOE L"
+    },
+    "reasonCode": [
+      {
+        "text": "Post concussion syndrome"
+      }
+    ],
+    "dosageInstruction": [
+      {
+        "text": "Take 1 (one) capsule by mouth nightly. Start with 10 mg at night; can increase to 20 mg after 1-2 weeks if no side effects, Starting Thu 12/1/2022, Until Mon 2/20/2023, Normal",
+        "patientInstruction": "Take 1 (one) capsule by mouth nightly. Start with 10 mg at night; can increase to 20 mg after 1-2 weeks if no side effects",
+        "timing": {
+          "repeat": {
+            "boundsPeriod": {
+              "start": "2022-12-01",
+              "end": "2023-02-20"
+            },
+            "timeOfDay": [
+              "21:00:00"
+            ]
+          },
+          "code": {
+            "text": "nightly"
+          }
+        },
+        "asNeededBoolean": false,
+        "route": {
+          "text": "Oral"
+        },
+        "method": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "419652001",
+              "display": "Take"
+            }
+          ],
+          "text": "Take"
+        },
+        "doseAndRate": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://epic.com/CodeSystem/dose-rate-type",
+                  "code": "calculated",
+                  "display": "calculated"
+                }
+              ],
+              "text": "calculated"
+            },
+            "doseQuantity": {
+              "value": 10,
+              "unit": "mg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg"
+            }
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://epic.com/CodeSystem/dose-rate-type",
+                  "code": "admin-amount",
+                  "display": "admin-amount"
+                }
+              ],
+              "text": "admin-amount"
+            },
+            "doseQuantity": {
+              "value": 1,
+              "unit": "capsule",
+              "system": "http://unitsofmeasure.org",
+              "code": "{capsule}"
+            }
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://epic.com/CodeSystem/dose-rate-type",
+                  "code": "ordered",
+                  "display": "ordered"
+                }
+              ],
+              "text": "ordered"
+            },
+            "doseQuantity": {
+              "value": 10,
+              "unit": "mg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg"
+            }
+          }
+        ]
+      }
+    ],
+    "dispenseRequest": {
+      "validityPeriod": {
+        "start": "2022-12-01",
+        "end": "2023-02-20"
+      },
+      "numberOfRepeatsAllowed": 1,
+      "quantity": {
+        "value": 90,
+        "unit": "capsule"
+      },
+      "expectedSupplyDuration": {
+        "value": 90,
+        "unit": "Day",
+        "system": "http://unitsofmeasure.org",
+        "code": "d"
+      }
+    }
+  },
+  {
+    "resourceType": "MedicationRequest",
+    "id": "medreq-772179269",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "772179269"
+      }
+    ],
+    "status": "stopped",
+    "intent": "order",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+            "code": "community",
+            "display": "Community"
+          }
+        ],
+        "text": "Community"
+      }
+    ],
+    "medicationReference": {
+      "reference": "Medication/med-772179269",
+      "display": "NORTRIPTYLINE HCL 10 MG PO CAPS"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-988126821",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "988126821"
+      }
+    },
+    "authoredOn": "2023-02-20",
+    "requester": {
+      "reference": "Practitioner/prac-144590",
+      "type": "Practitioner",
+      "display": "RAMMELKAMP, ZOE L"
+    },
+    "recorder": {
+      "reference": "Practitioner/prac-144590",
+      "type": "Practitioner",
+      "display": "RAMMELKAMP, ZOE L"
+    },
+    "reasonCode": [
+      {
+        "text": "Post concussion syndrome"
+      }
+    ],
+    "dosageInstruction": [
+      {
+        "text": "TAKE 1 CAPSULE BY MOUTH EVERY NIGHT. START WITH 1 CAPSULE AT NIGHT; CAN. INCREASE TO 2 CAPSULES AFTER 1-2 WEEKS IF NO SIDE EFFECTS, Starting Mon 2/20/2023, Until Fri 12/22/2023, Normal",
+        "patientInstruction": "TAKE 1 CAPSULE BY MOUTH EVERY NIGHT. START WITH 1 CAPSULE AT NIGHT; CAN. INCREASE TO 2 CAPSULES AFTER 1-2 WEEKS IF NO SIDE EFFECTS",
+        "timing": {
+          "repeat": {
+            "boundsPeriod": {
+              "start": "2023-02-20",
+              "end": "2023-12-22"
+            }
+          }
+        }
+      }
+    ],
+    "dispenseRequest": {
+      "validityPeriod": {
+        "start": "2023-02-20",
+        "end": "2023-12-22"
+      },
+      "numberOfRepeatsAllowed": 3,
+      "quantity": {
+        "value": 180,
+        "unit": "capsule"
+      },
+      "expectedSupplyDuration": {
+        "value": 305,
+        "unit": "Day",
+        "system": "http://unitsofmeasure.org",
+        "code": "d"
+      }
+    },
+    "priorPrescription": {
+      "reference": "MedicationRequest/medreq-772179266",
+      "display": "NORTRIPTYLINE HCL 10 MG PO CAPS"
+    }
+  },
+  {
+    "resourceType": "MedicationRequest",
+    "id": "medreq-945468373",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "945468373"
+      }
+    ],
+    "status": "stopped",
+    "intent": "order",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+            "code": "community",
+            "display": "Community"
+          }
+        ],
+        "text": "Community"
+      }
+    ],
+    "medicationReference": {
+      "reference": "Medication/med-945468373",
+      "display": "NORTRIPTYLINE HCL 10 MG PO CAPS"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1043034397",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1043034397"
+      }
+    },
+    "authoredOn": "2023-12-22",
+    "requester": {
+      "reference": "Practitioner/prac-144590",
+      "type": "Practitioner",
+      "display": "RAMMELKAMP, ZOE L"
+    },
+    "recorder": {
+      "reference": "Practitioner/prac-144590",
+      "type": "Practitioner",
+      "display": "RAMMELKAMP, ZOE L"
+    },
+    "reasonCode": [
+      {
+        "text": "Post concussion syndrome"
+      }
+    ],
+    "dosageInstruction": [
+      {
+        "text": "Take 3 (three) capsules by mouth nightly., Starting Fri 12/22/2023, Until Mon 1/27/2025, Normal",
+        "patientInstruction": "Take 3 (three) capsules by mouth nightly.",
+        "timing": {
+          "repeat": {
+            "boundsPeriod": {
+              "start": "2023-12-22",
+              "end": "2025-01-27"
+            },
+            "timeOfDay": [
+              "21:00:00"
+            ]
+          },
+          "code": {
+            "text": "nightly"
+          }
+        },
+        "asNeededBoolean": false,
+        "route": {
+          "text": "Oral"
+        },
+        "method": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "419652001",
+              "display": "Take"
+            }
+          ],
+          "text": "Take"
+        },
+        "doseAndRate": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://epic.com/CodeSystem/dose-rate-type",
+                  "code": "calculated",
+                  "display": "calculated"
+                }
+              ],
+              "text": "calculated"
+            },
+            "doseQuantity": {
+              "value": 30,
+              "unit": "mg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg"
+            }
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://epic.com/CodeSystem/dose-rate-type",
+                  "code": "admin-amount",
+                  "display": "admin-amount"
+                }
+              ],
+              "text": "admin-amount"
+            },
+            "doseQuantity": {
+              "value": 3,
+              "unit": "capsule",
+              "system": "http://unitsofmeasure.org",
+              "code": "{capsule}"
+            }
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://epic.com/CodeSystem/dose-rate-type",
+                  "code": "ordered",
+                  "display": "ordered"
+                }
+              ],
+              "text": "ordered"
+            },
+            "doseQuantity": {
+              "value": 30,
+              "unit": "mg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg"
+            }
+          }
+        ]
+      }
+    ],
+    "dispenseRequest": {
+      "validityPeriod": {
+        "start": "2023-12-22",
+        "end": "2025-01-27"
+      },
+      "numberOfRepeatsAllowed": 3,
+      "quantity": {
+        "value": 270,
+        "unit": "capsule"
+      },
+      "expectedSupplyDuration": {
+        "value": 90,
+        "unit": "Day",
+        "system": "http://unitsofmeasure.org",
+        "code": "d"
+      }
+    },
+    "priorPrescription": {
+      "reference": "MedicationRequest/medreq-772179269",
+      "display": "NORTRIPTYLINE HCL 10 MG PO CAPS"
+    }
+  },
+  {
+    "resourceType": "MedicationRequest",
+    "id": "medreq-945468374",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "945468374"
+      }
+    ],
+    "status": "stopped",
+    "intent": "order",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+            "code": "community",
+            "display": "Community"
+          }
+        ],
+        "text": "Community"
+      }
+    ],
+    "medicationReference": {
+      "reference": "Medication/med-945468374",
+      "display": "FREESTYLE LIBRE 3 SENSOR MISC"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1056709125",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1056709125"
+      }
+    },
+    "authoredOn": "2024-03-12",
+    "requester": {
+      "reference": "Practitioner/prac-144590",
+      "type": "Practitioner",
+      "display": "RAMMELKAMP, ZOE L"
+    },
+    "recorder": {
+      "reference": "Practitioner/prac-144590",
+      "type": "Practitioner",
+      "display": "RAMMELKAMP, ZOE L"
+    },
+    "dosageInstruction": [
+      {
+        "text": "Apply every two weeks, Starting Tue 3/12/2024, Until Tue 5/7/2024, Normal",
+        "patientInstruction": "Apply every two weeks",
+        "timing": {
+          "repeat": {
+            "boundsPeriod": {
+              "start": "2024-03-12",
+              "end": "2024-05-07"
+            }
+          }
+        }
+      }
+    ],
+    "dispenseRequest": {
+      "validityPeriod": {
+        "start": "2024-03-12",
+        "end": "2024-05-07"
+      },
+      "numberOfRepeatsAllowed": 0,
+      "quantity": {
+        "value": 2,
+        "unit": "each"
+      },
+      "expectedSupplyDuration": {
+        "value": 56,
+        "unit": "Day",
+        "system": "http://unitsofmeasure.org",
+        "code": "d"
+      }
+    }
+  },
+  {
+    "resourceType": "MedicationRequest",
+    "id": "medreq-945468375",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "945468375"
+      }
+    ],
+    "status": "stopped",
+    "intent": "order",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+            "code": "community",
+            "display": "Community"
+          }
+        ],
+        "text": "Community"
+      }
+    ],
+    "medicationReference": {
+      "reference": "Medication/med-945468375",
+      "display": "FREESTYLE LIBRE 3 READER DEVI"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1056709125",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1056709125"
+      }
+    },
+    "authoredOn": "2024-03-12",
+    "requester": {
+      "reference": "Practitioner/prac-144590",
+      "type": "Practitioner",
+      "display": "RAMMELKAMP, ZOE L"
+    },
+    "recorder": {
+      "reference": "Practitioner/prac-144590",
+      "type": "Practitioner",
+      "display": "RAMMELKAMP, ZOE L"
+    },
+    "dosageInstruction": [
+      {
+        "text": "For use as indicated every 14 days, Starting Tue 3/12/2024, Until Thu 12/4/2025, Normal",
+        "patientInstruction": "For use as indicated every 14 days",
+        "timing": {
+          "repeat": {
+            "boundsPeriod": {
+              "start": "2024-03-12",
+              "end": "2025-12-04"
+            }
+          }
+        }
+      }
+    ],
+    "dispenseRequest": {
+      "validityPeriod": {
+        "start": "2024-03-12",
+        "end": "2025-12-04"
+      },
+      "numberOfRepeatsAllowed": 0,
+      "quantity": {
+        "value": 2,
+        "unit": "each"
+      },
+      "expectedSupplyDuration": {
+        "value": 632,
+        "unit": "Day",
+        "system": "http://unitsofmeasure.org",
+        "code": "d"
+      }
+    }
+  },
+  {
+    "resourceType": "MedicationRequest",
+    "id": "medreq-945468376",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "945468376"
+      }
+    ],
+    "status": "active",
+    "intent": "order",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+            "code": "community",
+            "display": "Community"
+          }
+        ],
+        "text": "Community"
+      }
+    ],
+    "medicationReference": {
+      "reference": "Medication/med-945468376",
+      "display": "FREESTYLE LIBRE 3 SENSOR MISC"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1066932467",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1066932467"
+      }
+    },
+    "authoredOn": "2024-05-07",
+    "requester": {
+      "reference": "Practitioner/prac-144590",
+      "type": "Practitioner",
+      "display": "RAMMELKAMP, ZOE L"
+    },
+    "recorder": {
+      "reference": "Practitioner/prac-621755",
+      "type": "Practitioner",
+      "display": "SMITH, MARY B"
+    },
+    "dosageInstruction": [
+      {
+        "text": "APPLY ONE SENSOR EVERY 2 WEEKS, Starting Tue 5/7/2024, Normal",
+        "patientInstruction": "APPLY ONE SENSOR EVERY 2 WEEKS",
+        "timing": {
+          "repeat": {
+            "boundsPeriod": {
+              "start": "2024-05-07"
+            }
+          }
+        }
+      }
+    ],
+    "dispenseRequest": {
+      "validityPeriod": {
+        "start": "2024-05-07"
+      },
+      "numberOfRepeatsAllowed": 4,
+      "quantity": {
+        "value": 4,
+        "unit": "each"
+      }
+    },
+    "priorPrescription": {
+      "reference": "MedicationRequest/medreq-945468374",
+      "display": "FREESTYLE LIBRE 3 SENSOR MISC"
+    }
+  },
+  {
+    "resourceType": "MedicationRequest",
+    "id": "medreq-1025926288",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "1025926288"
+      }
+    ],
+    "status": "stopped",
+    "intent": "order",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+            "code": "community",
+            "display": "Community"
+          }
+        ],
+        "text": "Community"
+      }
+    ],
+    "medicationReference": {
+      "reference": "Medication/med-1025926288",
+      "display": "CYCLOBENZAPRINE HCL 5 MG PO TABS"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1076261941",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1076261941"
+      }
+    },
+    "authoredOn": "2024-07-02",
+    "requester": {
+      "reference": "Practitioner/prac-133057",
+      "type": "Practitioner",
+      "display": "EVERTON, JENNIFER L"
+    },
+    "recorder": {
+      "reference": "Practitioner/prac-133057",
+      "type": "Practitioner",
+      "display": "EVERTON, JENNIFER L"
+    },
+    "dosageInstruction": [
+      {
+        "text": "Take 1 (one) tablet by mouth nightly as needed for Muscle spasms., Starting Tue 7/2/2024, Until Thu 11/7/2024, Normal",
+        "patientInstruction": "Take 1 (one) tablet by mouth nightly as needed for Muscle spasms.",
+        "timing": {
+          "repeat": {
+            "boundsPeriod": {
+              "start": "2024-07-02",
+              "end": "2024-11-07"
+            },
+            "frequency": 1,
+            "period": 1,
+            "periodUnit": "d"
+          },
+          "code": {
+            "text": "nightly as needed"
+          }
+        },
+        "asNeededBoolean": true,
+        "route": {
+          "text": "Oral"
+        },
+        "method": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "419652001",
+              "display": "Take"
+            }
+          ],
+          "text": "Take"
+        },
+        "doseAndRate": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://epic.com/CodeSystem/dose-rate-type",
+                  "code": "calculated",
+                  "display": "calculated"
+                }
+              ],
+              "text": "calculated"
+            },
+            "doseQuantity": {
+              "value": 5,
+              "unit": "mg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg"
+            }
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://epic.com/CodeSystem/dose-rate-type",
+                  "code": "admin-amount",
+                  "display": "admin-amount"
+                }
+              ],
+              "text": "admin-amount"
+            },
+            "doseQuantity": {
+              "value": 1,
+              "unit": "tablet",
+              "system": "http://unitsofmeasure.org",
+              "code": "{tbl}"
+            }
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://epic.com/CodeSystem/dose-rate-type",
+                  "code": "ordered",
+                  "display": "ordered"
+                }
+              ],
+              "text": "ordered"
+            },
+            "doseQuantity": {
+              "value": 5,
+              "unit": "mg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg"
+            }
+          }
+        ]
+      }
+    ],
+    "dispenseRequest": {
+      "validityPeriod": {
+        "start": "2024-07-02",
+        "end": "2024-11-07"
+      },
+      "numberOfRepeatsAllowed": 0,
+      "quantity": {
+        "value": 20,
+        "unit": "tablet"
+      },
+      "expectedSupplyDuration": {
+        "value": 20,
+        "unit": "Day",
+        "system": "http://unitsofmeasure.org",
+        "code": "d"
+      }
+    }
+  },
+  {
+    "resourceType": "MedicationRequest",
+    "id": "medreq-1025926290",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "1025926290"
+      }
+    ],
+    "status": "stopped",
+    "intent": "order",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+            "code": "inpatient",
+            "display": "Inpatient"
+          }
+        ],
+        "text": "Inpatient"
+      }
+    ],
+    "medicationReference": {
+      "reference": "Medication/med-1025926290",
+      "display": "SODIUM CHLORIDE 0.9 % IV SOLN"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1081584507"
+      }
+    },
+    "authoredOn": "2024-07-30T20:33:40Z",
+    "requester": {
+      "reference": "Practitioner/prac-8800099",
+      "type": "Practitioner",
+      "display": "GENERIC EXTERNAL DATA PROVIDER"
+    },
+    "recorder": {
+      "type": "Practitioner",
+      "display": "EPIC, USER"
+    },
+    "dosageInstruction": [
+      {
+        "text": "Intravenous",
+        "timing": {
+          "repeat": {
+            "boundsPeriod": {
+              "end": "2024-07-30T20:33:40Z"
+            }
+          }
+        },
+        "route": {
+          "text": "Intravenous"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "MedicationRequest",
+    "id": "medreq-1025926291",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "1025926291"
+      }
+    ],
+    "status": "stopped",
+    "intent": "order",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+            "code": "inpatient",
+            "display": "Inpatient"
+          }
+        ],
+        "text": "Inpatient"
+      }
+    ],
+    "medicationReference": {
+      "reference": "Medication/med-1025926291",
+      "display": "SODIUM CHLORIDE 0.9 % IV SOLN"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1081584507"
+      }
+    },
+    "authoredOn": "2024-07-30T20:33:40Z",
+    "requester": {
+      "reference": "Practitioner/prac-8800099",
+      "type": "Practitioner",
+      "display": "GENERIC EXTERNAL DATA PROVIDER"
+    },
+    "recorder": {
+      "type": "Practitioner",
+      "display": "EPIC, USER"
+    },
+    "dosageInstruction": [
+      {
+        "text": "Intravenous",
+        "timing": {
+          "repeat": {
+            "boundsPeriod": {
+              "end": "2024-07-30T20:33:40Z"
+            }
+          }
+        },
+        "route": {
+          "text": "Intravenous"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "MedicationRequest",
+    "id": "medreq-1025926292",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "1025926292"
+      }
+    ],
+    "status": "stopped",
+    "intent": "order",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+            "code": "inpatient",
+            "display": "Inpatient"
+          }
+        ],
+        "text": "Inpatient"
+      }
+    ],
+    "medicationReference": {
+      "reference": "Medication/med-1025926292",
+      "display": "SODIUM CHLORIDE 0.9 % IV SOLN"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1081584507"
+      }
+    },
+    "authoredOn": "2024-07-30T20:33:40Z",
+    "requester": {
+      "reference": "Practitioner/prac-8800099",
+      "type": "Practitioner",
+      "display": "GENERIC EXTERNAL DATA PROVIDER"
+    },
+    "recorder": {
+      "type": "Practitioner",
+      "display": "EPIC, USER"
+    },
+    "dosageInstruction": [
+      {
+        "text": "Intravenous",
+        "timing": {
+          "repeat": {
+            "boundsPeriod": {
+              "end": "2024-07-30T20:33:40Z"
+            }
+          }
+        },
+        "route": {
+          "text": "Intravenous"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "MedicationRequest",
+    "id": "medreq-1034471687",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "1034471687"
+      }
+    ],
+    "status": "stopped",
+    "intent": "order",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+            "code": "inpatient",
+            "display": "Inpatient"
+          }
+        ],
+        "text": "Inpatient"
+      }
+    ],
+    "medicationReference": {
+      "reference": "Medication/med-1034471687",
+      "display": "SODIUM CHLORIDE 0.9 % IV SOLN"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1081584507"
+      }
+    },
+    "authoredOn": "2024-07-30T20:33:40Z",
+    "requester": {
+      "reference": "Practitioner/prac-8800099",
+      "type": "Practitioner",
+      "display": "GENERIC EXTERNAL DATA PROVIDER"
+    },
+    "recorder": {
+      "type": "Practitioner",
+      "display": "EPIC, USER"
+    },
+    "dosageInstruction": [
+      {
+        "text": "Intravenous",
+        "timing": {
+          "repeat": {
+            "boundsPeriod": {
+              "end": "2024-07-30T20:33:40Z"
+            }
+          }
+        },
+        "route": {
+          "text": "Intravenous"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "MedicationRequest",
+    "id": "medreq-1034471688",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "1034471688"
+      }
+    ],
+    "status": "stopped",
+    "intent": "order",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+            "code": "inpatient",
+            "display": "Inpatient"
+          }
+        ],
+        "text": "Inpatient"
+      }
+    ],
+    "medicationReference": {
+      "reference": "Medication/med-1034471688",
+      "display": "SODIUM CHLORIDE 0.9 % IV SOLN"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1081584508"
+      }
+    },
+    "authoredOn": "2024-07-30T20:33:40Z",
+    "requester": {
+      "reference": "Practitioner/prac-8800099",
+      "type": "Practitioner",
+      "display": "GENERIC EXTERNAL DATA PROVIDER"
+    },
+    "recorder": {
+      "type": "Practitioner",
+      "display": "EPIC, USER"
+    },
+    "dosageInstruction": [
+      {
+        "text": "Intravenous",
+        "timing": {
+          "repeat": {
+            "boundsPeriod": {
+              "end": "2024-07-30T20:33:40Z"
+            }
+          }
+        },
+        "route": {
+          "text": "Intravenous"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "MedicationRequest",
+    "id": "medreq-1034471689",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "1034471689"
+      }
+    ],
+    "status": "stopped",
+    "intent": "order",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+            "code": "inpatient",
+            "display": "Inpatient"
+          }
+        ],
+        "text": "Inpatient"
+      }
+    ],
+    "medicationReference": {
+      "reference": "Medication/med-1034471689",
+      "display": "SODIUM CHLORIDE 0.9 % IV SOLN"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1081584508"
+      }
+    },
+    "authoredOn": "2024-07-30T20:33:40Z",
+    "requester": {
+      "reference": "Practitioner/prac-8800099",
+      "type": "Practitioner",
+      "display": "GENERIC EXTERNAL DATA PROVIDER"
+    },
+    "recorder": {
+      "type": "Practitioner",
+      "display": "EPIC, USER"
+    },
+    "dosageInstruction": [
+      {
+        "text": "Intravenous",
+        "timing": {
+          "repeat": {
+            "boundsPeriod": {
+              "end": "2024-07-30T20:33:40Z"
+            }
+          }
+        },
+        "route": {
+          "text": "Intravenous"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "MedicationRequest",
+    "id": "medreq-1034471690",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "1034471690"
+      }
+    ],
+    "status": "stopped",
+    "intent": "order",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+            "code": "inpatient",
+            "display": "Inpatient"
+          }
+        ],
+        "text": "Inpatient"
+      }
+    ],
+    "medicationReference": {
+      "reference": "Medication/med-1034471690",
+      "display": "SODIUM CHLORIDE 0.9 % IV SOLN"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1081584508"
+      }
+    },
+    "authoredOn": "2024-07-30T20:33:40Z",
+    "requester": {
+      "reference": "Practitioner/prac-8800099",
+      "type": "Practitioner",
+      "display": "GENERIC EXTERNAL DATA PROVIDER"
+    },
+    "recorder": {
+      "type": "Practitioner",
+      "display": "EPIC, USER"
+    },
+    "dosageInstruction": [
+      {
+        "text": "Intravenous",
+        "timing": {
+          "repeat": {
+            "boundsPeriod": {
+              "end": "2024-07-30T20:33:40Z"
+            }
+          }
+        },
+        "route": {
+          "text": "Intravenous"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "MedicationRequest",
+    "id": "medreq-1034471691",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "1034471691"
+      }
+    ],
+    "status": "stopped",
+    "intent": "order",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+            "code": "inpatient",
+            "display": "Inpatient"
+          }
+        ],
+        "text": "Inpatient"
+      }
+    ],
+    "medicationReference": {
+      "reference": "Medication/med-1034471691",
+      "display": "SODIUM CHLORIDE 0.9 % IV SOLN"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1081584508"
+      }
+    },
+    "authoredOn": "2024-07-30T20:33:40Z",
+    "requester": {
+      "reference": "Practitioner/prac-8800099",
+      "type": "Practitioner",
+      "display": "GENERIC EXTERNAL DATA PROVIDER"
+    },
+    "recorder": {
+      "type": "Practitioner",
+      "display": "EPIC, USER"
+    },
+    "dosageInstruction": [
+      {
+        "text": "Intravenous",
+        "timing": {
+          "repeat": {
+            "boundsPeriod": {
+              "end": "2024-07-30T20:33:40Z"
+            }
+          }
+        },
+        "route": {
+          "text": "Intravenous"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "MedicationRequest",
+    "id": "medreq-1034471696",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "1034471696"
+      }
+    ],
+    "status": "stopped",
+    "intent": "order",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+            "code": "community",
+            "display": "Community"
+          }
+        ],
+        "text": "Community"
+      }
+    ],
+    "medicationReference": {
+      "reference": "Medication/med-1034471696",
+      "display": "NORTRIPTYLINE HCL 10 MG PO CAPS"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1113285509",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1113285509"
+      }
+    },
+    "authoredOn": "2025-01-27",
+    "requester": {
+      "reference": "Practitioner/prac-144590",
+      "type": "Practitioner",
+      "display": "RAMMELKAMP, ZOE L"
+    },
+    "recorder": {
+      "reference": "Practitioner/prac-144590",
+      "type": "Practitioner",
+      "display": "RAMMELKAMP, ZOE L"
+    },
+    "reasonCode": [
+      {
+        "text": "Post concussion syndrome"
+      }
+    ],
+    "dosageInstruction": [
+      {
+        "text": "Take 3 (three) capsules (30 mg total) by mouth nightly., Starting Mon 1/27/2025, Until Thu 12/4/2025, Normal",
+        "patientInstruction": "Take 3 (three) capsules (30 mg total) by mouth nightly.",
+        "timing": {
+          "repeat": {
+            "boundsPeriod": {
+              "start": "2025-01-27",
+              "end": "2025-12-04"
+            },
+            "timeOfDay": [
+              "21:00:00"
+            ]
+          },
+          "code": {
+            "text": "nightly"
+          }
+        },
+        "asNeededBoolean": false,
+        "route": {
+          "text": "Oral"
+        },
+        "method": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "419652001",
+              "display": "Take"
+            }
+          ],
+          "text": "Take"
+        },
+        "doseAndRate": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://epic.com/CodeSystem/dose-rate-type",
+                  "code": "calculated",
+                  "display": "calculated"
+                }
+              ],
+              "text": "calculated"
+            },
+            "doseQuantity": {
+              "value": 30,
+              "unit": "mg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg"
+            }
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://epic.com/CodeSystem/dose-rate-type",
+                  "code": "admin-amount",
+                  "display": "admin-amount"
+                }
+              ],
+              "text": "admin-amount"
+            },
+            "doseQuantity": {
+              "value": 3,
+              "unit": "capsule",
+              "system": "http://unitsofmeasure.org",
+              "code": "{capsule}"
+            }
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://epic.com/CodeSystem/dose-rate-type",
+                  "code": "ordered",
+                  "display": "ordered"
+                }
+              ],
+              "text": "ordered"
+            },
+            "doseQuantity": {
+              "value": 30,
+              "unit": "mg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg"
+            }
+          }
+        ]
+      }
+    ],
+    "dispenseRequest": {
+      "validityPeriod": {
+        "start": "2025-01-27",
+        "end": "2025-12-04"
+      },
+      "numberOfRepeatsAllowed": 3,
+      "quantity": {
+        "value": 270,
+        "unit": "capsule"
+      },
+      "expectedSupplyDuration": {
+        "value": 90,
+        "unit": "Day",
+        "system": "http://unitsofmeasure.org",
+        "code": "d"
+      }
+    },
+    "priorPrescription": {
+      "reference": "MedicationRequest/medreq-945468373",
+      "display": "NORTRIPTYLINE HCL 10 MG PO CAPS"
+    }
+  },
+  {
+    "resourceType": "MedicationRequest",
+    "id": "medreq-1034471697",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "1034471697"
+      }
+    ],
+    "status": "stopped",
+    "intent": "order",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+            "code": "community",
+            "display": "Community"
+          }
+        ],
+        "text": "Community"
+      }
+    ],
+    "medicationReference": {
+      "reference": "Medication/med-1034471697",
+      "display": "PAXLOVID (300/100) 20 X 150 MG & 10 X 100MG PO TBPK"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1127808563",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1127808563"
+      }
+    },
+    "authoredOn": "2025-04-23",
+    "requester": {
+      "reference": "Practitioner/prac-144590",
+      "type": "Practitioner",
+      "display": "RAMMELKAMP, ZOE L"
+    },
+    "recorder": {
+      "reference": "Practitioner/prac-144590",
+      "type": "Practitioner",
+      "display": "RAMMELKAMP, ZOE L"
+    },
+    "reasonCode": [
+      {
+        "text": "COVID-19"
+      }
+    ],
+    "dosageInstruction": [
+      {
+        "text": "Take two nirmatrelvir 150mg tablets with one ritonavir 100mg tablet all together by mouth twice daily for 5 days., Starting Wed 4/23/2025, Until Thu 12/4/2025, Normal",
+        "patientInstruction": "Take two nirmatrelvir 150mg tablets with one ritonavir 100mg tablet all together by mouth twice daily for 5 days.",
+        "timing": {
+          "repeat": {
+            "boundsPeriod": {
+              "start": "2025-04-23",
+              "end": "2025-12-04"
+            }
+          }
+        }
+      }
+    ],
+    "dispenseRequest": {
+      "validityPeriod": {
+        "start": "2025-04-23",
+        "end": "2025-12-04"
+      },
+      "numberOfRepeatsAllowed": 0,
+      "quantity": {
+        "value": 30,
+        "unit": "tablet"
+      },
+      "expectedSupplyDuration": {
+        "value": 225,
+        "unit": "Day",
+        "system": "http://unitsofmeasure.org",
+        "code": "d"
+      }
+    }
+  }
+]

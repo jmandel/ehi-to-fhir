@@ -1,0 +1,84 @@
+[
+  {
+    "resourceType": "Organization",
+    "id": "org-18",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "NPI"
+        },
+        "system": "http://hl7.org/fhir/sid/us-npi",
+        "value": "1861412785"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "TAX"
+        },
+        "system": "urn:oid:2.16.840.1.113883.4.4",
+        "value": "391837462"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:2.16.840.1.113883.6.101",
+        "value": "193200000X"
+      }
+    ],
+    "active": true,
+    "name": "MAC ASSOCIATED PHYSICIANS LLP",
+    "address": [
+      {
+        "text": "4410 REGENT ST\r\nMADISON WI 53705-4901",
+        "line": [
+          "4410 REGENT ST"
+        ],
+        "city": "MADISON",
+        "state": "WI",
+        "postalCode": "53705-4901"
+      }
+    ]
+  },
+  {
+    "resourceType": "Organization",
+    "id": "org-LLB-359",
+    "active": true,
+    "name": "UPH MADISON MERITER SUNQUEST LAB",
+    "address": [
+      {
+        "use": "work",
+        "text": "36 S Brooks St\r\nMadison Wisconsin 53715-1304",
+        "line": [
+          "36 S Brooks St"
+        ],
+        "city": "Madison",
+        "state": "Wisconsin",
+        "postalCode": "53715-1304"
+      }
+    ]
+  },
+  {
+    "resourceType": "Organization",
+    "id": "org-LLB-1700801005",
+    "active": true,
+    "name": "UPH MAC ASSOCIATED PHYSICIANS",
+    "address": [
+      {
+        "use": "work",
+        "text": "4410 Regent Street\r\nMadison Wisconsin 53705",
+        "line": [
+          "4410 Regent Street"
+        ],
+        "city": "Madison",
+        "state": "Wisconsin",
+        "postalCode": "53705"
+      }
+    ]
+  },
+  {
+    "resourceType": "Organization",
+    "id": "org-1302",
+    "active": true,
+    "name": "BLUE CROSS OF WISCONSIN"
+  }
+]

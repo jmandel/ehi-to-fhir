@@ -1,0 +1,765 @@
+[
+  {
+    "resourceType": "Immunization",
+    "id": "imm-30666377",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.768076",
+        "value": "30666377"
+      }
+    ],
+    "status": "completed",
+    "vaccineCode": {
+      "text": "INFLUENZA (FLUCELVAX) CCIIV4, PREFILLED SYRINGE"
+    },
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "occurrenceDateTime": "2017-10-25",
+    "primarySource": false,
+    "reportOrigin": {
+      "text": "Confirmed",
+      "coding": [
+        {
+          "display": "Confirmed"
+        }
+      ]
+    },
+    "site": {
+      "text": "Left Arm"
+    },
+    "route": {
+      "text": "Intramuscular"
+    }
+  },
+  {
+    "resourceType": "Immunization",
+    "id": "imm-59265744",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.768076",
+        "value": "59265744"
+      }
+    ],
+    "status": "completed",
+    "vaccineCode": {
+      "text": "TYPHOID INACTIVATED (TYPHIM VI)"
+    },
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-832464108",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "832464108"
+      }
+    },
+    "location": {
+      "reference": "Location/loc-1700801002",
+      "display": "MAC APL INTERNAL MEDICINE"
+    },
+    "occurrenceDateTime": "2019-02-05",
+    "primarySource": false,
+    "site": {
+      "text": "Left Arm"
+    },
+    "route": {
+      "text": "Intramuscular"
+    }
+  },
+  {
+    "resourceType": "Immunization",
+    "id": "imm-59265745",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.768076",
+        "value": "59265745"
+      }
+    ],
+    "status": "completed",
+    "vaccineCode": {
+      "text": "TDAP"
+    },
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-832464108",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "832464108"
+      }
+    },
+    "location": {
+      "reference": "Location/loc-1700801002",
+      "display": "MAC APL INTERNAL MEDICINE"
+    },
+    "occurrenceDateTime": "2019-02-05",
+    "primarySource": false,
+    "site": {
+      "text": "Left Arm"
+    },
+    "route": {
+      "text": "Intramuscular"
+    }
+  },
+  {
+    "resourceType": "Immunization",
+    "id": "imm-59265746",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.768076",
+        "value": "59265746"
+      }
+    ],
+    "status": "completed",
+    "vaccineCode": {
+      "text": "INFLUENZA (FLUCELVAX) CCIIV4, PREFILLED SYRINGE"
+    },
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-832464108",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "832464108"
+      }
+    },
+    "location": {
+      "reference": "Location/loc-1700801002",
+      "display": "MAC APL INTERNAL MEDICINE"
+    },
+    "occurrenceDateTime": "2019-11-13",
+    "primarySource": false,
+    "site": {
+      "text": "Right Deltoid"
+    },
+    "route": {
+      "text": "Intramuscular"
+    }
+  },
+  {
+    "resourceType": "Immunization",
+    "id": "imm-59265747",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.768076",
+        "value": "59265747"
+      }
+    ],
+    "status": "completed",
+    "vaccineCode": {
+      "text": "HEPATITIS A (HAVRIX) HEPA ADULT"
+    },
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-832464108",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "832464108"
+      }
+    },
+    "location": {
+      "reference": "Location/loc-1700801002",
+      "display": "MAC APL INTERNAL MEDICINE"
+    },
+    "occurrenceDateTime": "2019-02-05",
+    "primarySource": false,
+    "site": {
+      "text": "Right Arm"
+    },
+    "route": {
+      "text": "Intramuscular"
+    }
+  },
+  {
+    "resourceType": "Immunization",
+    "id": "imm-59265748",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.768076",
+        "value": "59265748"
+      }
+    ],
+    "status": "completed",
+    "vaccineCode": {
+      "text": "INFLUENZA, UNSPECIFIED FORMULATION"
+    },
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-832464108",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "832464108"
+      }
+    },
+    "location": {
+      "reference": "Location/loc-1700801002",
+      "display": "MAC APL INTERNAL MEDICINE"
+    },
+    "occurrenceDateTime": "2018-10-08",
+    "primarySource": false,
+    "site": {
+      "text": "Left Arm"
+    },
+    "route": {
+      "text": "Intramuscular"
+    }
+  },
+  {
+    "resourceType": "Immunization",
+    "id": "imm-82049278",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.768076",
+        "value": "82049278"
+      }
+    ],
+    "status": "completed",
+    "vaccineCode": {
+      "text": "COVID-19 (MODERNA) MRNA"
+    },
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "occurrenceDateTime": "2021-04-18",
+    "primarySource": false,
+    "reportOrigin": {
+      "text": "MyChart Entered",
+      "coding": [
+        {
+          "display": "MyChart Entered"
+        }
+      ]
+    },
+    "site": {
+      "text": "Right Arm"
+    },
+    "route": {
+      "text": "Intramuscular"
+    }
+  },
+  {
+    "resourceType": "Immunization",
+    "id": "imm-82049279",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.768076",
+        "value": "82049279"
+      }
+    ],
+    "status": "completed",
+    "vaccineCode": {
+      "text": "COVID-19 (MODERNA) MRNA"
+    },
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "occurrenceDateTime": "2021-05-16",
+    "primarySource": false,
+    "reportOrigin": {
+      "text": "MyChart Entered",
+      "coding": [
+        {
+          "display": "MyChart Entered"
+        }
+      ]
+    },
+    "route": {
+      "text": "Intramuscular"
+    }
+  },
+  {
+    "resourceType": "Immunization",
+    "id": "imm-82049323",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.768076",
+        "value": "82049323"
+      }
+    ],
+    "status": "completed",
+    "vaccineCode": {
+      "text": "COVID-19 (MODERNA) MRNA"
+    },
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "occurrenceDateTime": "2021-12-03",
+    "primarySource": false,
+    "reportOrigin": {
+      "text": "MyChart Entered",
+      "coding": [
+        {
+          "display": "MyChart Entered"
+        }
+      ]
+    },
+    "site": {
+      "text": "Left Deltoid"
+    },
+    "route": {
+      "text": "Intramuscular"
+    }
+  },
+  {
+    "resourceType": "Immunization",
+    "id": "imm-90573906",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.768076",
+        "value": "90573906"
+      }
+    ],
+    "status": "completed",
+    "vaccineCode": {
+      "text": "INFLUENZA, INACTIVATED, QUADRIVALENT, ALL AGES 6 MONTHS AND OLDER, SINGLE DOSE SYRINGE/VIAL"
+    },
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-948004323",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "948004323"
+      }
+    },
+    "location": {
+      "reference": "Location/loc-1700801002",
+      "display": "MAC APL INTERNAL MEDICINE"
+    },
+    "occurrenceDateTime": "2018-10-08",
+    "primarySource": false,
+    "site": {
+      "text": "Left Arm"
+    },
+    "route": {
+      "text": "Intramuscular"
+    }
+  },
+  {
+    "resourceType": "Immunization",
+    "id": "imm-90573907",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.768076",
+        "value": "90573907"
+      }
+    ],
+    "status": "completed",
+    "vaccineCode": {
+      "text": "INFLUENZA, INACTIVATED, QUADRIVALENT, ALL AGES 6 MONTHS AND OLDER, SINGLE DOSE SYRINGE/VIAL"
+    },
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-948004323",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "948004323"
+      }
+    },
+    "location": {
+      "reference": "Location/loc-1700801002",
+      "display": "MAC APL INTERNAL MEDICINE"
+    },
+    "occurrenceDateTime": "2021-10-24",
+    "primarySource": false,
+    "site": {
+      "text": "Left Arm"
+    },
+    "route": {
+      "text": "Intramuscular"
+    }
+  },
+  {
+    "resourceType": "Immunization",
+    "id": "imm-91906111",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.768076",
+        "value": "91906111"
+      }
+    ],
+    "status": "completed",
+    "vaccineCode": {
+      "text": "COVID-19 (PFIZER-BIVALENT) MRNA AGES 12+"
+    },
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "occurrenceDateTime": "2022-09-25",
+    "primarySource": false,
+    "reportOrigin": {
+      "text": "MyChart Entered",
+      "coding": [
+        {
+          "display": "MyChart Entered"
+        }
+      ]
+    },
+    "site": {
+      "text": "Left Arm"
+    },
+    "route": {
+      "text": "Intramuscular"
+    }
+  },
+  {
+    "resourceType": "Immunization",
+    "id": "imm-94544282",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.768076",
+        "value": "94544282"
+      }
+    ],
+    "status": "completed",
+    "vaccineCode": {
+      "text": "INFLUENZA, INACTIVATED, QUADRIVALENT, ALL AGES 6 MONTHS AND OLDER, SINGLE DOSE SYRINGE/VIAL"
+    },
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-974614965",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "974614965"
+      }
+    },
+    "location": {
+      "reference": "Location/loc-1700801002",
+      "display": "MAC APL INTERNAL MEDICINE"
+    },
+    "occurrenceDateTime": "2022-10-26",
+    "primarySource": false,
+    "site": {
+      "text": "Left Deltoid"
+    },
+    "route": {
+      "text": "Intramuscular"
+    }
+  },
+  {
+    "resourceType": "Immunization",
+    "id": "imm-104512005",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.768076",
+        "value": "104512005"
+      }
+    ],
+    "status": "completed",
+    "vaccineCode": {
+      "text": "INFLUENZA (FLUARIX) IIV4",
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/sid/ndc",
+          "code": "58160-909-52"
+        }
+      ]
+    },
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-991225117",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "991225117"
+      }
+    },
+    "location": {
+      "reference": "Location/loc-1700801002",
+      "display": "MAC APL INTERNAL MEDICINE"
+    },
+    "occurrenceDateTime": "2023-09-28",
+    "primarySource": true,
+    "manufacturer": {
+      "display": "GLAXO SMITH KLINE"
+    },
+    "lotNumber": "5ME77",
+    "expirationDate": "2024-06-30",
+    "site": {
+      "text": "Left Deltoid"
+    },
+    "route": {
+      "text": "Intramuscular"
+    },
+    "doseQuantity": {
+      "value": 0.5,
+      "unit": "mL"
+    },
+    "performer": [
+      {
+        "function": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0443",
+              "code": "AP",
+              "display": "Administering Provider"
+            }
+          ],
+          "text": "Administering Provider"
+        },
+        "actor": {
+          "reference": "Practitioner/prac-621755",
+          "type": "Practitioner",
+          "display": "SMITH, MARY B"
+        }
+      },
+      {
+        "function": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0443",
+              "code": "OP",
+              "display": "Ordering Provider"
+            }
+          ],
+          "text": "Ordering Provider"
+        },
+        "actor": {
+          "reference": "Practitioner/prac-144590",
+          "type": "Practitioner",
+          "display": "RAMMELKAMP, ZOE L"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "Immunization",
+    "id": "imm-116013056",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.768076",
+        "value": "116013056"
+      }
+    ],
+    "status": "completed",
+    "vaccineCode": {
+      "text": "COVID-19 (MODERNA) MRNA SPIKEVAX AGES 12+"
+    },
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1028744231",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1028744231"
+      }
+    },
+    "location": {
+      "reference": "Location/loc-1700801002",
+      "display": "MAC APL INTERNAL MEDICINE"
+    },
+    "occurrenceDateTime": "2023-10-11",
+    "primarySource": false,
+    "site": {
+      "text": "Left Arm"
+    },
+    "route": {
+      "text": "Intramuscular"
+    }
+  },
+  {
+    "resourceType": "Immunization",
+    "id": "imm-116014760",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.768076",
+        "value": "116014760"
+      }
+    ],
+    "status": "completed",
+    "vaccineCode": {
+      "text": "INFLUENZA (FLUCELVAX) CCIIV3"
+    },
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1028744231",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1028744231"
+      }
+    },
+    "location": {
+      "reference": "Location/loc-1700801002",
+      "display": "MAC APL INTERNAL MEDICINE"
+    },
+    "occurrenceDateTime": "2024-09-07",
+    "primarySource": false,
+    "site": {
+      "text": "Right Deltoid"
+    },
+    "route": {
+      "text": "Intramuscular"
+    }
+  },
+  {
+    "resourceType": "Immunization",
+    "id": "imm-116014761",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.768076",
+        "value": "116014761"
+      }
+    ],
+    "status": "completed",
+    "vaccineCode": {
+      "text": "COVID-19 (PFIZER COMIRNATY) MRNA AGES 12+"
+    },
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1028744231",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1028744231"
+      }
+    },
+    "location": {
+      "reference": "Location/loc-1700801002",
+      "display": "MAC APL INTERNAL MEDICINE"
+    },
+    "occurrenceDateTime": "2024-09-07",
+    "primarySource": false,
+    "site": {
+      "text": "Right Deltoid"
+    },
+    "route": {
+      "text": "Intramuscular"
+    }
+  },
+  {
+    "resourceType": "Immunization",
+    "id": "imm-126924598",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.768076",
+        "value": "126924598"
+      }
+    ],
+    "status": "completed",
+    "vaccineCode": {
+      "text": "INFLUENZA (FLUCELVAX) CCIIV3"
+    },
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1098684634",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1098684634"
+      }
+    },
+    "location": {
+      "reference": "Location/loc-1700801002",
+      "display": "MAC APL INTERNAL MEDICINE"
+    },
+    "occurrenceDateTime": "2025-10-29",
+    "primarySource": false,
+    "route": {
+      "text": "Intramuscular"
+    }
+  },
+  {
+    "resourceType": "Immunization",
+    "id": "imm-126924599",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.768076",
+        "value": "126924599"
+      }
+    ],
+    "status": "completed",
+    "vaccineCode": {
+      "text": "COVID-19 (PFIZER COMIRNATY) MRNA AGES 12+"
+    },
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1098684634",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1098684634"
+      }
+    },
+    "location": {
+      "reference": "Location/loc-1700801002",
+      "display": "MAC APL INTERNAL MEDICINE"
+    },
+    "occurrenceDateTime": "2025-10-29",
+    "primarySource": false,
+    "route": {
+      "text": "Intramuscular"
+    }
+  }
+]

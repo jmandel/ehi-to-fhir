@@ -1,0 +1,4280 @@
+[
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-52919609-3",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "4671",
+          "display": "Have you felt little interest or pleasure in doing things over the past 2 weeks?  (RETIRED)"
+        }
+      ],
+      "text": "Have you felt little interest or pleasure in doing things over the past 2 weeks?  (RETIRED)"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-720803470",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "720803470"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,18-39"
+    },
+    "effectiveDateTime": "2018-08-09T14:48:00Z",
+    "issued": "2018-08-09T14:49:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-518228",
+        "display": "IRELAND, TRACY C"
+      }
+    ],
+    "valueCodeableConcept": {
+      "coding": [
+        {
+          "code": "0",
+          "display": "0"
+        }
+      ],
+      "text": "0"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-52919609-4",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "4673",
+          "display": "Have you felt down, depressed or hopeless over the past 2 weeks? (RETIRED)"
+        }
+      ],
+      "text": "Have you felt down, depressed or hopeless over the past 2 weeks? (RETIRED)"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-720803470",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "720803470"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,18-39"
+    },
+    "effectiveDateTime": "2018-08-09T14:48:00Z",
+    "issued": "2018-08-09T14:49:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-518228",
+        "display": "IRELAND, TRACY C"
+      }
+    ],
+    "valueCodeableConcept": {
+      "coding": [
+        {
+          "code": "0",
+          "display": "0"
+        }
+      ],
+      "text": "0"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-52919609-5",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "5856",
+          "display": "PHQ-2 Total Score (RETIRED) "
+        }
+      ],
+      "text": "PHQ-2 Total Score (RETIRED) "
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-720803470",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "720803470"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,18-39"
+    },
+    "effectiveDateTime": "2018-08-09T14:48:00Z",
+    "issued": "2018-08-09T14:49:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-518228",
+        "display": "IRELAND, TRACY C"
+      }
+    ],
+    "valueQuantity": {
+      "value": 0
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-52919609-6",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "7914",
+          "display": "PHQ-2 Total Score  (RETIRED)"
+        }
+      ],
+      "text": "PHQ-2 Total Score  (RETIRED)"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-720803470",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "720803470"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,18-39"
+    },
+    "effectiveDateTime": "2018-08-09T14:48:00Z",
+    "issued": "2018-08-09T14:49:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-518228",
+        "display": "IRELAND, TRACY C"
+      }
+    ],
+    "valueQuantity": {
+      "value": 0
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-52919609-14",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "301060",
+          "display": "BSA (Calculated - sq m)"
+        }
+      ],
+      "text": "BSA (Calculated - sq m)"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-720803470",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "720803470"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,18-39"
+    },
+    "effectiveDateTime": "2018-08-09T14:50:00Z",
+    "issued": "2018-08-09T14:50:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-518228",
+        "display": "IRELAND, TRACY C"
+      }
+    ],
+    "valueQuantity": {
+      "value": 1.99,
+      "unit": "sq meters"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-52919609-23",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "3040100525",
+          "display": "Percent Weight Change Since Birth"
+        }
+      ],
+      "text": "Percent Weight Change Since Birth"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-720803470",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "720803470"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,18-39"
+    },
+    "effectiveDateTime": "2018-08-09T14:50:00Z",
+    "issued": "2018-08-09T14:50:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-518228",
+        "display": "IRELAND, TRACY C"
+      }
+    ],
+    "valueQuantity": {
+      "value": 0
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-52919609-29",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "3041300005",
+          "display": "Percent Weight Change Since Admission"
+        }
+      ],
+      "text": "Percent Weight Change Since Admission"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-720803470",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "720803470"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,18-39"
+    },
+    "effectiveDateTime": "2018-08-09T14:50:00Z",
+    "issued": "2018-08-09T14:50:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-518228",
+        "display": "IRELAND, TRACY C"
+      }
+    ],
+    "valueQuantity": {
+      "value": 0,
+      "unit": "%",
+      "system": "http://unitsofmeasure.org",
+      "code": "%"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-52919609-32",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "3051000315",
+          "display": "Difference in Last Recorded Weight (grams)"
+        }
+      ],
+      "text": "Difference in Last Recorded Weight (grams)"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-720803470",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "720803470"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,18-39"
+    },
+    "effectiveDateTime": "2018-08-09T14:50:00Z",
+    "issued": "2018-08-09T14:50:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-518228",
+        "display": "IRELAND, TRACY C"
+      }
+    ],
+    "valueQuantity": {
+      "value": 78926,
+      "unit": "Grams"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-68875117-7",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "6427",
+          "display": "Difference in Last Recorded Weight (kg)"
+        }
+      ],
+      "text": "Difference in Last Recorded Weight (kg)"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-799951565",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "799951565"
+      },
+      "display": "PR OFFICE/OUTPATIENT ESTABLISHED LOW MDM 20 MIN"
+    },
+    "effectiveDateTime": "2020-01-09T18:29:00Z",
+    "issued": "2020-01-09T18:31:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-597973",
+        "display": "THOMAS, ANGELA M"
+      }
+    ],
+    "valueQuantity": {
+      "value": 83,
+      "unit": "KG"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-68875117-9",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "3040100525",
+          "display": "Percent Weight Change Since Birth"
+        }
+      ],
+      "text": "Percent Weight Change Since Birth"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-799951565",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "799951565"
+      },
+      "display": "PR OFFICE/OUTPATIENT ESTABLISHED LOW MDM 20 MIN"
+    },
+    "effectiveDateTime": "2020-01-09T18:29:00Z",
+    "issued": "2020-01-09T18:31:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-597973",
+        "display": "THOMAS, ANGELA M"
+      }
+    ],
+    "valueQuantity": {
+      "value": 0
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-68875117-10",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "3041300005",
+          "display": "Percent Weight Change Since Admission"
+        }
+      ],
+      "text": "Percent Weight Change Since Admission"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-799951565",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "799951565"
+      },
+      "display": "PR OFFICE/OUTPATIENT ESTABLISHED LOW MDM 20 MIN"
+    },
+    "effectiveDateTime": "2020-01-09T18:29:00Z",
+    "issued": "2020-01-09T18:31:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-597973",
+        "display": "THOMAS, ANGELA M"
+      }
+    ],
+    "valueQuantity": {
+      "value": 0,
+      "unit": "%",
+      "system": "http://unitsofmeasure.org",
+      "code": "%"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-68875117-13",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "3051000315",
+          "display": "Difference in Last Recorded Weight (grams)"
+        }
+      ],
+      "text": "Difference in Last Recorded Weight (grams)"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-799951565",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "799951565"
+      },
+      "display": "PR OFFICE/OUTPATIENT ESTABLISHED LOW MDM 20 MIN"
+    },
+    "effectiveDateTime": "2020-01-09T18:29:00Z",
+    "issued": "2020-01-09T18:31:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-597973",
+        "display": "THOMAS, ANGELA M"
+      }
+    ],
+    "valueQuantity": {
+      "value": 83099,
+      "unit": "Grams"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-113578617-1",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "2100100050",
+          "display": "1. Little interest or pleasure in doing things"
+        }
+      ],
+      "text": "1. Little interest or pleasure in doing things"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-948004323",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "948004323"
+      },
+      "display": "PR OFFICE/OUTPATIENT ESTABLISHED LOW MDM 20 MIN"
+    },
+    "effectiveDateTime": "2022-08-29T18:32:00Z",
+    "issued": "2022-08-29T18:32:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-621755",
+        "display": "SMITH, MARY B"
+      }
+    ],
+    "valueCodeableConcept": {
+      "coding": [
+        {
+          "code": "0",
+          "display": "0"
+        }
+      ],
+      "text": "0"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-113578617-2",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "2100100051",
+          "display": "2. Feeling down, depressed, or hopeless"
+        }
+      ],
+      "text": "2. Feeling down, depressed, or hopeless"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-948004323",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "948004323"
+      },
+      "display": "PR OFFICE/OUTPATIENT ESTABLISHED LOW MDM 20 MIN"
+    },
+    "effectiveDateTime": "2022-08-29T18:32:00Z",
+    "issued": "2022-08-29T18:32:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-621755",
+        "display": "SMITH, MARY B"
+      }
+    ],
+    "valueCodeableConcept": {
+      "coding": [
+        {
+          "code": "0",
+          "display": "0"
+        }
+      ],
+      "text": "0"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-113578617-3",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "16752",
+          "display": "PHQ-2 Total Score"
+        }
+      ],
+      "text": "PHQ-2 Total Score"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-948004323",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "948004323"
+      },
+      "display": "PR OFFICE/OUTPATIENT ESTABLISHED LOW MDM 20 MIN"
+    },
+    "effectiveDateTime": "2022-08-29T18:32:00Z",
+    "issued": "2022-08-29T18:32:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-621755",
+        "display": "SMITH, MARY B"
+      }
+    ],
+    "valueQuantity": {
+      "value": 0
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-113578617-18",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "301060",
+          "display": "BSA (Calculated - sq m)"
+        }
+      ],
+      "text": "BSA (Calculated - sq m)"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-948004323",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "948004323"
+      },
+      "display": "PR OFFICE/OUTPATIENT ESTABLISHED LOW MDM 20 MIN"
+    },
+    "effectiveDateTime": "2022-08-29T18:34:00Z",
+    "issued": "2022-08-29T18:36:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-621755",
+        "display": "SMITH, MARY B"
+      }
+    ],
+    "valueQuantity": {
+      "value": 2.01,
+      "unit": "sq meters"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-113578617-31",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "3041300005",
+          "display": "Percent Weight Change Since Admission"
+        }
+      ],
+      "text": "Percent Weight Change Since Admission"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-948004323",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "948004323"
+      },
+      "display": "PR OFFICE/OUTPATIENT ESTABLISHED LOW MDM 20 MIN"
+    },
+    "effectiveDateTime": "2022-08-29T18:34:00Z",
+    "issued": "2022-08-29T18:36:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-621755",
+        "display": "SMITH, MARY B"
+      }
+    ],
+    "valueQuantity": {
+      "value": 0,
+      "unit": "%",
+      "system": "http://unitsofmeasure.org",
+      "code": "%"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-118745686-10",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "3041300005",
+          "display": "Percent Weight Change Since Admission"
+        }
+      ],
+      "text": "Percent Weight Change Since Admission"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-974614965",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "974614965"
+      },
+      "display": "PR OFFICE/OUTPATIENT ESTABLISHED MOD MDM 30 MIN"
+    },
+    "effectiveDateTime": "2022-12-01T15:36:00Z",
+    "issued": "2022-12-01T15:38:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-621755",
+        "display": "SMITH, MARY B"
+      }
+    ],
+    "valueQuantity": {
+      "value": 0,
+      "unit": "%",
+      "system": "http://unitsofmeasure.org",
+      "code": "%"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-123358331-1",
+    "status": "preliminary",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "2100100050",
+          "display": "1. Little interest or pleasure in doing things"
+        }
+      ],
+      "text": "1. Little interest or pleasure in doing things"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-958148810",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "958148810"
+      },
+      "display": "PR OFFICE/OUTPATIENT ESTABLISHED LOW MDM 20 MIN"
+    },
+    "effectiveDateTime": "2023-02-27T21:56:00Z",
+    "issued": "2023-02-27T21:56:00Z",
+    "performer": [
+      {
+        "display": "MYCHART, GENERIC"
+      }
+    ],
+    "valueCodeableConcept": {
+      "coding": [
+        {
+          "code": "0",
+          "display": "0"
+        }
+      ],
+      "text": "0"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-123358331-2",
+    "status": "preliminary",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "2100100051",
+          "display": "2. Feeling down, depressed, or hopeless"
+        }
+      ],
+      "text": "2. Feeling down, depressed, or hopeless"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-958148810",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "958148810"
+      },
+      "display": "PR OFFICE/OUTPATIENT ESTABLISHED LOW MDM 20 MIN"
+    },
+    "effectiveDateTime": "2023-02-27T21:56:00Z",
+    "issued": "2023-02-27T21:56:00Z",
+    "performer": [
+      {
+        "display": "MYCHART, GENERIC"
+      }
+    ],
+    "valueCodeableConcept": {
+      "coding": [
+        {
+          "code": "0",
+          "display": "0"
+        }
+      ],
+      "text": "0"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-123358331-3",
+    "status": "preliminary",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "16752",
+          "display": "PHQ-2 Total Score"
+        }
+      ],
+      "text": "PHQ-2 Total Score"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-958148810",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "958148810"
+      },
+      "display": "PR OFFICE/OUTPATIENT ESTABLISHED LOW MDM 20 MIN"
+    },
+    "effectiveDateTime": "2023-02-27T21:56:00Z",
+    "issued": "2023-02-27T21:56:00Z",
+    "performer": [
+      {
+        "display": "MYCHART, GENERIC"
+      }
+    ],
+    "valueQuantity": {
+      "value": 0
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-123358331-4",
+    "status": "preliminary",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "28282",
+          "display": "PHQ-2 Total Score"
+        }
+      ],
+      "text": "PHQ-2 Total Score"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-958148810",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "958148810"
+      },
+      "display": "PR OFFICE/OUTPATIENT ESTABLISHED LOW MDM 20 MIN"
+    },
+    "effectiveDateTime": "2023-02-27T21:56:00Z",
+    "issued": "2023-02-27T21:56:00Z",
+    "performer": [
+      {
+        "display": "MYCHART, GENERIC"
+      }
+    ],
+    "valueString": "0"
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-123579193-10",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "3041300005",
+          "display": "Percent Weight Change Since Admission"
+        }
+      ],
+      "text": "Percent Weight Change Since Admission"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-958148810",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "958148810"
+      },
+      "display": "PR OFFICE/OUTPATIENT ESTABLISHED LOW MDM 20 MIN"
+    },
+    "effectiveDateTime": "2023-03-02T20:44:00Z",
+    "issued": "2023-03-02T20:46:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-621755",
+        "display": "SMITH, MARY B"
+      }
+    ],
+    "valueQuantity": {
+      "value": 0,
+      "unit": "%",
+      "system": "http://unitsofmeasure.org",
+      "code": "%"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-135409106-1",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "28385",
+          "display": "Depression Screening Adult"
+        }
+      ],
+      "text": "Depression Screening Adult"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-991225117",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "991225117"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,40-64"
+    },
+    "effectiveDateTime": "2023-09-28T14:39:00Z",
+    "issued": "2023-09-28T14:39:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-621755",
+        "display": "SMITH, MARY B"
+      }
+    ],
+    "valueCodeableConcept": {
+      "coding": [
+        {
+          "code": "PHQ-2 Brief Screen",
+          "display": "PHQ-2 Brief Screen"
+        }
+      ],
+      "text": "PHQ-2 Brief Screen"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-135409106-2",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "2100100050",
+          "display": "1. Little interest or pleasure in doing things"
+        }
+      ],
+      "text": "1. Little interest or pleasure in doing things"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-991225117",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "991225117"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,40-64"
+    },
+    "effectiveDateTime": "2023-09-28T14:39:00Z",
+    "issued": "2023-09-28T14:39:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-621755",
+        "display": "SMITH, MARY B"
+      }
+    ],
+    "valueCodeableConcept": {
+      "coding": [
+        {
+          "code": "0",
+          "display": "0"
+        }
+      ],
+      "text": "0"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-135409106-3",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "2100100051",
+          "display": "2. Feeling down, depressed, or hopeless"
+        }
+      ],
+      "text": "2. Feeling down, depressed, or hopeless"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-991225117",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "991225117"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,40-64"
+    },
+    "effectiveDateTime": "2023-09-28T14:39:00Z",
+    "issued": "2023-09-28T14:39:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-621755",
+        "display": "SMITH, MARY B"
+      }
+    ],
+    "valueCodeableConcept": {
+      "coding": [
+        {
+          "code": "0",
+          "display": "0"
+        }
+      ],
+      "text": "0"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-135409106-4",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "16752",
+          "display": "PHQ-2 Total Score"
+        }
+      ],
+      "text": "PHQ-2 Total Score"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-991225117",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "991225117"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,40-64"
+    },
+    "effectiveDateTime": "2023-09-28T14:39:00Z",
+    "issued": "2023-09-28T14:39:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-621755",
+        "display": "SMITH, MARY B"
+      }
+    ],
+    "valueQuantity": {
+      "value": 0
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-135409106-5",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "28282",
+          "display": "PHQ-2 Total Score"
+        }
+      ],
+      "text": "PHQ-2 Total Score"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-991225117",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "991225117"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,40-64"
+    },
+    "effectiveDateTime": "2023-09-28T14:39:00Z",
+    "issued": "2023-09-28T14:39:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-621755",
+        "display": "SMITH, MARY B"
+      }
+    ],
+    "valueString": "0"
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-135409106-20",
+    "status": "amended",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "301060",
+          "display": "BSA (Calculated - sq m)"
+        }
+      ],
+      "text": "BSA (Calculated - sq m)"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-991225117",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "991225117"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,40-64"
+    },
+    "effectiveDateTime": "2023-09-28T14:41:00Z",
+    "issued": "2023-09-28T16:27:00Z",
+    "performer": [
+      {
+        "display": "FARGEN, MEGAN"
+      }
+    ],
+    "valueQuantity": {
+      "value": 2.03,
+      "unit": "sq meters"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-135409106-33",
+    "status": "amended",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "3041300005",
+          "display": "Percent Weight Change Since Admission"
+        }
+      ],
+      "text": "Percent Weight Change Since Admission"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-991225117",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "991225117"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,40-64"
+    },
+    "effectiveDateTime": "2023-09-28T14:41:00Z",
+    "issued": "2023-09-28T16:27:00Z",
+    "performer": [
+      {
+        "display": "FARGEN, MEGAN"
+      }
+    ],
+    "valueQuantity": {
+      "value": 0,
+      "unit": "%",
+      "system": "http://unitsofmeasure.org",
+      "code": "%"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-151444865-1",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "2100100050",
+          "display": "1. Little interest or pleasure in doing things"
+        }
+      ],
+      "text": "1. Little interest or pleasure in doing things"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1076261941",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1076261941"
+      },
+      "display": "PR OFFICE/OUTPATIENT ESTABLISHED MOD MDM 30 MIN"
+    },
+    "effectiveDateTime": "2024-07-02T03:56:00Z",
+    "issued": "2024-07-02T03:56:00Z",
+    "performer": [
+      {
+        "display": "MYCHART, GENERIC"
+      }
+    ],
+    "valueCodeableConcept": {
+      "coding": [
+        {
+          "code": "0",
+          "display": "0"
+        }
+      ],
+      "text": "0"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-151444865-2",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "2100100051",
+          "display": "2. Feeling down, depressed, or hopeless"
+        }
+      ],
+      "text": "2. Feeling down, depressed, or hopeless"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1076261941",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1076261941"
+      },
+      "display": "PR OFFICE/OUTPATIENT ESTABLISHED MOD MDM 30 MIN"
+    },
+    "effectiveDateTime": "2024-07-02T03:56:00Z",
+    "issued": "2024-07-02T03:56:00Z",
+    "performer": [
+      {
+        "display": "MYCHART, GENERIC"
+      }
+    ],
+    "valueCodeableConcept": {
+      "coding": [
+        {
+          "code": "1",
+          "display": "1"
+        }
+      ],
+      "text": "1"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-151444865-3",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "16752",
+          "display": "PHQ-2 Total Score"
+        }
+      ],
+      "text": "PHQ-2 Total Score"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1076261941",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1076261941"
+      },
+      "display": "PR OFFICE/OUTPATIENT ESTABLISHED MOD MDM 30 MIN"
+    },
+    "effectiveDateTime": "2024-07-02T03:56:00Z",
+    "issued": "2024-07-02T03:56:00Z",
+    "performer": [
+      {
+        "display": "MYCHART, GENERIC"
+      }
+    ],
+    "valueQuantity": {
+      "value": 1
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-151444865-4",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "28282",
+          "display": "PHQ-2 Total Score"
+        }
+      ],
+      "text": "PHQ-2 Total Score"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1076261941",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1076261941"
+      },
+      "display": "PR OFFICE/OUTPATIENT ESTABLISHED MOD MDM 30 MIN"
+    },
+    "effectiveDateTime": "2024-07-02T03:56:00Z",
+    "issued": "2024-07-02T03:56:00Z",
+    "performer": [
+      {
+        "display": "MYCHART, GENERIC"
+      }
+    ],
+    "valueString": "1"
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-151478676-9",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "3041300005",
+          "display": "Percent Weight Change Since Admission"
+        }
+      ],
+      "text": "Percent Weight Change Since Admission"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1076261941",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1076261941"
+      },
+      "display": "PR OFFICE/OUTPATIENT ESTABLISHED MOD MDM 30 MIN"
+    },
+    "effectiveDateTime": "2024-07-02T14:51:00Z",
+    "issued": "2024-07-02T14:53:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-656419",
+        "display": "TAFT, ASHLEY M"
+      }
+    ],
+    "valueQuantity": {
+      "value": 0,
+      "unit": "%",
+      "system": "http://unitsofmeasure.org",
+      "code": "%"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-158940288-1",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "28385",
+          "display": "Depression Screening Adult"
+        }
+      ],
+      "text": "Depression Screening Adult"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1028744231",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1028744231"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,40-64"
+    },
+    "effectiveDateTime": "2024-11-07T14:25:00Z",
+    "issued": "2024-11-07T14:26:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-621755",
+        "display": "SMITH, MARY B"
+      }
+    ],
+    "valueCodeableConcept": {
+      "coding": [
+        {
+          "code": "PHQ-2 Brief Screen",
+          "display": "PHQ-2 Brief Screen"
+        }
+      ],
+      "text": "PHQ-2 Brief Screen"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-158940288-2",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "2100100050",
+          "display": "1. Little interest or pleasure in doing things"
+        }
+      ],
+      "text": "1. Little interest or pleasure in doing things"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1028744231",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1028744231"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,40-64"
+    },
+    "effectiveDateTime": "2024-11-07T14:25:00Z",
+    "issued": "2024-11-07T14:26:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-621755",
+        "display": "SMITH, MARY B"
+      }
+    ],
+    "valueCodeableConcept": {
+      "coding": [
+        {
+          "code": "0",
+          "display": "0"
+        }
+      ],
+      "text": "0"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-158940288-3",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "2100100051",
+          "display": "2. Feeling down, depressed, or hopeless"
+        }
+      ],
+      "text": "2. Feeling down, depressed, or hopeless"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1028744231",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1028744231"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,40-64"
+    },
+    "effectiveDateTime": "2024-11-07T14:25:00Z",
+    "issued": "2024-11-07T14:26:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-621755",
+        "display": "SMITH, MARY B"
+      }
+    ],
+    "valueCodeableConcept": {
+      "coding": [
+        {
+          "code": "0",
+          "display": "0"
+        }
+      ],
+      "text": "0"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-158940288-4",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "16752",
+          "display": "PHQ-2 Total Score"
+        }
+      ],
+      "text": "PHQ-2 Total Score"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1028744231",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1028744231"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,40-64"
+    },
+    "effectiveDateTime": "2024-11-07T14:25:00Z",
+    "issued": "2024-11-07T14:26:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-621755",
+        "display": "SMITH, MARY B"
+      }
+    ],
+    "valueQuantity": {
+      "value": 0
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-158940288-5",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "28282",
+          "display": "PHQ-2 Total Score"
+        }
+      ],
+      "text": "PHQ-2 Total Score"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1028744231",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1028744231"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,40-64"
+    },
+    "effectiveDateTime": "2024-11-07T14:25:00Z",
+    "issued": "2024-11-07T14:26:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-621755",
+        "display": "SMITH, MARY B"
+      }
+    ],
+    "valueString": "0"
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-158940288-20",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "301060",
+          "display": "BSA (Calculated - sq m)"
+        }
+      ],
+      "text": "BSA (Calculated - sq m)"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1028744231",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1028744231"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,40-64"
+    },
+    "effectiveDateTime": "2024-11-07T14:27:00Z",
+    "issued": "2024-11-07T14:29:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-621755",
+        "display": "SMITH, MARY B"
+      }
+    ],
+    "valueQuantity": {
+      "value": 2.04,
+      "unit": "sq meters"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-158940288-33",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "3041300005",
+          "display": "Percent Weight Change Since Admission"
+        }
+      ],
+      "text": "Percent Weight Change Since Admission"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1028744231",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1028744231"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,40-64"
+    },
+    "effectiveDateTime": "2024-11-07T14:27:00Z",
+    "issued": "2024-11-07T14:29:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-621755",
+        "display": "SMITH, MARY B"
+      }
+    ],
+    "valueQuantity": {
+      "value": 0,
+      "unit": "%",
+      "system": "http://unitsofmeasure.org",
+      "code": "%"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-168650022-1",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "2100100050",
+          "display": "1. Little interest or pleasure in doing things"
+        }
+      ],
+      "text": "1. Little interest or pleasure in doing things"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1127808563",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1127808563"
+      },
+      "display": "PR SYNCHRONOUS AUDIO-VIDEO VISIT EST LOW MDM 20 MIN"
+    },
+    "effectiveDateTime": "2025-04-23T15:32:00Z",
+    "issued": "2025-04-23T15:32:00Z",
+    "performer": [
+      {
+        "display": "MYCHART, GENERIC"
+      }
+    ],
+    "valueCodeableConcept": {
+      "coding": [
+        {
+          "code": "0",
+          "display": "0"
+        }
+      ],
+      "text": "0"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-168650022-2",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "2100100051",
+          "display": "2. Feeling down, depressed, or hopeless"
+        }
+      ],
+      "text": "2. Feeling down, depressed, or hopeless"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1127808563",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1127808563"
+      },
+      "display": "PR SYNCHRONOUS AUDIO-VIDEO VISIT EST LOW MDM 20 MIN"
+    },
+    "effectiveDateTime": "2025-04-23T15:32:00Z",
+    "issued": "2025-04-23T15:32:00Z",
+    "performer": [
+      {
+        "display": "MYCHART, GENERIC"
+      }
+    ],
+    "valueCodeableConcept": {
+      "coding": [
+        {
+          "code": "0",
+          "display": "0"
+        }
+      ],
+      "text": "0"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-168650022-3",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "16752",
+          "display": "PHQ-2 Total Score"
+        }
+      ],
+      "text": "PHQ-2 Total Score"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1127808563",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1127808563"
+      },
+      "display": "PR SYNCHRONOUS AUDIO-VIDEO VISIT EST LOW MDM 20 MIN"
+    },
+    "effectiveDateTime": "2025-04-23T15:32:00Z",
+    "issued": "2025-04-23T15:32:00Z",
+    "performer": [
+      {
+        "display": "MYCHART, GENERIC"
+      }
+    ],
+    "valueQuantity": {
+      "value": 0
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-168650022-4",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "28282",
+          "display": "PHQ-2 Total Score"
+        }
+      ],
+      "text": "PHQ-2 Total Score"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1127808563",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1127808563"
+      },
+      "display": "PR SYNCHRONOUS AUDIO-VIDEO VISIT EST LOW MDM 20 MIN"
+    },
+    "effectiveDateTime": "2025-04-23T15:32:00Z",
+    "issued": "2025-04-23T15:32:00Z",
+    "performer": [
+      {
+        "display": "MYCHART, GENERIC"
+      }
+    ],
+    "valueString": "0"
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-181864978-1",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "28385",
+          "display": "Depression Screening Adult"
+        }
+      ],
+      "text": "Depression Screening Adult"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1098684634",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1098684634"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,40-64"
+    },
+    "effectiveDateTime": "2025-12-04T21:06:00Z",
+    "issued": "2025-12-04T21:06:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-621755",
+        "display": "SMITH, MARY B"
+      }
+    ],
+    "valueCodeableConcept": {
+      "coding": [
+        {
+          "code": "PHQ-2 Brief Screen",
+          "display": "PHQ-2 Brief Screen"
+        }
+      ],
+      "text": "PHQ-2 Brief Screen"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-181864978-2",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "2100100050",
+          "display": "1. Little interest or pleasure in doing things"
+        }
+      ],
+      "text": "1. Little interest or pleasure in doing things"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1098684634",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1098684634"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,40-64"
+    },
+    "effectiveDateTime": "2025-12-04T21:06:00Z",
+    "issued": "2025-12-04T21:06:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-621755",
+        "display": "SMITH, MARY B"
+      }
+    ],
+    "valueCodeableConcept": {
+      "coding": [
+        {
+          "code": "0",
+          "display": "0"
+        }
+      ],
+      "text": "0"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-181864978-3",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "2100100051",
+          "display": "2. Feeling down, depressed, or hopeless"
+        }
+      ],
+      "text": "2. Feeling down, depressed, or hopeless"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1098684634",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1098684634"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,40-64"
+    },
+    "effectiveDateTime": "2025-12-04T21:06:00Z",
+    "issued": "2025-12-04T21:06:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-621755",
+        "display": "SMITH, MARY B"
+      }
+    ],
+    "valueCodeableConcept": {
+      "coding": [
+        {
+          "code": "0",
+          "display": "0"
+        }
+      ],
+      "text": "0"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-181864978-4",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "16752",
+          "display": "PHQ-2 Total Score"
+        }
+      ],
+      "text": "PHQ-2 Total Score"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1098684634",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1098684634"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,40-64"
+    },
+    "effectiveDateTime": "2025-12-04T21:06:00Z",
+    "issued": "2025-12-04T21:06:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-621755",
+        "display": "SMITH, MARY B"
+      }
+    ],
+    "valueQuantity": {
+      "value": 0
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-181864978-5",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "28282",
+          "display": "PHQ-2 Total Score"
+        }
+      ],
+      "text": "PHQ-2 Total Score"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1098684634",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1098684634"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,40-64"
+    },
+    "effectiveDateTime": "2025-12-04T21:06:00Z",
+    "issued": "2025-12-04T21:06:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-621755",
+        "display": "SMITH, MARY B"
+      }
+    ],
+    "valueString": "0"
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-181864978-22",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "301060",
+          "display": "BSA (Calculated - sq m)"
+        }
+      ],
+      "text": "BSA (Calculated - sq m)"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1098684634",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1098684634"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,40-64"
+    },
+    "effectiveDateTime": "2025-12-04T21:07:00Z",
+    "issued": "2025-12-04T21:09:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-621755",
+        "display": "SMITH, MARY B"
+      }
+    ],
+    "valueQuantity": {
+      "value": 2.07,
+      "unit": "sq meters"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-181864978-35",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "disability-status",
+            "display": "Disability Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "3041300005",
+          "display": "Percent Weight Change Since Admission"
+        }
+      ],
+      "text": "Percent Weight Change Since Admission"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1098684634",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1098684634"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,40-64"
+    },
+    "effectiveDateTime": "2025-12-04T21:07:00Z",
+    "issued": "2025-12-04T21:09:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-621755",
+        "display": "SMITH, MARY B"
+      }
+    ],
+    "valueQuantity": {
+      "value": 0,
+      "unit": "%",
+      "system": "http://unitsofmeasure.org",
+      "code": "%"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-181864978-42",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "1572879836",
+          "display": "Q1: How often do you have a drink containing alcohol?"
+        }
+      ],
+      "text": "Q1: How often do you have a drink containing alcohol?"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1098684634",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1098684634"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,40-64"
+    },
+    "effectiveDateTime": "2025-12-04T21:34:00Z",
+    "issued": "2025-12-04T21:34:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-144590",
+        "display": "RAMMELKAMP, ZOE L"
+      }
+    ],
+    "valueCodeableConcept": {
+      "coding": [
+        {
+          "code": "NEVER",
+          "display": "NEVER"
+        }
+      ],
+      "text": "NEVER"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-181864978-43",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "1572879837",
+          "display": "Q2: How many drinks containing alcohol do you have on a typical day when you are drinking?"
+        }
+      ],
+      "text": "Q2: How many drinks containing alcohol do you have on a typical day when you are drinking?"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1098684634",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1098684634"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,40-64"
+    },
+    "effectiveDateTime": "2025-12-04T21:34:00Z",
+    "issued": "2025-12-04T21:34:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-144590",
+        "display": "RAMMELKAMP, ZOE L"
+      }
+    ],
+    "valueCodeableConcept": {
+      "coding": [
+        {
+          "code": "PATIENT DOES NOT DRINK",
+          "display": "PATIENT DOES NOT DRINK"
+        }
+      ],
+      "text": "PATIENT DOES NOT DRINK"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-181864978-44",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "1572879838",
+          "display": "Q3: How often do you have six or more drinks on one occasion?"
+        }
+      ],
+      "text": "Q3: How often do you have six or more drinks on one occasion?"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1098684634",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1098684634"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,40-64"
+    },
+    "effectiveDateTime": "2025-12-04T21:34:00Z",
+    "issued": "2025-12-04T21:34:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-144590",
+        "display": "RAMMELKAMP, ZOE L"
+      }
+    ],
+    "valueCodeableConcept": {
+      "coding": [
+        {
+          "code": "NEVER",
+          "display": "NEVER"
+        }
+      ],
+      "text": "NEVER"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "obs-flo-181864978-46",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "survey",
+            "display": "Survey"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "functional-status",
+            "display": "Functional Status"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+            "code": "sdoh",
+            "display": "SDOH"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id",
+          "code": "1570400748",
+          "display": "AUDIT-C Score"
+        }
+      ],
+      "text": "AUDIT-C Score"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1098684634",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1098684634"
+      },
+      "display": "PR PREVENTIVE VISIT,EST,40-64"
+    },
+    "effectiveDateTime": "2025-12-04T21:34:00Z",
+    "issued": "2025-12-04T21:34:00Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-144590",
+        "display": "RAMMELKAMP, ZOE L"
+      }
+    ],
+    "valueQuantity": {
+      "value": 0
+    }
+  }
+]

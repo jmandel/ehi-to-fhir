@@ -1,0 +1,2491 @@
+[
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-132946",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": "  KAC05"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": "KAC05"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "132946"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+        "value": "KAC05"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  132946"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "132946"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/us-npi",
+        "value": "1891752184",
+        "use": "usual",
+        "type": {
+          "text": "NPI"
+        }
+      },
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.60",
+        "value": "1891752184",
+        "use": "usual",
+        "type": {
+          "text": "EPIC"
+        }
+      },
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.63",
+        "value": "6146858150002",
+        "use": "usual",
+        "type": {
+          "text": "Epic"
+        }
+      },
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.126",
+        "value": "208000000X",
+        "use": "usual"
+      },
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.556",
+        "value": "3569",
+        "use": "usual",
+        "type": {
+          "text": "EXTPROVID"
+        }
+      },
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.557",
+        "value": "1891752184",
+        "use": "usual"
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Kathryn A Cahill",
+        "family": "Cahill",
+        "given": [
+          "Kathryn",
+          "A"
+        ]
+      },
+      {
+        "use": "official",
+        "family": "Cahill",
+        "given": [
+          "Kathryn",
+          "A"
+        ],
+        "prefix": [
+          "Dr."
+        ],
+        "text": "Dr. Kathryn A Cahill"
+      }
+    ],
+    "gender": "female",
+    "qualification": [
+      {
+        "identifier": [
+          {
+            "system": "https://npiregistry.cms.hhs.gov",
+            "value": "NPPES"
+          }
+        ],
+        "code": {
+          "text": "MD"
+        }
+      },
+      {
+        "identifier": [
+          {
+            "system": "https://npiregistry.cms.hhs.gov",
+            "value": "NPPES"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://nucc.org/provider-taxonomy",
+              "code": "208000000X",
+              "display": "Pediatrics"
+            }
+          ],
+          "text": "Pediatrics"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-133057",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "NPI"
+        },
+        "system": "http://hl7.org/fhir/sid/us-npi",
+        "value": "1790854107"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": " JLE400"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": "JLE400"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "133057"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.126",
+        "value": "207R00000X"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+        "value": "JLE400"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.557",
+        "value": "1790854107"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  133057"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "133057"
+      },
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.60",
+        "value": "1790854107",
+        "use": "usual",
+        "type": {
+          "text": "EPIC"
+        }
+      },
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.63",
+        "value": "6552692181001",
+        "use": "usual",
+        "type": {
+          "text": "Epic"
+        }
+      },
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.556",
+        "value": "9005",
+        "use": "usual",
+        "type": {
+          "text": "EXTPROVID"
+        }
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Jennifer L Everton",
+        "family": "Everton",
+        "given": [
+          "Jennifer",
+          "L"
+        ]
+      },
+      {
+        "use": "official",
+        "family": "Everton",
+        "given": [
+          "Jennifer",
+          "L"
+        ],
+        "prefix": [
+          "Dr."
+        ],
+        "text": "Dr. Jennifer L Everton"
+      }
+    ],
+    "gender": "female",
+    "qualification": [
+      {
+        "identifier": [
+          {
+            "system": "https://npiregistry.cms.hhs.gov",
+            "value": "NPPES"
+          }
+        ],
+        "code": {
+          "text": "D.O."
+        }
+      },
+      {
+        "identifier": [
+          {
+            "system": "https://npiregistry.cms.hhs.gov",
+            "value": "NPPES"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://nucc.org/provider-taxonomy",
+              "code": "207R00000X",
+              "display": "Internal Medicine"
+            }
+          ],
+          "text": "Internal Medicine"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-133073",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "133073"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  133073"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "133073"
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Amy Fothergill",
+        "family": "Fothergill",
+        "given": [
+          "Amy"
+        ]
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-137975",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "137975"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  137975"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "137975"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/us-npi",
+        "value": "1669814737",
+        "use": "usual",
+        "type": {
+          "text": "NPI"
+        }
+      },
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.60",
+        "value": "1669814737",
+        "use": "usual",
+        "type": {
+          "text": "EPIC"
+        }
+      },
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.63",
+        "value": "6120918316008",
+        "use": "usual",
+        "type": {
+          "text": "Epic"
+        }
+      },
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.126",
+        "value": "2085R0202X",
+        "use": "usual"
+      },
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.126",
+        "value": "2085P0229X",
+        "use": "usual"
+      },
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.557",
+        "value": "1669814737",
+        "use": "usual"
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Matthew W Shore",
+        "family": "Shore",
+        "given": [
+          "Matthew",
+          "W"
+        ]
+      },
+      {
+        "use": "official",
+        "family": "Shore",
+        "given": [
+          "Matthew",
+          "William"
+        ],
+        "prefix": [
+          "Dr."
+        ],
+        "text": "Dr. Matthew William Shore"
+      }
+    ],
+    "gender": "male",
+    "qualification": [
+      {
+        "identifier": [
+          {
+            "system": "https://npiregistry.cms.hhs.gov",
+            "value": "NPPES"
+          }
+        ],
+        "code": {
+          "text": "M.D."
+        }
+      },
+      {
+        "identifier": [
+          {
+            "system": "https://npiregistry.cms.hhs.gov",
+            "value": "NPPES"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://nucc.org/provider-taxonomy",
+              "code": "207UN0902X",
+              "display": "Nuclear Medicine, Nuclear Imaging & Therapy"
+            }
+          ],
+          "text": "Nuclear Medicine, Nuclear Imaging & Therapy"
+        }
+      },
+      {
+        "identifier": [
+          {
+            "system": "https://npiregistry.cms.hhs.gov",
+            "value": "NPPES"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://nucc.org/provider-taxonomy",
+              "code": "2085R0202X",
+              "display": "Radiology, Diagnostic Radiology"
+            }
+          ],
+          "text": "Radiology, Diagnostic Radiology"
+        }
+      },
+      {
+        "identifier": [
+          {
+            "system": "https://npiregistry.cms.hhs.gov",
+            "value": "NPPES"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://nucc.org/provider-taxonomy",
+              "code": "2085R0202X",
+              "display": "Radiology, Diagnostic Radiology"
+            }
+          ],
+          "text": "Radiology, Diagnostic Radiology"
+        }
+      },
+      {
+        "identifier": [
+          {
+            "system": "https://npiregistry.cms.hhs.gov",
+            "value": "NPPES"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://nucc.org/provider-taxonomy",
+              "code": "2085P0229X",
+              "display": "Radiology, Pediatric Radiology"
+            }
+          ],
+          "text": "Radiology, Pediatric Radiology"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-144590",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "NPI"
+        },
+        "system": "http://hl7.org/fhir/sid/us-npi",
+        "value": "1205323193"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": " RAMMELZL"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": "RAMMELZL"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "144590"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.126",
+        "value": "207R00000X"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+        "value": "RAMMELZL"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.557",
+        "value": "1205323193"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  144590"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "144590"
+      },
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.60",
+        "value": "1205323193",
+        "use": "usual",
+        "type": {
+          "text": "EPIC"
+        }
+      },
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.63",
+        "value": "9005828432002",
+        "use": "usual",
+        "type": {
+          "text": "Epic"
+        }
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Zoe L Rammelkamp",
+        "family": "Rammelkamp",
+        "given": [
+          "Zoe",
+          "L"
+        ]
+      },
+      {
+        "use": "official",
+        "family": "Rammelkamp",
+        "given": [
+          "Zoe",
+          "Louise"
+        ],
+        "prefix": [
+          "Dr."
+        ],
+        "text": "Dr. Zoe Louise Rammelkamp"
+      }
+    ],
+    "gender": "female",
+    "qualification": [
+      {
+        "identifier": [
+          {
+            "system": "https://npiregistry.cms.hhs.gov",
+            "value": "NPPES"
+          }
+        ],
+        "code": {
+          "text": "MD"
+        }
+      },
+      {
+        "identifier": [
+          {
+            "system": "https://npiregistry.cms.hhs.gov",
+            "value": "NPPES"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://nucc.org/provider-taxonomy",
+              "code": "390200000X",
+              "display": "Student in an Organized Health Care Education/Training Program"
+            }
+          ],
+          "text": "Student in an Organized Health Care Education/Training Program"
+        }
+      },
+      {
+        "identifier": [
+          {
+            "system": "https://npiregistry.cms.hhs.gov",
+            "value": "NPPES"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://nucc.org/provider-taxonomy",
+              "code": "207R00000X",
+              "display": "Internal Medicine"
+            }
+          ],
+          "text": "Internal Medicine"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-219711",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "NPI"
+        },
+        "system": "http://hl7.org/fhir/sid/us-npi",
+        "value": "1730357849"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": " PICONEMA"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": "PICONEMA"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "219711"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.126",
+        "value": "363LF0000X"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+        "value": "PICONEMA"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.557",
+        "value": "1730357849"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  219711"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "219711"
+      },
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.60",
+        "value": "1730357849",
+        "use": "usual",
+        "type": {
+          "text": "EPIC"
+        }
+      },
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.63",
+        "value": "6572844523084",
+        "use": "usual",
+        "type": {
+          "text": "Epic"
+        }
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Mary A Picone",
+        "family": "Picone",
+        "given": [
+          "Mary",
+          "A"
+        ]
+      },
+      {
+        "use": "official",
+        "family": "Picone",
+        "given": [
+          "Mary Ann"
+        ],
+        "text": "Mary Ann Picone"
+      }
+    ],
+    "gender": "female",
+    "qualification": [
+      {
+        "identifier": [
+          {
+            "system": "https://npiregistry.cms.hhs.gov",
+            "value": "NPPES"
+          }
+        ],
+        "code": {
+          "text": "CRNP"
+        }
+      },
+      {
+        "identifier": [
+          {
+            "system": "https://npiregistry.cms.hhs.gov",
+            "value": "NPPES"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://nucc.org/provider-taxonomy",
+              "code": "363LF0000X",
+              "display": "Nurse Practitioner, Family"
+            }
+          ],
+          "text": "Nurse Practitioner, Family"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-508903",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": " KLL403"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": "KLL403"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "508903"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+        "value": "KLL403"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  508903"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "508903"
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Karen L Lough",
+        "family": "Lough",
+        "given": [
+          "Karen",
+          "L"
+        ]
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-518228",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": " WENTZTC"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": "WENTZTC"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "518228"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+        "value": "WENTZTC"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  518228"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "518228"
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Tracy C Ireland",
+        "family": "Ireland",
+        "given": [
+          "Tracy",
+          "C"
+        ]
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-519715",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": " WHITTITC"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": "WHITTITC"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "519715"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+        "value": "WHITTITC"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  519715"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "519715"
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Theresa C Whittington",
+        "family": "Whittington",
+        "given": [
+          "Theresa",
+          "C"
+        ]
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-521751",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": " HAPPSM"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": "HAPPSM"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "521751"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+        "value": "HAPPSM"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  521751"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "521751"
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Steffany M Louko",
+        "family": "Louko",
+        "given": [
+          "Steffany",
+          "M"
+        ]
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-522795",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": " PEPINPA"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": "PEPINPA"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "522795"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+        "value": "PEPINPA"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  522795"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "522795"
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Pamela A Pepin",
+        "family": "Pepin",
+        "given": [
+          "Pamela",
+          "A"
+        ]
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-525016",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": " KAV402"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": "KAV402"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "525016"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+        "value": "KAV402"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  525016"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "525016"
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Kayla Lou A VanDyck",
+        "family": "Vandyck",
+        "given": [
+          "Kayla",
+          "Lou",
+          "A"
+        ]
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-529098",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": " BUDZBANL"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": "BUDZBANL"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "529098"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+        "value": "BUDZBANL"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  529098"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "529098"
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Nicole L Budzban",
+        "family": "Budzban",
+        "given": [
+          "Nicole",
+          "L"
+        ]
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-536363",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": " MXB454"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": "MXB454"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "536363"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+        "value": "MXB454"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  536363"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "536363"
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Megan M Bower",
+        "family": "Bower",
+        "given": [
+          "Megan",
+          "M"
+        ]
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-554179",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": " JSP400"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": "JSP400"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "554179"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+        "value": "JSP400"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  554179"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "554179"
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Jessica S Trainor",
+        "family": "Trainor",
+        "given": [
+          "Jessica",
+          "S"
+        ]
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-554362",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": " PAM400"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": "PAM400"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "554362"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+        "value": "PAM400"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  554362"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "554362"
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Patricia A Manix",
+        "family": "Manix",
+        "given": [
+          "Patricia",
+          "A"
+        ]
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-554368",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": " LRM400"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": "LRM400"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "554368"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+        "value": "LRM400"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  554368"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "554368"
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Leslie R Kommer",
+        "family": "Kommer",
+        "given": [
+          "Leslie",
+          "R"
+        ]
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-554383",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": " DMW400"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": "DMW400"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "554383"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+        "value": "DMW400"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  554383"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "554383"
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Dawn M Wild",
+        "family": "Wild",
+        "given": [
+          "Dawn",
+          "M"
+        ]
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-554385",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": "   JAY1"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": "JAY1"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "554385"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+        "value": "JAY1"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  554385"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "554385"
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Jess Young",
+        "family": "Young",
+        "given": [
+          "Jess"
+        ]
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-554513",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": " TJC322"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": "TJC322"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "554513"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+        "value": "TJC322"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  554513"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "554513"
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Terri Carufel-Wert",
+        "family": "Carufel-Wert",
+        "given": [
+          "Terri"
+        ]
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-564211",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": " JMG406"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": "JMG406"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "564211"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+        "value": "JMG406"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  564211"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "564211"
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Jennifer M George",
+        "family": "George",
+        "given": [
+          "Jennifer",
+          "M"
+        ]
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-597973",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": " SMITHAM28"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": "SMITHAM28"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "597973"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+        "value": "SMITHAM28"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  597973"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "597973"
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Angela M Thomas",
+        "family": "Thomas",
+        "given": [
+          "Angela",
+          "M"
+        ]
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-599471",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": " ALG006"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": "ALG006"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "599471"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+        "value": "ALG006"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  599471"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "599471"
+      },
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.60",
+        "value": "1073140950",
+        "use": "usual",
+        "type": {
+          "text": "EPIC"
+        }
+      },
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.126",
+        "value": "225X00000X",
+        "use": "usual"
+      },
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.557",
+        "value": "1073140950",
+        "use": "usual"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/us-npi",
+        "value": "1073140950",
+        "use": "usual",
+        "type": {
+          "text": "NPI"
+        }
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Aaron K Gilmour",
+        "family": "Gilmour",
+        "given": [
+          "Aaron",
+          "K"
+        ]
+      },
+      {
+        "use": "official",
+        "family": "Gilmour",
+        "given": [
+          "Aaron"
+        ],
+        "text": "Aaron Gilmour"
+      }
+    ],
+    "gender": "male",
+    "qualification": [
+      {
+        "identifier": [
+          {
+            "system": "https://npiregistry.cms.hhs.gov",
+            "value": "NPPES"
+          }
+        ],
+        "code": {
+          "text": "OTR/L"
+        }
+      },
+      {
+        "identifier": [
+          {
+            "system": "https://npiregistry.cms.hhs.gov",
+            "value": "NPPES"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://nucc.org/provider-taxonomy",
+              "code": "225X00000X",
+              "display": "Occupational Therapist"
+            }
+          ],
+          "text": "Occupational Therapist"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-621755",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": " MBS403"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": "MBS403"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "621755"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+        "value": "MBS403"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  621755"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "621755"
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Mary B Smith",
+        "family": "Smith",
+        "given": [
+          "Mary",
+          "B"
+        ]
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-652153",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": " KELLEYJM1"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": "KELLEYJM1"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "652153"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+        "value": "KELLEYJM1"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  652153"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "652153"
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Jennifer M Jones",
+        "family": "Jones",
+        "given": [
+          "Jennifer",
+          "M"
+        ]
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-656419",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": " TAFTAM"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": "TAFTAM"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "656419"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+        "value": "TAFTAM"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  656419"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "656419"
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Ashley M Taft",
+        "family": "Taft",
+        "given": [
+          "Ashley",
+          "M"
+        ]
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-656903",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": " NACKSR"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": "NACKSR"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "656903"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+        "value": "NACKSR"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  656903"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "656903"
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Samantha R Nack",
+        "family": "Nack",
+        "given": [
+          "Samantha",
+          "R"
+        ]
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-802011",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "NPI"
+        },
+        "system": "http://hl7.org/fhir/sid/us-npi",
+        "value": "1073855474"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": " DHILLOPS"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+        "value": "DHILLOPS"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "802011"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.126",
+        "value": "207R00000X"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+        "value": "DHILLOPS"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.557",
+        "value": "1073855474"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  802011"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "802011"
+      },
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.60",
+        "value": "1073855474",
+        "use": "usual",
+        "type": {
+          "text": "EPIC"
+        }
+      },
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.63",
+        "value": "6050558173003",
+        "use": "usual",
+        "type": {
+          "text": "Epic"
+        }
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Puneet S Dhillon",
+        "family": "Dhillon",
+        "given": [
+          "Puneet",
+          "S"
+        ]
+      },
+      {
+        "use": "official",
+        "family": "Dhillon",
+        "given": [
+          "Puneet",
+          "S"
+        ],
+        "prefix": [
+          "Dr."
+        ],
+        "text": "Dr. Puneet S Dhillon"
+      }
+    ],
+    "gender": "female",
+    "qualification": [
+      {
+        "identifier": [
+          {
+            "system": "https://npiregistry.cms.hhs.gov",
+            "value": "NPPES"
+          }
+        ],
+        "code": {
+          "text": "M.D."
+        }
+      },
+      {
+        "identifier": [
+          {
+            "system": "https://npiregistry.cms.hhs.gov",
+            "value": "NPPES"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://nucc.org/provider-taxonomy",
+              "code": "390200000X",
+              "display": "Student in an Organized Health Care Education/Training Program"
+            }
+          ],
+          "text": "Student in an Organized Health Care Education/Training Program"
+        }
+      },
+      {
+        "identifier": [
+          {
+            "system": "https://npiregistry.cms.hhs.gov",
+            "value": "NPPES"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://nucc.org/provider-taxonomy",
+              "code": "207R00000X",
+              "display": "Internal Medicine"
+            }
+          ],
+          "text": "Internal Medicine"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-805364",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "NPI"
+        },
+        "system": "http://hl7.org/fhir/sid/us-npi",
+        "value": "1841421872"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "805364"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.126",
+        "value": "208100000X"
+      },
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.557",
+        "value": "1841421872"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "  805364"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "805364"
+      },
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.60",
+        "value": "1841421872",
+        "use": "usual",
+        "type": {
+          "text": "EPIC"
+        }
+      },
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.63",
+        "value": "6497081292016",
+        "use": "usual",
+        "type": {
+          "text": "Epic"
+        }
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "Benjamin T Gillespie",
+        "family": "Gillespie",
+        "given": [
+          "Benjamin",
+          "T"
+        ]
+      },
+      {
+        "use": "official",
+        "family": "Gillespie",
+        "given": [
+          "Benjamin",
+          "Todd"
+        ],
+        "prefix": [
+          "Dr."
+        ],
+        "text": "Dr. Benjamin Todd Gillespie"
+      }
+    ],
+    "gender": "male",
+    "qualification": [
+      {
+        "identifier": [
+          {
+            "system": "https://npiregistry.cms.hhs.gov",
+            "value": "NPPES"
+          }
+        ],
+        "code": {
+          "text": "DO"
+        }
+      },
+      {
+        "identifier": [
+          {
+            "system": "https://npiregistry.cms.hhs.gov",
+            "value": "NPPES"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://nucc.org/provider-taxonomy",
+              "code": "208100000X",
+              "display": "Physical Medicine & Rehabilitation"
+            }
+          ],
+          "text": "Physical Medicine & Rehabilitation"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "Practitioner",
+    "id": "prac-8800099",
+    "identifier": [
+      {
+        "use": "usual",
+        "type": {
+          "text": "CCPROVID"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+        "value": "8800099"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "INTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": " 8800099"
+      },
+      {
+        "use": "usual",
+        "type": {
+          "text": "EXTERNAL"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+        "value": "8800099"
+      }
+    ],
+    "name": [
+      {
+        "use": "usual",
+        "text": "GENERIC EXTERNAL DATA PROVIDER",
+        "family": "Generic External Data Provider"
+      }
+    ]
+  }
+]

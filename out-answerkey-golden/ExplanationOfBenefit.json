@@ -1,0 +1,6060 @@
+[
+  {
+    "resourceType": "ExplanationOfBenefit",
+    "id": "eob-L1002834030",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.689224",
+        "value": "L1002834030"
+      },
+      {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-claim-control-number",
+        "value": "2018241CN0502"
+      }
+    ],
+    "status": "active",
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+          "code": "professional",
+          "display": "Professional"
+        }
+      ]
+    },
+    "use": "claim",
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "billablePeriod": {
+      "start": "2018-08-09",
+      "end": "2018-08-09"
+    },
+    "created": "2018-08-30",
+    "insurer": {
+      "reference": "Organization/org-1302",
+      "identifier": {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-id",
+        "value": "1302"
+      },
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "provider": {
+      "reference": "Practitioner/prac-802011",
+      "display": "DHILLON, PUNEET S"
+    },
+    "outcome": "complete",
+    "careTeam": [
+      {
+        "sequence": 1,
+        "provider": {
+          "reference": "Practitioner/prac-802011",
+          "display": "DHILLON, PUNEET S"
+        },
+        "role": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+              "code": "primary",
+              "display": "Primary provider"
+            }
+          ]
+        }
+      }
+    ],
+    "diagnosis": [
+      {
+        "sequence": 1,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "Z00.00"
+            }
+          ]
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/ex-diagnosistype",
+                "code": "principal",
+                "display": "Principal Diagnosis"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": 2,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "K21.9"
+            }
+          ]
+        }
+      },
+      {
+        "sequence": 3,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "R10.13"
+            }
+          ]
+        }
+      }
+    ],
+    "insurance": [
+      {
+        "focal": true,
+        "coverage": {
+          "reference": "Coverage/cov-5934765"
+        }
+      }
+    ],
+    "item": [
+      {
+        "sequence": 1,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "99395",
+              "display": "PR PREVENTIVE VISIT,EST,18-39"
+            }
+          ],
+          "text": "PR PREVENTIVE VISIT,EST,18-39"
+        },
+        "servicedDate": "2018-08-09",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 335,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 335,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-720803470"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 335,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 230.73,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": 104.27,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 230.73,
+              "currency": "USD"
+            }
+          }
+        ]
+      }
+    ],
+    "total": [
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "submitted",
+              "display": "Submitted Amount"
+            }
+          ],
+          "text": "Submitted Amount"
+        },
+        "amount": {
+          "value": 335,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "eligible",
+              "display": "Eligible Amount"
+            }
+          ],
+          "text": "Eligible Amount"
+        },
+        "amount": {
+          "value": 230.73,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "benefit",
+              "display": "Benefit Amount"
+            }
+          ],
+          "text": "Benefit Amount"
+        },
+        "amount": {
+          "value": 230.73,
+          "currency": "USD"
+        }
+      }
+    ],
+    "payment": {
+      "amount": {
+        "value": 230.73,
+        "currency": "USD"
+      }
+    },
+    "processNote": [
+      {
+        "number": 1,
+        "type": "display",
+        "text": "45-CHGS EXCD FEE SCH/MAX ALLOWABLE."
+      }
+    ]
+  },
+  {
+    "resourceType": "ExplanationOfBenefit",
+    "id": "eob-L1002834040",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.689224",
+        "value": "L1002834040"
+      },
+      {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-claim-control-number",
+        "value": "2018241CN0503"
+      }
+    ],
+    "status": "active",
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+          "code": "professional",
+          "display": "Professional"
+        }
+      ]
+    },
+    "use": "claim",
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "billablePeriod": {
+      "start": "2018-08-09",
+      "end": "2018-08-09"
+    },
+    "created": "2018-08-30",
+    "insurer": {
+      "reference": "Organization/org-1302",
+      "identifier": {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-id",
+        "value": "1302"
+      },
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "provider": {
+      "reference": "Practitioner/prac-802011",
+      "display": "DHILLON, PUNEET S"
+    },
+    "outcome": "complete",
+    "careTeam": [
+      {
+        "sequence": 1,
+        "provider": {
+          "reference": "Practitioner/prac-802011",
+          "display": "DHILLON, PUNEET S"
+        },
+        "role": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+              "code": "primary",
+              "display": "Primary provider"
+            }
+          ]
+        }
+      }
+    ],
+    "diagnosis": [
+      {
+        "sequence": 1,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "Z13.220"
+            }
+          ]
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/ex-diagnosistype",
+                "code": "principal",
+                "display": "Principal Diagnosis"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "insurance": [
+      {
+        "focal": true,
+        "coverage": {
+          "reference": "Coverage/cov-5934765"
+        }
+      }
+    ],
+    "item": [
+      {
+        "sequence": 1,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "80061",
+              "display": "CHG LIPID PANEL"
+            }
+          ],
+          "text": "CHG LIPID PANEL"
+        },
+        "servicedDate": "2018-08-09",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 114,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 114,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-724628999"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 114,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 19.52,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": 94.48,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 19.52,
+              "currency": "USD"
+            }
+          }
+        ]
+      },
+      {
+        "sequence": 2,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "36415",
+              "display": "PR COLLECTION VENOUS BLOOD,VENIPUNCTURE"
+            }
+          ],
+          "text": "PR COLLECTION VENOUS BLOOD,VENIPUNCTURE"
+        },
+        "servicedDate": "2018-08-09",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 37,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 37,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-724628999"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 37,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 4,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": 33,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 4,
+              "currency": "USD"
+            }
+          }
+        ]
+      }
+    ],
+    "total": [
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "submitted",
+              "display": "Submitted Amount"
+            }
+          ],
+          "text": "Submitted Amount"
+        },
+        "amount": {
+          "value": 151,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "eligible",
+              "display": "Eligible Amount"
+            }
+          ],
+          "text": "Eligible Amount"
+        },
+        "amount": {
+          "value": 23.52,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "benefit",
+              "display": "Benefit Amount"
+            }
+          ],
+          "text": "Benefit Amount"
+        },
+        "amount": {
+          "value": 23.52,
+          "currency": "USD"
+        }
+      }
+    ],
+    "payment": {
+      "amount": {
+        "value": 23.52,
+        "currency": "USD"
+      }
+    },
+    "processNote": [
+      {
+        "number": 1,
+        "type": "display",
+        "text": "45-CHGS EXCD FEE SCH/MAX ALLOWABLE."
+      }
+    ]
+  },
+  {
+    "resourceType": "ExplanationOfBenefit",
+    "id": "eob-L1004236460",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.689224",
+        "value": "L1004236460"
+      },
+      {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-claim-control-number",
+        "value": "2020010DE9628"
+      }
+    ],
+    "status": "active",
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+          "code": "professional",
+          "display": "Professional"
+        }
+      ]
+    },
+    "use": "claim",
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "billablePeriod": {
+      "start": "2020-01-09",
+      "end": "2020-01-09"
+    },
+    "created": "2020-01-13",
+    "insurer": {
+      "reference": "Organization/org-1302",
+      "identifier": {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-id",
+        "value": "1302"
+      },
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "provider": {
+      "reference": "Practitioner/prac-802011",
+      "display": "DHILLON, PUNEET S"
+    },
+    "outcome": "complete",
+    "careTeam": [
+      {
+        "sequence": 1,
+        "provider": {
+          "reference": "Practitioner/prac-802011",
+          "display": "DHILLON, PUNEET S"
+        },
+        "role": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+              "code": "primary",
+              "display": "Primary provider"
+            }
+          ]
+        }
+      }
+    ],
+    "diagnosis": [
+      {
+        "sequence": 1,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "K21.9"
+            }
+          ]
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/ex-diagnosistype",
+                "code": "principal",
+                "display": "Principal Diagnosis"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": 2,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "D17.0"
+            }
+          ]
+        }
+      },
+      {
+        "sequence": 3,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "D22.62"
+            }
+          ]
+        }
+      }
+    ],
+    "insurance": [
+      {
+        "focal": true,
+        "coverage": {
+          "reference": "Coverage/cov-5934765"
+        }
+      }
+    ],
+    "item": [
+      {
+        "sequence": 1,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "99213",
+              "display": "PR OFFICE/OUTPATIENT ESTABLISHED LOW MDM 20 MIN"
+            }
+          ],
+          "text": "PR OFFICE/OUTPATIENT ESTABLISHED LOW MDM 20 MIN"
+        },
+        "servicedDate": "2020-01-09",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 165,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 165,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-799951565"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 165,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 133.29,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "deductible",
+                  "display": "Deductible"
+                }
+              ],
+              "text": "Deductible"
+            },
+            "amount": {
+              "value": 133.29,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": 31.71,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 0,
+              "currency": "USD"
+            }
+          }
+        ]
+      }
+    ],
+    "total": [
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "submitted",
+              "display": "Submitted Amount"
+            }
+          ],
+          "text": "Submitted Amount"
+        },
+        "amount": {
+          "value": 165,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "eligible",
+              "display": "Eligible Amount"
+            }
+          ],
+          "text": "Eligible Amount"
+        },
+        "amount": {
+          "value": 133.29,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "benefit",
+              "display": "Benefit Amount"
+            }
+          ],
+          "text": "Benefit Amount"
+        },
+        "amount": {
+          "value": 0,
+          "currency": "USD"
+        }
+      }
+    ],
+    "payment": {
+      "amount": {
+        "value": 0,
+        "currency": "USD"
+      }
+    },
+    "processNote": [
+      {
+        "number": 1,
+        "type": "display",
+        "text": "1-DEDUCTIBLE AMOUNT"
+      },
+      {
+        "number": 2,
+        "type": "display",
+        "text": "45-CHGS EXCD FEE SCH/MAX ALLOWABLE."
+      }
+    ]
+  },
+  {
+    "resourceType": "ExplanationOfBenefit",
+    "id": "eob-L1004718920",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.689224",
+        "value": "L1004718920"
+      },
+      {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-claim-control-number",
+        "value": "2020228BN6036"
+      }
+    ],
+    "status": "active",
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+          "code": "professional",
+          "display": "Professional"
+        }
+      ]
+    },
+    "use": "claim",
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "billablePeriod": {
+      "start": "2020-07-14",
+      "end": "2020-07-14"
+    },
+    "created": "2020-08-17",
+    "insurer": {
+      "reference": "Organization/org-1302",
+      "identifier": {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-id",
+        "value": "1302"
+      },
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "provider": {
+      "reference": "Practitioner/prac-219711",
+      "display": "PICONE, MARY A"
+    },
+    "outcome": "complete",
+    "careTeam": [
+      {
+        "sequence": 1,
+        "provider": {
+          "reference": "Practitioner/prac-219711",
+          "display": "PICONE, MARY A"
+        },
+        "role": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+              "code": "primary",
+              "display": "Primary provider"
+            }
+          ]
+        }
+      }
+    ],
+    "diagnosis": [
+      {
+        "sequence": 1,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "S09.90XA"
+            }
+          ]
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/ex-diagnosistype",
+                "code": "principal",
+                "display": "Principal Diagnosis"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": 2,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "R51"
+            }
+          ]
+        }
+      },
+      {
+        "sequence": 3,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "R11.0"
+            }
+          ]
+        }
+      },
+      {
+        "sequence": 4,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "W20.8XXA"
+            }
+          ]
+        }
+      }
+    ],
+    "insurance": [
+      {
+        "focal": true,
+        "coverage": {
+          "reference": "Coverage/cov-5934765"
+        }
+      }
+    ],
+    "item": [
+      {
+        "sequence": 1,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "99213",
+              "display": "PR OFFICE/OUTPATIENT ESTABLISHED LOW MDM 20 MIN"
+            }
+          ],
+          "text": "PR OFFICE/OUTPATIENT ESTABLISHED LOW MDM 20 MIN"
+        },
+        "modifier": [
+          {
+            "coding": [
+              {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "code": "95"
+              }
+            ]
+          }
+        ],
+        "servicedDate": "2020-07-14",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 170,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 170,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-829213099"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 170,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 113.3,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": 56.7,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 113.3,
+              "currency": "USD"
+            }
+          }
+        ]
+      }
+    ],
+    "total": [
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "submitted",
+              "display": "Submitted Amount"
+            }
+          ],
+          "text": "Submitted Amount"
+        },
+        "amount": {
+          "value": 170,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "eligible",
+              "display": "Eligible Amount"
+            }
+          ],
+          "text": "Eligible Amount"
+        },
+        "amount": {
+          "value": 113.3,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "benefit",
+              "display": "Benefit Amount"
+            }
+          ],
+          "text": "Benefit Amount"
+        },
+        "amount": {
+          "value": 113.3,
+          "currency": "USD"
+        }
+      }
+    ],
+    "payment": {
+      "amount": {
+        "value": 113.3,
+        "currency": "USD"
+      }
+    },
+    "processNote": [
+      {
+        "number": 1,
+        "type": "display",
+        "text": "45-CHGS EXCD FEE SCH/MAX ALLOWABLE."
+      }
+    ]
+  },
+  {
+    "resourceType": "ExplanationOfBenefit",
+    "id": "eob-L1006928390",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.689224",
+        "value": "L1006928390"
+      },
+      {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-claim-control-number",
+        "value": "2022264BT5584"
+      }
+    ],
+    "status": "active",
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+          "code": "professional",
+          "display": "Professional"
+        }
+      ]
+    },
+    "use": "claim",
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "billablePeriod": {
+      "start": "2022-08-29",
+      "end": "2022-08-29"
+    },
+    "created": "2022-09-21",
+    "insurer": {
+      "reference": "Organization/org-1302",
+      "identifier": {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-id",
+        "value": "1302"
+      },
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "provider": {
+      "reference": "Practitioner/prac-144590",
+      "display": "RAMMELKAMP, ZOE L"
+    },
+    "outcome": "complete",
+    "careTeam": [
+      {
+        "sequence": 1,
+        "provider": {
+          "reference": "Practitioner/prac-144590",
+          "display": "RAMMELKAMP, ZOE L"
+        },
+        "role": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+              "code": "primary",
+              "display": "Primary provider"
+            }
+          ]
+        }
+      }
+    ],
+    "diagnosis": [
+      {
+        "sequence": 1,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "Z00.00"
+            }
+          ]
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/ex-diagnosistype",
+                "code": "principal",
+                "display": "Principal Diagnosis"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": 2,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "F07.81"
+            }
+          ]
+        }
+      },
+      {
+        "sequence": 3,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "I10"
+            }
+          ]
+        }
+      }
+    ],
+    "insurance": [
+      {
+        "focal": true,
+        "coverage": {
+          "reference": "Coverage/cov-5934765"
+        }
+      }
+    ],
+    "item": [
+      {
+        "sequence": 1,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "99395",
+              "display": "PR PREVENTIVE VISIT,EST,18-39"
+            }
+          ],
+          "text": "PR PREVENTIVE VISIT,EST,18-39"
+        },
+        "servicedDate": "2022-08-29",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 294,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 294,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-948004323"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 294,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 209.89,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": 84.11,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 209.89,
+              "currency": "USD"
+            }
+          }
+        ]
+      },
+      {
+        "sequence": 2,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "99213",
+              "display": "PR OFFICE/OUTPATIENT ESTABLISHED LOW MDM 20 MIN"
+            }
+          ],
+          "text": "PR OFFICE/OUTPATIENT ESTABLISHED LOW MDM 20 MIN"
+        },
+        "modifier": [
+          {
+            "coding": [
+              {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "code": "25"
+              }
+            ]
+          }
+        ],
+        "servicedDate": "2022-08-29",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 222,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 222,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-948004323"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 222,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 69.99,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Co-insurance Amount"
+            },
+            "amount": {
+              "value": 6.99,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": 152.01,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 63,
+              "currency": "USD"
+            }
+          }
+        ]
+      }
+    ],
+    "total": [
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "submitted",
+              "display": "Submitted Amount"
+            }
+          ],
+          "text": "Submitted Amount"
+        },
+        "amount": {
+          "value": 516,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "eligible",
+              "display": "Eligible Amount"
+            }
+          ],
+          "text": "Eligible Amount"
+        },
+        "amount": {
+          "value": 279.88,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "benefit",
+              "display": "Benefit Amount"
+            }
+          ],
+          "text": "Benefit Amount"
+        },
+        "amount": {
+          "value": 272.89,
+          "currency": "USD"
+        }
+      }
+    ],
+    "payment": {
+      "amount": {
+        "value": 272.89,
+        "currency": "USD"
+      }
+    },
+    "processNote": [
+      {
+        "number": 1,
+        "type": "display",
+        "text": "2-COINSURANCE AMOUNT"
+      },
+      {
+        "number": 2,
+        "type": "display",
+        "text": "45-CHGS EXCD FEE SCH/MAX ALLOWABLE."
+      }
+    ]
+  },
+  {
+    "resourceType": "ExplanationOfBenefit",
+    "id": "eob-L1006942840",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.689224",
+        "value": "L1006942840"
+      },
+      {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-claim-control-number",
+        "value": "2022266BM7967"
+      }
+    ],
+    "status": "active",
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+          "code": "professional",
+          "display": "Professional"
+        }
+      ]
+    },
+    "use": "claim",
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "billablePeriod": {
+      "start": "2022-08-29",
+      "end": "2022-08-29"
+    },
+    "created": "2022-09-23",
+    "insurer": {
+      "reference": "Organization/org-1302",
+      "identifier": {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-id",
+        "value": "1302"
+      },
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "provider": {
+      "reference": "Practitioner/prac-144590",
+      "display": "RAMMELKAMP, ZOE L"
+    },
+    "outcome": "complete",
+    "careTeam": [
+      {
+        "sequence": 1,
+        "provider": {
+          "reference": "Practitioner/prac-144590",
+          "display": "RAMMELKAMP, ZOE L"
+        },
+        "role": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+              "code": "primary",
+              "display": "Primary provider"
+            }
+          ]
+        }
+      }
+    ],
+    "diagnosis": [
+      {
+        "sequence": 1,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "I10"
+            }
+          ]
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/ex-diagnosistype",
+                "code": "principal",
+                "display": "Principal Diagnosis"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "insurance": [
+      {
+        "focal": true,
+        "coverage": {
+          "reference": "Coverage/cov-5934765"
+        }
+      }
+    ],
+    "item": [
+      {
+        "sequence": 1,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "80048",
+              "display": "CHG BASIC METABOLIC PANEL CALCIUM TOTAL"
+            }
+          ],
+          "text": "CHG BASIC METABOLIC PANEL CALCIUM TOTAL"
+        },
+        "servicedDate": "2022-08-29",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 140,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 140,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-958147754"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 140,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 6.26,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Co-insurance Amount"
+            },
+            "amount": {
+              "value": 0.62,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": 133.74,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 5.64,
+              "currency": "USD"
+            }
+          }
+        ]
+      },
+      {
+        "sequence": 2,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "36415",
+              "display": "PR COLLECTION VENOUS BLOOD,VENIPUNCTURE"
+            }
+          ],
+          "text": "PR COLLECTION VENOUS BLOOD,VENIPUNCTURE"
+        },
+        "servicedDate": "2022-08-29",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 33,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 33,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-958147754"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 33,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 2.14,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Co-insurance Amount"
+            },
+            "amount": {
+              "value": 0.21,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": 30.86,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 1.93,
+              "currency": "USD"
+            }
+          }
+        ]
+      }
+    ],
+    "total": [
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "submitted",
+              "display": "Submitted Amount"
+            }
+          ],
+          "text": "Submitted Amount"
+        },
+        "amount": {
+          "value": 173,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "eligible",
+              "display": "Eligible Amount"
+            }
+          ],
+          "text": "Eligible Amount"
+        },
+        "amount": {
+          "value": 8.4,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "benefit",
+              "display": "Benefit Amount"
+            }
+          ],
+          "text": "Benefit Amount"
+        },
+        "amount": {
+          "value": 7.57,
+          "currency": "USD"
+        }
+      }
+    ],
+    "payment": {
+      "amount": {
+        "value": 7.57,
+        "currency": "USD"
+      }
+    },
+    "processNote": [
+      {
+        "number": 1,
+        "type": "display",
+        "text": "2-COINSURANCE AMOUNT"
+      },
+      {
+        "number": 2,
+        "type": "display",
+        "text": "45-CHGS EXCD FEE SCH/MAX ALLOWABLE."
+      }
+    ]
+  },
+  {
+    "resourceType": "ExplanationOfBenefit",
+    "id": "eob-L1007201490",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.689224",
+        "value": "L1007201490"
+      },
+      {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-claim-control-number",
+        "value": "2022341BT5497"
+      }
+    ],
+    "status": "cancelled",
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+          "code": "professional",
+          "display": "Professional"
+        }
+      ]
+    },
+    "use": "claim",
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "billablePeriod": {
+      "start": "2022-12-01",
+      "end": "2022-12-01"
+    },
+    "created": "2022-12-07",
+    "insurer": {
+      "reference": "Organization/org-1302",
+      "identifier": {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-id",
+        "value": "1302"
+      },
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "provider": {
+      "reference": "Practitioner/prac-144590",
+      "display": "RAMMELKAMP, ZOE L"
+    },
+    "outcome": "complete",
+    "careTeam": [
+      {
+        "sequence": 1,
+        "provider": {
+          "reference": "Practitioner/prac-144590",
+          "display": "RAMMELKAMP, ZOE L"
+        },
+        "role": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+              "code": "primary",
+              "display": "Primary provider"
+            }
+          ]
+        }
+      }
+    ],
+    "diagnosis": [
+      {
+        "sequence": 1,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "F07.81"
+            }
+          ]
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/ex-diagnosistype",
+                "code": "principal",
+                "display": "Principal Diagnosis"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "insurance": [
+      {
+        "focal": true,
+        "coverage": {
+          "reference": "Coverage/cov-5934765"
+        }
+      }
+    ],
+    "item": [
+      {
+        "sequence": 1,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "99214",
+              "display": "PR OFFICE/OUTPATIENT ESTABLISHED MOD MDM 30 MIN"
+            }
+          ],
+          "text": "PR OFFICE/OUTPATIENT ESTABLISHED MOD MDM 30 MIN"
+        },
+        "servicedDate": "2022-12-01",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 315,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 315,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-974614965"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 315,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 0,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": 315,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 0,
+              "currency": "USD"
+            }
+          }
+        ]
+      }
+    ],
+    "total": [
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "submitted",
+              "display": "Submitted Amount"
+            }
+          ],
+          "text": "Submitted Amount"
+        },
+        "amount": {
+          "value": 315,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "eligible",
+              "display": "Eligible Amount"
+            }
+          ],
+          "text": "Eligible Amount"
+        },
+        "amount": {
+          "value": 0,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "benefit",
+              "display": "Benefit Amount"
+            }
+          ],
+          "text": "Benefit Amount"
+        },
+        "amount": {
+          "value": 0,
+          "currency": "USD"
+        }
+      }
+    ],
+    "payment": {
+      "amount": {
+        "value": 0,
+        "currency": "USD"
+      }
+    },
+    "processNote": [
+      {
+        "number": 1,
+        "type": "display",
+        "text": "16-LACKS INFO NEEDED FOR ADJUDICATION."
+      },
+      {
+        "number": 2,
+        "type": "display",
+        "text": "MA63 INCMPL/INV PRINCIPAL DX."
+      }
+    ]
+  },
+  {
+    "resourceType": "ExplanationOfBenefit",
+    "id": "eob-L1007233831",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.689224",
+        "value": "L1007233831"
+      },
+      {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-claim-control-number",
+        "value": "2022341BT5497"
+      }
+    ],
+    "status": "active",
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+          "code": "professional",
+          "display": "Professional"
+        }
+      ]
+    },
+    "use": "claim",
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "billablePeriod": {
+      "start": "2022-12-01",
+      "end": "2022-12-01"
+    },
+    "created": "2022-12-21",
+    "insurer": {
+      "reference": "Organization/org-1302",
+      "identifier": {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-id",
+        "value": "1302"
+      },
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "provider": {
+      "reference": "Practitioner/prac-144590",
+      "display": "RAMMELKAMP, ZOE L"
+    },
+    "outcome": "complete",
+    "careTeam": [
+      {
+        "sequence": 1,
+        "provider": {
+          "reference": "Practitioner/prac-144590",
+          "display": "RAMMELKAMP, ZOE L"
+        },
+        "role": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+              "code": "primary",
+              "display": "Primary provider"
+            }
+          ]
+        }
+      }
+    ],
+    "diagnosis": [
+      {
+        "sequence": 1,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "S06.0X0A"
+            }
+          ]
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/ex-diagnosistype",
+                "code": "principal",
+                "display": "Principal Diagnosis"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": 2,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "W22.8XXA"
+            }
+          ]
+        }
+      },
+      {
+        "sequence": 3,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "R11.0"
+            }
+          ]
+        }
+      }
+    ],
+    "insurance": [
+      {
+        "focal": true,
+        "coverage": {
+          "reference": "Coverage/cov-5934765"
+        }
+      }
+    ],
+    "item": [
+      {
+        "sequence": 1,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "99214",
+              "display": "PR OFFICE/OUTPATIENT ESTABLISHED MOD MDM 30 MIN"
+            }
+          ],
+          "text": "PR OFFICE/OUTPATIENT ESTABLISHED MOD MDM 30 MIN"
+        },
+        "servicedDate": "2022-12-01",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 315,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 315,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-974614965"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 315,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 198.91,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Co-insurance Amount"
+            },
+            "amount": {
+              "value": 19.89,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": -198.91,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 179.02,
+              "currency": "USD"
+            }
+          }
+        ]
+      }
+    ],
+    "total": [
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "submitted",
+              "display": "Submitted Amount"
+            }
+          ],
+          "text": "Submitted Amount"
+        },
+        "amount": {
+          "value": 315,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "eligible",
+              "display": "Eligible Amount"
+            }
+          ],
+          "text": "Eligible Amount"
+        },
+        "amount": {
+          "value": 198.91,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "benefit",
+              "display": "Benefit Amount"
+            }
+          ],
+          "text": "Benefit Amount"
+        },
+        "amount": {
+          "value": 179.02,
+          "currency": "USD"
+        }
+      }
+    ],
+    "payment": {
+      "amount": {
+        "value": 179.02,
+        "currency": "USD"
+      }
+    },
+    "processNote": [
+      {
+        "number": 1,
+        "type": "display",
+        "text": "2-COINSURANCE AMOUNT"
+      },
+      {
+        "number": 2,
+        "type": "display",
+        "text": "45-CHGS EXCD FEE SCH/MAX ALLOWABLE."
+      },
+      {
+        "number": 3,
+        "type": "display",
+        "text": "16-LACKS INFO NEEDED FOR ADJUDICATION."
+      },
+      {
+        "number": 4,
+        "type": "display",
+        "text": "MA63 INCMPL/INV PRINCIPAL DX."
+      }
+    ]
+  },
+  {
+    "resourceType": "ExplanationOfBenefit",
+    "id": "eob-L1007449820",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.689224",
+        "value": "L1007449820"
+      },
+      {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-claim-control-number",
+        "value": "2023072DV0514"
+      }
+    ],
+    "status": "active",
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+          "code": "professional",
+          "display": "Professional"
+        }
+      ]
+    },
+    "use": "claim",
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "billablePeriod": {
+      "start": "2023-03-02",
+      "end": "2023-03-02"
+    },
+    "created": "2023-03-13",
+    "insurer": {
+      "reference": "Organization/org-1302",
+      "identifier": {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-id",
+        "value": "1302"
+      },
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "provider": {
+      "reference": "Practitioner/prac-144590",
+      "display": "RAMMELKAMP, ZOE L"
+    },
+    "outcome": "complete",
+    "careTeam": [
+      {
+        "sequence": 1,
+        "provider": {
+          "reference": "Practitioner/prac-144590",
+          "display": "RAMMELKAMP, ZOE L"
+        },
+        "role": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+              "code": "primary",
+              "display": "Primary provider"
+            }
+          ]
+        }
+      }
+    ],
+    "diagnosis": [
+      {
+        "sequence": 1,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "F07.81"
+            }
+          ]
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/ex-diagnosistype",
+                "code": "principal",
+                "display": "Principal Diagnosis"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "insurance": [
+      {
+        "focal": true,
+        "coverage": {
+          "reference": "Coverage/cov-5934765"
+        }
+      }
+    ],
+    "item": [
+      {
+        "sequence": 1,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "99213",
+              "display": "PR OFFICE/OUTPATIENT ESTABLISHED LOW MDM 20 MIN"
+            }
+          ],
+          "text": "PR OFFICE/OUTPATIENT ESTABLISHED LOW MDM 20 MIN"
+        },
+        "servicedDate": "2023-03-02",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 226,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 226,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-958148810"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 226,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 139.97,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "deductible",
+                  "display": "Deductible"
+                }
+              ],
+              "text": "Deductible"
+            },
+            "amount": {
+              "value": 139.97,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": 86.03,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 0,
+              "currency": "USD"
+            }
+          }
+        ]
+      }
+    ],
+    "total": [
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "submitted",
+              "display": "Submitted Amount"
+            }
+          ],
+          "text": "Submitted Amount"
+        },
+        "amount": {
+          "value": 226,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "eligible",
+              "display": "Eligible Amount"
+            }
+          ],
+          "text": "Eligible Amount"
+        },
+        "amount": {
+          "value": 139.97,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "benefit",
+              "display": "Benefit Amount"
+            }
+          ],
+          "text": "Benefit Amount"
+        },
+        "amount": {
+          "value": 0,
+          "currency": "USD"
+        }
+      }
+    ],
+    "payment": {
+      "amount": {
+        "value": 0,
+        "currency": "USD"
+      }
+    },
+    "processNote": [
+      {
+        "number": 1,
+        "type": "display",
+        "text": "1-DEDUCTIBLE AMOUNT"
+      },
+      {
+        "number": 2,
+        "type": "display",
+        "text": "45-CHGS EXCD FEE SCH/MAX ALLOWABLE."
+      }
+    ]
+  },
+  {
+    "resourceType": "ExplanationOfBenefit",
+    "id": "eob-L1007985430",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.689224",
+        "value": "L1007985430"
+      },
+      {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-claim-control-number",
+        "value": "2023277DI2086"
+      }
+    ],
+    "status": "active",
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+          "code": "professional",
+          "display": "Professional"
+        }
+      ]
+    },
+    "use": "claim",
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "billablePeriod": {
+      "start": "2023-09-28",
+      "end": "2023-09-28"
+    },
+    "created": "2023-10-04",
+    "insurer": {
+      "reference": "Organization/org-1302",
+      "identifier": {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-id",
+        "value": "1302"
+      },
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "provider": {
+      "reference": "Practitioner/prac-144590",
+      "display": "RAMMELKAMP, ZOE L"
+    },
+    "outcome": "complete",
+    "careTeam": [
+      {
+        "sequence": 1,
+        "provider": {
+          "reference": "Practitioner/prac-144590",
+          "display": "RAMMELKAMP, ZOE L"
+        },
+        "role": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+              "code": "primary",
+              "display": "Primary provider"
+            }
+          ]
+        }
+      }
+    ],
+    "diagnosis": [
+      {
+        "sequence": 1,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "Z13.1"
+            }
+          ]
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/ex-diagnosistype",
+                "code": "principal",
+                "display": "Principal Diagnosis"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": 2,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "Z13.220"
+            }
+          ]
+        }
+      }
+    ],
+    "insurance": [
+      {
+        "focal": true,
+        "coverage": {
+          "reference": "Coverage/cov-5934765"
+        }
+      }
+    ],
+    "item": [
+      {
+        "sequence": 1,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "83036",
+              "display": "PR GLYCOSYLATED HEMOGLOBIN TEST"
+            }
+          ],
+          "text": "PR GLYCOSYLATED HEMOGLOBIN TEST"
+        },
+        "servicedDate": "2023-09-28",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 50,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 50,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-1028743701"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 50,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 7.19,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": 42.81,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 7.19,
+              "currency": "USD"
+            }
+          }
+        ]
+      },
+      {
+        "sequence": 2,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "80061",
+              "display": "CHG LIPID PANEL"
+            }
+          ],
+          "text": "CHG LIPID PANEL"
+        },
+        "servicedDate": "2023-09-28",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 120,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 120,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-1028743701"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 120,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 9.92,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": 110.08,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 9.92,
+              "currency": "USD"
+            }
+          }
+        ]
+      },
+      {
+        "sequence": 3,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "36415",
+              "display": "PR COLLECTION VENOUS BLOOD,VENIPUNCTURE"
+            }
+          ],
+          "text": "PR COLLECTION VENOUS BLOOD,VENIPUNCTURE"
+        },
+        "servicedDate": "2023-09-28",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 33,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 33,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-1028743701"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 33,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 2.14,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": 30.86,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 2.14,
+              "currency": "USD"
+            }
+          }
+        ]
+      }
+    ],
+    "total": [
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "submitted",
+              "display": "Submitted Amount"
+            }
+          ],
+          "text": "Submitted Amount"
+        },
+        "amount": {
+          "value": 203,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "eligible",
+              "display": "Eligible Amount"
+            }
+          ],
+          "text": "Eligible Amount"
+        },
+        "amount": {
+          "value": 19.25,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "benefit",
+              "display": "Benefit Amount"
+            }
+          ],
+          "text": "Benefit Amount"
+        },
+        "amount": {
+          "value": 19.25,
+          "currency": "USD"
+        }
+      }
+    ],
+    "payment": {
+      "amount": {
+        "value": 19.25,
+        "currency": "USD"
+      }
+    },
+    "processNote": [
+      {
+        "number": 1,
+        "type": "display",
+        "text": "45-CHGS EXCD FEE SCH/MAX ALLOWABLE."
+      }
+    ]
+  },
+  {
+    "resourceType": "ExplanationOfBenefit",
+    "id": "eob-L1007990080",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.689224",
+        "value": "L1007990080"
+      },
+      {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-claim-control-number",
+        "value": "2023278BR8828"
+      }
+    ],
+    "status": "active",
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+          "code": "professional",
+          "display": "Professional"
+        }
+      ]
+    },
+    "use": "claim",
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "billablePeriod": {
+      "start": "2023-09-28",
+      "end": "2023-09-28"
+    },
+    "created": "2023-10-05",
+    "insurer": {
+      "reference": "Organization/org-1302",
+      "identifier": {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-id",
+        "value": "1302"
+      },
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "provider": {
+      "reference": "Practitioner/prac-621755",
+      "display": "SMITH, MARY B"
+    },
+    "outcome": "complete",
+    "careTeam": [
+      {
+        "sequence": 1,
+        "provider": {
+          "reference": "Practitioner/prac-621755",
+          "display": "SMITH, MARY B"
+        },
+        "role": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+              "code": "primary",
+              "display": "Primary provider"
+            }
+          ]
+        }
+      }
+    ],
+    "diagnosis": [
+      {
+        "sequence": 1,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "Z00.00"
+            }
+          ]
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/ex-diagnosistype",
+                "code": "principal",
+                "display": "Principal Diagnosis"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": 2,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "Z23"
+            }
+          ]
+        }
+      }
+    ],
+    "insurance": [
+      {
+        "focal": true,
+        "coverage": {
+          "reference": "Coverage/cov-5934765"
+        }
+      }
+    ],
+    "item": [
+      {
+        "sequence": 1,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "90686",
+              "display": "PR IIV4 VACC PRESRV FREE 0.5 ML DOS FOR IM USE"
+            }
+          ],
+          "text": "PR IIV4 VACC PRESRV FREE 0.5 ML DOS FOR IM USE"
+        },
+        "servicedDate": "2023-09-28",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 54,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 54,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-991225117"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 54,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 21,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": 33,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 21,
+              "currency": "USD"
+            }
+          }
+        ]
+      },
+      {
+        "sequence": 2,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "90471",
+              "display": "PR IMMUNIZ ADMIN,1 SINGLE/COMB VAC/TOXOID"
+            }
+          ],
+          "text": "PR IMMUNIZ ADMIN,1 SINGLE/COMB VAC/TOXOID"
+        },
+        "servicedDate": "2023-09-28",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 60,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 60,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-991225117"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 60,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 17.85,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": 42.15,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 17.85,
+              "currency": "USD"
+            }
+          }
+        ]
+      }
+    ],
+    "total": [
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "submitted",
+              "display": "Submitted Amount"
+            }
+          ],
+          "text": "Submitted Amount"
+        },
+        "amount": {
+          "value": 114,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "eligible",
+              "display": "Eligible Amount"
+            }
+          ],
+          "text": "Eligible Amount"
+        },
+        "amount": {
+          "value": 38.85,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "benefit",
+              "display": "Benefit Amount"
+            }
+          ],
+          "text": "Benefit Amount"
+        },
+        "amount": {
+          "value": 38.85,
+          "currency": "USD"
+        }
+      }
+    ],
+    "payment": {
+      "amount": {
+        "value": 38.85,
+        "currency": "USD"
+      }
+    },
+    "processNote": [
+      {
+        "number": 1,
+        "type": "display",
+        "text": "45-CHGS EXCD FEE SCH/MAX ALLOWABLE."
+      }
+    ]
+  },
+  {
+    "resourceType": "ExplanationOfBenefit",
+    "id": "eob-L1008016200",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.689224",
+        "value": "L1008016200"
+      },
+      {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-claim-control-number",
+        "value": "2023286CD3233"
+      }
+    ],
+    "status": "active",
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+          "code": "professional",
+          "display": "Professional"
+        }
+      ]
+    },
+    "use": "claim",
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "billablePeriod": {
+      "start": "2023-09-28",
+      "end": "2023-09-28"
+    },
+    "created": "2023-10-13",
+    "insurer": {
+      "reference": "Organization/org-1302",
+      "identifier": {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-id",
+        "value": "1302"
+      },
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "provider": {
+      "reference": "Practitioner/prac-144590",
+      "display": "RAMMELKAMP, ZOE L"
+    },
+    "outcome": "complete",
+    "careTeam": [
+      {
+        "sequence": 1,
+        "provider": {
+          "reference": "Practitioner/prac-144590",
+          "display": "RAMMELKAMP, ZOE L"
+        },
+        "role": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+              "code": "primary",
+              "display": "Primary provider"
+            }
+          ]
+        }
+      }
+    ],
+    "diagnosis": [
+      {
+        "sequence": 1,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "Z00.00"
+            }
+          ]
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/ex-diagnosistype",
+                "code": "principal",
+                "display": "Principal Diagnosis"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": 2,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "F07.81"
+            }
+          ]
+        }
+      }
+    ],
+    "insurance": [
+      {
+        "focal": true,
+        "coverage": {
+          "reference": "Coverage/cov-5934765"
+        }
+      }
+    ],
+    "item": [
+      {
+        "sequence": 1,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "99396",
+              "display": "PR PREVENTIVE VISIT,EST,40-64"
+            }
+          ],
+          "text": "PR PREVENTIVE VISIT,EST,40-64"
+        },
+        "modifier": [
+          {
+            "coding": [
+              {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "code": "25"
+              }
+            ]
+          }
+        ],
+        "servicedDate": "2023-09-28",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 330,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 330,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-991225117"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 330,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 223.42,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": 106.58,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 223.42,
+              "currency": "USD"
+            }
+          }
+        ]
+      }
+    ],
+    "total": [
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "submitted",
+              "display": "Submitted Amount"
+            }
+          ],
+          "text": "Submitted Amount"
+        },
+        "amount": {
+          "value": 330,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "eligible",
+              "display": "Eligible Amount"
+            }
+          ],
+          "text": "Eligible Amount"
+        },
+        "amount": {
+          "value": 223.42,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "benefit",
+              "display": "Benefit Amount"
+            }
+          ],
+          "text": "Benefit Amount"
+        },
+        "amount": {
+          "value": 223.42,
+          "currency": "USD"
+        }
+      }
+    ],
+    "payment": {
+      "amount": {
+        "value": 223.42,
+        "currency": "USD"
+      }
+    },
+    "processNote": [
+      {
+        "number": 1,
+        "type": "display",
+        "text": "45-CHGS EXCD FEE SCH/MAX ALLOWABLE."
+      }
+    ]
+  },
+  {
+    "resourceType": "ExplanationOfBenefit",
+    "id": "eob-L1008789160",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.689224",
+        "value": "L1008789160"
+      },
+      {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-claim-control-number",
+        "value": "2024191CL6984"
+      }
+    ],
+    "status": "active",
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+          "code": "professional",
+          "display": "Professional"
+        }
+      ]
+    },
+    "use": "claim",
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "billablePeriod": {
+      "start": "2024-07-02",
+      "end": "2024-07-02"
+    },
+    "created": "2024-07-09",
+    "insurer": {
+      "reference": "Organization/org-1302",
+      "identifier": {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-id",
+        "value": "1302"
+      },
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "provider": {
+      "reference": "Practitioner/prac-133057",
+      "display": "EVERTON, JENNIFER L"
+    },
+    "outcome": "complete",
+    "careTeam": [
+      {
+        "sequence": 1,
+        "provider": {
+          "reference": "Practitioner/prac-133057",
+          "display": "EVERTON, JENNIFER L"
+        },
+        "role": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+              "code": "primary",
+              "display": "Primary provider"
+            }
+          ]
+        }
+      }
+    ],
+    "diagnosis": [
+      {
+        "sequence": 1,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "M54.2"
+            }
+          ]
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/ex-diagnosistype",
+                "code": "principal",
+                "display": "Principal Diagnosis"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": 2,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "F07.81"
+            }
+          ]
+        }
+      },
+      {
+        "sequence": 3,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "G44.329"
+            }
+          ]
+        }
+      }
+    ],
+    "insurance": [
+      {
+        "focal": true,
+        "coverage": {
+          "reference": "Coverage/cov-5934765"
+        }
+      }
+    ],
+    "item": [
+      {
+        "sequence": 1,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "99214",
+              "display": "PR OFFICE/OUTPATIENT ESTABLISHED MOD MDM 30 MIN"
+            }
+          ],
+          "text": "PR OFFICE/OUTPATIENT ESTABLISHED MOD MDM 30 MIN"
+        },
+        "servicedDate": "2024-07-02",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 335,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 335,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-1076261941"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 335,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 204.15,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "deductible",
+                  "display": "Deductible"
+                }
+              ],
+              "text": "Deductible"
+            },
+            "amount": {
+              "value": 204.15,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": 130.85,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 0,
+              "currency": "USD"
+            }
+          }
+        ]
+      },
+      {
+        "sequence": 2,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "G2211",
+              "display": "PR COMPLEX E/M VISIT ADD ON"
+            }
+          ],
+          "text": "PR COMPLEX E/M VISIT ADD ON"
+        },
+        "servicedDate": "2024-07-02",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 48,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 48,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-1076261941"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 48,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 0,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": 48,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 0,
+              "currency": "USD"
+            }
+          }
+        ]
+      }
+    ],
+    "total": [
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "submitted",
+              "display": "Submitted Amount"
+            }
+          ],
+          "text": "Submitted Amount"
+        },
+        "amount": {
+          "value": 383,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "eligible",
+              "display": "Eligible Amount"
+            }
+          ],
+          "text": "Eligible Amount"
+        },
+        "amount": {
+          "value": 204.15,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "benefit",
+              "display": "Benefit Amount"
+            }
+          ],
+          "text": "Benefit Amount"
+        },
+        "amount": {
+          "value": 0,
+          "currency": "USD"
+        }
+      }
+    ],
+    "payment": {
+      "amount": {
+        "value": 0,
+        "currency": "USD"
+      }
+    },
+    "processNote": [
+      {
+        "number": 1,
+        "type": "display",
+        "text": "1-DEDUCTIBLE AMOUNT"
+      },
+      {
+        "number": 2,
+        "type": "display",
+        "text": "234-THIS PROCEDURE IS NOT PAID SEPARATELY"
+      },
+      {
+        "number": 3,
+        "type": "display",
+        "text": "45-CHGS EXCD FEE SCH/MAX ALLOWABLE."
+      },
+      {
+        "number": 4,
+        "type": "display",
+        "text": "N390 SVC CANNOT BE BILLED SEPARATE."
+      }
+    ]
+  },
+  {
+    "resourceType": "ExplanationOfBenefit",
+    "id": "eob-L1008789170",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.689224",
+        "value": "L1008789170"
+      },
+      {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-claim-control-number",
+        "value": "2024191CL7455"
+      }
+    ],
+    "status": "active",
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+          "code": "professional",
+          "display": "Professional"
+        }
+      ]
+    },
+    "use": "claim",
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "billablePeriod": {
+      "start": "2024-07-02",
+      "end": "2024-07-02"
+    },
+    "created": "2024-07-09",
+    "insurer": {
+      "reference": "Organization/org-1302",
+      "identifier": {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-id",
+        "value": "1302"
+      },
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "provider": {
+      "reference": "Practitioner/prac-554368",
+      "display": "KOMMER, LESLIE R"
+    },
+    "outcome": "complete",
+    "careTeam": [
+      {
+        "sequence": 1,
+        "provider": {
+          "reference": "Practitioner/prac-554368",
+          "display": "KOMMER, LESLIE R"
+        },
+        "role": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+              "code": "primary",
+              "display": "Primary provider"
+            }
+          ]
+        }
+      }
+    ],
+    "diagnosis": [
+      {
+        "sequence": 1,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "M54.2"
+            }
+          ]
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/ex-diagnosistype",
+                "code": "principal",
+                "display": "Principal Diagnosis"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "insurance": [
+      {
+        "focal": true,
+        "coverage": {
+          "reference": "Coverage/cov-5934765"
+        }
+      }
+    ],
+    "item": [
+      {
+        "sequence": 1,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "72040",
+              "display": "CHG RADEX SPINE CERVICAL 3 VIEWS OR LESS"
+            }
+          ],
+          "text": "CHG RADEX SPINE CERVICAL 3 VIEWS OR LESS"
+        },
+        "servicedDate": "2024-07-02",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 129,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 129,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-1076676013"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 129,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 38.25,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "deductible",
+                  "display": "Deductible"
+                }
+              ],
+              "text": "Deductible"
+            },
+            "amount": {
+              "value": 38.25,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": 90.75,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 0,
+              "currency": "USD"
+            }
+          }
+        ]
+      }
+    ],
+    "total": [
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "submitted",
+              "display": "Submitted Amount"
+            }
+          ],
+          "text": "Submitted Amount"
+        },
+        "amount": {
+          "value": 129,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "eligible",
+              "display": "Eligible Amount"
+            }
+          ],
+          "text": "Eligible Amount"
+        },
+        "amount": {
+          "value": 38.25,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "benefit",
+              "display": "Benefit Amount"
+            }
+          ],
+          "text": "Benefit Amount"
+        },
+        "amount": {
+          "value": 0,
+          "currency": "USD"
+        }
+      }
+    ],
+    "payment": {
+      "amount": {
+        "value": 0,
+        "currency": "USD"
+      }
+    },
+    "processNote": [
+      {
+        "number": 1,
+        "type": "display",
+        "text": "1-DEDUCTIBLE AMOUNT"
+      },
+      {
+        "number": 2,
+        "type": "display",
+        "text": "45-CHGS EXCD FEE SCH/MAX ALLOWABLE."
+      }
+    ]
+  },
+  {
+    "resourceType": "ExplanationOfBenefit",
+    "id": "eob-L1009194250",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.689224",
+        "value": "L1009194250"
+      },
+      {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-claim-control-number",
+        "value": "2024318BL0495"
+      }
+    ],
+    "status": "active",
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+          "code": "professional",
+          "display": "Professional"
+        }
+      ]
+    },
+    "use": "claim",
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "billablePeriod": {
+      "start": "2024-11-07",
+      "end": "2024-11-07"
+    },
+    "created": "2024-11-13",
+    "insurer": {
+      "reference": "Organization/org-1302",
+      "identifier": {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-id",
+        "value": "1302"
+      },
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "provider": {
+      "reference": "Practitioner/prac-144590",
+      "display": "RAMMELKAMP, ZOE L"
+    },
+    "outcome": "complete",
+    "careTeam": [
+      {
+        "sequence": 1,
+        "provider": {
+          "reference": "Practitioner/prac-144590",
+          "display": "RAMMELKAMP, ZOE L"
+        },
+        "role": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+              "code": "primary",
+              "display": "Primary provider"
+            }
+          ]
+        }
+      }
+    ],
+    "diagnosis": [
+      {
+        "sequence": 1,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "Z00.00"
+            }
+          ]
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/ex-diagnosistype",
+                "code": "principal",
+                "display": "Principal Diagnosis"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": 2,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "F07.81"
+            }
+          ]
+        }
+      },
+      {
+        "sequence": 3,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "K21.9"
+            }
+          ]
+        }
+      }
+    ],
+    "insurance": [
+      {
+        "focal": true,
+        "coverage": {
+          "reference": "Coverage/cov-5934765"
+        }
+      }
+    ],
+    "item": [
+      {
+        "sequence": 1,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "99396",
+              "display": "PR PREVENTIVE VISIT,EST,40-64"
+            }
+          ],
+          "text": "PR PREVENTIVE VISIT,EST,40-64"
+        },
+        "servicedDate": "2024-11-07",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 358,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 358,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-1028744231"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 358,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 198.19,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": 159.81,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 198.19,
+              "currency": "USD"
+            }
+          }
+        ]
+      }
+    ],
+    "total": [
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "submitted",
+              "display": "Submitted Amount"
+            }
+          ],
+          "text": "Submitted Amount"
+        },
+        "amount": {
+          "value": 358,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "eligible",
+              "display": "Eligible Amount"
+            }
+          ],
+          "text": "Eligible Amount"
+        },
+        "amount": {
+          "value": 198.19,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "benefit",
+              "display": "Benefit Amount"
+            }
+          ],
+          "text": "Benefit Amount"
+        },
+        "amount": {
+          "value": 198.19,
+          "currency": "USD"
+        }
+      }
+    ],
+    "payment": {
+      "amount": {
+        "value": 198.19,
+        "currency": "USD"
+      }
+    },
+    "processNote": [
+      {
+        "number": 1,
+        "type": "display",
+        "text": "45-CHGS EXCD FEE SCH/MAX ALLOWABLE."
+      }
+    ]
+  },
+  {
+    "resourceType": "ExplanationOfBenefit",
+    "id": "eob-L1009735840",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.689224",
+        "value": "L1009735840"
+      },
+      {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-claim-control-number",
+        "value": "2025119BP9768"
+      }
+    ],
+    "status": "active",
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+          "code": "professional",
+          "display": "Professional"
+        }
+      ]
+    },
+    "use": "claim",
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "billablePeriod": {
+      "start": "2025-04-23",
+      "end": "2025-04-23"
+    },
+    "created": "2025-04-29",
+    "insurer": {
+      "reference": "Organization/org-1302",
+      "identifier": {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-id",
+        "value": "1302"
+      },
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "provider": {
+      "reference": "Practitioner/prac-144590",
+      "display": "RAMMELKAMP, ZOE L"
+    },
+    "outcome": "complete",
+    "careTeam": [
+      {
+        "sequence": 1,
+        "provider": {
+          "reference": "Practitioner/prac-144590",
+          "display": "RAMMELKAMP, ZOE L"
+        },
+        "role": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+              "code": "primary",
+              "display": "Primary provider"
+            }
+          ]
+        }
+      }
+    ],
+    "diagnosis": [
+      {
+        "sequence": 1,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "U07.1"
+            }
+          ]
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/ex-diagnosistype",
+                "code": "principal",
+                "display": "Principal Diagnosis"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "insurance": [
+      {
+        "focal": true,
+        "coverage": {
+          "reference": "Coverage/cov-5934765"
+        }
+      }
+    ],
+    "item": [
+      {
+        "sequence": 1,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "98005",
+              "display": "PR SYNCHRONOUS AUDIO-VIDEO VISIT EST LOW MDM 20 MIN"
+            }
+          ],
+          "text": "PR SYNCHRONOUS AUDIO-VIDEO VISIT EST LOW MDM 20 MIN"
+        },
+        "servicedDate": "2025-04-23",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 177,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 177,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-1127808563"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 177,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 88.5,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "deductible",
+                  "display": "Deductible"
+                }
+              ],
+              "text": "Deductible"
+            },
+            "amount": {
+              "value": 88.5,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": 88.5,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 0,
+              "currency": "USD"
+            }
+          }
+        ]
+      },
+      {
+        "sequence": 2,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "G2211",
+              "display": "PR COMPLEX E/M VISIT ADD ON"
+            }
+          ],
+          "text": "PR COMPLEX E/M VISIT ADD ON"
+        },
+        "servicedDate": "2025-04-23",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 48,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 48,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-1127808563"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 48,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 0,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": 48,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 0,
+              "currency": "USD"
+            }
+          }
+        ]
+      }
+    ],
+    "total": [
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "submitted",
+              "display": "Submitted Amount"
+            }
+          ],
+          "text": "Submitted Amount"
+        },
+        "amount": {
+          "value": 225,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "eligible",
+              "display": "Eligible Amount"
+            }
+          ],
+          "text": "Eligible Amount"
+        },
+        "amount": {
+          "value": 88.5,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "benefit",
+              "display": "Benefit Amount"
+            }
+          ],
+          "text": "Benefit Amount"
+        },
+        "amount": {
+          "value": 0,
+          "currency": "USD"
+        }
+      }
+    ],
+    "payment": {
+      "amount": {
+        "value": 0,
+        "currency": "USD"
+      }
+    },
+    "processNote": [
+      {
+        "number": 1,
+        "type": "display",
+        "text": "1-DEDUCTIBLE AMOUNT"
+      },
+      {
+        "number": 2,
+        "type": "display",
+        "text": "45-CHGS EXCD FEE SCH/MAX ALLOWABLE."
+      },
+      {
+        "number": 3,
+        "type": "display",
+        "text": "97-PMT INCL IN PMT FOR OTHR SVC/PX."
+      },
+      {
+        "number": 4,
+        "type": "display",
+        "text": "N19 PX CODE INCIDNTL TO PRIMARY PX."
+      }
+    ]
+  },
+  {
+    "resourceType": "ExplanationOfBenefit",
+    "id": "eob-L1010454700",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.689224",
+        "value": "L1010454700"
+      },
+      {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-claim-control-number",
+        "value": "2025339CJ8368"
+      }
+    ],
+    "status": "active",
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+          "code": "professional",
+          "display": "Professional"
+        }
+      ]
+    },
+    "use": "claim",
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "billablePeriod": {
+      "start": "2025-12-04",
+      "end": "2025-12-04"
+    },
+    "created": "2025-12-05",
+    "insurer": {
+      "reference": "Organization/org-1302",
+      "identifier": {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-id",
+        "value": "1302"
+      },
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "provider": {
+      "reference": "Practitioner/prac-144590",
+      "display": "RAMMELKAMP, ZOE L"
+    },
+    "outcome": "complete",
+    "careTeam": [
+      {
+        "sequence": 1,
+        "provider": {
+          "reference": "Practitioner/prac-144590",
+          "display": "RAMMELKAMP, ZOE L"
+        },
+        "role": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+              "code": "primary",
+              "display": "Primary provider"
+            }
+          ]
+        }
+      }
+    ],
+    "diagnosis": [
+      {
+        "sequence": 1,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "Z00.00"
+            }
+          ]
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/ex-diagnosistype",
+                "code": "principal",
+                "display": "Principal Diagnosis"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": 2,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "F07.81"
+            }
+          ]
+        }
+      },
+      {
+        "sequence": 3,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "K21.9"
+            }
+          ]
+        }
+      },
+      {
+        "sequence": 4,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "Z13.1"
+            }
+          ]
+        }
+      },
+      {
+        "sequence": 5,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "Z13.220"
+            }
+          ]
+        }
+      }
+    ],
+    "insurance": [
+      {
+        "focal": true,
+        "coverage": {
+          "reference": "Coverage/cov-5934765"
+        }
+      }
+    ],
+    "item": [
+      {
+        "sequence": 1,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "99396",
+              "display": "PR PREVENTIVE VISIT,EST,40-64"
+            }
+          ],
+          "text": "PR PREVENTIVE VISIT,EST,40-64"
+        },
+        "servicedDate": "2025-12-04",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 358,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 358,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-1098684634"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 358,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 198.19,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": 159.81,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 198.19,
+              "currency": "USD"
+            }
+          }
+        ]
+      }
+    ],
+    "total": [
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "submitted",
+              "display": "Submitted Amount"
+            }
+          ],
+          "text": "Submitted Amount"
+        },
+        "amount": {
+          "value": 358,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "eligible",
+              "display": "Eligible Amount"
+            }
+          ],
+          "text": "Eligible Amount"
+        },
+        "amount": {
+          "value": 198.19,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "benefit",
+              "display": "Benefit Amount"
+            }
+          ],
+          "text": "Benefit Amount"
+        },
+        "amount": {
+          "value": 198.19,
+          "currency": "USD"
+        }
+      }
+    ],
+    "payment": {
+      "amount": {
+        "value": 198.19,
+        "currency": "USD"
+      }
+    },
+    "processNote": [
+      {
+        "number": 1,
+        "type": "display",
+        "text": "45-CHGS EXCD FEE SCH/MAX ALLOWABLE."
+      }
+    ]
+  },
+  {
+    "resourceType": "ExplanationOfBenefit",
+    "id": "eob-L1010466900",
+    "identifier": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.689224",
+        "value": "L1010466900"
+      },
+      {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-claim-control-number",
+        "value": "2025343CQ3952"
+      }
+    ],
+    "status": "active",
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+          "code": "professional",
+          "display": "Professional"
+        }
+      ]
+    },
+    "use": "claim",
+    "patient": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "billablePeriod": {
+      "start": "2025-12-04",
+      "end": "2025-12-04"
+    },
+    "created": "2025-12-09",
+    "insurer": {
+      "reference": "Organization/org-1302",
+      "identifier": {
+        "system": "http://open.epic.com/FHIR/StructureDefinition/payer-id",
+        "value": "1302"
+      },
+      "display": "BLUE CROSS OF WISCONSIN"
+    },
+    "provider": {
+      "reference": "Practitioner/prac-144590",
+      "display": "RAMMELKAMP, ZOE L"
+    },
+    "outcome": "complete",
+    "careTeam": [
+      {
+        "sequence": 1,
+        "provider": {
+          "reference": "Practitioner/prac-144590",
+          "display": "RAMMELKAMP, ZOE L"
+        },
+        "role": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+              "code": "primary",
+              "display": "Primary provider"
+            }
+          ]
+        }
+      }
+    ],
+    "diagnosis": [
+      {
+        "sequence": 1,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "Z13.1"
+            }
+          ]
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/ex-diagnosistype",
+                "code": "principal",
+                "display": "Principal Diagnosis"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": 2,
+        "diagnosisCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "Z13.220"
+            }
+          ]
+        }
+      }
+    ],
+    "insurance": [
+      {
+        "focal": true,
+        "coverage": {
+          "reference": "Coverage/cov-5934765"
+        }
+      }
+    ],
+    "item": [
+      {
+        "sequence": 1,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "80048",
+              "display": "CHG BASIC METABOLIC PANEL CALCIUM TOTAL"
+            }
+          ],
+          "text": "CHG BASIC METABOLIC PANEL CALCIUM TOTAL"
+        },
+        "servicedDate": "2025-12-04",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 145,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 145,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-1169847546"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 145,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 6.26,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": 138.74,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 6.26,
+              "currency": "USD"
+            }
+          }
+        ]
+      },
+      {
+        "sequence": 2,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "83036",
+              "display": "PR GLYCOSYLATED HEMOGLOBIN TEST"
+            }
+          ],
+          "text": "PR GLYCOSYLATED HEMOGLOBIN TEST"
+        },
+        "servicedDate": "2025-12-04",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 52,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 52,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-1169847546"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 52,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 7.19,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": 44.81,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 7.19,
+              "currency": "USD"
+            }
+          }
+        ]
+      },
+      {
+        "sequence": 3,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "80061",
+              "display": "CHG LIPID PANEL"
+            }
+          ],
+          "text": "CHG LIPID PANEL"
+        },
+        "servicedDate": "2025-12-04",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 124,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 124,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-1169847546"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 124,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 9.92,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": 114.08,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 9.92,
+              "currency": "USD"
+            }
+          }
+        ]
+      },
+      {
+        "sequence": 4,
+        "careTeamSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "36415",
+              "display": "PR COLLECTION VENOUS BLOOD,VENIPUNCTURE"
+            }
+          ],
+          "text": "PR COLLECTION VENOUS BLOOD,VENIPUNCTURE"
+        },
+        "servicedDate": "2025-12-04",
+        "quantity": {
+          "value": 1
+        },
+        "unitPrice": {
+          "value": 34,
+          "currency": "USD"
+        },
+        "net": {
+          "value": 34,
+          "currency": "USD"
+        },
+        "encounter": [
+          {
+            "reference": "Encounter/enc-1169847546"
+          }
+        ],
+        "adjudication": [
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "submitted",
+                  "display": "Submitted Amount"
+                }
+              ],
+              "text": "Submitted Amount"
+            },
+            "amount": {
+              "value": 34,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "eligible",
+                  "display": "Eligible Amount"
+                }
+              ],
+              "text": "Eligible Amount"
+            },
+            "amount": {
+              "value": 2.14,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "text": "Noncovered Amount"
+            },
+            "amount": {
+              "value": 31.86,
+              "currency": "USD"
+            }
+          },
+          {
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                  "code": "benefit",
+                  "display": "Benefit Amount"
+                }
+              ],
+              "text": "Benefit Amount"
+            },
+            "amount": {
+              "value": 2.14,
+              "currency": "USD"
+            }
+          }
+        ]
+      }
+    ],
+    "total": [
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "submitted",
+              "display": "Submitted Amount"
+            }
+          ],
+          "text": "Submitted Amount"
+        },
+        "amount": {
+          "value": 355,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "eligible",
+              "display": "Eligible Amount"
+            }
+          ],
+          "text": "Eligible Amount"
+        },
+        "amount": {
+          "value": 25.51,
+          "currency": "USD"
+        }
+      },
+      {
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+              "code": "benefit",
+              "display": "Benefit Amount"
+            }
+          ],
+          "text": "Benefit Amount"
+        },
+        "amount": {
+          "value": 25.51,
+          "currency": "USD"
+        }
+      }
+    ],
+    "payment": {
+      "amount": {
+        "value": 25.51,
+        "currency": "USD"
+      }
+    },
+    "processNote": [
+      {
+        "number": 1,
+        "type": "display",
+        "text": "45-CHGS EXCD FEE SCH/MAX ALLOWABLE."
+      }
+    ]
+  }
+]

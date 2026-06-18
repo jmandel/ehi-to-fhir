@@ -1,0 +1,704 @@
+[
+  {
+    "resourceType": "Medication",
+    "id": "med-772179261",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+        "value": "10449"
+      }
+    ],
+    "code": {
+      "text": "LISINOPRIL 10 MG PO TABS"
+    },
+    "form": {
+      "coding": [
+        {
+          "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+          "code": "TABS",
+          "display": "Tab"
+        }
+      ],
+      "text": "Tab"
+    },
+    "ingredient": [
+      {
+        "itemCodeableConcept": {
+          "text": "LISINOPRIL 10 MG PO TABS"
+        },
+        "strength": {
+          "numerator": {
+            "value": 10,
+            "unit": "MG",
+            "system": "http://unitsofmeasure.org",
+            "code": "mg"
+          },
+          "denominator": {
+            "value": 1,
+            "unit": "tablet"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "Medication",
+    "id": "med-772179266",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+        "value": "5674"
+      }
+    ],
+    "code": {
+      "text": "NORTRIPTYLINE HCL 10 MG PO CAPS"
+    },
+    "form": {
+      "coding": [
+        {
+          "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+          "code": "CAPS",
+          "display": "Cap"
+        }
+      ],
+      "text": "Cap"
+    },
+    "ingredient": [
+      {
+        "itemCodeableConcept": {
+          "text": "NORTRIPTYLINE HCL 10 MG PO CAPS"
+        },
+        "strength": {
+          "numerator": {
+            "value": 10,
+            "unit": "MG",
+            "system": "http://unitsofmeasure.org",
+            "code": "mg"
+          },
+          "denominator": {
+            "value": 1,
+            "unit": "capsule"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "Medication",
+    "id": "med-772179269",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+        "value": "5674"
+      }
+    ],
+    "code": {
+      "text": "NORTRIPTYLINE HCL 10 MG PO CAPS"
+    },
+    "form": {
+      "coding": [
+        {
+          "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+          "code": "CAPS",
+          "display": "Cap"
+        }
+      ],
+      "text": "Cap"
+    },
+    "ingredient": [
+      {
+        "itemCodeableConcept": {
+          "text": "NORTRIPTYLINE HCL 10 MG PO CAPS"
+        },
+        "strength": {
+          "numerator": {
+            "value": 10,
+            "unit": "MG",
+            "system": "http://unitsofmeasure.org",
+            "code": "mg"
+          },
+          "denominator": {
+            "value": 1,
+            "unit": "capsule"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "Medication",
+    "id": "med-945468373",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+        "value": "5674"
+      }
+    ],
+    "code": {
+      "text": "NORTRIPTYLINE HCL 10 MG PO CAPS"
+    },
+    "form": {
+      "coding": [
+        {
+          "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+          "code": "CAPS",
+          "display": "Cap"
+        }
+      ],
+      "text": "Cap"
+    },
+    "ingredient": [
+      {
+        "itemCodeableConcept": {
+          "text": "NORTRIPTYLINE HCL 10 MG PO CAPS"
+        },
+        "strength": {
+          "numerator": {
+            "value": 10,
+            "unit": "MG",
+            "system": "http://unitsofmeasure.org",
+            "code": "mg"
+          },
+          "denominator": {
+            "value": 1,
+            "unit": "capsule"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "Medication",
+    "id": "med-945468374",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+        "value": "163506"
+      }
+    ],
+    "code": {
+      "text": "FREESTYLE LIBRE 3 SENSOR MISC"
+    },
+    "form": {
+      "coding": [
+        {
+          "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+          "code": "MISC"
+        }
+      ]
+    },
+    "ingredient": [
+      {
+        "itemCodeableConcept": {
+          "text": "FREESTYLE LIBRE 3 SENSOR MISC"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "Medication",
+    "id": "med-945468375",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+        "value": "170050"
+      }
+    ],
+    "code": {
+      "text": "FREESTYLE LIBRE 3 READER DEVI"
+    },
+    "form": {
+      "coding": [
+        {
+          "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+          "code": "DEVI"
+        }
+      ]
+    },
+    "ingredient": [
+      {
+        "itemCodeableConcept": {
+          "text": "FREESTYLE LIBRE 3 READER DEVI"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "Medication",
+    "id": "med-945468376",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+        "value": "163506"
+      }
+    ],
+    "code": {
+      "text": "FREESTYLE LIBRE 3 SENSOR MISC"
+    },
+    "form": {
+      "coding": [
+        {
+          "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+          "code": "MISC"
+        }
+      ]
+    },
+    "ingredient": [
+      {
+        "itemCodeableConcept": {
+          "text": "FREESTYLE LIBRE 3 SENSOR MISC"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "Medication",
+    "id": "med-1025926288",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+        "value": "35184"
+      }
+    ],
+    "code": {
+      "text": "CYCLOBENZAPRINE HCL 5 MG PO TABS"
+    },
+    "form": {
+      "coding": [
+        {
+          "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+          "code": "TABS",
+          "display": "Tab"
+        }
+      ],
+      "text": "Tab"
+    },
+    "ingredient": [
+      {
+        "itemCodeableConcept": {
+          "text": "CYCLOBENZAPRINE HCL 5 MG PO TABS"
+        },
+        "strength": {
+          "numerator": {
+            "value": 5,
+            "unit": "MG",
+            "system": "http://unitsofmeasure.org",
+            "code": "mg"
+          },
+          "denominator": {
+            "value": 1,
+            "unit": "tablet"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "Medication",
+    "id": "med-1025926290",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+        "value": "27838"
+      }
+    ],
+    "code": {
+      "text": "SODIUM CHLORIDE 0.9 % IV SOLN"
+    },
+    "form": {
+      "coding": [
+        {
+          "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+          "code": "SOLN"
+        }
+      ]
+    },
+    "ingredient": [
+      {
+        "itemCodeableConcept": {
+          "text": "SODIUM CHLORIDE 0.9 % IV SOLN"
+        },
+        "strength": {
+          "numerator": {
+            "value": 0.9,
+            "unit": "%",
+            "system": "http://unitsofmeasure.org",
+            "code": "%"
+          },
+          "denominator": {
+            "value": 1,
+            "unit": "mL"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "Medication",
+    "id": "med-1025926291",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+        "value": "27838"
+      }
+    ],
+    "code": {
+      "text": "SODIUM CHLORIDE 0.9 % IV SOLN"
+    },
+    "form": {
+      "coding": [
+        {
+          "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+          "code": "SOLN"
+        }
+      ]
+    },
+    "ingredient": [
+      {
+        "itemCodeableConcept": {
+          "text": "SODIUM CHLORIDE 0.9 % IV SOLN"
+        },
+        "strength": {
+          "numerator": {
+            "value": 0.9,
+            "unit": "%",
+            "system": "http://unitsofmeasure.org",
+            "code": "%"
+          },
+          "denominator": {
+            "value": 1,
+            "unit": "mL"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "Medication",
+    "id": "med-1025926292",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+        "value": "27838"
+      }
+    ],
+    "code": {
+      "text": "SODIUM CHLORIDE 0.9 % IV SOLN"
+    },
+    "form": {
+      "coding": [
+        {
+          "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+          "code": "SOLN"
+        }
+      ]
+    },
+    "ingredient": [
+      {
+        "itemCodeableConcept": {
+          "text": "SODIUM CHLORIDE 0.9 % IV SOLN"
+        },
+        "strength": {
+          "numerator": {
+            "value": 0.9,
+            "unit": "%",
+            "system": "http://unitsofmeasure.org",
+            "code": "%"
+          },
+          "denominator": {
+            "value": 1,
+            "unit": "mL"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "Medication",
+    "id": "med-1034471687",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+        "value": "27838"
+      }
+    ],
+    "code": {
+      "text": "SODIUM CHLORIDE 0.9 % IV SOLN"
+    },
+    "form": {
+      "coding": [
+        {
+          "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+          "code": "SOLN"
+        }
+      ]
+    },
+    "ingredient": [
+      {
+        "itemCodeableConcept": {
+          "text": "SODIUM CHLORIDE 0.9 % IV SOLN"
+        },
+        "strength": {
+          "numerator": {
+            "value": 0.9,
+            "unit": "%",
+            "system": "http://unitsofmeasure.org",
+            "code": "%"
+          },
+          "denominator": {
+            "value": 1,
+            "unit": "mL"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "Medication",
+    "id": "med-1034471688",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+        "value": "27838"
+      }
+    ],
+    "code": {
+      "text": "SODIUM CHLORIDE 0.9 % IV SOLN"
+    },
+    "form": {
+      "coding": [
+        {
+          "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+          "code": "SOLN"
+        }
+      ]
+    },
+    "ingredient": [
+      {
+        "itemCodeableConcept": {
+          "text": "SODIUM CHLORIDE 0.9 % IV SOLN"
+        },
+        "strength": {
+          "numerator": {
+            "value": 0.9,
+            "unit": "%",
+            "system": "http://unitsofmeasure.org",
+            "code": "%"
+          },
+          "denominator": {
+            "value": 1,
+            "unit": "mL"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "Medication",
+    "id": "med-1034471689",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+        "value": "27838"
+      }
+    ],
+    "code": {
+      "text": "SODIUM CHLORIDE 0.9 % IV SOLN"
+    },
+    "form": {
+      "coding": [
+        {
+          "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+          "code": "SOLN"
+        }
+      ]
+    },
+    "ingredient": [
+      {
+        "itemCodeableConcept": {
+          "text": "SODIUM CHLORIDE 0.9 % IV SOLN"
+        },
+        "strength": {
+          "numerator": {
+            "value": 0.9,
+            "unit": "%",
+            "system": "http://unitsofmeasure.org",
+            "code": "%"
+          },
+          "denominator": {
+            "value": 1,
+            "unit": "mL"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "Medication",
+    "id": "med-1034471690",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+        "value": "27838"
+      }
+    ],
+    "code": {
+      "text": "SODIUM CHLORIDE 0.9 % IV SOLN"
+    },
+    "form": {
+      "coding": [
+        {
+          "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+          "code": "SOLN"
+        }
+      ]
+    },
+    "ingredient": [
+      {
+        "itemCodeableConcept": {
+          "text": "SODIUM CHLORIDE 0.9 % IV SOLN"
+        },
+        "strength": {
+          "numerator": {
+            "value": 0.9,
+            "unit": "%",
+            "system": "http://unitsofmeasure.org",
+            "code": "%"
+          },
+          "denominator": {
+            "value": 1,
+            "unit": "mL"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "Medication",
+    "id": "med-1034471691",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+        "value": "27838"
+      }
+    ],
+    "code": {
+      "text": "SODIUM CHLORIDE 0.9 % IV SOLN"
+    },
+    "form": {
+      "coding": [
+        {
+          "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+          "code": "SOLN"
+        }
+      ]
+    },
+    "ingredient": [
+      {
+        "itemCodeableConcept": {
+          "text": "SODIUM CHLORIDE 0.9 % IV SOLN"
+        },
+        "strength": {
+          "numerator": {
+            "value": 0.9,
+            "unit": "%",
+            "system": "http://unitsofmeasure.org",
+            "code": "%"
+          },
+          "denominator": {
+            "value": 1,
+            "unit": "mL"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "Medication",
+    "id": "med-1034471696",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+        "value": "5674"
+      }
+    ],
+    "code": {
+      "text": "NORTRIPTYLINE HCL 10 MG PO CAPS"
+    },
+    "form": {
+      "coding": [
+        {
+          "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+          "code": "CAPS",
+          "display": "Cap"
+        }
+      ],
+      "text": "Cap"
+    },
+    "ingredient": [
+      {
+        "itemCodeableConcept": {
+          "text": "NORTRIPTYLINE HCL 10 MG PO CAPS"
+        },
+        "strength": {
+          "numerator": {
+            "value": 10,
+            "unit": "MG",
+            "system": "http://unitsofmeasure.org",
+            "code": "mg"
+          },
+          "denominator": {
+            "value": 1,
+            "unit": "capsule"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "resourceType": "Medication",
+    "id": "med-1034471697",
+    "identifier": [
+      {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+        "value": "163915"
+      }
+    ],
+    "code": {
+      "text": "PAXLOVID (300/100) 20 X 150 MG & 10 X 100MG PO TBPK"
+    },
+    "form": {
+      "coding": [
+        {
+          "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+          "code": "TBPK"
+        }
+      ]
+    },
+    "ingredient": [
+      {
+        "itemCodeableConcept": {
+          "text": "PAXLOVID (300/100) 20 X 150 MG & 10 X 100MG PO TBPK"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,1204 @@
+[
+  {
+    "resourceType": "DiagnosticReport",
+    "id": "dr-439060606",
+    "identifier": [
+      {
+        "use": "official",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "PLAC",
+              "display": "Placer Identifier"
+            }
+          ],
+          "text": "Placer Identifier"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "439060606"
+      },
+      {
+        "use": "official",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "FILL",
+              "display": "Filler Identifier"
+            }
+          ],
+          "text": "Filler Identifier"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.798268.800",
+        "value": "H258308"
+      },
+      {
+        "use": "official",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "FILL",
+              "display": "Filler Identifier"
+            }
+          ],
+          "text": "Filler Identifier"
+        },
+        "value": "H258308"
+      }
+    ],
+    "basedOn": [
+      {
+        "reference": "ServiceRequest/sr-439060606",
+        "type": "ServiceRequest",
+        "identifier": {
+          "use": "usual",
+          "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+          "value": "439060606"
+        },
+        "display": "LIPID PANEL"
+      }
+    ],
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "urn:oid:1.2.840.114350.1.13.283.2.7.10.798268.30",
+            "code": "Lab"
+          }
+        ],
+        "text": "Lab"
+      },
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+            "code": "LAB",
+            "display": "Laboratory"
+          }
+        ],
+        "text": "Laboratory"
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "urn:oid:2.16.840.1.113883.6.12",
+          "code": "80061",
+          "display": "CHG LIPID PANEL"
+        }
+      ],
+      "text": "Lipid panel"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-724628999",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "724628999"
+      },
+      "display": "Lab"
+    },
+    "effectiveDateTime": "2018-08-09T15:16:00Z",
+    "issued": "2018-08-09T16:59:09Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-802011",
+        "type": "Practitioner",
+        "display": "DHILLON, PUNEET S"
+      },
+      {
+        "reference": "Organization/org-LLB-359",
+        "type": "Organization",
+        "display": "UPH MADISON MERITER SUNQUEST LAB"
+      }
+    ],
+    "result": [
+      {
+        "reference": "Observation/obs-439060606-1",
+        "display": "Component (1): CHOLESTEROL"
+      },
+      {
+        "reference": "Observation/obs-439060606-2",
+        "display": "Component (1): TRIGLYCERIDES"
+      },
+      {
+        "reference": "Observation/obs-439060606-3",
+        "display": "Component (1): HIGH DENSITY CHOLESTEROL"
+      },
+      {
+        "reference": "Observation/obs-439060606-4",
+        "display": "Component (1): LDL, CALCULATED"
+      },
+      {
+        "reference": "Observation/obs-439060606-5",
+        "display": "Component (1): CHOLESTEROL/HDL RATIO"
+      }
+    ]
+  },
+  {
+    "resourceType": "DiagnosticReport",
+    "id": "dr-439060607",
+    "identifier": [
+      {
+        "use": "official",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "PLAC",
+              "display": "Placer Identifier"
+            }
+          ],
+          "text": "Placer Identifier"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "439060607"
+      },
+      {
+        "use": "official",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "FILL",
+              "display": "Filler Identifier"
+            }
+          ],
+          "text": "Filler Identifier"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.798268.800",
+        "value": "S141309"
+      },
+      {
+        "use": "official",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "FILL",
+              "display": "Filler Identifier"
+            }
+          ],
+          "text": "Filler Identifier"
+        },
+        "value": "S141309"
+      }
+    ],
+    "basedOn": [
+      {
+        "reference": "ServiceRequest/sr-439060607",
+        "type": "ServiceRequest",
+        "identifier": {
+          "use": "usual",
+          "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+          "value": "439060607"
+        },
+        "display": "H. PYLORI ANTIGEN, STOOL"
+      }
+    ],
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "urn:oid:1.2.840.114350.1.13.283.2.7.10.798268.30",
+            "code": "Microbiology"
+          }
+        ],
+        "text": "Microbiology"
+      },
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+            "code": "LAB",
+            "display": "Laboratory"
+          }
+        ],
+        "text": "Laboratory"
+      }
+    ],
+    "code": {
+      "text": "H. pylori antigen, stool"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-725327197",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "725327197"
+      },
+      "display": "Microbiology"
+    },
+    "effectiveDateTime": "2018-08-18T14:30:00Z",
+    "issued": "2018-08-18T19:25:33Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-802011",
+        "type": "Practitioner",
+        "display": "DHILLON, PUNEET S"
+      },
+      {
+        "reference": "Organization/org-LLB-359",
+        "type": "Organization",
+        "display": "UPH MADISON MERITER SUNQUEST LAB"
+      }
+    ],
+    "result": [
+      {
+        "reference": "Observation/obs-439060607-1",
+        "display": "Component (1): H PYLORI ANTIGEN STOOL"
+      }
+    ]
+  },
+  {
+    "resourceType": "DiagnosticReport",
+    "id": "dr-772179262",
+    "identifier": [
+      {
+        "use": "official",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "PLAC",
+              "display": "Placer Identifier"
+            }
+          ],
+          "text": "Placer Identifier"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "772179262"
+      },
+      {
+        "use": "official",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "FILL",
+              "display": "Filler Identifier"
+            }
+          ],
+          "text": "Filler Identifier"
+        },
+        "value": "M585457"
+      }
+    ],
+    "basedOn": [
+      {
+        "reference": "ServiceRequest/sr-772179262",
+        "type": "ServiceRequest",
+        "identifier": {
+          "use": "usual",
+          "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+          "value": "772179262"
+        },
+        "display": "BASIC METABOLIC PANEL"
+      }
+    ],
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "urn:oid:1.2.840.114350.1.13.283.2.7.10.798268.30",
+            "code": "Lab"
+          }
+        ],
+        "text": "Lab"
+      },
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+            "code": "LAB",
+            "display": "Laboratory"
+          }
+        ],
+        "text": "Laboratory"
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "urn:oid:2.16.840.1.113883.6.12",
+          "code": "80048",
+          "display": "CHG BASIC METABOLIC PANEL CALCIUM TOTAL"
+        },
+        {
+          "system": "http://loinc.org",
+          "code": "24321-2"
+        }
+      ],
+      "text": "Basic metabolic panel"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-958147754",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "958147754"
+      },
+      "display": "Lab"
+    },
+    "effectiveDateTime": "2022-08-29T19:32:00Z",
+    "issued": "2022-08-29T20:42:02Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-144590",
+        "type": "Practitioner",
+        "display": "RAMMELKAMP, ZOE L"
+      },
+      {
+        "reference": "Organization/org-LLB-359",
+        "type": "Organization",
+        "display": "UPH MADISON MERITER SUNQUEST LAB"
+      }
+    ],
+    "result": [
+      {
+        "reference": "Observation/obs-772179262-1",
+        "display": "Component (1): SODIUM"
+      },
+      {
+        "reference": "Observation/obs-772179262-2",
+        "display": "Component (1): POTASSIUM"
+      },
+      {
+        "reference": "Observation/obs-772179262-3",
+        "display": "Component (1): CHLORIDE"
+      },
+      {
+        "reference": "Observation/obs-772179262-4",
+        "display": "Component (1): CO2"
+      },
+      {
+        "reference": "Observation/obs-772179262-5",
+        "display": "Component (1): GLUCOSE"
+      },
+      {
+        "reference": "Observation/obs-772179262-6",
+        "display": "Component (1): BUN BLOOD"
+      },
+      {
+        "reference": "Observation/obs-772179262-7",
+        "display": "Component (1): CREATININE"
+      },
+      {
+        "reference": "Observation/obs-772179262-8",
+        "display": "Component (1): CALCIUM"
+      },
+      {
+        "reference": "Observation/obs-772179262-9",
+        "display": "Component (1): ANION GAP"
+      },
+      {
+        "reference": "Observation/obs-772179262-10",
+        "display": "Component (1): BUN / CREAT RATIO"
+      },
+      {
+        "reference": "Observation/obs-772179262-11",
+        "display": "Component (1): OSMOLALITY CALCULATED"
+      },
+      {
+        "reference": "Observation/obs-772179262-12",
+        "display": "Component (1): EGFR NON-AFR/AMER"
+      }
+    ]
+  },
+  {
+    "resourceType": "DiagnosticReport",
+    "id": "dr-945468370",
+    "identifier": [
+      {
+        "use": "official",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "PLAC",
+              "display": "Placer Identifier"
+            }
+          ],
+          "text": "Placer Identifier"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "945468370"
+      },
+      {
+        "use": "official",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "FILL",
+              "display": "Filler Identifier"
+            }
+          ],
+          "text": "Filler Identifier"
+        },
+        "value": "H237948"
+      }
+    ],
+    "basedOn": [
+      {
+        "reference": "ServiceRequest/sr-945468370",
+        "type": "ServiceRequest",
+        "identifier": {
+          "use": "usual",
+          "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+          "value": "945468370"
+        },
+        "display": "HEMOGLOBIN A1C"
+      }
+    ],
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "urn:oid:1.2.840.114350.1.13.283.2.7.10.798268.30",
+            "code": "Lab"
+          }
+        ],
+        "text": "Lab"
+      },
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+            "code": "LAB",
+            "display": "Laboratory"
+          }
+        ],
+        "text": "Laboratory"
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "urn:oid:2.16.840.1.113883.6.12",
+          "code": "83036",
+          "display": "PR GLYCOSYLATED HEMOGLOBIN TEST"
+        },
+        {
+          "system": "http://loinc.org",
+          "code": "4548-4"
+        }
+      ],
+      "text": "Hemoglobin A1c"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1028743701",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1028743701"
+      },
+      "display": "Lab"
+    },
+    "effectiveDateTime": "2023-09-28T15:10:00Z",
+    "issued": "2023-09-28T15:47:49Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-144590",
+        "type": "Practitioner",
+        "display": "RAMMELKAMP, ZOE L"
+      },
+      {
+        "reference": "Organization/org-LLB-359",
+        "type": "Organization",
+        "display": "UPH MADISON MERITER SUNQUEST LAB"
+      }
+    ],
+    "result": [
+      {
+        "reference": "Observation/obs-945468370-1",
+        "display": "Component (1): HEMOGLOBIN A1C"
+      },
+      {
+        "reference": "Observation/obs-945468370-2",
+        "display": "Component (1): ESTIMATED AVG GLUC"
+      }
+    ]
+  },
+  {
+    "resourceType": "DiagnosticReport",
+    "id": "dr-945468371",
+    "identifier": [
+      {
+        "use": "official",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "PLAC",
+              "display": "Placer Identifier"
+            }
+          ],
+          "text": "Placer Identifier"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "945468371"
+      },
+      {
+        "use": "official",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "FILL",
+              "display": "Filler Identifier"
+            }
+          ],
+          "text": "Filler Identifier"
+        },
+        "value": "H237948"
+      }
+    ],
+    "basedOn": [
+      {
+        "reference": "ServiceRequest/sr-945468371",
+        "type": "ServiceRequest",
+        "identifier": {
+          "use": "usual",
+          "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+          "value": "945468371"
+        },
+        "display": "LIPID PANEL"
+      }
+    ],
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "urn:oid:1.2.840.114350.1.13.283.2.7.10.798268.30",
+            "code": "Lab"
+          }
+        ],
+        "text": "Lab"
+      },
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+            "code": "LAB",
+            "display": "Laboratory"
+          }
+        ],
+        "text": "Laboratory"
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "urn:oid:2.16.840.1.113883.6.12",
+          "code": "80061",
+          "display": "CHG LIPID PANEL"
+        },
+        {
+          "system": "http://loinc.org",
+          "code": "24331-1"
+        }
+      ],
+      "text": "Lipid panel"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1028743701",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1028743701"
+      },
+      "display": "Lab"
+    },
+    "effectiveDateTime": "2023-09-28T15:10:00Z",
+    "issued": "2023-09-28T16:19:26Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-144590",
+        "type": "Practitioner",
+        "display": "RAMMELKAMP, ZOE L"
+      },
+      {
+        "reference": "Organization/org-LLB-359",
+        "type": "Organization",
+        "display": "UPH MADISON MERITER SUNQUEST LAB"
+      }
+    ],
+    "result": [
+      {
+        "reference": "Observation/obs-945468371-1",
+        "display": "Component (1): CHOLESTEROL"
+      },
+      {
+        "reference": "Observation/obs-945468371-2",
+        "display": "Component (1): TRIGLYCERIDES"
+      },
+      {
+        "reference": "Observation/obs-945468371-3",
+        "display": "Component (1): HDL"
+      },
+      {
+        "reference": "Observation/obs-945468371-4",
+        "display": "Component (1): LDL, CALCULATED"
+      },
+      {
+        "reference": "Observation/obs-945468371-5",
+        "display": "Component (1): CHOLESTEROL/HDL RATIO"
+      }
+    ]
+  },
+  {
+    "resourceType": "DiagnosticReport",
+    "id": "dr-945468372",
+    "identifier": [
+      {
+        "use": "official",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "PLAC",
+              "display": "Placer Identifier"
+            }
+          ],
+          "text": "Placer Identifier"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "945468372"
+      },
+      {
+        "use": "official",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "FILL",
+              "display": "Filler Identifier"
+            }
+          ],
+          "text": "Filler Identifier"
+        },
+        "value": "H237948"
+      }
+    ],
+    "basedOn": [
+      {
+        "reference": "ServiceRequest/sr-945468372",
+        "type": "ServiceRequest",
+        "identifier": {
+          "use": "usual",
+          "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+          "value": "945468372"
+        },
+        "display": "HEPATITIS C ANTIBODY"
+      }
+    ],
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "urn:oid:1.2.840.114350.1.13.283.2.7.10.798268.30",
+            "code": "Lab"
+          }
+        ],
+        "text": "Lab"
+      },
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+            "code": "LAB",
+            "display": "Laboratory"
+          }
+        ],
+        "text": "Laboratory"
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "16128-1"
+        }
+      ],
+      "text": "Hepatitis C antibody"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1028743701",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1028743701"
+      },
+      "display": "Lab"
+    },
+    "effectiveDateTime": "2023-09-28T15:10:00Z",
+    "issued": "2023-09-28T21:09:25Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-144590",
+        "type": "Practitioner",
+        "display": "RAMMELKAMP, ZOE L"
+      },
+      {
+        "reference": "Organization/org-LLB-359",
+        "type": "Organization",
+        "display": "UPH MADISON MERITER SUNQUEST LAB"
+      }
+    ],
+    "result": [
+      {
+        "reference": "Observation/obs-945468372-1",
+        "display": "Component (1): HEPATITIS C AB"
+      }
+    ]
+  },
+  {
+    "resourceType": "DiagnosticReport",
+    "id": "dr-1165205279",
+    "identifier": [
+      {
+        "use": "official",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "PLAC",
+              "display": "Placer Identifier"
+            }
+          ],
+          "text": "Placer Identifier"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "1165205279"
+      },
+      {
+        "use": "official",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "FILL",
+              "display": "Filler Identifier"
+            }
+          ],
+          "text": "Filler Identifier"
+        },
+        "value": "H613684"
+      }
+    ],
+    "basedOn": [
+      {
+        "reference": "ServiceRequest/sr-1165205279",
+        "type": "ServiceRequest",
+        "identifier": {
+          "use": "usual",
+          "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+          "value": "1165205279"
+        },
+        "display": "LIPID PANEL"
+      }
+    ],
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "urn:oid:1.2.840.114350.1.13.283.2.7.10.798268.30",
+            "code": "Lab"
+          }
+        ],
+        "text": "Lab"
+      },
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+            "code": "LAB",
+            "display": "Laboratory"
+          }
+        ],
+        "text": "Laboratory"
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "urn:oid:2.16.840.1.113883.6.12",
+          "code": "80061",
+          "display": "CHG LIPID PANEL"
+        },
+        {
+          "system": "http://loinc.org",
+          "code": "24331-1"
+        }
+      ],
+      "text": "Lipid panel"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1169847546",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1169847546"
+      },
+      "display": "Lab"
+    },
+    "effectiveDateTime": "2025-12-04T21:54:00Z",
+    "issued": "2025-12-04T22:48:08Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-144590",
+        "type": "Practitioner",
+        "display": "RAMMELKAMP, ZOE L"
+      },
+      {
+        "reference": "Organization/org-LLB-1700801005",
+        "type": "Organization",
+        "display": "UPH MAC ASSOCIATED PHYSICIANS"
+      }
+    ],
+    "result": [
+      {
+        "reference": "Observation/obs-1165205279-1",
+        "display": "Component (1): CHOLESTEROL"
+      },
+      {
+        "reference": "Observation/obs-1165205279-2",
+        "display": "Component (1): TRIGLYCERIDES"
+      },
+      {
+        "reference": "Observation/obs-1165205279-3",
+        "display": "Component (1): HDL"
+      },
+      {
+        "reference": "Observation/obs-1165205279-4",
+        "display": "Component (1): LDL, CALCULATED"
+      },
+      {
+        "reference": "Observation/obs-1165205279-5",
+        "display": "Component (1): VLDL CHOLESTEROL"
+      },
+      {
+        "reference": "Observation/obs-1165205279-6",
+        "display": "Component (1): CHOLESTEROL/HDL RATIO"
+      }
+    ]
+  },
+  {
+    "resourceType": "DiagnosticReport",
+    "id": "dr-1165205280",
+    "identifier": [
+      {
+        "use": "official",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "PLAC",
+              "display": "Placer Identifier"
+            }
+          ],
+          "text": "Placer Identifier"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "1165205280"
+      },
+      {
+        "use": "official",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "FILL",
+              "display": "Filler Identifier"
+            }
+          ],
+          "text": "Filler Identifier"
+        },
+        "value": "H613684"
+      }
+    ],
+    "basedOn": [
+      {
+        "reference": "ServiceRequest/sr-1165205280",
+        "type": "ServiceRequest",
+        "identifier": {
+          "use": "usual",
+          "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+          "value": "1165205280"
+        },
+        "display": "BASIC METABOLIC PANEL"
+      }
+    ],
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "urn:oid:1.2.840.114350.1.13.283.2.7.10.798268.30",
+            "code": "Lab"
+          }
+        ],
+        "text": "Lab"
+      },
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+            "code": "LAB",
+            "display": "Laboratory"
+          }
+        ],
+        "text": "Laboratory"
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "urn:oid:2.16.840.1.113883.6.12",
+          "code": "80048",
+          "display": "CHG BASIC METABOLIC PANEL CALCIUM TOTAL"
+        },
+        {
+          "system": "http://loinc.org",
+          "code": "24321-2"
+        }
+      ],
+      "text": "Basic metabolic panel"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1169847546",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1169847546"
+      },
+      "display": "Lab"
+    },
+    "effectiveDateTime": "2025-12-04T21:54:00Z",
+    "issued": "2025-12-04T22:48:08Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-144590",
+        "type": "Practitioner",
+        "display": "RAMMELKAMP, ZOE L"
+      },
+      {
+        "reference": "Organization/org-LLB-1700801005",
+        "type": "Organization",
+        "display": "UPH MAC ASSOCIATED PHYSICIANS"
+      }
+    ],
+    "result": [
+      {
+        "reference": "Observation/obs-1165205280-1",
+        "display": "Component (1): SODIUM"
+      },
+      {
+        "reference": "Observation/obs-1165205280-2",
+        "display": "Component (1): POTASSIUM"
+      },
+      {
+        "reference": "Observation/obs-1165205280-3",
+        "display": "Component (1): CHLORIDE"
+      },
+      {
+        "reference": "Observation/obs-1165205280-4",
+        "display": "Component (1): CO2"
+      },
+      {
+        "reference": "Observation/obs-1165205280-5",
+        "display": "Component (1): GLUCOSE"
+      },
+      {
+        "reference": "Observation/obs-1165205280-6",
+        "display": "Component (1): BUN BLOOD"
+      },
+      {
+        "reference": "Observation/obs-1165205280-7",
+        "display": "Component (1): CREATININE"
+      },
+      {
+        "reference": "Observation/obs-1165205280-8",
+        "display": "Component (1): CALCIUM"
+      },
+      {
+        "reference": "Observation/obs-1165205280-9",
+        "display": "Component (1): ANION GAP"
+      },
+      {
+        "reference": "Observation/obs-1165205280-10",
+        "display": "Component (1): BUN / CREAT RATIO"
+      },
+      {
+        "reference": "Observation/obs-1165205280-11",
+        "display": "Component (1): OSMOLALITY CALCULATED"
+      },
+      {
+        "reference": "Observation/obs-1165205280-12",
+        "display": "Component (1): EGFR NON-AFR/AMER"
+      }
+    ]
+  },
+  {
+    "resourceType": "DiagnosticReport",
+    "id": "dr-1165205281",
+    "identifier": [
+      {
+        "use": "official",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "PLAC",
+              "display": "Placer Identifier"
+            }
+          ],
+          "text": "Placer Identifier"
+        },
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+        "value": "1165205281"
+      },
+      {
+        "use": "official",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "FILL",
+              "display": "Filler Identifier"
+            }
+          ],
+          "text": "Filler Identifier"
+        },
+        "value": "H613684"
+      }
+    ],
+    "basedOn": [
+      {
+        "reference": "ServiceRequest/sr-1165205281",
+        "type": "ServiceRequest",
+        "identifier": {
+          "use": "usual",
+          "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+          "value": "1165205281"
+        },
+        "display": "HEMOGLOBIN A1C"
+      }
+    ],
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "urn:oid:1.2.840.114350.1.13.283.2.7.10.798268.30",
+            "code": "Lab"
+          }
+        ],
+        "text": "Lab"
+      },
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+            "code": "LAB",
+            "display": "Laboratory"
+          }
+        ],
+        "text": "Laboratory"
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "urn:oid:2.16.840.1.113883.6.12",
+          "code": "83036",
+          "display": "PR GLYCOSYLATED HEMOGLOBIN TEST"
+        },
+        {
+          "system": "http://loinc.org",
+          "code": "4548-4"
+        }
+      ],
+      "text": "Hemoglobin A1c"
+    },
+    "subject": {
+      "reference": "Patient/pat-Z7004242",
+      "display": "Mandel, Josh C"
+    },
+    "encounter": {
+      "reference": "Encounter/enc-1169847546",
+      "identifier": {
+        "use": "usual",
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+        "value": "1169847546"
+      },
+      "display": "Lab"
+    },
+    "effectiveDateTime": "2025-12-04T21:54:00Z",
+    "issued": "2025-12-04T22:33:41Z",
+    "performer": [
+      {
+        "reference": "Practitioner/prac-144590",
+        "type": "Practitioner",
+        "display": "RAMMELKAMP, ZOE L"
+      },
+      {
+        "reference": "Organization/org-LLB-1700801005",
+        "type": "Organization",
+        "display": "UPH MAC ASSOCIATED PHYSICIANS"
+      }
+    ],
+    "result": [
+      {
+        "reference": "Observation/obs-1165205281-1",
+        "display": "Component (1): HEMOGLOBIN A1C"
+      },
+      {
+        "reference": "Observation/obs-1165205281-2",
+        "display": "Component (1): ESTIMATED AVG GLUC"
+      }
+    ]
+  }
+]

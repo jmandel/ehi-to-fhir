@@ -1,15 +1,15 @@
 #!/usr/bin/env bun
 /**
- * apply-answer-key.ts — OPT-IN, non-destructive enrichment pass.
+ * apply-crosswalk.ts — OPT-IN, non-destructive enrichment pass.
  *
- *   bun tools/apply-answer-key.ts [--in out] [--out out-answerkey] [--all]
+ *   bun tools/apply-crosswalk.ts [--in out] [--out out-crosswalk] [--all]
  *
  * Reads baseline FHIR resources from an input dir (default out/) and the
  * reconstructed terminology crosswalk (crosswalk/ALL.csv), then LAYERS the
- * "answer-key" standard codings (LOINC/SNOMED/ICD/RxNorm/CVX/CPT…) that the EHI
+ * crosswalk standard codings (LOINC/SNOMED/ICD/RxNorm/CVX/CPT…) that the EHI
  * export does NOT carry but we recovered, writing ENRICHED copies to an output
- * dir (default out-answerkey/). The baseline dir is never modified, so output
- * gaps can be measured WITH vs WITHOUT the answer key.
+ * dir (default out-crosswalk/). The baseline dir is never modified, so output
+ * gaps can be measured WITH vs WITHOUT the crosswalk.
  *
  * Two matching modes, exactly as specified:
  *
@@ -42,7 +42,7 @@ function argVal(name: string, def: string): string {
   return i >= 0 && argv[i + 1] ? argv[i + 1] : def;
 }
 const IN_DIR = resolve(ROOT, argVal("--in", "out"));
-const OUT_DIR = resolve(ROOT, argVal("--out", "out-answerkey"));
+const OUT_DIR = resolve(ROOT, argVal("--out", "out-crosswalk"));
 const INCLUDE_ALL = argv.includes("--all"); // include non-ehi_verified rows too
 const CSV_PATH = resolve(ROOT, "crosswalk", "ALL.csv");
 const IDENTIFIERS_CSV = resolve(ROOT, "crosswalk", "identifiers.csv");
@@ -111,7 +111,7 @@ function loadCrosswalk(): Row[] {
       ehi_verified: get(r, "ehi_verified"),
       system_class: get(r, "system_class") || "standard",
     }))
-    // A usable answer-key row must name a real standard coding to attach.
+    // A usable crosswalk row must name a real standard coding to attach.
     .filter((r) => r.target_system && r.target_code)
     .filter((r) => INCLUDE_ALL || r.ehi_verified.toLowerCase() === "yes");
 }
@@ -570,7 +570,7 @@ function targetCodingArray(resource: any, fhir_path: string): Coding[] | undefin
 // custodian.identifier). ADDITIVE + IDEMPOTENT: a row is never added if an identifier
 // with the same {system,value} is already present (so an EHI-derived identifier is
 // never overwritten or duplicated). HONESTY: allowed because each row is anchored to a
-// real EHI entity and tagged provenance=answer-key — not a verbatim no-anchor copy.
+// real EHI entity and tagged provenance=crosswalk — not a verbatim no-anchor copy.
 // ============================================================================
 interface IdRow {
   entity_type: string;
@@ -692,7 +692,7 @@ function main() {
   }
 
   // Mirror IN_DIR exactly: wipe stale resource files in OUT_DIR first so the enriched dir is a
-  // faithful copy of the (possibly lean) baseline + answer-key layer — never carrying an orphan
+  // faithful copy of the (possibly lean) baseline + crosswalk layer — never carrying an orphan
   // from an earlier build (e.g. a Binary.json left by a prior --embed-attachments run).
   mkdirSync(OUT_DIR, { recursive: true });
   for (const f of readdirSync(OUT_DIR).filter((f) => f.endsWith(".json")))
@@ -792,7 +792,7 @@ function main() {
   }
 
   // ---- summary -------------------------------------------------------------
-  console.error(`\nanswer-key pass: ${IN_DIR} -> ${OUT_DIR}`);
+  console.error(`\ncrosswalk pass: ${IN_DIR} -> ${OUT_DIR}`);
   console.error(`  crosswalk rows used: ${rows.length} (${INCLUDE_ALL ? "all" : "ehi_verified only"})`);
   console.error(`  files written:       ${filesWritten}`);
   console.error(`  codings added:       ${codingsAdded}`);
