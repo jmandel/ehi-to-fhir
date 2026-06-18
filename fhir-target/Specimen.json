@@ -1,0 +1,320 @@
+[
+ {
+  "resourceType": "Specimen",
+  "id": "exvCjTbtSmQ-0kxwmMFFuypiI4Sq3MA..5ijt-4dAwUk3",
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.798268.320",
+    "value": "M585457"
+   }
+  ],
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.798268.300",
+     "code": "100230",
+     "display": "Serum"
+    },
+    {
+     "system": "http://snomed.info/sct"
+    }
+   ],
+   "text": "Serum"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "receivedTime": "2022-08-29T19:37:00Z",
+  "collection": {
+   "collector": {
+    "display": "PHAT, SOPHAN X"
+   },
+   "collectedDateTime": "2022-08-29T19:32:00Z"
+  }
+ },
+ {
+  "resourceType": "Specimen",
+  "id": "eqEBK2eJvVXtfD22j3xNXH0qlXMT6wbbOSHLJdjLCJzk3",
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.798268.320",
+    "value": "H613684"
+   }
+  ],
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.798268.300",
+     "code": "100230",
+     "display": "Serum"
+    },
+    {
+     "system": "http://snomed.info/sct"
+    }
+   ],
+   "text": "Serum"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "receivedTime": "2025-12-04T21:56:00Z",
+  "collection": {
+   "collector": {
+    "display": "HUME, CAMERON J"
+   },
+   "collectedDateTime": "2025-12-04T21:54:00Z"
+  }
+ },
+ {
+  "resourceType": "Specimen",
+  "id": "eqEBK2eJvVXtfD22j3xNXH6k.dIEAmyx1yF9AJ53DLxg3",
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.798268.320",
+    "value": "H613684"
+   }
+  ],
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.798268.300",
+     "code": "100230",
+     "display": "Serum"
+    },
+    {
+     "system": "http://snomed.info/sct"
+    }
+   ],
+   "text": "Serum"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "receivedTime": "2025-12-04T21:56:00Z",
+  "collection": {
+   "collector": {
+    "display": "HUME, CAMERON J"
+   },
+   "collectedDateTime": "2025-12-04T21:54:00Z"
+  }
+ },
+ {
+  "resourceType": "Specimen",
+  "id": "e.sHSBQN0fc5pwfutZcvCAKUMTYzRXBGqbtrlL0k0C-03",
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.798268.320",
+    "value": "H237948"
+   }
+  ],
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.798268.300",
+     "code": "100230",
+     "display": "Serum"
+    },
+    {
+     "system": "http://snomed.info/sct"
+    }
+   ],
+   "text": "Serum"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "receivedTime": "2023-09-28T15:17:00Z",
+  "collection": {
+   "collector": {
+    "display": "BRECHT, SAMANTHA L"
+   },
+   "collectedDateTime": "2023-09-28T15:10:00Z"
+  }
+ },
+ {
+  "resourceType": "Specimen",
+  "id": "eZqiAReKGTrWhDgKuT6lvgHS7xCxwEowqpr7Vx9xvtiY3",
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.798268.320",
+    "value": "H613684"
+   }
+  ],
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.798268.300",
+     "code": "100230",
+     "display": "Serum"
+    },
+    {
+     "system": "http://snomed.info/sct"
+    }
+   ],
+   "text": "Serum"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "receivedTime": "2025-12-04T21:56:00Z",
+  "collection": {
+   "collector": {
+    "display": "HUME, CAMERON J"
+   },
+   "collectedDateTime": "2025-12-04T21:54:00Z"
+  }
+ },
+ {
+  "resourceType": "Specimen",
+  "id": "enrUb8idu0GMsgSfY25cp6Srthnc2RVj7Zf92tTAYzI83",
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.798268.320",
+    "value": "H237948"
+   }
+  ],
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.798268.300",
+     "code": "100230",
+     "display": "Serum"
+    },
+    {
+     "system": "http://snomed.info/sct"
+    }
+   ],
+   "text": "Serum"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "receivedTime": "2023-09-28T15:17:00Z",
+  "collection": {
+   "collector": {
+    "display": "BRECHT, SAMANTHA L"
+   },
+   "collectedDateTime": "2023-09-28T15:10:00Z"
+  }
+ },
+ {
+  "resourceType": "Specimen",
+  "id": "eVXGcL7y44GrCwenyy-JOPDusfFsoLa9f826e6RhYWWI3",
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.798268.320",
+    "value": "S141309"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.798268.800",
+    "value": "S141309"
+   }
+  ],
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.798268.300",
+     "code": "54",
+     "display": "Stool"
+    },
+    {
+     "system": "http://snomed.info/sct",
+     "code": "119339001",
+     "display": "Stool specimen (specimen)"
+    }
+   ],
+   "text": "Stool"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "receivedTime": "2018-08-18T14:46:00Z",
+  "collection": {
+   "collector": {
+    "display": "WATKINS,MICHELLE"
+   },
+   "collectedDateTime": "2018-08-18T14:30:00Z"
+  }
+ },
+ {
+  "resourceType": "Specimen",
+  "id": "e-AkWvSoQ7-HzrdNZsG-MS9OH8gHk0TPa8.bz81tEruo3",
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.798268.320",
+    "value": "H258308"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.798268.800",
+    "value": "H258308"
+   }
+  ],
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.798268.300",
+     "code": "188",
+     "display": "Blood"
+    },
+    {
+     "system": "http://snomed.info/sct",
+     "code": "119297000",
+     "display": "Blood specimen (specimen)"
+    }
+   ],
+   "text": "Blood"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "receivedTime": "2018-08-09T15:22:00Z",
+  "collection": {
+   "collector": {
+    "display": "CORNELL,VIRA X"
+   },
+   "collectedDateTime": "2018-08-09T15:16:00Z"
+  }
+ },
+ {
+  "resourceType": "Specimen",
+  "id": "efXcNHAAlKtn9L8vP9Z-gDtDspNAjig95fxHL7Df-JRg3",
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.798268.320",
+    "value": "H237948"
+   }
+  ],
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.798268.300",
+     "code": "188",
+     "display": "Blood"
+    },
+    {
+     "system": "http://snomed.info/sct"
+    }
+   ],
+   "text": "Blood"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "receivedTime": "2023-09-28T15:17:00Z",
+  "collection": {
+   "collector": {
+    "display": "BRECHT, SAMANTHA L"
+   },
+   "collectedDateTime": "2023-09-28T15:10:00Z"
+  }
+ }
+]

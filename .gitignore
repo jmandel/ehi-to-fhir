@@ -5,8 +5,6 @@
 ehi.sqlite
 ehi.sqlite-*
 raw/
-# Epic-API reference (answer key) — raw PHI; report ships only derived data.json
-fhir-target/
 # generated FHIR (lean + bridge) — regenerable + PHI
 out/
 out-answerkey/
@@ -42,8 +40,6 @@ bun.lockb
 *.log
 .DS_Store
 
-# patient identifier values (PHI) + intermediate cluster doc with preimages
-crosswalk/identifiers.csv
 compare/RESIDUAL-CLUSTERS.md
 
 # patient→Epic feedback report (contains the patient's clinical PHI; not a public artifact)
@@ -55,3 +51,17 @@ out-answerkey-golden/
 compare/CODING-FLOOR-AUDIT.md
 compare/TRIAGE.md
 compare/DELTAS.md
+
+# locally-built skill zip — CI assembles it from report/health-record-assistant/ (text shell+content)
+report/*.zip
+
+# ── submodule-CI rebuild architecture ──
+# committed: redacted fhir-target/ + redacted crosswalk/identifiers.csv (answer key for CI)
+# local-only unredacted sources:
+fhir-target.unredacted/
+crosswalk/identifiers.csv.unredacted
+# CI-built (derived) — no longer committed; GH Actions rebuilds from the submodule:
+report/viewer/data.json
+report/viewer/data-lean.json
+report/health-record-assistant/data/
+out-crosswalk/

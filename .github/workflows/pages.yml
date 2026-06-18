@@ -19,17 +19,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: recursive        # pulls jmandel/my-ehi (public, redacted raw) for the EHI source
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
       - run: bun install --frozen-lockfile || bun install
-      - name: Build the report bundle
+
+      # Full pipeline — reproduce everything from public inputs (submodule raw + committed answer key +
+      # committed redacted fhir-target). No PHI, no network, no validator needed.
+      - name: Build EHI SQLite from the submodule's redacted raw
+        run: bun my-ehi/skills/reading-epic-ehi-export/scripts/load.ts my-ehi/raw ehi.sqlite
+      - name: Build gold FHIR (apply terminology crosswalk + embed attachments)
+        run: bun build.ts --apply-crosswalk --embed-attachments
+      - name: Build report data (classify + tolerance ledger vs committed redacted fhir-target)
+        run: bun tools/build-report-data.ts
+      - name: Bundle the report app
         run: bun report/build.ts
+      - name: Build the synthetic health-record skill bundle
+        run: bun tools/build-skill-zip.ts
+
       - name: Stage static site
         run: |
           mkdir -p _site
           cp report/index.html report/styles.css report/app.js _site/
-          cp report/*.zip _site/ 2>/dev/null || true   # synthetic health-record skill bundle(s)
+          ( cd report && zip -rq "$GITHUB_WORKSPACE/_site/health-records-skill-josh-mandel-fhir.zip" health-record-assistant )
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

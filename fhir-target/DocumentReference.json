@@ -1,0 +1,6479 @@
+[
+ {
+  "resourceType": "DocumentReference",
+  "id": "eQHJ6GFbh7izn9NXQxeNzcLWDCem3hwlb2HG.MvJSer03",
+  "extension": [
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "1",
+         "display": "Signer"
+        }
+       ],
+       "text": "Signer"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2026-01-12T20:12:48Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/eLVj8xkYnXC5-pslt7s83rw3",
+       "display": "Jess Y"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   }
+  ],
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879",
+    "value": "6463947644"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.72.3.15",
+    "value": "1.2.840.114350.1.13.283.2.7.2.727879_6463947644"
+   }
+  ],
+  "status": "current",
+  "docStatus": "final",
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010",
+     "code": "36",
+     "display": "Telephone Encounter"
+    },
+    {
+     "system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
+     "code": "36",
+     "display": "Telephone Encounter"
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "34748-4",
+     "display": "Telephone encounter Note",
+     "userSelected": true
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "34109-9",
+     "display": "Note"
+    }
+   ],
+   "text": "Telephone Encounter"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2026-01-12T20:12:38Z",
+  "author": [
+   {
+    "reference": "Practitioner/eLVj8xkYnXC5-pslt7s83rw3",
+    "type": "Practitioner",
+    "display": "Jess Y"
+   }
+  ],
+  "authenticator": {
+   "extension": [
+    {
+     "valueDateTime": "2026-01-12T20:12:48Z",
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant"
+    }
+   ],
+   "reference": "Practitioner/eLVj8xkYnXC5-pslt7s83rw3",
+   "type": "Practitioner",
+   "display": "Jess Y"
+  },
+  "custodian": {
+   "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:ihs:ce-prd"
+   },
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/eYZ.h-kKFROkILfoyIlCdhkVOXgZYKY89q3SEx1-q7J83"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   },
+   {
+    "attachment": {
+     "contentType": "text/rtf",
+     "url": "Binary/fKeUQXBNL8CoTY4P.Z.2MXhs2mvy5e9iDypcA8bVF9Bw4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "extension": [
+    {
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040",
+        "code": "2507",
+        "display": "Clerk"
+       }
+      ],
+      "text": "Clerk"
+     },
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type"
+    }
+   ],
+   "encounter": [
+    {
+     "reference": "Encounter/eUclqYmI4W8LEhLRT0bOVmg3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "1175103496"
+     },
+     "display": "Telephone"
+    }
+   ],
+   "period": {
+    "start": "2026-01-12T20:12:38Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "ewcnefn2yKRhMjUedOS8kU65rucsHuOPIfgP-hJM-mv03",
+  "extension": [
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "1",
+         "display": "Signer"
+        }
+       ],
+       "text": "Signer"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2026-01-02T18:35:46Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/eLVj8xkYnXC5-pslt7s83rw3",
+       "display": "Jess Y"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   }
+  ],
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879",
+    "value": "6445602279"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.72.3.15",
+    "value": "1.2.840.114350.1.13.283.2.7.2.727879_6445602279"
+   }
+  ],
+  "status": "current",
+  "docStatus": "final",
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010",
+     "code": "36",
+     "display": "Telephone Encounter"
+    },
+    {
+     "system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
+     "code": "36",
+     "display": "Telephone Encounter"
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "34748-4",
+     "display": "Telephone encounter Note",
+     "userSelected": true
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "34109-9",
+     "display": "Note"
+    }
+   ],
+   "text": "Telephone Encounter"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2026-01-02T18:35:14Z",
+  "author": [
+   {
+    "reference": "Practitioner/eLVj8xkYnXC5-pslt7s83rw3",
+    "type": "Practitioner",
+    "display": "Jess Y"
+   }
+  ],
+  "authenticator": {
+   "extension": [
+    {
+     "valueDateTime": "2026-01-02T18:35:46Z",
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant"
+    }
+   ],
+   "reference": "Practitioner/eLVj8xkYnXC5-pslt7s83rw3",
+   "type": "Practitioner",
+   "display": "Jess Y"
+  },
+  "custodian": {
+   "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:ihs:ce-prd"
+   },
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/e1b3QDYIDEAM7DalACXHEVTcn3eZuztkcHo7A35cQm8c3"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   },
+   {
+    "attachment": {
+     "contentType": "text/rtf",
+     "url": "Binary/ff0hiS54fDvLkhb80CTwN9poBF-Tf353ozzocyOHXoPg4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "extension": [
+    {
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040",
+        "code": "2507",
+        "display": "Clerk"
+       }
+      ],
+      "text": "Clerk"
+     },
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type"
+    }
+   ],
+   "encounter": [
+    {
+     "reference": "Encounter/eUclqYmI4W8LEhLRT0bOVmg3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "1175103496"
+     },
+     "display": "Telephone"
+    }
+   ],
+   "period": {
+    "start": "2026-01-02T18:35:14Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "ek-cWl5smvl6-2UlJxsMh-6PCHj3YMxWZ8QHWBmxVyzs3",
+  "extension": [
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "1",
+         "display": "Signer"
+        }
+       ],
+       "text": "Signer"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2025-12-05T14:35:11Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+       "display": "Dr. Z Rammelkamp"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   }
+  ],
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879",
+    "value": "6400951410"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.72.3.15",
+    "value": "1.2.840.114350.1.13.283.2.7.2.727879_6400951410"
+   }
+  ],
+  "status": "current",
+  "docStatus": "final",
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010",
+     "code": "36",
+     "display": "Telephone Encounter"
+    },
+    {
+     "system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
+     "code": "36",
+     "display": "Telephone Encounter"
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "34748-4",
+     "display": "Telephone encounter Note",
+     "userSelected": true
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "34109-9",
+     "display": "Note"
+    }
+   ],
+   "text": "Telephone Encounter"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2025-12-05T14:34:56Z",
+  "author": [
+   {
+    "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+    "type": "Practitioner",
+    "display": "Dr. Z Rammelkamp"
+   }
+  ],
+  "authenticator": {
+   "extension": [
+    {
+     "valueDateTime": "2025-12-05T14:35:11Z",
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant"
+    }
+   ],
+   "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+   "type": "Practitioner",
+   "display": "Dr. Z Rammelkamp"
+  },
+  "custodian": {
+   "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:ihs:ce-prd"
+   },
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/eaNFtMxqA76tb5Kf9aS1QvQtx-vxrqEZ.4.VMyIEhrlE3"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   },
+   {
+    "attachment": {
+     "contentType": "text/rtf",
+     "url": "Binary/faSBZOkQ4uz-RM5KWiMYUtYSKcAzNrE1w28A4lV1xBn04"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "extension": [
+    {
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040",
+        "code": "1",
+        "display": "Physician"
+       }
+      ],
+      "text": "Physician"
+     },
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type"
+    }
+   ],
+   "encounter": [
+    {
+     "reference": "Encounter/eh.drovopO2yAcQF5cMjUJA3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "1169865957"
+     },
+     "display": "Results Follow-Up"
+    }
+   ],
+   "period": {
+    "start": "2025-12-05T14:34:56Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "e9iFv-U2GwzWaN0bDNsSPOuqx7O0M7bcg3d.xnftM2Bc3",
+  "extension": [
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "1",
+         "display": "Signer"
+        }
+       ],
+       "text": "Signer"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2025-12-05T03:47:51Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/eAMIAXa0PnbU5XAsvFYMljg3",
+       "display": "Mary S"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   }
+  ],
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879",
+    "value": "6399861344"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.72.3.15",
+    "value": "1.2.840.114350.1.13.283.2.7.2.727879_6399861344"
+   }
+  ],
+  "status": "current",
+  "docStatus": "final",
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3",
+     "display": "Progress note",
+     "userSelected": true
+    }
+   ],
+   "text": "Progress Notes"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2025-12-04T14:17:36Z",
+  "author": [
+   {
+    "reference": "Practitioner/eAMIAXa0PnbU5XAsvFYMljg3",
+    "type": "Practitioner",
+    "display": "Mary S"
+   }
+  ],
+  "authenticator": {
+   "extension": [
+    {
+     "valueDateTime": "2025-12-05T03:47:51Z",
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant"
+    }
+   ],
+   "reference": "Practitioner/eAMIAXa0PnbU5XAsvFYMljg3",
+   "type": "Practitioner",
+   "display": "Mary S"
+  },
+  "custodian": {
+   "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:ihs:ce-prd"
+   },
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/edIQXUXi-hPSpKFEXWYFPbY8xxuORHMU3cCJnKg9SCwM3"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   },
+   {
+    "attachment": {
+     "contentType": "text/rtf",
+     "url": "Binary/f-sYTH1NYzeMNzOKj5Jj4aOrJ-luO2.FihPT74fcXg5Y4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "extension": [
+    {
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040",
+        "code": "114",
+        "display": "Medical Assistant"
+       }
+      ],
+      "text": "Medical Assistant"
+     },
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type"
+    }
+   ],
+   "encounter": [
+    {
+     "reference": "Encounter/eOLbd0HJXaCYSduv-jZwPpA3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "1098684634"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2025-12-04T21:00:00Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "enXhypoNRedCrNuTOK2ptlfWIEwxSXZmb-4Ym5PIRTio3",
+  "extension": [
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "1",
+         "display": "Signer"
+        }
+       ],
+       "text": "Signer"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2025-12-05T03:47:51Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+       "display": "Dr. Z Rammelkamp"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   }
+  ],
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879",
+    "value": "6399850741"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.72.3.15",
+    "value": "1.2.840.114350.1.13.283.2.7.2.727879_6399850741"
+   }
+  ],
+  "status": "current",
+  "docStatus": "final",
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3",
+     "display": "Progress note",
+     "userSelected": true
+    }
+   ],
+   "text": "Progress Notes"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2025-12-04T14:08:37Z",
+  "author": [
+   {
+    "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+    "type": "Practitioner",
+    "display": "Dr. Z Rammelkamp"
+   }
+  ],
+  "authenticator": {
+   "extension": [
+    {
+     "valueDateTime": "2025-12-05T03:47:51Z",
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant"
+    }
+   ],
+   "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+   "type": "Practitioner",
+   "display": "Dr. Z Rammelkamp"
+  },
+  "custodian": {
+   "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:ihs:ce-prd"
+   },
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/evepu.U85pqyeQMPW2WDQswfYB3t98qVE303TsuS.V9o3"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   },
+   {
+    "attachment": {
+     "contentType": "text/rtf",
+     "url": "Binary/fkwJzYJvqc8r7vvc0qZGdQhDxrQSZNilBhkxUwBdOLK44"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "extension": [
+    {
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040",
+        "code": "1",
+        "display": "Physician"
+       }
+      ],
+      "text": "Physician"
+     },
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type"
+    }
+   ],
+   "encounter": [
+    {
+     "reference": "Encounter/eOLbd0HJXaCYSduv-jZwPpA3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "1098684634"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2025-12-04T21:00:00Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "eFCUBGTRdCWTPh5dm2gWhobIEeaeEHWN4zbmnCzHhnkg3",
+  "extension": [
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "1",
+         "display": "Signer"
+        }
+       ],
+       "text": "Signer"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2025-04-23T18:23:38Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+       "display": "Dr. Z Rammelkamp"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   }
+  ],
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879",
+    "value": "5908756424"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.72.3.15",
+    "value": "1.2.840.114350.1.13.283.2.7.2.727879_5908756424"
+   }
+  ],
+  "status": "current",
+  "docStatus": "final",
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3",
+     "display": "Progress note",
+     "userSelected": true
+    }
+   ],
+   "text": "Progress Notes"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2025-04-23T18:13:32Z",
+  "author": [
+   {
+    "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+    "type": "Practitioner",
+    "display": "Dr. Z Rammelkamp"
+   }
+  ],
+  "authenticator": {
+   "extension": [
+    {
+     "valueDateTime": "2025-04-23T18:23:38Z",
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant"
+    }
+   ],
+   "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+   "type": "Practitioner",
+   "display": "Dr. Z Rammelkamp"
+  },
+  "custodian": {
+   "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:ihs:ce-prd"
+   },
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/eEMqn9EDAhFuwEM08TRJI.rE3guvxBfj-yWeZlxCI9TU3"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   },
+   {
+    "attachment": {
+     "contentType": "text/rtf",
+     "url": "Binary/fe4A1smBcIzgICRaA6fF96iEPLPMJtyAZ5N2K476T83s4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "extension": [
+    {
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040",
+        "code": "1",
+        "display": "Physician"
+       }
+      ],
+      "text": "Physician"
+     },
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type"
+    }
+   ],
+   "encounter": [
+    {
+     "reference": "Encounter/eq7-yQQnBCUfN9o-DirVGyA3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "1127808563"
+     },
+     "display": "Telemedicine"
+    }
+   ],
+   "period": {
+    "start": "2025-04-23T18:00:00Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "eHJsjwyQWDu4B6R3lG2IJHMNYB6Au9oKJhbZ-5Kw8ipM3",
+  "extension": [
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "1",
+         "display": "Signer"
+        }
+       ],
+       "text": "Signer"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2024-11-07T15:11:02Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/eAMIAXa0PnbU5XAsvFYMljg3",
+       "display": "Mary S"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   }
+  ],
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879",
+    "value": "5522459649"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.72.3.15",
+    "value": "1.2.840.114350.1.13.283.2.7.2.727879_5522459649"
+   }
+  ],
+  "status": "current",
+  "docStatus": "final",
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3",
+     "display": "Progress note",
+     "userSelected": true
+    }
+   ],
+   "text": "Progress Notes"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2024-11-07T13:54:54Z",
+  "author": [
+   {
+    "reference": "Practitioner/eAMIAXa0PnbU5XAsvFYMljg3",
+    "type": "Practitioner",
+    "display": "Mary S"
+   }
+  ],
+  "authenticator": {
+   "extension": [
+    {
+     "valueDateTime": "2024-11-07T15:11:02Z",
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant"
+    }
+   ],
+   "reference": "Practitioner/eAMIAXa0PnbU5XAsvFYMljg3",
+   "type": "Practitioner",
+   "display": "Mary S"
+  },
+  "custodian": {
+   "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:ihs:ce-prd"
+   },
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/eu.FonAtmomi4xqED7r7Zlb7FX8GSOjl.lll0mDTLi0o3"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   },
+   {
+    "attachment": {
+     "contentType": "text/rtf",
+     "url": "Binary/f1JBiBuUW5zduRpXBNje212aRmOyHKRkfZuPRxPMcLAo4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "extension": [
+    {
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040",
+        "code": "114",
+        "display": "Medical Assistant"
+       }
+      ],
+      "text": "Medical Assistant"
+     },
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type"
+    }
+   ],
+   "encounter": [
+    {
+     "reference": "Encounter/ex77tmo2owursW0Cs0zQfZQ3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "1028744231"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2024-11-07T14:30:00Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "eXSGEIbJKXaY4rnfXcUL9A4Y.50YpUVo-VJT30OWHdfE3",
+  "extension": [
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "1",
+         "display": "Signer"
+        }
+       ],
+       "text": "Signer"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2024-11-07T15:11:03Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+       "display": "Dr. Z Rammelkamp"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   }
+  ],
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879",
+    "value": "5522457878"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.72.3.15",
+    "value": "1.2.840.114350.1.13.283.2.7.2.727879_5522457878"
+   }
+  ],
+  "status": "current",
+  "docStatus": "final",
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3",
+     "display": "Progress note",
+     "userSelected": true
+    }
+   ],
+   "text": "Progress Notes"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2024-11-07T13:56:35Z",
+  "author": [
+   {
+    "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+    "type": "Practitioner",
+    "display": "Dr. Z Rammelkamp"
+   }
+  ],
+  "authenticator": {
+   "extension": [
+    {
+     "valueDateTime": "2024-11-07T15:11:03Z",
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant"
+    }
+   ],
+   "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+   "type": "Practitioner",
+   "display": "Dr. Z Rammelkamp"
+  },
+  "custodian": {
+   "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:ihs:ce-prd"
+   },
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/eb76EuuqxtOKHMQSK3083mHDldMbwkmnnOrK0UzkCqUE3"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   },
+   {
+    "attachment": {
+     "contentType": "text/rtf",
+     "url": "Binary/f1piO7Ymahm0Y54HH.pd19MDKvO6yOtFo2uQRVYYlVTM4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "extension": [
+    {
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040",
+        "code": "1",
+        "display": "Physician"
+       }
+      ],
+      "text": "Physician"
+     },
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type"
+    }
+   ],
+   "encounter": [
+    {
+     "reference": "Encounter/ex77tmo2owursW0Cs0zQfZQ3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "1028744231"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2024-11-07T14:30:00Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "eB3j9BILAWJf-VZh4oBV1Vx5J8iJyXYTQn4.hkbe4KyE3",
+  "extension": [
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "1",
+         "display": "Signer"
+        }
+       ],
+       "text": "Signer"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2024-07-02T15:25:11Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/e9b60AolyK2yTgurIP.sXOQ3",
+       "display": "Ashley T"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   }
+  ],
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879",
+    "value": "5231725601"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.72.3.15",
+    "value": "1.2.840.114350.1.13.283.2.7.2.727879_5231725601"
+   }
+  ],
+  "status": "current",
+  "docStatus": "final",
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3",
+     "display": "Progress note",
+     "userSelected": true
+    }
+   ],
+   "text": "Progress Notes"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2024-07-02T14:50:56Z",
+  "author": [
+   {
+    "reference": "Practitioner/e9b60AolyK2yTgurIP.sXOQ3",
+    "type": "Practitioner",
+    "display": "Ashley T"
+   }
+  ],
+  "authenticator": {
+   "extension": [
+    {
+     "valueDateTime": "2024-07-02T15:25:11Z",
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant"
+    }
+   ],
+   "reference": "Practitioner/e9b60AolyK2yTgurIP.sXOQ3",
+   "type": "Practitioner",
+   "display": "Ashley T"
+  },
+  "custodian": {
+   "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:ihs:ce-prd"
+   },
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/ejSrxoX.MGvAS8TjzjZffAZStAUJyIyflCP5oTN0Ulhs3"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   },
+   {
+    "attachment": {
+     "contentType": "text/rtf",
+     "url": "Binary/fn8xFqIIQXkQujkn2Ve45x1DiI0bzl1q59yP8LJ16u.E4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "extension": [
+    {
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040",
+        "code": "114",
+        "display": "Medical Assistant"
+       }
+      ],
+      "text": "Medical Assistant"
+     },
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type"
+    }
+   ],
+   "encounter": [
+    {
+     "reference": "Encounter/eZjqlpWPCapiLvU41AUArfw3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "1076261941"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2024-07-02T14:45:00Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "ezrA8or7nL2Rt5q6Kit..rlniQBxEeZ3j-oS-vGQS9r03",
+  "extension": [
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "1",
+         "display": "Signer"
+        }
+       ],
+       "text": "Signer"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2024-07-02T15:25:11Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/e5byPpf4uFndv9PtT8cAMIg3",
+       "display": "Dr. J Everton"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   }
+  ],
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879",
+    "value": "5231266254"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.72.3.15",
+    "value": "1.2.840.114350.1.13.283.2.7.2.727879_5231266254"
+   }
+  ],
+  "status": "current",
+  "docStatus": "final",
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3",
+     "display": "Progress note",
+     "userSelected": true
+    }
+   ],
+   "text": "Progress Notes"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2024-07-02T12:19:09Z",
+  "author": [
+   {
+    "reference": "Practitioner/e5byPpf4uFndv9PtT8cAMIg3",
+    "type": "Practitioner",
+    "display": "Dr. J Everton"
+   }
+  ],
+  "authenticator": {
+   "extension": [
+    {
+     "valueDateTime": "2024-07-02T15:25:11Z",
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant"
+    }
+   ],
+   "reference": "Practitioner/e5byPpf4uFndv9PtT8cAMIg3",
+   "type": "Practitioner",
+   "display": "Dr. J Everton"
+  },
+  "custodian": {
+   "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:ihs:ce-prd"
+   },
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/egrQ1DxOtYWkRr2z6WWl7WxJqPn1ljcGNXW9SgL.q8rI3"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   },
+   {
+    "attachment": {
+     "contentType": "text/rtf",
+     "url": "Binary/frdoKdA1KXR7ufwoxtddkz9rCYAzkbgymuoO3TOdwlY04"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "extension": [
+    {
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040",
+        "code": "1",
+        "display": "Physician"
+       }
+      ],
+      "text": "Physician"
+     },
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type"
+    }
+   ],
+   "encounter": [
+    {
+     "reference": "Encounter/eZjqlpWPCapiLvU41AUArfw3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "1076261941"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2024-07-02T14:45:00Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "elkM9QcOlYrcJWMB2uLKUkxjO9d1.Dzhcu1De0zz2gNc3",
+  "extension": [
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "1",
+         "display": "Signer"
+        }
+       ],
+       "text": "Signer"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2024-06-28T13:47:49Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/e1qEsF5fbP3cl-5U5BvEVvA3",
+       "display": "Samantha N"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   }
+  ],
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879",
+    "value": "5224352133"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.72.3.15",
+    "value": "1.2.840.114350.1.13.283.2.7.2.727879_5224352133"
+   }
+  ],
+  "status": "current",
+  "docStatus": "final",
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010",
+     "code": "36",
+     "display": "Telephone Encounter"
+    },
+    {
+     "system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
+     "code": "36",
+     "display": "Telephone Encounter"
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "34748-4",
+     "display": "Telephone encounter Note",
+     "userSelected": true
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "34109-9",
+     "display": "Note"
+    }
+   ],
+   "text": "Telephone Encounter"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2024-06-28T13:37:48Z",
+  "author": [
+   {
+    "reference": "Practitioner/e1qEsF5fbP3cl-5U5BvEVvA3",
+    "type": "Practitioner",
+    "display": "Samantha N"
+   }
+  ],
+  "authenticator": {
+   "extension": [
+    {
+     "valueDateTime": "2024-06-28T13:47:49Z",
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant"
+    }
+   ],
+   "reference": "Practitioner/e1qEsF5fbP3cl-5U5BvEVvA3",
+   "type": "Practitioner",
+   "display": "Samantha N"
+  },
+  "custodian": {
+   "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:ihs:ce-prd"
+   },
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/e9U5zWPso02lUfGul.zytHySDGfLfbVv1x4yY5UgE.RY3"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   },
+   {
+    "attachment": {
+     "contentType": "text/rtf",
+     "url": "Binary/fBSverfUaj3V941I.7yJKi57rNd7jGlwusXCoQ6CCXUg4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "extension": [
+    {
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040",
+        "code": "3",
+        "display": "Registered Nurse"
+       }
+      ],
+      "text": "Registered Nurse"
+     },
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type"
+    }
+   ],
+   "encounter": [
+    {
+     "reference": "Encounter/euMtyJHscRM5kVYQ0dixBaw3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "1076257656"
+     },
+     "display": "Telephone"
+    }
+   ],
+   "period": {
+    "start": "2024-06-28T13:37:48Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "eBcH2wUblkUtXXSLdE-hUvE5-5HsqcUC3k3v..xkqYYA3",
+  "extension": [
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "1",
+         "display": "Signer"
+        }
+       ],
+       "text": "Signer"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2024-06-28T13:29:49Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/e1qEsF5fbP3cl-5U5BvEVvA3",
+       "display": "Samantha N"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   }
+  ],
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879",
+    "value": "5224295593"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.72.3.15",
+    "value": "1.2.840.114350.1.13.283.2.7.2.727879_5224295593"
+   }
+  ],
+  "status": "current",
+  "docStatus": "final",
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010",
+     "code": "36",
+     "display": "Telephone Encounter"
+    },
+    {
+     "system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
+     "code": "36",
+     "display": "Telephone Encounter"
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "34748-4",
+     "display": "Telephone encounter Note",
+     "userSelected": true
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "34109-9",
+     "display": "Note"
+    }
+   ],
+   "text": "Telephone Encounter"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2024-06-28T13:29:49Z",
+  "author": [
+   {
+    "reference": "Practitioner/e1qEsF5fbP3cl-5U5BvEVvA3",
+    "type": "Practitioner",
+    "display": "Samantha N"
+   }
+  ],
+  "authenticator": {
+   "extension": [
+    {
+     "valueDateTime": "2024-06-28T13:29:49Z",
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant"
+    }
+   ],
+   "reference": "Practitioner/e1qEsF5fbP3cl-5U5BvEVvA3",
+   "type": "Practitioner",
+   "display": "Samantha N"
+  },
+  "custodian": {
+   "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:ihs:ce-prd"
+   },
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/enLbHogk6qobK1KOX6w3C-LvNjSV3wW17CJlD9i-yvwI3"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   },
+   {
+    "attachment": {
+     "contentType": "text/rtf",
+     "url": "Binary/fBwCa24cCgNyOpaF-LIg-PxO3Y3BuNGWiqN8RJATw8kk4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "extension": [
+    {
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040",
+        "code": "3",
+        "display": "Registered Nurse"
+       }
+      ],
+      "text": "Registered Nurse"
+     },
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type"
+    }
+   ],
+   "encounter": [
+    {
+     "reference": "Encounter/euMtyJHscRM5kVYQ0dixBaw3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "1076257656"
+     },
+     "display": "Telephone"
+    }
+   ],
+   "period": {
+    "start": "2024-06-28T13:29:49Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "eC-BhgW6KbRuUAM8QWfg0zhAQzL-Fq4L8B9ghrLHRugs3",
+  "extension": [
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "1",
+         "display": "Signer"
+        }
+       ],
+       "text": "Signer"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2023-09-28T15:18:41Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/eAMIAXa0PnbU5XAsvFYMljg3",
+       "display": "Mary S"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   }
+  ],
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879",
+    "value": "4662399454"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.72.3.15",
+    "value": "1.2.840.114350.1.13.283.2.7.2.727879_4662399454"
+   }
+  ],
+  "status": "current",
+  "docStatus": "final",
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3",
+     "display": "Progress note",
+     "userSelected": true
+    }
+   ],
+   "text": "Progress Notes"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2023-09-28T14:46:30Z",
+  "author": [
+   {
+    "reference": "Practitioner/eAMIAXa0PnbU5XAsvFYMljg3",
+    "type": "Practitioner",
+    "display": "Mary S"
+   }
+  ],
+  "authenticator": {
+   "extension": [
+    {
+     "valueDateTime": "2023-09-28T15:18:41Z",
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant"
+    }
+   ],
+   "reference": "Practitioner/eAMIAXa0PnbU5XAsvFYMljg3",
+   "type": "Practitioner",
+   "display": "Mary S"
+  },
+  "custodian": {
+   "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:ihs:ce-prd"
+   },
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/eUs2VFmiVeL0sV8OjmBns9XsxHO7vr8a7AKDHPlatyqU3"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   },
+   {
+    "attachment": {
+     "contentType": "text/rtf",
+     "url": "Binary/fs9AOJcR5L8qwnb5PwTy2md9xboPUg0LwLHivfeSFc6w4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "extension": [
+    {
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040",
+        "code": "114",
+        "display": "Medical Assistant"
+       }
+      ],
+      "text": "Medical Assistant"
+     },
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type"
+    }
+   ],
+   "encounter": [
+    {
+     "reference": "Encounter/e1yIAPla.j8qkqnU275BH4w3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "991225117"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2023-09-28T14:30:00Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "eZMdk-jh1HwfK5Mcyp0vqRj5URxxbHOCEihJD1wTcAQE3",
+  "extension": [
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "1",
+         "display": "Signer"
+        }
+       ],
+       "text": "Signer"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2023-09-28T15:18:41Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/eAMIAXa0PnbU5XAsvFYMljg3",
+       "display": "Mary S"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   }
+  ],
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879",
+    "value": "4662030807"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.72.3.15",
+    "value": "1.2.840.114350.1.13.283.2.7.2.727879_4662030807"
+   }
+  ],
+  "status": "current",
+  "docStatus": "final",
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3",
+     "display": "Progress note",
+     "userSelected": true
+    }
+   ],
+   "text": "Progress Notes"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2023-09-28T13:00:20Z",
+  "author": [
+   {
+    "reference": "Practitioner/eAMIAXa0PnbU5XAsvFYMljg3",
+    "type": "Practitioner",
+    "display": "Mary S"
+   }
+  ],
+  "authenticator": {
+   "extension": [
+    {
+     "valueDateTime": "2023-09-28T15:18:41Z",
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant"
+    }
+   ],
+   "reference": "Practitioner/eAMIAXa0PnbU5XAsvFYMljg3",
+   "type": "Practitioner",
+   "display": "Mary S"
+  },
+  "custodian": {
+   "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:ihs:ce-prd"
+   },
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/eY.TvFKFvPnFkJKEJJy6BtEkB8NJIoeS1Gfpy1hTfR5o3"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   },
+   {
+    "attachment": {
+     "contentType": "text/rtf",
+     "url": "Binary/fWurXJHDm8i5pogGEs7cSIC3Kob9qldGCZZf3lMMASbA4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "extension": [
+    {
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040",
+        "code": "114",
+        "display": "Medical Assistant"
+       }
+      ],
+      "text": "Medical Assistant"
+     },
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type"
+    }
+   ],
+   "encounter": [
+    {
+     "reference": "Encounter/e1yIAPla.j8qkqnU275BH4w3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "991225117"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2023-09-28T14:30:00Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "eNsApxAuBD6MmUE9rtpwVJ-DaTtcJDNuEGPZkZGx9osc3",
+  "extension": [
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "1",
+         "display": "Signer"
+        }
+       ],
+       "text": "Signer"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2023-09-28T15:18:40Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+       "display": "Dr. Z Rammelkamp"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   }
+  ],
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879",
+    "value": "4662006870"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.72.3.15",
+    "value": "1.2.840.114350.1.13.283.2.7.2.727879_4662006870"
+   }
+  ],
+  "status": "current",
+  "docStatus": "final",
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3",
+     "display": "Progress note",
+     "userSelected": true
+    }
+   ],
+   "text": "Progress Notes"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2023-09-28T12:49:48Z",
+  "author": [
+   {
+    "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+    "type": "Practitioner",
+    "display": "Dr. Z Rammelkamp"
+   }
+  ],
+  "authenticator": {
+   "extension": [
+    {
+     "valueDateTime": "2023-09-28T15:18:40Z",
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant"
+    }
+   ],
+   "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+   "type": "Practitioner",
+   "display": "Dr. Z Rammelkamp"
+  },
+  "custodian": {
+   "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:ihs:ce-prd"
+   },
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/el5KvD6ZWqKHrngEph2xJcsfBu5NuGRzifkCjqtlU8Is3"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   },
+   {
+    "attachment": {
+     "contentType": "text/rtf",
+     "url": "Binary/fzsSTHus16cScAytrOlWXUhE-56IjlRqq2ccJSWrh87o4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "extension": [
+    {
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040",
+        "code": "1",
+        "display": "Physician"
+       }
+      ],
+      "text": "Physician"
+     },
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type"
+    }
+   ],
+   "encounter": [
+    {
+     "reference": "Encounter/e1yIAPla.j8qkqnU275BH4w3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "991225117"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2023-09-28T14:30:00Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "ehoXGsYof8Y-C8Zt6S35tdgFFMomarQ0VADXpyrRFHBQ3",
+  "extension": [
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "1",
+         "display": "Signer"
+        }
+       ],
+       "text": "Signer"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2023-03-02T20:58:34Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+       "display": "Dr. Z Rammelkamp"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   },
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "4",
+         "display": "Addendum/Transcription Authenticator"
+        }
+       ],
+       "text": "Addendum/Transcription Authenticator"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2023-03-02T21:00:10Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+       "display": "Dr. Z Rammelkamp"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   }
+  ],
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879",
+    "value": "4216859306"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.72.3.15",
+    "value": "1.2.840.114350.1.13.283.2.7.2.727879_4216859306"
+   }
+  ],
+  "status": "current",
+  "docStatus": "amended",
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010",
+     "code": "37",
+     "display": "Patient Instructions"
+    },
+    {
+     "system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
+     "code": "37",
+     "display": "Patient Instructions"
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "69730-0",
+     "display": "Instructions",
+     "userSelected": true
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "74213-0",
+     "display": "Discharge instructions"
+    }
+   ],
+   "text": "Patient Instructions"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2023-03-02T20:58:34Z",
+  "author": [
+   {
+    "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+    "type": "Practitioner",
+    "display": "Dr. Z Rammelkamp"
+   }
+  ],
+  "authenticator": {
+   "extension": [
+    {
+     "valueDateTime": "2023-03-02T21:00:10Z",
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant"
+    }
+   ],
+   "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+   "type": "Practitioner",
+   "display": "Dr. Z Rammelkamp"
+  },
+  "custodian": {
+   "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:ihs:ce-prd"
+   },
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/e42XiXxeaQL1z9pG1tam76hkbq7JLK9UaSV4O1pK055I3"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   },
+   {
+    "attachment": {
+     "contentType": "text/rtf",
+     "url": "Binary/fmzJZLBXBA7GRujyFQ0e.9Hfa-skPc-.2CspJXHtP8og4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "extension": [
+    {
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040",
+        "code": "1",
+        "display": "Physician"
+       }
+      ],
+      "text": "Physician"
+     },
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type"
+    }
+   ],
+   "encounter": [
+    {
+     "reference": "Encounter/eMwIgHPJe9mGD4QJWjwpyng3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "958148810"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2023-03-02T20:45:00Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "eS3jT10wEgiDDfKnZNZJz.5aVYx3yxZsBTXexizWGxOk3",
+  "extension": [
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "1",
+         "display": "Signer"
+        }
+       ],
+       "text": "Signer"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2023-03-02T21:47:26Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/eAMIAXa0PnbU5XAsvFYMljg3",
+       "display": "Mary S"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   }
+  ],
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879",
+    "value": "4215509941"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.72.3.15",
+    "value": "1.2.840.114350.1.13.283.2.7.2.727879_4215509941"
+   }
+  ],
+  "status": "current",
+  "docStatus": "final",
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3",
+     "display": "Progress note",
+     "userSelected": true
+    }
+   ],
+   "text": "Progress Notes"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2023-03-02T14:15:54Z",
+  "author": [
+   {
+    "reference": "Practitioner/eAMIAXa0PnbU5XAsvFYMljg3",
+    "type": "Practitioner",
+    "display": "Mary S"
+   }
+  ],
+  "authenticator": {
+   "extension": [
+    {
+     "valueDateTime": "2023-03-02T21:47:26Z",
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant"
+    }
+   ],
+   "reference": "Practitioner/eAMIAXa0PnbU5XAsvFYMljg3",
+   "type": "Practitioner",
+   "display": "Mary S"
+  },
+  "custodian": {
+   "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:ihs:ce-prd"
+   },
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/ehkJVRNO.87znGaFjhM212te6OosNEZ0luyWLXBukd6U3"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   },
+   {
+    "attachment": {
+     "contentType": "text/rtf",
+     "url": "Binary/fet9fYaQeCBxiSdlzhQTYqYWoavE9vLy3VdsxPF7fnr44"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "extension": [
+    {
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040",
+        "code": "114",
+        "display": "Medical Assistant"
+       }
+      ],
+      "text": "Medical Assistant"
+     },
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type"
+    }
+   ],
+   "encounter": [
+    {
+     "reference": "Encounter/eMwIgHPJe9mGD4QJWjwpyng3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "958148810"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2023-03-02T20:45:00Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "eMWenUVu9z-oCxDREHWnwjGhBKvuhvtdbopWePv7A03I3",
+  "extension": [
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "1",
+         "display": "Signer"
+        }
+       ],
+       "text": "Signer"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2023-03-02T21:47:26Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+       "display": "Dr. Z Rammelkamp"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   }
+  ],
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879",
+    "value": "4215475900"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.72.3.15",
+    "value": "1.2.840.114350.1.13.283.2.7.2.727879_4215475900"
+   }
+  ],
+  "status": "current",
+  "docStatus": "final",
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3",
+     "display": "Progress note",
+     "userSelected": true
+    }
+   ],
+   "text": "Progress Notes"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2023-03-02T14:02:33Z",
+  "author": [
+   {
+    "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+    "type": "Practitioner",
+    "display": "Dr. Z Rammelkamp"
+   }
+  ],
+  "authenticator": {
+   "extension": [
+    {
+     "valueDateTime": "2023-03-02T21:47:26Z",
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant"
+    }
+   ],
+   "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+   "type": "Practitioner",
+   "display": "Dr. Z Rammelkamp"
+  },
+  "custodian": {
+   "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:ihs:ce-prd"
+   },
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/elQAFkQt3O.oWI0tGcDHHOWldE2-ZTSnFyd9Co84.lmo3"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   },
+   {
+    "attachment": {
+     "contentType": "text/rtf",
+     "url": "Binary/fXZ6g7DEZ3exkl3mx2p29m5bsdYack.cWOipaC0FQwIw4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "extension": [
+    {
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040",
+        "code": "1",
+        "display": "Physician"
+       }
+      ],
+      "text": "Physician"
+     },
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type"
+    }
+   ],
+   "encounter": [
+    {
+     "reference": "Encounter/eMwIgHPJe9mGD4QJWjwpyng3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "958148810"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2023-03-02T20:45:00Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "eb6IYlcvkerbdLpOUD.JotiU7L4zmN7TAVBxQ788uf983",
+  "extension": [
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "1",
+         "display": "Signer"
+        }
+       ],
+       "text": "Signer"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2022-12-05T18:14:13Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/eLCYrsF4VSpeEe3oN-SZwcg3",
+       "display": "Patricia M"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   }
+  ],
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879",
+    "value": "4033189439"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.72.3.15",
+    "value": "1.2.840.114350.1.13.283.2.7.2.727879_4033189439"
+   }
+  ],
+  "status": "current",
+  "docStatus": "final",
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3",
+     "display": "Progress note",
+     "userSelected": true
+    }
+   ],
+   "text": "Progress Notes"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2022-12-05T18:14:01Z",
+  "author": [
+   {
+    "reference": "Practitioner/eLCYrsF4VSpeEe3oN-SZwcg3",
+    "type": "Practitioner",
+    "display": "Patricia M"
+   }
+  ],
+  "authenticator": {
+   "extension": [
+    {
+     "valueDateTime": "2022-12-05T18:14:13Z",
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant"
+    }
+   ],
+   "reference": "Practitioner/eLCYrsF4VSpeEe3oN-SZwcg3",
+   "type": "Practitioner",
+   "display": "Patricia M"
+  },
+  "custodian": {
+   "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:ihs:ce-prd"
+   },
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/e7lY-6-78OHm0YDOgPGDlEyrpH3jBOy9qFIRuqJpfvMI3"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   },
+   {
+    "attachment": {
+     "contentType": "text/rtf",
+     "url": "Binary/fDtdXl9Wm3RLMrZa7hVpN8bWPS2aLogSH05qnzSGNjJE4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "extension": [
+    {
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040",
+        "code": "2507",
+        "display": "Clerk"
+       }
+      ],
+      "text": "Clerk"
+     },
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type"
+    }
+   ],
+   "encounter": [
+    {
+     "reference": "Encounter/eaczqSTIxEFgrkvi.zMgWQQ3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "974614965"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2022-12-01T15:30:00Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "esN6JKKYUgXD-tBE8ktcwyrZlx07nUenB9UjidvDhFdg3",
+  "extension": [
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "1",
+         "display": "Signer"
+        }
+       ],
+       "text": "Signer"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2022-12-01T16:17:32Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+       "display": "Dr. Z Rammelkamp"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   }
+  ],
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879",
+    "value": "4024965334"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.72.3.15",
+    "value": "1.2.840.114350.1.13.283.2.7.2.727879_4024965334"
+   }
+  ],
+  "status": "current",
+  "docStatus": "final",
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010",
+     "code": "37",
+     "display": "Patient Instructions"
+    },
+    {
+     "system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
+     "code": "37",
+     "display": "Patient Instructions"
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "69730-0",
+     "display": "Instructions",
+     "userSelected": true
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "74213-0",
+     "display": "Discharge instructions"
+    }
+   ],
+   "text": "Patient Instructions"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2022-12-01T16:17:32Z",
+  "author": [
+   {
+    "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+    "type": "Practitioner",
+    "display": "Dr. Z Rammelkamp"
+   }
+  ],
+  "authenticator": {
+   "extension": [
+    {
+     "valueDateTime": "2022-12-01T16:17:32Z",
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant"
+    }
+   ],
+   "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+   "type": "Practitioner",
+   "display": "Dr. Z Rammelkamp"
+  },
+  "custodian": {
+   "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:ihs:ce-prd"
+   },
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/e.yN4jXu67lUltPSYS3jaeiLhJrN2w9lFvQvziflJnJo3"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   },
+   {
+    "attachment": {
+     "contentType": "text/rtf",
+     "url": "Binary/fO2s6H6.17VEuWbSASi5ZWRarVy.nE5yqPu3JXwGpEG84"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "extension": [
+    {
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040",
+        "code": "1",
+        "display": "Physician"
+       }
+      ],
+      "text": "Physician"
+     },
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type"
+    }
+   ],
+   "encounter": [
+    {
+     "reference": "Encounter/eaczqSTIxEFgrkvi.zMgWQQ3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "974614965"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2022-12-01T15:30:00Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "ePZD3PbH57bUSSrqKmYZl.jJfETBsWVpYb9fAtWjpfBk3",
+  "extension": [
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "1",
+         "display": "Signer"
+        }
+       ],
+       "text": "Signer"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2022-12-02T02:06:40Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/eAMIAXa0PnbU5XAsvFYMljg3",
+       "display": "Mary S"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   }
+  ],
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879",
+    "value": "4024492394"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.72.3.15",
+    "value": "1.2.840.114350.1.13.283.2.7.2.727879_4024492394"
+   }
+  ],
+  "status": "current",
+  "docStatus": "final",
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3",
+     "display": "Progress note",
+     "userSelected": true
+    }
+   ],
+   "text": "Progress Notes"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2022-12-01T14:14:01Z",
+  "author": [
+   {
+    "reference": "Practitioner/eAMIAXa0PnbU5XAsvFYMljg3",
+    "type": "Practitioner",
+    "display": "Mary S"
+   }
+  ],
+  "authenticator": {
+   "extension": [
+    {
+     "valueDateTime": "2022-12-02T02:06:40Z",
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant"
+    }
+   ],
+   "reference": "Practitioner/eAMIAXa0PnbU5XAsvFYMljg3",
+   "type": "Practitioner",
+   "display": "Mary S"
+  },
+  "custodian": {
+   "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:ihs:ce-prd"
+   },
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/e4EXfZMvtXapv24aBULDAeKGvb7r4kBn66k36dpSaUQc3"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   },
+   {
+    "attachment": {
+     "contentType": "text/rtf",
+     "url": "Binary/fxlC8E.0DxFfF0H6c-sTKasFtywBdEJjXCYgTdQSVzJc4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "extension": [
+    {
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040",
+        "code": "114",
+        "display": "Medical Assistant"
+       }
+      ],
+      "text": "Medical Assistant"
+     },
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type"
+    }
+   ],
+   "encounter": [
+    {
+     "reference": "Encounter/eaczqSTIxEFgrkvi.zMgWQQ3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "974614965"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2022-12-01T15:30:00Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "eO13ccD0mdJQ6CFGZ6BLwILthpM-al-9w0un9Pd9z7sY3",
+  "extension": [
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "1",
+         "display": "Signer"
+        }
+       ],
+       "text": "Signer"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2022-12-02T02:06:40Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+       "display": "Dr. Z Rammelkamp"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   }
+  ],
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879",
+    "value": "4024447284"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.72.3.15",
+    "value": "1.2.840.114350.1.13.283.2.7.2.727879_4024447284"
+   }
+  ],
+  "status": "current",
+  "docStatus": "final",
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3",
+     "display": "Progress note",
+     "userSelected": true
+    }
+   ],
+   "text": "Progress Notes"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2022-12-01T13:56:58Z",
+  "author": [
+   {
+    "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+    "type": "Practitioner",
+    "display": "Dr. Z Rammelkamp"
+   }
+  ],
+  "authenticator": {
+   "extension": [
+    {
+     "valueDateTime": "2022-12-02T02:06:40Z",
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant"
+    }
+   ],
+   "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+   "type": "Practitioner",
+   "display": "Dr. Z Rammelkamp"
+  },
+  "custodian": {
+   "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:ihs:ce-prd"
+   },
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/emV7jI93CUMoDtE0DSBUwn2goTeBsnyrW0rjKTgBM68I3"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   },
+   {
+    "attachment": {
+     "contentType": "text/rtf",
+     "url": "Binary/fvJ.H1POyEpD7h0EpOHzEWmWGKv1TFqAut6NkhOM-h3w4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "extension": [
+    {
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040",
+        "code": "1",
+        "display": "Physician"
+       }
+      ],
+      "text": "Physician"
+     },
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type"
+    }
+   ],
+   "encounter": [
+    {
+     "reference": "Encounter/eaczqSTIxEFgrkvi.zMgWQQ3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "974614965"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2022-12-01T15:30:00Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "e8Z8hSHsoM7B-9gXsYZicSzByzvocZm9TAYHKQfXkAXw3",
+  "extension": [
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "1",
+         "display": "Signer"
+        }
+       ],
+       "text": "Signer"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2022-08-29T19:07:36Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+       "display": "Dr. Z Rammelkamp"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   },
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "4",
+         "display": "Addendum/Transcription Authenticator"
+        }
+       ],
+       "text": "Addendum/Transcription Authenticator"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2022-08-29T19:21:34Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+       "display": "Dr. Z Rammelkamp"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   }
+  ],
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879",
+    "value": "3820384431"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.72.3.15",
+    "value": "1.2.840.114350.1.13.283.2.7.2.727879_3820384431"
+   }
+  ],
+  "status": "current",
+  "docStatus": "amended",
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010",
+     "code": "37",
+     "display": "Patient Instructions"
+    },
+    {
+     "system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
+     "code": "37",
+     "display": "Patient Instructions"
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "69730-0",
+     "display": "Instructions",
+     "userSelected": true
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "74213-0",
+     "display": "Discharge instructions"
+    }
+   ],
+   "text": "Patient Instructions"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2022-08-29T19:07:36Z",
+  "author": [
+   {
+    "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+    "type": "Practitioner",
+    "display": "Dr. Z Rammelkamp"
+   }
+  ],
+  "authenticator": {
+   "extension": [
+    {
+     "valueDateTime": "2022-08-29T19:21:34Z",
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant"
+    }
+   ],
+   "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+   "type": "Practitioner",
+   "display": "Dr. Z Rammelkamp"
+  },
+  "custodian": {
+   "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:ihs:ce-prd"
+   },
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/eP4X8X1Nx536E8k4Y55Jb6gG495nvMhPEQ3FSxINcLqo3"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   },
+   {
+    "attachment": {
+     "contentType": "text/rtf",
+     "url": "Binary/flyjSFGDb7Goe9atFjfRDWY5ZIFVwit3gjmNFGGpGZeI4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "extension": [
+    {
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040",
+        "code": "1",
+        "display": "Physician"
+       }
+      ],
+      "text": "Physician"
+     },
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type"
+    }
+   ],
+   "encounter": [
+    {
+     "reference": "Encounter/e9Yth5IquIww-psZE1ZqiPQ3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "948004323"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2022-08-29T18:30:00Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "eTm1JsdEKkRtuu7eDqw7u.AjFrCH8qB-jxnxnGeTjHbw3",
+  "extension": [
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "1",
+         "display": "Signer"
+        }
+       ],
+       "text": "Signer"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2022-08-30T04:58:05Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/eAMIAXa0PnbU5XAsvFYMljg3",
+       "display": "Mary S"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   }
+  ],
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879",
+    "value": "3819161963"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.72.3.15",
+    "value": "1.2.840.114350.1.13.283.2.7.2.727879_3819161963"
+   }
+  ],
+  "status": "current",
+  "docStatus": "final",
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3",
+     "display": "Progress note",
+     "userSelected": true
+    }
+   ],
+   "text": "Progress Notes"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2022-08-29T13:51:50Z",
+  "author": [
+   {
+    "reference": "Practitioner/eAMIAXa0PnbU5XAsvFYMljg3",
+    "type": "Practitioner",
+    "display": "Mary S"
+   }
+  ],
+  "authenticator": {
+   "extension": [
+    {
+     "valueDateTime": "2022-08-30T04:58:05Z",
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant"
+    }
+   ],
+   "reference": "Practitioner/eAMIAXa0PnbU5XAsvFYMljg3",
+   "type": "Practitioner",
+   "display": "Mary S"
+  },
+  "custodian": {
+   "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:ihs:ce-prd"
+   },
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/eXxdBhzKxAbs.BfkfwC3Oy3oLRq8n9btWxHuY4xrpJEo3"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   },
+   {
+    "attachment": {
+     "contentType": "text/rtf",
+     "url": "Binary/f5vpKkqxMRCW-cN8dbZT5NtxkPbUx1hw6jTHm.0lKNZg4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "extension": [
+    {
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040",
+        "code": "114",
+        "display": "Medical Assistant"
+       }
+      ],
+      "text": "Medical Assistant"
+     },
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type"
+    }
+   ],
+   "encounter": [
+    {
+     "reference": "Encounter/e9Yth5IquIww-psZE1ZqiPQ3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "948004323"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2022-08-29T18:30:00Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "eqp4TJ1sQ-pjAtIYarjeIHDzQ7T.HAC3jF1OPg15gnxU3",
+  "extension": [
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "1",
+         "display": "Signer"
+        }
+       ],
+       "text": "Signer"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2022-08-30T04:58:05Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+       "display": "Dr. Z Rammelkamp"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   }
+  ],
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879",
+    "value": "3819029543"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.72.3.15",
+    "value": "1.2.840.114350.1.13.283.2.7.2.727879_3819029543"
+   }
+  ],
+  "status": "current",
+  "docStatus": "final",
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3",
+     "display": "Progress note",
+     "userSelected": true
+    }
+   ],
+   "text": "Progress Notes"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2022-08-29T13:13:55Z",
+  "author": [
+   {
+    "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+    "type": "Practitioner",
+    "display": "Dr. Z Rammelkamp"
+   }
+  ],
+  "authenticator": {
+   "extension": [
+    {
+     "valueDateTime": "2022-08-30T04:58:05Z",
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant"
+    }
+   ],
+   "reference": "Practitioner/er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+   "type": "Practitioner",
+   "display": "Dr. Z Rammelkamp"
+  },
+  "custodian": {
+   "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:ihs:ce-prd"
+   },
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/eeZ7UxH25T.tVA5noLG-CGnyKqYHaMjFPV0UrgXhuYEI3"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   },
+   {
+    "attachment": {
+     "contentType": "text/rtf",
+     "url": "Binary/fuRKEL8CoI1gZzjy9jOnAFegq1Vp2PX5t.SGJ2wQwNhM4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "extension": [
+    {
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040",
+        "code": "1",
+        "display": "Physician"
+       }
+      ],
+      "text": "Physician"
+     },
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type"
+    }
+   ],
+   "encounter": [
+    {
+     "reference": "Encounter/e9Yth5IquIww-psZE1ZqiPQ3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "948004323"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2022-08-29T18:30:00Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "ePXxYEtleu8w7RSyzKuPv87EBKU6cRH5iI4QyUgJYI443",
+  "extension": [
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "1",
+         "display": "Signer"
+        }
+       ],
+       "text": "Signer"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2022-03-22T23:13:23Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/e.eou8uzbCulyjNdAJ3LSCg3",
+       "display": "Aaron G"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   },
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "4",
+         "display": "Addendum/Transcription Authenticator"
+        }
+       ],
+       "text": "Addendum/Transcription Authenticator"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2022-04-21T19:25:38Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/e.eou8uzbCulyjNdAJ3LSCg3",
+       "display": "Aaron G"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   }
+  ],
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879",
+    "value": "3495270844"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.72.3.15",
+    "value": "1.2.840.114350.1.13.283.2.7.2.727879_3495270844"
+   }
+  ],
+  "status": "current",
+  "docStatus": "amended",
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3",
+     "display": "Progress note",
+     "userSelected": true
+    }
+   ],
+   "text": "Progress Notes"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2022-03-22T13:21:23Z",
+  "author": [
+   {
+    "reference": "Practitioner/e.eou8uzbCulyjNdAJ3LSCg3",
+    "type": "Practitioner",
+    "display": "Aaron G"
+   }
+  ],
+  "authenticator": {
+   "extension": [
+    {
+     "valueDateTime": "2022-04-21T19:25:38Z",
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant"
+    }
+   ],
+   "reference": "Practitioner/e.eou8uzbCulyjNdAJ3LSCg3",
+   "type": "Practitioner",
+   "display": "Aaron G"
+  },
+  "custodian": {
+   "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:ihs:ce-prd"
+   },
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/eFLr-O3gx1e.e5nF8-E9AphcP-U7XHQjvg-NhN7Ik1o83"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   },
+   {
+    "attachment": {
+     "contentType": "text/rtf",
+     "url": "Binary/f728rb0D2Y2fhDIvoWcvj6L6e27VhZU7-JGhydn5JmRE4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "extension": [
+    {
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040",
+        "code": "100",
+        "display": "Occupational Therapist"
+       }
+      ],
+      "text": "Occupational Therapist"
+     },
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type"
+    }
+   ],
+   "encounter": [
+    {
+     "reference": "Encounter/eXbKPEi0Qs6PRTp3JmAg1XQ3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "922943112"
+     },
+     "display": "Hospital Outpatient Visit"
+    }
+   ],
+   "period": {
+    "start": "2022-03-22T22:00:00Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "eiWqvXETQZszUJytgQYKP-zYeLy3F3OqtOl1Q7WVVshw3",
+  "extension": [
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "1",
+         "display": "Signer"
+        }
+       ],
+       "text": "Signer"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2022-03-11T23:53:10Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/e.eou8uzbCulyjNdAJ3LSCg3",
+       "display": "Aaron G"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   }
+  ],
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879",
+    "value": "3476135346"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.72.3.15",
+    "value": "1.2.840.114350.1.13.283.2.7.2.727879_3476135346"
+   }
+  ],
+  "status": "current",
+  "docStatus": "final",
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010",
+     "code": "2",
+     "display": "Consults"
+    },
+    {
+     "system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
+     "code": "2",
+     "display": "Consults"
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "11488-4",
+     "display": "Consult note",
+     "userSelected": true
+    }
+   ],
+   "text": "Consults"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2022-03-11T14:12:03Z",
+  "author": [
+   {
+    "reference": "Practitioner/e.eou8uzbCulyjNdAJ3LSCg3",
+    "type": "Practitioner",
+    "display": "Aaron G"
+   }
+  ],
+  "authenticator": {
+   "extension": [
+    {
+     "valueDateTime": "2022-03-11T23:53:10Z",
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant"
+    }
+   ],
+   "reference": "Practitioner/e.eou8uzbCulyjNdAJ3LSCg3",
+   "type": "Practitioner",
+   "display": "Aaron G"
+  },
+  "custodian": {
+   "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:ihs:ce-prd"
+   },
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/eF9.dUSqFEDhBlfk5cPnfOBsngNiVYSYxO3OIM31oE-Q3"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   },
+   {
+    "attachment": {
+     "contentType": "text/rtf",
+     "url": "Binary/fRktMq2c-NVkrSvJG1EhIIZfqz7sP--w3OjhiZ.wwTsg4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "extension": [
+    {
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040",
+        "code": "100",
+        "display": "Occupational Therapist"
+       }
+      ],
+      "text": "Occupational Therapist"
+     },
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type"
+    }
+   ],
+   "encounter": [
+    {
+     "reference": "Encounter/ec9vlX7WhP16uHS1z8ahJ6w3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "922942674"
+     },
+     "display": "Hospital Outpatient Visit"
+    }
+   ],
+   "period": {
+    "start": "2022-03-11T20:50:00Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "e1ra2PPmvSkzmFuEpqHY3bOzqhyb6YziUC2-QYYD1vQM3",
+  "extension": [
+   {
+    "extension": [
+     {
+      "valueCodeableConcept": {
+       "coding": [
+        {
+         "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072",
+         "code": "1",
+         "display": "Signer"
+        }
+       ],
+       "text": "Signer"
+      },
+      "url": "mode"
+     },
+     {
+      "valueDateTime": "2020-01-09T19:02:16Z",
+      "url": "time"
+     },
+     {
+      "valueReference": {
+       "reference": "Practitioner/e4s89AmNl2QODx7-6WDbkeuF6FvLbm-Q.xBGKIn03gDI3",
+       "display": "Dr. P Dhillon"
+      },
+      "url": "party"
+     }
+    ],
+    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester"
+   }
+  ],
+  "identifier": [
+   {
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879",
+    "value": "1998212111"
+   },
+   {
+    "system": "urn:oid:1.2.840.114350.1.72.3.15",
+    "value": "1.2.840.114350.1.13.283.2.7.2.727879_1998212111"
+   }
+  ],
+  "status": "current",
+  "docStatus": "final",
+  "type": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
+     "code": "1",
+     "display": "Progress Notes"
+    },
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3",
+     "display": "Progress note",
+     "userSelected": true
+    }
+   ],
+   "text": "Progress Notes"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2020-01-09T18:56:44Z",
+  "author": [
+   {
+    "reference": "Practitioner/e4s89AmNl2QODx7-6WDbkeuF6FvLbm-Q.xBGKIn03gDI3",
+    "type": "Practitioner",
+    "display": "Dr. P Dhillon"
+   }
+  ],
+  "authenticator": {
+   "extension": [
+    {
+     "valueDateTime": "2020-01-09T19:02:16Z",
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant"
+    }
+   ],
+   "reference": "Practitioner/e4s89AmNl2QODx7-6WDbkeuF6FvLbm-Q.xBGKIn03gDI3",
+   "type": "Practitioner",
+   "display": "Dr. P Dhillon"
+  },
+  "custodian": {
+   "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:ihs:ce-prd"
+   },
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/eK77ryRK-gFMRaeHqxSMKi8G7AzLXRLQz1Oq0HCQ5zP03"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   },
+   {
+    "attachment": {
+     "contentType": "text/rtf",
+     "url": "Binary/fHqVvhCDrm9AHLxXmMbUpDKuo6HcoFZPHWD-lqL4sHZI4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "extension": [
+    {
+     "valueCodeableConcept": {
+      "coding": [
+       {
+        "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040",
+        "code": "1",
+        "display": "Physician"
+       }
+      ],
+      "text": "Physician"
+     },
+     "url": "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type"
+    }
+   ],
+   "encounter": [
+    {
+     "reference": "Encounter/e7jVo8vEAxcJ36UbHZzVojw3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "799951565"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2020-01-09T18:45:00Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "e5zb4Pvc-fQCTyzDb8kdx0cYMddGPs6.i1NlBanshB0E3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+    "value": "439060613"
+   }
+  ],
+  "status": "current",
+  "type": {
+   "coding": [
+    {
+     "system": "http://loinc.org",
+     "code": "18748-4",
+     "display": "Diagnostic imaging study"
+    }
+   ],
+   "text": "Diagnostic imaging study"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2020-07-29T15:30:00Z",
+  "custodian": {
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/eLz-xP9PHWlQcHREfErqjmubbxT.WI5hj4IGTQPVvCBo3"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "encounter": [
+    {
+     "reference": "Encounter/ek3hekULAwEXPvhfbYIc2Gg3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "832464108"
+     },
+     "display": "Abstract"
+    }
+   ],
+   "period": {
+    "start": "2020-07-29T15:30:00Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "eeNKlkhQUbQDeh885YPXykURCceoNMaF0TbTY9UfKmeI3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+    "value": "1025926289"
+   }
+  ],
+  "status": "current",
+  "type": {
+   "coding": [
+    {
+     "system": "http://loinc.org",
+     "code": "18748-4",
+     "display": "Diagnostic imaging study"
+    }
+   ],
+   "text": "Diagnostic imaging study"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2024-07-02T15:33:25Z",
+  "author": [
+   {
+    "reference": "Practitioner/eu95HjB4reTHBt48QFU5kuQ3",
+    "type": "Practitioner",
+    "display": "Dr. M Shore"
+   }
+  ],
+  "custodian": {
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/ecFIzBdo7mZ5wO6pD21Eg3oDUo8VPJ-upHp3sAZUUVWk3"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "encounter": [
+    {
+     "reference": "Encounter/eO-UViuC0CDbUmv7-iod.lA3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "1076676013"
+     },
+     "display": "Clinical Support"
+    }
+   ],
+   "period": {
+    "start": "2024-07-02T15:33:25Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "eeNKlkhQUbQDeh885YPXykdiJLlt82E1yhb2FBSB04Lw3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+    "value": "1025926289"
+   }
+  ],
+  "status": "current",
+  "type": {
+   "coding": [
+    {
+     "system": "http://loinc.org",
+     "code": "18748-4",
+     "display": "Diagnostic imaging study"
+    }
+   ],
+   "text": "Diagnostic imaging study"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code": "clinical-note",
+      "display": "Clinical Note"
+     }
+    ],
+    "text": "Clinical Note"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2024-07-02T15:33:25Z",
+  "author": [
+   {
+    "reference": "Practitioner/eu95HjB4reTHBt48QFU5kuQ3",
+    "type": "Practitioner",
+    "display": "Dr. M Shore"
+   }
+  ],
+  "custodian": {
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "text/html",
+     "url": "Binary/ecFIzBdo7mZ5wO6pD21Eg3pxAdOg4dbOV15WZBnkU-Kk3"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+     "display": "mimeType Sufficient"
+    }
+   }
+  ],
+  "context": {
+   "encounter": [
+    {
+     "reference": "Encounter/eO-UViuC0CDbUmv7-iod.lA3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "1076676013"
+     },
+     "display": "Clinical Support"
+    }
+   ],
+   "period": {
+    "start": "2024-07-02T15:33:25Z"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "f4c4IQ81xJTKxQ7JaNQC3N.IqagYg1Q--gVDXj7p8ss04",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:oid:1.2.840.114350.1.13.283.2.7.8.688883.2790988341"
+   }
+  ],
+  "status": "current",
+  "type": {
+   "coding": [
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3"
+    }
+   ],
+   "text": "Encounter Summary"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/document-reference-category",
+      "code": "summary-document",
+      "display": "Summary Document"
+     }
+    ],
+    "text": "Summary Document"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2026-01-12T03:33:33Z",
+  "author": [
+   {
+    "display": "UnityPoint Health"
+   }
+  ],
+  "custodian": {
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "application/xml",
+     "url": "Binary/fxsSefehhsab0rBMAVT3sn1.MURgfczkRe6qIngU4MvI4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:hl7-org:sdwg:ccda-structuredBody:2.1",
+     "display": "Structured Body C-CDA 2.1"
+    }
+   }
+  ],
+  "context": {
+   "encounter": [
+    {
+     "reference": "Encounter/eQ6.JK9L9XY-2BpYQ4Y5aRw3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "1169847546"
+     },
+     "display": "Lab"
+    }
+   ],
+   "period": {
+    "start": "2025-12-04",
+    "end": "2025-12-04"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "f4c4IQ81xJTKxQ7JaNQC3N8DeBI2AQH6LRgBPgtIq9kY4",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:oid:1.2.840.114350.1.13.283.2.7.8.688883.2790988342"
+   }
+  ],
+  "status": "current",
+  "type": {
+   "coding": [
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3"
+    }
+   ],
+   "text": "Encounter Summary"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/document-reference-category",
+      "code": "summary-document",
+      "display": "Summary Document"
+     }
+    ],
+    "text": "Summary Document"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2026-01-12T03:33:33Z",
+  "author": [
+   {
+    "display": "UnityPoint Health"
+   }
+  ],
+  "custodian": {
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "application/xml",
+     "url": "Binary/fxsSefehhsab0rBMAVT3sn7v8DksGJWaVYkHmLMQTr8g4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:hl7-org:sdwg:ccda-structuredBody:2.1",
+     "display": "Structured Body C-CDA 2.1"
+    }
+   }
+  ],
+  "context": {
+   "encounter": [
+    {
+     "reference": "Encounter/eOLbd0HJXaCYSduv-jZwPpA3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "1098684634"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2025-12-04",
+    "end": "2025-12-04"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "f4c4IQ81xJTKxQ7JaNQC3N2FFBkoNQyUveLvWiTDv77o4",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:oid:1.2.840.114350.1.13.283.2.7.8.688883.2153914427"
+   }
+  ],
+  "status": "current",
+  "type": {
+   "coding": [
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3"
+    }
+   ],
+   "text": "Encounter Summary"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/document-reference-category",
+      "code": "summary-document",
+      "display": "Summary Document"
+     }
+    ],
+    "text": "Summary Document"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2025-04-28T23:42:05Z",
+  "author": [
+   {
+    "display": "UnityPoint Health"
+   }
+  ],
+  "custodian": {
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "application/xml",
+     "url": "Binary/fxsSefehhsab0rBMAVT3sn389lgtJ-vhT-dV7hBXy5cs4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:hl7-org:sdwg:ccda-structuredBody:2.1",
+     "display": "Structured Body C-CDA 2.1"
+    }
+   }
+  ],
+  "context": {
+   "encounter": [
+    {
+     "reference": "Encounter/eq7-yQQnBCUfN9o-DirVGyA3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "1127808563"
+     },
+     "display": "Telemedicine"
+    }
+   ],
+   "period": {
+    "start": "2025-04-23",
+    "end": "2025-04-23"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "f4c4IQ81xJTKxQ7JaNQC3Ny.631Xhy8-Z.z073Q6Vo804",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:oid:1.2.840.114350.1.13.283.2.7.8.688883.2105098157"
+   }
+  ],
+  "status": "current",
+  "type": {
+   "coding": [
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3"
+    }
+   ],
+   "text": "Encounter Summary"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/document-reference-category",
+      "code": "summary-document",
+      "display": "Summary Document"
+     }
+    ],
+    "text": "Summary Document"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2025-04-02T16:03:04Z",
+  "author": [
+   {
+    "display": "UnityPoint Health"
+   }
+  ],
+  "custodian": {
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "application/xml",
+     "url": "Binary/fxsSefehhsab0rBMAVT3sn1CK0DoZiq8wcFB8LOPMoJA4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:hl7-org:sdwg:ccda-structuredBody:2.1",
+     "display": "Structured Body C-CDA 2.1"
+    }
+   }
+  ],
+  "context": {
+   "encounter": [
+    {
+     "reference": "Encounter/ex77tmo2owursW0Cs0zQfZQ3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "1028744231"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2024-11-07",
+    "end": "2024-11-07"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "f4c4IQ81xJTKxQ7JaNQC3NyorzWAcrG0yq.jfGvA-EWE4",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:oid:1.2.840.114350.1.13.283.2.7.8.688883.2105098158"
+   }
+  ],
+  "status": "current",
+  "type": {
+   "coding": [
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3"
+    }
+   ],
+   "text": "Encounter Summary"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/document-reference-category",
+      "code": "summary-document",
+      "display": "Summary Document"
+     }
+    ],
+    "text": "Summary Document"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2025-04-02T16:03:04Z",
+  "author": [
+   {
+    "display": "UnityPoint Health"
+   }
+  ],
+  "custodian": {
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "application/xml",
+     "url": "Binary/fxsSefehhsab0rBMAVT3sn.c0pOvq3aEPmNiIIgPVTYI4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:hl7-org:sdwg:ccda-structuredBody:2.1",
+     "display": "Structured Body C-CDA 2.1"
+    }
+   }
+  ],
+  "context": {
+   "encounter": [
+    {
+     "reference": "Encounter/eO-UViuC0CDbUmv7-iod.lA3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "1076676013"
+     },
+     "display": "Clinical Support"
+    }
+   ],
+   "period": {
+    "start": "2024-07-02",
+    "end": "2024-07-02"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "f4c4IQ81xJTKxQ7JaNQC3N6HSzrpKABa6hqryHLPMtFg4",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:oid:1.2.840.114350.1.13.283.2.7.8.688883.2105098159"
+   }
+  ],
+  "status": "current",
+  "type": {
+   "coding": [
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3"
+    }
+   ],
+   "text": "Encounter Summary"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/document-reference-category",
+      "code": "summary-document",
+      "display": "Summary Document"
+     }
+    ],
+    "text": "Summary Document"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2025-04-02T16:03:04Z",
+  "author": [
+   {
+    "display": "UnityPoint Health"
+   }
+  ],
+  "custodian": {
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "application/xml",
+     "url": "Binary/fxsSefehhsab0rBMAVT3sn43Aa5lQaANRQDCY1grItrU4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:hl7-org:sdwg:ccda-structuredBody:2.1",
+     "display": "Structured Body C-CDA 2.1"
+    }
+   }
+  ],
+  "context": {
+   "encounter": [
+    {
+     "reference": "Encounter/eZjqlpWPCapiLvU41AUArfw3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "1076261941"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2024-07-02",
+    "end": "2024-07-02"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "f4c4IQ81xJTKxQ7JaNQC3N00FZ5hhsFEyItzOBuoTB4Q4",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:oid:1.2.840.114350.1.13.283.2.7.8.688883.2105098163"
+   }
+  ],
+  "status": "current",
+  "type": {
+   "coding": [
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3"
+    }
+   ],
+   "text": "Encounter Summary"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/document-reference-category",
+      "code": "summary-document",
+      "display": "Summary Document"
+     }
+    ],
+    "text": "Summary Document"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2025-04-02T16:03:04Z",
+  "author": [
+   {
+    "display": "UnityPoint Health"
+   }
+  ],
+  "custodian": {
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "application/xml",
+     "url": "Binary/fxsSefehhsab0rBMAVT3snxn7Menw38TZBAxQxBoxD3Q4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:hl7-org:sdwg:ccda-structuredBody:2.1",
+     "display": "Structured Body C-CDA 2.1"
+    }
+   }
+  ],
+  "context": {
+   "encounter": [
+    {
+     "reference": "Encounter/eIJD3pIhxpMN4Kk981kLcxA3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "1028743701"
+     },
+     "display": "Lab"
+    }
+   ],
+   "period": {
+    "start": "2023-09-28",
+    "end": "2023-09-28"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "f4c4IQ81xJTKxQ7JaNQC3N9.GAeW-iHp9J4uzCltzCZQ4",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:oid:1.2.840.114350.1.13.283.2.7.8.688883.2105098164"
+   }
+  ],
+  "status": "current",
+  "type": {
+   "coding": [
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3"
+    }
+   ],
+   "text": "Encounter Summary"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/document-reference-category",
+      "code": "summary-document",
+      "display": "Summary Document"
+     }
+    ],
+    "text": "Summary Document"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2025-04-02T16:03:04Z",
+  "author": [
+   {
+    "display": "UnityPoint Health"
+   }
+  ],
+  "custodian": {
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "application/xml",
+     "url": "Binary/fxsSefehhsab0rBMAVT3sn.hq4po6gDqOTU7AvL7T8884"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:hl7-org:sdwg:ccda-structuredBody:2.1",
+     "display": "Structured Body C-CDA 2.1"
+    }
+   }
+  ],
+  "context": {
+   "encounter": [
+    {
+     "reference": "Encounter/e1yIAPla.j8qkqnU275BH4w3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "991225117"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2023-09-28",
+    "end": "2023-09-28"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "f4c4IQ81xJTKxQ7JaNQC3N65f88xO96GGZawuoNvGGmE4",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:oid:1.2.840.114350.1.13.283.2.7.8.688883.2105098166"
+   }
+  ],
+  "status": "current",
+  "type": {
+   "coding": [
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3"
+    }
+   ],
+   "text": "Encounter Summary"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/document-reference-category",
+      "code": "summary-document",
+      "display": "Summary Document"
+     }
+    ],
+    "text": "Summary Document"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2025-04-02T16:03:04Z",
+  "author": [
+   {
+    "display": "UnityPoint Health"
+   }
+  ],
+  "custodian": {
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "application/xml",
+     "url": "Binary/fxsSefehhsab0rBMAVT3sn6690u1yS-4DgL7jvRWkOWw4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:hl7-org:sdwg:ccda-structuredBody:2.1",
+     "display": "Structured Body C-CDA 2.1"
+    }
+   }
+  ],
+  "context": {
+   "encounter": [
+    {
+     "reference": "Encounter/eMwIgHPJe9mGD4QJWjwpyng3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "958148810"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2023-03-02",
+    "end": "2023-03-02"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "f4c4IQ81xJTKxQ7JaNQC3N19xzz1u88Zmq-nerFVKRK44",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:oid:1.2.840.114350.1.13.283.2.7.8.688883.2105098167"
+   }
+  ],
+  "status": "current",
+  "type": {
+   "coding": [
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3"
+    }
+   ],
+   "text": "Encounter Summary"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/document-reference-category",
+      "code": "summary-document",
+      "display": "Summary Document"
+     }
+    ],
+    "text": "Summary Document"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2025-04-02T16:03:04Z",
+  "author": [
+   {
+    "display": "UnityPoint Health"
+   }
+  ],
+  "custodian": {
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "application/xml",
+     "url": "Binary/fxsSefehhsab0rBMAVT3sn1KlQ.qa2ShU0LjG9WlKqe04"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:hl7-org:sdwg:ccda-structuredBody:2.1",
+     "display": "Structured Body C-CDA 2.1"
+    }
+   }
+  ],
+  "context": {
+   "encounter": [
+    {
+     "reference": "Encounter/eaczqSTIxEFgrkvi.zMgWQQ3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "974614965"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2022-12-01",
+    "end": "2022-12-01"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "f4c4IQ81xJTKxQ7JaNQC3N88IbuGOU.zIqkAmYrt28NU4",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:oid:1.2.840.114350.1.13.283.2.7.8.688883.2105098168"
+   }
+  ],
+  "status": "current",
+  "type": {
+   "coding": [
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3"
+    }
+   ],
+   "text": "Encounter Summary"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/document-reference-category",
+      "code": "summary-document",
+      "display": "Summary Document"
+     }
+    ],
+    "text": "Summary Document"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2025-04-02T16:03:04Z",
+  "author": [
+   {
+    "display": "UnityPoint Health"
+   }
+  ],
+  "custodian": {
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "application/xml",
+     "url": "Binary/fxsSefehhsab0rBMAVT3sn6wRs55-C3t3JR-Uvjb3TGs4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:hl7-org:sdwg:ccda-structuredBody:2.1",
+     "display": "Structured Body C-CDA 2.1"
+    }
+   }
+  ],
+  "context": {
+   "encounter": [
+    {
+     "reference": "Encounter/eicq6YSSv0NiweXOdV3a2fA3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "958147754"
+     },
+     "display": "Lab"
+    }
+   ],
+   "period": {
+    "start": "2022-08-29",
+    "end": "2022-08-29"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "f4c4IQ81xJTKxQ7JaNQC3N85ic5M7NDPqI.PfHIy8KK84",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:oid:1.2.840.114350.1.13.283.2.7.8.688883.2105098169"
+   }
+  ],
+  "status": "current",
+  "type": {
+   "coding": [
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3"
+    }
+   ],
+   "text": "Encounter Summary"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/document-reference-category",
+      "code": "summary-document",
+      "display": "Summary Document"
+     }
+    ],
+    "text": "Summary Document"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2025-04-02T16:03:04Z",
+  "author": [
+   {
+    "display": "UnityPoint Health"
+   }
+  ],
+  "custodian": {
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "application/xml",
+     "url": "Binary/fxsSefehhsab0rBMAVT3sn45FiBBjRH3KRK387ylL5Kc4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:hl7-org:sdwg:ccda-structuredBody:2.1",
+     "display": "Structured Body C-CDA 2.1"
+    }
+   }
+  ],
+  "context": {
+   "encounter": [
+    {
+     "reference": "Encounter/e9Yth5IquIww-psZE1ZqiPQ3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "948004323"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2022-08-29",
+    "end": "2022-08-29"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "f4c4IQ81xJTKxQ7JaNQC3N3BSqIs9OVrHj5ltQemcC9s4",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:oid:1.2.840.114350.1.13.283.2.7.8.688883.2105098170"
+   }
+  ],
+  "status": "current",
+  "type": {
+   "coding": [
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3"
+    }
+   ],
+   "text": "Encounter Summary"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/document-reference-category",
+      "code": "summary-document",
+      "display": "Summary Document"
+     }
+    ],
+    "text": "Summary Document"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2025-04-02T16:03:04Z",
+  "author": [
+   {
+    "display": "UnityPoint Health"
+   }
+  ],
+  "custodian": {
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "application/xml",
+     "url": "Binary/fxsSefehhsab0rBMAVT3sn.lvbIBJR.3tFn3Am2mBCEM4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:hl7-org:sdwg:ccda-structuredBody:2.1",
+     "display": "Structured Body C-CDA 2.1"
+    }
+   }
+  ],
+  "context": {
+   "encounter": [
+    {
+     "reference": "Encounter/eXbKPEi0Qs6PRTp3JmAg1XQ3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "922943112"
+     },
+     "display": "Hospital Outpatient Visit"
+    }
+   ],
+   "period": {
+    "start": "2022-03-22",
+    "end": "2022-03-22"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "f4c4IQ81xJTKxQ7JaNQC3N1LVB6dJUimqP7iZ4mEuQx84",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:oid:1.2.840.114350.1.13.283.2.7.8.688883.2105098171"
+   }
+  ],
+  "status": "current",
+  "type": {
+   "coding": [
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3"
+    }
+   ],
+   "text": "Encounter Summary"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/document-reference-category",
+      "code": "summary-document",
+      "display": "Summary Document"
+     }
+    ],
+    "text": "Summary Document"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2025-04-02T16:03:04Z",
+  "author": [
+   {
+    "display": "UnityPoint Health"
+   }
+  ],
+  "custodian": {
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "application/xml",
+     "url": "Binary/fxsSefehhsab0rBMAVT3sny9EYE7gWZorUvu15Yn8PCY4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:hl7-org:sdwg:ccda-structuredBody:2.1",
+     "display": "Structured Body C-CDA 2.1"
+    }
+   }
+  ],
+  "context": {
+   "encounter": [
+    {
+     "reference": "Encounter/ec9vlX7WhP16uHS1z8ahJ6w3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "922942674"
+     },
+     "display": "Hospital Outpatient Visit"
+    }
+   ],
+   "period": {
+    "start": "2022-03-11",
+    "end": "2022-03-11"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "f4c4IQ81xJTKxQ7JaNQC3N0upvNcRnas-UsXbBsJMVNE4",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:oid:1.2.840.114350.1.13.283.2.7.8.688883.2105098179"
+   }
+  ],
+  "status": "current",
+  "type": {
+   "coding": [
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3"
+    }
+   ],
+   "text": "Encounter Summary"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/document-reference-category",
+      "code": "summary-document",
+      "display": "Summary Document"
+     }
+    ],
+    "text": "Summary Document"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2025-04-02T16:03:04Z",
+  "author": [
+   {
+    "display": "UnityPoint Health"
+   }
+  ],
+  "custodian": {
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "application/xml",
+     "url": "Binary/fxsSefehhsab0rBMAVT3sn07lyd7S-0cy4BI2c4LRySY4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:hl7-org:sdwg:ccda-structuredBody:2.1",
+     "display": "Structured Body C-CDA 2.1"
+    }
+   }
+  ],
+  "context": {
+   "encounter": [
+    {
+     "reference": "Encounter/eED6OhVRXP6XsEM4vxkusjA3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "829213099"
+     },
+     "display": "Telemedicine"
+    }
+   ],
+   "period": {
+    "start": "2020-07-14",
+    "end": "2020-07-14"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "f4c4IQ81xJTKxQ7JaNQC3N4-kws.iPeUn0udHWWJJSxg4",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:oid:1.2.840.114350.1.13.283.2.7.8.688883.2105098180"
+   }
+  ],
+  "status": "current",
+  "type": {
+   "coding": [
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3"
+    }
+   ],
+   "text": "Encounter Summary"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/document-reference-category",
+      "code": "summary-document",
+      "display": "Summary Document"
+     }
+    ],
+    "text": "Summary Document"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2025-04-02T16:03:04Z",
+  "author": [
+   {
+    "display": "UnityPoint Health"
+   }
+  ],
+  "custodian": {
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "application/xml",
+     "url": "Binary/fxsSefehhsab0rBMAVT3sn9DcAbkXKtW7VhHFxu3ZITI4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:hl7-org:sdwg:ccda-structuredBody:2.1",
+     "display": "Structured Body C-CDA 2.1"
+    }
+   }
+  ],
+  "context": {
+   "encounter": [
+    {
+     "reference": "Encounter/e7jVo8vEAxcJ36UbHZzVojw3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "799951565"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2020-01-09",
+    "end": "2020-01-09"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "f4c4IQ81xJTKxQ7JaNQC3Ny9CkHXLS2-OekBFrQ-uuWs4",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:oid:1.2.840.114350.1.13.283.2.7.8.688883.188221828"
+   }
+  ],
+  "status": "current",
+  "type": {
+   "coding": [
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3"
+    }
+   ],
+   "text": "Encounter Summary"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/document-reference-category",
+      "code": "summary-document",
+      "display": "Summary Document"
+     }
+    ],
+    "text": "Summary Document"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2019-03-01T16:57:25Z",
+  "author": [
+   {
+    "display": "UnityPoint Health"
+   }
+  ],
+  "custodian": {
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "application/xml",
+     "url": "Binary/fxsSefehhsab0rBMAVT3sn0VXlAcuH13pVHoCb21bGjo4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:hl7-org:sdwg:ccda-structuredBody:2.1",
+     "display": "Structured Body C-CDA 2.1"
+    }
+   }
+  ],
+  "context": {
+   "encounter": [
+    {
+     "reference": "Encounter/ef5y5upKfLIsUvqi9Xrmfig3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "725327197"
+     },
+     "display": "Lab"
+    }
+   ],
+   "period": {
+    "start": "2018-08-18",
+    "end": "2018-08-18"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "f4c4IQ81xJTKxQ7JaNQC3N-JChjMgjVjkszJ2HSt5pvY4",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:oid:1.2.840.114350.1.13.283.2.7.8.688883.188221829"
+   }
+  ],
+  "status": "current",
+  "type": {
+   "coding": [
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3"
+    }
+   ],
+   "text": "Encounter Summary"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/document-reference-category",
+      "code": "summary-document",
+      "display": "Summary Document"
+     }
+    ],
+    "text": "Summary Document"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2019-03-01T16:57:25Z",
+  "author": [
+   {
+    "display": "UnityPoint Health"
+   }
+  ],
+  "custodian": {
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "application/xml",
+     "url": "Binary/fxsSefehhsab0rBMAVT3snwpGNW-oy81ktp23z4ua0oE4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:hl7-org:sdwg:ccda-structuredBody:2.1",
+     "display": "Structured Body C-CDA 2.1"
+    }
+   }
+  ],
+  "context": {
+   "encounter": [
+    {
+     "reference": "Encounter/e-Y4mag6.P2MlJiyxCLjK4g3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "724628999"
+     },
+     "display": "Lab"
+    }
+   ],
+   "period": {
+    "start": "2018-08-09",
+    "end": "2018-08-09"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "f4c4IQ81xJTKxQ7JaNQC3Nxa7jKoW6G1BWzFEFytqfks4",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:oid:1.2.840.114350.1.13.283.2.7.8.688883.188221830"
+   }
+  ],
+  "status": "current",
+  "type": {
+   "coding": [
+    {
+     "system": "http://loinc.org",
+     "code": "11506-3"
+    }
+   ],
+   "text": "Encounter Summary"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/document-reference-category",
+      "code": "summary-document",
+      "display": "Summary Document"
+     }
+    ],
+    "text": "Summary Document"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2019-03-01T16:57:25Z",
+  "author": [
+   {
+    "display": "UnityPoint Health"
+   }
+  ],
+  "custodian": {
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "application/xml",
+     "url": "Binary/fxsSefehhsab0rBMAVT3sn3hoxeWKRqGPz6IB0dW4qnw4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:hl7-org:sdwg:ccda-structuredBody:2.1",
+     "display": "Structured Body C-CDA 2.1"
+    }
+   }
+  ],
+  "context": {
+   "encounter": [
+    {
+     "reference": "Encounter/eVMXHnnT7souX6XGVBlM3Cg3",
+     "identifier": {
+      "use": "usual",
+      "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+      "value": "720803470"
+     },
+     "display": "Office Visit"
+    }
+   ],
+   "period": {
+    "start": "2018-08-09",
+    "end": "2018-08-09"
+   }
+  }
+ },
+ {
+  "resourceType": "DocumentReference",
+  "id": "f4c4IQ81xJTKxQ7JaNQC3NxDaDFFAoNKt1CLLBaQQJNU4",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:oid:1.2.840.114350.1.13.283.2.7.8.688883.188221825"
+   }
+  ],
+  "status": "current",
+  "type": {
+   "coding": [
+    {
+     "system": "http://loinc.org",
+     "code": "34133-9"
+    }
+   ],
+   "text": "Patient Summary"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/document-reference-category",
+      "code": "summary-document",
+      "display": "Summary Document"
+     }
+    ],
+    "text": "Summary Document"
+   }
+  ],
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "date": "2019-03-01T16:57:25Z",
+  "author": [
+   {
+    "display": "UnityPoint Health"
+   }
+  ],
+  "custodian": {
+   "display": "UnityPoint Health"
+  },
+  "content": [
+   {
+    "attachment": {
+     "contentType": "application/xml",
+     "url": "Binary/fxsSefehhsab0rBMAVT3sn.q9blb-WN2gOq3CBF9Tk2A4"
+    },
+    "format": {
+     "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+     "code": "urn:hl7-org:sdwg:ccda-structuredBody:2.1",
+     "display": "Structured Body C-CDA 2.1"
+    }
+   }
+  ]
+ }
+]

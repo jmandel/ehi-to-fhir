@@ -8,11 +8,11 @@ tolerated delta cites its rule + evidence, and every blessing pins exact values.
 
 ## Headline
 
-- **total target elements**: 16120
-  - **EXACT**: 12562
-  - **TOLERATED**: 1703 — mechanical 1702 + blessed 1
-  - **GAP (true residual)**: 1855 — real-gap 939, coding-gap 725, unsure 191
-- **reconciliation**: 12562 + 1703 + 1855 = 16120 ✓ (= total)
+- **total target elements**: 14269
+  - **EXACT**: 6843
+  - **TOLERATED**: 1413 — mechanical 1412 + blessed 1
+  - **GAP (true residual)**: 6013 — real-gap 2649, coding-gap 3208, unsure 156
+- **reconciliation**: 6843 + 1413 + 6013 = 14269 ✓ (= total)
 
 The residual GAP set is now ONLY true gaps: coding-gaps stay in their dedicated bucket
 (tolerated-as-known, never matched), real-gaps are genuine omissions/changes, and `unsure`
@@ -47,9 +47,9 @@ still GAPs a same-shaped regression (a ref to a DIFFERENT entity, a CHANGED valu
 
 | rule | kind | scope | hits / cap | regression it still rejects |
 |---|---|---|---:|---|
-| `iso-ref-observation-subject` | isomorphic-ref | `Observation.subject.reference` | 110 / 120 | our subject.reference re-pointed to a non-Patient, a dangling ref, or a second Patient whose PAT_ID != target's -> GAP. |
+| `iso-ref-observation-subject` | isomorphic-ref | `Observation.subject.reference` | 60 / 120 | our subject.reference re-pointed to a non-Patient, a dangling ref, or a second Patient whose PAT_ID != target's -> GAP. |
 | `iso-ref-condition-subject` | isomorphic-ref | `Condition.subject.reference` | 53 / 53 | Condition.subject re-pointed to a different resourceType or a Patient with a different PAT_ID -> GAP. |
-| `iso-ref-observation-encounter-by-csn` | isomorphic-ref | `Observation.encounter.reference` | 110 / 120 | encounter.reference re-pointed to an Encounter with a different CSN -> GAP. |
+| `iso-ref-observation-encounter-by-csn` | isomorphic-ref | `Observation.encounter.reference` | 60 / 120 | encounter.reference re-pointed to an Encounter with a different CSN -> GAP. |
 | `iso-ref-condition-encounter-by-csn` | isomorphic-ref | `Condition.encounter.reference` | 39 / 46 | Condition.encounter re-pointed to a different encounter (different bound CSN), a CSN under a wrong system, or a missing inline identifier -> GAP. |
 | `iso-ref-encounter-participant-by-ser` | isomorphic-ref | `Encounter.participant[].individual.reference` | 54 / 54 | participant re-pointed to a same-SER twin Practitioner with a different name, or to a provider matched only on a loose EXTPROVID digit-string -> GAP. |
 | `iso-ref-encounter-location-by-name` | isomorphic-ref | `Encounter.location[].location.reference` | 32 / 32 | re-point to a Location with a different name -> GAP; and if two departments ever share a name, the rule disables itself for that side -> GAP rather than a wrong tolerate. |
@@ -67,7 +67,7 @@ still GAPs a same-shaped regression (a ref to a DIFFERENT entity, a CHANGED valu
 | `iso-ref-medicationrequest-encounter-by-csn` | isomorphic-ref | `MedicationRequest.encounter.reference` | 4 / 4 | MedicationRequest.encounter.reference re-pointed to an Encounter with a different CSN, a wrong-system CSN, a non-Encounter, or a dangling ref -> GAP. |
 | `iso-ref-diagnosticreport-encounter-by-csn` | isomorphic-ref | `DiagnosticReport.encounter.reference` | 9 / 9 | DiagnosticReport.encounter.reference re-pointed to an Encounter with a different CSN, a wrong-system CSN, a non-Encounter, or a dangling ref -> GAP. |
 | `iso-ref-immunization-encounter-by-csn` | isomorphic-ref | `Immunization.encounter.reference` | 9 / 9 | Immunization.encounter.reference re-pointed to an Encounter with a different CSN, a wrong-system CSN, a non-Encounter, or a dangling ref -> GAP. |
-| `iso-ref-observation-performer-by-ser` | isomorphic-ref | `Observation.performer[].reference` | 70 / 75 | the performer/author/authenticator re-pointed to a same-SER twin with a different name, a loose-EXTPROVID match, a non-Practitioner, or a dangling ref -> GAP. |
+| `iso-ref-observation-performer-by-ser` | isomorphic-ref | `Observation.performer[].reference` | 19 / 75 | the performer/author/authenticator re-pointed to a same-SER twin with a different name, a loose-EXTPROVID match, a non-Practitioner, or a dangling ref -> GAP. |
 | `iso-ref-documentreference-author-by-ser` | isomorphic-ref | `DocumentReference.author[].reference` | 28 / 28 | the performer/author/authenticator re-pointed to a same-SER twin with a different name, a loose-EXTPROVID match, a non-Practitioner, or a dangling ref -> GAP. |
 | `iso-ref-documentreference-authenticator-by-ser` | isomorphic-ref | `DocumentReference.authenticator.reference` | 28 / 28 | the performer/author/authenticator re-pointed to a same-SER twin with a different name, a loose-EXTPROVID match, a non-Practitioner, or a dangling ref -> GAP. |
 | `iso-ref-medicationrequest-requester-by-ser` | isomorphic-ref | `MedicationRequest.requester.reference` | 10 / 10 | MedicationRequest.requester.reference re-pointed to a same-SER twin with a different name, an Organization/non-Practitioner, a loose-EXTPROVID digit match, or a dangling ref -> GAP. |
@@ -82,7 +82,7 @@ still GAPs a same-shaped regression (a ref to a DIFFERENT entity, a CHANGED valu
 | `iso-ref-observation-specimen-by-accession-unique` | isomorphic-ref | `Observation.specimen.reference` | 12 / 12 | Observation.specimen re-pointed to a DIFFERENT specimen that shares the accession (collision group), or to a different/absent accession -> GAP. |
 | `tolerate-documentreference-content-attachment-binary` | structural-variant | `DocumentReference.content[].attachment.url` | 56 / 56 | attachment.url re-pointed to a Binary holding different bytes (sha1 != slot hash), to a Binary under a DocumentReference with a different DOCUMENT_ID, to a non-Binary, or to a Binary absent from our export -> GAP. |
 | `tolerate-documentreference-content-attachment-contenttype` | structural-variant | `DocumentReference.content[].attachment.contentType` | 28 / 28 | attachment.contentType set to a non-note media type (application/pdf, image/*, ...), or the owning DocumentReference re-anchored to a different DOCUMENT_ID, or the Binary url sibling absent -> GAP. |
-| `iso-ref-observation-basedon-by-order` | isomorphic-ref | `Observation.basedOn[].reference` | 38 / 40 | Observation.basedOn[].reference re-pointed to a DIFFERENT order (different ORDER_PROC_ID) -> the bijection becomes ambiguous -> GAP; a non-ServiceRequest ref -> GAP. |
+| `iso-ref-observation-basedon-by-order` | isomorphic-ref | `Observation.basedOn[].reference` | 40 / 40 | Observation.basedOn[].reference re-pointed to a DIFFERENT order (different ORDER_PROC_ID) -> the bijection becomes ambiguous -> GAP; a non-ServiceRequest ref -> GAP. |
 | `iso-ref-diagnosticreport-basedon-by-order` | isomorphic-ref | `DiagnosticReport.basedOn[].reference` | 0 / 1 | DiagnosticReport.basedOn[].reference re-pointed to a DIFFERENT order (different ORDER_PROC_ID) -> the bijection becomes ambiguous -> GAP; a non-ServiceRequest ref -> GAP. |
 | `cosmetic-observation-subject-display` | cosmetic-display | `Observation.subject.display` | 0 / 60 | subject.display drifted to a different person's name while the ref still resolves to the one Patient -> GAP. |
 | `cosmetic-condition-subject-display` | cosmetic-display | `Condition.subject.display` | 0 / 53 | Condition.subject.display set to a non-recorded name (different person) -> GAP. |
@@ -90,7 +90,7 @@ still GAPs a same-shaped regression (a ref to a DIFFERENT entity, a CHANGED valu
 | `cosmetic-documentreference-subject-display` | cosmetic-display | `DocumentReference.subject.display` | 0 / 28 | DocumentReference.subject.display = a different person's name -> GAP. |
 | `cosmetic-encounter-participant-display` | cosmetic-display | `Encounter.participant[].individual.display` | 54 / 54 | correct SER ref but display = a different real clinician's name (wrong-name-on-correct-ref) -> GAP. |
 | `cosmetic-encounter-location-display` | cosmetic-display | `Encounter.location[].location.display` | 32 / 32 | location.display changed to any string that is not this department's DEPARTMENT_NAME (incl. another dept's label) -> GAP. |
-| `cosmetic-observation-performer-display` | cosmetic-display | `Observation.performer[].display` | 70 / 72 | Observation.performer[].display display set to a DIFFERENT real clinician's name on a correct SER ref, or the sibling ref re-pointed to a different/absent SER, an Organization, or a dangling ref -> GAP. |
+| `cosmetic-observation-performer-display` | cosmetic-display | `Observation.performer[].display` | 19 / 72 | Observation.performer[].display display set to a DIFFERENT real clinician's name on a correct SER ref, or the sibling ref re-pointed to a different/absent SER, an Organization, or a dangling ref -> GAP. |
 | `cosmetic-documentreference-author-display` | cosmetic-display | `DocumentReference.author[].display` | 28 / 28 | DocumentReference.author[].display display set to a DIFFERENT real clinician's name on a correct SER ref, or the sibling ref re-pointed to a different/absent SER, an Organization, or a dangling ref -> GAP. |
 | `cosmetic-documentreference-authenticator-display` | cosmetic-display | `DocumentReference.authenticator.display` | 28 / 28 | DocumentReference.authenticator.display display set to a DIFFERENT real clinician's name on a correct SER ref, or the sibling ref re-pointed to a different/absent SER, an Organization, or a dangling ref -> GAP. |
 | `cosmetic-documentreference-ext-valuereference-display` | cosmetic-display | `DocumentReference.extension[].extension[].valueReference.display` | 31 / 31 | DocumentReference.extension[].extension[].valueReference.display display set to a DIFFERENT real clinician's name on a correct SER ref, or the sibling ref re-pointed to a different/absent SER, an Organization, or a dangling ref -> GAP. |
@@ -104,11 +104,11 @@ still GAPs a same-shaped regression (a ref to a DIFFERENT entity, a CHANGED valu
 | `cosmetic-diagnosticreport-encounter-display` | cosmetic-display | `DiagnosticReport.encounter.display` | 1 / 1 | DiagnosticReport.encounter.display sibling .encounter.reference re-pointed to an Encounter with a different CSN (a display on a different entity), or a dangling/non-Encounter ref, or an empty display -> GAP. |
 | `cosmetic-case-encounter-reasoncode-coding-display` | cosmetic-display | `Encounter.reasonCode[].coding[].display` | 26 / 30 | Encounter.reasonCode[].coding[].display changed to genuinely different letters (not just case), or the same words placed on a different/absent coding code -> GAP. |
 | `cosmetic-case-encounter-reasoncode-text` | cosmetic-display | `Encounter.reasonCode[].text` | 26 / 30 | Encounter.reasonCode[].text changed to genuinely different letters, or the same words on a CodeableConcept whose coding concept set differs -> GAP. |
-| `cosmetic-display-condition-code-coding-display` | cosmetic-display | `Condition.code.coding[].display` | 22 / 30 | Condition.code.coding[].display display placed on a different/absent coding code, or a different code system -> GAP. |
-| `cosmetic-display-observation-code-coding-display` | cosmetic-display | `Observation.code.coding[].display` | 9 / 30 | Observation.code.coding[].display display placed on a different/absent coding code, or a different code system -> GAP. |
-| `cosmetic-display-observation-value-coding-display` | cosmetic-display | `Observation.valueCodeableConcept.coding[].display` | 11 / 25 | Observation.valueCodeableConcept.coding[].display display placed on a different/absent coding code, or a different code system -> GAP. |
+| `cosmetic-display-condition-code-coding-display` | cosmetic-display | `Condition.code.coding[].display` | 0 / 30 | Condition.code.coding[].display display placed on a different/absent coding code, or a different code system -> GAP. |
+| `cosmetic-display-observation-code-coding-display` | cosmetic-display | `Observation.code.coding[].display` | 0 / 30 | Observation.code.coding[].display display placed on a different/absent coding code, or a different code system -> GAP. |
+| `cosmetic-display-observation-value-coding-display` | cosmetic-display | `Observation.valueCodeableConcept.coding[].display` | 2 / 25 | Observation.valueCodeableConcept.coding[].display display placed on a different/absent coding code, or a different code system -> GAP. |
 | `iso-ref-medicationrequest-medication-bijection` | isomorphic-ref | `MedicationRequest.medicationReference.reference` | 18 / 30 | MedicationRequest.medicationReference.reference re-pointed to a different entity (bijection becomes ambiguous) or a non-'Medication/' ref -> GAP. |
-| `iso-ref-observation-specimen-bijection` | isomorphic-ref | `Observation.specimen.reference` | 26 / 40 | Observation.specimen.reference re-pointed to a different entity (bijection becomes ambiguous) or a non-'Specimen/' ref -> GAP. |
+| `iso-ref-observation-specimen-bijection` | isomorphic-ref | `Observation.specimen.reference` | 28 / 40 | Observation.specimen.reference re-pointed to a different entity (bijection becomes ambiguous) or a non-'Specimen/' ref -> GAP. |
 | `iso-ref-diagnosticreport-specimen-bijection` | isomorphic-ref | `DiagnosticReport.specimen[].reference` | 0 / 20 | DiagnosticReport.specimen[].reference re-pointed to a different entity (bijection becomes ambiguous) or a non-'Specimen/' ref -> GAP. |
 | `iso-ref-condition-evidence-detail-bijection` | isomorphic-ref | `Condition.evidence[].detail[].reference` | 16 / 30 | Condition.evidence[].detail[].reference re-pointed to a different entity (bijection becomes ambiguous) or a non-'Condition/' ref -> GAP. |
 | `iso-ref-observation-derivedfrom-bijection` | isomorphic-ref | `Observation.derivedFrom[].reference` | 0 / 20 | Observation.derivedFrom[].reference re-pointed to a different entity (bijection becomes ambiguous) or a non-'Observation/' ref -> GAP. |
@@ -120,7 +120,7 @@ still GAPs a same-shaped regression (a ref to a DIFFERENT entity, a CHANGED valu
 | `iso-ref-careplan-goal-bijection` | isomorphic-ref | `CarePlan.goal[].reference` | 1 / 10 | CarePlan.goal[].reference re-pointed to a different entity (bijection becomes ambiguous) or a non-'Goal/' ref -> GAP. |
 | `iso-ref-coverage-payor-bijection` | isomorphic-ref | `Coverage.payor[].reference` | 1 / 10 | Coverage.payor[].reference re-pointed to a different entity (bijection becomes ambiguous) or a non-'Organization/' ref -> GAP. |
 | `iso-ref-patient-managingorganization-bijection` | isomorphic-ref | `Patient.managingOrganization.reference` | 1 / 10 | Patient.managingOrganization.reference re-pointed to a different entity (bijection becomes ambiguous) or a non-'Organization/' ref -> GAP. |
-| `minute-rounded-observation-issued` | structural-variant | `Observation.issued` | 72 / 75 | Observation.issued target/ours differing in the minute/hour/day or timezone, OR ours carrying non-zero seconds (a real second-level change) -> GAP. |
+| `minute-rounded-observation-issued` | structural-variant | `Observation.issued` | 20 / 75 | Observation.issued target/ours differing in the minute/hour/day or timezone, OR ours carrying non-zero seconds (a real second-level change) -> GAP. |
 | `minute-rounded-diagnosticreport-issued` | structural-variant | `DiagnosticReport.issued` | 0 / 7 | DiagnosticReport.issued target/ours differing in the minute/hour/day or timezone, OR ours carrying non-zero seconds (a real second-level change) -> GAP. |
 | `minute-rounded-documentreference-date` | structural-variant | `DocumentReference.date` | 28 / 28 | DocumentReference.date target/ours differing in the minute/hour/day or timezone, OR ours carrying non-zero seconds (a real second-level change) -> GAP. |
 | `minute-rounded-allergyintolerance-recordeddate` | structural-variant | `AllergyIntolerance.recordedDate` | 4 / 4 | AllergyIntolerance.recordedDate target/ours differing in the minute/hour/day or timezone, OR ours carrying non-zero seconds (a real second-level change) -> GAP. |
@@ -148,7 +148,7 @@ still GAPs a same-shaped regression (a ref to a DIFFERENT entity, a CHANGED valu
 ### `iso-ref-observation-subject`  (isomorphic-ref)
 
 - **scope**: `Observation.subject.reference`
-- **tolerated hits**: 110 (cap 120)
+- **tolerated hits**: 60 (cap 120)
 - **predicate**: Resolve target ref in the target entity index and our ref in our entity index. Tolerate ONLY if BOTH resolve to a Patient AND our resolved Patient's PAT_ID natural key (identifier.value @ urn:oid:1.2.840.114350.1.13.283.2.7.2.698084, whitespace-normalized) equals the target Patient's PAT_ID. Still GAPs: unresolvable/dangling ref, non-Patient type, or a Patient whose PAT_ID != target's. Does NOT cover subject.display.
 - **rationale**: Synthetic id pat-Z7004242 vs target euBTtyZ... point at the same single Patient; only the minted id differs.
 - **approval**: approved by agent:reviewer — MECHANICAL isomorphic-ref verified vs data; the PAT_ID key-equality clause (not bare is-a-Patient) carries the anti-regression guarantee. Predicate narrowed to compare the .698084 PAT_ID value explicitly.
@@ -166,7 +166,7 @@ still GAPs a same-shaped regression (a ref to a DIFFERENT entity, a CHANGED valu
 ### `iso-ref-observation-encounter-by-csn`  (isomorphic-ref)
 
 - **scope**: `Observation.encounter.reference`
-- **tolerated hits**: 110 (cap 120)
+- **tolerated hits**: 60 (cap 120)
 - **predicate**: Resolve both refs to their Encounter and read identifier.value @ urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8 (the CSN). Require exactly one CSN per side. Tolerate ONLY if the CSNs are byte-equal (no EHI->Epic CSN crosswalk exists, so the carried CSN is the sole proof). Re-point to an Encounter with a DIFFERENT CSN -> GAP.
 - **rationale**: Matched Observations reference the same encounter; our enc-<CSN> id differs from target's opaque id but the CSN identifier.value matches.
 - **approval**: approved by agent:reviewer — Tolerate decision IS a byte-equal CSN compare bound to the resolved referent; stress-tested with an injected re-point (725327197 vs 1028743701) which correctly GAPped.
@@ -328,7 +328,7 @@ still GAPs a same-shaped regression (a ref to a DIFFERENT entity, a CHANGED valu
 ### `iso-ref-observation-performer-by-ser`  (isomorphic-ref)
 
 - **scope**: `Observation.performer[].reference`
-- **tolerated hits**: 70 (cap 75)
+- **tolerated hits**: 19 (cap 75)
 - **predicate**: Resolve BOTH refs to a Practitioner. Extract SER STRICTLY by system (identifier.value @ urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99, trimmed, /^\d{5,7}$/, exactly one per side — never a loose digit regex that also matches EXTPROVID .556 / INTERNAL .836982). Tolerate ONLY if (a) SERs equal AND (b) the two resolved Practitioners share a MULTI-CHARACTER (>=2 char) name token (family/given) — a shared single masked initial is NOT corroboration — so a coincidental SER/EXTPROVID collision to a different provider still GAPs. Missing/unequal/wrong-system SER, dangling ref, disjoint names, or only-an-initial-shared -> GAP.
 - **rationale**: Practitioner SER (CCPROVID) is shared across both exports; only synthetic prac-<SER> vs opaque id differs. SER alone is non-injective (twins share a SER) so name corroboration is required — same machinery as iso-ref-encounter-participant-by-ser.
 - **approval**: approved by agent:reviewer — Strict .99-system SER selection + resolved-name corroboration (reused verbatim from the approved participant rule). Type-indexed to this exact element; a dangling our-side ref (e.g. an Observation.performer whose Practitioner is absent) correctly stays GAP.
@@ -463,7 +463,7 @@ still GAPs a same-shaped regression (a ref to a DIFFERENT entity, a CHANGED valu
 ### `iso-ref-observation-basedon-by-order`  (isomorphic-ref)
 
 - **scope**: `Observation.basedOn[].reference`
-- **tolerated hits**: 38 (cap 40)
+- **tolerated hits**: 40 (cap 40)
 - **predicate**: Tolerate ONLY when BOTH sides are a 'ServiceRequest/...' reference AND ctx.basedOnOrderMate(targetRef) === ourRef, i.e. the target's opaque ServiceRequest ref maps — via the strict BIJECTION observed across all aligned Observation/DiagnosticReport.basedOn pairs — to exactly our ref (which is ServiceRequest/sr-<ORDER_PROC_ID>). The target ServiceRequest is opaque + absent from the target export and the order display is non-injective, so the bijective same-order map is the sole proof. A re-point to a DIFFERENT order makes the target ref ambiguous in the map (co-occurs with two our refs) -> null -> GAP.
 - **rationale**: Both exports point basedOn at the SAME order; only synthetic sr-<ORDER_PROC_ID> vs the opaque target id differs. Display alone is non-injective (a panel ordered twice shares its name), so a fail-closed bijection — not the display — is what proves same-order.
 - **approval**: approved by agent:reviewer — Extends the iso-ref family with an order key. NARROWED past the non-injective display: keyed on the fail-closed (target<->our) basedOn bijection so that two same-named orders (two BASIC METABOLIC PANELs on different dates) are kept distinct. Adversarially verified: re-pointing one observation's basedOn from order A to order B makes A's target ref ambiguous -> the map drops it -> GAP; a non-ServiceRequest / display-only match is not tolerated.
@@ -535,7 +535,7 @@ still GAPs a same-shaped regression (a ref to a DIFFERENT entity, a CHANGED valu
 ### `cosmetic-observation-performer-display`  (cosmetic-display)
 
 - **scope**: `Observation.performer[].display`
-- **tolerated hits**: 70 (cap 72)
+- **tolerated hits**: 19 (cap 72)
 - **predicate**: Tolerate ONLY when ALL hold: (1) the sibling .reference on the SAME owner resolves on BOTH sides (per iso-ref-*-by-ser) to a Practitioner carrying the SAME strict SER (identifier.value @ urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99, /^\d{5,7}$/, exactly one per side) — i.e. the SAME entity that family already iso-tolerates; (2) those Practitioners share a MULTI-CHARACTER (>=2 char) name token (defeats a same-SER twin / EXTPROVID collision); (3) BOTH displays are recorded name-forms of THEIR OWN resolved Practitioner (target privacy-masked 'Mary S' is a name-form of the masked Practitioner; our 'SMITH, MARY B' is a name-form of our fuller name). A sibling ref to a DIFFERENT entity (different/absent SER, an Organization, a dangling ref), or a display swapped to a DIFFERENT real clinician's name on a correct ref, -> GAP.
 - **rationale**: Epic privacy-masks the display to title + first-initial + last-initial-or-family ('Mary S'); our EHI export carries the fuller name ('SMITH, MARY B'). The SIBLING reference is already iso-tolerated (same SER) so this is the same provider; only the display string's masking differs. Same per-side name-form pin as cosmetic-encounter-participant-display so a wrong-name-on-correct-ref still GAPs.
 - **approval**: approved by agent:reviewer — Extends the approved cosmetic-encounter-participant-display machinery (SER-resolved sibling ref + per-side name-form pin) to the parallel display of every iso-ref-*-by-ser scope. Injection-self-checked: importing the real verify, an injected wrong-clinician display on a correct SER ref GAPs; the Organization/medication refs on these same paths (no SER) correctly stay GAP.
@@ -661,7 +661,7 @@ still GAPs a same-shaped regression (a ref to a DIFFERENT entity, a CHANGED valu
 ### `cosmetic-display-condition-code-coding-display`  (cosmetic-display)
 
 - **scope**: `Condition.code.coding[].display`
-- **tolerated hits**: 22 (cap 30)
+- **tolerated hits**: 0 (cap 30)
 - **predicate**: Tolerate a coding.display difference of ANY wording ONLY when the SAME coding object's sibling {system,code} are byte-equal (norm) across sides AND a code is present — coding.display is a NON-NORMATIVE label for the authoritative {system,code}, so a same-{system,code} display variant (SNOMED FSN vs short label; Epic master 'Blood Pressure' vs our flowsheet 'BP' on the SAME OID+FLO_MEAS_ID) is presentation-only. A display on a DIFFERENT or absent code, or a different system, -> GAP even if related.
 - **rationale**: FHIR coding.display is the human label for the code; the code carries the meaning. classify.ts pairs the display to its own {system,code} owner, so this only ever tolerates a wording variant of the IDENTICAL coded concept.
 - **approval**: approved by agent:coordinator — User-approved code-gated display tolerance (broadens cosmetic-CASE to any wording). Injection-self-checked: a display moved onto a DIFFERENT code GAPs; an absent sibling code GAPs; a different system GAPs; the genuine same-{system,code} wording variants tolerate.
@@ -670,7 +670,7 @@ still GAPs a same-shaped regression (a ref to a DIFFERENT entity, a CHANGED valu
 ### `cosmetic-display-observation-code-coding-display`  (cosmetic-display)
 
 - **scope**: `Observation.code.coding[].display`
-- **tolerated hits**: 9 (cap 30)
+- **tolerated hits**: 0 (cap 30)
 - **predicate**: Tolerate a coding.display difference of ANY wording ONLY when the SAME coding object's sibling {system,code} are byte-equal (norm) across sides AND a code is present — coding.display is a NON-NORMATIVE label for the authoritative {system,code}, so a same-{system,code} display variant (SNOMED FSN vs short label; Epic master 'Blood Pressure' vs our flowsheet 'BP' on the SAME OID+FLO_MEAS_ID) is presentation-only. A display on a DIFFERENT or absent code, or a different system, -> GAP even if related.
 - **rationale**: FHIR coding.display is the human label for the code; the code carries the meaning. classify.ts pairs the display to its own {system,code} owner, so this only ever tolerates a wording variant of the IDENTICAL coded concept.
 - **approval**: approved by agent:coordinator — User-approved code-gated display tolerance (broadens cosmetic-CASE to any wording). Injection-self-checked: a display moved onto a DIFFERENT code GAPs; an absent sibling code GAPs; a different system GAPs; the genuine same-{system,code} wording variants tolerate.
@@ -679,7 +679,7 @@ still GAPs a same-shaped regression (a ref to a DIFFERENT entity, a CHANGED valu
 ### `cosmetic-display-observation-value-coding-display`  (cosmetic-display)
 
 - **scope**: `Observation.valueCodeableConcept.coding[].display`
-- **tolerated hits**: 11 (cap 25)
+- **tolerated hits**: 2 (cap 25)
 - **predicate**: Tolerate a coding.display difference of ANY wording ONLY when the SAME coding object's sibling {system,code} are byte-equal (norm) across sides AND a code is present — coding.display is a NON-NORMATIVE label for the authoritative {system,code}, so a same-{system,code} display variant (SNOMED FSN vs short label; Epic master 'Blood Pressure' vs our flowsheet 'BP' on the SAME OID+FLO_MEAS_ID) is presentation-only. A display on a DIFFERENT or absent code, or a different system, -> GAP even if related.
 - **rationale**: FHIR coding.display is the human label for the code; the code carries the meaning. classify.ts pairs the display to its own {system,code} owner, so this only ever tolerates a wording variant of the IDENTICAL coded concept.
 - **approval**: approved by agent:coordinator — User-approved code-gated display tolerance (broadens cosmetic-CASE to any wording). Injection-self-checked: a display moved onto a DIFFERENT code GAPs; an absent sibling code GAPs; a different system GAPs; the genuine same-{system,code} wording variants tolerate.
@@ -697,7 +697,7 @@ still GAPs a same-shaped regression (a ref to a DIFFERENT entity, a CHANGED valu
 ### `iso-ref-observation-specimen-bijection`  (isomorphic-ref)
 
 - **scope**: `Observation.specimen.reference`
-- **tolerated hits**: 26 (cap 40)
+- **tolerated hits**: 28 (cap 40)
 - **predicate**: Tolerate ONLY when BOTH sides are a 'Specimen/...' reference AND ctx.refBijectionMate("Observation.specimen.reference", targetVal) === ourVal — the opaque target id maps, via the strict (target<->our) BIJECTION observed across ALL aligned pairs at this scope, to exactly our ref. The target id is opaque + absent from the target export, so the fail-closed bijection is the sole proof of same-entity. A re-point to a DIFFERENT entity makes the target ref co-occur with two our refs -> dropped from the map -> null -> GAP; a non-'Specimen/' ref -> GAP.
 - **rationale**: Same machinery + honesty basis as the user-approved attachment opaque-id tolerance and the basedOn order bijection: only synthetic-vs-opaque id scheme differs for the SAME referenced entity. medicationReference is structurally 1:1 (one Medication per ORDER_MED); specimen/evidence are bound by the fail-closed bijection.
 - **approval**: approved by agent:coordinator — User-approved (extend opaque-id iso-ref to med + specimen/evidence). NARROW: keyed on the strict bijection (not display, which is non-injective), so two same-named entities stay distinct. Self-checked: re-pointing one leaf to a different entity makes its target ref ambiguous -> the map drops it -> GAP; a non-matching-prefix ref -> GAP.
@@ -805,7 +805,7 @@ still GAPs a same-shaped regression (a ref to a DIFFERENT entity, a CHANGED valu
 ### `minute-rounded-observation-issued`  (structural-variant)
 
 - **scope**: `Observation.issued`
-- **tolerated hits**: 72 (cap 75)
+- **tolerated hits**: 20 (cap 75)
 - **predicate**: Tolerate ONLY when BOTH values are well-formed second-precision ISO instants that are byte-equal after TRUNCATING to the minute (same YYYY-MM-DDThh:mm AND same timezone suffix) AND OUR value's seconds component is exactly '00' — i.e. ours is the minute-ROUNDED form the EHI export emits for *_DTTM columns while the target keeps real seconds. A different minute/hour/day, a different timezone, OUR value carrying non-zero seconds (a real second-level divergence that merely lands in the same minute), or a malformed instant -> GAP.
 - **rationale**: The EHI export rounds *_DTTM source columns to the minute, so our instant is 'YYYY-MM-DDThh:mm:00Z' while the target carries the true seconds 'YYYY-MM-DDThh:mm:ssZ'. Same instant to the minute; the seconds are the export's rounding, not a real difference. Requiring our seconds == '00' keeps a genuine same-minute-but-different-seconds pair (e.g. some DiagnosticReport.issued rows where BOTH sides have non-zero seconds) as a GAP.
 - **approval**: approved by agent:reviewer — NARROWED past a blanket truncate-to-minute compare: also requires OUR seconds == '00' so only the actual export-rounding artifact is tolerated, not any coincidental same-minute pair. Injection-self-checked: an injected target shifted to a different minute GAPs; a same-minute pair where ours has non-zero seconds GAPs; the genuine ':00'-rounded pairs tolerate.
@@ -1047,51 +1047,51 @@ Recorded for audit. The divergences they targeted remain GAPs (no blind ignore).
 
 | class | count |
 |---|---:|
-| real-gap | 939 |
-| coding-gap | 725 |
-| unsure | 191 |
+| coding-gap | 3208 |
+| real-gap | 2649 |
+| unsure | 156 |
 
 Top gap clusters (resourceType.path):
 
 | resourceType.path | class | count | example |
 |---|---|---:|---|
-| `Observation.(whole resource)` | real-gap | 130 | tgt "72166-2@2024-07-02" / our null |
-| `Observation.code.coding[].code` | coding-gap | 115 | tgt "tOmaSI-nbFazecSfoof8VzQ0" / our null |
-| `Observation.code.coding[].system` | real-gap | 95 | tgt "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id" / o |
-| `Observation.code.coding[].display` | coding-gap | 91 | tgt "Blood Pressure" / our null |
+| `DiagnosticReport.code.coding[].system` | real-gap | 1046 | tgt "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.102" / our null |
+| `DiagnosticReport.code.coding[].code` | coding-gap | 1046 | tgt "LIPID" / our null |
+| `Observation.code.coding[].code` | coding-gap | 355 | tgt "25000300" / our null |
+| `Observation.code.coding[].system` | real-gap | 335 | tgt "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.149" / our null |
+| `Observation.(whole resource)` | real-gap | 180 | tgt "72166-2@2024-07-02" / our null |
+| `Condition.code.coding[].system` | coding-gap | 171 | tgt "http://hl7.org/fhir/sid/icd-10-cm" / our null |
+| `Condition.code.coding[].code` | coding-gap | 171 | tgt "K21.9" / our null |
+| `Condition.code.coding[].display` | coding-gap | 171 | tgt "Gastro-esophageal reflux disease without esophagitis" / our null |
+| `Medication.code.coding[].system` | real-gap | 170 | tgt "http://www.whocc.no/atc" / our null |
+| `Medication.code.coding[].code` | coding-gap | 170 | tgt "N06AA10" / our null |
+| `DocumentReference.type.coding[].system` | real-gap | 94 | tgt "urn:oid:1.2.840.114350.1.13.283.2.7.4.737880.5010" / our null |
+| `DocumentReference.type.coding[].code` | coding-gap | 94 | tgt "36" / our null |
+| `DocumentReference.type.coding[].display` | coding-gap | 94 | tgt "Telephone Encounter" / our null |
 | `Encounter.type[].coding[].system` | real-gap | 82 | tgt "urn:oid:1.2.840.114350.1.13.283.2.7.10.698084.30" / our null |
 | `Encounter.type[].coding[].code` | coding-gap | 82 | tgt "70" / our null |
 | `Encounter.type[].coding[].display` | coding-gap | 82 | tgt "Telephone" / our null |
+| `AllergyIntolerance.code.coding[].system` | coding-gap | 78 | tgt "http://snomed.info/sct" / our null |
+| `AllergyIntolerance.code.coding[].code` | coding-gap | 78 | tgt "372788003" / our null |
 | `Encounter.type[].text` | real-gap | 62 | tgt "Telephone" / our null |
-| `Observation.encounter.display` | real-gap | 52 | tgt "Office Visit" / our null |
+| `Observation.code.coding[].display` | coding-gap | 41 | tgt "BUN/Creatinine Ratio" / our null |
 | `Condition.encounter.display` | real-gap | 40 | tgt "Lab" / our null |
+| `Practitioner.identifier[].system` | real-gap | 32 | tgt "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.60" / our null |
 | `DocumentReference.extension[].extension[].valueCodeableConcept.coding[].system` | real-gap | 31 | tgt "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072" / our null |
 | `DocumentReference.extension[].extension[].valueCodeableConcept.coding[].code` | coding-gap | 31 | tgt "1" / our null |
 | `DocumentReference.extension[].extension[].valueCodeableConcept.coding[].display` | coding-gap | 31 | tgt "Signer" / our null |
+| `Practitioner.identifier[].value` | real-gap | 31 | tgt "9005828432002" / our null |
 | `DocumentReference.context.encounter[].display` | real-gap | 30 | tgt "Telephone" / our null |
 | `DocumentReference.type.coding[].userSelected` | real-gap | 28 | tgt true / our null |
+| `DocumentReference.custodian.identifier.system` | real-gap | 28 | tgt "urn:ietf:rfc:3986" / our null |
+| `DocumentReference.custodian.identifier.value` | real-gap | 28 | tgt "urn:ihs:ce-prd" / our null |
 | `DocumentReference.context.extension[].valueCodeableConcept.coding[].system` | real-gap | 28 | tgt "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040" / our null |
 | `DocumentReference.context.extension[].valueCodeableConcept.coding[].code` | coding-gap | 28 | tgt "2507" / our null |
 | `DocumentReference.context.extension[].valueCodeableConcept.coding[].display` | coding-gap | 28 | tgt "Clerk" / our null |
+| `Practitioner.identifier[].use` | real-gap | 27 | tgt "usual" / our null |
+| `MedicationRequest.dosageInstruction[].route.coding[].system` | coding-gap | 26 | tgt "http://snomed.info/sct" / our null |
+| `MedicationRequest.dosageInstruction[].route.coding[].code` | coding-gap | 26 | tgt "738956005" / our null |
+| `MedicationRequest.dosageInstruction[].route.coding[].display` | coding-gap | 26 | tgt "Oral (intended site)" / our null |
+| `Practitioner.identifier[].type.text` | real-gap | 23 | tgt "EPIC" / our null |
 | `DocumentReference.(whole resource)` | real-gap | 21 | tgt "1025926289" / our null |
 | `Practitioner.active` | real-gap | 21 | tgt true / our null |
-| `Practitioner.name[].text` | unsure | 20 | tgt "Mary S" / our "Mary B Smith" |
-| `Encounter.hospitalization.admitSource.coding[].system` | real-gap | 19 | tgt "urn:oid:1.2.840.114350.1.13.283.2.7.10.698084.10310" / our null |
-| `Encounter.hospitalization.admitSource.coding[].code` | coding-gap | 19 | tgt "2" / our null |
-| `Encounter.hospitalization.admitSource.coding[].display` | coding-gap | 19 | tgt "Clinic or Physician" / our null |
-| `Immunization.vaccineCode.text` | unsure | 19 | tgt "Influenza (FLUCELVAX) ccIIV4, prefilled syringe" / our "INFLUENZA (FLUCELVA |
-| `Encounter.extension[].valueBoolean` | real-gap | 18 | tgt false / our null |
-| `Encounter.extension[].url` | real-gap | 18 | tgt "http://open.epic.com/FHIR/StructureDefinition/extension/accidentrelated" /  |
-| `Medication.code.text` | unsure | 18 | tgt "nortriptyline 10 MG capsule" / our "NORTRIPTYLINE HCL 10 MG PO CAPS" |
-| `Medication.ingredient[].itemCodeableConcept.text` | unsure | 18 | tgt "nortriptyline 10 MG capsule" / our "NORTRIPTYLINE HCL 10 MG PO CAPS" |
-| `MedicationRequest.medicationReference.display` | unsure | 18 | tgt "nortriptyline 10 MG capsule" / our "NORTRIPTYLINE HCL 10 MG PO CAPS" |
-| `MedicationRequest.encounter.display` | real-gap | 18 | tgt "Office Visit" / our null |
-| `MedicationRequest.reasonCode[].coding[].system` | coding-gap | 18 | tgt "http://snomed.info/sct" / our null |
-| `MedicationRequest.reasonCode[].coding[].code` | coding-gap | 18 | tgt "40425004" / our null |
-| `MedicationRequest.reasonCode[].coding[].display` | coding-gap | 18 | tgt "Postconcussion syndrome (disorder)" / our null |
-| `MedicationRequest.courseOfTherapyType.coding[].system` | real-gap | 18 | tgt "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy"  |
-| `MedicationRequest.courseOfTherapyType.coding[].code` | coding-gap | 18 | tgt "acute" / our null |
-| `MedicationRequest.courseOfTherapyType.coding[].display` | coding-gap | 18 | tgt "Short course (acute) therapy" / our null |
-| `MedicationRequest.courseOfTherapyType.text` | real-gap | 18 | tgt "Short course (acute) therapy" / our null |
-| `Observation.component[].code.text` | unsure | 18 | tgt "Systolic blood pressure" / our "BP Systolic" |
-| `Observation.valueCodeableConcept.coding[].code` | coding-gap | 18 | tgt "33586001" / our null |

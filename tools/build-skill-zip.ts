@@ -25,7 +25,6 @@ const ROOT = resolve(import.meta.dir, "..");
 const SRC = resolve(ROOT, process.env.SKILL_SRC || "out-crosswalk");
 const REAL_SKILL_MD = process.env.REAL_SKILL_MD || "/tmp/hra-inspect/health-record-assistant/SKILL.md";
 const OUT_ZIP = process.env.OUT_ZIP || resolve(process.env.HOME!, "Downloads/health-record-assistant-synthetic.zip");
-const STAGE = "/tmp/hra-synth/health-record-assistant";
 const KEEP_COMMUNICATIONS = ["comm-73255482", "comm-75160350", "comm-88901225", "comm-88909182"]; // CGM ask+refill, Paxlovid ask+RN reply
 
 // ── load our resources ──
@@ -104,7 +103,7 @@ const provider = {
   patientBirthDate: pat.birthDate || null,
   fhir,
   attachments,
-  fetchedAt: new Date().toISOString(),
+  fetchedAt: process.env.SKILL_FETCHED_AT || "2026-06-17T03:49:45.135Z", // stable so the committed content diffs cleanly
   _note: "SYNTHETIC: FHIR + attachments reconstructed from this patient's Epic EHI export (already redacted); a 1:1-shaped substitute for the real patient-portal download. Not Epic's live FHIR output.",
 };
 
@@ -144,20 +143,23 @@ function buildScrub() {
   const walk = (n: any): any => typeof n === "string" ? redactStr(n) : Array.isArray(n) ? n.map(walk) : n && typeof n === "object" ? Object.fromEntries(Object.keys(n).map((k) => [k, walk(n[k])])) : n;
   return { walk, n: exact.size + subs.size };
 }
-const scrub = buildScrub();
-const scrubbed = scrub.walk(provider);
-console.log(`PHI scrub: ${scrub.n} patient preimage value(s) removed from the whole bundle`);
+// Redaction is inherited from the gold (my-ehi-redacted raw + the redacted crosswalk/identifiers.csv),
+// so no scrub here — the skill carries exactly the same redaction as the report's "ours" side.
+const scrubbed = provider;
 
-// ── stage + zip ──
-rmSync("/tmp/hra-synth", { recursive: true, force: true });
-mkdirSync(resolve(STAGE, "data"), { recursive: true });
-mkdirSync(resolve(STAGE, "references"), { recursive: true });
-if (existsSync(REAL_SKILL_MD)) copyFileSync(REAL_SKILL_MD, resolve(STAGE, "SKILL.md"));
-writeFileSync(resolve(STAGE, "data/unitypoint-health.json"), JSON.stringify(scrubbed, null, 2));
+// ── write the UNZIPPED skill as committable text (shell + content). The published .zip is assembled
+// in CI from this dir, so the zip can never drift from its committed inputs. Only this dir is checked in. ──
+const DEST = resolve(ROOT, "report/health-record-assistant");
+mkdirSync(resolve(DEST, "data"), { recursive: true });
+mkdirSync(resolve(DEST, "references"), { recursive: true });
+writeFileSync(resolve(DEST, "references/.gitkeep"), "");
+// seed SKILL.md once from the real export; thereafter the committed shell is the source of truth (don't clobber)
+if (!existsSync(resolve(DEST, "SKILL.md")) && existsSync(REAL_SKILL_MD)) copyFileSync(REAL_SKILL_MD, resolve(DEST, "SKILL.md"));
+writeFileSync(resolve(DEST, "data/unitypoint-health.json"), JSON.stringify(scrubbed, null, 2));
+console.log("wrote committable skill dir:", DEST.replace(ROOT + "/", ""), "(zip assembled in CI / via `cd report && zip -r ... health-record-assistant`)");
 
 const counts = Object.fromEntries(Object.entries(fhir).filter(([, v]) => v.length).map(([k, v]) => [k, v.length]));
 console.log("=== synthetic skill bundle ===");
 console.log("patient:", patientDisplayName, "| DOB:", provider.patientBirthDate);
 console.log("fhir types:", JSON.stringify(counts));
 console.log("Communications kept:", fhir.Communication.length, "| attachments:", attachments.length, "| total note plaintext:", attachments.reduce((s, a) => s + (a.bestEffortPlaintext || "").length, 0), "chars");
-console.log("staged at:", STAGE);

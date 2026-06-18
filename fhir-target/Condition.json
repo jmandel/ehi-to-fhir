@@ -1,0 +1,3719 @@
+[
+ {
+  "resourceType": "Condition",
+  "id": "ey9D-CCgaYNTNBamddODJgRWkvcZ0m5AvcZA1meQCORc3",
+  "clinicalStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+     "version": "4.0.0",
+     "code": "active",
+     "display": "Active"
+    }
+   ],
+   "text": "Active"
+  },
+  "verificationStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+     "version": "4.0.0",
+     "code": "confirmed",
+     "display": "Confirmed"
+    }
+   ],
+   "text": "Confirmed"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "problem-list-item",
+      "display": "Problem List Item"
+     }
+    ],
+    "text": "Problem List Item"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "K21.9",
+     "display": "Gastro-esophageal reflux disease without esophagitis"
+    },
+    {
+     "system": "http://snomed.info/sct",
+     "code": "235595009",
+     "display": "Gastroesophageal Reflux Disease"
+    },
+    {
+     "system": "http://snomed.info/sct",
+     "code": "698065002",
+     "display": "Acid Reflux"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "530.81",
+     "display": "Gastroesophageal reflux disease"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.3.247.1.1",
+     "code": "8169",
+     "display": "Gastroesophageal reflux disease"
+    }
+   ],
+   "text": "Gastroesophageal reflux disease"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "onsetDateTime": "2018-08-09",
+  "recordedDate": "2018-08-09"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "epCVtMcGpB2.HetQahGDyfkpTL..DUZjNB.hnumcLtWE3",
+  "clinicalStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+     "version": "4.0.0",
+     "code": "active",
+     "display": "Active"
+    }
+   ],
+   "text": "Active"
+  },
+  "verificationStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+     "version": "4.0.0",
+     "code": "confirmed",
+     "display": "Confirmed"
+    }
+   ],
+   "text": "Confirmed"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "problem-list-item",
+      "display": "Problem List Item"
+     }
+    ],
+    "text": "Problem List Item"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "F07.81",
+     "display": "Postconcussional syndrome"
+    },
+    {
+     "system": "http://snomed.info/sct",
+     "code": "40425004",
+     "display": "Postconcussion Syndrome"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "310.2",
+     "display": "Post concussion syndrome"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.3.247.1.1",
+     "code": "802015",
+     "display": "Post concussion syndrome"
+    }
+   ],
+   "text": "Post concussion syndrome"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "onsetDateTime": "2020-09-01",
+  "recordedDate": "2022-08-29"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eS996QlT1zpNRZ5-CacunOzc59C4XNf.xm.yXAygjNso3",
+  "clinicalStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+     "version": "4.0.0",
+     "code": "resolved",
+     "display": "Resolved"
+    }
+   ],
+   "text": "Resolved"
+  },
+  "verificationStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+     "version": "4.0.0",
+     "code": "confirmed",
+     "display": "Confirmed"
+    }
+   ],
+   "text": "Confirmed"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "problem-list-item",
+      "display": "Problem List Item"
+     }
+    ],
+    "text": "Problem List Item"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "M54.2",
+     "display": "Cervicalgia"
+    },
+    {
+     "system": "http://snomed.info/sct",
+     "code": "81680005",
+     "display": "Neck Pain"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "723.1",
+     "display": "Neck pain"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.3.247.1.1",
+     "code": "78890",
+     "display": "Neck pain"
+    }
+   ],
+   "text": "Neck pain"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "onsetDateTime": "2024-05-25",
+  "abatementDateTime": "2024-11-07",
+  "recordedDate": "2024-07-02"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "ekI2Z1Uuvnk2ov9eOtrIg7A1Rc9jRIlRLYUgHlKh5laM3",
+  "clinicalStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+     "version": "4.0.0",
+     "code": "active",
+     "display": "Active"
+    }
+   ],
+   "text": "Active"
+  },
+  "verificationStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+     "version": "4.0.0",
+     "code": "confirmed",
+     "display": "Confirmed"
+    }
+   ],
+   "text": "Confirmed"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "problem-list-item",
+      "display": "Problem List Item"
+     }
+    ],
+    "text": "Problem List Item"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "J30.2",
+     "display": "Other seasonal allergic rhinitis"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "H10.10",
+     "display": "Acute atopic conjunctivitis, unspecified eye"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "J30.89",
+     "display": "Other allergic rhinitis"
+    },
+    {
+     "system": "http://snomed.info/sct",
+     "code": "878820003",
+     "display": "Rhinoconjunctivitis"
+    },
+    {
+     "system": "http://snomed.info/sct",
+     "code": "61582004",
+     "display": "Allergic Rhinitis"
+    },
+    {
+     "system": "http://snomed.info/sct",
+     "code": "473460002",
+     "display": "Allergic Conjunctivitis"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "477.9",
+     "display": "Allergic rhinoconjunctivitis, seasonal and perennial"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.3.247.1.1",
+     "code": "2029089",
+     "display": "Allergic rhinoconjunctivitis, seasonal and perennial"
+    }
+   ],
+   "text": "Allergic rhinoconjunctivitis, seasonal and perennial"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "onsetDateTime": "2025-05-09",
+  "recordedDate": "2025-12-04"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "e-PZ2D0aRdZIgegQwyye55aALPVvCD3xbXsw-ptEtrwk3",
+  "clinicalStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+     "version": "4.0.0",
+     "code": "active",
+     "display": "Active"
+    }
+   ],
+   "text": "Active"
+  },
+  "verificationStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+     "version": "4.0.0",
+     "code": "confirmed",
+     "display": "Confirmed"
+    }
+   ],
+   "text": "Confirmed"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "problem-list-item",
+      "display": "Problem List Item"
+     }
+    ],
+    "text": "Problem List Item"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "T78.19XA",
+     "display": "Other adverse food reactions, not elsewhere classified, initial encounter"
+    },
+    {
+     "system": "http://snomed.info/sct",
+     "code": "432807008",
+     "display": "Pollen-Food Allergy"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "995.7",
+     "display": "Pollen-food allergy"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.3.247.1.1",
+     "code": "1712504",
+     "display": "Pollen-food allergy"
+    }
+   ],
+   "text": "Pollen-food allergy"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "onsetDateTime": "2025-05-09",
+  "recordedDate": "2025-12-04"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eNctkbGPCmbGHkV-PvYhZxjXi5hrqyf77ktW3WxozW9rvdW-VC2pgCmLTt.PzvUu9C43YBfa5jPmA7UKWhj88cw3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "305058001",
+     "display": "Patient encounter status (finding)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "V70.0",
+     "display": "Routine general medical examination at a health care facility"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "Z00.00",
+     "display": "Encounter for general adult medical examination without abnormal findings"
+    }
+   ],
+   "text": "Preventative health care"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eQ6.JK9L9XY-2BpYQ4Y5aRw3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1169847546"
+   },
+   "display": "Lab"
+  },
+  "recordedDate": "2025-12-04"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eNctkbGPCmbGHkV-PvYhZxgxJqiGKXb8Ut.wYnuUmIjHVPBPoj4tveN6gV2QST8iHQVSLGa5HLSN.hFm13YVNQQ3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "305058001",
+     "display": "Patient encounter status (finding)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "V70.0",
+     "display": "Routine general medical examination at a health care facility"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "Z00.00",
+     "display": "Encounter for general adult medical examination without abnormal findings"
+    }
+   ],
+   "text": "Preventative health care"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eOLbd0HJXaCYSduv-jZwPpA3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1098684634"
+   },
+   "display": "Office Visit"
+  },
+  "recordedDate": "2025-12-04"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eNctkbGPCmbGHkV-PvYhZxgxJqiGKXb8Ut.wYnuUmIjFIE6i683f0kSoqypT1F0cAEa2ijjV5NCwFjabC9p24WQ3",
+  "clinicalStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+     "version": "4.0.0",
+     "code": "active",
+     "display": "Active"
+    }
+   ],
+   "text": "Active"
+  },
+  "verificationStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+     "version": "4.0.0",
+     "code": "confirmed",
+     "display": "Confirmed"
+    }
+   ],
+   "text": "Confirmed"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "40425004",
+     "display": "Postconcussion syndrome (disorder)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "310.2",
+     "display": "Postconcussion syndrome"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "F07.81",
+     "display": "Postconcussional syndrome"
+    }
+   ],
+   "text": "Post concussion syndrome"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eOLbd0HJXaCYSduv-jZwPpA3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1098684634"
+   },
+   "display": "Office Visit"
+  },
+  "onsetDateTime": "2020-09-01",
+  "recordedDate": "2022-08-29",
+  "evidence": [
+   {
+    "detail": [
+     {
+      "reference": "Condition/epCVtMcGpB2.HetQahGDyfkpTL..DUZjNB.hnumcLtWE3",
+      "display": "Post concussion syndrome"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eNctkbGPCmbGHkV-PvYhZxgxJqiGKXb8Ut.wYnuUmIjEF7eke0sqzCgyTs7FDBDgkFgyMirNyE1p0CEvyouEuaw3",
+  "clinicalStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+     "version": "4.0.0",
+     "code": "active",
+     "display": "Active"
+    }
+   ],
+   "text": "Active"
+  },
+  "verificationStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+     "version": "4.0.0",
+     "code": "confirmed",
+     "display": "Confirmed"
+    }
+   ],
+   "text": "Confirmed"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "235595009",
+     "display": "Gastroesophageal reflux disease (disorder)"
+    },
+    {
+     "system": "http://snomed.info/sct",
+     "code": "698065002",
+     "display": "Acid reflux (finding)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "530.81",
+     "display": "Esophageal reflux"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "K21.9",
+     "display": "Gastro-esophageal reflux disease without esophagitis"
+    }
+   ],
+   "text": "Gastroesophageal reflux disease, unspecified whether esophagitis present"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eOLbd0HJXaCYSduv-jZwPpA3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1098684634"
+   },
+   "display": "Office Visit"
+  },
+  "onsetDateTime": "2018-08-09",
+  "recordedDate": "2018-08-09",
+  "evidence": [
+   {
+    "detail": [
+     {
+      "reference": "Condition/ey9D-CCgaYNTNBamddODJgRWkvcZ0m5AvcZA1meQCORc3",
+      "display": "Gastroesophageal reflux disease"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eNctkbGPCmbGHkV-PvYhZxgxJqiGKXb8Ut.wYnuUmIjFUp75Tj2QRLgkFLfv3VRsazEwC1uy-FVZDpZ5BA9FDEQ3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "305058001",
+     "display": "Patient encounter status (finding)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "V77.1",
+     "display": "Screening for diabetes mellitus"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "Z13.1",
+     "display": "Encounter for screening for diabetes mellitus"
+    }
+   ],
+   "text": "Screening for diabetes mellitus"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eOLbd0HJXaCYSduv-jZwPpA3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1098684634"
+   },
+   "display": "Office Visit"
+  },
+  "recordedDate": "2025-12-04"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eNctkbGPCmbGHkV-PvYhZxgxJqiGKXb8Ut.wYnuUmIjFww-1D4Q6LLWP84gfRm3hLRbqjKnQLJgpgx3Bk9J2c4w3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "305058001",
+     "display": "Patient encounter status (finding)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "V77.91",
+     "display": "Screening for lipoid disorders"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "Z13.220",
+     "display": "Encounter for screening for lipoid disorders"
+    }
+   ],
+   "text": "Screening for hyperlipidemia"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eOLbd0HJXaCYSduv-jZwPpA3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1098684634"
+   },
+   "display": "Office Visit"
+  },
+  "recordedDate": "2025-12-04"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eNctkbGPCmbGHkV-PvYhZxlaVMVbjXNAPE9MYEzWNt8yxPXiUzXlPUDpTuo91Uf.OPNdcjlYrCP5p1ol8XLSHkw3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "840539006",
+     "display": "Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "079.89",
+     "display": "Other specified viral infection, in conditions classified elsewhere and of unspecified site"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "U07.1",
+     "display": "COVID-19"
+    }
+   ],
+   "text": "COVID-19"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eq7-yQQnBCUfN9o-DirVGyA3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1127808563"
+   },
+   "display": "Telemedicine"
+  },
+  "recordedDate": "2025-04-23"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eNctkbGPCmbGHkV-PvYhZxpvoNex1RBtlHr2PuNWLroKAbZlqp64GaDgWnkX2DzbS93OqPcH69mx8MrARzBeTcA3",
+  "clinicalStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+     "version": "4.0.0",
+     "code": "active",
+     "display": "Active"
+    }
+   ],
+   "text": "Active"
+  },
+  "verificationStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+     "version": "4.0.0",
+     "code": "confirmed",
+     "display": "Confirmed"
+    }
+   ],
+   "text": "Confirmed"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "40425004",
+     "display": "Postconcussion syndrome (disorder)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "310.2",
+     "display": "Postconcussion syndrome"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "F07.81",
+     "display": "Postconcussional syndrome"
+    }
+   ],
+   "text": "Post concussion syndrome"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "onsetDateTime": "2020-09-01",
+  "recordedDate": "2022-08-29",
+  "evidence": [
+   {
+    "detail": [
+     {
+      "reference": "Condition/epCVtMcGpB2.HetQahGDyfkpTL..DUZjNB.hnumcLtWE3",
+      "display": "Post concussion syndrome"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eNctkbGPCmbGHkV-PvYhZxmCunTlY7cWF0YlnZgrzwYzX9Fso8gcmauh54qyd49ScITPxsQLhWbCqLQ3.LuIWMw3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "762616007",
+     "display": "History of food allergy (situation)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "V15.05",
+     "display": "Allergy to other foods"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "Z91.018",
+     "display": "Allergy to other foods"
+    }
+   ],
+   "text": "Past history of nut allergy"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "recordedDate": "2024-11-27"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eNctkbGPCmbGHkV-PvYhZxsqOGg-9MU67xlpW3cTsi3CaepXJSsIp2czGz0tzcCV93dPtar8C9DSEnggYWMYY9Q3",
+  "clinicalStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+     "version": "4.0.0",
+     "code": "active",
+     "display": "Active"
+    }
+   ],
+   "text": "Active"
+  },
+  "verificationStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+     "version": "4.0.0",
+     "code": "confirmed",
+     "display": "Confirmed"
+    }
+   ],
+   "text": "Confirmed"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "40425004",
+     "display": "Postconcussion syndrome (disorder)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "310.2",
+     "display": "Postconcussion syndrome"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "F07.81",
+     "display": "Postconcussional syndrome"
+    }
+   ],
+   "text": "Post concussion syndrome"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/ex77tmo2owursW0Cs0zQfZQ3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1028744231"
+   },
+   "display": "Office Visit"
+  },
+  "onsetDateTime": "2020-09-01",
+  "recordedDate": "2022-08-29",
+  "evidence": [
+   {
+    "detail": [
+     {
+      "reference": "Condition/epCVtMcGpB2.HetQahGDyfkpTL..DUZjNB.hnumcLtWE3",
+      "display": "Post concussion syndrome"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eNctkbGPCmbGHkV-PvYhZxsqOGg-9MU67xlpW3cTsi3B0UVvtYWnqPI6i4s2N9FhQf1s2ZOAWgxpmg0MsdUCgZA3",
+  "clinicalStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+     "version": "4.0.0",
+     "code": "active",
+     "display": "Active"
+    }
+   ],
+   "text": "Active"
+  },
+  "verificationStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+     "version": "4.0.0",
+     "code": "confirmed",
+     "display": "Confirmed"
+    }
+   ],
+   "text": "Confirmed"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "235595009",
+     "display": "Gastroesophageal reflux disease (disorder)"
+    },
+    {
+     "system": "http://snomed.info/sct",
+     "code": "698065002",
+     "display": "Acid reflux (finding)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "530.81",
+     "display": "Esophageal reflux"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "K21.9",
+     "display": "Gastro-esophageal reflux disease without esophagitis"
+    }
+   ],
+   "text": "Gastroesophageal reflux disease, unspecified whether esophagitis present"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/ex77tmo2owursW0Cs0zQfZQ3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1028744231"
+   },
+   "display": "Office Visit"
+  },
+  "onsetDateTime": "2018-08-09",
+  "recordedDate": "2018-08-09",
+  "evidence": [
+   {
+    "detail": [
+     {
+      "reference": "Condition/ey9D-CCgaYNTNBamddODJgRWkvcZ0m5AvcZA1meQCORc3",
+      "display": "Gastroesophageal reflux disease"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eNctkbGPCmbGHkV-PvYhZxsqOGg-9MU67xlpW3cTsi3BAYkGZaxwGPWD0UgYEvAXWxPnejyNqm4tFjfwTc0h0QA3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "305058001",
+     "display": "Patient encounter status (finding)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "V70.0",
+     "display": "Routine general medical examination at a health care facility"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "Z00.00",
+     "display": "Encounter for general adult medical examination without abnormal findings"
+    }
+   ],
+   "text": "Preventative health care"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/ex77tmo2owursW0Cs0zQfZQ3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1028744231"
+   },
+   "display": "Office Visit"
+  },
+  "recordedDate": "2024-11-07"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eNctkbGPCmbGHkV-PvYhZxvf9XU1MLHTwa-D0R6J1gt.60Y9Re5OMPU2KhQ-0aodgzIj4I0hGTfSNZmlQbiElxw3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "81680005",
+     "display": "Neck pain (finding)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "723.1",
+     "display": "Cervicalgia"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "M54.2",
+     "display": "Cervicalgia"
+    }
+   ],
+   "text": "Cervicalgia"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eO-UViuC0CDbUmv7-iod.lA3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1076676013"
+   },
+   "display": "Clinical Support"
+  },
+  "recordedDate": "2024-07-02"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eNctkbGPCmbGHkV-PvYhZxhCIzd0-B2oDSFwgfrpOq3cDG37CxgcQay55wypraAcxlq-2OK2w6JiMjwoQv3YzFA3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "81680005",
+     "display": "Neck pain (finding)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "723.1",
+     "display": "Cervicalgia"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "M54.2",
+     "display": "Cervicalgia"
+    }
+   ],
+   "text": "Cervicalgia"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eZjqlpWPCapiLvU41AUArfw3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1076261941"
+   },
+   "display": "Office Visit"
+  },
+  "recordedDate": "2024-07-02"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eNctkbGPCmbGHkV-PvYhZxhCIzd0-B2oDSFwgfrpOq3cilm9d82xxRXwEjo1gbdo00NcNZL-5d.GPfk0tF9nROQ3",
+  "clinicalStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+     "version": "4.0.0",
+     "code": "active",
+     "display": "Active"
+    }
+   ],
+   "text": "Active"
+  },
+  "verificationStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+     "version": "4.0.0",
+     "code": "confirmed",
+     "display": "Confirmed"
+    }
+   ],
+   "text": "Confirmed"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "40425004",
+     "display": "Postconcussion syndrome (disorder)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "310.2",
+     "display": "Postconcussion syndrome"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "F07.81",
+     "display": "Postconcussional syndrome"
+    }
+   ],
+   "text": "Post concussion syndrome"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eZjqlpWPCapiLvU41AUArfw3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1076261941"
+   },
+   "display": "Office Visit"
+  },
+  "onsetDateTime": "2020-09-01",
+  "recordedDate": "2022-08-29",
+  "evidence": [
+   {
+    "detail": [
+     {
+      "reference": "Condition/epCVtMcGpB2.HetQahGDyfkpTL..DUZjNB.hnumcLtWE3",
+      "display": "Post concussion syndrome"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eNctkbGPCmbGHkV-PvYhZxhCIzd0-B2oDSFwgfrpOq3fhRpT5AFBEwiIQLYzDns5AASNWKh1sLsqPINlkSqgA4w3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "230477005",
+     "display": "Chronic post-traumatic headache (disorder)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "339.22",
+     "display": "Chronic post-traumatic headache"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "G44.329",
+     "display": "Chronic post-traumatic headache, not intractable"
+    }
+   ],
+   "text": "Chronic post-traumatic headache, not intractable"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eZjqlpWPCapiLvU41AUArfw3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1076261941"
+   },
+   "display": "Office Visit"
+  },
+  "recordedDate": "2024-07-02"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eNctkbGPCmbGHkV-PvYhZxhpj.8x0juTq63C9mAsaFDGY3MXyRlMZ-79kWEjwz9NfGqzQCviCRBUZ8mdTnoANpw3",
+  "clinicalStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+     "version": "4.0.0",
+     "code": "active",
+     "display": "Active"
+    }
+   ],
+   "text": "Active"
+  },
+  "verificationStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+     "version": "4.0.0",
+     "code": "confirmed",
+     "display": "Confirmed"
+    }
+   ],
+   "text": "Confirmed"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "40425004",
+     "display": "Postconcussion syndrome (disorder)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "310.2",
+     "display": "Postconcussion syndrome"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "F07.81",
+     "display": "Postconcussional syndrome"
+    }
+   ],
+   "text": "Post concussion syndrome"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "onsetDateTime": "2020-09-01",
+  "recordedDate": "2022-08-29",
+  "evidence": [
+   {
+    "detail": [
+     {
+      "reference": "Condition/epCVtMcGpB2.HetQahGDyfkpTL..DUZjNB.hnumcLtWE3",
+      "display": "Post concussion syndrome"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eNctkbGPCmbGHkV-PvYhZxuliw3gIT1Dx53k1Nn8gi-HFlG21O0-JLKBQDzUHA9i8Bn5qTk4HVM4PCfrwxoZ29Q3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "305058001",
+     "display": "Patient encounter status (finding)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "V77.1",
+     "display": "Screening for diabetes mellitus"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "Z13.1",
+     "display": "Encounter for screening for diabetes mellitus"
+    }
+   ],
+   "text": "Screening for diabetes mellitus"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eIJD3pIhxpMN4Kk981kLcxA3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1028743701"
+   },
+   "display": "Lab"
+  },
+  "recordedDate": "2023-09-28"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eNctkbGPCmbGHkV-PvYhZxuliw3gIT1Dx53k1Nn8gi-FHKHpt0yoUWZjIZhsuK7pQIJ795AqMTjmiiDDt4N-V6Q3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "305058001",
+     "display": "Patient encounter status (finding)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "V77.91",
+     "display": "Screening for lipoid disorders"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "Z13.220",
+     "display": "Encounter for screening for lipoid disorders"
+    }
+   ],
+   "text": "Screening for hyperlipidemia"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eIJD3pIhxpMN4Kk981kLcxA3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1028743701"
+   },
+   "display": "Lab"
+  },
+  "recordedDate": "2023-09-28"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eNctkbGPCmbGHkV-PvYhZxuliw3gIT1Dx53k1Nn8gi-G1JocYVvRkv-4WZsiA3uuI86dMFq2J9VQIPBayCr5MHQ3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "305058001",
+     "display": "Patient encounter status (finding)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "V70.0",
+     "display": "Routine general medical examination at a health care facility"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "Z00.00",
+     "display": "Encounter for general adult medical examination without abnormal findings"
+    }
+   ],
+   "text": "Preventative health care"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eIJD3pIhxpMN4Kk981kLcxA3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1028743701"
+   },
+   "display": "Lab"
+  },
+  "recordedDate": "2023-09-28"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eucKKbtYzNniEtSrGUAAPg-vwmQgM7KcAdM1JZtPcV.YiyDDzptP0Um0OUke14i9EU2FwrJFLEmbXe0ePt4TGbA3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "305058001",
+     "display": "Patient encounter status (finding)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "V77.91",
+     "display": "Screening for lipoid disorders"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "Z13.220",
+     "display": "Encounter for screening for lipoid disorders"
+    }
+   ],
+   "text": "Screening for hyperlipidemia"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/e1yIAPla.j8qkqnU275BH4w3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "991225117"
+   },
+   "display": "Office Visit"
+  },
+  "recordedDate": "2023-09-28"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eucKKbtYzNniEtSrGUAAPg-vwmQgM7KcAdM1JZtPcV.YixHOuVCoPr26PZ3rTTdhZ6LFOrvDkg2lYBIFHx0AbvQ3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "305058001",
+     "display": "Patient encounter status (finding)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "V77.1",
+     "display": "Screening for diabetes mellitus"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "Z13.1",
+     "display": "Encounter for screening for diabetes mellitus"
+    }
+   ],
+   "text": "Screening for diabetes mellitus"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/e1yIAPla.j8qkqnU275BH4w3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "991225117"
+   },
+   "display": "Office Visit"
+  },
+  "recordedDate": "2023-09-28"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eucKKbtYzNniEtSrGUAAPg-vwmQgM7KcAdM1JZtPcV.bf7PNmvVY3KuSvlKxid6894uzybPz9PTf.jq9yAj2k4w3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "305058001",
+     "display": "Patient encounter status (finding)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "V70.0",
+     "display": "Routine general medical examination at a health care facility"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "Z00.00",
+     "display": "Encounter for general adult medical examination without abnormal findings"
+    }
+   ],
+   "text": "Preventative health care"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/e1yIAPla.j8qkqnU275BH4w3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "991225117"
+   },
+   "display": "Office Visit"
+  },
+  "recordedDate": "2023-09-28"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eucKKbtYzNniEtSrGUAAPg-vwmQgM7KcAdM1JZtPcV.ZTwrhRBU4xCqMaJdL7ZhO16QzK3orpg1hey9.h4-gijw3",
+  "clinicalStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+     "version": "4.0.0",
+     "code": "active",
+     "display": "Active"
+    }
+   ],
+   "text": "Active"
+  },
+  "verificationStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+     "version": "4.0.0",
+     "code": "confirmed",
+     "display": "Confirmed"
+    }
+   ],
+   "text": "Confirmed"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "40425004",
+     "display": "Postconcussion syndrome (disorder)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "310.2",
+     "display": "Postconcussion syndrome"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "F07.81",
+     "display": "Postconcussional syndrome"
+    }
+   ],
+   "text": "Post concussion syndrome"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/e1yIAPla.j8qkqnU275BH4w3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "991225117"
+   },
+   "display": "Office Visit"
+  },
+  "onsetDateTime": "2020-09-01",
+  "recordedDate": "2022-08-29",
+  "evidence": [
+   {
+    "detail": [
+     {
+      "reference": "Condition/epCVtMcGpB2.HetQahGDyfkpTL..DUZjNB.hnumcLtWE3",
+      "display": "Post concussion syndrome"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eucKKbtYzNniEtSrGUAAPgw4W.B-whVg4.KCWL.0c9ZtYEK-EiGl8k1WJOmGh.QtdnzwgopBXO093GEsmjEKDaA3",
+  "clinicalStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+     "version": "4.0.0",
+     "code": "active",
+     "display": "Active"
+    }
+   ],
+   "text": "Active"
+  },
+  "verificationStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+     "version": "4.0.0",
+     "code": "confirmed",
+     "display": "Confirmed"
+    }
+   ],
+   "text": "Confirmed"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "40425004",
+     "display": "Postconcussion syndrome (disorder)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "310.2",
+     "display": "Postconcussion syndrome"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "F07.81",
+     "display": "Postconcussional syndrome"
+    }
+   ],
+   "text": "Post concussion syndrome"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eMwIgHPJe9mGD4QJWjwpyng3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "958148810"
+   },
+   "display": "Office Visit"
+  },
+  "onsetDateTime": "2020-09-01",
+  "recordedDate": "2022-08-29",
+  "evidence": [
+   {
+    "detail": [
+     {
+      "reference": "Condition/epCVtMcGpB2.HetQahGDyfkpTL..DUZjNB.hnumcLtWE3",
+      "display": "Post concussion syndrome"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eucKKbtYzNniEtSrGUAAPgxJ4L6mMNqQzM2A98SQPaB6VcABSA-83XTOR3bODG0VMaFOv-p8Rc2BLcugWIEj3og3",
+  "clinicalStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+     "version": "4.0.0",
+     "code": "active",
+     "display": "Active"
+    }
+   ],
+   "text": "Active"
+  },
+  "verificationStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+     "version": "4.0.0",
+     "code": "confirmed",
+     "display": "Confirmed"
+    }
+   ],
+   "text": "Confirmed"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "40425004",
+     "display": "Postconcussion syndrome (disorder)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "310.2",
+     "display": "Postconcussion syndrome"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "F07.81",
+     "display": "Postconcussional syndrome"
+    }
+   ],
+   "text": "Post concussion syndrome"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "onsetDateTime": "2020-09-01",
+  "recordedDate": "2022-08-29",
+  "evidence": [
+   {
+    "detail": [
+     {
+      "reference": "Condition/epCVtMcGpB2.HetQahGDyfkpTL..DUZjNB.hnumcLtWE3",
+      "display": "Post concussion syndrome"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eucKKbtYzNniEtSrGUAAPg05W5wvIGSZBUAb.zmPZn40eeose7quN-0gKk7fSqjfeZqWv2KlZqhZo-un1xJq5ow3",
+  "clinicalStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+     "version": "4.0.0",
+     "code": "active",
+     "display": "Active"
+    }
+   ],
+   "text": "Active"
+  },
+  "verificationStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+     "version": "4.0.0",
+     "code": "confirmed",
+     "display": "Confirmed"
+    }
+   ],
+   "text": "Confirmed"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "40425004",
+     "display": "Postconcussion syndrome (disorder)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "310.2",
+     "display": "Postconcussion syndrome"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "F07.81",
+     "display": "Postconcussional syndrome"
+    }
+   ],
+   "text": "Post concussion syndrome"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "onsetDateTime": "2020-09-01",
+  "recordedDate": "2022-08-29",
+  "evidence": [
+   {
+    "detail": [
+     {
+      "reference": "Condition/epCVtMcGpB2.HetQahGDyfkpTL..DUZjNB.hnumcLtWE3",
+      "display": "Post concussion syndrome"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eucKKbtYzNniEtSrGUAAPgyhhSu2rfe-SBdmbl9pgtHdNxFG29pqxIO.QjI39X1-UYMihoHbsDjI2QgVOgTiRlQ3",
+  "clinicalStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+     "version": "4.0.0",
+     "code": "active",
+     "display": "Active"
+    }
+   ],
+   "text": "Active"
+  },
+  "verificationStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+     "version": "4.0.0",
+     "code": "confirmed",
+     "display": "Confirmed"
+    }
+   ],
+   "text": "Confirmed"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "40425004",
+     "display": "Postconcussion syndrome (disorder)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "310.2",
+     "display": "Postconcussion syndrome"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "F07.81",
+     "display": "Postconcussional syndrome"
+    }
+   ],
+   "text": "Post concussion syndrome"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eaczqSTIxEFgrkvi.zMgWQQ3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "974614965"
+   },
+   "display": "Office Visit"
+  },
+  "onsetDateTime": "2020-09-01",
+  "recordedDate": "2022-08-29",
+  "evidence": [
+   {
+    "detail": [
+     {
+      "reference": "Condition/epCVtMcGpB2.HetQahGDyfkpTL..DUZjNB.hnumcLtWE3",
+      "display": "Post concussion syndrome"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eucKKbtYzNniEtSrGUAAPg9DDsAiSFNGiHzfxJwRQkptIP3P6ywQU5W1ZihdYlb-QrZCQ7cvhIRTS61OguCjTIQ3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "59621000",
+     "display": "Essential hypertension (disorder)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "401.9",
+     "display": "Unspecified essential hypertension"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "I10",
+     "display": "Essential (primary) hypertension"
+    }
+   ],
+   "text": "Primary hypertension"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eicq6YSSv0NiweXOdV3a2fA3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "958147754"
+   },
+   "display": "Lab"
+  },
+  "recordedDate": "2022-08-29"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eucKKbtYzNniEtSrGUAAPgxESvVY31GoM74ESfdcz8bjRl3r5i5an98xQ-xaaYH7cu6.IyzkJsrlsZmEnwq59xw3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "59621000",
+     "display": "Essential hypertension (disorder)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "401.9",
+     "display": "Unspecified essential hypertension"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "I10",
+     "display": "Essential (primary) hypertension"
+    }
+   ],
+   "text": "Primary hypertension"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/e9Yth5IquIww-psZE1ZqiPQ3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "948004323"
+   },
+   "display": "Office Visit"
+  },
+  "recordedDate": "2022-08-29"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eucKKbtYzNniEtSrGUAAPgxESvVY31GoM74ESfdcz8bhHBKtLfgciQBmcsmyDspScVTvuZd06Ftw1k0n8DNYk7A3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "305058001",
+     "display": "Patient encounter status (finding)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "V70.0",
+     "display": "Routine general medical examination at a health care facility"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "Z00.00",
+     "display": "Encounter for general adult medical examination without abnormal findings"
+    }
+   ],
+   "text": "Preventative health care"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/e9Yth5IquIww-psZE1ZqiPQ3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "948004323"
+   },
+   "display": "Office Visit"
+  },
+  "recordedDate": "2022-08-29"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eucKKbtYzNniEtSrGUAAPgxESvVY31GoM74ESfdcz8bhRHbe.emf-KI.23a6LFWzjv5HDwPB3iXHGzLCAdlB0Wg3",
+  "clinicalStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+     "version": "4.0.0",
+     "code": "active",
+     "display": "Active"
+    }
+   ],
+   "text": "Active"
+  },
+  "verificationStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+     "version": "4.0.0",
+     "code": "confirmed",
+     "display": "Confirmed"
+    }
+   ],
+   "text": "Confirmed"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "40425004",
+     "display": "Postconcussion syndrome (disorder)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "310.2",
+     "display": "Postconcussion syndrome"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "F07.81",
+     "display": "Postconcussional syndrome"
+    }
+   ],
+   "text": "Post concussion syndrome"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/e9Yth5IquIww-psZE1ZqiPQ3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "948004323"
+   },
+   "display": "Office Visit"
+  },
+  "onsetDateTime": "2020-09-01",
+  "recordedDate": "2022-08-29",
+  "evidence": [
+   {
+    "detail": [
+     {
+      "reference": "Condition/epCVtMcGpB2.HetQahGDyfkpTL..DUZjNB.hnumcLtWE3",
+      "display": "Post concussion syndrome"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Condition",
+  "id": "eucKKbtYzNniEtSrGUAAPg5cJP2CqS5MW-mVLrbND84PCvgd4GqVc9ylRXkFahh2hi8ZDNrpDhQyHqM1gao2T7A3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "429656004",
+     "display": "Late effect of traumatic injury to brain (disorder)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "907.0",
+     "display": "Late effect of intracranial injury without mention of skull fracture"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "S06.9XAS",
+     "display": "Unspecified intracranial injury with loss of consciousness status unknown, sequela"
+    }
+   ],
+   "text": "Late effect of traumatic injury to brain"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "recordedDate": "2022-02-09"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "e3jL2btNU8fmR5qMpnFQ39VE3E2gft3UDOaq8p2zcUqHcekW97fIp1RQIjAqbS5jqKhHursGCcl0jTJBrAAdXsA3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "82271004",
+     "display": "Injury of head (disorder)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "959.01",
+     "display": "Head injury, unspecified"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "S09.90XA",
+     "display": "Unspecified injury of head, initial encounter"
+    }
+   ],
+   "text": "Traumatic injury of head, initial encounter"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "recordedDate": "2020-07-31"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "e3jL2btNU8fmR5qMpnFQ39VRV1ansI9tpUE3Hi.Mqum5jj7m1g40SQvuJ6w.w1QdvLcwTmGy5UcL0USnVjjx70w3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "82271004",
+     "display": "Injury of head (disorder)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "959.01",
+     "display": "Head injury, unspecified"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "S09.90XA",
+     "display": "Unspecified injury of head, initial encounter"
+    }
+   ],
+   "text": "Traumatic injury of head, initial encounter"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eHcSgydLAxcfCAKBVtwDxXw3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "829995922"
+   },
+   "display": "Orders Only"
+  },
+  "recordedDate": "2020-07-21"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "e3jL2btNU8fmR5qMpnFQ39fl7kDF-yWlM0DZ8ef8WKBI1wb2xvfVo4nFtsM3sUQmCDmLWXl69svRzZ2iLbYFYCw3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "82271004",
+     "display": "Injury of head (disorder)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "959.01",
+     "display": "Head injury, unspecified"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "S09.90XA",
+     "display": "Unspecified injury of head, initial encounter"
+    }
+   ],
+   "text": "Traumatic injury of head, initial encounter"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "recordedDate": "2020-07-21"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "e3jL2btNU8fmR5qMpnFQ39bUjvlBx1q7KcJk6.C6yuPqaO1q9lXI34pzjXYie7rWwSTvoByRoVRk3BxBFTOZCGg3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "82271004",
+     "display": "Injury of head (disorder)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "959.01",
+     "display": "Head injury, unspecified"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "S09.90XA",
+     "display": "Unspecified injury of head, initial encounter"
+    }
+   ],
+   "text": "Traumatic injury of head, initial encounter"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eO5BPd4vBOvR8PDqpYvlgfQ3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "829393933"
+   },
+   "display": "Orders Only"
+  },
+  "recordedDate": "2020-07-15"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "e3jL2btNU8fmR5qMpnFQ39bUjvlBx1q7KcJk6.C6yuPqbbZCflxsGMK4pDStBcWoL1fFpDoU0WvR8McetShIebg3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "25064002",
+     "display": "Headache (finding)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "339.20",
+     "display": "Post-traumatic headache, unspecified"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "G44.309",
+     "display": "Post-traumatic headache, unspecified, not intractable"
+    }
+   ],
+   "text": "Post-concussion headache"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eO5BPd4vBOvR8PDqpYvlgfQ3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "829393933"
+   },
+   "display": "Orders Only"
+  },
+  "recordedDate": "2020-07-15"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "e3jL2btNU8fmR5qMpnFQ39YjPvDLPL6ubXbO5hnCCP-tw3gPafNox6B0uJCHScylaopgDd0bABzypDyEu7Kqpjw3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "82271004",
+     "display": "Injury of head (disorder)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "959.01",
+     "display": "Head injury, unspecified"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "S09.90XA",
+     "display": "Unspecified injury of head, initial encounter"
+    }
+   ],
+   "text": "Traumatic injury of head, initial encounter"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eED6OhVRXP6XsEM4vxkusjA3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "829213099"
+   },
+   "display": "Telemedicine"
+  },
+  "recordedDate": "2020-07-14"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "e-6Jgy3edPraXiVO8CQ1YzKKCvzTU.szNaKS.CexZYoKafRTH5kXwxricrkFcac07bUPoGMEiq8TBv3UXR228gg3",
+  "clinicalStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+     "version": "4.0.0",
+     "code": "active",
+     "display": "Active"
+    }
+   ],
+   "text": "Active"
+  },
+  "verificationStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+     "version": "4.0.0",
+     "code": "confirmed",
+     "display": "Confirmed"
+    }
+   ],
+   "text": "Confirmed"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "235595009",
+     "display": "Gastroesophageal reflux disease (disorder)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "530.81",
+     "display": "Esophageal reflux"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "K21.9",
+     "display": "Gastro-esophageal reflux disease without esophagitis"
+    }
+   ],
+   "text": "Gastroesophageal reflux disease, esophagitis presence not specified"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/e7jVo8vEAxcJ36UbHZzVojw3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "799951565"
+   },
+   "display": "Office Visit"
+  },
+  "onsetDateTime": "2018-08-09",
+  "recordedDate": "2018-08-09",
+  "evidence": [
+   {
+    "detail": [
+     {
+      "reference": "Condition/ey9D-CCgaYNTNBamddODJgRWkvcZ0m5AvcZA1meQCORc3",
+      "display": "Gastroesophageal reflux disease"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Condition",
+  "id": "e-6Jgy3edPraXiVO8CQ1YzKKCvzTU.szNaKS.CexZYoI5SDo.8yPlucdv5OA6HWA7MRblI9PzSdFU02rsybgxVg3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "354431000119105",
+     "display": "Lipoma of head (disorder)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "214.0",
+     "display": "Lipoma of skin and subcutaneous tissue of face"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "D17.0",
+     "display": "Benign lipomatous neoplasm of skin and subcutaneous tissue of head, face and neck"
+    }
+   ],
+   "text": "Lipoma of head"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/e7jVo8vEAxcJ36UbHZzVojw3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "799951565"
+   },
+   "display": "Office Visit"
+  },
+  "recordedDate": "2020-01-09"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "e-6Jgy3edPraXiVO8CQ1YzKKCvzTU.szNaKS.CexZYoJr1kSIBH1PcOlz7.cV2zC1Fki3Tm5fZcWUAVDl5Z892A3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "92069005",
+     "display": "Benign neoplasm of soft tissue (disorder)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "216.9",
+     "display": "Benign neoplasm of skin, site unspecified"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "D22.9",
+     "display": "Melanocytic nevi, unspecified"
+    }
+   ],
+   "text": "Nevus"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/e7jVo8vEAxcJ36UbHZzVojw3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "799951565"
+   },
+   "display": "Office Visit"
+  },
+  "recordedDate": "2020-01-09"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "e-6Jgy3edPraXiVO8CQ1YzDOXgZq5LeJc83sh1MxgrWX7pAqktXji4-Xb5Jx-JgXtoM.ikqxdWuz12WpUFIpWbg3",
+  "clinicalStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+     "version": "4.0.0",
+     "code": "active",
+     "display": "Active"
+    }
+   ],
+   "text": "Active"
+  },
+  "verificationStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+     "version": "4.0.0",
+     "code": "confirmed",
+     "display": "Confirmed"
+    }
+   ],
+   "text": "Confirmed"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "235595009",
+     "display": "Gastroesophageal reflux disease (disorder)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "530.81",
+     "display": "Esophageal reflux"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "K21.9",
+     "display": "Gastro-esophageal reflux disease without esophagitis"
+    }
+   ],
+   "text": "Gastroesophageal reflux disease, esophagitis presence not specified"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/ef5y5upKfLIsUvqi9Xrmfig3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "725327197"
+   },
+   "display": "Lab"
+  },
+  "onsetDateTime": "2018-08-09",
+  "recordedDate": "2018-08-09",
+  "evidence": [
+   {
+    "detail": [
+     {
+      "reference": "Condition/ey9D-CCgaYNTNBamddODJgRWkvcZ0m5AvcZA1meQCORc3",
+      "display": "Gastroesophageal reflux disease"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Condition",
+  "id": "e-6Jgy3edPraXiVO8CQ1YzDOXgZq5LeJc83sh1MxgrWWT0CWxO7R8-HNYXtYPKCbGP4dlHyXWPXqrIxTBpoE2Wg3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "162031009",
+     "display": "Indigestion (finding)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "536.8",
+     "display": "Dyspepsia and other specified disorders of function of stomach"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "R10.13",
+     "display": "Epigastric pain"
+    }
+   ],
+   "text": "Dyspepsia"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/ef5y5upKfLIsUvqi9Xrmfig3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "725327197"
+   },
+   "display": "Lab"
+  },
+  "recordedDate": "2018-08-18"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "e-6Jgy3edPraXiVO8CQ1YzDcjDg1OwFhfRrxOWCDtQCV-DaIEvfnV5LL-mf9jkWp85rdu9U54vyiaqa-9-drOcg3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "305058001",
+     "display": "Patient encounter status (finding)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "V65.8",
+     "display": "Other reasons for seeking consultation"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "Z76.89",
+     "display": "Persons encountering health services in other specified circumstances"
+    }
+   ],
+   "text": "Encounter to establish care"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/e-Y4mag6.P2MlJiyxCLjK4g3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "724628999"
+   },
+   "display": "Lab"
+  },
+  "recordedDate": "2018-08-09"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "e-6Jgy3edPraXiVO8CQ1YzHRHgGVbFr1uQ87gWdIR546CgUm0kqXLEEzZN4SwxMEjRCrsaaKx3-bR-FQpQLdpSw3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "305058001",
+     "display": "Patient encounter status (finding)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "V65.8",
+     "display": "Other reasons for seeking consultation"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "Z76.89",
+     "display": "Persons encountering health services in other specified circumstances"
+    }
+   ],
+   "text": "Encounter to establish care"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eVMXHnnT7souX6XGVBlM3Cg3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "720803470"
+   },
+   "display": "Office Visit"
+  },
+  "recordedDate": "2018-08-09"
+ },
+ {
+  "resourceType": "Condition",
+  "id": "e-6Jgy3edPraXiVO8CQ1YzHRHgGVbFr1uQ87gWdIR544IIEef0QVQ6UwBUqBh9WVVaAZvXylbMHlMj9wdxGQGbA3",
+  "clinicalStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+     "version": "4.0.0",
+     "code": "active",
+     "display": "Active"
+    }
+   ],
+   "text": "Active"
+  },
+  "verificationStatus": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+     "version": "4.0.0",
+     "code": "confirmed",
+     "display": "Confirmed"
+    }
+   ],
+   "text": "Confirmed"
+  },
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "235595009",
+     "display": "Gastroesophageal reflux disease (disorder)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "530.81",
+     "display": "Esophageal reflux"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "K21.9",
+     "display": "Gastro-esophageal reflux disease without esophagitis"
+    }
+   ],
+   "text": "Gastroesophageal reflux disease, esophagitis presence not specified"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eVMXHnnT7souX6XGVBlM3Cg3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "720803470"
+   },
+   "display": "Office Visit"
+  },
+  "onsetDateTime": "2018-08-09",
+  "recordedDate": "2018-08-09",
+  "evidence": [
+   {
+    "detail": [
+     {
+      "reference": "Condition/ey9D-CCgaYNTNBamddODJgRWkvcZ0m5AvcZA1meQCORc3",
+      "display": "Gastroesophageal reflux disease"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Condition",
+  "id": "e-6Jgy3edPraXiVO8CQ1YzHRHgGVbFr1uQ87gWdIR545426WdoWUS5UwYnXeoUDFq6bZEqhefIDtIps2qQ4ck.w3",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+      "code": "encounter-diagnosis",
+      "display": "Encounter Diagnosis"
+     }
+    ],
+    "text": "Encounter Diagnosis"
+   },
+   {
+    "coding": [
+     {
+      "system": "http://open.epic.com/FHIR/StructureDefinition/condition-category",
+      "code": "visit-diagnosis",
+      "display": "Visit Diagnosis"
+     }
+    ],
+    "text": "Visit Diagnosis"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://snomed.info/sct",
+     "code": "162031009",
+     "display": "Indigestion (finding)"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-9-cm",
+     "code": "536.8",
+     "display": "Dyspepsia and other specified disorders of function of stomach"
+    },
+    {
+     "system": "http://hl7.org/fhir/sid/icd-10-cm",
+     "code": "R10.13",
+     "display": "Epigastric pain"
+    }
+   ],
+   "text": "Dyspepsia"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eVMXHnnT7souX6XGVBlM3Cg3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "720803470"
+   },
+   "display": "Office Visit"
+  },
+  "recordedDate": "2018-08-09"
+ }
+]

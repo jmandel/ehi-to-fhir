@@ -1,0 +1,3 @@
+[submodule "my-ehi"]
+	path = my-ehi
+	url = https://github.com/jmandel/my-ehi.git

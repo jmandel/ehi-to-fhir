@@ -1,0 +1,2226 @@
+[
+ {
+  "resourceType": "MedicationRequest",
+  "id": "e-5zPnOnYWHzasymFzMzQMLxej5CYXQHKvSEbsSey5Uo3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+    "value": "772179266"
+   }
+  ],
+  "status": "stopped",
+  "intent": "order",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+      "code": "community",
+      "display": "Community"
+     }
+    ],
+    "text": "Community"
+   }
+  ],
+  "medicationReference": {
+   "reference": "Medication/eDO6E2jpqXXkkRFNTmOTCVOeIDXAMIPLdErYsFoh2D5-YSXkGkLJwcqLdnvuHpmNfe2fNbnn8LZPJE9KXGk3DdaQuLRFIyUTRhizUT87qGNc3",
+   "display": "nortriptyline 10 MG capsule"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eaczqSTIxEFgrkvi.zMgWQQ3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "974614965"
+   },
+   "display": "Office Visit"
+  },
+  "authoredOn": "2022-12-01",
+  "requester": {
+   "reference": "Practitioner/ey81YiHNZU361WB9p7j7lsw3",
+   "type": "Practitioner",
+   "display": "Dr. Z Rammelkamp"
+  },
+  "recorder": {
+   "reference": "Practitioner/ey81YiHNZU361WB9p7j7lsw3",
+   "type": "Practitioner",
+   "display": "Dr. Z Rammelkamp"
+  },
+  "reasonCode": [
+   {
+    "coding": [
+     {
+      "system": "http://snomed.info/sct",
+      "code": "40425004",
+      "display": "Postconcussion syndrome (disorder)"
+     },
+     {
+      "system": "http://hl7.org/fhir/sid/icd-9-cm",
+      "code": "310.2",
+      "display": "Postconcussion syndrome"
+     },
+     {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "code": "F07.81",
+      "display": "Postconcussional syndrome"
+     }
+    ],
+    "text": "Post concussion syndrome"
+   }
+  ],
+  "courseOfTherapyType": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
+     "code": "acute",
+     "display": "Short course (acute) therapy"
+    }
+   ],
+   "text": "Short course (acute) therapy"
+  },
+  "dosageInstruction": [
+   {
+    "text": "Take 1 (one) capsule by mouth nightly. Start with 10 mg at night; can increase to 20 mg after 1-2 weeks if no side effects, Starting Thu 12/1/2022, Until Mon 2/20/2023, Normal",
+    "patientInstruction": "Take 1 (one) capsule by mouth nightly. Start with 10 mg at night; can increase to 20 mg after 1-2 weeks if no side effects",
+    "timing": {
+     "repeat": {
+      "boundsPeriod": {
+       "start": "2022-12-01",
+       "end": "2023-02-20"
+      },
+      "timeOfDay": [
+       "21:00:00"
+      ]
+     },
+     "code": {
+      "text": "nightly"
+     }
+    },
+    "asNeededBoolean": false,
+    "route": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "738956005",
+       "display": "Oral (intended site)"
+      },
+      {
+       "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.798268.7025",
+       "code": "15",
+       "display": "Oral"
+      }
+     ],
+     "text": "Oral"
+    },
+    "method": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "419652001",
+       "display": "Take"
+      }
+     ],
+     "text": "Take"
+    },
+    "doseAndRate": [
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://epic.com/CodeSystem/dose-rate-type",
+         "code": "calculated",
+         "display": "calculated"
+        }
+       ],
+       "text": "calculated"
+      },
+      "doseQuantity": {
+       "value": 10,
+       "unit": "mg",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg"
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://epic.com/CodeSystem/dose-rate-type",
+         "code": "admin-amount",
+         "display": "admin-amount"
+        }
+       ],
+       "text": "admin-amount"
+      },
+      "doseQuantity": {
+       "value": 1,
+       "unit": "capsule",
+       "system": "http://unitsofmeasure.org",
+       "code": "{capsule}"
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://epic.com/CodeSystem/dose-rate-type",
+         "code": "ordered",
+         "display": "ordered"
+        }
+       ],
+       "text": "ordered"
+      },
+      "doseQuantity": {
+       "value": 10,
+       "unit": "mg",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg"
+      }
+     }
+    ]
+   }
+  ],
+  "dispenseRequest": {
+   "validityPeriod": {
+    "start": "2022-12-01",
+    "end": "2023-02-20"
+   },
+   "numberOfRepeatsAllowed": 1,
+   "quantity": {
+    "value": 90,
+    "unit": "capsule"
+   },
+   "expectedSupplyDuration": {
+    "value": 90,
+    "unit": "Day",
+    "system": "http://unitsofmeasure.org",
+    "code": "d"
+   }
+  }
+ },
+ {
+  "resourceType": "MedicationRequest",
+  "id": "e4wjr00sTy91o7wDe7Cs92CwCfBq4Gh5wn6oLUMNu4pc3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+    "value": "1034471697"
+   }
+  ],
+  "status": "stopped",
+  "intent": "order",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+      "code": "community",
+      "display": "Community"
+     }
+    ],
+    "text": "Community"
+   }
+  ],
+  "medicationReference": {
+   "reference": "Medication/esUpzRRVrqaF8F2n7wLvp6j8tedgaO9xVE897nLNnwgJf9fEzp8hkM3suHI3xhmc4C2vMhEa95FwwuY6RfOmDUEOIVOWiaxH0arX.qn-ntqo3",
+   "display": "Paxlovid (300/100) 20 x 150 MG & 10 x 100MG tablet"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eq7-yQQnBCUfN9o-DirVGyA3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1127808563"
+   },
+   "display": "Telemedicine"
+  },
+  "authoredOn": "2025-04-23",
+  "requester": {
+   "reference": "Practitioner/ey81YiHNZU361WB9p7j7lsw3",
+   "type": "Practitioner",
+   "display": "Dr. Z Rammelkamp"
+  },
+  "recorder": {
+   "reference": "Practitioner/ey81YiHNZU361WB9p7j7lsw3",
+   "type": "Practitioner",
+   "display": "Dr. Z Rammelkamp"
+  },
+  "reasonCode": [
+   {
+    "coding": [
+     {
+      "system": "http://snomed.info/sct",
+      "code": "840539006",
+      "display": "Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder)"
+     },
+     {
+      "system": "http://hl7.org/fhir/sid/icd-9-cm",
+      "code": "079.89",
+      "display": "Other specified viral infection, in conditions classified elsewhere and of unspecified site"
+     },
+     {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "code": "U07.1",
+      "display": "COVID-19"
+     }
+    ],
+    "text": "COVID-19"
+   }
+  ],
+  "courseOfTherapyType": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
+     "code": "acute",
+     "display": "Short course (acute) therapy"
+    }
+   ],
+   "text": "Short course (acute) therapy"
+  },
+  "dosageInstruction": [
+   {
+    "text": "Take two nirmatrelvir 150mg tablets with one ritonavir 100mg tablet all together by mouth twice daily for 5 days., Normal",
+    "patientInstruction": "Take two nirmatrelvir 150mg tablets with one ritonavir 100mg tablet all together by mouth twice daily for 5 days.",
+    "timing": {
+     "repeat": {
+      "boundsPeriod": {
+       "start": "2025-04-23",
+       "end": "2025-12-04"
+      }
+     }
+    }
+   }
+  ],
+  "dispenseRequest": {
+   "validityPeriod": {
+    "start": "2025-04-23",
+    "end": "2025-12-04"
+   },
+   "numberOfRepeatsAllowed": 0,
+   "quantity": {
+    "value": 30,
+    "unit": "tablet"
+   },
+   "expectedSupplyDuration": {
+    "value": 225,
+    "unit": "Day",
+    "system": "http://unitsofmeasure.org",
+    "code": "d"
+   }
+  }
+ },
+ {
+  "resourceType": "MedicationRequest",
+  "id": "e4wjr00sTy91o7wDe7Cs92FE8l8qluUic9L6yN54xQh03",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+    "value": "1034471690"
+   }
+  ],
+  "status": "stopped",
+  "intent": "order",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+      "code": "inpatient",
+      "display": "Inpatient"
+     }
+    ],
+    "text": "Inpatient"
+   }
+  ],
+  "medicationReference": {
+   "reference": "Medication/emDPp1EhWCs.lOHv4D8xRGqBiBvGYSms-Ryijy29pZl.7AnFGt9ih9WIohK.GSVsXthxCjLwayOY5wqfmwV-sY2VLaSpttJJjy4jokE1.EhQ3",
+   "display": "sodium chloride"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1081584508"
+   },
+   "display": "Reconciled Outside Data"
+  },
+  "authoredOn": "2024-07-30T20:33:40Z",
+  "requester": {
+   "reference": "Practitioner/e47iW8-b75HxGPkJQEdldQw3",
+   "type": "Practitioner",
+   "display": "Dr. G Provider"
+  },
+  "recorder": {
+   "type": "Practitioner",
+   "display": "User E"
+  },
+  "courseOfTherapyType": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
+     "code": "acute",
+     "display": "Short course (acute) therapy"
+    }
+   ],
+   "text": "Short course (acute) therapy"
+  },
+  "dosageInstruction": [
+   {
+    "text": "Intravenous",
+    "timing": {
+     "repeat": {
+      "boundsPeriod": {
+       "end": "2024-07-30T20:33:40Z"
+      }
+     }
+    },
+    "route": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "47625008",
+       "display": "Intravenous route (qualifier value)"
+      },
+      {
+       "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.798268.7025",
+       "code": "11",
+       "display": "Intravenous"
+      }
+     ],
+     "text": "Intravenous"
+    }
+   }
+  ]
+ },
+ {
+  "resourceType": "MedicationRequest",
+  "id": "e4wjr00sTy91o7wDe7Cs92G6DY3HBI8jLLlNJR1ibRR03",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+    "value": "1034471696"
+   }
+  ],
+  "status": "stopped",
+  "intent": "order",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+      "code": "community",
+      "display": "Community"
+     }
+    ],
+    "text": "Community"
+   }
+  ],
+  "medicationReference": {
+   "reference": "Medication/eDO6E2jpqXXkkRFNTmOTCVFQvRXX8LmZr1IrqwOgblQaHuiklQbiezwt6xAejQvmreCaEytu.z0FDXAcd8ZOvy2hcerQO4PHydSRBekn34Fk3",
+   "display": "nortriptyline 10 MG capsule"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eTehJyV67AE-2eHhFlEtUVw3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1113285509"
+   },
+   "display": "Refill"
+  },
+  "authoredOn": "2025-01-27",
+  "requester": {
+   "reference": "Practitioner/ey81YiHNZU361WB9p7j7lsw3",
+   "type": "Practitioner",
+   "display": "Dr. Z Rammelkamp"
+  },
+  "recorder": {
+   "reference": "Practitioner/ey81YiHNZU361WB9p7j7lsw3",
+   "type": "Practitioner",
+   "display": "Dr. Z Rammelkamp"
+  },
+  "reasonCode": [
+   {
+    "coding": [
+     {
+      "system": "http://snomed.info/sct",
+      "code": "40425004",
+      "display": "Postconcussion syndrome (disorder)"
+     },
+     {
+      "system": "http://hl7.org/fhir/sid/icd-9-cm",
+      "code": "310.2",
+      "display": "Postconcussion syndrome"
+     },
+     {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "code": "F07.81",
+      "display": "Postconcussional syndrome"
+     }
+    ],
+    "text": "Post concussion syndrome"
+   }
+  ],
+  "courseOfTherapyType": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
+     "code": "acute",
+     "display": "Short course (acute) therapy"
+    }
+   ],
+   "text": "Short course (acute) therapy"
+  },
+  "dosageInstruction": [
+   {
+    "text": "Take 3 (three) capsules (30 mg total) by mouth nightly., Starting Mon 1/27/2025, Until Thu 12/4/2025, Normal",
+    "patientInstruction": "Take 3 (three) capsules (30 mg total) by mouth nightly.",
+    "timing": {
+     "repeat": {
+      "boundsPeriod": {
+       "start": "2025-01-27",
+       "end": "2025-12-04"
+      },
+      "timeOfDay": [
+       "21:00:00"
+      ]
+     },
+     "code": {
+      "text": "nightly"
+     }
+    },
+    "asNeededBoolean": false,
+    "route": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "738956005",
+       "display": "Oral (intended site)"
+      },
+      {
+       "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.798268.7025",
+       "code": "15",
+       "display": "Oral"
+      }
+     ],
+     "text": "Oral"
+    },
+    "method": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "419652001",
+       "display": "Take"
+      }
+     ],
+     "text": "Take"
+    },
+    "doseAndRate": [
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://epic.com/CodeSystem/dose-rate-type",
+         "code": "calculated",
+         "display": "calculated"
+        }
+       ],
+       "text": "calculated"
+      },
+      "doseQuantity": {
+       "value": 30,
+       "unit": "mg",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg"
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://epic.com/CodeSystem/dose-rate-type",
+         "code": "admin-amount",
+         "display": "admin-amount"
+        }
+       ],
+       "text": "admin-amount"
+      },
+      "doseQuantity": {
+       "value": 3,
+       "unit": "capsule",
+       "system": "http://unitsofmeasure.org",
+       "code": "{capsule}"
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://epic.com/CodeSystem/dose-rate-type",
+         "code": "ordered",
+         "display": "ordered"
+        }
+       ],
+       "text": "ordered"
+      },
+      "doseQuantity": {
+       "value": 30,
+       "unit": "mg",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg"
+      }
+     }
+    ]
+   }
+  ],
+  "dispenseRequest": {
+   "validityPeriod": {
+    "start": "2025-01-27",
+    "end": "2025-12-04"
+   },
+   "numberOfRepeatsAllowed": 3,
+   "quantity": {
+    "value": 270,
+    "unit": "capsule"
+   },
+   "expectedSupplyDuration": {
+    "value": 90,
+    "unit": "Day",
+    "system": "http://unitsofmeasure.org",
+    "code": "d"
+   }
+  },
+  "priorPrescription": {
+   "reference": "MedicationRequest/eAipZq.-v6EnRuhs.bbo2eTdNbf.bPsSJt1fFTYLEzwo3",
+   "display": "nortriptyline 10 MG capsule"
+  }
+ },
+ {
+  "resourceType": "MedicationRequest",
+  "id": "e4wjr00sTy91o7wDe7Cs92L-0qF0yxKfmRFwSuqS3Ijo3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+    "value": "1034471691"
+   }
+  ],
+  "status": "stopped",
+  "intent": "order",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+      "code": "inpatient",
+      "display": "Inpatient"
+     }
+    ],
+    "text": "Inpatient"
+   }
+  ],
+  "medicationReference": {
+   "reference": "Medication/emDPp1EhWCs.lOHv4D8xRGuUP7ph5Ve6tXxZ5nJtkA9PM63Ud0Mfr5lFsCUp1JkS8QTdYYEZmP8wCBI5IohzTx-DccVRC9oaBLUKbR9roFQ83",
+   "display": "sodium chloride"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1081584508"
+   },
+   "display": "Reconciled Outside Data"
+  },
+  "authoredOn": "2024-07-30T20:33:40Z",
+  "requester": {
+   "reference": "Practitioner/e47iW8-b75HxGPkJQEdldQw3",
+   "type": "Practitioner",
+   "display": "Dr. G Provider"
+  },
+  "recorder": {
+   "type": "Practitioner",
+   "display": "User E"
+  },
+  "courseOfTherapyType": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
+     "code": "acute",
+     "display": "Short course (acute) therapy"
+    }
+   ],
+   "text": "Short course (acute) therapy"
+  },
+  "dosageInstruction": [
+   {
+    "text": "Intravenous",
+    "timing": {
+     "repeat": {
+      "boundsPeriod": {
+       "end": "2024-07-30T20:33:40Z"
+      }
+     }
+    },
+    "route": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "47625008",
+       "display": "Intravenous route (qualifier value)"
+      },
+      {
+       "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.798268.7025",
+       "code": "11",
+       "display": "Intravenous"
+      }
+     ],
+     "text": "Intravenous"
+    }
+   }
+  ]
+ },
+ {
+  "resourceType": "MedicationRequest",
+  "id": "e6owG7Soz1QZriww.vGYIrQ-IQQRwzo7SOzmeuhqIyJU3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+    "value": "1025926292"
+   }
+  ],
+  "status": "stopped",
+  "intent": "order",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+      "code": "inpatient",
+      "display": "Inpatient"
+     }
+    ],
+    "text": "Inpatient"
+   }
+  ],
+  "medicationReference": {
+   "reference": "Medication/emDPp1EhWCs.lOHv4D8xRGpHutx3UJt05HZNpF08zHtUo2LfxoIDGQYaxHWqS8rtiKfILey9RZS92-uYOT86AIVZXiLhNocfd5MafnnC8xEs3",
+   "display": "sodium chloride"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1081584507"
+   },
+   "display": "Reconciled Outside Data"
+  },
+  "authoredOn": "2024-07-30T20:33:40Z",
+  "requester": {
+   "reference": "Practitioner/e47iW8-b75HxGPkJQEdldQw3",
+   "type": "Practitioner",
+   "display": "Dr. G Provider"
+  },
+  "recorder": {
+   "type": "Practitioner",
+   "display": "User E"
+  },
+  "courseOfTherapyType": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
+     "code": "acute",
+     "display": "Short course (acute) therapy"
+    }
+   ],
+   "text": "Short course (acute) therapy"
+  },
+  "dosageInstruction": [
+   {
+    "text": "Intravenous",
+    "timing": {
+     "repeat": {
+      "boundsPeriod": {
+       "end": "2024-07-30T20:33:40Z"
+      }
+     }
+    },
+    "route": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "47625008",
+       "display": "Intravenous route (qualifier value)"
+      },
+      {
+       "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.798268.7025",
+       "code": "11",
+       "display": "Intravenous"
+      }
+     ],
+     "text": "Intravenous"
+    }
+   }
+  ]
+ },
+ {
+  "resourceType": "MedicationRequest",
+  "id": "e6owG7Soz1QZriww.vGYIrR6TvhuB.6HNbxGW4KmBwKI3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+    "value": "1025926290"
+   }
+  ],
+  "status": "stopped",
+  "intent": "order",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+      "code": "inpatient",
+      "display": "Inpatient"
+     }
+    ],
+    "text": "Inpatient"
+   }
+  ],
+  "medicationReference": {
+   "reference": "Medication/emDPp1EhWCs.lOHv4D8xRGpLn02CnjPHwoSejjAvkImbRjvxgrcKqMoMaTMYJsKCMeDSb6Hl8f.rUrv27LQ0.nI8WaY2lxKbjLhYGjbiV-V43",
+   "display": "sodium chloride"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1081584507"
+   },
+   "display": "Reconciled Outside Data"
+  },
+  "authoredOn": "2024-07-30T20:33:40Z",
+  "requester": {
+   "reference": "Practitioner/e47iW8-b75HxGPkJQEdldQw3",
+   "type": "Practitioner",
+   "display": "Dr. G Provider"
+  },
+  "recorder": {
+   "type": "Practitioner",
+   "display": "User E"
+  },
+  "courseOfTherapyType": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
+     "code": "acute",
+     "display": "Short course (acute) therapy"
+    }
+   ],
+   "text": "Short course (acute) therapy"
+  },
+  "dosageInstruction": [
+   {
+    "text": "Intravenous",
+    "timing": {
+     "repeat": {
+      "boundsPeriod": {
+       "end": "2024-07-30T20:33:40Z"
+      }
+     }
+    },
+    "route": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "47625008",
+       "display": "Intravenous route (qualifier value)"
+      },
+      {
+       "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.798268.7025",
+       "code": "11",
+       "display": "Intravenous"
+      }
+     ],
+     "text": "Intravenous"
+    }
+   }
+  ]
+ },
+ {
+  "resourceType": "MedicationRequest",
+  "id": "e6owG7Soz1QZriww.vGYIrUIPZi7vO0zRXnGKDDjksp03",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+    "value": "1025926291"
+   }
+  ],
+  "status": "stopped",
+  "intent": "order",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+      "code": "inpatient",
+      "display": "Inpatient"
+     }
+    ],
+    "text": "Inpatient"
+   }
+  ],
+  "medicationReference": {
+   "reference": "Medication/emDPp1EhWCs.lOHv4D8xRGi1gO4BaLhQryjiEisQPZ6qOTfpsKmSTDHbliz8.pGX2ECL48LEfQo.yh1qwoFx-HmrVu5PDBu6WYFlKlfcaTLo3",
+   "display": "sodium chloride"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1081584507"
+   },
+   "display": "Reconciled Outside Data"
+  },
+  "authoredOn": "2024-07-30T20:33:40Z",
+  "requester": {
+   "reference": "Practitioner/e47iW8-b75HxGPkJQEdldQw3",
+   "type": "Practitioner",
+   "display": "Dr. G Provider"
+  },
+  "recorder": {
+   "type": "Practitioner",
+   "display": "User E"
+  },
+  "courseOfTherapyType": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
+     "code": "acute",
+     "display": "Short course (acute) therapy"
+    }
+   ],
+   "text": "Short course (acute) therapy"
+  },
+  "dosageInstruction": [
+   {
+    "text": "Intravenous",
+    "timing": {
+     "repeat": {
+      "boundsPeriod": {
+       "end": "2024-07-30T20:33:40Z"
+      }
+     }
+    },
+    "route": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "47625008",
+       "display": "Intravenous route (qualifier value)"
+      },
+      {
+       "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.798268.7025",
+       "code": "11",
+       "display": "Intravenous"
+      }
+     ],
+     "text": "Intravenous"
+    }
+   }
+  ]
+ },
+ {
+  "resourceType": "MedicationRequest",
+  "id": "e6ttlecRpXDVhb4-rVxyaQmEFsn.sCrL-9gAI7.3aJmc3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+    "value": "1034471689"
+   }
+  ],
+  "status": "stopped",
+  "intent": "order",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+      "code": "inpatient",
+      "display": "Inpatient"
+     }
+    ],
+    "text": "Inpatient"
+   }
+  ],
+  "medicationReference": {
+   "reference": "Medication/emDPp1EhWCs.lOHv4D8xRGo7tuiHoETG7EhNfvWZfe4duR.gudYVzFhNjV4N2zE.m6N3esqO49W5UJHNYbAr2oCQosSPQMutPr7MzbEm6pcE3",
+   "display": "sodium chloride"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1081584508"
+   },
+   "display": "Reconciled Outside Data"
+  },
+  "authoredOn": "2024-07-30T20:33:40Z",
+  "requester": {
+   "reference": "Practitioner/e47iW8-b75HxGPkJQEdldQw3",
+   "type": "Practitioner",
+   "display": "Dr. G Provider"
+  },
+  "recorder": {
+   "type": "Practitioner",
+   "display": "User E"
+  },
+  "courseOfTherapyType": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
+     "code": "acute",
+     "display": "Short course (acute) therapy"
+    }
+   ],
+   "text": "Short course (acute) therapy"
+  },
+  "dosageInstruction": [
+   {
+    "text": "Intravenous",
+    "timing": {
+     "repeat": {
+      "boundsPeriod": {
+       "end": "2024-07-30T20:33:40Z"
+      }
+     }
+    },
+    "route": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "47625008",
+       "display": "Intravenous route (qualifier value)"
+      },
+      {
+       "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.798268.7025",
+       "code": "11",
+       "display": "Intravenous"
+      }
+     ],
+     "text": "Intravenous"
+    }
+   }
+  ]
+ },
+ {
+  "resourceType": "MedicationRequest",
+  "id": "e6ttlecRpXDVhb4-rVxyaQqsTwccPxacni3l9LgfagMU3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+    "value": "1034471687"
+   }
+  ],
+  "status": "stopped",
+  "intent": "order",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+      "code": "inpatient",
+      "display": "Inpatient"
+     }
+    ],
+    "text": "Inpatient"
+   }
+  ],
+  "medicationReference": {
+   "reference": "Medication/emDPp1EhWCs.lOHv4D8xRGlZB3AALLmB-qH60OZToQ3vNotRdqiktOAwGetHrL6NhdX81LGPOrQD.BKNPCWCngTjpWqZX9uj5aq12REcmVQk3",
+   "display": "sodium chloride"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1081584507"
+   },
+   "display": "Reconciled Outside Data"
+  },
+  "authoredOn": "2024-07-30T20:33:40Z",
+  "requester": {
+   "reference": "Practitioner/e47iW8-b75HxGPkJQEdldQw3",
+   "type": "Practitioner",
+   "display": "Dr. G Provider"
+  },
+  "recorder": {
+   "type": "Practitioner",
+   "display": "User E"
+  },
+  "courseOfTherapyType": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
+     "code": "acute",
+     "display": "Short course (acute) therapy"
+    }
+   ],
+   "text": "Short course (acute) therapy"
+  },
+  "dosageInstruction": [
+   {
+    "text": "Intravenous",
+    "timing": {
+     "repeat": {
+      "boundsPeriod": {
+       "end": "2024-07-30T20:33:40Z"
+      }
+     }
+    },
+    "route": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "47625008",
+       "display": "Intravenous route (qualifier value)"
+      },
+      {
+       "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.798268.7025",
+       "code": "11",
+       "display": "Intravenous"
+      }
+     ],
+     "text": "Intravenous"
+    }
+   }
+  ]
+ },
+ {
+  "resourceType": "MedicationRequest",
+  "id": "e6ttlecRpXDVhb4-rVxyaQtvnicZK70gWJe7feME6wIo3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+    "value": "1034471688"
+   }
+  ],
+  "status": "stopped",
+  "intent": "order",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+      "code": "inpatient",
+      "display": "Inpatient"
+     }
+    ],
+    "text": "Inpatient"
+   }
+  ],
+  "medicationReference": {
+   "reference": "Medication/emDPp1EhWCs.lOHv4D8xRGlCZAxhkIIhSUCZb74CP.Y2Elu9a6xV-zqoreKauHgcpJKjyK42QTWb9GyPncpakAzstFT-iKJt9q44UBb9y1rU3",
+   "display": "sodium chloride"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1081584508"
+   },
+   "display": "Reconciled Outside Data"
+  },
+  "authoredOn": "2024-07-30T20:33:40Z",
+  "requester": {
+   "reference": "Practitioner/e47iW8-b75HxGPkJQEdldQw3",
+   "type": "Practitioner",
+   "display": "Dr. G Provider"
+  },
+  "recorder": {
+   "type": "Practitioner",
+   "display": "User E"
+  },
+  "courseOfTherapyType": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
+     "code": "acute",
+     "display": "Short course (acute) therapy"
+    }
+   ],
+   "text": "Short course (acute) therapy"
+  },
+  "dosageInstruction": [
+   {
+    "text": "Intravenous",
+    "timing": {
+     "repeat": {
+      "boundsPeriod": {
+       "end": "2024-07-30T20:33:40Z"
+      }
+     }
+    },
+    "route": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "47625008",
+       "display": "Intravenous route (qualifier value)"
+      },
+      {
+       "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.798268.7025",
+       "code": "11",
+       "display": "Intravenous"
+      }
+     ],
+     "text": "Intravenous"
+    }
+   }
+  ]
+ },
+ {
+  "resourceType": "MedicationRequest",
+  "id": "eAipZq.-v6EnRuhs.bbo2eTdNbf.bPsSJt1fFTYLEzwo3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+    "value": "945468373"
+   }
+  ],
+  "status": "stopped",
+  "intent": "order",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+      "code": "community",
+      "display": "Community"
+     }
+    ],
+    "text": "Community"
+   }
+  ],
+  "medicationReference": {
+   "reference": "Medication/eDO6E2jpqXXkkRFNTmOTCVFIm1sguHwlLiHSXRa0D34T5Kxuh6FuWTa0POOqIKnU4y0co3fPTWhbGFtv9duo7BLZgksNvZCu9X8LUSLp2DwA3",
+   "display": "nortriptyline 10 MG capsule"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/e11nNZcqXJO0l2dCoFgZkKQ3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1043034397"
+   },
+   "display": "Refill"
+  },
+  "authoredOn": "2023-12-22",
+  "requester": {
+   "reference": "Practitioner/ey81YiHNZU361WB9p7j7lsw3",
+   "type": "Practitioner",
+   "display": "Dr. Z Rammelkamp"
+  },
+  "recorder": {
+   "reference": "Practitioner/ey81YiHNZU361WB9p7j7lsw3",
+   "type": "Practitioner",
+   "display": "Dr. Z Rammelkamp"
+  },
+  "reasonCode": [
+   {
+    "coding": [
+     {
+      "system": "http://snomed.info/sct",
+      "code": "40425004",
+      "display": "Postconcussion syndrome (disorder)"
+     },
+     {
+      "system": "http://hl7.org/fhir/sid/icd-9-cm",
+      "code": "310.2",
+      "display": "Postconcussion syndrome"
+     },
+     {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "code": "F07.81",
+      "display": "Postconcussional syndrome"
+     }
+    ],
+    "text": "Post concussion syndrome"
+   }
+  ],
+  "courseOfTherapyType": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
+     "code": "acute",
+     "display": "Short course (acute) therapy"
+    }
+   ],
+   "text": "Short course (acute) therapy"
+  },
+  "dosageInstruction": [
+   {
+    "text": "Take 3 (three) capsules by mouth nightly., Starting Fri 12/22/2023, Until Mon 1/27/2025, Normal",
+    "patientInstruction": "Take 3 (three) capsules by mouth nightly.",
+    "timing": {
+     "repeat": {
+      "boundsPeriod": {
+       "start": "2023-12-22",
+       "end": "2025-01-27"
+      },
+      "timeOfDay": [
+       "21:00:00"
+      ]
+     },
+     "code": {
+      "text": "nightly"
+     }
+    },
+    "asNeededBoolean": false,
+    "route": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "738956005",
+       "display": "Oral (intended site)"
+      },
+      {
+       "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.798268.7025",
+       "code": "15",
+       "display": "Oral"
+      }
+     ],
+     "text": "Oral"
+    },
+    "method": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "419652001",
+       "display": "Take"
+      }
+     ],
+     "text": "Take"
+    },
+    "doseAndRate": [
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://epic.com/CodeSystem/dose-rate-type",
+         "code": "calculated",
+         "display": "calculated"
+        }
+       ],
+       "text": "calculated"
+      },
+      "doseQuantity": {
+       "value": 30,
+       "unit": "mg",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg"
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://epic.com/CodeSystem/dose-rate-type",
+         "code": "admin-amount",
+         "display": "admin-amount"
+        }
+       ],
+       "text": "admin-amount"
+      },
+      "doseQuantity": {
+       "value": 3,
+       "unit": "capsule",
+       "system": "http://unitsofmeasure.org",
+       "code": "{capsule}"
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://epic.com/CodeSystem/dose-rate-type",
+         "code": "ordered",
+         "display": "ordered"
+        }
+       ],
+       "text": "ordered"
+      },
+      "doseQuantity": {
+       "value": 30,
+       "unit": "mg",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg"
+      }
+     }
+    ]
+   }
+  ],
+  "dispenseRequest": {
+   "validityPeriod": {
+    "start": "2023-12-22",
+    "end": "2025-01-27"
+   },
+   "numberOfRepeatsAllowed": 3,
+   "quantity": {
+    "value": 270,
+    "unit": "capsule"
+   },
+   "expectedSupplyDuration": {
+    "value": 90,
+    "unit": "Day",
+    "system": "http://unitsofmeasure.org",
+    "code": "d"
+   }
+  },
+  "priorPrescription": {
+   "reference": "MedicationRequest/esPtAZIVMSBpGaQre467SYe-ap5n.OehBQylLeH099Ok3",
+   "display": "nortriptyline 10 MG capsule"
+  }
+ },
+ {
+  "resourceType": "MedicationRequest",
+  "id": "eBPBhpAYtVsPKz1faayD3hPk3IykhF4PrhCAqivplNM43",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+    "value": "945468375"
+   }
+  ],
+  "status": "stopped",
+  "intent": "order",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+      "code": "community",
+      "display": "Community"
+     }
+    ],
+    "text": "Community"
+   }
+  ],
+  "medicationReference": {
+   "reference": "Medication/ePn03ge..laA21H5D6jjUKhjayt2Z-0xmaFPxrSdlGmMrMFXifct3ABcpmvAy-.hUss2wwMPiQGx.9M4XqPUAOPxfDqUp8PN2eirp0LWFdfM3",
+   "display": "FreeStyle Libre 3 Reader Devi Device"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eCDP-q.4XctJegL0vv.aSqg3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1056709125"
+   },
+   "display": "Patient Message"
+  },
+  "authoredOn": "2024-03-12",
+  "requester": {
+   "reference": "Practitioner/ey81YiHNZU361WB9p7j7lsw3",
+   "type": "Practitioner",
+   "display": "Dr. Z Rammelkamp"
+  },
+  "recorder": {
+   "reference": "Practitioner/ey81YiHNZU361WB9p7j7lsw3",
+   "type": "Practitioner",
+   "display": "Dr. Z Rammelkamp"
+  },
+  "courseOfTherapyType": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
+     "code": "acute",
+     "display": "Short course (acute) therapy"
+    }
+   ],
+   "text": "Short course (acute) therapy"
+  },
+  "dosageInstruction": [
+   {
+    "text": "For use as indicated every 14 days, Normal",
+    "patientInstruction": "For use as indicated every 14 days",
+    "timing": {
+     "repeat": {
+      "boundsPeriod": {
+       "start": "2024-03-12",
+       "end": "2025-12-04"
+      }
+     }
+    }
+   }
+  ],
+  "dispenseRequest": {
+   "validityPeriod": {
+    "start": "2024-03-12",
+    "end": "2025-12-04"
+   },
+   "numberOfRepeatsAllowed": 0,
+   "quantity": {
+    "value": 2,
+    "unit": "each"
+   },
+   "expectedSupplyDuration": {
+    "value": 632,
+    "unit": "Day",
+    "system": "http://unitsofmeasure.org",
+    "code": "d"
+   }
+  }
+ },
+ {
+  "resourceType": "MedicationRequest",
+  "id": "eL27B.PbvlhONvZ9jSKUoCnRb71nKgvSK1qfxDKJSrMI3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+    "value": "1025926288"
+   }
+  ],
+  "status": "stopped",
+  "intent": "order",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+      "code": "community",
+      "display": "Community"
+     }
+    ],
+    "text": "Community"
+   }
+  ],
+  "medicationReference": {
+   "reference": "Medication/eHKeo4A0FuTrKKbsVTVaV9WQWsut4J.prTcFdm5mi-02ABSv29qMwSREZhtvzpjXnLRZfAZDHLhEbMpKO90ighvwSatJYwAeHYBEZ62KHsDo3",
+   "display": "cyclobenzaprine 5 MG tablet"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eZjqlpWPCapiLvU41AUArfw3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1076261941"
+   },
+   "display": "Office Visit"
+  },
+  "authoredOn": "2024-07-02",
+  "requester": {
+   "reference": "Practitioner/e6WthosTjZVTQiypDp3DLJw3",
+   "type": "Practitioner",
+   "display": "Dr. J Everton"
+  },
+  "recorder": {
+   "reference": "Practitioner/e6WthosTjZVTQiypDp3DLJw3",
+   "type": "Practitioner",
+   "display": "Dr. J Everton"
+  },
+  "courseOfTherapyType": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
+     "code": "acute",
+     "display": "Short course (acute) therapy"
+    }
+   ],
+   "text": "Short course (acute) therapy"
+  },
+  "dosageInstruction": [
+   {
+    "text": "Take 1 (one) tablet by mouth nightly as needed for Muscle spasms., Starting Tue 7/2/2024, Until Thu 11/7/2024, Normal",
+    "patientInstruction": "Take 1 (one) tablet by mouth nightly as needed for Muscle spasms.",
+    "timing": {
+     "repeat": {
+      "boundsPeriod": {
+       "start": "2024-07-02",
+       "end": "2024-11-07"
+      },
+      "frequency": 1,
+      "period": 1,
+      "periodUnit": "d"
+     },
+     "code": {
+      "text": "nightly as needed"
+     }
+    },
+    "asNeededBoolean": true,
+    "route": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "738956005",
+       "display": "Oral (intended site)"
+      },
+      {
+       "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.798268.7025",
+       "code": "15",
+       "display": "Oral"
+      }
+     ],
+     "text": "Oral"
+    },
+    "method": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "419652001",
+       "display": "Take"
+      }
+     ],
+     "text": "Take"
+    },
+    "doseAndRate": [
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://epic.com/CodeSystem/dose-rate-type",
+         "code": "calculated",
+         "display": "calculated"
+        }
+       ],
+       "text": "calculated"
+      },
+      "doseQuantity": {
+       "value": 5,
+       "unit": "mg",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg"
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://epic.com/CodeSystem/dose-rate-type",
+         "code": "admin-amount",
+         "display": "admin-amount"
+        }
+       ],
+       "text": "admin-amount"
+      },
+      "doseQuantity": {
+       "value": 1,
+       "unit": "tablet",
+       "system": "http://unitsofmeasure.org",
+       "code": "{tbl}"
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://epic.com/CodeSystem/dose-rate-type",
+         "code": "ordered",
+         "display": "ordered"
+        }
+       ],
+       "text": "ordered"
+      },
+      "doseQuantity": {
+       "value": 5,
+       "unit": "mg",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg"
+      }
+     }
+    ]
+   }
+  ],
+  "dispenseRequest": {
+   "validityPeriod": {
+    "start": "2024-07-02",
+    "end": "2024-11-07"
+   },
+   "numberOfRepeatsAllowed": 0,
+   "quantity": {
+    "value": 20,
+    "unit": "tablet"
+   },
+   "expectedSupplyDuration": {
+    "value": 20,
+    "unit": "Day",
+    "system": "http://unitsofmeasure.org",
+    "code": "d"
+   }
+  }
+ },
+ {
+  "resourceType": "MedicationRequest",
+  "id": "eizsM5zjuHqOGut9mtULf12idIszikTUoKELrTHvJ.S43",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+    "value": "945468376"
+   }
+  ],
+  "status": "active",
+  "intent": "order",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+      "code": "community",
+      "display": "Community"
+     }
+    ],
+    "text": "Community"
+   }
+  ],
+  "medicationReference": {
+   "reference": "Medication/eLmilK3Rw9PZAb9uoMGzD1Ch3xNKrnhRdx9AFoKpSfwhmwQMuJ1ZgB7D10WaRWX-spNXo2.l5OMxmINIQh4HsnCkLh9Qy8F.Ko9E-op7HHAk3",
+   "display": "FreeStyle Libre 3 Sensor Misc"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/e5kEztFJRMvIuhhRljS4ptw3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1066932467"
+   },
+   "display": "Refill"
+  },
+  "authoredOn": "2024-05-07",
+  "requester": {
+   "reference": "Practitioner/ey81YiHNZU361WB9p7j7lsw3",
+   "type": "Practitioner",
+   "display": "Dr. Z Rammelkamp"
+  },
+  "recorder": {
+   "reference": "Practitioner/ec2pifA.qX7iOuRSPi2DB0w3",
+   "type": "Practitioner",
+   "display": "Mary S"
+  },
+  "courseOfTherapyType": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
+     "code": "acute",
+     "display": "Short course (acute) therapy"
+    }
+   ],
+   "text": "Short course (acute) therapy"
+  },
+  "dosageInstruction": [
+   {
+    "text": "APPLY ONE SENSOR EVERY 2 WEEKS, Normal",
+    "patientInstruction": "APPLY ONE SENSOR EVERY 2 WEEKS",
+    "timing": {
+     "repeat": {
+      "boundsPeriod": {
+       "start": "2024-05-07"
+      }
+     }
+    }
+   }
+  ],
+  "dispenseRequest": {
+   "validityPeriod": {
+    "start": "2024-05-07"
+   },
+   "numberOfRepeatsAllowed": 4,
+   "quantity": {
+    "value": 4,
+    "unit": "each"
+   }
+  },
+  "priorPrescription": {
+   "reference": "MedicationRequest/ex54m1TOhc0nKuw6bdQA2z7N-1KyV7t64TcPsHOHCBEE3",
+   "display": "FreeStyle Libre 3 Sensor Misc"
+  }
+ },
+ {
+  "resourceType": "MedicationRequest",
+  "id": "esPtAZIVMSBpGaQre467SYe-ap5n.OehBQylLeH099Ok3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+    "value": "772179269"
+   }
+  ],
+  "status": "stopped",
+  "intent": "order",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+      "code": "community",
+      "display": "Community"
+     }
+    ],
+    "text": "Community"
+   }
+  ],
+  "medicationReference": {
+   "reference": "Medication/eDO6E2jpqXXkkRFNTmOTCVOt.jRufeZKSGmdNHGchOFDCkJZPnPmBrLI4n-SWW4JqdQfNlXb9J.S92ylrjY0RnYP0zYQ3KQ2LgKvyre3Bcwk3",
+   "display": "nortriptyline 10 MG capsule"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eLKaHYMOm07VFJ0Z8xJcOlA3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "988126821"
+   },
+   "display": "Refill"
+  },
+  "authoredOn": "2023-02-20",
+  "requester": {
+   "reference": "Practitioner/ey81YiHNZU361WB9p7j7lsw3",
+   "type": "Practitioner",
+   "display": "Dr. Z Rammelkamp"
+  },
+  "recorder": {
+   "reference": "Practitioner/ey81YiHNZU361WB9p7j7lsw3",
+   "type": "Practitioner",
+   "display": "Dr. Z Rammelkamp"
+  },
+  "reasonCode": [
+   {
+    "coding": [
+     {
+      "system": "http://snomed.info/sct",
+      "code": "40425004",
+      "display": "Postconcussion syndrome (disorder)"
+     },
+     {
+      "system": "http://hl7.org/fhir/sid/icd-9-cm",
+      "code": "310.2",
+      "display": "Postconcussion syndrome"
+     },
+     {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "code": "F07.81",
+      "display": "Postconcussional syndrome"
+     }
+    ],
+    "text": "Post concussion syndrome"
+   }
+  ],
+  "courseOfTherapyType": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
+     "code": "acute",
+     "display": "Short course (acute) therapy"
+    }
+   ],
+   "text": "Short course (acute) therapy"
+  },
+  "dosageInstruction": [
+   {
+    "text": "TAKE 1 CAPSULE BY MOUTH EVERY NIGHT. START WITH 1 CAPSULE AT NIGHT; CAN. INCREASE TO 2 CAPSULES AFTER 1-2 WEEKS IF NO SIDE EFFECTS, Normal",
+    "patientInstruction": "TAKE 1 CAPSULE BY MOUTH EVERY NIGHT. START WITH 1 CAPSULE AT NIGHT; CAN. INCREASE TO 2 CAPSULES AFTER 1-2 WEEKS IF NO SIDE EFFECTS",
+    "timing": {
+     "repeat": {
+      "boundsPeriod": {
+       "start": "2023-02-20",
+       "end": "2023-12-22"
+      }
+     }
+    }
+   }
+  ],
+  "dispenseRequest": {
+   "validityPeriod": {
+    "start": "2023-02-20",
+    "end": "2023-12-22"
+   },
+   "numberOfRepeatsAllowed": 3,
+   "quantity": {
+    "value": 180,
+    "unit": "capsule"
+   },
+   "expectedSupplyDuration": {
+    "value": 305,
+    "unit": "Day",
+    "system": "http://unitsofmeasure.org",
+    "code": "d"
+   }
+  },
+  "priorPrescription": {
+   "reference": "MedicationRequest/e-5zPnOnYWHzasymFzMzQMLxej5CYXQHKvSEbsSey5Uo3",
+   "display": "nortriptyline 10 MG capsule"
+  }
+ },
+ {
+  "resourceType": "MedicationRequest",
+  "id": "ewXfIDONoeXpfFDuK8BKYwoxeZHeaTdRFqVD3Q2wMf783",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+    "value": "772179261"
+   }
+  ],
+  "status": "stopped",
+  "intent": "order",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+      "code": "community",
+      "display": "Community"
+     }
+    ],
+    "text": "Community"
+   }
+  ],
+  "medicationReference": {
+   "reference": "Medication/e9fvpnj3WyE-H2BtI7XPll4rBD00w9avMoKkakH9Dvo4tFRYaZnfO0R6wmJUNwCsbXE7QMWR4uUztj5A5ElQEg1D1u6arc0sLlRIK.ssJSYY3",
+   "display": "lisinopril 10 MG tablet"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/e9Yth5IquIww-psZE1ZqiPQ3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "948004323"
+   },
+   "display": "Office Visit"
+  },
+  "authoredOn": "2022-08-29",
+  "requester": {
+   "reference": "Practitioner/ey81YiHNZU361WB9p7j7lsw3",
+   "type": "Practitioner",
+   "display": "Dr. Z Rammelkamp"
+  },
+  "recorder": {
+   "reference": "Practitioner/ey81YiHNZU361WB9p7j7lsw3",
+   "type": "Practitioner",
+   "display": "Dr. Z Rammelkamp"
+  },
+  "reasonCode": [
+   {
+    "coding": [
+     {
+      "system": "http://snomed.info/sct",
+      "code": "59621000",
+      "display": "Essential hypertension (disorder)"
+     },
+     {
+      "system": "http://hl7.org/fhir/sid/icd-9-cm",
+      "code": "401.9",
+      "display": "Unspecified essential hypertension"
+     },
+     {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "code": "I10",
+      "display": "Essential (primary) hypertension"
+     }
+    ],
+    "text": "Primary hypertension"
+   }
+  ],
+  "courseOfTherapyType": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
+     "code": "acute",
+     "display": "Short course (acute) therapy"
+    }
+   ],
+   "text": "Short course (acute) therapy"
+  },
+  "dosageInstruction": [
+   {
+    "text": "Take 1 (one) tablet by mouth daily., Starting Mon 8/29/2022, Until Thu 9/28/2023, Normal",
+    "patientInstruction": "Take 1 (one) tablet by mouth daily.",
+    "timing": {
+     "repeat": {
+      "boundsPeriod": {
+       "start": "2022-08-29",
+       "end": "2023-09-28"
+      },
+      "timeOfDay": [
+       "09:00:00"
+      ]
+     },
+     "code": {
+      "text": "daily"
+     }
+    },
+    "asNeededBoolean": false,
+    "route": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "738956005",
+       "display": "Oral (intended site)"
+      },
+      {
+       "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.798268.7025",
+       "code": "15",
+       "display": "Oral"
+      }
+     ],
+     "text": "Oral"
+    },
+    "method": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "419652001",
+       "display": "Take"
+      }
+     ],
+     "text": "Take"
+    },
+    "doseAndRate": [
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://epic.com/CodeSystem/dose-rate-type",
+         "code": "calculated",
+         "display": "calculated"
+        }
+       ],
+       "text": "calculated"
+      },
+      "doseQuantity": {
+       "value": 10,
+       "unit": "mg",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg"
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://epic.com/CodeSystem/dose-rate-type",
+         "code": "admin-amount",
+         "display": "admin-amount"
+        }
+       ],
+       "text": "admin-amount"
+      },
+      "doseQuantity": {
+       "value": 1,
+       "unit": "tablet",
+       "system": "http://unitsofmeasure.org",
+       "code": "{tbl}"
+      }
+     },
+     {
+      "type": {
+       "coding": [
+        {
+         "system": "http://epic.com/CodeSystem/dose-rate-type",
+         "code": "ordered",
+         "display": "ordered"
+        }
+       ],
+       "text": "ordered"
+      },
+      "doseQuantity": {
+       "value": 10,
+       "unit": "mg",
+       "system": "http://unitsofmeasure.org",
+       "code": "mg"
+      }
+     }
+    ]
+   }
+  ],
+  "dispenseRequest": {
+   "validityPeriod": {
+    "start": "2022-08-29",
+    "end": "2023-09-28"
+   },
+   "numberOfRepeatsAllowed": 1,
+   "quantity": {
+    "value": 90,
+    "unit": "tablet"
+   },
+   "expectedSupplyDuration": {
+    "value": 90,
+    "unit": "Day",
+    "system": "http://unitsofmeasure.org",
+    "code": "d"
+   }
+  }
+ },
+ {
+  "resourceType": "MedicationRequest",
+  "id": "ex54m1TOhc0nKuw6bdQA2z7N-1KyV7t64TcPsHOHCBEE3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268",
+    "value": "945468374"
+   }
+  ],
+  "status": "stopped",
+  "intent": "order",
+  "category": [
+   {
+    "coding": [
+     {
+      "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+      "code": "community",
+      "display": "Community"
+     }
+    ],
+    "text": "Community"
+   }
+  ],
+  "medicationReference": {
+   "reference": "Medication/eLmilK3Rw9PZAb9uoMGzD1MZDg3HnFaqzkOL9nEGgS9uDD97BP5XBBwmqu3gZyDlSv1HdHPU-EtMGdE5sb0hWvzUuUGiSzsu6Hzktn95B3RU3",
+   "display": "FreeStyle Libre 3 Sensor Misc"
+  },
+  "subject": {
+   "reference": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+   "display": "Mandel, Josh C"
+  },
+  "encounter": {
+   "reference": "Encounter/eCDP-q.4XctJegL0vv.aSqg3",
+   "identifier": {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8",
+    "value": "1056709125"
+   },
+   "display": "Patient Message"
+  },
+  "authoredOn": "2024-03-12",
+  "requester": {
+   "reference": "Practitioner/ey81YiHNZU361WB9p7j7lsw3",
+   "type": "Practitioner",
+   "display": "Dr. Z Rammelkamp"
+  },
+  "recorder": {
+   "reference": "Practitioner/ey81YiHNZU361WB9p7j7lsw3",
+   "type": "Practitioner",
+   "display": "Dr. Z Rammelkamp"
+  },
+  "courseOfTherapyType": {
+   "coding": [
+    {
+     "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
+     "code": "acute",
+     "display": "Short course (acute) therapy"
+    }
+   ],
+   "text": "Short course (acute) therapy"
+  },
+  "dosageInstruction": [
+   {
+    "text": "Apply every two weeks, Normal",
+    "patientInstruction": "Apply every two weeks",
+    "timing": {
+     "repeat": {
+      "boundsPeriod": {
+       "start": "2024-03-12",
+       "end": "2024-05-07"
+      }
+     }
+    }
+   }
+  ],
+  "dispenseRequest": {
+   "validityPeriod": {
+    "start": "2024-03-12",
+    "end": "2024-05-07"
+   },
+   "numberOfRepeatsAllowed": 0,
+   "quantity": {
+    "value": 2,
+    "unit": "each"
+   },
+   "expectedSupplyDuration": {
+    "value": 56,
+    "unit": "Day",
+    "system": "http://unitsofmeasure.org",
+    "code": "d"
+   }
+  }
+ }
+]

@@ -227,7 +227,10 @@ function buildRedactor(pairs: any[]) {
     : n && typeof n === "object" ? Object.fromEntries(Object.keys(n).map((k) => [k, walk(n[k])])) : n;
   return { walk, n: exact.size + subs.size };
 }
-const redactor = buildRedactor(pairs);
+// NOTE: redaction is now baked into the committed inputs — the EHI-derived gold inherits my-ehi's
+// redaction, and fhir-target is committed pre-redacted by tools/redact-fhir-target.ts. So we do NOT
+// scrub here (doing so would over-redact the identifiers the project deliberately inherits). buildRedactor
+// is retained only as a verification helper; the payload is emitted as-is.
 
 // ── Bridge-contribution decomposition (canonical build only) ────────────────
 // Splits the reproduced leaves into "the raw export already had it" vs "the terminology bridge
@@ -266,7 +269,7 @@ function computeDecomposition(): any {
 }
 const decomposition = computeDecomposition();
 
-const payload = redactor.walk({
+const payload = ({
   generatedFrom: "compare/LEDGER.json (crosswalk, attachments embedded, SmartData excluded)",
   summary: { exact: L.exact, tolerated: L.tolerated?.total ?? 0, gap: L.gap?.total ?? 0, total: L.totalTargetElements, reconciles: L.reconciles, gapByClass: L.gap?.byClass || {}, perType: L.perType || {}, decomposition },
   pairs, cantReproduce, ourOnly, newResources, samples: samplePairs(),

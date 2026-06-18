@@ -1,0 +1,38 @@
+[
+ {
+  "resourceType": "Location",
+  "id": "eY3MQR9m.houWYvy5mpACL-tOdxUVkBDJ8VqL8pDwA6A3",
+  "name": "Assoc Physicians Internal Medicine",
+  "mode": "instance"
+ },
+ {
+  "resourceType": "Location",
+  "id": "eY3MQR9m.houWYvy5mpACL-EOOCptq8VIkP6x3qgcOQY3",
+  "name": "Associated Physicians Laboratory",
+  "mode": "instance"
+ },
+ {
+  "resourceType": "Location",
+  "id": "eY3MQR9m.houWYvy5mpACLz3Zc5v8zdlNvhsyHzsjULk3",
+  "name": "Associated Physicians Radiology",
+  "mode": "instance"
+ },
+ {
+  "resourceType": "Location",
+  "id": "eCefE.QMiywJF20KZeH7FF.otuzM.qcubZaIBnfQmJ5I3",
+  "name": "UnityPoint Health-MeriterTherapy-Central",
+  "mode": "instance"
+ },
+ {
+  "resourceType": "Location",
+  "id": "egjpywdJOoeSn5JpmOHLRKA3",
+  "name": "UnityPoint Health",
+  "mode": "instance"
+ },
+ {
+  "resourceType": "Location",
+  "id": "e2tFlWq4f.6ewAk-IWYrgZZjU0VDOJvLJJY6MIcCbS4o3",
+  "name": "UnityPoint Health - Meriter Pediatrics W Washington",
+  "mode": "instance"
+ }
+]

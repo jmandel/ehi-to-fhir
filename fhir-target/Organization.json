@@ -1,0 +1,127 @@
+[
+ {
+  "resourceType": "Organization",
+  "id": "eoyD-w3fnt2ZkEv0tYqBLxA3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.61",
+    "value": "1861412785",
+    "period": {
+     "start": "2008-01-01"
+    }
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.73",
+    "value": "193200000X",
+    "period": {
+     "start": "2008-01-01"
+    }
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "NPI"
+    },
+    "system": "http://hl7.org/fhir/sid/us-npi",
+    "value": "1861412785"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "TAX"
+    },
+    "system": "urn:oid:2.16.840.1.113883.4.4",
+    "value": "391837462"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.696570",
+    "value": "18"
+   }
+  ],
+  "active": true,
+  "name": "Mac Associated Physicians LLP",
+  "address": [
+   {
+    "text": "4410 Regent St\r\nMADISON WI 53705-4901",
+    "line": [
+     "4410 Regent St"
+    ],
+    "city": "MADISON",
+    "state": "Wisconsin",
+    "postalCode": "53705-4901"
+   }
+  ]
+ },
+ {
+  "resourceType": "Organization",
+  "id": "eXbUbhQG51PNKID42nZi3T8Zjg-3KGK4kBQCVb3YmLVo3",
+  "active": true,
+  "name": "UPH MADISON MERITER SUNQUEST LAB",
+  "alias": [
+   "MHMLAB"
+  ],
+  "telecom": [
+   {
+    "system": "phone",
+    "value": "608-417-6529",
+    "use": "work",
+    "period": {
+     "start": "2020-12-29T19:43:44Z"
+    }
+   }
+  ],
+  "address": [
+   {
+    "use": "work",
+    "text": "36 S Brooks Street\r\nMadison WI",
+    "line": [
+     "36 S Brooks Street"
+    ],
+    "city": "Madison",
+    "state": "WI",
+    "period": {
+     "start": "2020-12-29T19:43:44Z"
+    }
+   }
+  ]
+ },
+ {
+  "resourceType": "Organization",
+  "id": "eXbUbhQG51PNKID42nZi3TyKfX2lmO9P5AlrB18.TJ9o3",
+  "active": true,
+  "name": "UPH MADISON SUNQUEST LAB",
+  "alias": [
+   "MHMLAB"
+  ],
+  "address": [
+   {
+    "use": "work",
+    "text": "Madison WI",
+    "city": "Madison",
+    "state": "WI",
+    "period": {
+     "start": "2015-07-30T13:12:04Z",
+     "end": "2018-11-28T14:14:26Z"
+    }
+   }
+  ]
+ },
+ {
+  "resourceType": "Organization",
+  "id": "eAWtY0XUFVkYiSRxGAoCej-A8P1fTxOAcGRrt4VNnwnY0q4SYe09VRf7yLAbF4d-g3",
+  "active": true,
+  "name": "UPH MAC ASSOCIATED PHYSICIANS ",
+  "alias": [
+   "APLLAB"
+  ]
+ },
+ {
+  "resourceType": "Organization",
+  "id": "eAno6ntmxnijYYjVD86NqIA3",
+  "active": true,
+  "name": "Blue Cross of Wisconsin"
+ }
+]

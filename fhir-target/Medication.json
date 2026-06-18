@@ -1,0 +1,1444 @@
+[
+ {
+  "resourceType": "Medication",
+  "id": "eDO6E2jpqXXkkRFNTmOTCVOeIDXAMIPLdErYsFoh2D5-YSXkGkLJwcqLdnvuHpmNfe2fNbnn8LZPJE9KXGk3DdaQuLRFIyUTRhizUT87qGNc3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+    "value": "5674"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://www.whocc.no/atc",
+     "code": "N06AA10"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.253",
+     "code": "15185"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.68",
+     "code": "58200060100105"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.162",
+     "code": "03053"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "7531"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "198045"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "203130"
+    }
+   ],
+   "text": "nortriptyline 10 MG capsule"
+  },
+  "form": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+     "code": "CAPS",
+     "display": "Cap"
+    }
+   ],
+   "text": "Cap"
+  },
+  "ingredient": [
+   {
+    "itemCodeableConcept": {
+     "text": "nortriptyline 10 MG capsule"
+    },
+    "strength": {
+     "numerator": {
+      "value": 10,
+      "unit": "MG",
+      "system": "http://unitsofmeasure.org",
+      "code": "mg"
+     },
+     "denominator": {
+      "value": 1,
+      "unit": "capsule"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "resourceType": "Medication",
+  "id": "esUpzRRVrqaF8F2n7wLvp6j8tedgaO9xVE897nLNnwgJf9fEzp8hkM3suHI3xhmc4C2vMhEa95FwwuY6RfOmDUEOIVOWiaxH0arX.qn-ntqo3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+    "value": "163915"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://www.whocc.no/atc",
+     "code": "J05AE30"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.253",
+     "code": "219459"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.68",
+     "code": "1299000255B720"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.162",
+     "code": "33352"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "85762"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "2587892"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "2587898"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "2587899"
+    }
+   ],
+   "text": "Paxlovid (300/100) 20 x 150 MG & 10 x 100MG tablet"
+  },
+  "form": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+     "code": "TBPK",
+     "display": "Tablet Therapy Pack"
+    }
+   ],
+   "text": "Tablet Therapy Pack"
+  },
+  "ingredient": [
+   {
+    "itemCodeableConcept": {
+     "text": "Paxlovid (300/100) 20 x 150 MG & 10 x 100MG tablet"
+    }
+   }
+  ]
+ },
+ {
+  "resourceType": "Medication",
+  "id": "emDPp1EhWCs.lOHv4D8xRGqBiBvGYSms-Ryijy29pZl.7AnFGt9ih9WIohK.GSVsXthxCjLwayOY5wqfmwV-sY2VLaSpttJJjy4jokE1.EhQ3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+    "value": "27838"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://www.whocc.no/atc",
+     "code": "B05BB01"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.253",
+     "code": "64888"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.68",
+     "code": "79750010002021"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.162",
+     "code": "28522"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "9863"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "313002"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807627"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807630"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807631"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807632"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807633"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807634"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807639"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "2471089"
+    }
+   ],
+   "text": "sodium chloride"
+  },
+  "form": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+     "code": "SOLN",
+     "display": "Solution"
+    }
+   ],
+   "text": "Solution"
+  },
+  "ingredient": [
+   {
+    "itemCodeableConcept": {
+     "text": "sodium chloride"
+    },
+    "strength": {
+     "numerator": {
+      "value": 0.9,
+      "unit": "%",
+      "system": "http://unitsofmeasure.org",
+      "code": "%"
+     },
+     "denominator": {
+      "value": 1,
+      "unit": "mL"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "resourceType": "Medication",
+  "id": "emDPp1EhWCs.lOHv4D8xRGuUP7ph5Ve6tXxZ5nJtkA9PM63Ud0Mfr5lFsCUp1JkS8QTdYYEZmP8wCBI5IohzTx-DccVRC9oaBLUKbR9roFQ83",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+    "value": "27838"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://www.whocc.no/atc",
+     "code": "B05BB01"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.253",
+     "code": "64888"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.68",
+     "code": "79750010002021"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.162",
+     "code": "28522"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "9863"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "313002"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807627"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807630"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807631"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807632"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807633"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807634"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807639"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "2471089"
+    }
+   ],
+   "text": "sodium chloride"
+  },
+  "form": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+     "code": "SOLN",
+     "display": "Solution"
+    }
+   ],
+   "text": "Solution"
+  },
+  "ingredient": [
+   {
+    "itemCodeableConcept": {
+     "text": "sodium chloride"
+    },
+    "strength": {
+     "numerator": {
+      "value": 0.9,
+      "unit": "%",
+      "system": "http://unitsofmeasure.org",
+      "code": "%"
+     },
+     "denominator": {
+      "value": 1,
+      "unit": "mL"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "resourceType": "Medication",
+  "id": "emDPp1EhWCs.lOHv4D8xRGpHutx3UJt05HZNpF08zHtUo2LfxoIDGQYaxHWqS8rtiKfILey9RZS92-uYOT86AIVZXiLhNocfd5MafnnC8xEs3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+    "value": "27838"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://www.whocc.no/atc",
+     "code": "B05BB01"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.253",
+     "code": "64888"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.68",
+     "code": "79750010002021"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.162",
+     "code": "28522"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "9863"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "313002"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807627"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807630"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807631"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807632"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807633"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807634"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807639"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "2471089"
+    }
+   ],
+   "text": "sodium chloride"
+  },
+  "form": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+     "code": "SOLN",
+     "display": "Solution"
+    }
+   ],
+   "text": "Solution"
+  },
+  "ingredient": [
+   {
+    "itemCodeableConcept": {
+     "text": "sodium chloride"
+    },
+    "strength": {
+     "numerator": {
+      "value": 0.9,
+      "unit": "%",
+      "system": "http://unitsofmeasure.org",
+      "code": "%"
+     },
+     "denominator": {
+      "value": 1,
+      "unit": "mL"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "resourceType": "Medication",
+  "id": "emDPp1EhWCs.lOHv4D8xRGpLn02CnjPHwoSejjAvkImbRjvxgrcKqMoMaTMYJsKCMeDSb6Hl8f.rUrv27LQ0.nI8WaY2lxKbjLhYGjbiV-V43",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+    "value": "27838"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://www.whocc.no/atc",
+     "code": "B05BB01"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.253",
+     "code": "64888"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.68",
+     "code": "79750010002021"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.162",
+     "code": "28522"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "9863"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "313002"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807627"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807630"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807631"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807632"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807633"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807634"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807639"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "2471089"
+    }
+   ],
+   "text": "sodium chloride"
+  },
+  "form": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+     "code": "SOLN",
+     "display": "Solution"
+    }
+   ],
+   "text": "Solution"
+  },
+  "ingredient": [
+   {
+    "itemCodeableConcept": {
+     "text": "sodium chloride"
+    },
+    "strength": {
+     "numerator": {
+      "value": 0.9,
+      "unit": "%",
+      "system": "http://unitsofmeasure.org",
+      "code": "%"
+     },
+     "denominator": {
+      "value": 1,
+      "unit": "mL"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "resourceType": "Medication",
+  "id": "emDPp1EhWCs.lOHv4D8xRGi1gO4BaLhQryjiEisQPZ6qOTfpsKmSTDHbliz8.pGX2ECL48LEfQo.yh1qwoFx-HmrVu5PDBu6WYFlKlfcaTLo3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+    "value": "27838"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://www.whocc.no/atc",
+     "code": "B05BB01"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.253",
+     "code": "64888"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.68",
+     "code": "79750010002021"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.162",
+     "code": "28522"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "9863"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "313002"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807627"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807630"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807631"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807632"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807633"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807634"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807639"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "2471089"
+    }
+   ],
+   "text": "sodium chloride"
+  },
+  "form": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+     "code": "SOLN",
+     "display": "Solution"
+    }
+   ],
+   "text": "Solution"
+  },
+  "ingredient": [
+   {
+    "itemCodeableConcept": {
+     "text": "sodium chloride"
+    },
+    "strength": {
+     "numerator": {
+      "value": 0.9,
+      "unit": "%",
+      "system": "http://unitsofmeasure.org",
+      "code": "%"
+     },
+     "denominator": {
+      "value": 1,
+      "unit": "mL"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "resourceType": "Medication",
+  "id": "eDO6E2jpqXXkkRFNTmOTCVFQvRXX8LmZr1IrqwOgblQaHuiklQbiezwt6xAejQvmreCaEytu.z0FDXAcd8ZOvy2hcerQO4PHydSRBekn34Fk3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+    "value": "5674"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://www.whocc.no/atc",
+     "code": "N06AA10"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.253",
+     "code": "15185"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.68",
+     "code": "58200060100105"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.162",
+     "code": "03053"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "7531"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "198045"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "203130"
+    }
+   ],
+   "text": "nortriptyline 10 MG capsule"
+  },
+  "form": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+     "code": "CAPS",
+     "display": "Cap"
+    }
+   ],
+   "text": "Cap"
+  },
+  "ingredient": [
+   {
+    "itemCodeableConcept": {
+     "text": "nortriptyline 10 MG capsule"
+    },
+    "strength": {
+     "numerator": {
+      "value": 10,
+      "unit": "MG",
+      "system": "http://unitsofmeasure.org",
+      "code": "mg"
+     },
+     "denominator": {
+      "value": 1,
+      "unit": "capsule"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "resourceType": "Medication",
+  "id": "emDPp1EhWCs.lOHv4D8xRGo7tuiHoETG7EhNfvWZfe4duR.gudYVzFhNjV4N2zE.m6N3esqO49W5UJHNYbAr2oCQosSPQMutPr7MzbEm6pcE3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+    "value": "27838"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://www.whocc.no/atc",
+     "code": "B05BB01"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.253",
+     "code": "64888"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.68",
+     "code": "79750010002021"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.162",
+     "code": "28522"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "9863"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "313002"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807627"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807630"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807631"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807632"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807633"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807634"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807639"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "2471089"
+    }
+   ],
+   "text": "sodium chloride"
+  },
+  "form": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+     "code": "SOLN",
+     "display": "Solution"
+    }
+   ],
+   "text": "Solution"
+  },
+  "ingredient": [
+   {
+    "itemCodeableConcept": {
+     "text": "sodium chloride"
+    },
+    "strength": {
+     "numerator": {
+      "value": 0.9,
+      "unit": "%",
+      "system": "http://unitsofmeasure.org",
+      "code": "%"
+     },
+     "denominator": {
+      "value": 1,
+      "unit": "mL"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "resourceType": "Medication",
+  "id": "emDPp1EhWCs.lOHv4D8xRGlCZAxhkIIhSUCZb74CP.Y2Elu9a6xV-zqoreKauHgcpJKjyK42QTWb9GyPncpakAzstFT-iKJt9q44UBb9y1rU3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+    "value": "27838"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://www.whocc.no/atc",
+     "code": "B05BB01"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.253",
+     "code": "64888"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.68",
+     "code": "79750010002021"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.162",
+     "code": "28522"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "9863"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "313002"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807627"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807630"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807631"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807632"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807633"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807634"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807639"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "2471089"
+    }
+   ],
+   "text": "sodium chloride"
+  },
+  "form": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+     "code": "SOLN",
+     "display": "Solution"
+    }
+   ],
+   "text": "Solution"
+  },
+  "ingredient": [
+   {
+    "itemCodeableConcept": {
+     "text": "sodium chloride"
+    },
+    "strength": {
+     "numerator": {
+      "value": 0.9,
+      "unit": "%",
+      "system": "http://unitsofmeasure.org",
+      "code": "%"
+     },
+     "denominator": {
+      "value": 1,
+      "unit": "mL"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "resourceType": "Medication",
+  "id": "emDPp1EhWCs.lOHv4D8xRGlZB3AALLmB-qH60OZToQ3vNotRdqiktOAwGetHrL6NhdX81LGPOrQD.BKNPCWCngTjpWqZX9uj5aq12REcmVQk3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+    "value": "27838"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://www.whocc.no/atc",
+     "code": "B05BB01"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.253",
+     "code": "64888"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.68",
+     "code": "79750010002021"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.162",
+     "code": "28522"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "9863"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "313002"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807627"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807630"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807631"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807632"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807633"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807634"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "1807639"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "2471089"
+    }
+   ],
+   "text": "sodium chloride"
+  },
+  "form": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+     "code": "SOLN",
+     "display": "Solution"
+    }
+   ],
+   "text": "Solution"
+  },
+  "ingredient": [
+   {
+    "itemCodeableConcept": {
+     "text": "sodium chloride"
+    },
+    "strength": {
+     "numerator": {
+      "value": 0.9,
+      "unit": "%",
+      "system": "http://unitsofmeasure.org",
+      "code": "%"
+     },
+     "denominator": {
+      "value": 1,
+      "unit": "mL"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "resourceType": "Medication",
+  "id": "eDO6E2jpqXXkkRFNTmOTCVFIm1sguHwlLiHSXRa0D34T5Kxuh6FuWTa0POOqIKnU4y0co3fPTWhbGFtv9duo7BLZgksNvZCu9X8LUSLp2DwA3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+    "value": "5674"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://www.whocc.no/atc",
+     "code": "N06AA10"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.253",
+     "code": "15185"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.68",
+     "code": "58200060100105"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.162",
+     "code": "03053"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "7531"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "198045"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "203130"
+    }
+   ],
+   "text": "nortriptyline 10 MG capsule"
+  },
+  "form": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+     "code": "CAPS",
+     "display": "Cap"
+    }
+   ],
+   "text": "Cap"
+  },
+  "ingredient": [
+   {
+    "itemCodeableConcept": {
+     "text": "nortriptyline 10 MG capsule"
+    },
+    "strength": {
+     "numerator": {
+      "value": 10,
+      "unit": "MG",
+      "system": "http://unitsofmeasure.org",
+      "code": "mg"
+     },
+     "denominator": {
+      "value": 1,
+      "unit": "capsule"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "resourceType": "Medication",
+  "id": "ePn03ge..laA21H5D6jjUKhjayt2Z-0xmaFPxrSdlGmMrMFXifct3ABcpmvAy-.hUss2wwMPiQGx.9M4XqPUAOPxfDqUp8PN2eirp0LWFdfM3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+    "value": "170050"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.253",
+     "code": "225056"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.68",
+     "code": "97202012026200"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.162",
+     "code": "15054"
+    }
+   ],
+   "text": "FreeStyle Libre 3 Reader Devi Device"
+  },
+  "form": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+     "code": "DEVI",
+     "display": "Device"
+    }
+   ],
+   "text": "Device"
+  },
+  "ingredient": [
+   {
+    "itemCodeableConcept": {
+     "text": "FreeStyle Libre 3 Reader Devi Device"
+    }
+   }
+  ]
+ },
+ {
+  "resourceType": "Medication",
+  "id": "eHKeo4A0FuTrKKbsVTVaV9WQWsut4J.prTcFdm5mi-02ABSv29qMwSREZhtvzpjXnLRZfAZDHLhEbMpKO90ighvwSatJYwAeHYBEZ62KHsDo3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+    "value": "35184"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://www.whocc.no/atc",
+     "code": "M03BX08"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.253",
+     "code": "80777"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.68",
+     "code": "75100050100303"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.162",
+     "code": "36845"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "21949"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "52101"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "828320"
+    }
+   ],
+   "text": "cyclobenzaprine 5 MG tablet"
+  },
+  "form": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+     "code": "TABS",
+     "display": "Tab"
+    }
+   ],
+   "text": "Tab"
+  },
+  "ingredient": [
+   {
+    "itemCodeableConcept": {
+     "text": "cyclobenzaprine 5 MG tablet"
+    },
+    "strength": {
+     "numerator": {
+      "value": 5,
+      "unit": "MG",
+      "system": "http://unitsofmeasure.org",
+      "code": "mg"
+     },
+     "denominator": {
+      "value": 1,
+      "unit": "tablet"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "resourceType": "Medication",
+  "id": "eLmilK3Rw9PZAb9uoMGzD1Ch3xNKrnhRdx9AFoKpSfwhmwQMuJ1ZgB7D10WaRWX-spNXo2.l5OMxmINIQh4HsnCkLh9Qy8F.Ko9E-op7HHAk3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+    "value": "163506"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.253",
+     "code": "219069"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.68",
+     "code": "97202012046300"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.162",
+     "code": "15056"
+    }
+   ],
+   "text": "FreeStyle Libre 3 Sensor Misc"
+  },
+  "form": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+     "code": "MISC",
+     "display": "Misc"
+    }
+   ],
+   "text": "Misc"
+  },
+  "ingredient": [
+   {
+    "itemCodeableConcept": {
+     "text": "FreeStyle Libre 3 Sensor Misc"
+    }
+   }
+  ]
+ },
+ {
+  "resourceType": "Medication",
+  "id": "e9fvpnj3WyE-H2BtI7XPll4rBD00w9avMoKkakH9Dvo4tFRYaZnfO0R6wmJUNwCsbXE7QMWR4uUztj5A5ElQEg1D1u6arc0sLlRIK.ssJSYY3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+    "value": "10449"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://www.whocc.no/atc",
+     "code": "C09AA03"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.253",
+     "code": "28360"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.68",
+     "code": "36100030000310"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.162",
+     "code": "01213"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "29046"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "314076"
+    }
+   ],
+   "text": "lisinopril 10 MG tablet"
+  },
+  "form": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+     "code": "TABS",
+     "display": "Tab"
+    }
+   ],
+   "text": "Tab"
+  },
+  "ingredient": [
+   {
+    "itemCodeableConcept": {
+     "text": "lisinopril 10 MG tablet"
+    },
+    "strength": {
+     "numerator": {
+      "value": 10,
+      "unit": "MG",
+      "system": "http://unitsofmeasure.org",
+      "code": "mg"
+     },
+     "denominator": {
+      "value": 1,
+      "unit": "tablet"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "resourceType": "Medication",
+  "id": "eDO6E2jpqXXkkRFNTmOTCVOt.jRufeZKSGmdNHGchOFDCkJZPnPmBrLI4n-SWW4JqdQfNlXb9J.S92ylrjY0RnYP0zYQ3KQ2LgKvyre3Bcwk3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+    "value": "5674"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "http://www.whocc.no/atc",
+     "code": "N06AA10"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.253",
+     "code": "15185"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.68",
+     "code": "58200060100105"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.162",
+     "code": "03053"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "7531"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "198045"
+    },
+    {
+     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+     "code": "203130"
+    }
+   ],
+   "text": "nortriptyline 10 MG capsule"
+  },
+  "form": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+     "code": "CAPS",
+     "display": "Cap"
+    }
+   ],
+   "text": "Cap"
+  },
+  "ingredient": [
+   {
+    "itemCodeableConcept": {
+     "text": "nortriptyline 10 MG capsule"
+    },
+    "strength": {
+     "numerator": {
+      "value": 10,
+      "unit": "MG",
+      "system": "http://unitsofmeasure.org",
+      "code": "mg"
+     },
+     "denominator": {
+      "value": 1,
+      "unit": "capsule"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "resourceType": "Medication",
+  "id": "eLmilK3Rw9PZAb9uoMGzD1MZDg3HnFaqzkOL9nEGgS9uDD97BP5XBBwmqu3gZyDlSv1HdHPU-EtMGdE5sb0hWvzUuUGiSzsu6Hzktn95B3RU3",
+  "identifier": [
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288",
+    "value": "163506"
+   }
+  ],
+  "code": {
+   "coding": [
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.253",
+     "code": "219069"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.68",
+     "code": "97202012046300"
+    },
+    {
+     "system": "urn:oid:2.16.840.1.113883.6.162",
+     "code": "15056"
+    }
+   ],
+   "text": "FreeStyle Libre 3 Sensor Misc"
+  },
+  "form": {
+   "coding": [
+    {
+     "system": "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310",
+     "code": "MISC",
+     "display": "Misc"
+    }
+   ],
+   "text": "Misc"
+  },
+  "ingredient": [
+   {
+    "itemCodeableConcept": {
+     "text": "FreeStyle Libre 3 Sensor Misc"
+    }
+   }
+  ]
+ }
+]

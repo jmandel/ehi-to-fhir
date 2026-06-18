@@ -1,0 +1,2183 @@
+[
+ {
+  "resourceType": "Practitioner",
+  "id": "ey81YiHNZU361WB9p7j7lsw3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "NPI"
+    },
+    "system": "http://hl7.org/fhir/sid/us-npi",
+    "value": "1205323193"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": " RAMMELZL"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "RAMMELZL"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EPIC"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.60",
+    "value": "1205323193"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "Epic"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.63",
+    "value": "9005828432002"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "144590"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.126",
+    "value": "207R00000X"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+    "value": "RAMMELZL"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.557",
+    "value": "1205323193"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "  144590"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "144590"
+   }
+  ],
+  "active": true,
+  "name": [
+   {
+    "use": "usual",
+    "text": "Dr. Z Rammelkamp",
+    "family": "Rammelkamp",
+    "given": [
+     "Z"
+    ],
+    "prefix": [
+     "Dr."
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Practitioner",
+  "id": "eAMIAXa0PnbU5XAsvFYMljg3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": " MBS403"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "MBS403"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "621755"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+    "value": "MBS403"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "  621755"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "621755"
+   }
+  ],
+  "active": true,
+  "name": [
+   {
+    "use": "usual",
+    "text": "Mary S",
+    "family": "S",
+    "given": [
+     "Mary"
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Practitioner",
+  "id": "e9b60AolyK2yTgurIP.sXOQ3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": " TAFTAM"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "TAFTAM"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "656419"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+    "value": "TAFTAM"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "  656419"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "656419"
+   }
+  ],
+  "active": false,
+  "name": [
+   {
+    "use": "usual",
+    "text": "Ashley T",
+    "family": "T",
+    "given": [
+     "Ashley"
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Practitioner",
+  "id": "evrp-FcMapiLXs2cG3YysMgcM5jE-40MQsbT1jHBAMyU3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": " SMITHAM28"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "SMITHAM28"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "597973"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+    "value": "SMITHAM28"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "  597973"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "597973"
+   }
+  ],
+  "active": false,
+  "name": [
+   {
+    "use": "usual",
+    "text": "Angela T",
+    "family": "T",
+    "given": [
+     "Angela"
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Practitioner",
+  "id": "ew6Li56NMxgscXaoYNv4JlQ3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": " WENTZTC"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "WENTZTC"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "518228"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+    "value": "WENTZTC"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "  518228"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "518228"
+   }
+  ],
+  "active": true,
+  "name": [
+   {
+    "use": "usual",
+    "text": "Tracy I",
+    "family": "I",
+    "given": [
+     "Tracy"
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Practitioner",
+  "id": "ezM-rrQLMC.sw7BYDm41tuA3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": " MSF400"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "MSF400"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "554340"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+    "value": "MSF400"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "  554340"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "554340"
+   }
+  ],
+  "active": true,
+  "name": [
+   {
+    "use": "usual",
+    "text": "Megan F",
+    "family": "F",
+    "given": [
+     "Megan"
+    ]
+   }
+  ],
+  "gender": "female"
+ },
+ {
+  "resourceType": "Practitioner",
+  "id": "er.OePSLrxqVlzVsMn.4myxDHOyNMErSQdktjBHxTGKY3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": " RAMMELZL"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "RAMMELZL"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EPIC"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.60",
+    "value": "1205323193"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "Epic"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.63",
+    "value": "9005828432002"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "144590"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.126",
+    "value": "207R00000X"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+    "value": "RAMMELZL"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.557",
+    "value": "1205323193"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "  144590"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "144590"
+   }
+  ],
+  "active": true,
+  "name": [
+   {
+    "use": "usual",
+    "text": "Dr. Z Rammelkamp",
+    "family": "Rammelkamp",
+    "given": [
+     "Z"
+    ],
+    "prefix": [
+     "Dr."
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Practitioner",
+  "id": "e5byPpf4uFndv9PtT8cAMIg3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": " JLE400"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "JLE400"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EPIC"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.60",
+    "value": "1790854107"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "Epic"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.63",
+    "value": "6552692181001"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "133057"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.126",
+    "value": "207R00000X"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+    "value": "JLE400"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.556",
+    "value": "9005"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.557",
+    "value": "1790854107"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "  133057"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "133057"
+   }
+  ],
+  "active": true,
+  "name": [
+   {
+    "use": "usual",
+    "text": "Dr. J Everton",
+    "family": "Everton",
+    "given": [
+     "J"
+    ],
+    "prefix": [
+     "Dr."
+    ]
+   }
+  ],
+  "gender": "female"
+ },
+ {
+  "resourceType": "Practitioner",
+  "id": "e1qEsF5fbP3cl-5U5BvEVvA3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": " NACKSR"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "NACKSR"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "656903"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+    "value": "NACKSR"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "  656903"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "656903"
+   }
+  ],
+  "active": true,
+  "name": [
+   {
+    "use": "usual",
+    "text": "Samantha N",
+    "family": "N",
+    "given": [
+     "Samantha"
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Practitioner",
+  "id": "eLCYrsF4VSpeEe3oN-SZwcg3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": " PAM400"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "PAM400"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "554362"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+    "value": "PAM400"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "  554362"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "554362"
+   }
+  ],
+  "active": true,
+  "name": [
+   {
+    "use": "usual",
+    "text": "Patricia M",
+    "family": "M",
+    "given": [
+     "Patricia"
+    ]
+   }
+  ],
+  "gender": "female"
+ },
+ {
+  "resourceType": "Practitioner",
+  "id": "e4s89AmNl2QODx7-6WDbkeuF6FvLbm-Q.xBGKIn03gDI3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": " DHILLOPS"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "DHILLOPS"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EPIC"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.60",
+    "value": "1073855474"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "Epic"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.63",
+    "value": "6050558173003"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "802011"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.126",
+    "value": "207R00000X"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.557",
+    "value": "1073855474"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "  802011"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "802011"
+   }
+  ],
+  "active": true,
+  "name": [
+   {
+    "use": "usual",
+    "text": "Dr. P Dhillon",
+    "family": "Dhillon",
+    "given": [
+     "P"
+    ],
+    "prefix": [
+     "Dr."
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Practitioner",
+  "id": "eLVj8xkYnXC5-pslt7s83rw3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "   JAY1"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "JAY1"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "554385"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+    "value": "JAY1"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "  554385"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "554385"
+   }
+  ],
+  "active": true,
+  "name": [
+   {
+    "use": "usual",
+    "text": "Jess Y",
+    "family": "Y",
+    "given": [
+     "Jess"
+    ]
+   }
+  ],
+  "gender": "female"
+ },
+ {
+  "resourceType": "Practitioner",
+  "id": "e.eou8uzbCulyjNdAJ3LSCg3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": " ALG006"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "ALG006"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EPIC"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.60",
+    "value": "1073140950"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "599471"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.126",
+    "value": "225X00000X"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.557",
+    "value": "1073140950"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "  599471"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "599471"
+   }
+  ],
+  "active": false,
+  "name": [
+   {
+    "use": "usual",
+    "text": "Aaron G",
+    "family": "G",
+    "given": [
+     "Aaron"
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Practitioner",
+  "id": "eu95HjB4reTHBt48QFU5kuQ3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "NPI"
+    },
+    "system": "http://hl7.org/fhir/sid/us-npi",
+    "value": "1669814737"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": " MWS266"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "MWS266"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EPIC"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.60",
+    "value": "1669814737"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "Epic"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.63",
+    "value": "6120918316008"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "137975"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.126",
+    "value": "2085R0202X"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.126",
+    "value": "2085P0229X"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+    "value": "MWS266"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.557",
+    "value": "1669814737"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "  137975"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "137975"
+   }
+  ],
+  "active": true,
+  "name": [
+   {
+    "use": "usual",
+    "text": "Dr. M Shore",
+    "family": "Shore",
+    "given": [
+     "M"
+    ],
+    "prefix": [
+     "Dr."
+    ]
+   }
+  ],
+  "gender": "male"
+ },
+ {
+  "resourceType": "Practitioner",
+  "id": "eLT5TYxUWqvf6piKZ8-r.yA3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "NPI"
+    },
+    "system": "http://hl7.org/fhir/sid/us-npi",
+    "value": "1073855474"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": " DHILLOPS"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "DHILLOPS"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EPIC"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.60",
+    "value": "1073855474"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "Epic"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.63",
+    "value": "6050558173003"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "802011"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.126",
+    "value": "207R00000X"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.557",
+    "value": "1073855474"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "  802011"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "802011"
+   }
+  ],
+  "active": true,
+  "name": [
+   {
+    "use": "usual",
+    "text": "Dr. P Dhillon",
+    "family": "Dhillon",
+    "given": [
+     "P"
+    ],
+    "prefix": [
+     "Dr."
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Practitioner",
+  "id": "e6WthosTjZVTQiypDp3DLJw3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "NPI"
+    },
+    "system": "http://hl7.org/fhir/sid/us-npi",
+    "value": "1790854107"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": " JLE400"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "JLE400"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EPIC"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.60",
+    "value": "1790854107"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "Epic"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.63",
+    "value": "6552692181001"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "133057"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.126",
+    "value": "207R00000X"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+    "value": "JLE400"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.556",
+    "value": "9005"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.557",
+    "value": "1790854107"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "  133057"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "133057"
+   }
+  ],
+  "active": true,
+  "name": [
+   {
+    "use": "usual",
+    "text": "Dr. J Everton",
+    "family": "Everton",
+    "given": [
+     "J"
+    ],
+    "prefix": [
+     "Dr."
+    ]
+   }
+  ],
+  "gender": "female"
+ },
+ {
+  "resourceType": "Practitioner",
+  "id": "efMPLOF.HqAdx5LLIKaiU6A3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": " LRM400"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "LRM400"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "554368"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+    "value": "LRM400"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "  554368"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "554368"
+   }
+  ],
+  "active": true,
+  "name": [
+   {
+    "use": "usual",
+    "text": "Leslie K",
+    "family": "K",
+    "given": [
+     "Leslie"
+    ]
+   }
+  ],
+  "gender": "female"
+ },
+ {
+  "resourceType": "Practitioner",
+  "id": "ec2pifA.qX7iOuRSPi2DB0w3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": " MBS403"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "MBS403"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "621755"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+    "value": "MBS403"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "  621755"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "621755"
+   }
+  ],
+  "active": true,
+  "name": [
+   {
+    "use": "usual",
+    "text": "Mary S",
+    "family": "S",
+    "given": [
+     "Mary"
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Practitioner",
+  "id": "e47iW8-b75HxGPkJQEdldQw3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "88000999"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": " 8800099"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "8800099"
+   }
+  ],
+  "active": true,
+  "name": [
+   {
+    "use": "usual",
+    "text": "Dr. G Provider",
+    "family": "Provider",
+    "given": [
+     "G"
+    ],
+    "prefix": [
+     "Dr."
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Practitioner",
+  "id": "erKg1JcU7QjqfnsN0Q6PM8A3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "   JAY1"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "JAY1"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "554385"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+    "value": "JAY1"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "  554385"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "554385"
+   }
+  ],
+  "active": true,
+  "name": [
+   {
+    "use": "usual",
+    "text": "Jess Y",
+    "family": "Y",
+    "given": [
+     "Jess"
+    ]
+   }
+  ],
+  "gender": "female"
+ },
+ {
+  "resourceType": "Practitioner",
+  "id": "eA2zXz.xUA.l089P58m2Xww3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": " NACKSR"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "NACKSR"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "656903"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+    "value": "NACKSR"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "  656903"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "656903"
+   }
+  ],
+  "active": true,
+  "name": [
+   {
+    "use": "usual",
+    "text": "Samantha N",
+    "family": "N",
+    "given": [
+     "Samantha"
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Practitioner",
+  "id": "el9L1d9z77kDO27pg1Bczqg3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "NPI"
+    },
+    "system": "http://hl7.org/fhir/sid/us-npi",
+    "value": "1841421872"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": " BTG378"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "BTG378"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EPIC"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.60",
+    "value": "1841421872"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "Epic"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.63",
+    "value": "6497081292016"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "805364"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.126",
+    "value": "208100000X"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+    "value": "BTG378"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.557",
+    "value": "1841421872"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "  805364"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "805364"
+   }
+  ],
+  "active": true,
+  "name": [
+   {
+    "use": "usual",
+    "text": "Dr. B Gillespie",
+    "family": "Gillespie",
+    "given": [
+     "B"
+    ],
+    "prefix": [
+     "Dr."
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Practitioner",
+  "id": "eQOLfk-9aHqHIk3LoEv-xBw3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": " KLL403"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "KLL403"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "508903"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+    "value": "KLL403"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "  508903"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "508903"
+   }
+  ],
+  "active": true,
+  "name": [
+   {
+    "use": "usual",
+    "text": "Karen L",
+    "family": "L",
+    "given": [
+     "Karen"
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Practitioner",
+  "id": "e6.0Tn8CqIe1d1HdnS2dOkw3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "NPI"
+    },
+    "system": "http://hl7.org/fhir/sid/us-npi",
+    "value": "1073140950"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": " ALG006"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "ALG006"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EPIC"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.60",
+    "value": "1073140950"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "599471"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.126",
+    "value": "225X00000X"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.557",
+    "value": "1073140950"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "  599471"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "599471"
+   }
+  ],
+  "active": false,
+  "name": [
+   {
+    "use": "usual",
+    "text": "Aaron G",
+    "family": "G",
+    "given": [
+     "Aaron"
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Practitioner",
+  "id": "evxKk0bRmk4048zdXpsQV8w3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": " PEPINPA"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "PEPINPA"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "522795"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+    "value": "PEPINPA"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "  522795"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "522795"
+   }
+  ],
+  "active": false,
+  "name": [
+   {
+    "use": "usual",
+    "text": "Pamela P",
+    "family": "P",
+    "given": [
+     "Pamela"
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Practitioner",
+  "id": "eK5.k-HYolPVGSphPKQIOWQ3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "NPI"
+    },
+    "system": "http://hl7.org/fhir/sid/us-npi",
+    "value": "1730357849"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": " PICONEMA"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "PICONEMA"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EPIC"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.60",
+    "value": "1730357849"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "Epic"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.63",
+    "value": "6572844523084"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "219711"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.126",
+    "value": "363LF0000X"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.557",
+    "value": "1730357849"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "  219711"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "219711"
+   }
+  ],
+  "active": true,
+  "name": [
+   {
+    "use": "usual",
+    "text": "M Picone",
+    "family": "Picone",
+    "given": [
+     "M"
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Practitioner",
+  "id": "eWfRHrwgDMDUglPRf9N8tMg3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "NPI"
+    },
+    "system": "http://hl7.org/fhir/sid/us-npi",
+    "value": "1891752184"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "  KAC05"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "KAC05"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EPIC"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.60",
+    "value": "1891752184"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "Epic"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.63",
+    "value": "6146858150002"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "132946"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.126",
+    "value": "208000000X"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+    "value": "KAC05"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.556",
+    "value": "3569"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.557",
+    "value": "1891752184"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "  132946"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "132946"
+   }
+  ],
+  "active": true,
+  "name": [
+   {
+    "use": "usual",
+    "text": "Dr. K Cahill",
+    "family": "Cahill",
+    "given": [
+     "K"
+    ],
+    "prefix": [
+     "Dr."
+    ]
+   }
+  ],
+  "gender": "female"
+ },
+ {
+  "resourceType": "Practitioner",
+  "id": "enmCueTK4BVkRVXH.BnWaAA3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": " BUDZBANL"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "BUDZBANL"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "529098"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+    "value": "BUDZBANL"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "  529098"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "529098"
+   }
+  ],
+  "active": false,
+  "name": [
+   {
+    "use": "usual",
+    "text": "Nicole B",
+    "family": "B",
+    "given": [
+     "Nicole"
+    ]
+   }
+  ]
+ },
+ {
+  "resourceType": "Practitioner",
+  "id": "exIEorxpUzHCIrs2mskaxMQ3",
+  "identifier": [
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": " DMW400"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.697780",
+    "value": "DMW400"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "CCPROVID"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.99",
+    "value": "554383"
+   },
+   {
+    "use": "usual",
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.553",
+    "value": "DMW400"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "INTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "  554383"
+   },
+   {
+    "use": "usual",
+    "type": {
+     "text": "EXTERNAL"
+    },
+    "system": "urn:oid:1.2.840.114350.1.13.283.2.7.2.836982",
+    "value": "554383"
+   }
+  ],
+  "active": true,
+  "name": [
+   {
+    "use": "usual",
+    "text": "Dawn W",
+    "family": "W",
+    "given": [
+     "Dawn"
+    ]
+   }
+  ],
+  "gender": "female"
+ }
+]
