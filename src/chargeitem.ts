@@ -47,18 +47,20 @@
  *
  * Everything in the EHI is TEXT (general-patterns §17): CAST before numeric ORDER BY.
  */
-import { q, parseEpicDateTime } from "../lib/db";
+import { q } from "../lib/db";
+import { isoDate as dateOnly } from "../lib/time";
 import { emit, clean } from "../lib/gen";
-import { id, ref, patientRef } from "../lib/ids";
+import { ident } from "../lib/cc";
+import { id, ref, patientRef, epicOid, SYS } from "../lib/ids";
 import { nn, money } from "../lib/fmt";
 
 // Published / standard systems we can legitimately assert.
 const SYS_CPT = "http://www.ama-assn.org/go/cpt"; // CPT/HCPCS (HC qualifier on the 835 line)
 
-// Epic instance master-file OIDs (instance prefix 1.2.840.114350.1.13.283; same convention
+// Epic instance master-file OIDs (org-instance node centralized in lib/ids; same convention
 // every other domain generator here uses for Epic master-file ids).
-const OID_ETR = "urn:oid:1.2.840.114350.1.13.283.2.7.2.726582.1"; // PB transaction (ETR) id
-const OID_EAP = "urn:oid:1.2.840.114350.1.13.283.2.7.2.696580";   // EAP procedure master id
+const OID_ETR = SYS.ETR;                       // PB transaction (ETR) id — CHILD of HSP_ACCT (DNM #8)
+const OID_EAP = epicOid("2.7.2.696580");       // EAP procedure master id
 
 
 /** Quantity count from a TEXT decimal; undefined if not numeric. */
@@ -68,12 +70,6 @@ function qty(v: unknown): { value: number } | undefined {
   const n = Number(s);
   if (!Number.isFinite(n)) return undefined;
   return { value: n };
-}
-
-/** SERVICE_DATE / POST_DATE → "YYYY-MM-DD" (source is date-only at 12:00:00 AM). */
-function dateOnly(v: unknown): string | undefined {
-  const iso = parseEpicDateTime(v);
-  return iso ? iso.slice(0, 10) : undefined;
 }
 
 /**
@@ -187,7 +183,7 @@ function buildChargeItems(): any[] {
       clean({
         resourceType: "ChargeItem",
         id: id.chargeItem(txId),
-        identifier: [{ system: OID_ETR, value: txId }],
+        identifier: [ident(OID_ETR, txId)],
         status,
         code,
         subject: { reference: subject.reference, display: subject.display },

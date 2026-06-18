@@ -21,12 +21,14 @@
  *   requester    AUTHRZING_PROV_ID → Practitioner (CLARITY_SER name)
  *   authoredOn   ORDERING_DATE (date)
  */
-import { q, parseEpicDateTime } from "../lib/db";
-import { id, ref, patientRef } from "../lib/ids";
+import { qIf } from "../lib/db";
+import { isoDate as dateOnly } from "../lib/time";
+import { id, ref, patientRef, SYS } from "../lib/ids";
 import { emit, clean } from "../lib/gen";
+import { concept, ident } from "../lib/cc";
 
-const SYS_PLACER = "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268"; // order placer id (matches DR/Obs)
-const SYS_ENC = "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8";  // Encounter CSN
+const SYS_PLACER = SYS.PLACER; // order placer id (matches DR/Obs)
+const SYS_ENC = SYS.CSN;  // Encounter CSN
 
 type Row = Record<string, any>;
 
@@ -39,16 +41,10 @@ function srStatus(name: unknown): string {
   return "completed"; // all orders in this specimen are Completed/Final result
 }
 
-/** Date-only portion of an Epic datetime → ISO yyyy-mm-dd. */
-function dateOnly(v: unknown): string | undefined {
-  const iso = parseEpicDateTime(v);
-  if (!iso) return undefined;
-  return iso.includes("T") ? iso.slice(0, 10) : iso;
-}
-
 function build(): any[] {
   // Same order set as lab.ts: resulted Lab Collect orders. Join the header fields we need.
-  const rows = q<Row>(
+  const rows = qIf<Row>(
+    "ORDER_RESULTS",
     `SELECT p.ORDER_PROC_ID, p.DESCRIPTION, p.ORDER_STATUS_C_NAME, p.PAT_ENC_CSN_ID,
             p.AUTHRZING_PROV_ID, p.ORDERING_DATE, p.ORDER_TYPE_C_NAME,
             ser.PROV_NAME AS AUTH_PROV_NAME
@@ -68,7 +64,7 @@ function build(): any[] {
     const encounter = csn
       ? {
           reference: `Encounter/${id.encounter(csn)}`,
-          identifier: { use: "usual", system: SYS_ENC, value: csn },
+          identifier: ident(SYS_ENC, csn, { use: "usual" }),
         }
       : undefined;
 
@@ -84,12 +80,10 @@ function build(): any[] {
       clean({
         resourceType: "ServiceRequest",
         id: id.serviceRequest(orderId),
-        identifier: [
-          { use: "usual", system: SYS_PLACER, value: orderId },
-        ],
+        identifier: [ident(SYS_PLACER, orderId, { use: "usual" })],
         status: srStatus(r.ORDER_STATUS_C_NAME),
         intent: "order",
-        code: r.DESCRIPTION ? { text: String(r.DESCRIPTION).trim() } : undefined,
+        code: r.DESCRIPTION ? concept(String(r.DESCRIPTION).trim()) : undefined,
         subject: patientRef(),
         encounter,
         authoredOn: dateOnly(r.ORDERING_DATE),

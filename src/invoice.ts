@@ -57,9 +57,10 @@
  * Everything is TEXT in the EHI (general-patterns §17); amounts CAST before SUM; categories
  * ship pre-resolved as *_C_NAME (§23).
  */
-import { q, parseEpicDateTime } from "../lib/db";
+import { q } from "../lib/db";
+import { isoDate } from "../lib/time";
 import { emit, clean } from "../lib/gen";
-import { cc, ident } from "../lib/cc";
+import { cc, concept, ident } from "../lib/cc";
 import { id, ref, patientRef } from "../lib/ids";
 import { nn, money } from "../lib/fmt";
 
@@ -161,7 +162,7 @@ function buildInvoices(): any[] {
     // --- date (service date of the governing submission). FROM_SVC_DATE carries a
     // placeholder "12:00:00 AM" time, so emit date-only (a valid FHIR dateTime form that
     // avoids asserting a spurious time/zone).
-    const date = parseEpicDateTime(latest?.FROM_SVC_DATE)?.slice(0, 10);
+    const date = isoDate(latest?.FROM_SVC_DATE);
 
     // --- issuer (billing facility org).
     const saId = nn(inv.SERV_AREA_ID);
@@ -251,7 +252,7 @@ function buildInvoices(): any[] {
         identifier,
         status,
         cancelledReason,
-        type: typeText ? { text: typeText } : undefined,
+        type: concept(typeText),
         subject: { reference: patRef.reference, display: patRef.display },
         date,
         issuer,

@@ -44,19 +44,24 @@
  * → text only; birthsex/genderIdentity SNOMED variants absent), and the language-proficiency
  * Epic codings.
  */
-import { q, q1, parseEpicDateTime, dateRealToISO } from "../lib/db";
-import { id, ref, PATIENT_PAT_ID } from "../lib/ids";
+import { q, q1, dateRealToISO } from "../lib/db";
+import { isoDate } from "../lib/time";
+import { id, ref, PATIENT_PAT_ID, epicOid } from "../lib/ids";
 import { emit, clean } from "../lib/gen";
+import { cc, ident } from "../lib/cc";
 import { nn as ANY } from "../lib/fmt";
 
-// ---- Epic identifier OID systems (stable, org-independent constants) ----
-const EPI_OID = "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.0"; // EPI enterprise id
-const EXTERNAL_OID = "urn:oid:1.2.840.114350.1.13.283.2.7.2.698084"; // EPT (PAT_ID) EXTERNAL/INTERNAL
-const WPRINTERNAL_OID = "urn:oid:1.2.840.114350.1.13.283.2.7.2.878082"; // MyChart WPR internal id
+// ---- Epic identifier OID systems ----
+// NOTE: these are NOT org-independent — they hang off the Epic ORG-INSTANCE node
+// (.283), centralized in lib/ids as EPIC_INSTANCE_OID. A new org flips them all via
+// epicOid(); only the open.epic StructureDefinition URLs below are org-independent.
+const EPI_OID = epicOid("2.7.5.737384.0"); // EPI enterprise id
+const EXTERNAL_OID = epicOid("2.7.2.698084"); // EPT (PAT_ID) EXTERNAL/INTERNAL
+const WPRINTERNAL_OID = epicOid("2.7.2.878082"); // MyChart WPR internal id
 const PAYER_MEMBER_ID_SYSTEM = "https://open.epic.com/FHIR/StructureDefinition/PayerMemberId";
-const IHSMRN_OID = "urn:oid:1.2.840.114350.1.13.283"; // Epic root — the IHS-typed MRN ships under it in target
+const IHSMRN_OID = epicOid(""); // Epic root — the IHS-typed MRN ships under it in target
 // The org MRN's IDENTITY_ID_TYPE id (955) IS the trailing node of the APL identifier OID.
-const MRN_OID_BASE = "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384."; // + the numeric type id
+const MRN_OID_BASE = epicOid("2.7.5.737384."); // + the numeric type id
 const LEGAL_SEX_EXT = "http://open.epic.com/FHIR/StructureDefinition/extension/legal-sex";
 const GENDER_IDENTITY_EXT = "http://hl7.org/fhir/StructureDefinition/patient-genderIdentity";
 const BIRTHSEX_EXT = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex";
@@ -109,12 +114,6 @@ const MARITAL_LABEL_BY_CODE: Record<string, string> = {
 };
 
 
-/** ISO date from an Epic textual DATE ("10/26/1982 12:00:00 AM" → "1982-10-26"). */
-function isoDate(v: unknown): string | undefined {
-  const s = parseEpicDateTime(v);
-  return s ? s.slice(0, 10) : undefined;
-}
-
 // State / country labels → the abbreviations Epic's FHIR view uses.
 const STATE_ABBR: Record<string, string> = {
   Wisconsin: "WI", Iowa: "IA", Illinois: "IL", Minnesota: "MN", Michigan: "MI",
@@ -126,7 +125,8 @@ const stateAbbr = (v?: string) => (v ? STATE_ABBR[v] ?? v : undefined);
 const countryAbbr = (v?: string) => (v ? COUNTRY_ABBR[v] ?? v : undefined);
 
 function buildPatient(): any {
-  const p = q1<Record<string, any>>(`SELECT * FROM PATIENT WHERE PAT_ID = ?`, PATIENT_PAT_ID)!;
+  const p = q1<Record<string, any>>(`SELECT * FROM PATIENT WHERE PAT_ID = ?`, PATIENT_PAT_ID);
+  if (!p) throw new Error(`buildPatient: no PATIENT row for PAT_ID ${PATIENT_PAT_ID}`);
   const p2 = q1<Record<string, any>>(`SELECT * FROM PATIENT_2 WHERE PAT_ID = ?`, PATIENT_PAT_ID) ?? {};
   const p3 = q1<Record<string, any>>(`SELECT * FROM PATIENT_3 WHERE PAT_ID = ?`, PATIENT_PAT_ID) ?? {};
   const p4 = q1<Record<string, any>>(`SELECT * FROM PATIENT_4 WHERE PAT_ID = ?`, PATIENT_PAT_ID) ?? {};
@@ -457,15 +457,12 @@ function buildPatient(): any {
       const rc = REL_ROLECODE[relType];
       relationship.push(
         rc
-          ? { coding: [{ system: ROLECODE_SYSTEM, code: rc.code, display: rc.display }], text: relType }
+          ? cc(ROLECODE_SYSTEM, rc.code, rc.display, relType)
           : { text: relType } // text only — no recoverable code
       );
     }
     if (isEmergency) {
-      relationship.push({
-        coding: [{ system: "http://terminology.hl7.org/CodeSystem/v2-0131", code: "C", display: "Emergency Contact" }],
-        text: "Emergency Contact",
-      });
+      relationship.push(cc("http://terminology.hl7.org/CodeSystem/v2-0131", "C", "Emergency Contact"));
     }
     const ctel: any[] = [];
     if (mobile) ctel.push({ system: "phone", value: mobile, use: "mobile", rank: 1 });
@@ -515,7 +512,7 @@ function buildPatient(): any {
   const emprCountry = countryAbbr(ANY(p2.EMPR_COUNTRY_C_NAME));
   if (employer || emprCountry) {
     contact.push({
-      relationship: [{ coding: [{ system: "http://terminology.hl7.org/CodeSystem/v2-0131", code: "E", display: "Employer" }] }],
+      relationship: [cc("http://terminology.hl7.org/CodeSystem/v2-0131", "E", "Employer", null)],
       address: emprCountry || ANY(p2.EMPR_CITY)
         ? {
             use: "work",
@@ -612,6 +609,6 @@ function buildPatient(): any {
 // open.epic legal-sex extension carries an org-specific value-set OID in the target;
 // that OID is server-assigned (not in the EHI), so we keep the system as the bare
 // concept system rather than fabricate the .750999123 value-set OID (recorded as gap).
-const LEGAL_SEX_EXT_VS_SYSTEM = "urn:oid:1.2.840.114350.1.13.283.2.7.10.698084.130.657370.750999123";
+const LEGAL_SEX_EXT_VS_SYSTEM = epicOid("2.7.10.698084.130.657370.750999123");
 
 emit("Patient", [buildPatient()]);

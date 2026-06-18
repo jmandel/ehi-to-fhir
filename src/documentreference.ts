@@ -64,22 +64,23 @@
  */
 import { q, q1 } from "../lib/db";
 import { emit, clean } from "../lib/gen";
-import { id, ref, patientRef } from "../lib/ids";
+import { cc, concept, category, ident } from "../lib/cc";
+import { id, ref, patientRef, epicOid, epicOidRaw, SYS } from "../lib/ids";
 import { attachmentsForNote, attachmentsForOrder } from "./binary";
 import { existsSync, readdirSync } from "fs";
 import { resolve } from "path";
 
-const SYS_NOTE = "urn:oid:1.2.840.114350.1.13.283.2.7.2.727879";       // HNO note id
-const NOTE_OID_TAIL = "1.2.840.114350.1.13.283.2.7.2.727879";          // tail used in the doc-id value
+const SYS_NOTE = SYS.NOTE;                                             // HNO note id
+const NOTE_OID_TAIL = epicOidRaw("2.7.2.727879");                      // tail used in the doc-id VALUE (bare OID, DNM #10)
 const SYS_NOTE_DOC = "urn:oid:1.2.840.114350.1.72.3.15";               // "<tail>_<NOTE_ID>" doc id
-const SYS_CSN = "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8";      // Encounter CSN (matches encounter.ts)
-const SYS_PROV_TYPE = "urn:oid:1.2.840.114350.1.13.283.2.7.4.836982.1040"; // author-provider-type (codes not in export)
+const SYS_CSN = SYS.CSN;                                               // Encounter CSN (matches encounter.ts)
+const SYS_PROV_TYPE = epicOid("2.7.4.836982.1040");                    // author-provider-type (codes not in export)
 const SYS_ATTEST_MODE = "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.72072"; // attester mode (codes not in export)
 const ATTESTER_URL = "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.attester";
 const PROV_TYPE_URL = "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-author-provider-type";
 const AUTH_INSTANT_URL = "http://open.epic.com/FHIR/StructureDefinition/extension/clinical-note-authentication-instant";
 const FORMAT_SYS = "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem";
-const SYS_ORDER_PLACER = "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268"; // imaging ORDER_PROC placer id (matches DR/Obs/ServiceRequest)
+const SYS_ORDER_PLACER = SYS.PLACER; // imaging ORDER_PROC placer id (matches DR/Obs/ServiceRequest)
 
 /** "12/4/2025 2:17:00 PM" (UTC instant in the export) → "2025-12-04T14:17:00Z". */
 function dttmToUTC(v: unknown): string | undefined {
@@ -377,7 +378,7 @@ function buildDocumentReferences() {
       ? [
           {
             reference: `Encounter/${id.encounter(csn)}`,
-            identifier: { use: "usual", system: SYS_CSN, value: String(csn) },
+            identifier: ident(SYS_CSN, String(csn), { use: "usual" }),
             // encounter `display` = Epic encounter-type label, not in export → omitted (GAP)
           },
         ]
@@ -389,24 +390,19 @@ function buildDocumentReferences() {
         id: id.documentReference(noteId),
         extension: attesters,
         identifier: [
-          { system: SYS_NOTE, value: String(noteId) },
-          { system: SYS_NOTE_DOC, value: `${NOTE_OID_TAIL}_${noteId}` },
+          ident(SYS_NOTE, String(noteId)),
+          ident(SYS_NOTE_DOC, `${NOTE_OID_TAIL}_${noteId}`),
         ],
         status: "current",
         docStatus: hasAddendum ? "amended" : "final",
-        type: typeText ? { text: typeText } : undefined,
-        category: [
-          {
-            coding: [
-              {
-                system: "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
-                code: "clinical-note",
-                display: "Clinical Note",
-              },
-            ],
-            text: "Clinical Note",
-          },
-        ],
+        type: concept(typeText),
+        category: category(
+          cc(
+            "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+            "clinical-note",
+            "Clinical Note"
+          )
+        ),
         subject: patientRef(),
         date: dttmToUTC(h.CREATE_INSTANT_DTTM),
         author: practitionerRefFromProv(first.AUTH_LNKED_PROV_ID, first.AUTHOR_USER_ID_NAME)
@@ -490,29 +486,24 @@ function buildImagingDocumentReferences() {
     const when = dttmToUTC(op.RESULT_TIME);
     const csn = op.PAT_ENC_CSN_ID;
     const encounter = csn
-      ? [{ reference: `Encounter/${id.encounter(csn)}`, identifier: { use: "usual", system: SYS_CSN, value: String(csn) } }]
+      ? [{ reference: `Encounter/${id.encounter(csn)}`, identifier: ident(SYS_CSN, String(csn), { use: "usual" }) }]
       : undefined;
 
     out.push(
       clean({
         resourceType: "DocumentReference",
-        identifier: [{ use: "usual", system: SYS_ORDER_PLACER, value: String(orderId) }],
+        identifier: [ident(SYS_ORDER_PLACER, String(orderId), { use: "usual" })],
         id: id.documentReference(orderId),
         status: "current",
         // LOINC 18748-4 is Epic-assigned + not in export (coding GAP) → type.text only.
         type: { text: "Diagnostic imaging study" },
-        category: [
-          {
-            coding: [
-              {
-                system: "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
-                code: "clinical-note",
-                display: "Clinical Note",
-              },
-            ],
-            text: "Clinical Note",
-          },
-        ],
+        category: category(
+          cc(
+            "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+            "clinical-note",
+            "Clinical Note"
+          )
+        ),
         subject: patientRef(),
         date: when,
         custodian: custodianName ? { display: custodianName } : undefined,

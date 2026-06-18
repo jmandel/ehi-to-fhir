@@ -41,25 +41,26 @@
  */
 import { readFileSync } from "fs";
 import { resolve } from "path";
-import { q, q1, parseEpicDateTime } from "../lib/db";
-import { id, ref, patientRef, PATIENT_ID } from "../lib/ids";
+import { q, q1, qIf, parseEpicDateTime } from "../lib/db";
+import { utcFromUtcColumn as utc, localToUtcInstant } from "../lib/time";
+import { id, ref, patientRef, PATIENT_ID, epicOid, SYS, STD } from "../lib/ids";
 import { emit, clean } from "../lib/gen";
 import { cc, category, ident } from "../lib/cc";
 
-const SYS_PLACER = "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268";        // DR/Obs order id (placer)
-const SYS_FILLER = "urn:oid:1.2.840.114350.1.13.283.2.7.3.798268.800";    // filler accession
-const SYS_SPEC_ID = "urn:oid:1.2.840.114350.1.13.283.2.7.3.798268.320";   // Specimen.identifier accession
-const SYS_ENC = "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8";         // Encounter CSN
-const SYS_CAT_EPIC = "urn:oid:1.2.840.114350.1.13.283.2.7.10.798268.30";  // Epic order-category
+const SYS_PLACER = SYS.PLACER;                                            // DR/Obs order id (placer)
+const SYS_FILLER = epicOid("2.7.3.798268.800");                           // filler accession
+const SYS_SPEC_ID = epicOid("2.7.3.798268.320");                          // Specimen.identifier accession
+const SYS_ENC = SYS.CSN;                                                  // Encounter CSN
+const SYS_CAT_EPIC = epicOid("2.7.10.798268.30");                         // Epic order-category
 const SYS_CAT_HL7 = "http://terminology.hl7.org/CodeSystem/v2-0074";      // DiagnosticService section
-const SYS_OBS_CAT = "http://terminology.hl7.org/CodeSystem/observation-category";
-const SYS_LOINC = "http://loinc.org";
-const SYS_UCUM = "http://unitsofmeasure.org";
-const SYS_V2_0203 = "http://terminology.hl7.org/CodeSystem/v2-0203";
-const SYS_CPT = "urn:oid:2.16.840.1.113883.6.12";                          // AMA CPT
-const SYS_SNOMED = "http://snomed.info/sct";
-const SYS_COMPON = "urn:oid:1.2.840.114350.1.13.283.2.7.2.768282";         // Epic component id (code = COMPONENT_ID)
-const SYS_SPEC_SNOMED = "http://snomed.info/sct";
+const SYS_OBS_CAT = STD.OBS_CATEGORY;
+const SYS_LOINC = STD.LOINC;
+const SYS_UCUM = STD.UCUM;
+const SYS_V2_0203 = STD.V2_0203;
+const SYS_CPT = STD.CPT;                                                   // AMA CPT
+const SYS_SNOMED = STD.SNOMED;
+const SYS_COMPON = epicOid("2.7.2.768282");                               // Epic component id (code = COMPONENT_ID)
+const SYS_SPEC_SNOMED = STD.SNOMED;
 
 // Lab-panel CPT codes we will surface on DiagnosticReport.code (from claim/charge lines).
 // Membership is a value filter only — the actual code+date come from the export.
@@ -77,7 +78,8 @@ type Row = Record<string, any>;
  * historical entry, not a collected/reported lab. No hardcoded id list.
  */
 function loadReportOrderIds(): string[] {
-  const rows = q<Row>(
+  const rows = qIf<Row>(
+    "ORDER_RESULTS",
     `SELECT DISTINCT p.ORDER_PROC_ID
        FROM ORDER_PROC p
        JOIN ORDER_RESULTS r ON r.ORDER_PROC_ID = p.ORDER_PROC_ID
@@ -92,23 +94,27 @@ function naive(v: unknown): string | undefined {
   const iso = parseEpicDateTime(v);
   return iso && iso.includes("T") ? iso : undefined;
 }
-/** Epic UTC "M/D/YYYY h:mm:ss AM" → ISO instant with Z. */
-function utc(v: unknown): string | undefined {
-  const n = naive(v);
-  return n ? `${n}Z` : undefined;
-}
 
 /**
- * Convert a local Epic datetime to a UTC instant, using the per-order offset
- * derived from the PRIORITIZED_INST local/UTC pair (Central time, DST-seasonal).
- * Falls back to naive+Z if no offset can be computed.
+ * Convert a local Epic datetime to a UTC instant using the per-order offset derived
+ * from the PRIORITIZED_INST local/UTC pair (the BEST, org-INDEPENDENT path — DNM #1).
+ * Routes through the central `localToUtcInstant` sibling branch: we feed it a synthetic
+ * UTC sibling (this local value shifted by the order offset) so it derives exactly the
+ * order's per-record offset rather than guessing a fixed Central offset. When no order
+ * offset is available we fall back to naive+Z (NOT the tz path — the order carries no
+ * usable zone signal, so fabricating one would be a guess).
  */
 function localToUtc(localVal: unknown, offsetMs: number | undefined): string | undefined {
   const n = naive(localVal);
   if (!n) return undefined;
   if (offsetMs === undefined) return `${n}Z`;
-  const d = new Date(`${n}Z`);
-  return new Date(d.getTime() + offsetMs).toISOString().replace(/\.\d{3}Z$/, "Z");
+  // Synthetic sibling = this local instant shifted by the order offset; the central
+  // converter then derives (sibling - local) === offsetMs and applies it. Equivalent
+  // to local+offset, expressed via the shared sibling-offset routine.
+  const sibling = new Date(new Date(`${n}Z`).getTime() + offsetMs)
+    .toISOString()
+    .replace(/\.\d{3}Z$/, "");
+  return localToUtcInstant(localVal, { utcSibling: sibling });
 }
 
 /** offset to ADD to local-as-UTC to get true UTC (i.e. utc - local), in ms. */
@@ -151,7 +157,8 @@ function ucumQty(value: number, unit?: string | null, comparator?: string) {
 
 function loadHeaders(orderIds: string[]): Map<string, Row> {
   const ph = orderIds.map(() => "?").join(",");
-  const rows = q<Row>(
+  const rows = qIf<Row>(
+    "ORDER_PROC",
     `SELECT p.ORDER_PROC_ID, p.PROC_ID, p.DESCRIPTION, p.DISPLAY_NAME, p.ORDER_TYPE_C_NAME, p.PAT_ENC_CSN_ID,
             p.LAB_STATUS_C_NAME, p.AUTHRZING_PROV_ID, p.RESULT_LAB_ID, p.RESULT_LAB_ID_LLB_NAME,
             p.SPECIMEN_TYPE_C_NAME,
@@ -198,7 +205,8 @@ function dateOnly(v: unknown): string {
  */
 function loadOrderCpt(reportOrders: { ORDER_PROC_ID: string; PROC_ID: string; COLDATE: string }[]): Map<string, { code: string; display?: string }> {
   // Claim/charge lines carrying a panel CPT, with the EAP display for the billing PROC_ID.
-  const claimRows = q<Row>(
+  const claimRows = qIf<Row>(
+    "INV_CLM_LN_ADDL",
     `SELECT a.PROC_OR_REV_CODE AS CPT, a.FROM_SVC_DATE AS SVC_DT, e.PROC_NAME AS DISPLAY
        FROM INV_CLM_LN_ADDL a
        LEFT JOIN CLARITY_EAP e ON e.PROC_ID = a.PROC_ID`
@@ -260,7 +268,8 @@ function loadOrderCpt(reportOrders: { ORDER_PROC_ID: string; PROC_ID: string; CO
  */
 function loadPanelLoinc(orderIds: string[]): Map<string, string> {
   const ph = orderIds.map(() => "?").join(",");
-  const rows = q<Row>(
+  const rows = qIf<Row>(
+    "ORDER_PROC_4",
     `SELECT p4.ORDER_ID, l.LNC_CODE
        FROM ORDER_PROC_4 p4
        JOIN LNC_DB_MAIN l ON l.RECORD_ID = p4.PROC_LNC_ID
@@ -282,7 +291,8 @@ function loadPanelLoinc(orderIds: string[]): Map<string, string> {
  */
 function loadSpecimenSnomed(orderIds: string[]): Map<string, string> {
   const ph = orderIds.map(() => "?").join(",");
-  const rows = q<Row>(
+  const rows = qIf<Row>(
+    "SPEC_TYPE_SNOMED",
     `SELECT p.ORDER_PROC_ID, sts.TYPE_SNOMED_CT
        FROM ORDER_PROC p
        JOIN ORDER_PARENT_INFO pi ON pi.ORDER_ID = p.ORDER_PROC_ID
@@ -304,7 +314,8 @@ function loadSpecimenSnomed(orderIds: string[]): Map<string, string> {
  * the stable COMPONENT_ID mapping — derived, not fabricated.
  */
 function loadComponentLoinc(): Map<string, string> {
-  const rows = q<Row>(
+  const rows = qIf<Row>(
+    "ORDER_RESULTS",
     `SELECT r.COMPONENT_ID, l.LNC_CODE
        FROM ORDER_RESULTS r
        JOIN LNC_DB_MAIN l ON l.RECORD_ID = r.COMPON_LNC_ID

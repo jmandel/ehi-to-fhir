@@ -53,18 +53,15 @@
  * EVERYTHING in the EHI is TEXT — CAST before ORDER/MIN/range. (§17)
  */
 import { q, q1, parseEpicDateTime } from "../lib/db";
+import { isoDate } from "../lib/time";
 import { id, ref, patientRef, PATIENT_ID } from "../lib/ids";
 import { emit, clean } from "../lib/gen";
+import { cc, concept, category } from "../lib/cc";
 import { enumMap } from "../lib/fmt";
+import { empLoginToSerId } from "../lib/providers";
 
 // US-Core CarePlan category (Epic emits this fixed assess-plan label on every plan).
 const US_CORE_CAREPLAN_CATEGORY = "http://hl7.org/fhir/us/core/CodeSystem/careplan-category";
-
-/** Epic "M/D/YYYY ..." → YYYY-MM-DD (date part only). */
-function isoDate(v: unknown): string | undefined {
-  const s = parseEpicDateTime(v);
-  return s ? s.slice(0, 10) : undefined;
-}
 
 const STATUS_MAP: Record<string, string> = {
   Active: "active",
@@ -73,18 +70,6 @@ const STATUS_MAP: Record<string, string> = {
   Cancelled: "cancelled",
   Canceled: "cancelled",
 };
-
-/** RAMMELZL (or any EMP login) → SER PROV_ID via exact, unambiguous name match. */
-function empLoginToSerId(login: string | null | undefined): string | undefined {
-  if (!login) return undefined;
-  const emp = q1<{ NAME: string }>(`SELECT NAME FROM CLARITY_EMP WHERE USER_ID = ?`, login);
-  if (!emp?.NAME) return undefined;
-  const sers = q<{ PROV_ID: string }>(
-    `SELECT PROV_ID FROM CLARITY_SER WHERE PROV_NAME = ?`,
-    emp.NAME
-  );
-  return sers.length === 1 ? String(sers[0].PROV_ID) : undefined;
-}
 
 /** Practitioner display in the target's "Dr. F Last" style (best-effort from EXTERNAL_NAME). */
 function practitionerDisplay(serId: string): string | undefined {
@@ -144,7 +129,7 @@ function buildGoals(): { resources: any[]; goalRefById: Map<string, any> } {
       ? [{ text: r.AMB_GOAL_TYPE_C_NAME }]
       : undefined;
 
-    const description = r.DISPLAY_NAME_OT ? { text: r.DISPLAY_NAME_OT } : undefined;
+    const description = concept(r.DISPLAY_NAME_OT);
 
     const serId = empLoginToSerId(r.EDIT_USER_ID);
     const expressedBy = serId ? practitionerRef(serId) : undefined;
@@ -249,21 +234,12 @@ function buildLongitudinalCarePlan(goalRefs: any[]): any[] {
     id: id.carePlan("longitudinal"),
     status: "active",
     intent: "plan",
-    category: [
-      {
-        coding: [
-          {
-            system: US_CORE_CAREPLAN_CATEGORY,
-            code: "assess-plan",
-            display: "Assessment and Plan of Treatment",
-          },
-        ],
-        text: "Assessment and Plan of Treatment",
-      },
+    category: category(
+      cc(US_CORE_CAREPLAN_CATEGORY, "assess-plan", "Assessment and Plan of Treatment"),
       // "Longitudinal": target codes SNOMED 38717003, which is Epic-assigned and not in the
       // export — emit text only (coding gap).
-      { text: "Longitudinal" },
-    ],
+      { text: "Longitudinal" }
+    ),
     subject: patientRef(),
     addresses,
     goal,

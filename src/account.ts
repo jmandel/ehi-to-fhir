@@ -53,7 +53,8 @@
  */
 import { q } from "../lib/db";
 import { emit, clean } from "../lib/gen";
-import { id, ref, patientRef, PATIENT_PAT_ID } from "../lib/ids";
+import { concept, ident } from "../lib/cc";
+import { id, ref, patientRef, PATIENT_PAT_ID, SYS } from "../lib/ids";
 import { nn, coalesceName } from "../lib/fmt";
 
 /** IS_ACTIVE (Y/N) → AccountStatus. Required 1..1 binding. */
@@ -67,7 +68,7 @@ function statusFromActive(v: string | undefined): string {
 const MINTED_ORG_SERV_AREAS = new Set(["18"]);
 
 /** Epic hospital-account (HSP_ACCOUNT) identifier OID — mirrors SYS_HSP_ACCT in encounter.ts. */
-const SYS_HSP_ACCT = "urn:oid:1.2.840.114350.1.13.283.2.7.2.726582";
+const SYS_HSP_ACCT = SYS.HSP_ACCT;
 
 /** ACCT_BILLSTS_HA_C_NAME → AccountStatus. "Closed" → inactive; everything else active. */
 function statusFromBillSts(v: string | undefined): string {
@@ -108,7 +109,7 @@ function buildHospitalAccounts(): any[] {
       clean({
         resourceType: "Account",
         id: id.account(harId),
-        identifier: [{ system: SYS_HSP_ACCT, value: harId }],
+        identifier: [ident(SYS_HSP_ACCT, harId)],
         status: statusFromBillSts(nn(row.ACCT_BILLSTS_HA_C_NAME)),
         type: { text: "Hospital Account" },
         name: nn(row.HSP_ACCOUNT_NAME),
@@ -145,7 +146,7 @@ function buildAccounts(): any[] {
 
     // --- type: text only (no standard AccountType code derivable).
     const typeName = nn(a.ACCOUNT_TYPE_C_NAME);
-    const type = typeName ? { text: typeName } : undefined;
+    const type = concept(typeName);
 
     const patRef = patientRef();
 

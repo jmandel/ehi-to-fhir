@@ -50,51 +50,30 @@
  */
 import { q, q1 } from "../lib/db";
 import { emit, clean } from "../lib/gen";
-import { id, ref, patientRef } from "../lib/ids";
+import { cc, concept, ident } from "../lib/cc";
+import { id, ref, patientRef, epicOid } from "../lib/ids";
 import { nn } from "../lib/fmt";
+import { emittedPractitionerIds } from "../lib/providers";
+import { localToUtcInstant, isoDate } from "../lib/time";
 
-// Epic instance master-file OID (instance prefix 1.2.840.114350.1.13.283; the
+// Epic instance master-file OID (org-instance node centralized in lib/ids; the
 // .2.7.2.<INI> convention every other domain generator uses for Epic master-file ids).
 // MYC = MyChart message master file (INI 7041).
-const OID_MYC_MESG = "urn:oid:1.2.840.114350.1.13.283.2.7.2.7041";
+const OID_MYC_MESG = epicOid("2.7.2.7041");
 
 const SYS_PARTICIPATION_MODE = "http://terminology.hl7.org/CodeSystem/v3-ParticipationMode";
 
 // The system pseudo-sender for templated/notification MyChart messages.
 const SYSTEM_SENDER = "MYCHART, GENERIC";
 
-/** Parse "M/D/YYYY h:mm:ss AM" as America/Chicago wall time → ISO instant (UTC, Z). */
-function chicagoToISO(v: unknown): string | undefined {
-  if (v === null || v === undefined || v === "") return undefined;
-  const m = String(v).trim().match(
-    /^(\d{1,2})\/(\d{1,2})\/(\d{4})(?:\s+(\d{1,2}):(\d{2})(?::(\d{2}))?\s*(AM|PM)?)?/i
-  );
-  if (!m) return undefined;
-  let [, mo, d, y, hh, mm, ss, ap] = m;
-  if (hh === undefined) return `${y}-${mo.padStart(2, "0")}-${d.padStart(2, "0")}`; // date-only
-  let H = parseInt(hh);
-  if (ap) {
-    if (/PM/i.test(ap) && H < 12) H += 12;
-    if (/AM/i.test(ap) && H === 12) H = 0;
-  }
-  const Y = +y, MO = +mo, D = +d, MI = +(mm ?? 0), S = +(ss ?? 0);
-  const offset = chicagoOffsetHours(Y, MO, D, H);
-  const utcMs = Date.UTC(Y, MO - 1, D, H - offset, MI, S);
-  return new Date(utcMs).toISOString().replace(/\.\d{3}Z$/, "Z");
-}
-
-/** US Central DST: 2nd Sun Mar 02:00 → 1st Sun Nov 02:00 = CDT(-5), else CST(-6). */
-function chicagoOffsetHours(Y: number, MO: number, D: number, H: number): number {
-  const nthSunday = (year: number, month: number, n: number) => {
-    const first = new Date(Date.UTC(year, month - 1, 1)).getUTCDay();
-    return 1 + ((7 - first) % 7) + (n - 1) * 7;
-  };
-  const marSun = nthSunday(Y, 3, 2);
-  const novSun = nthSunday(Y, 11, 1);
-  const afterStart = MO > 3 || (MO === 3 && (D > marSun || (D === marSun && H >= 2)));
-  const beforeEnd = MO < 11 || (MO === 11 && (D < novSun || (D === novSun && H < 2)));
-  return afterStart && beforeEnd ? -5 : -6;
-}
+/**
+ * Send instant from CREATED_TIME. Time-bearing values convert via the central
+ * wall-clock→UTC routine; a DATE-ONLY CREATED_TIME has no usable instant, so we fall
+ * back to the date-only string (DNM #5 — communication preserves the date rather than
+ * dropping it, unlike encounter which returns undefined).
+ */
+const chicagoToISO = (v: unknown): string | undefined =>
+  localToUtcInstant(v) ?? isoDate(v);
 
 // ---------------------------------------------------------------------------
 // RTF → text. The body stores chunk one RTF document across (MESSAGE_ID, LINE)
@@ -214,45 +193,10 @@ function carePartyRef(name: string | undefined, emittedPrac: Set<string>): any |
   return { display: nm }; // unresolvable user (system sender / EMP-only staff)
 }
 
-/** The set of Practitioner ids the Practitioner generator emits (its CARE-context rule). */
-function emittedPractitionerIds(): Set<string> {
-  // Mirror practitioner.ts: every distinct PROV_ID referenced in a care context that
-  // resolves in CLARITY_SER and is not a routing/lab sentinel. We compute the same set
-  // here from the same source columns so a sender/recipient reference never dangles.
-  const SENTINELS = new Set(["199995", "3724611", "E1011"]);
-  const CARE_PROV_COLUMNS: [string, string][] = [
-    ["PAT_ENC", "VISIT_PROV_ID"], ["PAT_ENC", "PCP_PROV_ID"], ["PAT_ENC_2", "SUP_PROV_ID"],
-    ["PAT_PCP", "PCP_PROV_ID"], ["PATIENT", "CUR_PCP_PROV_ID"], ["TREATMENT_TEAM", "TR_TEAM_ID"],
-    ["ORDER_MED", "ORD_PROV_ID"], ["ORDER_MED", "AUTHRZING_PROV_ID"], ["ORDER_MED", "MED_PRESC_PROV_ID"],
-    ["ORDER_MED", "MED_REFILL_PROV_ID"], ["ORDER_PROC", "AUTHRZING_PROV_ID"], ["ORDER_PROC", "BILLING_PROV_ID"],
-    ["ORDER_PROC", "REFERRING_PROV_ID"], ["ORDER_PROC_2", "PROV_ID"], ["ORDER_PROC_2", "REFD_TO_PROV_ID"],
-    ["ORDER_PROC_3", "PROVIDING_PROV_ID"], ["ORDER_SIGNED_MED", "AUTH_PROV_ID"], ["ORDER_SIGNED_MED", "ORDER_PROV_ID"],
-    ["ORDER_SIGNED_PROC", "AUTH_PROV_ID"], ["ORDER_SIGNED_PROC", "ORDER_PROV_ID"], ["REFERRAL", "REFERRING_PROV_ID"],
-    ["REFERRAL", "PCP_PROV_ID"], ["NOTE_ENC_INFO", "AUTH_LNKED_PROV_ID"], ["MYC_MESG", "PROV_ID"],
-    ["HSP_ATND_PROV", "PROV_ID"], ["HSP_ACCT_OTHR_PROV", "OTHER_PROV_ID"], ["DOC_INFORMATION", "PERFORMING_PROV_ID"],
-    ["ORDER_RAD_READING", "PROV_ID"],
-  ];
-  const referenced = new Set<string>();
-  for (const [tbl, col] of CARE_PROV_COLUMNS) {
-    try {
-      for (const r of q<{ v: string }>(
-        `SELECT DISTINCT "${col}" AS v FROM "${tbl}" WHERE "${col}" IS NOT NULL AND "${col}" <> ''`
-      )) {
-        if (r.v != null) referenced.add(String(r.v).trim());
-      }
-    } catch {
-      // table/column absent in this export
-    }
-  }
-  const out = new Set<string>();
-  for (const pid of referenced) {
-    if (SENTINELS.has(pid)) continue;
-    const ser = q1<{ PROV_ID: string }>(`SELECT PROV_ID FROM CLARITY_SER WHERE PROV_ID = ?`, pid);
-    if (ser) out.add(id.practitioner(pid));
-  }
-  return out;
-}
-
+// The set of Practitioner ids the Practitioner generator emits (its CARE-context rule):
+// every distinct PROV_ID referenced in a care context that resolves in CLARITY_SER and is
+// not a routing/lab sentinel. Shared from lib/providers so a sender/recipient reference
+// never dangles (single source of the selection rule).
 const EMITTED_PRAC = emittedPractitionerIds();
 
 /** CSNs the Encounter generator emits — mirror its selection so encounter refs resolve. */
@@ -348,18 +292,12 @@ function buildCommunications(): any[] {
       clean({
         resourceType: "Communication",
         id: id.communication(messageId),
-        identifier: [{ system: OID_MYC_MESG, value: messageId }],
+        identifier: [ident(OID_MYC_MESG, messageId)],
         status: "completed",
         category,
-        medium: [
-          {
-            coding: [
-              { system: SYS_PARTICIPATION_MODE, code: "ELECTRONIC", display: "electronic data" },
-            ],
-          },
-        ],
+        medium: [cc(SYS_PARTICIPATION_MODE, "ELECTRONIC", "electronic data", null)],
         subject: patientRef(),
-        topic: nn(m.SUBJECT) ? { text: nn(m.SUBJECT) } : undefined,
+        topic: concept(nn(m.SUBJECT)),
         sent: chicagoToISO(m.CREATED_TIME),
         sender,
         recipient: recipient.length ? recipient : undefined,

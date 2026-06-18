@@ -46,10 +46,11 @@
  * Everything is TEXT in the EHI (general-patterns §17); categories ship pre-resolved as
  * *_C_NAME with no ZC_ tables (§23).
  */
-import { q, parseEpicDateTime } from "../lib/db";
+import { q } from "../lib/db";
+import { isoDate } from "../lib/time";
 import { emit, clean } from "../lib/gen";
-import { cc, ident } from "../lib/cc";
-import { id, ref, patientRef, PATIENT_PAT_ID } from "../lib/ids";
+import { cc, concept, ident } from "../lib/cc";
+import { id, ref, patientRef, PATIENT_PAT_ID, epicOid } from "../lib/ids";
 import { nn } from "../lib/fmt";
 
 // Standard / published systems we can legitimately assert.
@@ -61,10 +62,10 @@ const SYS_CONTACT_TYPE = "http://terminology.hl7.org/CodeSystem/contactentity-ty
 const EXT_BILLING_ORG = "http://open.epic.com/FHIR/StructureDefinition/billing-organization";
 const EXT_EPIC_ID = "http://open.epic.com/FHIR/StructureDefinition/extension/epic-id";
 
-// Epic instance master-file OIDs (this Epic instance prefix is 1.2.840.114350.1.13.283;
+// Epic instance master-file OIDs (org-instance node centralized in lib/ids;
 // same convention used by every other domain generator here for Epic master-file ids).
-const OID_COVERAGE = "urn:oid:1.2.840.114350.1.13.283.2.7.2.678671"; // CVG coverage record
-const OID_PLAN = "urn:oid:1.2.840.114350.1.13.283.2.7.2.698080";     // EPP benefit plan
+const OID_COVERAGE = epicOid("2.7.2.678671"); // CVG coverage record
+const OID_PLAN = epicOid("2.7.2.698080");     // EPP benefit plan
 
 function buildCoverages(): any[] {
   const out: any[] = [];
@@ -100,7 +101,7 @@ function buildCoverages(): any[] {
     // *coding* (code "6"/system https://nahdo.org/sopt) is Epic-assigned terminology on a
     // different axis and is not in the export (see gaps/coverage.md), so no coding is asserted.
     const covType = nn(c.COVERAGE_TYPE_C_NAME);
-    const type = covType ? { text: covType } : undefined;
+    const type = concept(covType);
 
     // --- status: active when the coverage/member term date is open.
     const termDate = nn(c.CVG_TERM_DT) ?? nn(mem?.MEM_EFF_TO_DATE);
@@ -198,7 +199,7 @@ function buildCoverages(): any[] {
         subscriberId: memNumber,
         beneficiary: { reference: patRef.reference, display: patRef.display },
         relationship,
-        period: { start: parseEpicDateTime(mem?.MEM_EFF_FROM_DATE)?.slice(0, 10) },
+        period: { start: isoDate(mem?.MEM_EFF_FROM_DATE) },
         payor: payor.length ? payor : undefined,
         class: klass.length ? klass : undefined,
         order: 1,

@@ -48,7 +48,8 @@
  * Everything in the EHI is TEXT — CAST before ORDER BY/range. Categories ship pre-resolved
  * as *_C_NAME (general-patterns §17, §23).
  */
-import { q, q1, parseEpicDateTime } from "../lib/db";
+import { q, q1 } from "../lib/db";
+import { isoDate as dateOnly } from "../lib/time";
 import { id, ref, patientRef } from "../lib/ids";
 import { emit, clean } from "../lib/gen";
 import { cc, ident } from "../lib/cc";
@@ -96,7 +97,6 @@ const dxName = (dxId: unknown): string | undefined =>
     ? q1<{ DX_NAME: string }>(`SELECT DX_NAME FROM CLARITY_EDG WHERE DX_ID = ?`, String(dxId))?.DX_NAME ?? undefined
     : undefined;
 
-const dateOnly = (v: unknown): string | undefined => parseEpicDateTime(v)?.slice(0, 10);
 
 interface Run {
   LINE: string;

@@ -21,15 +21,16 @@
  *
  * EVERYTHING in the EHI is TEXT — CAST before ORDER/MIN. (§17)
  */
-import { q, parseEpicDateTime } from "../lib/db";
-import { id, ref, patientRef } from "../lib/ids";
+import { qIf } from "../lib/db";
+import { isoDate } from "../lib/time";
+import { id, ref, patientRef, SYS } from "../lib/ids";
 import { emit, clean } from "../lib/gen";
 import { cc, concept, category } from "../lib/cc";
 import { readdirSync, readFileSync, existsSync } from "fs";
 import { resolve } from "path";
 
 // Epic CSN identifier OID (constant in the target encounter references).
-const CSN_OID = "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8";
+const CSN_OID = SYS.CSN;
 
 /**
  * The set of encounter CSNs that the Encounter domain actually exports as Encounter
@@ -59,12 +60,6 @@ function exportedEncounterCsns(): Set<string> | undefined {
     } catch {}
   }
   return csns.size ? csns : undefined;
-}
-
-/** Epic "M/D/YYYY ..." effective date -> YYYY-MM-DD (date part only). */
-function isoDate(v: unknown): string | undefined {
-  const s = parseEpicDateTime(v);
-  return s ? s.slice(0, 10) : undefined;
 }
 
 function clinicalStatus(statusName: string | null | undefined) {
@@ -127,7 +122,7 @@ interface ProblemRow {
 }
 
 function buildProblems(): { resources: any[]; byProblemId: Map<string, { conditionId: string; onset?: string; recorded?: string; display?: string; status?: string }> } {
-  const rows = q<ProblemRow>(`
+  const rows = qIf<ProblemRow>("PROBLEM_LIST", `
     SELECT p.PROBLEM_LIST_ID,
            p.DX_ID,
            e.DX_NAME              AS DX_NAME,
@@ -199,7 +194,7 @@ function buildEncounterDx(
   byProblemId: Map<string, { conditionId: string; onset?: string; recorded?: string; display?: string; status?: string }>,
   exportedCsns: Set<string> | undefined
 ): any[] {
-  const rows = q<EncDxRow>(`
+  const rows = qIf<EncDxRow>("PAT_ENC_DX", `
     SELECT d.PAT_ENC_CSN_ID,
            d.LINE,
            d.DX_ID,

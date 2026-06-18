@@ -9,9 +9,84 @@
  * Convention: `<type>-<naturalKey>` with the key slugified. Use the helpers below.
  */
 import { titleCaseName } from "./fmt";
+import { q1 } from "./db";
 
-export const PATIENT_PAT_ID = "Z7004242"; // PATIENT.PAT_ID for this specimen
+/**
+ * The whole-pipeline patient anchor, DERIVED from the export (not baked), so the
+ * same code exports any single-patient EHI. Override with EHI_PAT_ID; otherwise the
+ * sole PATIENT row's PAT_ID. Errors clearly on an empty/absent PATIENT table — a
+ * missing anchor must fail loud, never silently mint refs to an undefined patient.
+ */
+export const PATIENT_PAT_ID: string = (() => {
+  const v = process.env.EHI_PAT_ID ?? q1<{ PAT_ID: string }>(`SELECT PAT_ID FROM PATIENT LIMIT 1`)?.PAT_ID;
+  if (!v) throw new Error("PATIENT_PAT_ID: no PATIENT row (set EHI_PAT_ID or check the EHI DB)");
+  return v;
+})();
 export const PATIENT_ID = "pat-" + PATIENT_PAT_ID;
+
+/**
+ * The Epic org-INSTANCE OID node (`.283`). This is NOT org-independent — it
+ * identifies one Epic customer instance. A different org = one edit here (or set
+ * EHI_INSTANCE_OID). Every Epic master-file identifier/code system below this org
+ * node composes from it via epicOid()/epicOidRaw(), so a new org flips them all.
+ * Stored BARE (no `urn:oid:` prefix).
+ */
+export const EPIC_INSTANCE_OID: string =
+  process.env.EHI_INSTANCE_OID ?? "1.2.840.114350.1.13.283";
+
+/**
+ * Compose an Epic-instance `identifier.system`/`code.system` URI from a suffix
+ * below the org node, e.g. epicOid("2.7.3.698084.8") -> the CSN system.
+ * epicOid("") yields the bare root urn (the org-root MRN system).
+ */
+export function epicOid(suffix: string): string {
+  return suffix
+    ? `urn:oid:${EPIC_INSTANCE_OID}.${suffix}`
+    : `urn:oid:${EPIC_INSTANCE_OID}`;
+}
+
+/**
+ * Bare-OID (no `urn:oid:`) form, for OIDs interpolated into identifier VALUES
+ * (e.g. the doc-id "<tail>_<NOTE_ID>"), not into systems.
+ */
+export function epicOidRaw(suffix: string): string {
+  return suffix ? `${EPIC_INSTANCE_OID}.${suffix}` : EPIC_INSTANCE_OID;
+}
+
+/**
+ * Registry of recurring Epic-instance master-file systems, so cross-referenced
+ * resources (basedOn/encounter-linked) cite byte-identical systems via one symbol.
+ * Single-use OIDs may stay inline as epicOid("<suffix>"). Child nodes are kept as
+ * DISTINCT entries from their masters on purpose (see CONSOLIDATION-PLAN DNM #8–#12).
+ */
+export const SYS = {
+  CSN: epicOid("2.7.3.698084.8"),       // PAT_ENC_CSN_ID — Encounter identifier
+  PLACER: epicOid("2.7.2.798268"),      // ORDER_PROC placer (DR/Obs/SR/med order)
+  HSP_ACCT: epicOid("2.7.2.726582"),    // HSP_ACCOUNT master
+  ETR: epicOid("2.7.2.726582.1"),       // PB transaction (ETR) — CHILD of HSP_ACCT (DNM #8)
+  FLO: epicOid("2.7.2.707679"),         // flowsheet measure id (DNM #12)
+  SDI: epicOid("2.7.2.727688"),         // SmartData element measure id (DNM #12)
+  DRUG: epicOid("2.7.2.698288"),        // MEDICATION_ID master
+  FORM: epicOid("2.7.4.698288.310"),    // drug form — CHILD of DRUG (DNM #9)
+  NOTE: epicOid("2.7.2.727879"),        // HNO note id
+} as const;
+
+/**
+ * Standard (non-Epic) system URIs that recur. ORG-INDEPENDENT — these MUST NOT
+ * compose from EPIC_INSTANCE_OID (DNM #13 boundary).
+ */
+export const STD = {
+  LOINC: "http://loinc.org",
+  SNOMED: "http://snomed.info/sct",
+  UCUM: "http://unitsofmeasure.org",
+  RXNORM: "http://www.nlm.nih.gov/research/umls/rxnorm",
+  ICD10CM: "http://hl7.org/fhir/sid/icd-10-cm",
+  NDC: "http://hl7.org/fhir/sid/ndc",
+  NPI: "http://hl7.org/fhir/sid/us-npi",
+  CPT: "urn:oid:2.16.840.1.113883.6.12",
+  OBS_CATEGORY: "http://terminology.hl7.org/CodeSystem/observation-category",
+  V2_0203: "http://terminology.hl7.org/CodeSystem/v2-0203",
+} as const;
 
 function slug(s: string | number): string {
   return String(s).trim().replace(/[^A-Za-z0-9._-]+/g, "-").replace(/^-+|-+$/g, "");

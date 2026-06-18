@@ -62,15 +62,16 @@
  *
  * Everything is TEXT in the EHI (general-patterns §17); CAST before numeric ops/ORDER BY.
  */
-import { q, parseEpicDateTime } from "../lib/db";
+import { q } from "../lib/db";
+import { isoDate } from "../lib/time";
 import { emit, clean } from "../lib/gen";
 import { cc, ident } from "../lib/cc";
-import { id, ref } from "../lib/ids";
+import { id, ref, SYS } from "../lib/ids";
 import { nn, money, enumMap } from "../lib/fmt";
 
-// Epic remittance-image (IMD) record OID. Same Epic-instance prefix (1.2.840.114350.1.13.283)
-// and master-file-OID convention every other domain generator here uses for Epic ids.
-const OID_REMIT_IMAGE = "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268";
+// Epic remittance-image (IMD) record OID. Numerically the placer OID but semantically the
+// remittance-image record (not basedOn-linked) — distinct name/comment kept on purpose (DNM #11).
+const OID_REMIT_IMAGE = SYS.PLACER;
 // Payer claim control number (X12 CLP07 ICN) — payer-assigned, no published/derivable OID.
 // Emitted value-only (FHIR Identifier permits value without system) rather than inventing a
 // system URI; recorded as a coding/system gap.
@@ -105,7 +106,7 @@ function buildPaymentReconciliations(): any[] {
     // CREATION_DATE is date-only here (every value is the midnight sentinel, no real time
     // component and no timezone in the EHI). Emit `created` (a dateTime element) as a bare
     // date — valid for dateTime and avoids fabricating a timezone offset.
-    const created = parseEpicDateTime(im.CREATION_DATE)?.slice(0, 10);
+    const created = isoDate(im.CREATION_DATE);
     const paymentDate = created; // posting date; CL_REMIT.ISSUE_DATE is 100% NULL
     const icn = nn(im.ICN_NO);
     const statusLabel = nn(im.CLM_STAT_CD_C_NAME);
@@ -185,7 +186,7 @@ function buildPaymentReconciliations(): any[] {
       )[0]?.CLAIM_DT
     );
     const period = periodStart
-      ? { start: parseEpicDateTime(periodStart)?.slice(0, 10) }
+      ? { start: isoDate(periodStart) }
       : undefined;
 
     out.push(

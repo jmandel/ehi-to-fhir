@@ -268,12 +268,23 @@ The 34 flags collapse to these standing constraints. Each names how the chosen A
 
 ## 4. Sequenced execution plan
 
+> **STATUS: ALL STEPS DONE (G0–G9).** Final reconcile 2026-06-18 (see `REFACTOR-RESULT.md`).
+> Pure-move steps (G0–G7, G9) proven byte-identical: `diff -rq out out-golden` and
+> `diff -rq out-crosswalk out-answerkey-golden` both empty; ledger unchanged at
+> **EXACT 12562 / TOLERATED 1703 / GAP 1855** (sum 16120 OK, no rule over cap).
+> Behavior-unifying step G8 (timezone) realized **zero** output diff for this patient because
+> all 4 allergy `recordedDate` rows fall in summer DST, where the new `EHI_TZ`=America/Chicago
+> offset (CDT −5) equals the old fixed −5 — enumerated below in the G8 step and in
+> `REFACTOR-RESULT.md`. Portability proven: `EHI_INSTANCE_OID=9.9.9` flips every Epic system
+> (no `.283` literal survives in `out/`); `PATIENT_PAT_ID`/`COVERAGE_ID` derive from the export;
+> `EHI_TZ` configurable; table guards in place.
+
 Each step is a self-contained safe refactor with its verification. Steps grouped by `[G#]`
 may land together. **PV** = portability level unblocked.
 
 ### Phase A — pure-move DRY (output byte-identical). Lands in any order; group for fewer PRs.
 
-- **[G0] Rename the terminology-crosswalk layer `answer-key` → `apply-crosswalk` (disambiguation).**
+- ✅ DONE **[G0] Rename the terminology-crosswalk layer `answer-key` → `apply-crosswalk` (disambiguation).**
   "answer key" is overloaded: the `--answer-key` FLAG = the terminology crosswalk (sense #1), but
   "answer key" in report prose = the Epic-FHIR `fhir-target/` reference we grade against (sense #2). Hard
   rename sense #1 only (USER 2026-06-18: `--apply-crosswalk`/`out-crosswalk`, NO alias):
@@ -288,21 +299,21 @@ may land together. **PV** = portability level unblocked.
   **Verify (pure move):** `bun build.ts --apply-crosswalk` writes `out-crosswalk/` **byte-identical** to
   today's `out-answerkey/` (`diff -r`); `grep -rl 'answer-key\|answerkey\|ANSWERKEY' <live files>` → empty;
   classify/status/floor-audit/triage/build-report-data still reconcile against `out-crosswalk/`. (Risk L.)
-- **[G1] `lib/fmt.ts`: `nn`, `money`, `enumMap`, `coalesceName`, `titleCaseName`.**
+- ✅ DONE **[G1] `lib/fmt.ts`: `nn`, `money`, `enumMap`, `coalesceName`, `titleCaseName`.**
   Create the module from the canonical seeds. Replace the 10 `nn` copies + patient `ANY`,
   6 `money` copies (with `opts.round` wired so eob/claim:243 use the round path), enum-lookup
   idioms, coalesce idioms, and the `tc` closure. **Verify:** build + classify; `out/` diff
   must be empty. (Risk L.)
-- **[G2] `lib/cc.ts`: `cc`, `concept`, `category`, `ident`.** Replace the ~70 inline CC/ident
+- ✅ DONE **[G2] `lib/cc.ts`: `cc`, `concept`, `category`, `ident`.** Replace the ~70 inline CC/ident
   sites. `category` variadic (DNM #26). coverageeligibility/lab keep their decision logic and
   CALL `cc()` (DNM #24, #25). Do not touch patient telecom (DNM #27). **Verify:** `out/` diff
   empty; `bun tools/validate.ts <Type>` no new errors. (Risk L.)
-- **[G3] time date-only + UTC-column moves (NO instant conversion yet):** `lib/db.ts`
+- ✅ DONE **[G3] time date-only + UTC-column moves (NO instant conversion yet):** `lib/db.ts`
   `naiveLocal`; `lib/time.ts` `isoDate` + `utcFromUtcColumn`; obs-social imports
   `dateRealToISO`. Replace the 9 `isoDate`/`dateOnly` copies + ~6 inline idioms, the 2
   UTC-column readers (lab, medication — DNM #2), and obs-social `dateRealIso`. **No tz
   routine changes here.** **Verify:** `out/` diff empty. (Risk L.)
-- **[G4] provider pure moves:** `lib/providers.ts` with `SENTINEL_SER_IDS`,
+- ✅ DONE **[G4] provider pure moves:** `lib/providers.ts` with `SENTINEL_SER_IDS`,
   `CARE_PROV_COLUMNS`, `referencedProviderIds`, `emittedPractitionerIds`, `provName`,
   `practitionerRef`, `orgRef`, `isNonHumanResource`. communication consumes
   `emittedPractitionerIds` instead of re-deriving. Keep `'LLB-'` prefix at lab call site
@@ -311,7 +322,7 @@ may land together. **PV** = portability level unblocked.
 
 ### Phase B — OID centralization (pure move now; unblocks different-org).
 
-- **[G5] `lib/ids.ts`: `EPIC_INSTANCE_OID`, `epicOid`, `epicOidRaw`, `SYS`, `STD`.** Rewrite
+- ✅ DONE **[G5] `lib/ids.ts`: `EPIC_INSTANCE_OID`, `epicOid`, `epicOidRaw`, `SYS`, `STD`.** Rewrite
   the ~49 `.283` literals across 18 files to compose from `epicOid`/`SYS.*`. Per-file
   `SYS_*`/`OID_*` names may stay as local aliases = `SYS.X` for minimal churn. Honor child-node
   and bare-OID distinctions (DNM #8, #9, #10, #11, #12); fix the patient.ts:51 comment (DNM #13).
@@ -322,7 +333,7 @@ may land together. **PV** = portability level unblocked.
 
 ### Phase C — patient anchor derivation (same-org reuse).
 
-- **[G6] Derive `PATIENT_PAT_ID` + `COVERAGE_ID`.** `lib/ids.ts:12` → `process.env.EHI_PAT_ID
+- ✅ DONE **[G6] Derive `PATIENT_PAT_ID` + `COVERAGE_ID`.** `lib/ids.ts:12` → `process.env.EHI_PAT_ID
   ?? q1("SELECT PAT_ID FROM PATIENT LIMIT 1")?.PAT_ID` (error on 0 rows); defensively replace
   the `patient.ts:129` `!`. Derive `COVERAGE_ID` (coverageeligibility:67) from the patient's
   COVERAGE/BENEFITS row. **Verify:** for THIS patient (`EHI_PAT_ID` resolves to `Z7004242`,
@@ -332,7 +343,7 @@ may land together. **PV** = portability level unblocked.
 
 ### Phase D — table guards (different-org thin subset).
 
-- **[G7] `lib/db.ts`: `qIf`, `tablesPresent`, `hasColumn`, `colSet`.** Refactor
+- ✅ DONE **[G7] `lib/db.ts`: `qIf`, `tablesPresent`, `hasColumn`, `colSet`.** Refactor
   obs-smartdata + location-org onto them (DNM #29). Add guards to the 7 unguarded generators
   (medication, lab, servicerequest, obs-vitals, obs-survey, encounter, condition) around each
   top-level `q(SELECT ... FROM <optionalTable>)`. **Verify:** full-DB `out/` diff empty
@@ -342,7 +353,7 @@ may land together. **PV** = portability level unblocked.
 
 ### Phase E — timezone unification (intended output diffs; different-tz org).
 
-- **[G8] `lib/time.ts`: `localToUtcInstant` (+ `EHI_TZ`) and `localMidnightToUtcInstant`.**
+- ✅ DONE (intended-diff; realized empty — see enumeration) **[G8] `lib/time.ts`: `localToUtcInstant` (+ `EHI_TZ`) and `localMidnightToUtcInstant`.**
   Repoint encounter, communication, obs-vitals, obs-survey, allergy onto `localToUtcInstant`
   and obs-social onto `localMidnightToUtcInstant`. Lab keeps its sibling-derived path via
   `localToUtcInstant(local, {utcSibling})` (DNM #1). Medication stays on `utcFromUtcColumn`
@@ -359,7 +370,7 @@ may land together. **PV** = portability level unblocked.
 
 ### Phase F — provider semantic unification + latent-bug fix.
 
-- **[G9] EMP→SER bridge + obs-smartdata fix.** `empLoginToSerId`/`empToSerMap`/`nameToSerId`
+- ✅ DONE **[G9] EMP→SER bridge + obs-smartdata fix.** `empLoginToSerId`/`empToSerMap`/`nameToSerId`
   replace the 5 inline EMP→SER reimplementations; each CALLER keeps its drop-vs-display policy
   (DNM #14, #15, #19). Switch `obs-smartdata.ts:135-138` to `empLoginToSerId` (DNM #18 — a
   fix). **Verify:** `out/` diff empty for the 5 active call sites (same matches, same policy);

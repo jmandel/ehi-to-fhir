@@ -28,7 +28,7 @@
  * as *_C_NAME with no ZC_ tables (§23). Provider/SER name companions are dropped but
  * masters ship (providers guide Gotcha 2) — not relevant here, we resolve names inline.
  */
-import { q, columnsOf } from "../lib/db";
+import { q, hasColumn } from "../lib/db";
 import { emit, clean } from "../lib/gen";
 import { id, PATIENT_PAT_ID } from "../lib/ids";
 import { nn, coalesceName } from "../lib/fmt";
@@ -228,7 +228,7 @@ function buildOrganizations(): any[] {
   // ORDER_RES_COMMENT for the street line) — see buildLabAddress. alias/telecom remain a
   // documented gap (Epic lab-interface sender config, not shipped).
   const labIds = new Set<string>();
-  if (columnsOf("ORDER_PROC").includes("RESULT_LAB_ID")) {
+  if (hasColumn("ORDER_PROC", "RESULT_LAB_ID")) {
     for (const r of q<{ RESULT_LAB_ID: string }>(
       `SELECT DISTINCT RESULT_LAB_ID FROM ORDER_PROC
         WHERE RESULT_LAB_ID IS NOT NULL

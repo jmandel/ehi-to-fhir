@@ -48,3 +48,7 @@ compare/RESIDUAL-CLUSTERS.md
 
 # patient→Epic feedback report (contains the patient's clinical PHI; not a public artifact)
 feedback/
+
+# temp regression-snapshot dirs (build oracles, not source)
+out-golden/
+out-answerkey-golden/

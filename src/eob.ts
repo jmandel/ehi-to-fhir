@@ -46,10 +46,11 @@
  *
  * Everything in the EHI is TEXT (general-patterns §17) — CAST before ORDER/MIN/MAX.
  */
-import { q, q1, parseEpicDateTime } from "../lib/db";
+import { q, q1 } from "../lib/db";
+import { isoDate as dateOnly } from "../lib/time";
 import { emit, clean } from "../lib/gen";
 import { cc, ident } from "../lib/cc";
-import { id, ref, patientRef } from "../lib/ids";
+import { id, ref, patientRef, epicOid } from "../lib/ids";
 import { nn, money } from "../lib/fmt";
 
 const SYS_CLAIM_TYPE = "http://terminology.hl7.org/CodeSystem/claim-type";
@@ -61,9 +62,9 @@ const SYS_ICD10 = "http://hl7.org/fhir/sid/icd-10-cm";
 const SYS_CARC = "https://x12.org/codes/claim-adjustment-reason-codes";
 const SYS_PAYER_ID = "http://open.epic.com/FHIR/StructureDefinition/payer-id";
 
-// Epic instance master-file OIDs (instance prefix 1.2.840.114350.1.13.283; same
+// Epic instance master-file OIDs (org-instance node centralized in lib/ids; same
 // convention coverage.ts uses for Epic master-file ids).
-const OID_INVOICE = "urn:oid:1.2.840.114350.1.13.283.2.7.3.689224"; // hospital/professional account invoice
+const OID_INVOICE = epicOid("2.7.3.689224"); // hospital/professional account invoice
 const SYS_ICN = "http://open.epic.com/FHIR/StructureDefinition/payer-claim-control-number";
 
 /** Parse a decimal string into a number, or undefined if not a finite number. */
@@ -72,10 +73,6 @@ function num(v: unknown): number | undefined {
   if (s === undefined) return undefined;
   const n = Number(s);
   return isFinite(n) ? n : undefined;
-}
-
-function dateOnly(v: unknown): string | undefined {
-  return parseEpicDateTime(v)?.slice(0, 10);
 }
 
 type Bucket = {

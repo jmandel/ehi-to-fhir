@@ -39,14 +39,16 @@
  * target shows are all Epic-terminology-assigned and unreachable — we emit ONLY the flowsheet
  * measure-id coding (OID …707679, code = FLO_MEAS_ID) plus text, never a fabricated code.
  */
-import { q, parseEpicDateTime } from "../lib/db";
-import { id, ref, patientRef, PATIENT_PAT_ID } from "../lib/ids";
+import { qIf } from "../lib/db";
+import { id, ref, patientRef, PATIENT_PAT_ID, SYS } from "../lib/ids";
 import { emit, clean } from "../lib/gen";
 import { cc, category, ident } from "../lib/cc";
+import { localToUtcInstant } from "../lib/time";
+import { empToSerMap } from "../lib/providers";
 
 // Epic instance OID namespaces that genuinely back columns in THIS export.
-const SYS_FLO = "urn:oid:1.2.840.114350.1.13.283.2.7.2.707679"; // flowsheet measure id (= FLO_MEAS_ID)
-const SYS_ENC = "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8"; // Encounter.identifier (CSN)
+const SYS_FLO = SYS.FLO; // flowsheet measure id (= FLO_MEAS_ID)
+const SYS_ENC = SYS.CSN; // Encounter.identifier (CSN)
 const SYS_UCUM = "http://unitsofmeasure.org";
 const SYS_INTERP = "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation";
 const SYS_OBSCAT = "http://terminology.hl7.org/CodeSystem/observation-category";
@@ -90,41 +92,13 @@ const NUMERIC_UNIT: Record<string, { unit: string; code: string }> = {
 
 type Row = Record<string, any>;
 
-/** Epic local "M/D/YYYY h:mm:ss AM/PM" wall-clock → UTC instant (America/Chicago). */
-function localToUtcInstant(v: unknown): string | undefined {
-  const iso = parseEpicDateTime(v); // naive local, no zone
-  if (!iso || iso.length <= 10) return iso || undefined;
-  // Treat the parsed local time as America/Chicago and convert to UTC.
-  const [d, t] = iso.split("T");
-  const [Y, M, D] = d.split("-").map(Number);
-  const [h, m, s] = t.split(":").map(Number);
-  const offsetH = chicagoOffsetHours(Y, M, D, h);
-  const ms = Date.UTC(Y, M - 1, D, h + offsetH, m, s || 0);
-  return new Date(ms).toISOString().replace(".000Z", "Z");
-}
-
-/** Hours to ADD to Chicago local to get UTC: 6 in CST, 5 in CDT. DST = 2nd Sun Mar .. 1st Sun Nov. */
-function chicagoOffsetHours(Y: number, M: number, D: number, _h: number): number {
-  const secondSundayMar = nthSunday(Y, 3, 2);
-  const firstSundayNov = nthSunday(Y, 11, 1);
-  const dayNum = Date.UTC(Y, M - 1, D);
-  const isDst = dayNum >= Date.UTC(Y, 2, secondSundayMar) && dayNum < Date.UTC(Y, 10, firstSundayNov);
-  return isDst ? 5 : 6;
-}
-
-function nthSunday(Y: number, month1: number, n: number): number {
-  // day-of-month of the nth Sunday in month1 (1-based month).
-  const firstDow = new Date(Date.UTC(Y, month1 - 1, 1)).getUTCDay(); // 0=Sun
-  const firstSunday = 1 + ((7 - firstDow) % 7);
-  return firstSunday + (n - 1) * 7;
-}
-
 function round1(n: number): number {
   return Math.round(n * 10) / 10;
 }
 
 function buildVitals(): any[] {
-  const rows = q<Row>(
+  const rows = qIf<Row>(
+    "V_EHI_FLO_MEAS_VALUE",
     `
     SELECT v.FSD_ID, v.LINE, v.FLO_MEAS_ID, v.FLO_MEAS_ID_DISP_NAME, v.VALUE_TYPE_C_NAME,
            v.UNITS, v.MEAS_VALUE_EXTERNAL,
@@ -146,15 +120,7 @@ function buildVitals(): any[] {
   // Best-effort TAKEN_USER (EMP login) → SER provider id, via exact unambiguous name match
   // (cross ID-space; §41/§6). Performer references must line up with the practitioner shard,
   // which mints ids from CLARITY_SER.PROV_ID.
-  const empToSer = new Map<string, string>();
-  for (const e of q<Row>(
-    `SELECT emp.USER_ID, s.PROV_ID
-       FROM CLARITY_EMP emp
-       JOIN CLARITY_SER s ON s.PROV_NAME = emp.NAME
-      GROUP BY emp.USER_ID HAVING COUNT(*) = 1`
-  )) {
-    empToSer.set(String(e.USER_ID), String(e.PROV_ID));
-  }
+  const empToSer = empToSerMap();
 
   const out: any[] = [];
 

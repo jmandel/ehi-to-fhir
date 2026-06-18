@@ -31,15 +31,17 @@
  * MEDICINE", emitted as Location loc-1700801002); rows without an IMM_CSN have no
  * department and get no location (correct).
  */
-import { q, q1, parseEpicDateTime } from "../lib/db";
-import { id, ref, patientRef, PATIENT_PAT_ID } from "../lib/ids";
+import { q, q1 } from "../lib/db";
+import { isoDate as dateOnly } from "../lib/time";
+import { id, ref, patientRef, PATIENT_PAT_ID, epicOid, SYS } from "../lib/ids";
 import { emit, clean } from "../lib/gen";
-import { cc, ident } from "../lib/cc";
+import { cc, concept, ident } from "../lib/cc";
 import { enumMap } from "../lib/fmt";
+import { empLoginToSerId } from "../lib/providers";
 
 // Epic instance OIDs observed in the target.
-const SYS_IMM = "urn:oid:1.2.840.114350.1.13.283.2.7.2.768076"; // Immunization.identifier (IMMUNE_ID)
-const SYS_ENC = "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8"; // Encounter.identifier (CSN)
+const SYS_IMM = epicOid("2.7.2.768076"); // Immunization.identifier (IMMUNE_ID)
+const SYS_ENC = SYS.CSN; // Encounter.identifier (CSN)
 const SYS_NDC = "http://hl7.org/fhir/sid/ndc";
 const SYS_PERF_FN = "http://terminology.hl7.org/CodeSystem/v2-0443";
 
@@ -53,12 +55,6 @@ const STATUS_MAP: Record<string, string> = {
 };
 
 type Row = Record<string, any>;
-
-/** Epic "M/D/YYYY 12:00:00 AM" effective date → date-only ISO. */
-function dateOnly(v: unknown): string | undefined {
-  const iso = parseEpicDateTime(v);
-  return iso ? iso.slice(0, 10) : undefined;
-}
 
 /** CLARITY_DEP.DEPARTMENT_NAME for a department id (Location.display). */
 const deptName = (depId: unknown): string | undefined =>
@@ -140,8 +136,8 @@ function buildImmunizations(): any[] {
     // .text only — no fabricated coding shell. The crosswalk worker owns adding the
     // standard route/site coding(s), anchored on this EHI text. (PHYSICAL_SITE is
     // 0/19 populated -> not used.)
-    const site = r.SITE_C_NAME ? { text: r.SITE_C_NAME } : undefined;
-    const route = r.ROUTE_C_NAME ? { text: r.ROUTE_C_NAME } : undefined;
+    const site = concept(r.SITE_C_NAME);
+    const route = concept(r.ROUTE_C_NAME);
 
     // --- manufacturer / lot / expiration (in-house dose only here).
     const manufacturer = r.MFG_C_NAME ? { display: r.MFG_C_NAME } : undefined;
@@ -164,16 +160,11 @@ function buildImmunizations(): any[] {
         r.GIVEN_BY_USER_ID_NAME ||
         q1<Row>(`SELECT NAME FROM CLARITY_EMP WHERE USER_ID = ?`, String(r.GIVEN_BY_USER_ID))?.NAME;
       // GIVEN_BY_USER_ID is a CLARITY_EMP.USER_ID, NOT a CLARITY_SER.PROV_ID. The
-      // Practitioner domain keys on PROV_ID, so we must bridge USER_ID → PROV_ID via
-      // the same exact, UNAMBIGUOUS name join the practitioner domain uses
-      // (CLARITY_EMP.NAME = CLARITY_SER.PROV_NAME). Mint the actor ref only when that
-      // resolves to exactly one PROV_ID; otherwise omit the dangling reference and
-      // keep the display (false-absence over a broken reference).
-      const serRows = q<Row>(
-        `SELECT s.PROV_ID FROM CLARITY_EMP e JOIN CLARITY_SER s ON s.PROV_NAME = e.NAME WHERE e.USER_ID = ?`,
-        String(r.GIVEN_BY_USER_ID)
-      );
-      const provId = serRows.length === 1 ? serRows[0].PROV_ID : undefined;
+      // Practitioner domain keys on PROV_ID, so we bridge USER_ID → PROV_ID via the
+      // exact, UNAMBIGUOUS name join (CLARITY_EMP.NAME = CLARITY_SER.PROV_NAME). Mint
+      // the actor ref only when that resolves to exactly one PROV_ID; otherwise omit
+      // the dangling reference and keep the display (false-absence over a broken ref).
+      const provId = empLoginToSerId(r.GIVEN_BY_USER_ID);
       performer.push({
         function: cc(SYS_PERF_FN, "AP", "Administering Provider"),
         actor: {

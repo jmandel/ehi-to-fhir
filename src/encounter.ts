@@ -38,17 +38,18 @@
  */
 import { existsSync, readdirSync } from "fs";
 import { resolve } from "path";
-import { q, q1 } from "../lib/db";
-import { id, ref, patientRef } from "../lib/ids";
+import { q, q1, qIf } from "../lib/db";
+import { id, ref, patientRef, epicOid, SYS } from "../lib/ids";
 import { emit, clean } from "../lib/gen";
-import { cc, ident } from "../lib/cc";
+import { cc, concept, ident } from "../lib/cc";
+import { localToUtcInstant } from "../lib/time";
 
 // Epic OID systems that appear in the export's own identifier columns (not Epic
 // terminology we'd be inventing): the CSN identifier system and the reason-for-visit
 // master. These are the export's structural identifier namespaces.
-const SYS_CSN = "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8";
-const SYS_REASON = "urn:oid:1.2.840.114350.1.13.283.2.7.2.728286"; // CL_RSN_FOR_VISIT
-const SYS_HSP_ACCT = "urn:oid:1.2.840.114350.1.13.283.2.7.2.726582"; // hospital account
+const SYS_CSN = SYS.CSN;
+const SYS_REASON = epicOid("2.7.2.728286"); // CL_RSN_FOR_VISIT
+const SYS_HSP_ACCT = SYS.HSP_ACCT; // hospital account
 
 const PARTICIPATION = "http://terminology.hl7.org/CodeSystem/v3-ParticipationType";
 
@@ -59,39 +60,8 @@ const PARTICIPATION = "http://terminology.hl7.org/CodeSystem/v3-ParticipationTyp
 // (ADT_PAT_CLASS_C_NAME) to the standard v3-ActCode. See buildClass() / gaps/encounter.md.
 const SYS_ACTCODE = "http://terminology.hl7.org/CodeSystem/v3-ActCode";
 
-/** Parse "M/D/YYYY h:mm:ss AM" as America/Chicago wall time → ISO instant (UTC, Z). */
-function chicagoToISO(v: unknown): string | undefined {
-  if (v === null || v === undefined || v === "") return undefined;
-  const m = String(v).trim().match(
-    /^(\d{1,2})\/(\d{1,2})\/(\d{4})(?:\s+(\d{1,2}):(\d{2})(?::(\d{2}))?\s*(AM|PM)?)?/i
-  );
-  if (!m) return undefined;
-  let [, mo, d, y, hh, mm, ss, ap] = m;
-  if (hh === undefined) return undefined; // date-only, no usable instant
-  let H = parseInt(hh);
-  if (ap) {
-    if (/PM/i.test(ap) && H < 12) H += 12;
-    if (/AM/i.test(ap) && H === 12) H = 0;
-  }
-  const Y = +y, MO = +mo, D = +d, MI = +(mm ?? 0), S = +(ss ?? 0);
-  // Determine the Chicago UTC offset (CST -6 / CDT -5) for this local date.
-  const offset = chicagoOffsetHours(Y, MO, D, H);
-  const utcMs = Date.UTC(Y, MO - 1, D, H - offset, MI, S);
-  return new Date(utcMs).toISOString().replace(/\.\d{3}Z$/, "Z");
-}
-
-/** US Central DST: 2nd Sunday of March 02:00 → 1st Sunday of November 02:00 = CDT(-5), else CST(-6). */
-function chicagoOffsetHours(Y: number, MO: number, D: number, H: number): number {
-  const nthSunday = (year: number, month: number, n: number) => {
-    const first = new Date(Date.UTC(year, month - 1, 1)).getUTCDay(); // 0=Sun
-    return 1 + ((7 - first) % 7) + (n - 1) * 7;
-  };
-  const marSun = nthSunday(Y, 3, 2);
-  const novSun = nthSunday(Y, 11, 1);
-  const afterStart = MO > 3 || (MO === 3 && (D > marSun || (D === marSun && H >= 2)));
-  const beforeEnd = MO < 11 || (MO === 11 && (D < novSun || (D === novSun && H < 2)));
-  return afterStart && beforeEnd ? -5 : -6;
-}
+/** Parse "M/D/YYYY h:mm:ss AM" as the configured-org wall time → ISO instant (UTC, Z). */
+const chicagoToISO = (v: unknown): string | undefined => localToUtcInstant(v);
 
 /** Effective contact day (YYYY-MM-DD) from *_DATE_REAL or CONTACT_DATE. */
 function contactDay(e: any): string | undefined {
@@ -110,7 +80,7 @@ const deptName = (depId: any): string | undefined =>
     ?.DEPARTMENT_NAME;
 
 function selectCsns(): string[] {
-  const rows = q<{ csn: string }>(`
+  const rows = qIf<{ csn: string }>("PAT_ENC", `
     SELECT e.PAT_ENC_CSN_ID AS csn
     FROM PAT_ENC e
     WHERE e.CALCULATED_ENC_STAT_C_NAME = 'Complete'
@@ -153,12 +123,13 @@ function referencedClosureCsns(): string[] {
   const refd = new Set<string>();
 
   // Immunization.encounter ← IMMUNE.IMM_CSN
-  for (const r of q<{ csn: string }>(`SELECT IMM_CSN AS csn FROM IMMUNE WHERE IMM_CSN IS NOT NULL`)) {
+  for (const r of qIf<{ csn: string }>("IMMUNE", `SELECT IMM_CSN AS csn FROM IMMUNE WHERE IMM_CSN IS NOT NULL`)) {
     refd.add(String(r.csn));
   }
 
   // MedicationRequest.encounter ← ORDER_MED.PAT_ENC_CSN_ID (non-inpatient only)
-  for (const r of q<{ csn: string }>(
+  for (const r of qIf<{ csn: string }>(
+    "ORDER_MED",
     `SELECT PAT_ENC_CSN_ID AS csn FROM ORDER_MED
       WHERE PAT_ENC_CSN_ID IS NOT NULL
         AND (ORDERING_MODE_C_NAME IS NULL OR ORDERING_MODE_C_NAME <> 'Inpatient')`
@@ -177,7 +148,8 @@ function referencedClosureCsns(): string[] {
       if (m) rtf.add(m[1]);
     }
   }
-  const noteRows = q<{ NOTE_ID: string; csn: string }>(
+  const noteRows = qIf<{ NOTE_ID: string; csn: string }>(
+    "HNO_INFO",
     `SELECT DISTINCT h.NOTE_ID, h.PAT_ENC_CSN_ID AS csn
        FROM HNO_INFO h
        JOIN NOTE_ENC_INFO e ON e.NOTE_ID = h.NOTE_ID
@@ -450,8 +422,8 @@ function buildHospitalization(h: any) {
       : undefined,
     // admitSource / dischargeDisposition: only the EHI label is available; the Epic
     // category code + OID system are not in the export → text only.
-    admitSource: h.ADMIT_SOURCE_C_NAME ? { text: h.ADMIT_SOURCE_C_NAME } : undefined,
-    dischargeDisposition: h.DISCH_DISP_C_NAME ? { text: h.DISCH_DISP_C_NAME } : undefined,
+    admitSource: concept(h.ADMIT_SOURCE_C_NAME),
+    dischargeDisposition: concept(h.DISCH_DISP_C_NAME),
   });
   return Object.keys(ho).length ? ho : undefined;
 }
@@ -479,7 +451,7 @@ function buildAccount(e: any) {
   return [
     clean({
       reference: "Account/" + id.account(String(e.HSP_ACCOUNT_ID)),
-      identifier: { system: SYS_HSP_ACCT, value: String(e.HSP_ACCOUNT_ID) },
+      identifier: ident(SYS_HSP_ACCT, String(e.HSP_ACCOUNT_ID)),
       display: nm,
     }),
   ];

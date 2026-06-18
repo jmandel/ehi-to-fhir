@@ -51,26 +51,28 @@
  * value, focus, performer, or issued instant when the rows are absent. A blank beats an
  * invention (mapping principle 4). See gaps/obs-smartdata.md.
  */
-import { q, tableHasRows, columnsOf, parseEpicDateTime } from "../lib/db";
-import { id, ref, patientRef } from "../lib/ids";
+import { q, tableHasRows, tablesPresent, colSet, parseEpicDateTime } from "../lib/db";
+import { id, ref, patientRef, SYS } from "../lib/ids";
 import { emit, clean } from "../lib/gen";
+import { cc, category } from "../lib/cc";
+import { empLoginToSerId } from "../lib/providers";
 
 // The Epic SmartData concept code system (constant across the target's 118 rows).
-const SDI_OID = "urn:oid:1.2.840.114350.1.13.283.2.7.2.727688";
+const SDI_OID = SYS.SDI;
 
 function buildSmartDataObservations(): any[] {
   // Defensive: only attempt if the generic SmartData element store actually shipped.
   // In this specimen it did not (see header), so this returns [] honestly.
-  if (!tableHasRows("SMRTDTA_ELEM_DATA") || !tableHasRows("V_EHI_SMRTDTA_ELEM_VAL_EXT")) {
+  if (!tablesPresent("SMRTDTA_ELEM_DATA", "V_EHI_SMRTDTA_ELEM_VAL_EXT")) {
     return [];
   }
 
   // ---- The block below is the intended mapping for an export that DOES ship the store.
-  // It is column-guarded (columnsOf) so it cannot crash on a partial schema; it never runs
+  // It is column-guarded (colSet) so it cannot crash on a partial schema; it never runs
   // in this specimen. It is intentionally conservative: emit a code/coding ONLY from
   // CLARITY_CONCEPT (the real concept master), value/component ONLY from the value view.
-  const dataCols = new Set(columnsOf("SMRTDTA_ELEM_DATA"));
-  const valCols = new Set(columnsOf("V_EHI_SMRTDTA_ELEM_VAL_EXT"));
+  const dataCols = colSet("SMRTDTA_ELEM_DATA");
+  const valCols = colSet("V_EHI_SMRTDTA_ELEM_VAL_EXT");
   const hasConcept = tableHasRows("CLARITY_CONCEPT");
 
   const rows = q<Record<string, any>>(`SELECT * FROM SMRTDTA_ELEM_DATA`);
@@ -117,25 +119,23 @@ function buildSmartDataObservations(): any[] {
         resourceType: "Observation",
         id: id.observation(`smrtdta-${r.HLV_ID ?? elementId}`),
         status: "unknown",
-        category: [
-          {
-            coding: [
-              {
-                system: "http://open.epic.com/FHIR/StructureDefinition/observation-category",
-                code: "smartdata",
-                display: "SmartData",
-              },
-            ],
-            text: "SmartData",
-          },
-        ],
+        category: category(
+          cc("http://open.epic.com/FHIR/StructureDefinition/observation-category", "smartdata", "SmartData")
+        ),
         code: { coding, text: codeText },
         subject: patientRef(),
         issued: parseEpicDateTime(dataCols.has("CUR_VALUE_DATETIME") ? r.CUR_VALUE_DATETIME : undefined),
-        performer:
-          dataCols.has("CUR_VALUE_USER_ID") && r.CUR_VALUE_USER_ID
-            ? [ref("Practitioner", id.practitioner(r.CUR_VALUE_USER_ID))]
-            : undefined,
+        // CUR_VALUE_USER_ID is a CLARITY_EMP.USER_ID (EMP id-space), NOT a CLARITY_SER.PROV_ID.
+        // Bridge EMP→SER via exact unambiguous name match so the ref lands in the Practitioner
+        // id-space; mint the ref only when it resolves to exactly one provider. (Table dormant
+        // in this export, so this never fires today — but the id-space is now correct.)
+        performer: (() => {
+          const provId =
+            dataCols.has("CUR_VALUE_USER_ID") && r.CUR_VALUE_USER_ID
+              ? empLoginToSerId(r.CUR_VALUE_USER_ID)
+              : undefined;
+          return provId ? [ref("Practitioner", id.practitioner(provId))] : undefined;
+        })(),
         component: components,
       }),
     );

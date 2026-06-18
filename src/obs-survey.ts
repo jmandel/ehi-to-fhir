@@ -32,16 +32,18 @@
  * hasMember/derivedFrom panel wiring, and the Epic-scrambled performer/encounter
  * display strings are all Epic-assigned terminology absent from the export.
  */
-import { q } from "../lib/db";
-import { id, ref, patientRef } from "../lib/ids";
+import { qIf } from "../lib/db";
+import { id, ref, patientRef, SYS } from "../lib/ids";
 import { emit, clean } from "../lib/gen";
 import { cc, ident } from "../lib/cc";
+import { localToUtcInstant } from "../lib/time";
+import { empLoginToSerId } from "../lib/providers";
 
 // Epic's flowsheet-id code system (the survey code namespace the target uses). We
 // emit the REAL numeric FLO_MEAS_ID under it — the export's true flowsheet measure id
 // — not Epic's encrypted FHIR rendering of it (which is not in the export).
 const SYS_FLO = "http://open.epic.com/FHIR/StructureDefinition/observation-flowsheet-id";
-const SYS_CSN = "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8"; // PAT_ENC CSN identifier
+const SYS_CSN = SYS.CSN; // PAT_ENC CSN identifier
 const SYS_UCUM = "http://unitsofmeasure.org";
 const SYS_OBS_CAT = "http://terminology.hl7.org/CodeSystem/observation-category";
 const SYS_USCORE_CAT = "http://hl7.org/fhir/us/core/CodeSystem/us-core-category";
@@ -121,42 +123,12 @@ interface Row {
   CSN: string;
   RECORDED_TIME: string | null; ENTRY_TIME: string | null;
   TAKEN_USER_ID: string | null; TAKEN_USER_ID_NAME: string | null;
-  PROV_ID: string | null;
   ISACCEPTED_YN: string | null; EDITED_LINE: string | null;
 }
 
-/** Parse Epic "M/D/YYYY h:mm:ss AM" wall-clock (US Central) -> UTC ISO instant. */
-function centralToUTC(s: string | null | undefined): string | undefined {
-  if (!s) return undefined;
-  const m = String(s).trim().match(
-    /^(\d{1,2})\/(\d{1,2})\/(\d{4})\s+(\d{1,2}):(\d{2})(?::(\d{2}))?\s*(AM|PM)?/i
-  );
-  if (!m) return undefined;
-  let [, mo, d, y, hh, mm, ss, ap] = m;
-  let H = parseInt(hh);
-  if (ap) {
-    if (/PM/i.test(ap) && H < 12) H += 12;
-    if (/AM/i.test(ap) && H === 12) H = 0;
-  }
-  const year = +y, month = +mo, day = +d, minute = +mm, sec = ss ? +ss : 0;
-  // US Central offset: CDT (-5) during DST, CST (-6) otherwise. The target's UTC
-  // conversion of these wall-clock times is consistent with America/Chicago.
-  const offset = isUSDST(year, month, day) ? 5 : 6; // hours to ADD to reach UTC
-  const utcMs = Date.UTC(year, month - 1, day, H + offset, minute, sec);
-  return new Date(utcMs).toISOString().replace(/\.\d{3}Z$/, "Z");
-}
-
-/** US DST: 2nd Sunday of March .. 1st Sunday of November (approx, date-only). */
-function isUSDST(y: number, mo: number, d: number): boolean {
-  if (mo < 3 || mo > 11) return false;
-  if (mo > 3 && mo < 11) return true;
-  const nthSundayDOM = (year: number, month: number, nth: number) => {
-    const first = new Date(Date.UTC(year, month - 1, 1)).getUTCDay(); // 0=Sun
-    return 1 + ((7 - first) % 7) + (nth - 1) * 7;
-  };
-  if (mo === 3) return d >= nthSundayDOM(y, 3, 2);
-  return d < nthSundayDOM(y, 11, 1);
-}
+/** Epic "M/D/YYYY h:mm:ss AM" wall-clock (configured org tz) -> UTC ISO instant. */
+const centralToUTC = (s: string | null | undefined): string | undefined =>
+  localToUtcInstant(s);
 
 /** Encounter type label — best-effort from the visit's E&M / visit charge name.
  * (The target's "Office Visit"/"Telemedicine" is the Epic ENC_TYPE category, which
@@ -164,7 +136,8 @@ function isUSDST(y: number, mo: number, d: number): boolean {
 const encDisplayCache = new Map<string, string | undefined>();
 function encounterDisplay(csn: string): string | undefined {
   if (encDisplayCache.has(csn)) return encDisplayCache.get(csn);
-  const r = q<{ PROC_NAME: string }>(
+  const r = qIf<{ PROC_NAME: string }>(
+    "ARPB_TRANSACTIONS",
     `SELECT e.PROC_NAME
        FROM ARPB_TRANSACTIONS a
        JOIN CLARITY_EAP e ON a.PROC_ID = e.PROC_ID
@@ -202,21 +175,19 @@ function buildValue(r: Row): Record<string, any> {
 }
 
 function buildSurveyObservations(): any[] {
-  const rows = q<Row>(
+  const rows = qIf<Row>(
+    "V_EHI_FLO_MEAS_VALUE",
     `SELECT m.FSD_ID, m.LINE,
             m.FLO_MEAS_ID, m.FLO_MEAS_ID_DISP_NAME AS DISP,
             v.MEAS_VALUE_EXTERNAL AS VAL, v.VALUE_TYPE_C_NAME AS VTYPE, v.UNITS,
             e.PAT_ENC_CSN_ID AS CSN,
             m.RECORDED_TIME, m.ENTRY_TIME,
             m.TAKEN_USER_ID, m.TAKEN_USER_ID_NAME,
-            m.ISACCEPTED_YN, m.EDITED_LINE,
-            s.PROV_ID
+            m.ISACCEPTED_YN, m.EDITED_LINE
        FROM IP_FLWSHT_MEAS m
        JOIN V_EHI_FLO_MEAS_VALUE v ON v.FSD_ID = m.FSD_ID AND v.LINE = m.LINE
        JOIN IP_FLWSHT_REC r ON m.FSD_ID = r.FSD_ID
        JOIN PAT_ENC e ON r.INPATIENT_DATA_ID = e.INPATIENT_DATA_ID
-       LEFT JOIN CLARITY_EMP emp ON emp.USER_ID = m.TAKEN_USER_ID
-       LEFT JOIN CLARITY_SER s ON s.PROV_NAME = emp.NAME
       WHERE v.MEAS_VALUE_EXTERNAL IS NOT NULL AND v.MEAS_VALUE_EXTERNAL <> ''
       ORDER BY CAST(e.PAT_ENC_DATE_REAL AS REAL), CAST(m.FSD_ID AS INTEGER), CAST(m.LINE AS INTEGER)`
   ).filter((r) => SURVEY_MEAS.has(String(r.FLO_MEAS_ID)));
@@ -227,12 +198,13 @@ function buildSurveyObservations(): any[] {
     const effective = centralToUTC(r.RECORDED_TIME);
     const issued = centralToUTC(r.ENTRY_TIME);
 
-    // performer: TAKEN_USER (EMP) -> SER by name. patient-reported (MYCHARTG) and
-    // unmatched names get display-only (no reference) — mirrors the target's split.
+    // performer: TAKEN_USER (EMP) -> SER by exact unambiguous name match. patient-reported
+    // (MYCHARTG) and unmatched names get display-only (no reference) — mirrors the target's split.
     let performer: any | undefined;
     if (r.TAKEN_USER_ID_NAME) {
-      performer = r.PROV_ID
-        ? ref("Practitioner", id.practitioner(r.PROV_ID), r.TAKEN_USER_ID_NAME)
+      const provId = empLoginToSerId(r.TAKEN_USER_ID);
+      performer = provId
+        ? ref("Practitioner", id.practitioner(provId), r.TAKEN_USER_ID_NAME)
         : { display: r.TAKEN_USER_ID_NAME };
     }
 

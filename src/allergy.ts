@@ -21,30 +21,19 @@
  *
  * EVERYTHING in the EHI is TEXT — CAST before ORDER/MIN (§17).
  */
-import { q, parseEpicDateTime } from "../lib/db";
+import { q } from "../lib/db";
+import { isoDate, localToUtcInstant } from "../lib/time";
 import { id, patientRef, PATIENT_PAT_ID } from "../lib/ids";
 import { emit, clean } from "../lib/gen";
+import { concept } from "../lib/cc";
 
-// This specimen's records are stamped in US Eastern *standard* time year-round
-// (verified: 9:45 AM local -> 14:45Z, 2:34 PM local -> 19:34Z, both UTC-5).
-// The export carries no zone or seconds, so we apply -05:00 and lose sub-minute
-// precision — recorded as a gap rather than fabricated.
-const LOCAL_UTC_OFFSET_HOURS = 5;
-
-/** Epic "M/D/YYYY ..." effective date -> YYYY-MM-DD (date part only). */
-function isoDate(v: unknown): string | undefined {
-  const s = parseEpicDateTime(v);
-  return s ? s.slice(0, 10) : undefined;
-}
-
-/** Local "M/D/YYYY h:mm:ss AM" entry instant -> UTC ISO (Z), minute precision. */
-function recordedInstant(v: unknown): string | undefined {
-  const s = parseEpicDateTime(v); // YYYY-MM-DDTHH:MM:SS (local wall clock, no zone)
-  if (!s || s.length < 19) return undefined;
-  const local = new Date(s + "Z"); // treat parsed wall-clock as if UTC, then shift
-  const utc = new Date(local.getTime() + LOCAL_UTC_OFFSET_HOURS * 3600000);
-  return utc.toISOString().replace(/\.\d{3}Z$/, "Z");
-}
+/**
+ * Local "M/D/YYYY h:mm:ss AM" entry instant -> UTC ISO (Z). Converts the wall-clock
+ * value via the configured org timezone (EHI_TZ). Previously this applied a fixed
+ * Eastern -05:00 with NO DST — a bug that mis-stamped summer rows by an hour; routing
+ * through the tz-aware central converter is the fix (DNM #4).
+ */
+const recordedInstant = (v: unknown): string | undefined => localToUtcInstant(v);
 
 function clinicalStatus(statusName: string | null | undefined) {
   const map: Record<string, { code: string; display: string }> = {
@@ -171,7 +160,7 @@ function buildAllergies(): any[] {
         type: allergyType(r.SEVERITY_C_NAME),
         // category: Epic-derived allergen class, NOT in export — omitted (gap).
         criticality: criticality(r.ALLERGY_SEVERITY_C_NAME),
-        code: allergen ? { text: allergen } : undefined,
+        code: concept(allergen),
         patient: patientRef(),
         onsetDateTime: isoDate(r.DATE_NOTED),
         recordedDate: recordedInstant(r.ALRGY_ENTERED_DTTM),

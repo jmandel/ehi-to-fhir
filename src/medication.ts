@@ -18,19 +18,21 @@
  *   CLARITY_SER (PROV_ID)    — requester provider name
  *   CLARITY_EMP (USER_ID)    — recorder user name
  */
-import { q, q1, parseEpicDateTime } from "../lib/db";
-import { id, ref, patientRef } from "../lib/ids";
+import { q, q1, qIf } from "../lib/db";
+import { isoDate as dateOnly, utcFromUtcColumn as utcInstant } from "../lib/time";
+import { id, ref, patientRef, SYS } from "../lib/ids";
 import { emit, clean } from "../lib/gen";
-import { cc, category, ident } from "../lib/cc";
+import { cc, concept, category, ident } from "../lib/cc";
+import { empLoginToSerId } from "../lib/providers";
 
 // OIDs observed in the target (Epic instance order/medication namespaces).
-const SYS_ORDER = "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268";   // MedicationRequest.identifier
-const SYS_DRUG = "urn:oid:1.2.840.114350.1.13.283.2.7.2.698288";    // Medication.identifier (MEDICATION_ID)
-const SYS_ENC = "urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8";   // Encounter.identifier (CSN)
+const SYS_ORDER = SYS.PLACER;   // MedicationRequest.identifier
+const SYS_DRUG = SYS.DRUG;      // Medication.identifier (MEDICATION_ID)
+const SYS_ENC = SYS.CSN;        // Encounter.identifier (CSN)
 // Epic medication form-master OID (Medication.form.coding.system). The form CODE
 // (CAPS/TABS/SOLN/TBPK/MISC/DEVI) is the abbreviation Epic stamps on the order's
-// DESCRIPTION tail; it equals the target form.coding.code exactly.
-const SYS_FORM = "urn:oid:1.2.840.114350.1.13.283.2.7.4.698288.310";
+// DESCRIPTION tail; it equals the target form.coding.code exactly. CHILD of SYS_DRUG (DNM #9).
+const SYS_FORM = SYS.FORM;
 
 type OM = Record<string, any>;
 
@@ -140,20 +142,6 @@ function doseEntry(typeCode: string, rawValue: unknown, rawUnit: unknown): any |
   });
 }
 
-/** Epic "M/D/YYYY 12:00:00 AM" effective date → date-only ISO. */
-function dateOnly(v: unknown): string | undefined {
-  const iso = parseEpicDateTime(v);
-  return iso ? iso.slice(0, 10) : undefined;
-}
-
-/** Epic UTC "M/D/YYYY h:mm:ss AM" → ISO instant with Z. */
-function utcInstant(v: unknown): string | undefined {
-  const iso = parseEpicDateTime(v);
-  if (!iso) return undefined;
-  // parseEpicDateTime yields "YYYY-MM-DDTHH:MM:SS" (no zone) for datetimes.
-  return iso.includes("T") ? `${iso}Z` : undefined;
-}
-
 /** "90 capsule" → { value: 90, unit: "capsule" }. */
 function parseQuantity(v: unknown): { value: number; unit?: string } | undefined {
   if (v === null || v === undefined || v === "") return undefined;
@@ -232,7 +220,7 @@ function buildMedicationRequests(): { requests: any[]; medications: any[] } {
 
   // Sig text, keyed by ORDER_ID (= ORDER_MED_ID).
   const sigByOrder = new Map<string, string>();
-  for (const r of q<OM>(`SELECT ORDER_ID, SIG_TEXT FROM ORDER_MED_SIG WHERE SIG_TEXT IS NOT NULL`)) {
+  for (const r of qIf<OM>("ORDER_MED_SIG", `SELECT ORDER_ID, SIG_TEXT FROM ORDER_MED_SIG WHERE SIG_TEXT IS NOT NULL`)) {
     sigByOrder.set(String(r.ORDER_ID), r.SIG_TEXT);
   }
 
@@ -242,7 +230,7 @@ function buildMedicationRequests(): { requests: any[]; medications: any[] } {
   //                                             (e.g. 3 capsule / 1 tablet)
   // Populated only on the 5 self-administered tab/cap orders; absent on IV/device.
   const medinfoByOrder = new Map<string, OM>();
-  for (const r of q<OM>(`
+  for (const r of qIf<OM>("ORDER_MEDINFO", `
     SELECT ORDER_MED_ID, CALC_MIN_DOSE, CALC_DOSE_UNIT_C_NAME, ADMIN_MIN_DOSE, ADMIN_DOSE_UNIT_C_NAME
     FROM ORDER_MEDINFO
   `)) {
@@ -251,7 +239,7 @@ function buildMedicationRequests(): { requests: any[]; medications: any[] } {
 
   // First indication dx per order (reason — text only; no ICD/SNOMED in export).
   const dxByOrder = new Map<string, string>();
-  for (const r of q<OM>(`
+  for (const r of qIf<OM>("ORDER_DX_MED", `
     SELECT dm.ORDER_MED_ID, edg.DX_NAME
     FROM ORDER_DX_MED dm
     LEFT JOIN CLARITY_EDG edg ON edg.DX_ID = dm.DX_ID
@@ -263,7 +251,7 @@ function buildMedicationRequests(): { requests: any[]; medications: any[] } {
   // Drug-master generic name, keyed by MEDICATION_ID — the only shipped column that
   // can attest a canonical form-label word (see formLabelFromGeneric).
   const genericByMed = new Map<string, string>();
-  for (const r of q<OM>(`SELECT MEDICATION_ID, GENERIC_NAME FROM CLARITY_MEDICATION WHERE GENERIC_NAME IS NOT NULL`)) {
+  for (const r of qIf<OM>("CLARITY_MEDICATION", `SELECT MEDICATION_ID, GENERIC_NAME FROM CLARITY_MEDICATION WHERE GENERIC_NAME IS NOT NULL`)) {
     genericByMed.set(String(r.MEDICATION_ID), r.GENERIC_NAME);
   }
 
@@ -325,7 +313,7 @@ function buildMedicationRequests(): { requests: any[]; medications: any[] } {
         identifier: o.MEDICATION_ID
           ? [ident(SYS_DRUG, o.MEDICATION_ID, { use: "usual" })]
           : undefined,
-        code: drugText ? { text: drugText } : undefined,
+        code: concept(drugText),
         form,
         // Ingredient text mirrors the order's drug description; strength numerator is
         // parsed from that same text, denominator from the form code. Ingredient
@@ -377,21 +365,16 @@ function buildMedicationRequests(): { requests: any[]; medications: any[] } {
 
     // recorder: order-creator user (CLARITY_EMP). ORD_CREATR_USER_ID is a
     // CLARITY_EMP.USER_ID (a login like RAMMELZL), NOT a CLARITY_SER.PROV_ID.
-    // The Practitioner domain keys on PROV_ID, so we must bridge USER_ID → PROV_ID
-    // via the same exact, UNAMBIGUOUS name join immunization.ts uses
-    // (CLARITY_EMP.NAME = CLARITY_SER.PROV_NAME). Mint the recorder ref only when
-    // that resolves to exactly one PROV_ID; otherwise (generic EPIC,USER id "1",
-    // or unresolved/ambiguous) keep the display only — false-absence over a broken
-    // reference.
+    // The Practitioner domain keys on PROV_ID, so we bridge USER_ID → PROV_ID via the
+    // exact, UNAMBIGUOUS name join (CLARITY_EMP.NAME = CLARITY_SER.PROV_NAME). Mint the
+    // recorder ref only when that resolves to exactly one PROV_ID; otherwise (generic
+    // EPIC,USER id "1", or unresolved/ambiguous) keep the display only — false-absence
+    // over a broken reference.
     let recorder: any | undefined;
     if (o.ORD_CREATR_USER_ID) {
       const emp = q1<OM>(`SELECT NAME FROM CLARITY_EMP WHERE USER_ID = ?`, String(o.ORD_CREATR_USER_ID));
       const display = emp?.NAME || o.ORD_CREATR_USER_ID_NAME || undefined;
-      const serRows = q<OM>(
-        `SELECT s.PROV_ID FROM CLARITY_EMP e JOIN CLARITY_SER s ON s.PROV_NAME = e.NAME WHERE e.USER_ID = ?`,
-        String(o.ORD_CREATR_USER_ID)
-      );
-      const recProvId = serRows.length === 1 ? serRows[0].PROV_ID : undefined;
+      const recProvId = empLoginToSerId(o.ORD_CREATR_USER_ID);
       recorder = {
         reference: recProvId ? ref("Practitioner", id.practitioner(recProvId)).reference : undefined,
         type: "Practitioner",
@@ -501,7 +484,7 @@ function buildMedicationRequests(): { requests: any[]; medications: any[] } {
       : undefined;
     const timing = clean({
       repeat,
-      code: codeText ? { text: codeText } : undefined,
+      code: concept(codeText),
     });
     const dosageInstruction =
       diText || route || (timing && Object.keys(timing).length) || doseAndRate
@@ -511,7 +494,7 @@ function buildMedicationRequests(): { requests: any[]; medications: any[] } {
               patientInstruction: sig,
               timing: timing && Object.keys(timing).length ? timing : undefined,
               asNeededBoolean: isPrn,
-              route: route ? { text: route } : undefined,
+              route: concept(route),
               method,
               doseAndRate,
             }),

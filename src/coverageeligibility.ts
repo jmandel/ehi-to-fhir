@@ -50,23 +50,33 @@
  *
  * Everything is TEXT in the EHI (general-patterns §17); CAST before ORDER BY/MIN/MAX.
  */
-import { q, q1, dateRealToISO, parseEpicDateTime } from "../lib/db";
+import { q, q1, dateRealToISO } from "../lib/db";
+import { isoDate } from "../lib/time";
 import { emit, clean } from "../lib/gen";
-import { cc } from "../lib/cc";
-import { id, ref, patientRef, PATIENT_PAT_ID } from "../lib/ids";
+import { cc, ident } from "../lib/cc";
+import { id, ref, patientRef, PATIENT_PAT_ID, epicOid } from "../lib/ids";
 import { nn, money } from "../lib/fmt";
 
 // Published / standard systems we can legitimately assert.
 const SYS_NETWORK = "http://terminology.hl7.org/CodeSystem/benefit-network";
 const SYS_BENEFIT_TYPE_CODE = "http://terminology.hl7.org/CodeSystem/benefit-type";
 
-// Epic instance master-file OIDs (this instance prefix 1.2.840.114350.1.13.283; same
+// Epic instance master-file OIDs (org-instance node centralized in lib/ids; same
 // convention every other domain generator here uses for Epic master-file ids).
-const OID_BENEFITS = "urn:oid:1.2.840.114350.1.13.283.2.7.2.726666"; // BEN benefit-collection record
+const OID_BENEFITS = epicOid("2.7.2.726666"); // BEN benefit-collection record
 // Epic service-type (ECD) category code system for this instance (Epic-local, non-OID URI).
 const SYS_EPIC_SVC_TYPE = "http://open.epic.com/FHIR/CodeSystem/benefit-service-type";
 
-const COVERAGE_ID = "5934765";
+// The patient's coverage, DERIVED from the export (not baked): the COVERAGE this
+// patient is a member of. One coverage per patient in this specimen; if the export
+// ever carried several, take the lowest id deterministically.
+const COVERAGE_ID = nn(
+  q1<{ COVERAGE_ID: string }>(
+    `SELECT COVERAGE_ID FROM COVERAGE_MEMBER_LIST WHERE PAT_ID = ?
+      ORDER BY CAST(COVERAGE_ID AS INTEGER) LIMIT 1`,
+    PATIENT_PAT_ID
+  )?.COVERAGE_ID
+);
 
 
 /** Coinsurance percent column → "<n>%" string. */
@@ -133,9 +143,9 @@ function buildResources(): any[] {
 
     // RECORD_CREATION_DT is always midnight (a day, no real time-of-day) → emit date-only
     // (a valid FHIR dateTime; avoids a bogus timezone on a meaningless 00:00:00).
-    const created = parseEpicDateTime(b.RECORD_CREATION_DT)?.slice(0, 10);
+    const created = isoDate(b.RECORD_CREATION_DT);
     const servicedDate = encByBen.get(recId);
-    const benefitPeriodStart = parseEpicDateTime(b.BENEFIT_PERIOD_START_DATE)?.slice(0, 10);
+    const benefitPeriodStart = isoDate(b.BENEFIT_PERIOD_START_DATE);
 
     // ---- insurance.item from SERVICE_BENEFITS (sparse matrix; group per service type x tier).
     const svcRows = q<any>(
@@ -278,7 +288,7 @@ function buildResources(): any[] {
         resourceType: "CoverageEligibilityResponse",
         id: id.coverageEligibilityResponse(recId),
         contained: [containedReq],
-        identifier: [{ system: OID_BENEFITS, value: recId }],
+        identifier: [ident(OID_BENEFITS, recId)],
         status: "active",
         purpose: ["benefits"],
         patient: { reference: patientRef().reference, display: patientRef().display },

@@ -34,6 +34,38 @@ export function columnsOf(table: string): string[] {
 }
 
 /**
+ * Run a SELECT only when `table` exists AND has rows (via tableHasRows); otherwise
+ * return [] — turns a thinner table subset into honest false-absence instead of a hard
+ * "no such table" crash. On the FULL specimen (where the table is present) this is a
+ * no-op pass-through to q(): byte-identical output. The named table must be the (sole or
+ * spine) optional source the SELECT depends on for existence.
+ */
+export function qIf<T = Record<string, any>>(table: string, sql: string, ...params: any[]): T[] {
+  return tableHasRows(table) ? q<T>(sql, ...params) : [];
+}
+
+/** True only if EVERY named table exists AND has rows (the multi-table precondition). */
+export function tablesPresent(...tables: string[]): boolean {
+  return tables.every((t) => tableHasRows(t));
+}
+
+/** Memoized column Set for a table (PRAGMA runs once per table). */
+const _colSetCache = new Map<string, Set<string>>();
+export function colSet(table: string): Set<string> {
+  let s = _colSetCache.get(table);
+  if (!s) {
+    s = new Set(columnsOf(table));
+    _colSetCache.set(table, s);
+  }
+  return s;
+}
+
+/** True if `table` materializes `col` (memoized via colSet). */
+export function hasColumn(table: string, col: string): boolean {
+  return colSet(table).has(col);
+}
+
+/**
  * Epic *_DATE_REAL → ISO date (YYYY-MM-DD).
  * DATE_REAL is days since 1840-12-31 (the integer part); fractional part is intraday.
  * Returns undefined for null/empty/sentinel input.
@@ -67,4 +99,15 @@ export function parseEpicDateTime(v: unknown): string | undefined {
   const date = `${y}-${mo.padStart(2, "0")}-${d.padStart(2, "0")}`;
   if (hh === undefined) return date;
   return `${date}T${String(H).padStart(2, "0")}:${(mm ?? "00").padStart(2, "0")}:${(ss ?? "00").padStart(2, "0")}`;
+}
+
+/**
+ * Epic textual datetime → naive (zoneless) "YYYY-MM-DDTHH:MM:SS", but ONLY when the
+ * value carries a time-of-day (the parsed form `includes("T")`); date-only values
+ * return undefined. This is the floating-local front-half that `lib/time.ts` and the
+ * per-order lab path build the UTC instants on top of. Stays zone-agnostic — no offset.
+ */
+export function naiveLocal(v: unknown): string | undefined {
+  const iso = parseEpicDateTime(v);
+  return iso && iso.includes("T") ? iso : undefined;
 }
