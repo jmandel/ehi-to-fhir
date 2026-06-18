@@ -286,5 +286,5 @@ console.log(`pairs ${pairs.length} | cant-reproduce ${cantReproduce.length} | ou
 console.log(`new resource TYPES: ${newTypes.join(", ")}`);
 console.log(`tolerated leaves in pairs ${sumBy(pairs, (p) => p.tol)} (ledger ${L.tolerated.total}) | gap-in-pairs ${sumBy(pairs, (p) => p.gap)} + whole-resource ${cantReproduce.length} (ledger gap ${L.gap.total})`);
 const kb = Math.round(JSON.stringify(payload).length / 1024);
-console.log(`PHI redaction: ${redactor.n} patient preimage value(s) scrubbed from the published payload`);
+console.log(`PHI redaction: inherited from committed inputs (my-ehi-redacted raw + redacted fhir-target/crosswalk); no build-time scrub`);
 console.log(`data.json ${kb} KB`);
