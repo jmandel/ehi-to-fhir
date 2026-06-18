@@ -109,6 +109,7 @@ export function CompareWidget() {
   );
 }
 
+const whyLabelFor = (b: string) => (b === "equivalent" ? "Why it's the same: " : b === "different" ? "Why we keep ours: " : "Why it's blank: ");
 function DiffRow({ d }: { d: Delta }) {
   const { bucket, fam } = familyFor(d);
   return (
@@ -119,7 +120,7 @@ function DiffRow({ d }: { d: Delta }) {
       <td className="d-why">
         <BucketBadge bucket={bucket} small />
         <div className="d-fam">{fam?.title}</div>
-        <div className="d-explain">{fam?.why}</div>
+        <div className="d-explain"><b>{whyLabelFor(bucket)}</b>{fam?.why}</div>
         <TechDetail label="technical detail">
           <div className="muted">{d.ruleId ? <>rule: <code>{d.ruleId}</code><br /></> : null}{d.rationale}</div>
         </TechDetail>
@@ -129,13 +130,14 @@ function DiffRow({ d }: { d: Delta }) {
 }
 
 function PairDetail({ tgtId, rt, ds }: { tgtId: string | null; rt: string; ds: typeof data }) {
-  const showJson = useStore((s) => s.showJson);
+  const view = useStore((s) => s.cmpView);
   const set = useStore((s) => s.set);
   const bf = useStore((s) => s.cmpBucketFilter);
   const pair = ds.pairs.find((p) => p.rt === rt && p.tgtId === tgtId) as Pair | undefined;
   const statusByPath = useMemo(() => { const m = new Map<string, string>(); for (const d of pair?.deltas || []) m.set(d.path, d.status); return m; }, [pair]);
   if (!pair) return <div className="muted pad">Select a resource on the left.</div>;
   const deltas = pair.deltas.filter((d) => bf === "all" || (bf === "equivalent" && d.status === "TOLERATED") || (bf === "couldnt" && d.status === "GAP"));
+  const diffNote = `${pair.exact} identical · ${pair.tol} equivalent · ${pair.gap} differ/blank`;
   return (
     <div>
       <div className="cmp-head">
@@ -144,37 +146,42 @@ function PairDetail({ tgtId, rt, ds }: { tgtId: string | null; rt: string; ds: t
         <div className="cmp-counts">
           <b style={{ color: BUCKET.identical.color }}>{pair.exact}</b> identical&nbsp;·&nbsp;
           <b style={{ color: BUCKET.equivalent.color }}>{pair.tol}</b> equivalent&nbsp;·&nbsp;
-          <b style={{ color: BUCKET.couldnt.color }}>{pair.gap}</b> couldn't reproduce
+          <b style={{ color: BUCKET.couldnt.color }}>{pair.gap}</b> differ or blank
         </div>
       </div>
 
-      {pair.deltas.length === 0 ? (
-        <div className="ok-banner">Every field Epic's API returned was reproduced <b>identically</b> from the raw export.</div>
+      <div className="cmp-viewtabs">
+        <button className={"vtab" + (view === "diff" ? " on" : "")} onClick={() => set({ cmpView: "diff" })}>Differences{pair.deltas.length ? ` (${pair.deltas.length})` : ""}</button>
+        <button className={"vtab" + (view === "json" ? " on" : "")} onClick={() => set({ cmpView: "json" })}>Side-by-side resources</button>
+      </div>
+
+      {view === "diff" ? (
+        pair.deltas.length === 0 ? (
+          <div className="ok-banner">Every field Epic's API returned was reproduced <b>identically</b> from the raw export.</div>
+        ) : (
+          <>
+            <div className="diff-filter">
+              show:&nbsp;
+              {(["all", "equivalent", "couldnt"] as const).map((f) => (
+                <button key={f} className={"tag" + (bf === f ? " on" : "")} onClick={() => set({ cmpBucketFilter: f })}>
+                  {f === "all" ? "all differences" : f === "equivalent" ? "equivalent only" : "differ / blank only"}
+                </button>
+              ))}
+            </div>
+            <table className="diff">
+              <thead><tr><th>field</th><th>Epic's FHIR API</th><th>ours (from the export)</th><th>what's going on</th></tr></thead>
+              <tbody>{deltas.map((d, i) => <DiffRow key={i} d={d} />)}</tbody>
+            </table>
+          </>
+        )
       ) : (
         <>
-          <div className="diff-filter">
-            show:&nbsp;
-            {(["all", "equivalent", "couldnt"] as const).map((f) => (
-              <button key={f} className={"tag" + (bf === f ? " on" : "")} onClick={() => set({ cmpBucketFilter: f })}>
-                {f === "all" ? "all differences" : f === "equivalent" ? "equivalent only" : "couldn't only"}
-              </button>
-            ))}
+          <p className="muted small">Both full resources, with every differing field <span style={{ color: BUCKET.equivalent.color }}>highlighted</span>. {diffNote}.</p>
+          <div className="json-sxs">
+            <div><div className="json-h">Epic's FHIR API</div><JsonView obj={pair.target} statusByPath={statusByPath} title="" /></div>
+            <div><div className="json-h">Ours (rebuilt from the export)</div><JsonView obj={pair.ours} statusByPath={statusByPath} title="" /></div>
           </div>
-          <table className="diff">
-            <thead><tr><th>field</th><th>Epic's FHIR API</th><th>ours (from the export)</th><th>what's going on</th></tr></thead>
-            <tbody>{deltas.map((d, i) => <DiffRow key={i} d={d} />)}</tbody>
-          </table>
         </>
-      )}
-
-      <div className="json-controls">
-        <button className="chip" onClick={() => set({ showJson: !showJson })}>{showJson ? "hide" : "show"} full resources (differences highlighted)</button>
-      </div>
-      {showJson && (
-        <div className="json-sxs">
-          <div><div className="json-h">Epic's FHIR API</div><JsonView obj={pair.target} statusByPath={statusByPath} /></div>
-          <div><div className="json-h">Ours (rebuilt from the export)</div><JsonView obj={pair.ours} statusByPath={statusByPath} /></div>
-        </div>
       )}
     </div>
   );

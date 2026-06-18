@@ -92,10 +92,16 @@ try {
   await evalJs(`[...document.querySelectorAll('.cmp-types .pill')].find(b=>b.textContent==='Encounter')?.click()`);
   await Bun.sleep(250);
   checks.push(["compare switched to Encounter", await evalJs(`!!document.querySelector('.cmp-head h3')?.textContent.includes('Encounter')`)]);
-  await evalJs(`[...document.querySelectorAll('.json-controls .chip')][0]?.click()`);
+  await evalJs(`[...document.querySelectorAll('.cmp-viewtabs .vtab')].find(b=>b.textContent.includes('Side-by-side'))?.click()`);
   await Bun.sleep(250);
   checks.push(["full JSON shows", await evalJs(`document.querySelectorAll('.jsonview .json-body').length`)]);
   checks.push(["highlighted leaves in JSON", await evalJs(`document.querySelectorAll('.json-body .j-val[style*="border-bottom"]').length`)]);
+  // treemap drill-in
+  await evalJs(`document.querySelector('.chart svg g[style] rect')?.parentElement?.dispatchEvent(new MouseEvent('click',{bubbles:true}))`);
+  await Bun.sleep(200);
+  checks.push(["treemap drill-in card", await evalJs(`!!document.querySelector('.fam-detail')`)]);
+  checks.push(["missing-entirely cards", await evalJs(`document.querySelectorAll('.miss-card').length`)]);
+  checks.push(["different-value family cards", await evalJs(`[...document.querySelectorAll('.fam-h')].some(h=>h.textContent.includes('different value'))`)]);
   // glossary
   await evalJs(`document.querySelector('.nav-gloss')?.click()`);
   await Bun.sleep(150);

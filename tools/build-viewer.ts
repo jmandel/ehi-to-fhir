@@ -90,8 +90,19 @@ const kindOfRule = (id: string): string =>
 
 // Map a gap's floor-proof rationale to ONE reader-facing family id (keys content.ts COULDNT_FAMILIES).
 // Order matters: first match wins, most-specific first.
-function floorFamily(note: string, path: string): string {
+function floorFamily(note: string, path: string, ourVal?: any): string {
   const n = (note || "").toLowerCase();
+  const emitted = !(ourVal === null || ourVal === undefined);
+  // when WE emitted a value (just not byte-identical / not auto-verified), that's a deliberate
+  // source-faithful divergence — never a "couldn't reproduce". Family records why it diverges.
+  if (emitted) {
+    if (/privacy|redact|masked initials|phi/.test(n)) return "redacted-or-masked";
+    if (/comparator artifact|duplicate-per-ser/.test(n)) return "comparison-artifact";
+    if (/instant|rounding|study-time|byte-matching|byte-reproducible|last_final/.test(n)) return "different-precision";
+    if (/opaque|bijection|fail-closed|non-bijective|same-entity unprovable/.test(n)) return "different-reference";
+    return "we-chose-a-truthful-value"; // truthful name/drug/label/standard-code-choice etc.
+  }
+  // ourVal absent — a genuine "couldn't reproduce"
   if (/grouper|container|no standalone ehi row|hasmember|panel-grouper/.test(n)) return "structural-grouper";
   if (/privacy|redact|masked initials|phi/.test(n)) return "redacted-or-masked";
   if (/comparator artifact|duplicate-per-ser/.test(n)) return "comparison-artifact";
@@ -100,14 +111,13 @@ function floorFamily(note: string, path: string): string {
   if (/server|narrative|userselected|publishing value|api-only|curat|self-?stamp|version/.test(n)) return "server-decoration";
   if (/instant|rounding|study-time|byte-matching|byte-reproducible|last_final/.test(n)) return "not-byte-reproducible";
   if (/opaque|bijection|fail-closed|non-bijective|same-entity unprovable/.test(n)) return "unmatchable-reference";
-  if (/truthful|cosmetic|we emit|us-core-birthsex|hl7 |v3-rolecode|standard /.test(n)) return "we-chose-a-truthful-value";
   return "not-in-export"; // appointment slot end, accidentrelated boolean, absent columns, "blank beats invention", etc.
 }
-type Delta = { path: string; status: "TOLERATED" | "GAP"; targetVal: any; ourVal: any; rationale: string; ruleId?: string; kind?: string; cls?: string; family?: string };
+type Delta = { path: string; status: "TOLERATED" | "GAP"; targetVal: any; ourVal: any; rationale: string; ruleId?: string; kind?: string; cls?: string; family?: string; emitted?: boolean };
 const tolByKey = new Map<string, Delta[]>(), gapByKey = new Map<string, Delta[]>();
 const push = (m: Map<string, Delta[]>, k: string, d: Delta) => (m.get(k) ?? m.set(k, []).get(k)!).push(d);
 for (const t of L.toleratedDeltas || []) if (t.tgtId) push(tolByKey, `${t.rt}/${t.tgtId}`, { path: t.path, status: "TOLERATED", targetVal: t.targetVal, ourVal: t.ourVal, rationale: t.evidence, ruleId: t.ruleId, kind: kindOfRule(t.ruleId) });
-for (const g of L.gaps || []) { if (g.path === "(whole resource)" || !g.tgtId) continue; const note = verdict(g)[1]; push(gapByKey, `${g.rt}/${g.tgtId}`, { path: g.path, status: "GAP", targetVal: g.targetVal, ourVal: g.ourVal ?? null, rationale: note, cls: g.cls, family: floorFamily(note, g.path) }); }
+for (const g of L.gaps || []) { if (g.path === "(whole resource)" || !g.tgtId) continue; const note = verdict(g)[1]; const ov = g.ourVal ?? null; push(gapByKey, `${g.rt}/${g.tgtId}`, { path: g.path, status: "GAP", targetVal: g.targetVal, ourVal: ov, rationale: note, cls: g.cls, family: floorFamily(note, g.path, ov), emitted: ov !== null }); }
 
 // leaf count (EXACT denominator), excluding resourceType + top-level id
 function leafCount(o: any, k = "", top = true): number {
@@ -133,7 +143,7 @@ const pairs = (L.viewerPairs || []).map((p: any) => {
 const cantReproduce = (L.gaps || []).filter((g: any) => g.path === "(whole resource)").map((g: any) => {
   const target = g.tgtId ? TGT.get(`${g.rt}/${g.tgtId}`) : null;
   const note = verdict(g)[1];
-  return { rt: g.rt, key: g.targetVal || "(no identifying content)", tgtId: g.tgtId || null, subgroup: target ? subgroup(g.rt, target) : "(all)", target: target || null, reason: note, family: floorFamily(note, "(whole resource)") };
+  return { rt: g.rt, key: g.targetVal || "(no identifying content)", tgtId: g.tgtId || null, subgroup: target ? subgroup(g.rt, target) : "(all)", target: target || null, reason: note, family: floorFamily(note, "(whole resource)", null) };
 });
 
 // OUR-ONLY — within target-matched types, ours has no aligned target (extra coverage, ref-integrity)
@@ -213,9 +223,45 @@ function buildRedactor(pairs: any[]) {
 }
 const redactor = buildRedactor(pairs);
 
+// ── Bridge-contribution decomposition (canonical build only) ────────────────
+// Splits the reproduced leaves into "the raw export already had it" vs "the terminology bridge
+// recovered it", over the same canonical denominator. Only meaningful for the answer-key build, and
+// only when the lean output (out/) is present to compare against.
+function computeDecomposition(): any {
+  const LEAN_DIR = resolve(ROOT, "out");
+  if (!OUR_DIR.endsWith("out-answerkey") || !existsSync(LEAN_DIR)) return null;
+  const LEAN = indexDir(LEAN_DIR);
+  const lv = (r: any) => { const m = new Map<string, any[]>(); (function go(p: string, n: any) { if (n == null) return; if (Array.isArray(n)) return n.forEach((x) => go(p + "[]", x)); if (typeof n === "object") return Object.entries(n).forEach(([k, v]) => go(p ? `${p}.${k}` : k, v)); (m.get(p) ?? m.set(p, []).get(p)!).push(n); })("", r); return m; };
+  const disp = new Map<string, { g: Map<string, any[]>; t: Map<string, any[]> }>();
+  const sl = (k: string) => disp.get(k) ?? disp.set(k, { g: new Map(), t: new Map() }).get(k)!;
+  const pu = (m: Map<string, any[]>, p: string, v: any) => (m.get(p) ?? m.set(p, []).get(p)!).push(v);
+  for (const g of L.gaps) if (g.tgtId && g.path !== "(whole resource)") pu(sl(`${g.rt}/${g.tgtId}`).g, g.path, { tv: g.targetVal, ov: g.ourVal });
+  for (const t of L.toleratedDeltas) if (t.tgtId) pu(sl(`${t.rt}/${t.tgtId}`).t, t.path, { tv: t.targetVal, ov: t.ourVal });
+  const c = { exportIdentical: 0, exportEquivalent: 0, bridgeVocab: 0, bridgeIdentifier: 0, bridgeOther: 0, different: 0, absent: 0 };
+  const isCoding = (p: string) => /coding\[\]\.(system|code|display)$|\.code$|\.system$/.test(p) || /vaccineCode|valueCodeableConcept/.test(p);
+  const isIdent = (p: string) => /identifier/.test(p);
+  const eq = (a: any, b: any) => JSON.stringify(a) === JSON.stringify(b);
+  for (const vp of L.viewerPairs as any[]) {
+    const target = TGT.get(`${vp.rt}/${vp.tgtId}`); if (!target) continue;
+    const lean = LEAN.get(`${vp.rt}/${vp.ourId}`); const ll = lean ? lv(lean) : new Map();
+    const has = (p: string, v: any) => (ll.get(p) || []).some((x: any) => eq(x, v));
+    const d = disp.get(`${vp.rt}/${vp.tgtId}`) || { g: new Map(), t: new Map() };
+    for (const [path, vals] of lv(target)) {
+      if (path === "id") continue;
+      const pool = [...vals], rm = (v: any) => { const i = pool.findIndex((x) => eq(x, v)); if (i >= 0) pool.splice(i, 1); };
+      for (const g of d.g.get(path) || []) { rm(g.tv); (g.ov === null || g.ov === undefined) ? c.absent++ : c.different++; }
+      for (const t of d.t.get(path) || []) { rm(t.tv); has(path, t.ov) ? c.exportEquivalent++ : (isCoding(path) ? c.bridgeVocab++ : isIdent(path) ? c.bridgeIdentifier++ : c.bridgeOther++); }
+      for (const ev of pool) { has(path, ev) ? c.exportIdentical++ : (isCoding(path) ? c.bridgeVocab++ : isIdent(path) ? c.bridgeIdentifier++ : c.bridgeOther++); }
+    }
+  }
+  for (const g of L.gaps) if (g.path === "(whole resource)") c.absent++;
+  return c;
+}
+const decomposition = computeDecomposition();
+
 const payload = redactor.walk({
   generatedFrom: "compare/LEDGER.json (answer-key, attachments embedded, SmartData excluded)",
-  summary: { exact: L.exact, tolerated: L.tolerated?.total ?? 0, gap: L.gap?.total ?? 0, total: L.totalTargetElements, reconciles: L.reconciles, gapByClass: L.gap?.byClass || {}, perType: L.perType || {} },
+  summary: { exact: L.exact, tolerated: L.tolerated?.total ?? 0, gap: L.gap?.total ?? 0, total: L.totalTargetElements, reconciles: L.reconciles, gapByClass: L.gap?.byClass || {}, perType: L.perType || {}, decomposition },
   pairs, cantReproduce, ourOnly, newResources, samples: samplePairs(),
 });
 

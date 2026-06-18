@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { BUCKET, C } from "./data";
 import { useStore } from "./store";
 
+// set state + reliably scroll to a section (works even if the section value didn't change)
+export const jump = (id: string) => requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView({ block: "start" }));
+
 export const fmt = (v: any): string => {
   if (v === null || v === undefined) return "∅ (absent)";
   if (typeof v === "object") return JSON.stringify(v);

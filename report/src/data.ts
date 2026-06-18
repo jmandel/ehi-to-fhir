@@ -24,8 +24,9 @@ export type OurOnly = { rt: string; key: string; ourId: string; subgroup: string
 export type NewRes = { rt: string; id: string; subgroup: string; our: any };
 export type PerType = Record<string, { exact: number; tolerated: number; gap: number }>;
 
+export type Decomposition = { exportIdentical: number; exportEquivalent: number; bridgeVocab: number; bridgeIdentifier: number; bridgeOther: number; different: number; absent: number };
 export type Dataset = {
-  summary: { exact: number; tolerated: number; gap: number; total: number; reconciles: boolean; gapByClass: Record<string, number>; perType: PerType };
+  summary: { exact: number; tolerated: number; gap: number; total: number; reconciles: boolean; gapByClass: Record<string, number>; perType: PerType; decomposition: Decomposition | null };
   pairs: Pair[];
   cantReproduce: CantRepro[];
   ourOnly: OurOnly[];
@@ -47,6 +48,8 @@ export const summaries = summariesJson as Record<string, {
 export const BUCKET = {
   identical: { name: "Identical", color: "#1a7f37", bg: "#eaf6ec" },
   equivalent: { name: "Equivalent", color: "#bf8700", bg: "#fbf3df" },
+  bridge: { name: "Recovered by terminology mapping", color: "#0e7490", bg: "#e2f1f5" },
+  different: { name: "Different value we emitted", color: "#7e57c2", bg: "#efeafc" },
   couldnt: { name: "Couldn't reproduce", color: "#c2410c", bg: "#fbeae2" },
   extra: { name: "EHI-only", color: "#1f6feb", bg: "#e7f0fd" },
 } as const;
@@ -56,6 +59,9 @@ export const pct = (n: number, d: number) => (d ? Math.round((n / d) * 1000) / 1
 // family lookup for a delta -> the plain-language explanation in content
 export function familyFor(d: Delta) {
   if (d.status === "TOLERATED") return { bucket: "equivalent" as const, fam: (C.equivalenceFamilies as any)[d.kind || "other"] };
+  // GAP: did we emit a value (different, deliberate) or nothing (couldn't reproduce)?
+  const emitted = d.ourVal !== null && d.ourVal !== undefined;
+  if (emitted) return { bucket: "different" as const, fam: (C.differentFamilies as any)[d.family || ""] || (C.couldntFamilies as any)[d.family || "not-in-export"] };
   return { bucket: "couldnt" as const, fam: (C.couldntFamilies as any)[d.family || "not-in-export"] };
 }
 

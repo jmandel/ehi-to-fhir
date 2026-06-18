@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import { useStore } from "./store";
 import { data } from "./data";
-import { Hero, Intro, TwoViews, Buckets, Families, NewResources, Method, Residual, Glossary } from "./sections";
+import { Hero, Intro, TwoViews, Buckets, Families, MissingEntirely, NewResources, Method, Residual, Glossary } from "./sections";
 import { Scorecard } from "./scorecard";
 import { CompareWidget } from "./compare";
 import { FaithfulScatter } from "./charts";
@@ -13,6 +13,7 @@ const NAV = [
   ["scorecard", "Scorecard"],
   ["compare", "Compare resources"],
   ["families", "Why things differ"],
+  ["missing", "What's missing"],
   ["beyond", "Beyond the API"],
   ["method", "How it was built"],
   ["residual", "What's lost"],
@@ -23,7 +24,7 @@ function Nav() {
   const set = useStore((s) => s.set);
   const go = (id: string) => {
     set({ section: id });
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    document.getElementById(id)?.scrollIntoView({ block: "start" });
   };
   return (
     <nav className="nav">
@@ -41,7 +42,7 @@ function Nav() {
 // when store.section changes via a button elsewhere, scroll to it
 function ScrollSync() {
   const section = useStore((s) => s.section);
-  useEffect(() => { document.getElementById(section)?.scrollIntoView({ behavior: "smooth", block: "start" }); }, [section]);
+  useEffect(() => { document.getElementById(section)?.scrollIntoView({ block: "start" }); }, [section]);
   return null;
 }
 
@@ -66,7 +67,8 @@ function App() {
           <CompareWidget />
         </div>
         <div id="families" className="band"><Families /></div>
-        <div id="beyond" className="band alt"><NewResources /></div>
+        <div id="missing" className="band alt"><MissingEntirely /></div>
+        <div id="beyond" className="band"><NewResources /></div>
         <div id="method" className="band"><Method /></div>
         <div id="residual" className="band alt"><Residual /></div>
         <footer className="foot">

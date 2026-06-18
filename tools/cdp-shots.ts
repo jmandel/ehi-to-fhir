@@ -20,10 +20,8 @@ const shoot = async (selector: string, name: string, prep?: string) => {
   const shot = (await send("Page.captureScreenshot", { format: "png" })).result;
   if (shot?.data) { await Bun.write(resolve(ROOT, `report/_shot-${name}.png`), Buffer.from(shot.data, "base64")); console.log("wrote _shot-" + name + ".png"); }
 };
-await shoot("#scorecard", "scorecard");
-await shoot("#compare", "compare", `[...document.querySelectorAll('.cmp-types .pill')].find(b=>b.textContent==='Condition')?.click()`);
-await shoot("#compare", "compare-json", `document.querySelector('.json-controls .chip')?.click()`);
-await shoot("#compare", "compare-raw", `[...document.querySelectorAll('.cmp-dataset .toggle')].find(b=>b.textContent.includes('Raw export'))?.click(); [...document.querySelectorAll('.cmp-types .pill')].find(b=>b.textContent==='Medication')?.click();`);
-await shoot("#families", "families");
-await shoot("#beyond", "beyond", `[...document.querySelectorAll('.cmp-types .pill')]; `);
+await shoot("#top", "hero");
+await shoot("#compare", "compare-json", `[...document.querySelectorAll('.cmp-viewtabs .vtab')].find(b=>b.textContent.includes('Side-by-side'))?.click()`);
+await shoot("#families", "families-treemap", `[...document.querySelectorAll('.chart svg g[style]')][1]?.dispatchEvent(new MouseEvent('click',{bubbles:true}))`);
+await shoot("#missing", "missing");
 ws.close(); proc.kill(); await Bun.sleep(50); process.exit(0);

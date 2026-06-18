@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { data, summaries, BUCKET, pct, targetTypes } from "./data";
 import { useStore } from "./store";
-import { MiniBar } from "./lib";
+import { MiniBar, jump } from "./lib";
 
 type Sort = "faithful" | "size" | "gap";
 
@@ -74,7 +74,7 @@ function ResourceDrill({ rt }: { rt: string }) {
         <Field label="What's genuinely lost">{s.whatsLost}</Field>
         <Field label="Nicest reconstruction trick">{s.mostInterestingTrick}</Field>
       </div>
-      <button className="chip" onClick={() => open(rt)}>Compare real {rt} examples →</button>
+      <button className="chip" onClick={() => { open(rt); jump("compare"); }}>Compare real {rt} examples →</button>
     </div>
   );
 }

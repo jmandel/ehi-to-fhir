@@ -13,6 +13,8 @@ type State = {
   cmpMode: "pairs" | "couldnt" | "extra" | "new"; // which dataset the widget browses
   cmpBucketFilter: BucketFilter;
   cmpDataset: "bridge" | "raw";  // bridge = terminology-bridge ON (canonical); raw = export-only
+  cmpView: "diff" | "json";       // differences table vs side-by-side full resources
+  selectedFamily: string | null;  // treemap drill-in
   showJson: boolean;
   set: (p: Partial<State>) => void;
   openCompare: (rt: string, opts?: Partial<State>) => void;
@@ -28,6 +30,8 @@ export const useStore = create<State>((set) => ({
   cmpMode: "pairs",
   cmpBucketFilter: "all",
   cmpDataset: "bridge",
+  cmpView: "diff",
+  selectedFamily: null,
   showJson: false,
   set: (p) => set(p),
   openCompare: (rt, opts = {}) =>

@@ -96,7 +96,67 @@ export const content = {
         "A “Couldn't reproduce” verdict is earned by searching the *whole* export — not just the obvious table — and showing it came up empty. Early on we repeatedly declared things missing that were actually sitting in another table (a billing code hiding in the claims data, marital status in a claims table). So the rule became: prove absence across the entire export, including the free-text notes, before claiming it.",
     },
     headline:
-      "Identical + Equivalent = **faithfully reconstructed**. For this record that's 88% (12,560 identical + 1,703 equivalent). The remaining 12% (1,857 fields) couldn't be reproduced — every one with a documented reason, grouped into a handful of root causes below.",
+      "Identical + Equivalent = **faithfully reconstructed**. For this record that's 88% (12,562 identical + 1,703 equivalent). The remaining 12% (1,855 fields) couldn't be reproduced — every one with a documented reason, grouped into a handful of root causes below.",
+  },
+
+  // S0b — what the raw export gives you vs. what the terminology bridge adds (hero decomposition)
+  bridgeContribution: {
+    heading: "How much of this is the raw export — and how much is the terminology bridge?",
+    intro:
+      "“Identical” above is flattering, because a lot of it is only identical thanks to a step we added. The raw export ships most coded concepts as **text without a code** (a diagnosis name, not its SNOMED code). We reconstructed a **terminology bridge** — a lookup from Epic's internal codes to standard ones (RxNorm, CVX, ICD, NDF-RT…), keyed entirely on the export's own data — and layered it on. Splitting the result shows how much each part contributes:",
+    buckets: [
+      { key: "exportIdentical", label: "Identical from the raw export", color: "#1a7f37", note: "byte-for-byte, no help needed" },
+      { key: "exportEquivalent", label: "Equivalent (form only)", color: "#bf8700", note: "same meaning, different form" },
+      { key: "bridge", label: "Recovered by terminology mapping", color: "#0e7490", note: "standard codes the bridge rebuilt from the export's own keys" },
+      { key: "couldnt", label: "Couldn't reproduce", color: "#c2410c", note: "not in the raw data, even with the bridge" },
+    ],
+    takeaway:
+      "So from the **raw export alone**, about **59%** comes out identical-or-equivalent. The terminology bridge recovers **another ~30%** of Epic's standard codes — nearly a third of the whole record's fidelity rests on that one reconstructed lookup. Of the rest, a small slice (~1.6%) is a **deliberately different value** we emit instead of mimicking Epic, and ~10% is genuinely **blank** — couldn't reproduce. (You can see this field-by-field in the comparison tool's “raw export only” toggle.)",
+  },
+
+  // Families for the "Different value" group (we emitted something, just not byte-identical / not auto-verified)
+  differentFamilies: {
+    "we-chose-a-truthful-value": {
+      title: "We emitted the source-faithful value",
+      short: "We produced the export's real value, which differs from Epic's rendering.",
+      what: "Epic's API renders the field one way; the export holds another, and we emit the export's. Sometimes ours is *more* complete (Epic masked a clinician to “Z”; the export has “Zoe”); sometimes it's just a different form (“36 S Brooks St” vs “Street”, the literal order text vs a tidied catalog string).",
+      why: "A core rule of the project is faithfulness over mimicry: never copy Epic's output, always derive from the source. Reproducing Epic's exact string would mean fabricating it.",
+      soWhat: "We **did** produce a value — this is a deliberate difference, not a loss. A consumer gets a correct, source-traceable value; it just isn't byte-identical to Epic's.",
+      example: "Medication name: ours “NORTRIPTYLINE HCL 10 MG PO CAPS” (the actual order text) vs Epic “nortriptyline 10 MG capsule”.",
+      guardOrProof: "Each value is derived from a specific export column; this is a documented stance, not a miss.",
+    },
+    "different-reference": {
+      title: "A reference to the same thing, different id",
+      short: "Points at the same entity, but we couldn't prove the 1:1 match to bless it equivalent.",
+      what: "We reference the same real-world entity, but through our id scheme, and the data didn't give a clean one-to-one match to verify they're the same — so it shows as a difference rather than an “equivalent reference”.",
+      why: "When the mapping isn't provably unique, we refuse to assert equivalence (that would risk silently linking the wrong thing).",
+      soWhat: "Our reference resolves correctly within our own bundle; it just isn't auto-verified identical to Epic's.",
+      example: "an ordering provider where several look-alikes prevent a unique match.",
+      guardOrProof: "Fail-closed: no unique natural key ⇒ not blessed as equivalent.",
+    },
+    "different-precision": {
+      title: "A coarser or finer timestamp",
+      short: "Faithful source timestamp that differs from Epic's by seconds (or is date-only).",
+      what: "We emit the timestamp the export actually recorded, which differs from Epic's published instant by a few seconds, or is date-only where Epic has a full datetime.",
+      why: "The export's column was written by a different process than Epic's published value; we won't fabricate the missing precision.",
+      soWhat: "Correct to within seconds/the day; just not byte-identical.",
+      example: "a report finalize time: ours from the export vs Epic's, ~10 seconds apart.",
+      guardOrProof: "The only candidate column differs by non-rounding seconds, so we keep ours rather than guess.",
+    },
+  } as Record<string, Family>,
+
+  // What's missing ENTIRELY — whole categories absent from this export
+  missingEntirely: {
+    heading: "What's missing entirely",
+    intro:
+      "Beyond field-by-field gaps, a few **whole categories of data simply aren't in this export** — so the resources Epic builds from them can't be reconstructed at all. These are export-configuration set-asides, not failures of our code, and we verified each by searching the whole export. The notable ones:",
+    items: [
+      { title: "Physical-exam “SmartData” findings", count: "118 Observations", detail: "Epic's SmartForm/SmartTool findings — structured physical-exam results like “no focal deficit.” The data store that backs every one of them isn't included in this export, so none can be rebuilt. (They're set aside from both sides of the scorecard so they don't distort the comparison.) Their clinical content largely survives as free-text in the linked visit notes — lost as structured data, mostly preserved as narrative.", proof: "Searching the whole export for the SmartData store and its element codes returns nothing." },
+      { title: "Panel & group structure", count: "~75 Observations", detail: "Epic emits “grouper” resources — a Vital Signs panel that ties blood pressure, weight, and height together (via member links), and survey/score totals. The export stores each individual measurement flat, with no row for the panel or header — so the grouping resources and their member links can't be reconstructed. The individual measurements themselves are all present.", proof: "The member measurements exist in the export; no parent/panel row does." },
+      { title: "Care teams & care-plan templates", count: "CareTeam + 3 CarePlans", detail: "Care-team rosters and Epic's care-plan templates/narratives live in stores this export doesn't ship; the patient-instruction text survives inside the notes.", proof: "Whole-export search for the care-team and care-plan-template stores is empty." },
+      { title: "Server-only documents", count: "21 DocumentReferences", detail: "Some documents in Epic's API are pure server-side metadata pointers — the document id and its body aren't in the export, so there's nothing to point at.", proof: "The note id is absent from the export's note tables and no file ships for it." },
+    ],
+    note: "Everything here is genuinely absent from the patient's own download — the kind of gap right-of-access can't currently close, regardless of how good the translation code is.",
   },
 
   // ---------------------------------------------------------------------------
@@ -328,7 +388,7 @@ export const content = {
   // ---------------------------------------------------------------------------
   // S6 — EHI-only resources (the upside twist)
   newResources: {
-    heading: "What the API never gave us",
+    heading: "What Epic's FHIR API never included",
     intro:
       "Here's the twist: in places the raw export contains *more* than the curated API. The patient-access FHIR API is essentially the clinical chart plus insurance coverage. But the export also ships the full billing, claims, remittance, and secure-messaging machinery — none of which the API exposes. So we built valid FHIR for it, with no answer key to compare against; correctness here rests on the official HL7 validator (zero errors) and adversarial review of every mapping.",
     groups: [
