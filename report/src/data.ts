@@ -33,7 +33,7 @@ export type Dataset = {
   newResources: NewRes[];
   samples: Record<string, { subgroup: string; count: number; mostDivergent: { tgtId: string; why: string }; cleanest: { tgtId: string; why: string } }[]>;
 };
-// `data` = canonical (answer-key / terminology bridge ON) — drives the headline, scorecard, families.
+// `data` = canonical (crosswalk / terminology bridge ON) — drives the headline, scorecard, families.
 // `leanData` = the honest "raw export only" view (no bridge): coded concepts collapse to text-only.
 export const data = raw as unknown as Dataset;
 export const leanData = leanRaw as unknown as Dataset;

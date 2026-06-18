@@ -1,26 +1,26 @@
-# Answer-Key Evaluation — coding-gap closure WITH vs WITHOUT
+# Crosswalk Evaluation — coding-gap closure WITH vs WITHOUT
 
 **What this measures.** The EHI relational export does **not** carry standard
 terminology codings (LOINC / SNOMED / ICD-9 / ICD-10 / RxNorm / CVX / CPT / NDF-RT);
-the reference FHIR (`fhir-target/`) does. The opt-in *answer-key layer*
-(`tools/apply-answer-key.ts`) re-attaches the standard codings we reconstructed in
+the reference target FHIR (`fhir-target/`) does. The opt-in *crosswalk layer*
+(`tools/apply-crosswalk.ts`) re-attaches the standard codings we reconstructed in
 `crosswalk/ALL.csv`. This document scores how much of the target's standard-coding
 content our generated FHIR carries **without** the layer (baseline `out/`) vs **with**
-it (`out-answerkey/`).
+it (`out-crosswalk/`).
 
 **How to reproduce.**
 
 ```
-bun build.ts --answer-key      # writes baseline out/ AND enriched out-answerkey/
+bun build.ts --apply-crosswalk # writes baseline out/ AND enriched out-crosswalk/
 bun tools/coding-coverage.ts   # the table below   (add --json for machine output)
 ```
 
-Plain `bun build.ts` stays baseline-only; the `--answer-key` flag adds the
+Plain `bun build.ts` stays baseline-only; the `--apply-crosswalk` flag adds the
 non-destructive enrichment pass into a separate directory, so baseline and enriched
 both exist for side-by-side comparison.
 
-**Honest framing — recoverability, not an independent source.** The answer key was
-*reconstructed by pairing the EHI export with the very reference FHIR we score
+**Honest framing — recoverability, not an independent source.** The crosswalk was
+*reconstructed by pairing the EHI export with the very reference target FHIR we score
 against.* So this is a **recoverability ceiling**: it shows how much of the target's
 coding we can re-derive from data already present in the export, not how well an
 independent coding system would do. A 100% closure for a system means "every target
@@ -41,7 +41,7 @@ they are not the coding gap under study. (Script: `tools/coding-coverage.ts`.)
 
 ## Results — by terminology system
 
-| System    | Target codings | Baseline covered | Answer-key covered | Δ (added) | % of gap closed |
+| System    | Target codings | Baseline covered | Crosswalk covered | Δ (added) | % of gap closed |
 |-----------|---------------:|-----------------:|-------------------:|----------:|----------------:|
 | NDF-RT*   |             76 |        0 (  0%)   |        76 (100%)   |     **+76** |        **100%** |
 | SNOMED    |             71 |        2 (  3%)   |        26 ( 37%)   |     **+24** |          35%    |
@@ -57,7 +57,7 @@ they are not the coding gap under study. (Script: `tools/coding-coverage.ts`.)
 on `AllergyIntolerance.code`.
 
 **Headline:** standard-coding coverage rises from **10% (30/303) baseline → 74%
-(224/303) with the answer key**, closing **71% of the overall coding gap** (+194 of
+(224/303) with the crosswalk**, closing **71% of the overall coding gap** (+194 of
 the 273 missing distinct codings). *(Round-2a widened the crosswalk's LOINC coverage —
 additional lab/vitals observation LOINCs now land via the standard rows — lifting
 LOINC 38→44 / 57%→66% and overall 218→224 / 72%→74%.)*
@@ -70,9 +70,9 @@ sit in the SAME `code.coding[]` arrays as the standard codes (DiagnosticReport O
 fan-out, Medication ATC `http://www.whocc.no/atc`, Encounter/DocumentReference type
 arrays). Coverage measured directly against the crosswalk-asserted
 `(target_system,target_code)` pairs — the honest denominator, since every pair is
-anchored to a real EHI local code and tagged answer-key-sourced:
+anchored to a real EHI local code and tagged crosswalk-sourced:
 
-| Class             | Crosswalk pairs | In target | Baseline | Answer-key | AK % | Δ |
+| Class             | Crosswalk pairs | In target | Baseline | Crosswalk | XW % | Δ |
 |-------------------|----------------:|----------:|---------:|-----------:|-----:|---:|
 | standard          |             284 |       284 |       45 |        228 |  80% | **+183** |
 | epic-instance-oid |             602 |       602 |        0 |        602 | 100% | **+602** |
@@ -91,7 +91,7 @@ table; `--json` emits a `byClass` array).
 
 ## Results — by resource type
 
-| Type               | Target | Baseline | Answer-key | Δ |
+| Type               | Target | Baseline | Crosswalk | Δ |
 |--------------------|-------:|---------:|-----------:|---:|
 | Observation        |     90 |       22 |         38 | +16 |
 | AllergyIntolerance |     79 |        0 |         78 | +78 |
@@ -111,7 +111,7 @@ The layer's wins are concentrated in **AllergyIntolerance (+78)** and **Conditio
 (+59)**, with full closure of **Medication (+22, RxNorm)** and **Immunization (+11,
 CVX)**, plus partial gains on **Observation (+16)** and **DiagnosticReport (+2)**.
 
-## What the answer key fully closes vs leaves residual
+## What the crosswalk fully closes vs leaves residual
 
 **Fully / near-fully closed**
 
@@ -149,7 +149,7 @@ CVX)**, plus partial gains on **Observation (+16)** and **DiagnosticReport (+2)*
   `identifier` (`identifier.system`/`identifier.value`), **not** as a `code.coding` /
   `vaccineCode.coding` that PRIMARY could key on, and there was no FALLBACK bridge for
   either element. **Fixed** by adding two FALLBACK bridges to
-  `tools/apply-answer-key.ts`: `Medication.code` (minted id `med-<ORDER_MED_ID>` →
+  `tools/apply-crosswalk.ts`: `Medication.code` (minted id `med-<ORDER_MED_ID>` →
   `ORDER_MED.MEDICATION_ID` → crosswalk → append RxNorm/NDC to `code.coding`) and
   `Immunization.vaccineCode` (minted id `imm-<IMMUNE_ID>` → `IMMUNE.IMMUNE_ID` →
   crosswalk → append CVX/NDC to `vaccineCode.coding`). Additive-only, idempotent,
@@ -159,7 +159,7 @@ CVX)**, plus partial gains on **Observation (+16)** and **DiagnosticReport (+2)*
 
 ## Bottom line
 
-- **Overall standard coding coverage: 10% baseline → 74% with the answer key**
+- **Overall standard coding coverage: 10% baseline → 74% with the crosswalk**
   (273-pair gap, 71% closed, +194 codings).
 - **BY CLASS:** standard 80% (228/284, +183) · epic-instance-oid 100% (602/602, +602)
   · combined 94% (830/886, +785) of all crosswalk-asserted pairs.

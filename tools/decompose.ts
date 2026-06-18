@@ -16,7 +16,7 @@ import { resolve } from "path";
 const ROOT = resolve(import.meta.dir, "..");
 const L = JSON.parse(readFileSync(resolve(ROOT, "compare/LEDGER.json"), "utf8"));
 function indexDir(dir: string) { const m = new Map<string, any>(); if (!existsSync(dir)) return m; for (const f of readdirSync(dir)) { if (!f.endsWith(".json") || f === "bundle.json") continue; try { const a = JSON.parse(readFileSync(resolve(dir, f), "utf8")); if (Array.isArray(a)) for (const r of a) if (r?.resourceType && r?.id) m.set(`${r.resourceType}/${r.id}`, r); } catch {} } return m; }
-const TGT = indexDir(resolve(ROOT, "fhir-target")), BRIDGE = indexDir(resolve(ROOT, "out-answerkey")), LEAN = indexDir(resolve(ROOT, "out"));
+const TGT = indexDir(resolve(ROOT, "fhir-target")), BRIDGE = indexDir(resolve(ROOT, "out-crosswalk")), LEAN = indexDir(resolve(ROOT, "out"));
 
 // leaf path->values multiset
 function leaves(r: any) { const m = new Map<string, any[]>(); (function go(p: string, n: any) { if (n == null) return; if (Array.isArray(n)) return n.forEach((x) => go(p + "[]", x)); if (typeof n === "object") return Object.entries(n).forEach(([k, v]) => go(p ? `${p}.${k}` : k, v)); (m.get(p) ?? m.set(p, []).get(p)!).push(n); })("", r); return m; }

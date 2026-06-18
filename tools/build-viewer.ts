@@ -92,14 +92,20 @@ const kindOfRule = (id: string): string =>
 // Order matters: first match wins, most-specific first.
 function floorFamily(note: string, path: string, ourVal?: any): string {
   const n = (note || "").toLowerCase();
+  const p = (path || "").toLowerCase();
   const emitted = !(ourVal === null || ourVal === undefined);
+  // a timestamp-family verdict must actually be on a date/time field — the phrase "byte-reproducible"
+  // also appears in REFERENCE-alignment notes (e.g. an encounter ref's identifier), which are NOT timestamps.
+  const temporal = /date|time|instant|issued|authored|recorded|period|effective|created|sent|occurrence|\.start$|\.end$/.test(p);
+  const isInstant = (s: string) => temporal && /instant|rounding|study-time|byte-matching|byte-reproducible|last_final|finalize/.test(s);
+  const isRef = (s: string) => /opaque|bijection|fail-closed|non-bijective|same-entity unprovable|iso-ref|ref-identifier|opaque enc|encounter ref/.test(s);
   // when WE emitted a value (just not byte-identical / not auto-verified), that's a deliberate
   // source-faithful divergence — never a "couldn't reproduce". Family records why it diverges.
   if (emitted) {
     if (/privacy|redact|masked initials|phi/.test(n)) return "redacted-or-masked";
     if (/comparator artifact|duplicate-per-ser/.test(n)) return "comparison-artifact";
-    if (/instant|rounding|study-time|byte-matching|byte-reproducible|last_final/.test(n)) return "different-precision";
-    if (/opaque|bijection|fail-closed|non-bijective|same-entity unprovable/.test(n)) return "different-reference";
+    if (isInstant(n)) return "different-precision";
+    if (isRef(n)) return "different-reference";
     return "we-chose-a-truthful-value"; // truthful name/drug/label/standard-code-choice etc.
   }
   // ourVal absent — a genuine "couldn't reproduce"
@@ -109,8 +115,8 @@ function floorFamily(note: string, path: string, ourVal?: any): string {
   if (/no dx_id->snomed|no dx_id→snomed|->snomed|→snomed|crosswalk|loinc.*absent|snomed.*absent|\.96|flowsheet/.test(n)) return "no-code-crosswalk";
   if (/dict|enc_type_c|visit-type|role.*not exported|template|provider-mnemonic|allergen-type|numeric epic code|only .*_c_name|epic-oid/.test(n)) return "withheld-dictionary";
   if (/server|narrative|userselected|publishing value|api-only|curat|self-?stamp|version/.test(n)) return "server-decoration";
-  if (/instant|rounding|study-time|byte-matching|byte-reproducible|last_final/.test(n)) return "not-byte-reproducible";
-  if (/opaque|bijection|fail-closed|non-bijective|same-entity unprovable/.test(n)) return "unmatchable-reference";
+  if (isInstant(n)) return "not-byte-reproducible";
+  if (isRef(n)) return "unmatchable-reference"; // covers opaque/iso-ref reference-detail notes (e.g. encounter ref identifier)
   return "not-in-export"; // appointment slot end, accidentrelated boolean, absent columns, "blank beats invention", etc.
 }
 type Delta = { path: string; status: "TOLERATED" | "GAP"; targetVal: any; ourVal: any; rationale: string; ruleId?: string; kind?: string; cls?: string; family?: string; emitted?: boolean };
@@ -229,7 +235,8 @@ const redactor = buildRedactor(pairs);
 // only when the lean output (out/) is present to compare against.
 function computeDecomposition(): any {
   const LEAN_DIR = resolve(ROOT, "out");
-  if (!OUR_DIR.endsWith("out-crosswalk") || !existsSync(LEAN_DIR)) return null;
+  // compute for any non-lean (crosswalk/answer-key) build, as long as the lean output exists to diff against
+  if (OUR_DIR === LEAN_DIR || !existsSync(LEAN_DIR)) return null;
   const LEAN = indexDir(LEAN_DIR);
   const lv = (r: any) => { const m = new Map<string, any[]>(); (function go(p: string, n: any) { if (n == null) return; if (Array.isArray(n)) return n.forEach((x) => go(p + "[]", x)); if (typeof n === "object") return Object.entries(n).forEach(([k, v]) => go(p ? `${p}.${k}` : k, v)); (m.get(p) ?? m.set(p, []).get(p)!).push(n); })("", r); return m; };
   const disp = new Map<string, { g: Map<string, any[]>; t: Map<string, any[]> }>();

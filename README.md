@@ -5,12 +5,12 @@ thousands-of-TSV-tables dump a patient receives) and emit **FHIR R4 resources** 
 as faithfully as the source allows, the resources Epic's live FHIR API returns.
 
 The reference target (`../health-records-fhir.json`, split per-type into `fhir-target/`) is used as
-an **answer key for evaluation**, not a thing to copy. The goal is *faithful, valid, semantically
+a **reference target for evaluation**, not a thing to copy. The goal is *faithful, valid, semantically
 correct* FHIR derived from the EHI — not byte-identity with Epic's output.
 
 ```bash
 bun build.ts                 # run all generators → out/<Type>.json + out/bundle.json (+ reference-integrity gate)
-bun build.ts --answer-key    # also emit out-answerkey/ with recovered standard codings layered on
+bun build.ts --apply-crosswalk # also emit out-crosswalk/ with recovered standard codings layered on
 bun compare.ts               # shape scorecard vs fhir-target/ (counts, missing paths, coding systems)
 bun compare/classify.ts      # tolerance-aware ledger: every target element EXACT / TOLERATED / GAP
 bun tools/validate.ts <Type> # HL7 FHIR R4 validator (US Core IG, -tx n/a)
@@ -39,8 +39,8 @@ It is auto-built and deployed to **GitHub Pages** by `.github/workflows/pages.ym
 ## Data & privacy
 
 This repo deliberately **does not** contain the raw record. The Epic export (`ehi.sqlite`), the raw
-files (`raw/`), the reference-FHIR answer key (`fhir-target/`), and the generated FHIR (`out/`,
-`out-answerkey/`) are all git-ignored. What ships is the deterministic translator code plus the
+files (`raw/`), the reference-FHIR target (`fhir-target/`), and the generated FHIR (`out/`,
+`out-crosswalk/`) are all git-ignored. What ships is the deterministic translator code plus the
 **derived, redaction-safe** report data (`report/viewer/data*.json`). The specimen is the author's own
 real Epic record, published with consent; direct identifiers it chose to withhold (phone, email, street,
 MRN) — and one family member's name/phone — are redacted on **both** sides of every comparison, derived
@@ -62,7 +62,7 @@ Regenerating `report/viewer/data*.json` requires the private source, which stays
   validator-clean: **Communication** (secure messaging) and the billing/insurance set —
   **ExplanationOfBenefit, Claim, ChargeItem, Invoice, Account, PaymentReconciliation,
   CoverageEligibilityResponse**.
-- **Standard-coding coverage** vs the target: **10% baseline → 71% with the answer key** (RxNorm, CVX,
+- **Standard-coding coverage** vs the target: **10% baseline → 71% with the crosswalk** (RxNorm, CVX,
   ICD-10/9, and allergen NDF-RT near-fully closed).
 - **Tolerance-aware ledger** (every target element accounted for, reconciled):
   **14,330 = EXACT 6,293 + TOLERATED 534 + GAP 7,503** (GAP = real-gap 3,226 / unsure 957 / coding-gap 3,320).
@@ -96,10 +96,10 @@ Regenerating `report/viewer/data*.json` requires the private source, which stays
    over omitting or hardcoding a brand. Applied everywhere via a target-derived census; a "naked-display"
    check (a `.display` with no `.reference`) gates regressions.
 
-6. **The terminology answer key.** `crosswalk/ALL.csv` reconstructs Epic's local-code → standard-code
+6. **The terminology crosswalk.** `crosswalk/ALL.csv` reconstructs Epic's local-code → standard-code
    map (346 mappings, 278 EHI-verified) by pairing the EHI's local codes with the standard codings in the
-   reference FHIR. `bun build.ts --answer-key` layers these on (additive, idempotent, no fabrication) →
-   `out-answerkey/`, lifting coding coverage 10% → 71%. We verified the missing codes have **no EHI home**
+   reference target FHIR. `bun build.ts --apply-crosswalk` layers these on (additive, idempotent, no fabrication) →
+   `out-crosswalk/`, lifting coding coverage 10% → 71%. We verified the missing codes have **no EHI home**
    (the master files ship bare), so the CSV sidecar — not a shadow overlay — is the right delivery
    (`shadow/DECISION.md`, `crosswalk/SOURCE-FEASIBILITY.md`).
 
@@ -117,13 +117,13 @@ Regenerating `report/viewer/data*.json` requires the private source, which stays
 
 ```
 ehi.sqlite               the EHI specimen (load via ../skills/reading-epic-ehi-export/scripts/load.ts)
-fhir-target/             reference FHIR per resourceType (the evaluation answer key)
+fhir-target/             reference FHIR per resourceType (the evaluation reference target)
 lib/                     db.ts (read-only query + date helpers), ids.ts (deterministic id minting + ref),
                          gen.ts (emit + clean), profile.ts, q.ts
 src/                     one generator per domain (writes out/<Type>.json; Observation sharded by category)
-out/                     generated FHIR + bundle.json   ·   out-answerkey/  enriched variant
-tools/                   refcheck.ts · find-concept.ts · apply-answer-key.ts · validate.ts (+ validator_cli.jar)
-crosswalk/               the terminology answer key (ALL.csv + per-area) + COVERAGE/README/SOURCE-FEASIBILITY
+out/                     generated FHIR + bundle.json   ·   out-crosswalk/  enriched variant
+tools/                   refcheck.ts · find-concept.ts · apply-crosswalk.ts · validate.ts (+ validator_cli.jar)
+crosswalk/               the terminology crosswalk (ALL.csv + per-area) + COVERAGE/README/SOURCE-FEASIBILITY
 compare/                 classify.ts (tolerance-aware) · tolerances.ts (registry) · LEDGER.json · TOLERANCES.md
 build.ts                 run generators, assemble bundle, run the reference-integrity gate
 compare.ts               shape scorecard vs fhir-target/
@@ -174,10 +174,10 @@ with what moved), and the **residual register** (each remaining gap with the pro
 
 ```
 LOOP (until TODO.md has no actionable item AND every residual carries its proof):
-  1. MEASURE  — build (± --answer-key); run the gates (refcheck, validate, compare/classify).
+  1. MEASURE  — build (± --apply-crosswalk); run the gates (refcheck, validate, compare/classify).
   2. PARTITION & TRIAGE — bucket every delta: EXACT / TOLERATED / GAP{recoverable | approximatable |
                 tolerance-candidate | truly-unrecoverable}. Turn each actionable bucket into a TODO
-                entry: {what, verdict, EHI/answer-key/external source or proof-path, effort, FILES it
+                entry: {what, verdict, EHI/crosswalk/external source or proof-path, effort, FILES it
                 touches, dependencies}.
   3. PLAN THE ROUND — select a set of TODO items to do now and pack them into ONE workflow, or SEVERAL
                 COMPATIBLE PARALLEL workflows. "Compatible" = no shared-resource races:
@@ -191,7 +191,7 @@ LOOP (until TODO.md has no actionable item AND every residual carries its proof)
   4. EXECUTE  — run the round; every fix adversarially reviewed; re-run the gates after.
   5. JUSTIFY  — for anything still in GAP, demand the PROOF before it may be called residual:
                   • the exhaustive search (tables AND the note corpus) showing it is truly absent, OR
-                  • that it isn't answer-key-coverable (no EHI-anchored concept/entity to key to) and
+                  • that it isn't crosswalk-coverable (no EHI-anchored concept/entity to key to) and
                     isn't recoverable via a cross-domain source or an external authority, OR
                   • the generation method shown infeasible/lossy, OR
                   • a reviewed tolerance with its anti-drift pin.
@@ -209,7 +209,7 @@ can be one workflow or a fan of parallel ones — group by file-ownership, seria
 parallelize the rest. **The stop bar (step 5)** is evidence: a residual is admissible only with its proof
 (searched-and-absent, not-anchorable, infeasible, or a reviewed tolerance). "We didn't try" is never a
 valid residual — and in practice the floor keeps shrinking, because each "it can't be done" that gets
-pushed on (answer-key coverage, a cross-domain column, an external registry like NPPES) usually turns out
+pushed on (crosswalk coverage, a cross-domain column, an external registry like NPPES) usually turns out
 to be doable. That's why the log, not a vibe, decides when the loop ends.
 
 ### Reproduce / extend with a new agent
@@ -225,7 +225,7 @@ to be doable. That's why the log, not a vibe, decides when the loop ends.
    field.
 
 The actual sequence that built this: domain generators → anti-cheat audit → false-absence recovery →
-reference-integrity (dangling→0 + specificity) → terminology crosswalk → answer-key layer → tolerance
+reference-integrity (dangling→0 + specificity) → terminology crosswalk → crosswalk layer → tolerance
 registry → residual deep-dive. Each was one fan-out + adversarial-review workflow; the coordinator chained
 them, reading each result before launching the next.
 
@@ -248,7 +248,7 @@ turning each lesson into a gate. The honest version:
   "search-before-absence" rule is in this README because we violated it repeatedly.
 
 - **We got caught cheating.** Early generators hardcoded `PATIENT_DISPLAY = "Mandel, Josh C"` — a value
-  *copied from the answer key*, not derived from the EHI. The user named it ("this kind of thing is
+  *copied from the reference target*, not derived from the EHI. The user named it ("this kind of thing is
   cheating"). That triggered the anti-cheat audit and the rule "derive, never copy" — and the truthful
   derivation gives "Mandel, **Joshua** C" (the real name), not the target's nickname. The whole "we don't
   chase the target's strings" stance is a reaction to having done exactly that.
@@ -301,19 +301,19 @@ survive.
 
 ## Honest residual (what's genuinely lost)
 
-With the answer key on, the remaining GAP is, in priority order: **(1) terminology** Epic assigns
+With the crosswalk on, the remaining GAP is, in priority order: **(1) terminology** Epic assigns
 server-side that has no EHI home (closed by the crosswalk where verified); **(2) FHIR-server
 decorations** — narrative, `meta.*`, Epic-resolved reference labels — and **un-shipped stores** (the
 physical-exam **SmartData** store is the dominant known set-aside; its clinical content survives as
 narrative in the linked notes); **(3) computed cross-links** (panel↔member, order→result). The
 `unsure` bucket (semantic-linkage choices) and a full recoverable-vs-unrecoverable breakdown of the
-answer-key-enabled residual are analyzed in `RESIDUAL-DEEPDIVE.md`.
+crosswalk-enabled residual are analyzed in `RESIDUAL-DEEPDIVE.md`.
 
 ## Document map
 
 `GAPS.md` (gap register) · `SHAPE-GAPS.md` (missing-path trends) · `VALIDATION.md` (FHIR validator) ·
-`REFERENCE-INTEGRITY.md` · `ANSWER-KEY-EVAL.md` (coding coverage with/without) · `NEW-RESOURCES.md`
+`REFERENCE-INTEGRITY.md` · `CROSSWALK-EVAL.md` (coding coverage with/without) · `NEW-RESOURCES.md`
 (comms+billing) · `FALSE-ABSENCE-REGISTER.md` + `ROOT-CAUSE.md` (the recovery sweep) · `AUDIT.md`
 (anti-cheat) · `HARVEST.md` (better-data candidates) · `crosswalk/*` · `compare/TOLERANCES.md` ·
 `shadow/DECISION.md` (overlay evaluated, not adopted) · `design/*` (per-resource element→EHI mapping) ·
-`RESIDUAL-DEEPDIVE.md` (the answer-key-enabled residual analysis).
+`RESIDUAL-DEEPDIVE.md` (the crosswalk-enabled residual analysis).
