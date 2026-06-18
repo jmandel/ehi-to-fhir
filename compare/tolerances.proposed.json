@@ -1,0 +1,175 @@
+{
+  "_meta": {
+    "generatedBy": "agent:author",
+    "date": "2026-06-17",
+    "source": "compare/propose.ts survey (3923 deltas) + ground-truth verification against out/ and fhir-target/ and ehi.sqlite",
+    "note": "CANDIDATE rules only — every rule cites a real surveyed cluster and was verified against data before authoring. MECHANICAL rules carry a narrow VERIFYING predicate that re-checks the divergence from data on every run and still fails a same-shaped regression. BLESSED rules pin BOTH exact values. Clusters with no rule (Encounter.class*, Encounter.type*, all coding-gap, Observation whole-resource, basedOn, Condition.encounter.display) are left as GAPS deliberately — see _gapsLeftAsGaps.",
+    "verificationFindings": [
+      "Encounter natural key identifier.value DOES align for the 32 matched pairs (our export emits some encounters keyed on the Epic-FHIR CSN, e.g. enc-1175103496, enc-1169847546, enc-1098684634, which match target identifier.value exactly).",
+      "There is NO crosswalk in the EHI between the EHI CSN (e.g. 720803470) and the Epic-FHIR-published CSN (e.g. 1175103496): PAT_ENC only holds the EHI CSN. So isomorphic-ref for an encounter reference MUST compare the encounter.identifier.value (CSN) carried on BOTH sides, not the synthetic reference id.",
+      "Condition.encounter survey delta '1169847546 vs 1098684634' is an alignment artifact (Conditions aligned by code.text@onset can pair to different encounters). 18 Condition-encounter CSNs DO overlap; same-CSN pairs are isomorphic, DIFFERENT-CSN pairs are genuinely different encounters and MUST stay GAP — handled by the same predicate.",
+      "Encounter.class on target carries THREE distinct Epic-local classes (13/Support OP Encounter, 4/HOV, 5/Appointment) all collapsed to one AMB/ambulatory on our side. This is a lossy many-to-one, NOT an isomorphic re-encoding — no structural-variant rule; left as real-gap.",
+      "ALL the display pairs (Mandel,Josh C / Mandel,Joshua C; Jess Y / YOUNG,JESS; Assoc Physicians Internal Medicine / MAC APL INTERNAL MEDICINE) are NOT equal after whitespace/case normalize and NOT containment. The only mechanical justification is sibling-.reference-resolves-to-same-natural-key-entity. cosmetic-display rules are therefore predicated on that sibling-ref check, NOT on string normalization.",
+      "Observation.code.text and Practitioner.name[].text have NO sibling reference to confirm same entity -> blessed-value (pinned pair) is the only available tier.",
+      "Practitioner SER key 144590 matches target<->our (prac-144590 <-> ey81...; identifier value 144590 present both sides); names 'Dr. Z Rammelkamp' (privacy-masked) vs 'Zoe L Rammelkamp' (full)."
+    ]
+  },
+  "rules": [
+    {
+      "id": "iso-ref-observation-subject",
+      "kind": "isomorphic-ref",
+      "scope": "Observation.subject.reference",
+      "predicate": "Resolve the target reference in the target entity index and our reference in our entity index; tolerate ONLY if BOTH resolve to a Patient whose natural key normalizes to the singleton 'patient' (the export has exactly one Patient). Same-shaped regression that still GAPs: if our reference resolves to any resourceType other than Patient, or to an entity whose natural key != target's, it fails and surfaces as a GAP.",
+      "rationale": "Synthetic id pat-Z7004242 vs target euBTtyZ... point at the same single Patient; only the minted id differs. Cited cluster: Observation.subject.reference (60).",
+      "coversDeltas": 60,
+      "blessedBy": "agent:author"
+    },
+    {
+      "id": "iso-ref-condition-subject",
+      "kind": "isomorphic-ref",
+      "scope": "Condition.subject.reference",
+      "predicate": "Same as iso-ref-observation-subject: both references must resolve to the singleton Patient natural key 'patient'. A reference to any other entity or type fails -> GAP.",
+      "rationale": "Same single Patient, differing synthetic id. Cited cluster: Condition.subject.reference (53).",
+      "coversDeltas": 53,
+      "blessedBy": "agent:author"
+    },
+    {
+      "id": "iso-ref-observation-encounter-by-csn",
+      "kind": "isomorphic-ref",
+      "scope": "Observation.encounter.reference",
+      "predicate": "Resolve both references to their Encounter resource and read the Encounter.identifier where system='urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8'. Tolerate ONLY if the CSN identifier.value is byte-equal on both sides. There is no EHI->Epic-FHIR CSN crosswalk, so equality of this carried CSN is the sole proof of same encounter. Same-shaped regression that still GAPs: a reference re-pointed to an Encounter with a DIFFERENT CSN value fails and surfaces as a GAP.",
+      "rationale": "Matched Observation pairs reference the same encounter; our enc-<CSN> id differs from target's opaque FHIR id but the CSN identifier.value matches. Cited cluster: Observation.encounter.reference (60).",
+      "coversDeltas": 60,
+      "blessedBy": "agent:author"
+    },
+    {
+      "id": "iso-ref-condition-encounter-by-csn",
+      "kind": "isomorphic-ref",
+      "scope": "Condition.encounter.reference",
+      "predicate": "Compare the encounter.identifier.value (CSN, system urn:oid:1.2.840.114350.1.13.283.2.7.3.698084.8) carried inline on the Condition.encounter on BOTH sides (target carries identifier+display; ours carries reference Encounter/enc-<CSN>+identifier). Tolerate ONLY if the CSN values are byte-equal. CRITICAL fail-safe: when the CSNs DIFFER (e.g. survey's 1169847546 vs 1098684634, a true different-encounter mismatch produced by code.text alignment), the predicate fails and it stays a GAP. This RECLASSIFIES the survey's 'unsure' for this path: same-CSN -> tolerated isomorphic, different-CSN -> real GAP.",
+      "rationale": "The synthetic reference id always differs (target opaque vs our enc-<CSN>) but the same OID-scoped CSN identifier proves identity; 18 Condition-encounter CSNs verified overlapping. Cited clusters: Condition.encounter.reference (46, was 'unsure') and Condition.encounter.identifier.value (31, was 'real-gap' but is the same divergence — isomorphic when CSN equal, GAP when not).",
+      "coversDeltas": 46,
+      "blessedBy": "agent:author"
+    },
+    {
+      "id": "iso-ref-observation-specimen-by-accession",
+      "kind": "isomorphic-ref",
+      "scope": "Observation.specimen.reference",
+      "predicate": "Resolve both references to their Specimen resource and compare Specimen.identifier.value (the accession number, e.g. H613684 / M585457). Tolerate ONLY if the accession identifier.value matches. Same-shaped regression that still GAPs: a reference to a Specimen with a different accession fails -> GAP. (Our specimen ref has no inline identifier, so resolution-then-compare is required, not a string compare of the ref.)",
+      "rationale": "Specimen accession is the stable natural key; synthetic spec-<id> differs from target opaque id but accession matches. Cited cluster: Observation.specimen.reference (40).",
+      "coversDeltas": 40,
+      "blessedBy": "agent:author"
+    },
+    {
+      "id": "iso-ref-encounter-participant-by-ser",
+      "kind": "isomorphic-ref",
+      "scope": "Encounter.participant[].individual.reference",
+      "predicate": "Resolve both references to a Practitioner and compare the SER provider number (the identifier.value matching /^\\d{4,7}$/, e.g. 554385) present on both sides. Tolerate ONLY if the SER numbers are equal. Same-shaped regression that still GAPs: a participant re-pointed to a Practitioner with a different SER (a different clinician) fails -> GAP.",
+      "rationale": "Practitioner SER id is shared across both exports as an identifier.value; only the synthetic prac-<SER> vs opaque id differs. Cited cluster: Encounter.participant[].individual.reference (32).",
+      "coversDeltas": 32,
+      "blessedBy": "agent:author"
+    },
+    {
+      "id": "iso-ref-encounter-location-by-name",
+      "kind": "isomorphic-ref",
+      "scope": "Encounter.location[].location.reference",
+      "predicate": "Resolve both references to a Location and compare the Location.name after whitespace/case normalization. Tolerate ONLY if the normalized names are equal (natural key for Location/Organization is the name). Same-shaped regression that still GAPs: a reference re-pointed to a Location with a different name fails -> GAP. NOTE: this tolerates only the synthetic-id difference for the SAME-named location; the DISPLAY-string divergence on this same node ('Assoc Physicians Internal Medicine' vs 'MAC APL INTERNAL MEDICINE') is a SEPARATE entity-confirmed cosmetic-display delta handled by cosmetic-encounter-location-display — the reference key itself (resolved Location.name) matches.",
+      "rationale": "Location is keyed by name; synthetic loc-<id> vs target opaque id differs but the resolved Location identifies the same place. Cited cluster: Encounter.location[].location.reference (32).",
+      "coversDeltas": 32,
+      "blessedBy": "agent:author"
+    },
+    {
+      "id": "cosmetic-observation-subject-display",
+      "kind": "cosmetic-display",
+      "scope": "Observation.subject.display",
+      "predicate": "Tolerate the display string difference ONLY when the SIBLING .reference at the same node resolves (via iso-ref-observation-subject's natural-key check) to the SAME Patient entity on both sides. The display values are NOT equal after normalize (target nickname 'Mandel, Josh C' vs our fuller 'Mandel, Joshua C'); justification is entity-identity, not string equality. Same-shaped regression that still GAPs: if the sibling reference points at a different entity, the cosmetic tolerance does not apply and the delta is a GAP (a wrong label on a wrong ref is never cosmetic).",
+      "rationale": "Same Patient (sibling ref isomorphic); label differs by nickname/fuller-name. Cited cluster: Observation.subject.display (60).",
+      "coversDeltas": 60,
+      "blessedBy": "agent:author"
+    },
+    {
+      "id": "cosmetic-condition-subject-display",
+      "kind": "cosmetic-display",
+      "scope": "Condition.subject.display",
+      "predicate": "Same as cosmetic-observation-subject-display: tolerate only when sibling .reference resolves to the SAME singleton Patient. 'Mandel, Josh C' vs 'Mandel, Joshua C'. Different-entity sibling ref -> GAP.",
+      "rationale": "Same Patient, nickname vs fuller name. Cited cluster: Condition.subject.display (53).",
+      "coversDeltas": 53,
+      "blessedBy": "agent:author"
+    },
+    {
+      "id": "cosmetic-encounter-subject-display",
+      "kind": "cosmetic-display",
+      "scope": "Encounter.subject.display",
+      "predicate": "Tolerate only when the sibling Encounter.subject.reference resolves to the SAME singleton Patient on both sides. 'Mandel, Josh C' vs 'Mandel, Joshua C'. Different-entity sibling ref -> GAP.",
+      "rationale": "Same Patient, nickname vs fuller name. Cited cluster: Encounter.subject.display (32).",
+      "coversDeltas": 32,
+      "blessedBy": "agent:author"
+    },
+    {
+      "id": "cosmetic-documentreference-subject-display",
+      "kind": "cosmetic-display",
+      "scope": "DocumentReference.subject.display",
+      "predicate": "Tolerate only when the sibling DocumentReference.subject.reference resolves to the SAME singleton Patient on both sides. 'Mandel, Josh C' vs 'Mandel, Joshua C'. Different-entity sibling ref -> GAP.",
+      "rationale": "Same Patient, nickname vs fuller name. Cited cluster: DocumentReference.subject.display (28).",
+      "coversDeltas": 28,
+      "blessedBy": "agent:author"
+    },
+    {
+      "id": "cosmetic-encounter-participant-display",
+      "kind": "cosmetic-display",
+      "scope": "Encounter.participant[].individual.display",
+      "predicate": "Tolerate the display difference ONLY when the sibling .individual.reference resolves (via iso-ref-encounter-participant-by-ser) to a Practitioner with the SAME SER number on both sides. The target is privacy-masked ('Jess Y') and ours is the full/cased name ('YOUNG, JESS'); these are NOT normalize-equal, so the SER-identity check is the sole justification. Same-shaped regression that still GAPs: a different SER on the sibling ref -> GAP (a name swapped onto a different clinician is never cosmetic).",
+      "rationale": "Same Practitioner (SER matches); privacy-mask vs full name. Cited cluster: Encounter.participant[].individual.display (32).",
+      "coversDeltas": 32,
+      "blessedBy": "agent:author"
+    },
+    {
+      "id": "cosmetic-encounter-location-display",
+      "kind": "cosmetic-display",
+      "scope": "Encounter.location[].location.display",
+      "predicate": "Tolerate the display difference ONLY when the sibling .location.reference resolves (via iso-ref-encounter-location-by-name) to a Location whose NORMALIZED NAME matches on both sides. Here the resolved Location.name keys are equal ('assoc physicians internal medicine') even though the embedded DISPLAY strings differ ('Assoc Physicians Internal Medicine' vs 'MAC APL INTERNAL MEDICINE' — an internal-vs-published label of the SAME resolved location). Same-shaped regression that still GAPs: if the resolved Location names differ (a different place), the tolerance does not apply -> GAP. NOTE: this is the narrow case where the resolved natural key IS equal; it does NOT cover department-vs-corporate-brand mismatches where names do not resolve equal (those would remain GAP / candidate blessed-value).",
+      "rationale": "Same Location (resolved name key matches); internal abbreviation vs published label. Cited cluster: Encounter.location[].location.display (32).",
+      "coversDeltas": 32,
+      "blessedBy": "agent:author"
+    },
+    {
+      "id": "blessed-observation-code-text-bun-creat-ratio",
+      "kind": "blessed-value",
+      "scope": "Observation.code.text",
+      "predicate": "",
+      "pinTargetValue": "BUN/Creatinine Ratio",
+      "pinOurValue": "BUN / CREAT RATIO",
+      "rationale": "Same lab analyte; our text is the EHI source label (abbreviated, spaced) and target is Epic's expanded label. NOT normalize-equal and NO sibling reference exists to mechanically confirm same concept (the LOINC coding[] is itself a separate coding-gap on our side), so this falls to a pinned attestation. Tolerates ONLY this exact (target,our) pair; any drift in either string resurfaces as a GAP. This pin covers ONLY the BUN/Creat case (2 of our Observations); the remaining Observation.code.text deltas in the 39-cluster are OTHER lab names and each needs its own blessing or a real fix — they stay GAP.",
+      "coversDeltas": 2,
+      "blessedBy": "agent:author",
+      "recommendHumanSignoff": true
+    },
+    {
+      "id": "blessed-practitioner-name-text-rammelkamp",
+      "kind": "blessed-value",
+      "scope": "Practitioner.name[].text",
+      "predicate": "",
+      "pinTargetValue": "Dr. Z Rammelkamp",
+      "pinOurValue": "Zoe L Rammelkamp",
+      "rationale": "Same Practitioner (SER 144590 matches on both sides). Target is privacy-masked to a title + first-initial + family; ours is the fuller truthful name from the EHI. There is NO sibling reference inside a Practitioner resource to mechanically confirm identity beyond the SER key match used for alignment, so this is a per-case attestation. Pinned to this exact pair; any drift resurfaces as a GAP. This covers ONLY the Rammelkamp row; the other ~20 Practitioner.name[].text deltas are other clinicians and each need their own pin -> they stay GAP. HIGH-STAKES: a name substitution a reviewer might dispute -> human sign-off required.",
+      "coversDeltas": 1,
+      "blessedBy": "agent:author",
+      "recommendHumanSignoff": true
+    }
+  ],
+  "_gapsLeftAsGaps": {
+    "real-gap": [
+      "Observation.(whole resource) [298] — under-production (smartdata=118 emit 0) + vitals pairing failure (no LOINC, different effective ts). No equivalence to tolerate.",
+      "Observation.basedOn[].reference [40] + Observation.basedOn[].identifier.value [40] — we emit no ServiceRequest; target links one. Genuine omission, not a justified divergence.",
+      "Condition.encounter.display [40] (e.g. 'Lab') — we omit the encounter display text on the Condition link. Real omission.",
+      "Encounter.class.system [32] + Encounter.class.code [32] + Encounter.class.display [32] — target carries 3 distinct Epic-local classes (13/Support OP Encounter, 4/HOV, 5/Appointment) collapsed to ONE AMB/ambulatory. Lossy many-to-one; NOT an isomorphic structural-variant. Stays GAP.",
+      "Encounter.type[].coding[].system [32] (and type coding code, see coding-gap) — we emit no coded Encounter.type (only .text 'Elective'); target has Epic-local-OID coding. Omission."
+    ],
+    "coding-gap": [
+      "Observation.code.coding[].code [60] / display [41]; Condition.code.coding[].code/system/display [53/53/53]; Encounter.type[].coding[].code [32]; DocumentReference nested extension valueCodeableConcept.coding[].code [28] — all standard/standardish codings absent on our side. Stay in the dedicated coding-gap bucket (tolerated-as-known, never 'match')."
+    ],
+    "our-only": [
+      "Observation.basedOn[].identifier.value [40] present in ours absent in target — our extra ServiceRequest identifier. Not a target element; no tolerance needed (informational)."
+    ]
+  }
+}

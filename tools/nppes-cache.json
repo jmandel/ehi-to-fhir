@@ -1,0 +1,172 @@
+{
+  "1073140950": {
+    "npi": "1073140950",
+    "enumerationType": "NPI-1",
+    "firstName": "AARON",
+    "lastName": "GILMOUR",
+    "credential": "OTR/L",
+    "sex": "M",
+    "taxonomies": [
+      {
+        "code": "225X00000X",
+        "desc": "Occupational Therapist",
+        "primary": true
+      }
+    ],
+    "fetchedAt": "2026-06-18T03:38:09.464Z",
+    "source": "nppes"
+  },
+  "1073855474": {
+    "npi": "1073855474",
+    "enumerationType": "NPI-1",
+    "firstName": "PUNEET",
+    "middleName": "S",
+    "lastName": "DHILLON",
+    "credential": "M.D.",
+    "sex": "F",
+    "taxonomies": [
+      {
+        "code": "390200000X",
+        "desc": "Student in an Organized Health Care Education/Training Program",
+        "primary": false
+      },
+      {
+        "code": "207R00000X",
+        "desc": "Internal Medicine",
+        "primary": true
+      }
+    ],
+    "fetchedAt": "2026-06-17T20:29:56.285Z",
+    "source": "nppes"
+  },
+  "1205323193": {
+    "npi": "1205323193",
+    "enumerationType": "NPI-1",
+    "firstName": "ZOE",
+    "middleName": "LOUISE",
+    "lastName": "RAMMELKAMP",
+    "credential": "MD",
+    "sex": "F",
+    "taxonomies": [
+      {
+        "code": "390200000X",
+        "desc": "Student in an Organized Health Care Education/Training Program",
+        "primary": false
+      },
+      {
+        "code": "207R00000X",
+        "desc": "Internal Medicine",
+        "primary": true
+      }
+    ],
+    "fetchedAt": "2026-06-17T20:29:55.822Z",
+    "source": "nppes"
+  },
+  "1669814737": {
+    "npi": "1669814737",
+    "enumerationType": "NPI-1",
+    "firstName": "MATTHEW",
+    "middleName": "WILLIAM",
+    "lastName": "SHORE",
+    "namePrefix": "Dr.",
+    "credential": "M.D.",
+    "sex": "M",
+    "taxonomies": [
+      {
+        "code": "207UN0902X",
+        "desc": "Nuclear Medicine, Nuclear Imaging & Therapy",
+        "primary": false
+      },
+      {
+        "code": "2085R0202X",
+        "desc": "Radiology, Diagnostic Radiology",
+        "primary": false
+      },
+      {
+        "code": "2085R0202X",
+        "desc": "Radiology, Diagnostic Radiology",
+        "primary": false
+      },
+      {
+        "code": "2085P0229X",
+        "desc": "Radiology, Pediatric Radiology",
+        "primary": true
+      }
+    ],
+    "fetchedAt": "2026-06-18T03:38:09.319Z",
+    "source": "nppes"
+  },
+  "1730357849": {
+    "npi": "1730357849",
+    "enumerationType": "NPI-1",
+    "firstName": "MARY ANN",
+    "lastName": "PICONE",
+    "credential": "CRNP",
+    "sex": "F",
+    "taxonomies": [
+      {
+        "code": "363LF0000X",
+        "desc": "Nurse Practitioner, Family",
+        "primary": true
+      }
+    ],
+    "fetchedAt": "2026-06-17T20:29:56.078Z",
+    "source": "nppes"
+  },
+  "1790854107": {
+    "npi": "1790854107",
+    "enumerationType": "NPI-1",
+    "firstName": "JENNIFER",
+    "middleName": "L",
+    "lastName": "EVERTON",
+    "namePrefix": "--",
+    "nameSuffix": "--",
+    "credential": "D.O.",
+    "sex": "F",
+    "taxonomies": [
+      {
+        "code": "207R00000X",
+        "desc": "Internal Medicine",
+        "primary": true
+      }
+    ],
+    "fetchedAt": "2026-06-17T20:29:55.881Z",
+    "source": "nppes"
+  },
+  "1841421872": {
+    "npi": "1841421872",
+    "enumerationType": "NPI-1",
+    "firstName": "BENJAMIN",
+    "middleName": "TODD",
+    "lastName": "GILLESPIE",
+    "credential": "DO",
+    "sex": "M",
+    "taxonomies": [
+      {
+        "code": "208100000X",
+        "desc": "Physical Medicine & Rehabilitation",
+        "primary": true
+      }
+    ],
+    "fetchedAt": "2026-06-17T20:29:56.340Z",
+    "source": "nppes"
+  },
+  "1891752184": {
+    "npi": "1891752184",
+    "enumerationType": "NPI-1",
+    "firstName": "KATHRYN",
+    "middleName": "A",
+    "lastName": "CAHILL",
+    "credential": "MD",
+    "sex": "F",
+    "taxonomies": [
+      {
+        "code": "208000000X",
+        "desc": "Pediatrics",
+        "primary": true
+      }
+    ],
+    "fetchedAt": "2026-06-18T03:38:09.146Z",
+    "source": "nppes"
+  }
+}

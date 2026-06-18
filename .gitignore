@@ -1,0 +1,47 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# PHI / raw source — NEVER commit. This is the patient's full raw record.
+# (gitignore does NOT support trailing comments — keep patterns on their own lines)
+# ─────────────────────────────────────────────────────────────────────────────
+ehi.sqlite
+ehi.sqlite-*
+raw/
+# Epic-API reference (answer key) — raw PHI; report ships only derived data.json
+fhir-target/
+# generated FHIR (lean + bridge) — regenerable + PHI
+out/
+out-answerkey/
+# full per-leaf ledger — regenerable + PHI
+compare/LEDGER.json
+*.bak
+*.bak.json
+# old self-contained viewer with an embedded PHI payload (superseded by report/)
+viewer.html
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Intermediate analysis artifacts — not needed to build the report, and some quote
+# real values next to redaction tokens. The distilled, redaction-safe data ships in
+# report/viewer/data*.json + report/src/summaries.json instead.
+# ─────────────────────────────────────────────────────────────────────────────
+report/resources/
+report/summaries/
+report/slices/
+report/CROSS-CUTTING.md
+report/SCORECARD-DATA.md
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Build artifacts / heavy binaries / caches
+# ─────────────────────────────────────────────────────────────────────────────
+node_modules/
+# built by `bun report/build.ts` (and by CI for Pages)
+report/app.js
+# local screenshots from the headless smoke test
+report/_*.png
+# 178 MB HL7 validator — download separately (see README)
+tools/validator_cli.jar
+bun.lockb
+*.log
+.DS_Store
+
+# patient identifier values (PHI) + intermediate cluster doc with preimages
+crosswalk/identifiers.csv
+compare/RESIDUAL-CLUSTERS.md

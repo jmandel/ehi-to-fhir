@@ -1,0 +1,26 @@
+{
+  "name": "ehi-to-fhir",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "Deterministically reconstruct FHIR R4 from an Epic EHI export, scored against Epic's own FHIR API, with an interactive report.",
+  "license": "MIT",
+  "scripts": {
+    "data": "bun tools/build-report-data.ts",
+    "build:report": "bun report/build.ts",
+    "report": "bun tools/build-report-data.ts && bun report/build.ts",
+    "test:report": "bun tools/cdp-test.ts"
+  },
+  "dependencies": {
+    "d3": "^7.9.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "zustand": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/d3": "^7.4.3",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "bun-types": "latest"
+  }
+}

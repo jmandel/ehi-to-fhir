@@ -1,0 +1,220 @@
+{
+  "total": 1012,
+  "clusters": [
+    {
+      "path": "Observation.(whole resource)",
+      "kind": "real-gap",
+      "count": 298,
+      "example": "target Observation has no aligned resource in out/ (natural key 72166-2@2024-07-02)",
+      "tgt": "72166-2@2024-07-02",
+      "our": null
+    },
+    {
+      "path": "Observation.code.coding[].code",
+      "kind": "coding-gap",
+      "count": 60,
+      "example": "missing standard coding element (e.g. \"25000300\") [array cardinality: tgt has unmatched value(s)]",
+      "tgt": "25000300",
+      "our": null
+    },
+    {
+      "path": "Observation.subject.reference",
+      "kind": "isomorphic-ref",
+      "count": 60,
+      "example": "same natural key \"patient\"",
+      "tgt": "Patient/euBTtyZGh3f-JTiA7uZ5FgZJna7wj9UegXGnkSaLxxLk3",
+      "our": "Patient/pat-Z7004242"
+    },
+    {
+      "path": "Observation.subject.display",
+      "kind": "cosmetic-display",
+      "count": 60,
+      "example": "same entity (ref natural-key matches); label differs \"Mandel, Josh C\" vs \"Mandel, Joshua C\"",
+      "tgt": "Mandel, Josh C",
+      "our": "Mandel, Joshua C"
+    },
+    {
+      "path": "Observation.encounter.reference",
+      "kind": "isomorphic-ref",
+      "count": 60,
+      "example": "same natural key \"1169847546\"",
+      "tgt": "Encounter/eQ6.JK9L9XY-2BpYQ4Y5aRw3",
+      "our": "Encounter/enc-1169847546"
+    },
+    {
+      "path": "Observation.code.coding[].display",
+      "kind": "coding-gap",
+      "count": 41,
+      "example": "missing standard coding element (e.g. \"BUN/Creatinine Ratio\") [array cardinality: tgt has unmatched value(s)]",
+      "tgt": "BUN/Creatinine Ratio",
+      "our": null
+    },
+    {
+      "path": "Observation.basedOn[].reference",
+      "kind": "real-gap",
+      "count": 40,
+      "example": "target has path, ours omits (e.g. \"ServiceRequest/emwK.CqRRmpdlOT9dYj4k9HyZ57pHIAHHSI1xZM5yRwE3\")",
+      "tgt": "ServiceRequest/emwK.CqRRmpdlOT9dYj4k9HyZ57pHIAHHSI1xZM5yRwE3",
+      "our": null
+    },
+    {
+      "path": "Observation.code.coding[].system",
+      "kind": "real-gap",
+      "count": 40,
+      "example": "target has path, ours omits (e.g. \"urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.149\") [array cardinality: tgt has unmatched value(s)]",
+      "tgt": "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.149",
+      "our": null
+    },
+    {
+      "path": "Observation.specimen.reference",
+      "kind": "isomorphic-ref",
+      "count": 40,
+      "example": "same natural key \"h613684\"",
+      "tgt": "Specimen/eqEBK2eJvVXtfD22j3xNXH6k.dIEAmyx1yF9AJ53DLxg3",
+      "our": "Specimen/spec-1165205280"
+    },
+    {
+      "path": "Observation.basedOn[].identifier.use",
+      "kind": "unsure",
+      "count": 40,
+      "example": "present in ours, absent in target (e.g. \"usual\")",
+      "tgt": null,
+      "our": "usual"
+    },
+    {
+      "path": "Observation.basedOn[].identifier.system",
+      "kind": "unsure",
+      "count": 40,
+      "example": "present in ours, absent in target (e.g. \"urn:oid:1.2.840.114350.1.13.283.2.7.2.798268\")",
+      "tgt": null,
+      "our": "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268"
+    },
+    {
+      "path": "Observation.basedOn[].identifier.value",
+      "kind": "unsure",
+      "count": 40,
+      "example": "present in ours, absent in target (e.g. \"1165205280\")",
+      "tgt": null,
+      "our": "1165205280"
+    },
+    {
+      "path": "Observation.code.text",
+      "kind": "unsure",
+      "count": 39,
+      "example": "display text differs: \"BUN/Creatinine Ratio\" vs \"BUN / CREAT RATIO\"",
+      "tgt": "BUN/Creatinine Ratio",
+      "our": "BUN / CREAT RATIO"
+    },
+    {
+      "path": "Observation.category[].coding[].system",
+      "kind": "real-gap",
+      "count": 20,
+      "example": "target has path, ours omits (e.g. \"http://hl7.org/fhir/us/core/CodeSystem/us-core-category\") [array cardinality: tgt has unmatched value(s)]",
+      "tgt": "http://hl7.org/fhir/us/core/CodeSystem/us-core-category",
+      "our": null
+    },
+    {
+      "path": "Observation.category[].coding[].code",
+      "kind": "coding-gap",
+      "count": 20,
+      "example": "missing standard coding element (e.g. \"disability-status\") [array cardinality: tgt has unmatched value(s)]",
+      "tgt": "disability-status",
+      "our": null
+    },
+    {
+      "path": "Observation.category[].coding[].display",
+      "kind": "coding-gap",
+      "count": 20,
+      "example": "missing standard coding element (e.g. \"Disability Status\") [array cardinality: tgt has unmatched value(s)]",
+      "tgt": "Disability Status",
+      "our": null
+    },
+    {
+      "path": "Observation.encounter.display",
+      "kind": "cosmetic-display",
+      "count": 20,
+      "example": "same entity (ref natural-key matches); label differs \"Office Visit\" vs \"PR PREVENTIVE VISIT,EST,18-39\"",
+      "tgt": "Office Visit",
+      "our": "PR PREVENTIVE VISIT,EST,18-39"
+    },
+    {
+      "path": "Observation.issued",
+      "kind": "real-gap",
+      "count": 20,
+      "example": "value differs: \"2018-08-09T14:49:11Z\" vs \"2018-08-09T14:49:00Z\"",
+      "tgt": "2018-08-09T14:49:11Z",
+      "our": "2018-08-09T14:49:00Z"
+    },
+    {
+      "path": "Observation.performer[].reference",
+      "kind": "isomorphic-ref",
+      "count": 20,
+      "example": "same natural key \"518228\"",
+      "tgt": "Practitioner/ew6Li56NMxgscXaoYNv4JlQ3",
+      "our": "Practitioner/prac-518228"
+    },
+    {
+      "path": "Observation.performer[].display",
+      "kind": "cosmetic-display",
+      "count": 20,
+      "example": "same entity (ref natural-key matches); label differs \"Tracy I\" vs \"IRELAND, TRACY C\"",
+      "tgt": "Tracy I",
+      "our": "IRELAND, TRACY C"
+    },
+    {
+      "path": "Observation.derivedFrom[].reference",
+      "kind": "real-gap",
+      "count": 5,
+      "example": "target has path, ours omits (e.g. \"Observation/eB1to19IOlbpEyyd1.aWwP9kRKY2.z9YhZJ2q4yAbSw-wxzVfZ0rBIHfItBUuairE3I72IMZsN6poSlLI0qTGwQ3\")",
+      "tgt": "Observation/eB1to19IOlbpEyyd1.aWwP9kRKY2.z9YhZJ2q4yAbSw-wxzVfZ0rBIHfItBUuairE3I72IMZsN6poSlLI0qTGwQ3",
+      "our": null
+    },
+    {
+      "path": "Observation.valueQuantity.system",
+      "kind": "unsure",
+      "count": 2,
+      "example": "present in ours, absent in target (e.g. \"http://unitsofmeasure.org\")",
+      "tgt": null,
+      "our": "http://unitsofmeasure.org"
+    },
+    {
+      "path": "Observation.valueQuantity.code",
+      "kind": "unsure",
+      "count": 2,
+      "example": "present in ours, absent in target (e.g. \"mL/min/[1.73_m2]\")",
+      "tgt": null,
+      "our": "mL/min/[1.73_m2]"
+    },
+    {
+      "path": "Observation.valueCodeableConcept.coding[].display",
+      "kind": "unsure",
+      "count": 2,
+      "example": "display text differs: \"Not at all\" vs \"0\"",
+      "tgt": "Not at all",
+      "our": "0"
+    },
+    {
+      "path": "Observation.valueCodeableConcept.text",
+      "kind": "unsure",
+      "count": 2,
+      "example": "display text differs: \"Not at all\" vs \"0\"",
+      "tgt": "Not at all",
+      "our": "0"
+    },
+    {
+      "path": "Observation.encounter.identifier.value",
+      "kind": "real-gap",
+      "count": 1,
+      "example": "value differs: \"1028743701\" vs \"725327197\"",
+      "tgt": "1028743701",
+      "our": "725327197"
+    }
+  ],
+  "kindTally": {
+    "real-gap": 445,
+    "coding-gap": 120,
+    "unsure": 135,
+    "isomorphic-ref": 178,
+    "cosmetic-display": 134
+  }
+}
