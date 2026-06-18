@@ -64,7 +64,9 @@
  */
 import { q, parseEpicDateTime } from "../lib/db";
 import { emit, clean } from "../lib/gen";
+import { cc, ident } from "../lib/cc";
 import { id, ref } from "../lib/ids";
+import { nn, money, enumMap } from "../lib/fmt";
 
 // Epic remittance-image (IMD) record OID. Same Epic-instance prefix (1.2.840.114350.1.13.283)
 // and master-file-OID convention every other domain generator here uses for Epic ids.
@@ -84,20 +86,6 @@ const OUTCOME_MAP: Record<string, string> = {
   Denied: "error",
 };
 
-function nn(v: unknown): string | undefined {
-  if (v === null || v === undefined) return undefined;
-  const s = String(v).trim();
-  return s === "" ? undefined : s;
-}
-
-/** Real amount column -> FHIR Money USD. Pass-through; no sign flip (payments are positive). */
-function money(v: unknown): { value: number; currency: string } | undefined {
-  const s = nn(v);
-  if (s === undefined) return undefined;
-  const n = Number(s);
-  if (!Number.isFinite(n)) return undefined;
-  return { value: n, currency: "USD" };
-}
 
 function buildPaymentReconciliations(): any[] {
   const out: any[] = [];
@@ -123,8 +111,8 @@ function buildPaymentReconciliations(): any[] {
     const statusLabel = nn(im.CLM_STAT_CD_C_NAME);
 
     // --- identifiers: the remittance-image record id + the payer ICN.
-    const identifier: any[] = [{ system: OID_REMIT_IMAGE, value: imageId }];
-    if (icn) identifier.push({ value: icn });
+    const identifier: any[] = [ident(OID_REMIT_IMAGE, imageId)];
+    if (icn) identifier.push(ident(undefined, icn));
 
     // --- paymentIssuer: INV_NO -> INV_BASIC_INFO.EPM_ID -> Organization + payer name.
     let paymentIssuer: any;
@@ -143,7 +131,7 @@ function buildPaymentReconciliations(): any[] {
     }
 
     // --- outcome (required-binding enum) + disposition (raw label as text).
-    const outcome = statusLabel ? OUTCOME_MAP[statusLabel] : undefined;
+    const outcome = enumMap(statusLabel, OUTCOME_MAP);
 
     // --- detail[]: one per 835 service line.
     const svc = q<any>(
@@ -156,10 +144,8 @@ function buildPaymentReconciliations(): any[] {
     const detail = svc.map((s) => {
       const line = nn(s.SERVICE_LINE);
       return clean({
-        identifier: icn && line ? { value: `${icn}-${line}` } : undefined,
-        type: {
-          coding: [{ system: SYS_PMT_TYPE, code: "payment", display: "Payment" }],
-        },
+        identifier: icn && line ? ident(undefined, `${icn}-${line}`) : undefined,
+        type: cc(SYS_PMT_TYPE, "payment", "Payment", null),
         date: paymentDate,
         amount: money(s.PROV_PAYMENT_AMT),
       });
@@ -215,7 +201,7 @@ function buildPaymentReconciliations(): any[] {
         disposition: statusLabel,
         paymentDate,
         paymentAmount: money(im.CLAIM_PAID_AMT) ?? { value: 0, currency: "USD" },
-        paymentIdentifier: icn ? { value: icn } : undefined,
+        paymentIdentifier: icn ? ident(undefined, icn) : undefined,
         detail: detail.length ? detail : undefined,
         processNote: processNote.length ? processNote : undefined,
       })

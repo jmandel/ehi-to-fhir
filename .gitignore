@@ -45,3 +45,6 @@ bun.lockb
 # patient identifier values (PHI) + intermediate cluster doc with preimages
 crosswalk/identifiers.csv
 compare/RESIDUAL-CLUSTERS.md
+
+# patient→Epic feedback report (contains the patient's clinical PHI; not a public artifact)
+feedback/

@@ -48,7 +48,9 @@
  */
 import { q, q1, parseEpicDateTime } from "../lib/db";
 import { emit, clean } from "../lib/gen";
+import { cc, ident } from "../lib/cc";
 import { id, ref, patientRef } from "../lib/ids";
+import { nn, money } from "../lib/fmt";
 
 const SYS_CLAIM_TYPE = "http://terminology.hl7.org/CodeSystem/claim-type";
 const SYS_ADJUDICATION = "http://terminology.hl7.org/CodeSystem/adjudication";
@@ -64,24 +66,12 @@ const SYS_PAYER_ID = "http://open.epic.com/FHIR/StructureDefinition/payer-id";
 const OID_INVOICE = "urn:oid:1.2.840.114350.1.13.283.2.7.3.689224"; // hospital/professional account invoice
 const SYS_ICN = "http://open.epic.com/FHIR/StructureDefinition/payer-claim-control-number";
 
-function nn(v: unknown): string | undefined {
-  if (v === null || v === undefined) return undefined;
-  const s = String(v).trim();
-  return s === "" ? undefined : s;
-}
-
 /** Parse a decimal string into a number, or undefined if not a finite number. */
 function num(v: unknown): number | undefined {
   const s = nn(v);
   if (s === undefined) return undefined;
   const n = Number(s);
   return isFinite(n) ? n : undefined;
-}
-
-/** FHIR Money from a number (rounded to cents), USD. */
-function money(n: number | undefined): any {
-  if (n === undefined) return undefined;
-  return { value: Math.round(n * 100) / 100, currency: "USD" };
 }
 
 function dateOnly(v: unknown): string | undefined {
@@ -118,16 +108,14 @@ const ADJ_CATS: { key: keyof Bucket; code?: string; display: string }[] = [
 ];
 
 function adjCategory(c: { code?: string; display: string }): any {
-  return c.code
-    ? { coding: [{ system: SYS_ADJUDICATION, code: c.code, display: c.display }], text: c.display }
-    : { text: c.display };
+  return c.code ? cc(SYS_ADJUDICATION, c.code, c.display) : { text: c.display };
 }
 
 function adjudicationFrom(b: Bucket): any[] {
   const out: any[] = [];
   for (const c of ADJ_CATS) {
     if (b[c.key] === undefined) continue;
-    out.push({ category: adjCategory(c), amount: money(b[c.key]) });
+    out.push({ category: adjCategory(c), amount: money(b[c.key], { round: true }) });
   }
   return out;
 }
@@ -208,9 +196,7 @@ function buildEobs(): any[] {
           careTeam.push({
             sequence: seq,
             provider: ref("Practitioner", id.practitioner(provId), provName),
-            role: {
-              coding: [{ system: SYS_CARETEAM_ROLE, code: "primary", display: "Primary provider" }],
-            },
+            role: cc(SYS_CARETEAM_ROLE, "primary", "Primary provider", null),
           });
         }
         careTeamSeq = teamSeqByProv.get(provId);
@@ -240,7 +226,7 @@ function buildEobs(): any[] {
       }
 
       const productOrService = cptCode
-        ? { coding: [{ system: SYS_CPT, code: cptCode, display: procName }], text: procName }
+        ? cc(SYS_CPT, cptCode, procName)
         : procName
         ? { text: procName }
         : undefined;
@@ -248,7 +234,7 @@ function buildEobs(): any[] {
       if (!productOrService) continue;
 
       const modifier = modifiers.length
-        ? modifiers.map((m) => ({ coding: [{ system: SYS_CPT, code: m }] }))
+        ? modifiers.map((m) => cc(SYS_CPT, m, undefined, null))
         : undefined;
 
       const svcDate = dateOnly(chg.SERVICE_DATE);
@@ -292,8 +278,8 @@ function buildEobs(): any[] {
           modifier,
           servicedDate: svcDate,
           quantity: qty !== undefined ? { value: qty } : undefined,
-          unitPrice: qty && netAmt !== undefined ? money(netAmt / qty) : undefined,
-          net: money(netAmt),
+          unitPrice: qty && netAmt !== undefined ? money(netAmt / qty, { round: true }) : undefined,
+          net: money(netAmt, { round: true }),
           encounter: csn ? [ref("Encounter", id.encounter(csn))] : undefined,
           adjudication: adjudicationFrom(itemBucket),
         })
@@ -324,7 +310,7 @@ function buildEobs(): any[] {
     const insurer = payorId
       ? {
           reference: ref("Organization", id.organization(payorId)).reference,
-          identifier: { system: SYS_PAYER_ID, value: payorId },
+          identifier: ident(SYS_PAYER_ID, payorId),
           display: payorName,
         }
       : undefined;
@@ -367,12 +353,12 @@ function buildEobs(): any[] {
         // ABK = principal, ABF = other (837 diagnosis qualifiers).
         const dtype =
           qual === "ABK"
-            ? { coding: [{ system: SYS_DIAG_TYPE, code: "principal", display: "Principal Diagnosis" }] }
+            ? cc(SYS_DIAG_TYPE, "principal", "Principal Diagnosis", null)
             : undefined;
         diagnosis.push(
           clean({
             sequence: dseq,
-            diagnosisCodeableConcept: { coding: [{ system: SYS_ICD10, code }] },
+            diagnosisCodeableConcept: cc(SYS_ICD10, code, undefined, null),
             type: dtype ? [dtype] : undefined,
           })
         );
@@ -384,13 +370,13 @@ function buildEobs(): any[] {
     for (const c of ADJ_CATS) {
       if (c.key === "submitted" || c.key === "eligible" || c.key === "benefit") {
         if (claimBucket[c.key] !== undefined) {
-          total.push({ category: adjCategory(c), amount: money(claimBucket[c.key]) });
+          total.push({ category: adjCategory(c), amount: money(claimBucket[c.key], { round: true }) });
         }
       }
     }
 
     // --- payment amount (insurer payment posted by this 835).
-    const payment = claimPaid !== undefined ? { amount: money(claimPaid) } : undefined;
+    const payment = claimPaid !== undefined ? { amount: money(claimPaid, { round: true }) } : undefined;
 
     // --- processNote: CARC remit text from PMT_EOB_INFO_II for this claim's payment TXs.
     const noteRows = q<any>(
@@ -412,8 +398,8 @@ function buildEobs(): any[] {
     }
 
     // --- identifiers.
-    const identifier: any[] = [{ system: OID_INVOICE, value: invNum }];
-    if (icn) identifier.push({ system: SYS_ICN, value: icn });
+    const identifier: any[] = [ident(OID_INVOICE, invNum)];
+    if (icn) identifier.push(ident(SYS_ICN, icn));
 
     out.push(
       clean({
@@ -421,9 +407,7 @@ function buildEobs(): any[] {
         id: id.explanationOfBenefit(invNum),
         identifier,
         status,
-        type: {
-          coding: [{ system: SYS_CLAIM_TYPE, code: "professional", display: "Professional" }],
-        },
+        type: cc(SYS_CLAIM_TYPE, "professional", "Professional", null),
         use: "claim",
         patient: patientRef(),
         billablePeriod,

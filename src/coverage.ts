@@ -48,7 +48,9 @@
  */
 import { q, parseEpicDateTime } from "../lib/db";
 import { emit, clean } from "../lib/gen";
+import { cc, ident } from "../lib/cc";
 import { id, ref, patientRef, PATIENT_PAT_ID } from "../lib/ids";
+import { nn } from "../lib/fmt";
 
 // Standard / published systems we can legitimately assert.
 const SYS_V2_0203 = "http://terminology.hl7.org/CodeSystem/v2-0203";
@@ -63,12 +65,6 @@ const EXT_EPIC_ID = "http://open.epic.com/FHIR/StructureDefinition/extension/epi
 // same convention used by every other domain generator here for Epic master-file ids).
 const OID_COVERAGE = "urn:oid:1.2.840.114350.1.13.283.2.7.2.678671"; // CVG coverage record
 const OID_PLAN = "urn:oid:1.2.840.114350.1.13.283.2.7.2.698080";     // EPP benefit plan
-
-function nn(v: unknown): string | undefined {
-  if (v === null || v === undefined) return undefined;
-  const s = String(v).trim();
-  return s === "" ? undefined : s;
-}
 
 function buildCoverages(): any[] {
   const out: any[] = [];
@@ -141,21 +137,15 @@ function buildCoverages(): any[] {
 
     // --- identifiers.
     const identifier: any[] = [];
-    identifier.push({ system: OID_COVERAGE, value: covId });
+    identifier.push(ident(OID_COVERAGE, covId));
     if (memNumber) {
-      identifier.push({
-        type: { coding: [{ system: SYS_V2_0203, code: "MB", display: "Member Number" }] },
-        value: memNumber,
-      });
+      identifier.push(ident(undefined, memNumber, { type: cc(SYS_V2_0203, "MB", "Member Number", null) }));
     }
 
     // --- relationship (HL7 self code + text; Epic-OID coding is a gap).
     const relationship =
       rel && /^self$/i.test(rel)
-        ? {
-            coding: [{ system: SYS_SUBSCR_REL, code: "self", display: "Self" }],
-            text: rel,
-          }
+        ? cc(SYS_SUBSCR_REL, "self", "Self", rel)
         : rel
         ? { text: rel }
         : undefined;
@@ -165,7 +155,7 @@ function buildCoverages(): any[] {
     const groupNum = nn(c.GROUP_NUM);
     if (groupNum) {
       klass.push({
-        type: { coding: [{ system: SYS_CVG_CLASS, code: "group", display: "Group" }] },
+        type: cc(SYS_CVG_CLASS, "group", "Group", null),
         value: groupNum,
       });
     }
@@ -174,10 +164,10 @@ function buildCoverages(): any[] {
         extension: [
           {
             url: EXT_EPIC_ID,
-            valueIdentifier: { use: "secondary", system: OID_PLAN, value: planId },
+            valueIdentifier: ident(OID_PLAN, planId, { use: "secondary" }),
           },
         ],
-        type: { coding: [{ system: SYS_CVG_CLASS, code: "plan", display: "Plan" }] },
+        type: cc(SYS_CVG_CLASS, "plan", "Plan", null),
         value: planId,
         name: planName,
       });
@@ -188,7 +178,7 @@ function buildCoverages(): any[] {
     if (payorId) {
       payor.push({
         reference: ref("Organization", id.organization(payorId)).reference,
-        identifier: { use: "official", system: SYS_PAYER_ID, value: payorId },
+        identifier: ident(SYS_PAYER_ID, payorId, { use: "official" }),
         display: payorName,
       });
     }
@@ -249,7 +239,7 @@ function buildBillingOrg(payorName: string | undefined): any | undefined {
     if (Object.keys(address).length > 1) {
       contact = [
         {
-          purpose: { coding: [{ system: SYS_CONTACT_TYPE, code: "BILL", display: "Billing" }] },
+          purpose: cc(SYS_CONTACT_TYPE, "BILL", "Billing", null),
           address,
         },
       ];

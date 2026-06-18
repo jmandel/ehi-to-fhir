@@ -31,6 +31,7 @@
 import { q, columnsOf } from "../lib/db";
 import { emit, clean } from "../lib/gen";
 import { id, PATIENT_PAT_ID } from "../lib/ids";
+import { nn, coalesceName } from "../lib/fmt";
 
 // Standard (non-Epic-instance) identifier systems we can legitimately assert.
 const SYS_NPI = "http://hl7.org/fhir/sid/us-npi";
@@ -41,12 +42,6 @@ const SYS_NUCC = "urn:oid:2.16.840.1.113883.6.101"; // NUCC Health Care Provider
 // ("GENERIC EXTERNAL DATA DEPARTMENT"), not by a hardcoded id — its DEPARTMENT_ID is
 // looked up at runtime so no specific record id is baked into the generator.
 const SENTINEL_DEPT_NAME = "GENERIC EXTERNAL DATA DEPARTMENT";
-
-function nn(v: unknown): string | undefined {
-  if (v === null || v === undefined) return undefined;
-  const s = String(v).trim();
-  return s === "" ? undefined : s;
-}
 
 // ---------------------------------------------------------------------------
 // LOCATION
@@ -85,7 +80,7 @@ function buildLocations(): any[] {
   );
 
   for (const d of depRows) {
-    const name = nn(d.EXTERNAL_NAME) ?? nn(d.DEPARTMENT_NAME); // patient-facing first (Gotcha 8)
+    const name = coalesceName(d.EXTERNAL_NAME, d.DEPARTMENT_NAME); // patient-facing first (Gotcha 8)
     if (!name) continue;
     out.push(
       clean({
@@ -109,7 +104,7 @@ function buildLocations(): any[] {
       ORDER BY CAST(SERV_AREA_ID AS INTEGER)`
   );
   for (const s of sa) {
-    const name = nn(s.EXTERNAL_NAME) ?? nn(s.SERV_AREA_NAME);
+    const name = coalesceName(s.EXTERNAL_NAME, s.SERV_AREA_NAME);
     if (!name) continue;
     out.push(
       clean({

@@ -51,6 +51,7 @@
 import { q, q1 } from "../lib/db";
 import { emit, clean } from "../lib/gen";
 import { id, ref, patientRef } from "../lib/ids";
+import { nn } from "../lib/fmt";
 
 // Epic instance master-file OID (instance prefix 1.2.840.114350.1.13.283; the
 // .2.7.2.<INI> convention every other domain generator uses for Epic master-file ids).
@@ -61,12 +62,6 @@ const SYS_PARTICIPATION_MODE = "http://terminology.hl7.org/CodeSystem/v3-Partici
 
 // The system pseudo-sender for templated/notification MyChart messages.
 const SYSTEM_SENDER = "MYCHART, GENERIC";
-
-function nn(v: unknown): string | undefined {
-  if (v === null || v === undefined) return undefined;
-  const s = String(v).trim();
-  return s === "" ? undefined : s;
-}
 
 /** Parse "M/D/YYYY h:mm:ss AM" as America/Chicago wall time → ISO instant (UTC, Z). */
 function chicagoToISO(v: unknown): string | undefined {

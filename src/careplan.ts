@@ -55,6 +55,7 @@
 import { q, q1, parseEpicDateTime } from "../lib/db";
 import { id, ref, patientRef, PATIENT_ID } from "../lib/ids";
 import { emit, clean } from "../lib/gen";
+import { enumMap } from "../lib/fmt";
 
 // US-Core CarePlan category (Epic emits this fixed assess-plan label on every plan).
 const US_CORE_CAREPLAN_CATEGORY = "http://hl7.org/fhir/us/core/CodeSystem/careplan-category";
@@ -151,7 +152,7 @@ function buildGoals(): { resources: any[]; goalRefById: Map<string, any> } {
     const goal = clean({
       resourceType: "Goal",
       id: goalId,
-      lifecycleStatus: r.GOAL_STATUS_C_NAME ? STATUS_MAP[r.GOAL_STATUS_C_NAME] : undefined,
+      lifecycleStatus: enumMap(r.GOAL_STATUS_C_NAME, STATUS_MAP),
       category,
       description,
       subject: patientRef(),

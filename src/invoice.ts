@@ -59,7 +59,9 @@
  */
 import { q, parseEpicDateTime } from "../lib/db";
 import { emit, clean } from "../lib/gen";
+import { cc, ident } from "../lib/cc";
 import { id, ref, patientRef } from "../lib/ids";
+import { nn, money } from "../lib/fmt";
 
 // Standard / published systems.
 const SYS_CPT = "http://www.ama-assn.org/go/cpt";
@@ -70,20 +72,6 @@ const SYS_V2_0203 = "http://terminology.hl7.org/CodeSystem/v2-0203";
 // reasoning account.ts applies to EAR), so identifiers are asserted as type + value only,
 // with no fabricated system URI. Recorded as a coding gap.
 
-function nn(v: unknown): string | undefined {
-  if (v === null || v === undefined) return undefined;
-  const s = String(v).trim();
-  return s === "" ? undefined : s;
-}
-
-/** USD Money from a numeric-text amount column. */
-function money(amountText: string | undefined): any | undefined {
-  const s = nn(amountText);
-  if (s === undefined) return undefined;
-  const v = Number(s);
-  if (!Number.isFinite(v)) return undefined;
-  return { value: v, currency: "USD" };
-}
 
 /**
  * Map Epic INV_STATUS_C_NAME of the governing (latest) submission to FHIR InvoiceStatus.
@@ -153,19 +141,15 @@ function buildInvoices(): any[] {
     // --- identifiers: each submission's claim/invoice L-number (typed "FILL"), plus the
     // master INVOICE_ID (typed placer "PLAC"). No system asserted (OID not verifiable).
     const identifier: any[] = [];
-    identifier.push({
-      use: "secondary",
-      type: { coding: [{ system: SYS_V2_0203, code: "PLAC", display: "Placer Identifier" }] },
-      value: invId,
-    });
+    identifier.push(
+      ident(undefined, invId, { use: "secondary", type: cc(SYS_V2_0203, "PLAC", "Placer Identifier", null) })
+    );
     for (const s of submissions) {
       const num = nn(s.INV_NUM);
       if (num)
-        identifier.push({
-          use: "official",
-          type: { coding: [{ system: SYS_V2_0203, code: "FILL", display: "Filler Identifier" }] },
-          value: num,
-        });
+        identifier.push(
+          ident(undefined, num, { use: "official", type: cc(SYS_V2_0203, "FILL", "Filler Identifier", null) })
+        );
     }
 
     // --- status / cancelledReason.

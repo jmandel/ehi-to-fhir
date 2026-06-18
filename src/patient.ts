@@ -47,6 +47,7 @@
 import { q, q1, parseEpicDateTime, dateRealToISO } from "../lib/db";
 import { id, ref, PATIENT_PAT_ID } from "../lib/ids";
 import { emit, clean } from "../lib/gen";
+import { nn as ANY } from "../lib/fmt";
 
 // ---- Epic identifier OID systems (stable, org-independent constants) ----
 const EPI_OID = "urn:oid:1.2.840.114350.1.13.283.2.7.5.737384.0"; // EPI enterprise id
@@ -107,7 +108,6 @@ const MARITAL_LABEL_BY_CODE: Record<string, string> = {
   "1": "Married",
 };
 
-const ANY = (v: unknown) => (v == null || String(v).trim() === "" ? undefined : String(v).trim());
 
 /** ISO date from an Epic textual DATE ("10/26/1982 12:00:00 AM" → "1982-10-26"). */
 function isoDate(v: unknown): string | undefined {
@@ -139,10 +139,7 @@ function buildPatient(): any {
   const sex = ANY(p.SEX_C_NAME);
   if (sex) {
     extension.push({
-      valueCodeableConcept: {
-        coding: [{ system: LEGAL_SEX_EXT_VS_SYSTEM, code: sex.toLowerCase(), display: sex.toLowerCase() }],
-        text: sex,
-      },
+      valueCodeableConcept: cc(LEGAL_SEX_EXT_VS_SYSTEM, sex.toLowerCase(), sex.toLowerCase(), sex),
       url: LEGAL_SEX_EXT,
     });
   }
@@ -151,10 +148,7 @@ function buildPatient(): any {
   const gi = ANY(p4.GENDER_IDENTITY_C_NAME);
   if (gi) {
     extension.push({
-      valueCodeableConcept: {
-        coding: [{ system: "http://hl7.org/fhir/gender-identity", code: gi.toLowerCase(), display: gi.toLowerCase() }],
-        text: gi,
-      },
+      valueCodeableConcept: cc("http://hl7.org/fhir/gender-identity", gi.toLowerCase(), gi.toLowerCase(), gi),
       url: GENDER_IDENTITY_EXT,
     });
   }
@@ -205,23 +199,23 @@ function buildPatient(): any {
     const tid = ANY(r.TID);
     if (!v) continue;
     if (t === "EPI") {
-      identifier.push({ use: "usual", type: { text: "EPI" }, system: EPI_OID, value: v });
+      identifier.push(ident(EPI_OID, v, { use: "usual", type: { text: "EPI" } }));
     } else if (t && t.startsWith("MRN") && tid) {
       // Org MRN (type "MRN MAPL", type id 955). System = .737384.<type id>; value is the
       // display MRN (= PATIENT.PAT_MRN_ID, byte-identical, verified). Keep the EHI's label.
-      identifier.push({ use: "usual", type: { text: t }, system: MRN_OID_BASE + tid, value: v });
+      identifier.push(ident(MRN_OID_BASE + tid, v, { use: "usual", type: { text: t } }));
     } else if (t === "IHS") {
       // IHS-typed external code — ships under the Epic root in the target (type "IHSMRN").
-      identifier.push({ use: "usual", type: { text: "IHSMRN" }, system: IHSMRN_OID, value: v });
+      identifier.push(ident(IHSMRN_OID, v, { use: "usual", type: { text: "IHSMRN" } }));
     }
   }
   // EPT key (PAT_ID): EXTERNAL = trimmed, INTERNAL = padded-left (target shows "  Z7004242").
-  identifier.push({ use: "usual", type: { text: "EXTERNAL" }, system: EXTERNAL_OID, value: PATIENT_PAT_ID });
-  identifier.push({ use: "usual", type: { text: "INTERNAL" }, system: EXTERNAL_OID, value: "  " + PATIENT_PAT_ID });
+  identifier.push(ident(EXTERNAL_OID, PATIENT_PAT_ID, { use: "usual", type: { text: "EXTERNAL" } }));
+  identifier.push(ident(EXTERNAL_OID, "  " + PATIENT_PAT_ID, { use: "usual", type: { text: "INTERNAL" } }));
   // MyChart WPR internal id (MYPT_ID).
   const myc = q1<{ MYPT_ID: string }>(`SELECT MYPT_ID FROM PATIENT_MYC WHERE PAT_ID = ?`, PATIENT_PAT_ID);
   const mypt = ANY(myc?.MYPT_ID);
-  if (mypt) identifier.push({ use: "usual", type: { text: "WPRINTERNAL" }, system: WPRINTERNAL_OID, value: mypt });
+  if (mypt) identifier.push(ident(WPRINTERNAL_OID, mypt, { use: "usual", type: { text: "WPRINTERNAL" } }));
   // PayerMemberId (open.epic) — the patient's OWN coverage member number. Sourced from
   // the Coverage domain but keyed to THIS PAT_ID: COVERAGE_MEMBER_LIST rows where the
   // member's relation to subscriber is "Self" carry the patient's member id (byte-identical
@@ -234,7 +228,7 @@ function buildPatient(): any {
   );
   for (const pm of payerMemberIds) {
     const v = ANY(pm.M);
-    if (v) identifier.push({ use: "usual", system: PAYER_MEMBER_ID_SYSTEM, value: v });
+    if (v) identifier.push(ident(PAYER_MEMBER_ID_SYSTEM, v, { use: "usual" }));
   }
 
   // -------------------------------------------------------------- name

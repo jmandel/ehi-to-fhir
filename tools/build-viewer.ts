@@ -235,7 +235,7 @@ const redactor = buildRedactor(pairs);
 // only when the lean output (out/) is present to compare against.
 function computeDecomposition(): any {
   const LEAN_DIR = resolve(ROOT, "out");
-  // compute for any non-lean (crosswalk/answer-key) build, as long as the lean output exists to diff against
+  // compute for any non-lean (crosswalk) build, as long as the lean output exists to diff against
   if (OUR_DIR === LEAN_DIR || !existsSync(LEAN_DIR)) return null;
   const LEAN = indexDir(LEAN_DIR);
   const lv = (r: any) => { const m = new Map<string, any[]>(); (function go(p: string, n: any) { if (n == null) return; if (Array.isArray(n)) return n.forEach((x) => go(p + "[]", x)); if (typeof n === "object") return Object.entries(n).forEach(([k, v]) => go(p ? `${p}.${k}` : k, v)); (m.get(p) ?? m.set(p, []).get(p)!).push(n); })("", r); return m; };

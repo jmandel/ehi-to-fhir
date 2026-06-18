@@ -52,7 +52,9 @@
  */
 import { q, q1, dateRealToISO, parseEpicDateTime } from "../lib/db";
 import { emit, clean } from "../lib/gen";
+import { cc } from "../lib/cc";
 import { id, ref, patientRef, PATIENT_PAT_ID } from "../lib/ids";
+import { nn, money } from "../lib/fmt";
 
 // Published / standard systems we can legitimately assert.
 const SYS_NETWORK = "http://terminology.hl7.org/CodeSystem/benefit-network";
@@ -66,20 +68,6 @@ const SYS_EPIC_SVC_TYPE = "http://open.epic.com/FHIR/CodeSystem/benefit-service-
 
 const COVERAGE_ID = "5934765";
 
-function nn(v: unknown): string | undefined {
-  if (v === null || v === undefined) return undefined;
-  const s = String(v).trim();
-  return s === "" ? undefined : s;
-}
-
-/** Money from a decimal-string amount column; undefined when blank. */
-function money(v: unknown): { value: number; currency: string } | undefined {
-  const s = nn(v);
-  if (s === undefined) return undefined;
-  const n = Number(s);
-  if (!isFinite(n)) return undefined;
-  return { value: n, currency: "USD" };
-}
 
 /** Coinsurance percent column → "<n>%" string. */
 function percent(v: unknown): string | undefined {
@@ -93,15 +81,15 @@ function percent(v: unknown): string | undefined {
 /** In/Out → network-type coding (+ text); N/A or unknown → undefined. */
 function networkCC(raw: string | undefined): any | undefined {
   if (!raw) return undefined;
-  if (/^in$/i.test(raw)) return { coding: [{ system: SYS_NETWORK, code: "in", display: "In Network" }], text: raw };
-  if (/^out$/i.test(raw)) return { coding: [{ system: SYS_NETWORK, code: "out", display: "Out of Network" }], text: raw };
+  if (/^in$/i.test(raw)) return cc(SYS_NETWORK, "in", "In Network", raw);
+  if (/^out$/i.test(raw)) return cc(SYS_NETWORK, "out", "Out of Network", raw);
   return undefined; // "N/A" carries no meaningful network tier
 }
 
 // Benefit-type codes that exist in the THO benefit-type CodeSystem (verified against the
 // validator). Coinsurance has no code there → text-only CodeableConcept (binding is example).
 function benefitType(code: string, display: string): any {
-  return { coding: [{ system: SYS_BENEFIT_TYPE_CODE, code, display }] };
+  return cc(SYS_BENEFIT_TYPE_CODE, code, display, null);
 }
 const COINS_TYPE = { text: "Coinsurance" };
 const COPAY_TYPE = benefitType("copay", "Copayment per service");

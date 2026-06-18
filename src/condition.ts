@@ -24,6 +24,7 @@
 import { q, parseEpicDateTime } from "../lib/db";
 import { id, ref, patientRef } from "../lib/ids";
 import { emit, clean } from "../lib/gen";
+import { cc, concept, category } from "../lib/cc";
 import { readdirSync, readFileSync, existsSync } from "fs";
 import { resolve } from "path";
 
@@ -100,47 +101,19 @@ const VERIFICATION_CONFIRMED = {
   text: "Confirmed",
 };
 
-const CATEGORY_PROBLEM_LIST = [
-  {
-    coding: [
-      {
-        system: "http://terminology.hl7.org/CodeSystem/condition-category",
-        code: "problem-list-item",
-        display: "Problem List Item",
-      },
-    ],
-    text: "Problem List Item",
-  },
-];
+const CATEGORY_PROBLEM_LIST = category(
+  cc("http://terminology.hl7.org/CodeSystem/condition-category", "problem-list-item", "Problem List Item")
+);
 
-const CATEGORY_ENCOUNTER_DX = [
-  {
-    coding: [
-      {
-        system: "http://terminology.hl7.org/CodeSystem/condition-category",
-        code: "encounter-diagnosis",
-        display: "Encounter Diagnosis",
-      },
-    ],
-    text: "Encounter Diagnosis",
-  },
-  {
-    coding: [
-      {
-        system: "http://open.epic.com/FHIR/StructureDefinition/condition-category",
-        code: "visit-diagnosis",
-        display: "Visit Diagnosis",
-      },
-    ],
-    text: "Visit Diagnosis",
-  },
-];
+const CATEGORY_ENCOUNTER_DX = category(
+  cc("http://terminology.hl7.org/CodeSystem/condition-category", "encounter-diagnosis", "Encounter Diagnosis"),
+  cc("http://open.epic.com/FHIR/StructureDefinition/condition-category", "visit-diagnosis", "Visit Diagnosis")
+);
 
 /** code.text from CLARITY_EDG.DX_NAME. No ICD/SNOMED/Epic codes ship in this export
  *  (CLARITY_EDG carries only DX_ID + DX_NAME), so we emit text only — see gaps. */
 function codeFromDxName(dxName: string | null | undefined) {
-  if (!dxName) return undefined;
-  return { text: dxName };
+  return concept(dxName);
 }
 
 interface ProblemRow {

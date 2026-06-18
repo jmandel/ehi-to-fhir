@@ -50,6 +50,7 @@
 import { q, parseEpicDateTime } from "../lib/db";
 import { emit, clean } from "../lib/gen";
 import { id, ref, patientRef } from "../lib/ids";
+import { nn, money } from "../lib/fmt";
 
 // Published / standard systems we can legitimately assert.
 const SYS_CPT = "http://www.ama-assn.org/go/cpt"; // CPT/HCPCS (HC qualifier on the 835 line)
@@ -59,20 +60,6 @@ const SYS_CPT = "http://www.ama-assn.org/go/cpt"; // CPT/HCPCS (HC qualifier on 
 const OID_ETR = "urn:oid:1.2.840.114350.1.13.283.2.7.2.726582.1"; // PB transaction (ETR) id
 const OID_EAP = "urn:oid:1.2.840.114350.1.13.283.2.7.2.696580";   // EAP procedure master id
 
-function nn(v: unknown): string | undefined {
-  if (v === null || v === undefined) return undefined;
-  const s = String(v).trim();
-  return s === "" ? undefined : s;
-}
-
-/** Money from a TEXT amount column → {value:<number>, currency:"USD"}; undefined if not numeric. */
-function money(v: unknown): { value: number; currency: string } | undefined {
-  const s = nn(v);
-  if (s === undefined) return undefined;
-  const n = Number(s);
-  if (!Number.isFinite(n)) return undefined;
-  return { value: n, currency: "USD" };
-}
 
 /** Quantity count from a TEXT decimal; undefined if not numeric. */
 function qty(v: unknown): { value: number } | undefined {

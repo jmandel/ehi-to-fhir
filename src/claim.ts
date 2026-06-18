@@ -51,6 +51,8 @@
 import { q, q1, parseEpicDateTime } from "../lib/db";
 import { id, ref, patientRef } from "../lib/ids";
 import { emit, clean } from "../lib/gen";
+import { cc, ident } from "../lib/cc";
+import { nn, money } from "../lib/fmt";
 
 // Published code systems we can legitimately assert.
 const SYS_CLAIM_TYPE = "http://terminology.hl7.org/CodeSystem/claim-type";
@@ -70,22 +72,6 @@ const SYS_CPT_MOD = "http://www.ama-assn.org/go/cpt"; // CPT modifiers share the
 const SYS_INVOICE = "urn:ehi:epic:invoice-id"; // INV invoice record (INVOICE.INVOICE_ID)
 const SYS_INV_NUM = "urn:ehi:epic:claim-run-number"; // claim-run L-number (INV_BASIC_INFO.INV_NUM)
 
-const USD = "USD";
-
-function nn(v: unknown): string | undefined {
-  if (v === null || v === undefined) return undefined;
-  const s = String(v).trim();
-  return s === "" ? undefined : s;
-}
-
-/** Money from a textual amount column, USD; undefined for null/empty/non-numeric. */
-function money(v: unknown): { value: number; currency: string } | undefined {
-  const s = nn(v);
-  if (s === undefined) return undefined;
-  const n = Number(s);
-  if (!isFinite(n)) return undefined;
-  return { value: n, currency: USD };
-}
 
 const provName = (provId: unknown): string | undefined =>
   nn(provId)
@@ -179,7 +165,7 @@ function buildClaims(): any[] {
     const billablePeriod = bpStart || bpEnd ? clean({ start: bpStart, end: bpEnd }) : undefined;
 
     // --- identifiers: one per run L-number + the invoice-record id.
-    const identifier: any[] = [{ system: SYS_INVOICE, value: invId }];
+    const identifier: any[] = [ident(SYS_INVOICE, invId)];
     for (const r of runs) {
       const num = nn(r.INV_NUM);
       if (num) identifier.push({ system: SYS_INV_NUM, value: num });
@@ -213,7 +199,7 @@ function buildClaims(): any[] {
     for (const r of runs) {
       const repl = nn(r.REPLACED_INV);
       if (repl) {
-        related.push({ claim: { identifier: { system: SYS_INV_NUM, value: repl } } });
+        related.push({ claim: { identifier: ident(SYS_INV_NUM, repl) } });
       }
     }
 
@@ -240,7 +226,7 @@ function buildClaims(): any[] {
       : undefined;
     if (!total) {
       const sum = items.reduce((acc, it) => acc + (it.net?.value ?? 0), 0);
-      if (sum > 0) total = { value: Math.round(sum * 100) / 100, currency: USD };
+      if (sum > 0) total = money(sum, { round: true });
     }
 
     out.push(
@@ -256,7 +242,7 @@ function buildClaims(): any[] {
         created,
         insurer,
         provider,
-        priority: { coding: [{ system: SYS_PROCESS_PRIORITY, code: "normal", display: "Normal" }] },
+        priority: cc(SYS_PROCESS_PRIORITY, "normal", "Normal", null),
         related: related.length ? related : undefined,
         facility,
         careTeam: careTeam.length ? careTeam : undefined,
@@ -284,9 +270,7 @@ function buildType(imageRecordId: string | undefined): any {
     if (t && /^ub/i.test(t)) code = "institutional";
     else if (t && /^cms/i.test(t)) code = "professional";
   }
-  return {
-    coding: [{ system: SYS_CLAIM_TYPE, code, display: code === "institutional" ? "Institutional" : "Professional" }],
-  };
+  return cc(SYS_CLAIM_TYPE, code, code === "institutional" ? "Institutional" : "Professional", null);
 }
 
 /** careTeam from distinct charge service providers + the billing provider. */
@@ -348,12 +332,12 @@ function buildDiagnosis(invId: string, imageRecordId: string | undefined) {
       const qual = nn(r.CLM_DX_QUAL);
       const dtype =
         qual === "ABK"
-          ? { coding: [{ system: SYS_DIAGNOSIS_TYPE, code: "principal", display: "Principal Diagnosis" }] }
+          ? cc(SYS_DIAGNOSIS_TYPE, "principal", "Principal Diagnosis", null)
           : undefined;
       diagnosis.push(
         clean({
           sequence: seq,
-          diagnosisCodeableConcept: { coding: [{ system: SYS_ICD10CM, code }] },
+          diagnosisCodeableConcept: cc(SYS_ICD10CM, code, undefined, null),
           type: dtype ? [dtype] : undefined,
         })
       );
@@ -403,13 +387,13 @@ function buildImageItems(
     const cpt = nn(r.LN_PROC_CD);
     const desc = nn(r.LN_PROC_DESC);
     const productOrService = cpt
-      ? { coding: [{ system: SYS_CPT, code: cpt, display: desc }], text: desc }
+      ? cc(SYS_CPT, cpt, desc, desc)
       : desc
       ? { text: desc }
       : { text: "Service line" };
 
     const mod = nn(r.LN_PROC_MOD);
-    const modifier = mod ? [{ coding: [{ system: SYS_CPT_MOD, code: mod }] }] : undefined;
+    const modifier = mod ? [cc(SYS_CPT_MOD, mod, undefined, null)] : undefined;
 
     const from = dateOnly(r.LN_FROM_DT);
     const to = dateOnly(r.LN_TO_DT);

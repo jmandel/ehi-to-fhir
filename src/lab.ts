@@ -44,6 +44,7 @@ import { resolve } from "path";
 import { q, q1, parseEpicDateTime } from "../lib/db";
 import { id, ref, patientRef, PATIENT_ID } from "../lib/ids";
 import { emit, clean } from "../lib/gen";
+import { cc, category, ident } from "../lib/cc";
 
 const SYS_PLACER = "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268";        // DR/Obs order id (placer)
 const SYS_FILLER = "urn:oid:1.2.840.114350.1.13.283.2.7.3.798268.800";    // filler accession
@@ -426,16 +427,10 @@ function epicCategory(h: Row) {
 
 function observationCategory(h: Row): any[] {
   const epicLabel = epicCategory(h);
-  return [
-    {
-      coding: [{ system: SYS_OBS_CAT, code: "laboratory", display: "Laboratory" }],
-      text: "Laboratory",
-    },
-    {
-      coding: [{ system: SYS_CAT_EPIC, code: epicLabel, display: epicLabel }],
-      text: epicLabel,
-    },
-  ];
+  return category(
+    cc(SYS_OBS_CAT, "laboratory", "Laboratory"),
+    cc(SYS_CAT_EPIC, epicLabel, epicLabel)
+  );
 }
 
 // ---------------------------------------------------------------------------
@@ -482,7 +477,7 @@ function build() {
     const encounterRef = csn
       ? {
           reference: `Encounter/${id.encounter(csn)}`,
-          identifier: { use: "usual", system: SYS_ENC, value: csn },
+          identifier: ident(SYS_ENC, csn, { use: "usual" }),
           display: epicLabel,
         }
       : undefined;
@@ -535,10 +530,7 @@ function build() {
           const text = String(r.ORD_VALUE);
           // SNOMED result code lives in ORD_RSLT_COMPON_ID (no display ships — code only).
           if (r.COMPON_SNOMED_CT && String(r.COMPON_SNOMED_CT).trim() !== "") {
-            valueCodeableConcept = clean({
-              coding: [{ system: "http://snomed.info/sct", code: String(r.COMPON_SNOMED_CT).trim() }],
-              text,
-            });
+            valueCodeableConcept = cc("http://snomed.info/sct", String(r.COMPON_SNOMED_CT).trim(), undefined, text);
           } else {
             valueString = text;
           }
@@ -583,7 +575,7 @@ function build() {
             // keep the placer identifier + display alongside. orderId is always a real order here.
             reference: `ServiceRequest/${id.serviceRequest(orderId)}`,
             type: "ServiceRequest",
-            identifier: { use: "usual", system: SYS_PLACER, value: orderId },
+            identifier: ident(SYS_PLACER, orderId, { use: "usual" }),
             display: h.DESCRIPTION || undefined,
           },
         ],
@@ -613,31 +605,27 @@ function build() {
 
     // ---- DiagnosticReport ----
     const identifier: any[] = [
-      {
+      ident(SYS_PLACER, orderId, {
         use: "official",
-        type: {
-          coding: [{ system: SYS_V2_0203, code: "PLAC", display: "Placer Identifier" }],
-          text: "Placer Identifier",
-        },
-        system: SYS_PLACER,
-        value: orderId,
-      },
+        type: cc(SYS_V2_0203, "PLAC", "Placer Identifier"),
+      }),
     ];
     if (acc) {
       // filler-with-system only when the external order id ships (the 2018 orders)
       if (h.EXTERNAL_ORD_ID) {
-        identifier.push({
-          use: "official",
-          type: { coding: [{ system: SYS_V2_0203, code: "FILL", display: "Filler Identifier" }], text: "Filler Identifier" },
-          system: SYS_FILLER,
-          value: acc,
-        });
+        identifier.push(
+          ident(SYS_FILLER, acc, {
+            use: "official",
+            type: cc(SYS_V2_0203, "FILL", "Filler Identifier"),
+          })
+        );
       }
-      identifier.push({
-        use: "official",
-        type: { coding: [{ system: SYS_V2_0203, code: "FILL", display: "Filler Identifier" }], text: "Filler Identifier" },
-        value: acc,
-      });
+      identifier.push(
+        ident(undefined, acc, {
+          use: "official",
+          type: cc(SYS_V2_0203, "FILL", "Filler Identifier"),
+        })
+      );
     }
 
     const performer: any[] = [];
@@ -666,15 +654,15 @@ function build() {
             // Resolving reference to the placed order (ServiceRequest); orderId is real here.
             reference: `ServiceRequest/${id.serviceRequest(orderId)}`,
             type: "ServiceRequest",
-            identifier: { use: "usual", system: SYS_PLACER, value: orderId },
+            identifier: ident(SYS_PLACER, orderId, { use: "usual" }),
             display: h.DESCRIPTION || undefined,
           },
         ],
         status: "final",
-        category: [
-          { coding: [{ system: SYS_CAT_EPIC, code: epicLabel }], text: epicLabel },
-          { coding: [{ system: SYS_CAT_HL7, code: "LAB", display: "Laboratory" }], text: "Laboratory" },
-        ],
+        category: category(
+          cc(SYS_CAT_EPIC, epicLabel, undefined, epicLabel),
+          cc(SYS_CAT_HL7, "LAB", "Laboratory")
+        ),
         code: (() => {
           const drCoding: any[] = [];
           const cpt = cptByOrder.get(orderId);
@@ -695,8 +683,8 @@ function build() {
     // ---- Specimen ----
     const specIdentifier: any[] = [];
     if (acc) {
-      specIdentifier.push({ system: SYS_SPEC_ID, value: acc });
-      if (h.EXTERNAL_ORD_ID) specIdentifier.push({ system: SYS_FILLER, value: acc });
+      specIdentifier.push(ident(SYS_SPEC_ID, acc));
+      if (h.EXTERNAL_ORD_ID) specIdentifier.push(ident(SYS_FILLER, acc));
     }
     // Specimen.type: text from SPECIMEN_TYPE_C_NAME + SNOMED (code-only) recovered from the
     // placement-parent's SPEC_TYPE_SNOMED, but ONLY for genuinely Blood-typed specimens

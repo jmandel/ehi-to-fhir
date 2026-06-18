@@ -41,6 +41,7 @@ import { resolve } from "path";
 import { q, q1 } from "../lib/db";
 import { id, ref, patientRef } from "../lib/ids";
 import { emit, clean } from "../lib/gen";
+import { cc, ident } from "../lib/cc";
 
 // Epic OID systems that appear in the export's own identifier columns (not Epic
 // terminology we'd be inventing): the CSN identifier system and the reason-for-visit
@@ -393,7 +394,7 @@ function buildParticipants(e: any, csn: string) {
   if (e.REFERRAL_SOURCE_ID) {
     const nm = provName(e.REFERRAL_SOURCE_ID) ?? e.REFERRAL_SOURCE_ID_REFERRING_PROV_NAM ?? undefined;
     out.push({
-      type: [{ coding: [{ system: PARTICIPATION, code: "REF", display: "referrer" }], text: "referrer" }],
+      type: [cc(PARTICIPATION, "REF", "referrer")],
       individual: { ...ref("Practitioner", id.practitioner(e.REFERRAL_SOURCE_ID), nm), type: "Practitioner" },
     });
   }
@@ -430,7 +431,7 @@ function buildParticipants(e: any, csn: string) {
       )?.PROV_START_TIME
     );
     out.push({
-      type: [{ coding: [{ system: PARTICIPATION, code: "PART", display: "Participation" }], text: "Participation" }],
+      type: [cc(PARTICIPATION, "PART", "Participation")],
       period: apptStart ? { start: apptStart } : undefined,
       individual: ref("Practitioner", id.practitioner(e.VISIT_PROV_ID), nm),
     });
@@ -538,7 +539,7 @@ function buildEncounters() {
     const enc = clean({
       resourceType: "Encounter",
       id: id.encounter(csn),
-      identifier: [{ use: "usual", system: SYS_CSN, value: csn }],
+      identifier: [ident(SYS_CSN, csn, { use: "usual" })],
       status: "finished", // all selected contacts are CALCULATED_ENC_STAT 'Complete'
       // class: FHIR-required v3-ActCode, DERIVED from ADT_PAT_CLASS_C_NAME (see buildClass).
       class: buildClass(e, hsp),

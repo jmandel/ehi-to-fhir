@@ -35,6 +35,7 @@
 import { q } from "../lib/db";
 import { id, ref, patientRef } from "../lib/ids";
 import { emit, clean } from "../lib/gen";
+import { cc, ident } from "../lib/cc";
 
 // Epic's flowsheet-id code system (the survey code namespace the target uses). We
 // emit the REAL numeric FLO_MEAS_ID under it — the export's true flowsheet measure id
@@ -89,15 +90,11 @@ const USCORE_BY_MEAS: Record<string, string[]> = {
  *  additional CodeableConcept per US-Core overlay code (the target carries each
  *  us-core-category code in its OWN category entry, not merged into the survey coding). */
 function surveyCategory(measId: string): any[] {
-  const cats: any[] = [
-    { coding: [{ system: SYS_OBS_CAT, code: "survey", display: "Survey" }] },
-  ];
+  const cats: any[] = [cc(SYS_OBS_CAT, "survey", "Survey", null)];
   const overlay = USCORE_BY_MEAS[measId];
   if (overlay) {
     for (const c of overlay) {
-      cats.push({
-        coding: [{ system: SYS_USCORE_CAT, code: c, display: USCORE_LABEL[c] }],
-      });
+      cats.push(cc(SYS_USCORE_CAT, c, USCORE_LABEL[c], null));
     }
   }
   return cats;
@@ -255,14 +252,11 @@ function buildSurveyObservations(): any[] {
       id: id.observation(`flo-${r.FSD_ID}-${r.LINE}`),
       status,
       category: surveyCategory(String(r.FLO_MEAS_ID)),
-      code: {
-        coding: [{ system: SYS_FLO, code: String(r.FLO_MEAS_ID), display: disp }],
-        text: disp,
-      },
+      code: cc(SYS_FLO, String(r.FLO_MEAS_ID), disp),
       subject: patientRef(),
       encounter: {
         reference: `Encounter/${id.encounter(r.CSN)}`,
-        identifier: { use: "usual", system: SYS_CSN, value: String(r.CSN) },
+        identifier: ident(SYS_CSN, String(r.CSN), { use: "usual" }),
         display: encounterDisplay(r.CSN),
       },
       effectiveDateTime: effective,

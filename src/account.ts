@@ -54,12 +54,7 @@
 import { q } from "../lib/db";
 import { emit, clean } from "../lib/gen";
 import { id, ref, patientRef, PATIENT_PAT_ID } from "../lib/ids";
-
-function nn(v: unknown): string | undefined {
-  if (v === null || v === undefined) return undefined;
-  const s = String(v).trim();
-  return s === "" ? undefined : s;
-}
+import { nn, coalesceName } from "../lib/fmt";
 
 /** IS_ACTIVE (Y/N) → AccountStatus. Required 1..1 binding. */
 function statusFromActive(v: string | undefined): string {
@@ -225,7 +220,7 @@ function saName(servAreaId: string): string | undefined {
     `SELECT SERV_AREA_NAME, EXTERNAL_NAME FROM CLARITY_SA WHERE SERV_AREA_ID = ?`,
     servAreaId
   )[0];
-  return nn(r?.EXTERNAL_NAME) ?? nn(r?.SERV_AREA_NAME);
+  return coalesceName(r?.EXTERNAL_NAME, r?.SERV_AREA_NAME);
 }
 
 emit("Account", [...buildAccounts(), ...buildHospitalAccounts()]);

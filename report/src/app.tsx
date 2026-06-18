@@ -72,7 +72,12 @@ function App() {
         <div id="method" className="band"><Method /></div>
         <div id="residual" className="band alt"><Residual /></div>
         <footer className="foot">
-          <p>One real de-identified patient record · {data.summary.total.toLocaleString()} fields scored · reconciles {data.summary.reconciles ? "✓" : "✗"}. Built deterministically from the Epic EHI export; figures regenerate from <code>compare/LEDGER.json</code> via <code>bun tools/build-viewer.ts</code> and this page via <code>bun report/build.ts</code>.</p>
+          <p style={{ marginBottom: 10 }}>
+            📦 <b>Take it with you:</b> download this whole record as a self-contained{" "}
+            <a href="./health-records-skill-josh-mandel-fhir.zip">SMART-on-FHIR “health-record-assistant” skill bundle</a>{" "}
+            — the reconstructed FHIR plus clinical-note text, redacted exactly as on this page; a drop-in, 1:1-shaped substitute for a real patient-portal download.
+          </p>
+          <p>One real patient record (the author's own, published with consent; a family member's contact details removed) · {data.summary.total.toLocaleString()} fields scored · reconciles {data.summary.reconciles ? "✓" : "✗"}. Built deterministically from the Epic EHI export; figures regenerate from <code>compare/LEDGER.json</code> via <code>bun tools/build-viewer.ts</code> and this page via <code>bun report/build.ts</code>.</p>
         </footer>
       </main>
       <Glossary />

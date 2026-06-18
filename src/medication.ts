@@ -21,6 +21,7 @@
 import { q, q1, parseEpicDateTime } from "../lib/db";
 import { id, ref, patientRef } from "../lib/ids";
 import { emit, clean } from "../lib/gen";
+import { cc, category, ident } from "../lib/cc";
 
 // OIDs observed in the target (Epic instance order/medication namespaces).
 const SYS_ORDER = "urn:oid:1.2.840.114350.1.13.283.2.7.2.798268";   // MedicationRequest.identifier
@@ -129,10 +130,7 @@ function doseEntry(typeCode: string, rawValue: unknown, rawUnit: unknown): any |
   const unit = String(rawUnit);
   const ucum = doseUnitUcum(unit);
   return clean({
-    type: {
-      coding: [{ system: "http://epic.com/CodeSystem/dose-rate-type", code: typeCode, display: typeCode }],
-      text: typeCode,
-    },
+    type: cc("http://epic.com/CodeSystem/dose-rate-type", typeCode, typeCode),
     doseQuantity: {
       value,
       unit,
@@ -325,7 +323,7 @@ function buildMedicationRequests(): { requests: any[]; medications: any[] } {
         resourceType: "Medication",
         id: medFhirId,
         identifier: o.MEDICATION_ID
-          ? [{ use: "usual", system: SYS_DRUG, value: String(o.MEDICATION_ID) }]
+          ? [ident(SYS_DRUG, o.MEDICATION_ID, { use: "usual" })]
           : undefined,
         code: drugText ? { text: drugText } : undefined,
         form,
@@ -361,7 +359,7 @@ function buildMedicationRequests(): { requests: any[]; medications: any[] } {
     if (csn) {
       encounter = clean({
         reference: isInpatient ? undefined : ref("Encounter", id.encounter(csn)).reference,
-        identifier: { use: "usual", system: SYS_ENC, value: csn },
+        identifier: ident(SYS_ENC, csn, { use: "usual" }),
       });
     }
 
@@ -446,10 +444,7 @@ function buildMedicationRequests(): { requests: any[]; medications: any[] } {
     const methodText =
       sig && sig.split(/\s+/)[0] === "Take" && hasDiscreteDose ? "Take" : undefined;
     const method = methodText
-      ? {
-          coding: [{ system: "http://snomed.info/sct", code: "419652001", display: methodText }],
-          text: methodText,
-        }
+      ? cc("http://snomed.info/sct", "419652001", methodText)
       : undefined;
 
     // timing.repeat.timeOfDay — derived ONLY from the Epic discrete-frequency name
@@ -571,21 +566,12 @@ function buildMedicationRequests(): { requests: any[]; medications: any[] } {
       clean({
         resourceType: "MedicationRequest",
         id: id.medicationRequest(omId),
-        identifier: [{ use: "usual", system: SYS_ORDER, value: omId }],
+        identifier: [ident(SYS_ORDER, omId, { use: "usual" })],
         status,
         intent: "order",
-        category: [
-          {
-            coding: [
-              {
-                system: "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
-                code: catCode,
-                display: catDisplay,
-              },
-            ],
-            text: catDisplay,
-          },
-        ],
+        category: category(
+          cc("http://terminology.hl7.org/CodeSystem/medicationrequest-category", catCode, catDisplay)
+        ),
         medicationReference: ref("Medication", medFhirId, drugText),
         subject: patientRef(),
         encounter,

@@ -8,6 +8,7 @@
  *
  * Convention: `<type>-<naturalKey>` with the key slugified. Use the helpers below.
  */
+import { titleCaseName } from "./fmt";
 
 export const PATIENT_PAT_ID = "Z7004242"; // PATIENT.PAT_ID for this specimen
 export const PATIENT_ID = "pat-" + PATIENT_PAT_ID;
@@ -77,9 +78,8 @@ export function patientDisplay(): string | undefined {
   }
   // "MANDEL,JOSHUA C" -> title-cased ["Mandel", "Joshua", "C"] (cosmetic only).
   const [lastRaw = "", restRaw = ""] = raw.split(",");
-  const tc = (w: string) => (w ? w[0] + w.slice(1).toLowerCase() : w);
-  const last = lastRaw.trim().split(/\s+/).map(tc).join(" ");
-  const restParts = restRaw.trim().split(/\s+/).filter(Boolean).map(tc); // [first, middleInitial?]
+  const last = lastRaw.trim().split(/\s+/).map(titleCaseName).join(" ");
+  const restParts = restRaw.trim().split(/\s+/).filter(Boolean).map(titleCaseName); // [first, middleInitial?]
   // Prefer the EHI preferred first name when present, keeping any middle initial(s).
   const pref = q1<{ PREFERRED_NAME: string }>(
     `SELECT PREFERRED_NAME FROM PATIENT_3 WHERE PAT_ID = ?`, PATIENT_PAT_ID

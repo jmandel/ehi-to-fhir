@@ -42,6 +42,7 @@
 import { q, parseEpicDateTime } from "../lib/db";
 import { id, ref, patientRef, PATIENT_PAT_ID } from "../lib/ids";
 import { emit, clean } from "../lib/gen";
+import { cc, category, ident } from "../lib/cc";
 
 // Epic instance OID namespaces that genuinely back columns in THIS export.
 const SYS_FLO = "urn:oid:1.2.840.114350.1.13.283.2.7.2.707679"; // flowsheet measure id (= FLO_MEAS_ID)
@@ -169,16 +170,8 @@ function buildVitals(): any[] {
       // EDITED_LINE is populated exactly on the rows the target marks "amended" (the 9/28/2023
       // weight & BMI re-edit); everything else is a final reading.
       status: r.EDITED_LINE != null ? "amended" : "final",
-      category: [
-        {
-          coding: [{ system: SYS_OBSCAT, code: "vital-signs", display: "Vital Signs" }],
-          text: "Vital Signs",
-        },
-      ],
-      code: {
-        coding: [{ system: SYS_FLO, code: fmid, display: name }],
-        text: name,
-      },
+      category: category(cc(SYS_OBSCAT, "vital-signs", "Vital Signs")),
+      code: cc(SYS_FLO, fmid, name),
       subject: patientRef(),
     };
 
@@ -188,7 +181,7 @@ function buildVitals(): any[] {
       const csn = String(r.PAT_ENC_CSN_ID);
       obs.encounter = {
         ...ref("Encounter", id.encounter(csn)),
-        identifier: { use: "usual", system: SYS_ENC, value: csn },
+        identifier: ident(SYS_ENC, csn, { use: "usual" }),
       };
     }
 
@@ -206,7 +199,7 @@ function buildVitals(): any[] {
     // Abnormal flag → interpretation. Vitals abnormal flags are essentially absent in this
     // export (exactly the one High BP); ABNORMAL_C_NAME='Yes' → v3 "A" (Abnormal). (guide gotcha 7)
     if (String(r.ABNORMAL_C_NAME || "").toLowerCase() === "yes") {
-      obs.interpretation = [{ coding: [{ system: SYS_INTERP, code: "A", display: "Abnormal" }] }];
+      obs.interpretation = [cc(SYS_INTERP, "A", "Abnormal", null)];
     }
 
     // VALUE — branch on VALUE_TYPE_C_NAME (guide gotcha 2).

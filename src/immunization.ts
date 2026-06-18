@@ -34,6 +34,8 @@
 import { q, q1, parseEpicDateTime } from "../lib/db";
 import { id, ref, patientRef, PATIENT_PAT_ID } from "../lib/ids";
 import { emit, clean } from "../lib/gen";
+import { cc, ident } from "../lib/cc";
+import { enumMap } from "../lib/fmt";
 
 // Epic instance OIDs observed in the target.
 const SYS_IMM = "urn:oid:1.2.840.114350.1.13.283.2.7.2.768076"; // Immunization.identifier (IMMUNE_ID)
@@ -96,7 +98,7 @@ function buildImmunizations(): any[] {
 
     // --- status: derived from the Epic status name via STATUS_MAP (mapping logic).
     // 'Given' → completed is the only value in this specimen.
-    const status = STATUS_MAP[r.IMMNZTN_STATUS_C_NAME] || undefined;
+    const status = enumMap(r.IMMNZTN_STATUS_C_NAME, STATUS_MAP);
 
     // --- primarySource: a historically-documented dose (IMM_HISTORIC_ADM_YN='Y')
     // was not administered in this Epic instance -> false. The one in-house dose
@@ -115,7 +117,7 @@ function buildImmunizations(): any[] {
     const encounter = csn
       ? {
           reference: ref("Encounter", id.encounter(csn)).reference,
-          identifier: { use: "usual", system: SYS_ENC, value: csn },
+          identifier: ident(SYS_ENC, csn, { use: "usual" }),
         }
       : undefined;
 
@@ -173,10 +175,7 @@ function buildImmunizations(): any[] {
       );
       const provId = serRows.length === 1 ? serRows[0].PROV_ID : undefined;
       performer.push({
-        function: {
-          coding: [{ system: SYS_PERF_FN, code: "AP", display: "Administering Provider" }],
-          text: "Administering Provider",
-        },
+        function: cc(SYS_PERF_FN, "AP", "Administering Provider"),
         actor: {
           reference: provId ? ref("Practitioner", id.practitioner(provId)).reference : undefined,
           type: "Practitioner",
@@ -193,10 +192,7 @@ function buildImmunizations(): any[] {
       if (provId) {
         const provName = q1<Row>(`SELECT PROV_NAME FROM CLARITY_SER WHERE PROV_ID = ?`, String(provId))?.PROV_NAME;
         performer.push({
-          function: {
-            coding: [{ system: SYS_PERF_FN, code: "OP", display: "Ordering Provider" }],
-            text: "Ordering Provider",
-          },
+          function: cc(SYS_PERF_FN, "OP", "Ordering Provider"),
           actor: {
             reference: ref("Practitioner", id.practitioner(provId)).reference,
             type: "Practitioner",
@@ -210,7 +206,7 @@ function buildImmunizations(): any[] {
       clean({
         resourceType: "Immunization",
         id: id.immunization(immId),
-        identifier: [{ use: "usual", system: SYS_IMM, value: immId }],
+        identifier: [ident(SYS_IMM, immId, { use: "usual" })],
         status,
         vaccineCode,
         patient: patientRef(),

@@ -166,12 +166,12 @@ CVX)**, plus partial gains on **Observation (+16)** and **DiagnosticReport (+2)*
 - **Per-system deltas:** NDF-RT +76 (→100%), RxNorm +22 (→100%), ICD-10 +21 (→88%),
   ICD-9 +19 (→86%), SNOMED +24 (→37%), LOINC +19 (→66%), CVX +11 (→100%), CPT +2
   (→50%).
-- The answer key **fully closes** allergens, RxNorm medications, and CVX
+- The crosswalk **fully closes** allergens, RxNorm medications, and CVX
   immunizations, and **substantially closes** ICD diagnosis coding; it leaves real
   residuals in SNOMED/LOINC observation values and document types. (RxNorm/CVX were
   previously unrecovered due to an apply-pass keying gap; the two FALLBACK bridges
   added above closed it.)
-- All figures are a **recoverability ceiling**, since the answer key was reconstructed
+- All figures are a **recoverability ceiling**, since the crosswalk was reconstructed
   from the same reference FHIR being scored.
 
 **Round-2b note (no change to coding coverage).** Round 2b added provider demographics
@@ -179,7 +179,7 @@ CVX)**, plus partial gains on **Observation (+16)** and **DiagnosticReport (+2)*
 crosswalk, so the table above is unchanged (overall still **74%**, 224/303). One provenance
 shift worth recording: the Practitioner **NPI identifier** (`http://hl7.org/fhir/sid/us-npi`)
 is now emitted in the **baseline** build (recovered from `SVC_LN_INFO.LN_REND_NPI` + the NPPES
-registry), so it is no longer answer-key-only. The identifier answer-key layer is otherwise
+registry), so it is no longer crosswalk-only. The identifier crosswalk layer is otherwise
 unchanged (74 identifiers / 49 resources). The compare-ledger movement from round 2b lands in
 the EXACT/GAP ledger (provider demographics → EXACT; attachment opaque-Binary-id → residual GAP),
 not in the terminology-coverage figures — see TODO.md and SHAPE-GAPS.md.
@@ -190,18 +190,18 @@ per-system mover being **SNOMED 37%→41% (29/71, +27)** as the Condition encoun
 now lets the enc-dx siblings inherit their problem-list twin's SNOMED/ICD-10/ICD-9 (Condition
 distinct standard pairs **59/59**, fully closed). BY CLASS: standard **81% (231/286)** ·
 epic-instance-oid **100% (808/808)** · combined **95% (1039/1094)**. The larger round-4 ledger
-movement (answer-key GAP 2709→2064, −645) is **not** new terminology systems — it is the
+movement (crosswalk GAP 2709→2064, −645) is **not** new terminology systems — it is the
 med dosage/route/form + course-of-therapy *text/structure* landing, the Observation US-Core
 *category* derivation, and the **attachment relax finally scoring** (the
 `tolerate-documentreference-content-attachment-binary` 56/56 + `-contenttype` 28/28 rules now FIRE
-against the `--embed-attachments` answer-key build — were inert in round 3). Coding-gap still falls
-(answer-key 1130→801) because the Condition SNOMED inheritance closes recurring coding leaves.
+against the `--embed-attachments` crosswalk build — were inert in round 3). Coding-gap still falls
+(crosswalk 1130→801) because the Condition SNOMED inheritance closes recurring coding leaves.
 Residual coding floor is unchanged in character: SNOMED/LOINC **observation values** (no DX_ID→SNOMED
 / encrypted-flowsheet anchor) and a CPT/document-type tail. Re-score: `bun tools/coding-coverage.ts`.
 
 **Round-6 note (reconcile + adjudication; coding-coverage table unchanged).** Round 6 added no new
 crosswalk pairs and no new tolerance families, so the standard-coding coverage table above is
-unchanged. The ledger moved on shape/label closure only: answer-key+embed GAP **1940→1858 (−82)**,
+unchanged. The ledger moved on shape/label closure only: crosswalk+embed GAP **1940→1858 (−82)**,
 EXACT **12442→12505 (+63)**, TOLERATED **1681→1700 (+19)**; coding-gap **759→734**, real-gap
 **988→933**, unsure **215→191**. The floor audit re-buckets to **FLOOR 1730 / MOVABLE 100 /
 UNSURE 28** (UNSURE down from 350); after manual adjudication the true split is **FLOOR 1788 /
@@ -211,5 +211,5 @@ Encounter.type ENC_TYPE_C-dictionary and DocumentReference note-role-extension f
 irreducible-movable coding tail is Specimen.type SNOMED (6 via `SPEC_TYPE_SNOMED`) — see TODO.md
 for the full per-cluster table.
 
-Toggle: `bun build.ts --answer-key` (baseline `out/` always; enriched `out-answerkey/`
+Toggle: `bun build.ts --apply-crosswalk` (baseline `out/` always; enriched `out-crosswalk/`
 only with the flag). Re-score: `bun tools/coding-coverage.ts [--json]`.

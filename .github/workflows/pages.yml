@@ -29,6 +29,7 @@ jobs:
         run: |
           mkdir -p _site
           cp report/index.html report/styles.css report/app.js _site/
+          cp report/*.zip _site/ 2>/dev/null || true   # synthetic health-record skill bundle(s)
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
