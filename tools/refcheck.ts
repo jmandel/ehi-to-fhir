@@ -22,7 +22,7 @@ import { readdirSync, existsSync, readFileSync } from "fs";
 import { resolve } from "path";
 
 // OUT dir parameterizable (env OUT_DIR > default "out"), matching compare/classify.ts so the
-// gate can be run against the baseline (out/) OR the answer-key-enriched dir (out-answerkey/).
+// gate can be run against the baseline (out/) OR the crosswalk-enriched dir (out-crosswalk/).
 const OUT = resolve(import.meta.dir, "..", process.env.OUT_DIR || "out");
 const files = existsSync(OUT) ? readdirSync(OUT).filter((f) => f.endsWith(".json") && f !== "bundle.json") : [];
 const resources: any[] = [];

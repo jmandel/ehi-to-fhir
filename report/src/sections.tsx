@@ -156,15 +156,18 @@ export function Families() {
   );
 }
 
-function ExTable({ exs }: { exs?: Ex[] }) {
+function ExTable({ exs, total }: { exs?: Ex[]; total?: number }) {
   if (!exs?.length) return null;
   const seen = new Set<string>(), rows: Ex[] = [];
   for (const e of exs) { const key = e.rt + "|" + e.path; if (seen.has(key)) continue; seen.add(key); rows.push(e); if (rows.length >= 4) break; }
   return (
-    <table className="ex-table">
-      <thead><tr><th>field</th><th>Epic</th><th>ours</th></tr></thead>
-      <tbody>{rows.map((e, i) => <tr key={i}><td className="ex-rt">{e.rt} <span className="ex-path">{e.path}</span></td><td><Val v={e.target} /></td><td><Val v={e.ours} /></td></tr>)}</tbody>
-    </table>
+    <>
+      <div className="ex-caption">A few examples{total ? ` — ${rows.length} of ${total.toLocaleString()} fields` : ""} (distinct field types; each occurs across many resources):</div>
+      <table className="ex-table">
+        <thead><tr><th>field</th><th>Epic's FHIR API</th><th>ours</th></tr></thead>
+        <tbody>{rows.map((e, i) => <tr key={i}><td className="ex-rt">{e.rt} <span className="ex-path">{e.path}</span></td><td><Val v={e.target} /></td><td><Val v={e.ours} /></td></tr>)}</tbody>
+      </table>
+    </>
   );
 }
 function FamilyCard({ fk, f, n, bucket, exs }: { fk: string; f: Family; n: number; bucket: keyof typeof BUCKET; exs?: Ex[] }) {
@@ -175,7 +178,7 @@ function FamilyCard({ fk, f, n, bucket, exs }: { fk: string; f: Family; n: numbe
       <div className="fam-what">{f.what}</div>
       <div className="fam-why"><b>{whyLabel}</b>{f.why}</div>
       <div className="fam-sowhat">{f.soWhat}</div>
-      <ExTable exs={exs} />
+      <ExTable exs={exs} total={n} />
       <div className="fam-guard">{bucket === "equivalent" ? "Guard: " : "Proof: "}{f.guardOrProof}</div>
     </div>
   );
@@ -187,7 +190,7 @@ function FamilyDetail({ fk, exs, n, onClose }: { fk: string; exs?: Ex[]; n: numb
       <div className="fam-detail-head"><span className="fam-title">{f.title}</span> <span className="fam-n" style={{ background: BUCKET.couldnt.bg, color: BUCKET.couldnt.color }}>{n.toLocaleString()} fields</span><button className="fam-x" onClick={onClose}>×</button></div>
       <div className="fam-what">{f.what}</div>
       <div className="fam-why"><b>Why it's blank: </b>{f.why}</div>
-      <ExTable exs={exs} />
+      <ExTable exs={exs} total={n} />
       <div className="fam-guard">Proof: {f.guardOrProof}</div>
     </div>
   );

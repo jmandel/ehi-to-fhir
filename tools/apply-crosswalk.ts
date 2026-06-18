@@ -815,7 +815,7 @@ function main() {
 
   // machine-readable last line for callers (build.ts).
   console.error(
-    `ANSWERKEY SUMMARY: ${codingsAdded} codings / ${touchedResources.size} resources / ${filesWritten} files` +
+    `CROSSWALK SUMMARY: ${codingsAdded} codings / ${touchedResources.size} resources / ${filesWritten} files` +
       (APPLY_IDENTIFIERS ? ` / ${identifiersAdded} identifiers / ${idTouched.size} id-resources` : ""),
   );
 }

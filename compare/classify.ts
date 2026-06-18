@@ -25,7 +25,7 @@ const ROOT = resolve(import.meta.dir, "..");
 const TARGET_DIR = resolve(ROOT, "fhir-target");
 
 // OUT dir is parameterizable so we can score the baseline (out/, default) OR the
-// answer-key-enriched output (out-answerkey/). Precedence: env OUT_DIR > --out=<dir>
+// crosswalk-enriched output (out-crosswalk/). Precedence: env OUT_DIR > --out=<dir>
 // CLI flag > default "out". Accepts an absolute path or a path relative to ROOT.
 function resolveOutDir(): string {
   const cliArg = process.argv.find((a) => a.startsWith("--out="));
@@ -509,7 +509,7 @@ const ruleHits: Record<string, number> = {};
 for (const r of RULES) ruleHits[r.id] = 0;
 
 // Single optional positional TYPE filter. Must skip --flags (e.g. --out=<dir>) so the
-// flag never shadows the type arg: `bun compare/classify.ts --out=out-answerkey` has no
+// flag never shadows the type arg: `bun compare/classify.ts --out=out-crosswalk` has no
 // type filter (runs all types), while `bun compare/classify.ts Encounter --out=foo` filters
 // to Encounter. (Previously argv[2] grabbed `--out=...` as the type, classifying nothing.)
 const only = process.argv.slice(2).find((a) => !a.startsWith("--"));

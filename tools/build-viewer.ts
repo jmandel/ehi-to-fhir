@@ -3,7 +3,7 @@
  * build-viewer.ts — build report/viewer/data.json, the data layer that powers the HTML report's
  * interactive comparison widget. DETERMINISTIC consumer of compare/LEDGER.json (which already carries
  * per-instance tgtId/ourId + rationale on every TOLERATED and GAP leaf, plus viewerPairs/viewerOurOnly)
- * and the raw resources in out-answerkey/ (ours) + fhir-target/ (Epic's live-API answer key).
+ * and the raw resources in out-crosswalk/ (ours) + fhir-target/ (Epic's live-API reference target).
  *
  * Per-leaf disposition is read back from the trusted ledger (never re-derived), so the widget cannot
  * drift from the official EXACT/TOLERATED/GAP reconciliation. GAP rationale = tools/floor-audit.ts
@@ -19,7 +19,7 @@
  *                     PaymentReconciliation, CoverageEligibilityResponse, ServiceRequest, Binary)
  *   samples       curated per (type, subgroup) instance picks so the report can FEATURE examples
  *
- * Run after: EXCLUDE_SMARTDATA=1 bun compare/classify.ts --out=out-answerkey
+ * Run after: EXCLUDE_SMARTDATA=1 bun compare/classify.ts --out=out-crosswalk
  *   bun tools/build-viewer.ts
  */
 import { verdict } from "./floor-audit";
@@ -28,9 +28,9 @@ import { resolve } from "path";
 
 const ROOT = resolve(import.meta.dir, "..");
 const TARGET_DIR = resolve(ROOT, "fhir-target");
-// Defaults = the canonical answer-key view. Override (env) to build the honest "raw export only" view:
+// Defaults = the canonical crosswalk view. Override (env) to build the honest "raw export only" view:
 //   VIEWER_OUR=out  VIEWER_LEDGER=compare/LEDGER.json (a lean classify run)  VIEWER_DATA=report/viewer/data-lean.json
-const OUR_DIR = resolve(ROOT, process.env.VIEWER_OUR || "out-answerkey");
+const OUR_DIR = resolve(ROOT, process.env.VIEWER_OUR || "out-crosswalk");
 const OUT = resolve(ROOT, "report/viewer");
 const DATA_OUT = resolve(ROOT, process.env.VIEWER_DATA || "report/viewer/data.json");
 const L = JSON.parse(readFileSync(resolve(ROOT, process.env.VIEWER_LEDGER || "compare/LEDGER.json"), "utf8"));
@@ -173,7 +173,7 @@ function samplePairs() {
 
 // ---------------------------------------------------------------------------
 // PHI redaction for PUBLICATION (the report ships our own record; this only protects the patient's
-// direct identifiers from being revealed by the un-redacted Epic answer-key side).
+// direct identifiers from being revealed by the un-redacted Epic reference-target side).
 // Our generator already replaces the patient's phone/email/street/MRN/contact with [REDACTED-*] tokens.
 // Epic's target side is NOT redacted, so without this the comparison would show the real value (the
 // "preimage") next to our token. We derive the preimage SET from the data (NO hardcoded patient
@@ -225,11 +225,11 @@ const redactor = buildRedactor(pairs);
 
 // ── Bridge-contribution decomposition (canonical build only) ────────────────
 // Splits the reproduced leaves into "the raw export already had it" vs "the terminology bridge
-// recovered it", over the same canonical denominator. Only meaningful for the answer-key build, and
+// recovered it", over the same canonical denominator. Only meaningful for the crosswalk build, and
 // only when the lean output (out/) is present to compare against.
 function computeDecomposition(): any {
   const LEAN_DIR = resolve(ROOT, "out");
-  if (!OUR_DIR.endsWith("out-answerkey") || !existsSync(LEAN_DIR)) return null;
+  if (!OUR_DIR.endsWith("out-crosswalk") || !existsSync(LEAN_DIR)) return null;
   const LEAN = indexDir(LEAN_DIR);
   const lv = (r: any) => { const m = new Map<string, any[]>(); (function go(p: string, n: any) { if (n == null) return; if (Array.isArray(n)) return n.forEach((x) => go(p + "[]", x)); if (typeof n === "object") return Object.entries(n).forEach(([k, v]) => go(p ? `${p}.${k}` : k, v)); (m.get(p) ?? m.set(p, []).get(p)!).push(n); })("", r); return m; };
   const disp = new Map<string, { g: Map<string, any[]>; t: Map<string, any[]> }>();
@@ -260,7 +260,7 @@ function computeDecomposition(): any {
 const decomposition = computeDecomposition();
 
 const payload = redactor.walk({
-  generatedFrom: "compare/LEDGER.json (answer-key, attachments embedded, SmartData excluded)",
+  generatedFrom: "compare/LEDGER.json (crosswalk, attachments embedded, SmartData excluded)",
   summary: { exact: L.exact, tolerated: L.tolerated?.total ?? 0, gap: L.gap?.total ?? 0, total: L.totalTargetElements, reconciles: L.reconciles, gapByClass: L.gap?.byClass || {}, perType: L.perType || {}, decomposition },
   pairs, cantReproduce, ourOnly, newResources, samples: samplePairs(),
 });

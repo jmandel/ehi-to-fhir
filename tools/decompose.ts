@@ -9,7 +9,7 @@
  * Bridge is additive (same ids, only adds codings/identifiers), so lean-reproduced ⊆ bridge-reproduced
  * and the comparison is clean.
  *
- *   bun tools/decompose.ts   (uses the canonical compare/LEDGER.json + out/ + out-answerkey/)
+ *   bun tools/decompose.ts   (uses the canonical compare/LEDGER.json + out/ + out-crosswalk/)
  */
 import { readdirSync, readFileSync, existsSync } from "fs";
 import { resolve } from "path";

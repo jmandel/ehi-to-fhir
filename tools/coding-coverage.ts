@@ -1,7 +1,7 @@
 #!/usr/bin/env bun
 /**
  * coding-coverage.ts — measure standard-terminology coding coverage of generated
- * FHIR vs the reference target, WITH vs WITHOUT the answer-key layer.
+ * FHIR vs the reference target, WITH vs WITHOUT the crosswalk layer.
  *
  *   bun tools/coding-coverage.ts            # summary + writes nothing
  *   bun tools/coding-coverage.ts --json     # machine-readable JSON to stdout
@@ -13,11 +13,11 @@
  * of DISTINCT standard (system,code) pairs that appear anywhere in the target's
  * resources, then ask: how many of those exact pairs appear anywhere in our
  *   (a) baseline  output (out/)
- *   (b) enriched output (out-answerkey/, answer-key layered on)
+ *   (b) enriched output (out-crosswalk/, crosswalk layered on)
  * A pair is "covered" if the same {system,code} is emitted ANYWHERE in our output
  * for that type (we compare by value, since ids are Epic-opaque and won't line up).
  *
- * We restrict to the recoverable STANDARD systems — the ones the answer key targets —
+ * We restrict to the recoverable STANDARD systems — the ones the crosswalk targets —
  * because Epic-local urn:oid:* category/flowsheet systems are passthroughs, not the
  * coding gap under study. Counts are deduped distinct pairs (a missing LOINC that
  * recurs on 50 resources is one gap, not 50).
@@ -28,9 +28,9 @@ import { readdirSync, existsSync, readFileSync } from "fs";
 const ROOT = resolve(import.meta.dir, "..");
 const TARGET = resolve(ROOT, "fhir-target");
 const BASE = resolve(ROOT, "out");
-const AK = resolve(ROOT, "out-answerkey");
+const AK = resolve(ROOT, "out-crosswalk");
 
-// The recoverable standard terminologies the answer key targets. Anything else
+// The recoverable standard terminologies the crosswalk targets. Anything else
 // (Epic urn:oid category/flowsheet systems, hl7 structural code systems) is out of
 // scope for the coding gap and excluded from the denominator.
 const STD: Record<string, string> = {
@@ -160,7 +160,7 @@ const gapClosed = (b: number, a: number, t: number) => {
   return gap === 0 ? "-" : Math.round((100 * (a - b)) / gap) + "%";
 };
 
-console.log("=== Standard-terminology coding coverage: target vs baseline vs answer-key ===\n");
+console.log("=== Standard-terminology coding coverage: target vs baseline vs crosswalk ===\n");
 console.log(
   "SYSTEM".padEnd(14),
   "TGT".padStart(5),
@@ -214,8 +214,8 @@ for (const r of perType.sort((a, b) => b.target - a.target)) {
 // system_class (standard | epic-instance-oid), measure coverage of the EXACT
 // (target_system, target_code) pairs the crosswalk ASSERTS for each class —
 // regardless of whether the target_system is a "standard" terminology. This is
-// the honest denominator for the answer key: every pair here is anchored to a
-// real EHI local code and tagged answer-key-sourced. A pair is "covered" if that
+// the honest denominator for the crosswalk: every pair here is anchored to a
+// real EHI local code and tagged crosswalk-sourced. A pair is "covered" if that
 // {system,code} appears ANYWHERE in the corresponding output (deduped distinct).
 // ============================================================================
 function loadAllDir(dir: string): any[] {
@@ -317,5 +317,5 @@ if (xwalkByClass.size) {
     ("+" + (cA - cB)).padStart(7),
   );
   console.log("\nlegend: XWALK=distinct tagged pairs in crosswalk; INTGT=present in reference target;");
-  console.log("BASE/AK=present anywhere in baseline / answer-key output; AK%=AK/XWALK.");
+  console.log("BASE/AK=present anywhere in baseline / crosswalk output; AK%=AK/XWALK.");
 }

@@ -69,12 +69,12 @@ export const content = {
   buckets: {
     heading: "How we score every field",
     intro:
-      "We compared all 16,120 fields Epic's API returned and put each into one of three buckets. The buckets are defined so that “we matched it” can never be faked, and “we couldn't” always carries evidence.",
+      "We compared all 16,120 fields Epic's FHIR API returned and put each into one of three buckets. The buckets are defined so that “we matched it” can never be faked, and “we couldn't” always carries evidence.",
     identical: {
       key: "identical",
       name: "Identical",
       color: "#1a7f37",
-      def: "Byte-for-byte the same value Epic's API returned.",
+      def: "Byte-for-byte the same value Epic's FHIR API returned.",
       internalName: "EXACT",
     },
     equivalent: {
@@ -119,7 +119,7 @@ export const content = {
     "we-chose-a-truthful-value": {
       title: "We emitted the source-faithful value",
       short: "We produced the export's real value, which differs from Epic's rendering.",
-      what: "Epic's API renders the field one way; the export holds another, and we emit the export's. Sometimes ours is *more* complete (Epic masked a clinician to “Z”; the export has “Zoe”); sometimes it's just a different form (“36 S Brooks St” vs “Street”, the literal order text vs a tidied catalog string).",
+      what: "Epic's FHIR API renders the field one way; the export holds another, and we emit the export's. Sometimes ours is *more* complete (Epic masked a clinician to “Z”; the export has “Zoe”); sometimes it's just a different form (“36 S Brooks St” vs “Street”, the literal order text vs a tidied catalog string).",
       why: "A core rule of the project is faithfulness over mimicry: never copy Epic's output, always derive from the source. Reproducing Epic's exact string would mean fabricating it.",
       soWhat: "We **did** produce a value — this is a deliberate difference, not a loss. A consumer gets a correct, source-traceable value; it just isn't byte-identical to Epic's.",
       example: "Medication name: ours “NORTRIPTYLINE HCL 10 MG PO CAPS” (the actual order text) vs Epic “nortriptyline 10 MG capsule”.",
@@ -149,12 +149,12 @@ export const content = {
   missingEntirely: {
     heading: "What's missing entirely",
     intro:
-      "Beyond field-by-field gaps, a few **whole categories of data simply aren't in this export** — so the resources Epic builds from them can't be reconstructed at all. These are export-configuration set-asides, not failures of our code, and we verified each by searching the whole export. The notable ones:",
+      "Beyond field-by-field gaps, a few **whole categories of data simply aren't in this export** — so the resources Epic's FHIR API builds from them can't be reconstructed at all. These are export-configuration set-asides, not failures of our code, and we verified each by searching the whole export. The notable ones:",
     items: [
       { title: "Physical-exam “SmartData” findings", count: "118 Observations", detail: "Epic's SmartForm/SmartTool findings — structured physical-exam results like “no focal deficit.” The data store that backs every one of them isn't included in this export, so none can be rebuilt. (They're set aside from both sides of the scorecard so they don't distort the comparison.) Their clinical content largely survives as free-text in the linked visit notes — lost as structured data, mostly preserved as narrative.", proof: "Searching the whole export for the SmartData store and its element codes returns nothing." },
-      { title: "Panel & group structure", count: "~75 Observations", detail: "Epic emits “grouper” resources — a Vital Signs panel that ties blood pressure, weight, and height together (via member links), and survey/score totals. The export stores each individual measurement flat, with no row for the panel or header — so the grouping resources and their member links can't be reconstructed. The individual measurements themselves are all present.", proof: "The member measurements exist in the export; no parent/panel row does." },
+      { title: "Panel & group structure", count: "~75 Observations", detail: "Epic's FHIR API returns “grouper” resources — a Vital Signs panel that ties blood pressure, weight, and height together (via member links), and survey/score totals. The export stores each individual measurement flat, with no row for the panel or header — so the grouping resources and their member links can't be reconstructed. The individual measurements themselves are all present.", proof: "The member measurements exist in the export; no parent/panel row does." },
       { title: "Care teams & care-plan templates", count: "CareTeam + 3 CarePlans", detail: "Care-team rosters and Epic's care-plan templates/narratives live in stores this export doesn't ship; the patient-instruction text survives inside the notes.", proof: "Whole-export search for the care-team and care-plan-template stores is empty." },
-      { title: "Server-only documents", count: "21 DocumentReferences", detail: "Some documents in Epic's API are pure server-side metadata pointers — the document id and its body aren't in the export, so there's nothing to point at.", proof: "The note id is absent from the export's note tables and no file ships for it." },
+      { title: "Server-only documents", count: "21 DocumentReferences", detail: "Some documents in Epic's FHIR API are pure server-side metadata pointers — the document id and its body aren't in the export, so there's nothing to point at.", proof: "The note id is absent from the export's note tables and no file ships for it." },
     ],
     note: "Everything here is genuinely absent from the patient's own download — the kind of gap right-of-access can't currently close, regardless of how good the translation code is.",
   },
@@ -193,7 +193,7 @@ export const content = {
       title: "Timestamps rounded to the minute",
       short: "Our source timestamp is minute-precise; the target's extra seconds match the rounding.",
       what:
-        "Some timestamps in the export are recorded only to the minute, while Epic's API shows seconds. So our `…T21:09:00Z` vs Epic's `…T21:09:37Z`.",
+        "Some timestamps in the export are recorded only to the minute, while Epic's FHIR API shows seconds. So our `…T21:09:00Z` vs Epic's `…T21:09:37Z`.",
       why:
         "We tolerate this only when Epic's value equals ours once rounded to the minute — i.e. the difference is genuinely just the seconds the export never recorded.",
       soWhat:
@@ -206,7 +206,7 @@ export const content = {
       title: "We used the standard code where Epic used its own",
       short: "Encounter class: standard v3-ActCode vs Epic's proprietary code.",
       what:
-        "The encounter `class` field has an *extensible* binding to FHIR's standard value set (ambulatory, inpatient, …) — meaning you should use a standard code when a suitable one fits. Epic returns its own proprietary code (`HOV`, `Appointment`); we emit the standard `AMB` (ambulatory).",
+        "The encounter `class` field has an *extensible* binding to FHIR's standard value set (ambulatory, inpatient, …) — meaning you should use a standard code when a suitable one fits. Epic's FHIR API returns its own proprietary code (`HOV`, `Appointment`); we emit the standard `AMB` (ambulatory).",
       why:
         "Both are valid FHIR — Epic's proprietary code is permitted (the official validator flags it as a *warning*, not an error, since the binding is extensible). But because a suitable standard code clearly applies here, the standard one is the more conformant choice, so we emit it, derived from the encounter's recorded patient class.",
       soWhat:
@@ -219,7 +219,7 @@ export const content = {
       title: "Same content, a different valid shape",
       short: "Attachments and a few values represented in a different but equivalent form.",
       what:
-        "The same information is carried in a different valid structure. The biggest case: note/attachment bytes. Epic points an attachment at `Binary/<opaque-server-id>`; we ship the actual bytes and point at a `Binary/` whose ID is the content's own fingerprint, so the bundle is self-contained. Also small cases like a US state spelled out vs abbreviated.",
+        "The same information is carried in a different valid structure. The biggest case: note/attachment bytes. Epic's FHIR API points an attachment at `Binary/<opaque-server-id>`; we ship the actual bytes and point at a `Binary/` whose ID is the content's own fingerprint, so the bundle is self-contained. Also small cases like a US state spelled out vs abbreviated.",
       why:
         "The payload is the same; only the representation differs. For attachments we verify our reference's fingerprint matches the declared hash of the bytes in that slot, so we know it's the right content.",
       soWhat:
@@ -229,10 +229,10 @@ export const content = {
         "Swapping in a different note's bytes would change the fingerprint and be caught. (Note: we deliberately do NOT claim our attachment *URL* equals Epic's — that stays a real difference, since the IDs genuinely differ.)",
     },
     "server-version-stamp": {
-      title: "A version stamp Epic's server adds",
+      title: "A version stamp Epic's FHIR server adds",
       short: "Status codes carry a value-set version we don't echo.",
       what:
-        "On a few status fields Epic's server stamps the version of the value set it used (e.g. `version: \"4.0.0\"` on an allergy's clinical-status code). We emit the same status code without the version stamp.",
+        "On a few status fields Epic's FHIR server stamps the version of the value set it used (e.g. `version: \"4.0.0\"` on an allergy's clinical-status code). We emit the same status code without the version stamp.",
       why:
         "The code itself matches exactly; only the server-applied version annotation is absent. That annotation is a server bookkeeping detail, not patient data.",
       soWhat: "None — the status and its code are identical.",
@@ -258,14 +258,14 @@ export const content = {
   couldntFamilies: {
     "withheld-dictionary": {
       title: "Epic's internal lookup tables aren't in the download",
-      short: "Codes whose meaning lives in Epic's server-side dictionaries, not the export.",
+      short: "Codes whose meaning lives in Epic's FHIR server-side dictionaries, not the export.",
       what:
         "Lots of coded fields — the *type* of visit (“Office Visit”, “Telephone”), where a patient was admitted from, the role a clinician played in signing a note — are coded against Epic's internal dictionaries. The export ships the human label (sometimes) but not the code, and never the dictionary that defines it.",
       why:
         "The translation from Epic's internal concept to a code lives in master files on Epic's servers that the patient download simply doesn't include. We searched the whole export for these code systems; the candidate columns are absent or empty.",
       soWhat:
         "We keep whatever human-readable label the export does carry (and emit it as text), and omit the code rather than invent one.",
-      example: "a visit's type: Epic shows code “Office Visit” in a coded field; the export has no visit-type code at all.",
+      example: "a visit's type: Epic's FHIR API shows code “Office Visit” in a coded field; the export has no visit-type code at all.",
       guardOrProof:
         "Whole-export search for each of these code systems returns nothing; the numeric code columns that would hold them are not shipped.",
     },
@@ -273,7 +273,7 @@ export const content = {
       title: "The words survive, the standardized codes don't",
       short: "Diagnosis/result wording is kept; the LOINC/SNOMED code is gone.",
       what:
-        "Epic's API returns coded concepts — a diagnosis with a SNOMED code, a lab with a LOINC code. The export ships the human-readable *name* but, for many of these, no column linking that name to a standard code.",
+        "Epic's FHIR API returns coded concepts — a diagnosis with a SNOMED code, a lab with a LOINC code. The export ships the human-readable *name* but, for many of these, no column linking that name to a standard code.",
       why:
         "That name→code mapping is computed on Epic's servers from master files the download doesn't contain. For diagnoses, for instance, the export gives the diagnosis wording but no SNOMED code and no table pairing the two.",
       soWhat:
@@ -299,9 +299,9 @@ export const content = {
       title: "Grouping rows the flat export doesn't have",
       short: "Panel/flowsheet “container” resources with no standalone source row.",
       what:
-        "Epic's API sometimes emits a grouping resource — a panel header that gathers its member results, or a flowsheet container. The export stores the individual measurements flat, with no separate row for the group.",
+        "Epic's FHIR API sometimes emits a grouping resource — a panel header that gathers its member results, or a flowsheet container. The export stores the individual measurements flat, with no separate row for the group.",
       why:
-        "The grouper is a structure Epic's server composes at publish time; there's no underlying record in the export to rebuild it from.",
+        "The grouper is a structure Epic's FHIR server composes at publish time; there's no underlying record in the export to rebuild it from.",
       soWhat:
         "The individual results are all present and faithful; what's missing is the extra wrapper resource that would group them.",
       example: "a survey/vitals group resource that exists in the API but has no standalone row in the export.",
@@ -310,9 +310,9 @@ export const content = {
     },
     "we-chose-a-truthful-value": {
       title: "We kept the truthful value on purpose",
-      short: "The export's real value differs from Epic's server rendering — we keep the real one.",
+      short: "The export's real value differs from Epic's FHIR server rendering — we keep the real one.",
       what:
-        "Sometimes the export's true value differs cosmetically from what Epic's API renders, and we deliberately emit the truthful one. The patient's real legal name “Joshua” where the API shows the nickname “Josh”; the specific clinic name where the API shows the rolled-up health-system brand; the exact drug description on the order versus a tidied catalog string.",
+        "Sometimes the export's true value differs cosmetically from what Epic's FHIR API renders, and we deliberately emit the truthful one. The patient's real legal name “Joshua” where the API shows the nickname “Josh”; the specific clinic name where the API shows the rolled-up health-system brand; the exact drug description on the order versus a tidied catalog string.",
       why:
         "A core rule of the project is faithfulness over mimicry: never copy the answer key, always derive from the source. Matching Epic's rendering here would mean fabricating it.",
       soWhat:
@@ -335,7 +335,7 @@ export const content = {
         "Same fail-closed rule as the equivalent-references check: no unique natural key ⇒ we don't bless it.",
     },
     "server-decoration": {
-      title: "Things Epic's server adds at publish time",
+      title: "Things Epic's FHIR server adds at publish time",
       short: "Narrative, server flags, and curation decisions made outside the data.",
       what:
         "FHIR servers decorate resources with things that aren't patient data: human-readable narrative blocks, a “user selected this code” boolean, a provider “active?” flag, and curation choices about which records to surface.",
@@ -356,7 +356,7 @@ export const content = {
         "This is a privacy choice, not a capability gap. The data is recoverable; we choose not to publish it.",
       soWhat:
         "Counts as a difference, but it's intentional and reversible by policy.",
-      example: "a phone number: Epic shows the real number; we show `[REDACTED-PHONE]`.",
+      example: "a phone number: Epic's FHIR API shows the real number; we show `[REDACTED-PHONE]`.",
       guardOrProof: "Documented redaction policy — the only family here that's a deliberate withholding rather than a limit of the data.",
     },
     "not-byte-reproducible": {
@@ -376,7 +376,7 @@ export const content = {
       title: "An artifact of how the answer key is shaped",
       short: "The target duplicates a resource in a way our cleaner model doesn't.",
       what:
-        "In a couple of places Epic's API emits the same entity multiple times (e.g. a provider repeated once per role), where our model emits it once.",
+        "In a couple of places Epic's FHIR API emits the same entity multiple times (e.g. a provider repeated once per role), where our model emits it once.",
       why:
         "This is an artifact of the answer key's shape, not missing data — our single, de-duplicated resource carries the same information.",
       soWhat: "No information lost; the count differs because we don't duplicate.",
@@ -482,7 +482,7 @@ export const content = {
     { term: "EHI export", def: "“Electronic Health Information” export — the bulk, near-raw copy of a patient's whole record (hundreds of database tables) that US right-of-access rules entitle them to. Our starting point." },
     { term: "FHIR API (patient access)", def: "The clean, coded FHIR resources an EHR like Epic serves to apps. Our target / answer key." },
     { term: "Answer key", def: "Epic's own FHIR API output for this patient, used only to score our reconstruction against — never copied from." },
-    { term: "Identical", def: "Our field is byte-for-byte the same as Epic's API. (Internally: EXACT.)" },
+    { term: "Identical", def: "Our field is byte-for-byte the same as Epic's FHIR API. (Internally: EXACT.)" },
     { term: "Equivalent", def: "Our field differs on the surface but provably means the same thing, with a stated reason and an automated check. (Internally: TOLERATED.)" },
     { term: "Couldn't reproduce", def: "The field genuinely isn't derivable from the export, shown with proof of what was searched. (Internally: GAP / “floor”.)" },
     { term: "Faithful reconstruction", def: "Identical + Equivalent together — the share of Epic's FHIR we rebuilt correctly from the raw export." },
@@ -490,7 +490,7 @@ export const content = {
     { term: "Reference graph", def: "How resources point at each other. We rebuild a graph with the same shape as Epic's even though the IDs differ." },
     { term: "Terminology bridge / crosswalk", def: "A lookup we reconstructed that restores standard codes (drugs, vaccines, allergens, billed procedures) where the export had a recoverable key — lifting coded coverage from ~10% to ~71%." },
     { term: "Label without a code", def: "The export's habit of giving a human-readable category name (“Married”, “Office Visit”) but not the coded value behind it." },
-    { term: "Faithfulness over mimicry", def: "The project's core rule: emit the truthful value derived from the source, even when it differs from Epic's server rendering — never copy the answer key." },
+    { term: "Faithfulness over mimicry", def: "The project's core rule: emit the truthful value derived from the source, even when it differs from Epic's FHIR server rendering — never copy the answer key." },
     { term: "Floor / proof-carrying", def: "A “couldn't reproduce” that has been proven irreducible (searched-and-absent, not-anchorable, or infeasible) rather than merely unattempted." },
   ],
 };

@@ -105,7 +105,8 @@ figcaption{font-size:13px;color:var(--mut);margin-top:8px;max-width:900px}
 .fam-detail{border:2px solid;border-radius:10px;padding:16px 18px;margin:10px 0 16px;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.06)}
 .fam-detail-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
 .fam-x{margin-left:auto;border:0;background:none;font-size:22px;cursor:pointer;color:var(--mut);line-height:1}
-.ex-table{width:100%;border-collapse:collapse;margin:8px 0;font-size:12px}
+.ex-caption{font-size:11.5px;color:var(--mut);font-style:italic;margin:8px 0 3px}
+.ex-table{width:100%;border-collapse:collapse;margin:2px 0 8px;font-size:12px}
 .ex-table th{text-align:left;color:var(--mut);font-size:10.5px;text-transform:uppercase;padding:4px 6px;border-bottom:1px solid var(--line)}
 .ex-table td{padding:5px 6px;border-bottom:1px solid var(--line);vertical-align:top}
 .ex-rt{font-weight:600;white-space:nowrap} .ex-path{font-family:var(--mono);font-size:11px;color:#0550ae;font-weight:400}
