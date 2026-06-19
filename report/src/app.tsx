@@ -35,6 +35,7 @@ function Nav() {
         ))}
       </div>
       <button className="nav-gloss" onClick={() => set({ glossaryOpen: true })}>Terms</button>
+      <a className="nav-gloss" style={{ textDecoration: "none" }} href="https://github.com/jmandel/ehi-to-fhir" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
     </nav>
   );
 }
