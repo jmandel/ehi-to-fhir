@@ -269,9 +269,16 @@ function computeDecomposition(): any {
 }
 const decomposition = computeDecomposition();
 
+// per-type INSTANCE counts on the SAME basis as perType's element tots: the target resources that fed
+// the ledger — matched pairs + whole-resource (cant-reproduce) gaps. (NOT raw TGT, which would also count
+// SmartData Observations the ledger excludes.) Lets the report show avg fields/instance = tot/instances.
+const perTypeInstances: Record<string, number> = {};
+for (const p of pairs) perTypeInstances[p.rt] = (perTypeInstances[p.rt] || 0) + 1;
+for (const g of cantReproduce) perTypeInstances[g.rt] = (perTypeInstances[g.rt] || 0) + 1;
+
 const payload = ({
   generatedFrom: "compare/LEDGER.json (crosswalk, attachments embedded, SmartData excluded)",
-  summary: { exact: L.exact, tolerated: L.tolerated?.total ?? 0, gap: L.gap?.total ?? 0, total: L.totalTargetElements, reconciles: L.reconciles, gapByClass: L.gap?.byClass || {}, perType: L.perType || {}, decomposition },
+  summary: { exact: L.exact, tolerated: L.tolerated?.total ?? 0, gap: L.gap?.total ?? 0, total: L.totalTargetElements, reconciles: L.reconciles, gapByClass: L.gap?.byClass || {}, perType: L.perType || {}, perTypeInstances, decomposition },
   pairs, cantReproduce, ourOnly, newResources, samples: samplePairs(),
 });
 

@@ -26,7 +26,7 @@ export type PerType = Record<string, { exact: number; tolerated: number; gap: nu
 
 export type Decomposition = { exportIdentical: number; exportEquivalent: number; bridgeVocab: number; bridgeIdentifier: number; bridgeOther: number; different: number; absent: number };
 export type Dataset = {
-  summary: { exact: number; tolerated: number; gap: number; total: number; reconciles: boolean; gapByClass: Record<string, number>; perType: PerType; decomposition: Decomposition | null };
+  summary: { exact: number; tolerated: number; gap: number; total: number; reconciles: boolean; gapByClass: Record<string, number>; perType: PerType; perTypeInstances: Record<string, number>; decomposition: Decomposition | null };
   pairs: Pair[];
   cantReproduce: CantRepro[];
   ourOnly: OurOnly[];
@@ -55,6 +55,26 @@ export const BUCKET = {
 } as const;
 
 export const pct = (n: number, d: number) => (d ? Math.round((n / d) * 1000) / 10 : 0);
+
+// Clinical/financial/administrative grouping for the scorecard scatter's color channel.
+// Hand-curated over the reference-target types; reuses the design palette so it stays cohesive.
+export type Domain = "clinical" | "financial" | "administrative" | "document";
+export const DOMAIN: Record<string, Domain> = {
+  Observation: "clinical", Condition: "clinical", Encounter: "clinical", DiagnosticReport: "clinical",
+  Immunization: "clinical", AllergyIntolerance: "clinical", Specimen: "clinical", Goal: "clinical",
+  MedicationRequest: "clinical", Medication: "clinical", CarePlan: "clinical", CareTeam: "clinical",
+  Coverage: "financial",
+  Patient: "administrative", Practitioner: "administrative", Location: "administrative", Organization: "administrative",
+  DocumentReference: "document",
+};
+export const DOMAIN_META: { key: Domain; label: string; color: string }[] = [
+  { key: "clinical", label: "Clinical", color: "#1a7f37" },
+  { key: "financial", label: "Financial", color: "#bf8700" },
+  { key: "administrative", label: "Administrative", color: "#1f6feb" },
+  { key: "document", label: "Document", color: "#7e57c2" },
+];
+export const domainColor = (rt: string) =>
+  DOMAIN_META.find((d) => d.key === (DOMAIN[rt] || "administrative"))!.color;
 
 // family lookup for a delta -> the plain-language explanation in content
 export function familyFor(d: Delta) {

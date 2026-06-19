@@ -130,28 +130,11 @@ interface Row {
 const centralToUTC = (s: string | null | undefined): string | undefined =>
   localToUtcInstant(s);
 
-/** Encounter type label — best-effort from the visit's E&M / visit charge name.
- * (The target's "Office Visit"/"Telemedicine" is the Epic ENC_TYPE category, which
- * is not exported; this charge-name label is the closest real EHI value — see gaps.) */
-const encDisplayCache = new Map<string, string | undefined>();
-function encounterDisplay(csn: string): string | undefined {
-  if (encDisplayCache.has(csn)) return encDisplayCache.get(csn);
-  const r = qIf<{ PROC_NAME: string }>(
-    "ARPB_TRANSACTIONS",
-    `SELECT e.PROC_NAME
-       FROM ARPB_TRANSACTIONS a
-       JOIN CLARITY_EAP e ON a.PROC_ID = e.PROC_ID
-      WHERE a.PAT_ENC_CSN_ID = ? AND a.TX_TYPE_C_NAME = 'Charge'
-        AND e.PROC_NAME LIKE 'PR %'
-        AND (e.PROC_NAME LIKE '%VISIT%' OR e.PROC_NAME LIKE '%OFFICE%'
-             OR e.PROC_NAME LIKE '%PREVENTIVE%' OR e.PROC_NAME LIKE '%AUDIO-VIDEO%')
-      LIMIT 1`,
-    csn
-  )[0];
-  const v = r?.PROC_NAME;
-  encDisplayCache.set(csn, v);
-  return v;
-}
+// NOTE: encounter.display is intentionally OMITTED. The target's value is the Epic
+// ENC_TYPE category label ('Office Visit'/'Telemedicine'/'Telephone'), which is NOT in
+// the export (no ENC_TYPE_C column, no ZC_DISP_ENC_TYPE dictionary). The prior CPT E&M
+// charge-name proxy never matched that label, so we omit .display entirely — matching
+// condition.ts / documentreference.ts (the ENC_TYPE-label gap stays unrecoverable).
 
 function buildValue(r: Row): Record<string, any> {
   const vt = r.VTYPE;
@@ -229,7 +212,7 @@ function buildSurveyObservations(): any[] {
       encounter: {
         reference: `Encounter/${id.encounter(r.CSN)}`,
         identifier: ident(SYS_CSN, String(r.CSN), { use: "usual" }),
-        display: encounterDisplay(r.CSN),
+        // .display OMITTED — the ENC_TYPE category label is not in the export (see above).
       },
       effectiveDateTime: effective,
       issued,

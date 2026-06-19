@@ -50,6 +50,13 @@ import { localToUtcInstant } from "../lib/time";
 const SYS_CSN = SYS.CSN;
 const SYS_REASON = epicOid("2.7.2.728286"); // CL_RSN_FOR_VISIT
 const SYS_HSP_ACCT = SYS.HSP_ACCT; // hospital account
+// Encounter.hospitalization.admitSource — the Epic admit-source category system. The
+// numeric ADMIT_SOURCE_C code is NOT in the export (no ADMIT_SOURCE_C column, no ZC
+// dictionary), but the system OID is a fixed constant and the code is a deterministic
+// learned constant keyed on the in-export label ADMIT_SOURCE_C_NAME (crosswalk 2.3,
+// ehi_verified=yes). Only 'Self' appears on the 2 PAT_ENC_HSP encounters here.
+const SYS_ADMIT_SOURCE = "urn:oid:1.2.840.114350.1.13.283.2.7.10.698084.10310";
+const ADMIT_SOURCE_CODE: Record<string, string> = { Self: "1" };
 
 const PARTICIPATION = "http://terminology.hl7.org/CodeSystem/v3-ParticipationType";
 
@@ -141,7 +148,7 @@ function referencedClosureCsns(): string[] {
   // Candidate-note predicate mirrors documentreference.ts (Signed/Addendum +
   // shared-with-patient or Patient Instructions); then require an exported RTF body.
   const rtf = new Set<string>();
-  const rtfDir = resolve(import.meta.dir, "..", "..", "raw", "Rich Text");
+  const rtfDir = resolve(import.meta.dir, "..", "my-ehi", "raw", "Rich Text");
   if (existsSync(rtfDir)) {
     for (const f of readdirSync(rtfDir)) {
       const m = f.match(/^HNO_(\d+)_/i);
@@ -272,12 +279,22 @@ function buildReasonCodes(csn: string) {
  *     would inject wrong/extra codes (false-presence), so we do not emit it — recorded as a
  *     lossy-source gap, not a confirmed-absence.
  */
-function buildTypes(csn: string, e: any) {
+function buildTypes(csn: string, e: any, hsp: any) {
   const out: any[] = [];
 
   // 1. "Elective" acuity — PAT_ENC.HOSP_ADMSN_TYPE_C_NAME (label only; no Epic .18875 code).
   if (e.HOSP_ADMSN_TYPE_C_NAME) {
     out.push({ text: String(e.HOSP_ADMSN_TYPE_C_NAME) });
+  }
+
+  // 1b. ADT patient class as a type[] entry — PAT_ENC_HSP.ADT_PAT_CLASS_C_NAME
+  //     ("Therapies Series" for the 2 outpatient hospital-therapy contacts). The Epic
+  //     OID system (.10110) + numeric code (23428) are NOT in the export → text only
+  //     (principle 3). The LEDGER matches type[] by value, not positionally, so this
+  //     never shifts the existing "Elective" entry. buildClass already consumes this
+  //     for the required v3-ActCode; here we ALSO surface it as the target's type[] text.
+  if (hsp?.ADT_PAT_CLASS_C_NAME) {
+    out.push({ text: String(hsp.ADT_PAT_CLASS_C_NAME) });
   }
 
   // 2. Telehealth visit type — the per-encounter visit-type procedure (PAT_CANCEL_PROC.
@@ -412,6 +429,17 @@ function buildParticipants(e: any, csn: string) {
   return out.map(clean);
 }
 
+/** admitSource CodeableConcept — text from ADMIT_SOURCE_C_NAME; coding (fixed system OID
+ *  + learned constant code) only when the label is in our verified map (else text-only). */
+function buildAdmitSource(label: string | null | undefined) {
+  if (!label) return undefined;
+  const text = String(label);
+  const code = ADMIT_SOURCE_CODE[text.trim()];
+  return code
+    ? clean({ coding: [{ system: SYS_ADMIT_SOURCE, code, display: text }], text })
+    : concept(text);
+}
+
 function buildHospitalization(h: any) {
   if (!h) return undefined;
   const admInst = chicagoToISO(h.HOSP_ADMSN_TIME);
@@ -420,9 +448,12 @@ function buildHospitalization(h: any) {
     extension: admInst
       ? [{ valueDateTime: admInst, url: "http://open.epic.com/FHIR/StructureDefinition/extension/observation-datetime" }]
       : undefined,
-    // admitSource / dischargeDisposition: only the EHI label is available; the Epic
-    // category code + OID system are not in the export → text only.
-    admitSource: concept(h.ADMIT_SOURCE_C_NAME),
+    // admitSource: the EHI ships only the label (ADMIT_SOURCE_C_NAME). The Epic category
+    // system OID is a fixed constant and the code is a learned constant keyed on that label
+    // (crosswalk 2.3) — emit the coding when the label is mapped, else text only.
+    admitSource: buildAdmitSource(h.ADMIT_SOURCE_C_NAME),
+    // dischargeDisposition: only the EHI label is available; the Epic category code + OID
+    // system are not in the export → text only.
     dischargeDisposition: concept(h.DISCH_DISP_C_NAME),
   });
   return Object.keys(ho).length ? ho : undefined;
@@ -515,7 +546,7 @@ function buildEncounters() {
       status: "finished", // all selected contacts are CALCULATED_ENC_STAT 'Complete'
       // class: FHIR-required v3-ActCode, DERIVED from ADT_PAT_CLASS_C_NAME (see buildClass).
       class: buildClass(e, hsp),
-      type: buildTypes(csn, e),
+      type: buildTypes(csn, e, hsp),
       subject: patientRef(),
       participant: buildParticipants(e, csn),
       period: buildPeriod(e, csn, hsp),

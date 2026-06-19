@@ -1,25 +1,85 @@
 import React, { useMemo } from "react";
 import { scaleLinear, scaleLog, scaleSqrt, hierarchy, treemap as d3treemap } from "d3";
-import { data, BUCKET, pct, targetTypes, C } from "./data";
+import { data, BUCKET, pct, targetTypes, C, DOMAIN_META, domainColor } from "./data";
 import { useStore } from "./store";
 import { jump } from "./lib";
 
-// ── Scatter: resource size (x, log) vs % faithful (y), bubble area = couldn't-reproduce count ──
+// ── Scatter, three independent signals + a categorical:
+//    X = avg fields per instance (log) · Y = % faithful · bubble area = # instances · color = clinical domain.
+//    Splitting "size" into instances (area) × fields/instance (x) keeps volume from being double-counted. ──
+const FILL_OP = 0.55; // bubble fill opacity; legend swatches use the same tint so colors visually match.
+// mix a hex color toward white by (1-op) so a solid swatch reads as the bubble's pale fill-over-white.
+const tint = (hex: string, op: number) => {
+  const n = parseInt(hex.slice(1), 16), mix = (c: number) => Math.round(c * op + 255 * (1 - op));
+  return `rgb(${mix(n >> 16)},${mix((n >> 8) & 255)},${mix(n & 255)})`;
+};
+
+type Geo = { rt: string; n: number; avg: number; faithful: number; cx: number; cy: number; R: number };
+type Placed = { lx: number; ly: number; anchor: string; leader: { x1: number; y1: number; x2: number; y2: number } | null };
+// Greedy collision-avoiding label placement: try several anchor positions around each bubble (biggest
+// bubbles first), score each by overlap with already-placed labels, with bubbles, and with the frame,
+// pick the cheapest, and draw a thin leader line whenever the label had to move off its default spot.
+function layoutLabels(geo: Geo[], W: number, H: number, m: { t: number; r: number; b: number; l: number }): Record<string, Placed> {
+  const CW = 5.9, LH = 13, L = m.l, R = W - m.r, T = m.t, B = H - m.b;
+  const ov = (a: any, b: any) => Math.max(0, Math.min(a.x + a.w, b.x + b.w) - Math.max(a.x, b.x)) * Math.max(0, Math.min(a.y + a.h, b.y + b.h) - Math.max(a.y, b.y));
+  const circles = geo.map((g) => ({ x: g.cx - g.R, y: g.cy - g.R, w: 2 * g.R, h: 2 * g.R }));
+  const placed: any[] = [], out: Record<string, Placed> = {};
+  for (const g of [...geo].sort((a, b) => b.R - a.R)) {
+    const tw = g.rt.length * CW + 2;
+    const cands = [
+      { dx: 0, dy: -(g.R + 8), a: "middle" }, { dx: 0, dy: g.R + LH + 4, a: "middle" },
+      { dx: g.R + 5, dy: 4, a: "start" }, { dx: -(g.R + 5), dy: 4, a: "end" },
+      { dx: 0, dy: -(g.R + 8 + LH), a: "middle" }, { dx: 0, dy: g.R + LH * 2 + 4, a: "middle" },
+      { dx: g.R * 0.75 + 4, dy: -(g.R * 0.75 + 6), a: "start" }, { dx: -(g.R * 0.75 + 4), dy: -(g.R * 0.75 + 6), a: "end" },
+      { dx: g.R * 0.75 + 4, dy: g.R * 0.75 + 10, a: "start" }, { dx: -(g.R * 0.75 + 4), dy: g.R * 0.75 + 10, a: "end" },
+    ].map((c, i) => {
+      const lx = g.cx + c.dx, ly = g.cy + c.dy;
+      const bx = c.a === "middle" ? lx - tw / 2 : c.a === "start" ? lx : lx - tw;
+      return { ...c, i, lx, ly, box: { x: bx, y: ly - LH + 3, w: tw, h: LH } };
+    });
+    let best = cands[0], cost0 = Infinity;
+    for (const c of cands) {
+      let cost = c.i * 4;
+      for (const p of placed) cost += ov(c.box, p) * 40;
+      for (const cb of circles) cost += ov(c.box, cb) * 1.2;
+      cost += (Math.max(0, L - c.box.x) + Math.max(0, c.box.x + c.box.w - R) + Math.max(0, T - c.box.y) + Math.max(0, c.box.y + c.box.h - B)) * 30;
+      if (cost < cost0) { cost0 = cost; best = c; }
+    }
+    placed.push(best.box);
+    let leader = null;
+    if (best.i !== 0) {
+      const ex = best.lx, ey = best.ly - 4, ang = Math.atan2(ey - g.cy, ex - g.cx);
+      leader = { x1: g.cx + Math.cos(ang) * g.R, y1: g.cy + Math.sin(ang) * g.R, x2: ex, y2: ey };
+    }
+    out[g.rt] = { lx: best.lx, ly: best.ly, anchor: best.a, leader };
+  }
+  return out;
+}
+
 export function FaithfulScatter() {
   const openCompare = useStore((s) => s.openCompare);
-  const W = 720, H = 380, m = { t: 20, r: 24, b: 46, l: 48 };
+  const W = 720, H = 380, m = { t: 20, r: 24, b: 46, l: 52 };
+  const inst = data.summary.perTypeInstances || {};
   const pts = targetTypes.map((rt) => {
     const p = data.summary.perType[rt];
     const tot = p.exact + p.tolerated + p.gap;
-    return { rt, tot, faithful: pct(p.exact + p.tolerated, tot), gap: p.gap };
+    const n = inst[rt] || 1;
+    return { rt, tot, n, avg: tot / n, faithful: pct(p.exact + p.tolerated, tot) };
   });
-  const x = scaleLog().domain([10, 5200]).range([m.l, W - m.r]);
+  const maxN = Math.max(...pts.map((p) => p.n));
+  const maxAvg = Math.max(...pts.map((p) => p.avg));
+  const minAvg = Math.min(...pts.map((p) => p.avg));
+  const x = scaleLog().domain([Math.min(2.5, minAvg * 0.85), Math.max(120, maxAvg * 1.15)]).range([m.l, W - m.r]);
   const y = scaleLinear().domain([40, 100]).range([H - m.b, m.t]);
-  const r = scaleSqrt().domain([0, 600]).range([3, 26]);
-  const ticksX = [10, 50, 200, 1000, 5000];
+  const r = scaleSqrt().domain([0, maxN]).range([4, 30]);
+  const ticksX = [3, 5, 10, 20, 50, 100, 200].filter((t) => t >= x.domain()[0] && t <= x.domain()[1]);
+  const sizeLegend = [1, Math.round(maxN / 4), maxN].filter((v, i, a) => v > 0 && a.indexOf(v) === i);
+  const geo: Geo[] = pts.map((p) => ({ rt: p.rt, n: p.n, avg: p.avg, faithful: p.faithful, cx: x(p.avg), cy: y(p.faithful), R: r(p.n) }));
+  const lab = layoutLabels(geo, W, H, m);
+  const go = (rt: string) => { openCompare(rt); jump("compare"); };
   return (
     <figure className="chart">
-      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Resource size versus percent faithful">
+      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Average fields per instance versus percent faithful, sized by instance count, colored by domain">
         {[50, 60, 70, 80, 90, 100].map((g) => (
           <g key={g}>
             <line x1={m.l} x2={W - m.r} y1={y(g)} y2={y(g)} className="grid" />
@@ -29,26 +89,38 @@ export function FaithfulScatter() {
         {ticksX.map((t) => (
           <text key={t} x={x(t)} y={H - m.b + 18} className="axlbl" textAnchor="middle">{t}</text>
         ))}
-        <text x={(W) / 2} y={H - 6} className="axtitle" textAnchor="middle">number of fields in this resource type (log scale) →</text>
+        <text x={(W) / 2} y={H - 6} className="axtitle" textAnchor="middle">average fields per instance (log scale) →</text>
         <text transform={`translate(14 ${H / 2}) rotate(-90)`} className="axtitle" textAnchor="middle">% faithfully reconstructed →</text>
-        {pts.map((p) => (
-          <g key={p.rt} className="dot" onClick={() => { openCompare(p.rt); jump("compare"); }} style={{ cursor: "pointer" }}>
-            <circle cx={x(p.tot)} cy={y(p.faithful)} r={r(p.gap)}
-              fill={p.faithful >= 95 ? BUCKET.identical.color : p.faithful >= 80 ? BUCKET.equivalent.color : BUCKET.couldnt.color}
-              fillOpacity={0.5} stroke="#fff" />
-            <text x={x(p.tot)} y={y(p.faithful) - r(p.gap) - 3} className="dotlbl" textAnchor="middle">{p.rt}</text>
-            <title>{`${p.rt}: ${p.faithful}% faithful, ${p.gap} couldn't-reproduce of ${p.tot} fields`}</title>
+        {/* bubbles — biggest first so small ones stay on top and clickable */}
+        {geo.slice().sort((a, b) => b.R - a.R).map((p) => (
+          <g key={p.rt} className="dot" onClick={() => go(p.rt)} style={{ cursor: "pointer" }}>
+            <circle cx={p.cx} cy={p.cy} r={p.R} fill={domainColor(p.rt)} fillOpacity={FILL_OP} stroke="#fff" />
+            <title>{`${p.rt}: ${p.faithful}% faithful · ${p.n} instance${p.n === 1 ? "" : "s"} · ~${Math.round(p.avg)} fields each`}</title>
           </g>
+        ))}
+        {/* leader lines for displaced labels */}
+        {geo.map((p) => lab[p.rt].leader && (
+          <line key={p.rt} x1={lab[p.rt].leader!.x1} y1={lab[p.rt].leader!.y1} x2={lab[p.rt].leader!.x2} y2={lab[p.rt].leader!.y2} stroke="#aab0b8" strokeWidth={0.8} />
+        ))}
+        {/* labels with white halo (paint-order stroke) so they read over bubbles and lines */}
+        {geo.map((p) => (
+          <text key={p.rt} x={lab[p.rt].lx} y={lab[p.rt].ly} className="dotlbl" textAnchor={lab[p.rt].anchor as any}
+            onClick={() => go(p.rt)} style={{ cursor: "pointer", paintOrder: "stroke", stroke: "#fff", strokeWidth: 3, strokeLinejoin: "round" }}>{p.rt}</text>
         ))}
       </svg>
       <div className="chart-legend">
-        <span className="cl-item"><span className="cl-dot" style={{ background: BUCKET.identical.color }} />≥ 95% faithful</span>
-        <span className="cl-item"><span className="cl-dot" style={{ background: BUCKET.equivalent.color }} />80–95%</span>
-        <span className="cl-item"><span className="cl-dot" style={{ background: BUCKET.couldnt.color }} />&lt; 80%</span>
+        {DOMAIN_META.map((d) => (
+          <span key={d.key} className="cl-item"><span className="cl-dot" style={{ background: tint(d.color, FILL_OP), border: `1.5px solid ${d.color}` }} />{d.label}</span>
+        ))}
         <span className="cl-sep" />
-        <span className="cl-item"><span className="cl-circ" style={{ width: 8, height: 8 }} /><span className="cl-circ" style={{ width: 16, height: 16 }} /> bubble size = number of fields that couldn't be reproduced</span>
+        <span className="cl-item">
+          {sizeLegend.map((v) => (
+            <span key={v} className="cl-circ" style={{ width: 2 * r(v), height: 2 * r(v) }} />
+          ))}
+          &nbsp;bubble size = # of instances Epic returned
+        </span>
       </div>
-      <figcaption><b>Each bubble is a resource type.</b> Left–right = how many fields it has (log scale); up = the share reproduced identically or equivalently (the <b>color just re-states that height</b> in three bands); bubble size = how many fields couldn't be reproduced. Click a bubble to jump to real examples. Big-and-high (DiagnosticReport, Condition) reproduced almost perfectly; the misses concentrate in a few types (Encounter lowest, then DocumentReference, Observation).</figcaption>
+      <figcaption><b>Each bubble is a resource type</b>, with three independent signals and a category. Left–right = the average number of fields in <i>one</i> instance (its intrinsic richness — Patient is a single, very detailed resource; an Observation is small but there are many); up = the share reproduced identically or equivalently; bubble size = how many of that type Epic returned; color = clinical domain. Click a bubble to jump to real examples. The misses concentrate in a few types (Encounter lowest, then DocumentReference, Observation).</figcaption>
     </figure>
   );
 }

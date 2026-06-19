@@ -71,7 +71,7 @@ function ResourceDrill({ rt }: { rt: string }) {
         <Field label="How faithful">{s.howFaithful}</Field>
         <Field label="What came through perfectly">{s.whatsIdentical}</Field>
         <Field label="What differs, and why it's OK">{s.whatDiffersAndWhy}</Field>
-        <Field label="What's genuinely lost">{s.whatsLost}</Field>
+        <Field label="What's still missing">{s.whatsLost}</Field>
         <Field label="Nicest reconstruction trick">{s.mostInterestingTrick}</Field>
       </div>
       <button className="chip" onClick={() => { open(rt); jump("compare"); }}>Compare real {rt} examples →</button>

@@ -90,6 +90,21 @@ const NUMERIC_UNIT: Record<string, { unit: string; code: string }> = {
   "8": { unit: "/min", code: "/min" }, // Pulse → heart rate (UNITS NULL)
 };
 
+// Epic-instance vital-code OID system: the target carries the concept-specific LOINC of
+// each vital under this OID (NOT http://loinc.org). The numeric LOINC values are the
+// crosswalk's ehi_verified, concept-specific (non-generic, i.e. not the 8716-3 "Vital
+// signs" panel) FLO_MEAS_ID→LOINC mappings (crosswalk area=vital). The system OID itself
+// is a fixed Epic-instance constant matching the target. SpO2 (id 10 → 59417-6) is a
+// server-minted token not carried here (kept GAP, per the gap register). BP packs both
+// halves' LOINCs (8480-6 systolic + 8462-4 diastolic) on the parent BP Observation.
+const SYS_VITAL_LNC = "urn:oid:1.2.246.537.6.96";
+const VITAL_LOINC: Record<string, string[]> = {
+  "5": ["8462-4", "8480-6"], // BP → diastolic + systolic LOINC
+  "8": ["8867-4"],           // Pulse → Heart rate
+  "11": ["8302-2"],          // Height → Body height
+  "14": ["29463-7"],         // Weight → Body weight
+};
+
 type Row = Record<string, any>;
 
 function round1(n: number): number {
@@ -140,6 +155,13 @@ function buildVitals(): any[] {
       code: cc(SYS_FLO, fmid, name),
       subject: patientRef(),
     };
+
+    // Concept-specific LOINC under the Epic-instance vital-code OID (the target carries the
+    // analyte LOINC here, alongside the flowsheet-measure coding). Code-only — the export
+    // ships no display for these (target also omits it). See VITAL_LOINC.
+    for (const lnc of VITAL_LOINC[fmid] || []) {
+      obs.code.coding.push({ system: SYS_VITAL_LNC, code: lnc });
+    }
 
     // Encounter: reference + the export's own CSN identifier (no Epic-assigned "Office Visit"
     // type display — that label isn't reachable from PAT_ENC here; see gaps).
@@ -236,4 +258,68 @@ function buildVitals(): any[] {
   return out;
 }
 
-emit("Observation", buildVitals(), "vitals");
+/**
+ * BMI vital — FLO_MEAS_ID=301070 "BMI (Calculated)". This row lives under the "Custom
+ * Formula Data" template (an auto-calculated formula), NOT "Encounter Vitals", so the
+ * template filter in buildVitals() excludes it. But the target carries it as a vital-signs
+ * Observation, and 301070 is the ONLY decimal-valued "BMI (Calculated)" measure — its five
+ * values (24.3/25/24.9/25.3/25.7) match the target's BMI values exactly. We surface it as a
+ * vital here. code = the flowsheet-measure coding (real EHI); the LOINC 39156-5/8716-3 are
+ * layered by apply-crosswalk (crosswalk area=vital, ehi_verified=yes) keyed on FLO 301070,
+ * which is also what realigns the classifier's LOINC natural key. Value unit kg/m2 (UCUM;
+ * the EHI UNITS column is NULL, kg/m2 is the physiologic-standard BMI unit the target uses).
+ */
+function buildBmi(): any[] {
+  const rows = qIf<Row>(
+    "V_EHI_FLO_MEAS_VALUE",
+    `
+    SELECT v.FSD_ID, v.LINE, v.FLO_MEAS_ID, v.FLO_MEAS_ID_DISP_NAME, v.MEAS_VALUE_EXTERNAL,
+           m.RECORDED_TIME, m.ENTRY_TIME, m.TAKEN_USER_ID, m.TAKEN_USER_ID_NAME, m.EDITED_LINE,
+           e.PAT_ENC_CSN_ID, e.PAT_ENC_DATE_REAL
+    FROM V_EHI_FLO_MEAS_VALUE v
+    JOIN IP_FLWSHT_MEAS m ON v.FSD_ID = m.FSD_ID AND v.LINE = m.LINE
+    JOIN IP_FLWSHT_REC  r ON m.FSD_ID = r.FSD_ID
+    JOIN PAT_ENC        e ON r.INPATIENT_DATA_ID = e.INPATIENT_DATA_ID
+    WHERE v.FLO_MEAS_ID = '301070'
+      AND r.PAT_ID = ?
+    ORDER BY CAST(e.PAT_ENC_DATE_REAL AS REAL), CAST(v.LINE AS INTEGER)
+  `,
+    PATIENT_PAT_ID
+  );
+
+  const empToSer = empToSerMap();
+  const out: any[] = [];
+  for (const r of rows) {
+    const fmid = String(r.FLO_MEAS_ID);
+    const name = String(r.FLO_MEAS_ID_DISP_NAME);
+    const raw = r.MEAS_VALUE_EXTERNAL == null ? "" : String(r.MEAS_VALUE_EXTERNAL).trim();
+    const n = Number(raw);
+    if (raw === "" || !isFinite(n)) continue;
+
+    const obs: any = {
+      resourceType: "Observation",
+      id: id.observation(`flo-${r.FSD_ID}-${r.LINE}`),
+      status: r.EDITED_LINE != null ? "amended" : "final",
+      category: category(cc(SYS_OBSCAT, "vital-signs", "Vital Signs")),
+      code: cc(SYS_FLO, fmid, name),
+      subject: patientRef(),
+      valueQuantity: { value: n, unit: "kg/m2", system: SYS_UCUM, code: "kg/m2" },
+    };
+    if (r.PAT_ENC_CSN_ID != null) {
+      const csn = String(r.PAT_ENC_CSN_ID);
+      obs.encounter = { ...ref("Encounter", id.encounter(csn)), identifier: ident(SYS_ENC, csn, { use: "usual" }) };
+    }
+    const eff = localToUtcInstant(r.RECORDED_TIME);
+    if (eff) obs.effectiveDateTime = eff;
+    const iss = localToUtcInstant(r.ENTRY_TIME);
+    if (iss) obs.issued = iss;
+    if (r.TAKEN_USER_ID != null) {
+      const ser = empToSer.get(String(r.TAKEN_USER_ID));
+      if (ser) obs.performer = [ref("Practitioner", id.practitioner(ser), r.TAKEN_USER_ID_NAME || undefined)];
+    }
+    out.push(clean(obs));
+  }
+  return out;
+}
+
+emit("Observation", [...buildVitals(), ...buildBmi()], "vitals");

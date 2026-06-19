@@ -51,8 +51,8 @@ Regenerating `report/viewer/data*.json` requires the private source, which stays
 
 ## Results so far
 
-- **676-resource bundle**, **0 reference-integrity defects** (0 dangling, 0 type-violations), **0 real
-  FHIR-validation defects** (the 125 validator errors are all accepted: 83 Epic-proprietary extensions
+- **787-resource bundle**, **0 reference-integrity defects** (0 dangling, 0 type-violations), **0 real
+  FHIR-validation defects** (the 135 validator errors are all accepted: 93 Epic-proprietary extensions
   carrying real values + 42 offline-terminology "can't-verify" on valid standard codes).
 - **Target-matched types** reconstructed from the EHI: Patient **112/112 paths**, Condition 53/53,
   DiagnosticReport 9/9, Specimen, Immunization, Medication(Request), AllergyIntolerance, Encounter,
@@ -62,10 +62,11 @@ Regenerating `report/viewer/data*.json` requires the private source, which stays
   validator-clean: **Communication** (secure messaging) and the billing/insurance set —
   **ExplanationOfBenefit, Claim, ChargeItem, Invoice, Account, PaymentReconciliation,
   CoverageEligibilityResponse**.
-- **Standard-coding coverage** vs the target: **10% baseline → 71% with the crosswalk** (RxNorm, CVX,
+- **Standard-coding coverage** vs the target: **10% baseline → 79% with the crosswalk** (RxNorm, CVX,
   ICD-10/9, and allergen NDF-RT near-fully closed).
-- **Tolerance-aware ledger** (every target element accounted for, reconciled):
-  **14,330 = EXACT 6,293 + TOLERATED 534 + GAP 7,503** (GAP = real-gap 3,226 / unsure 957 / coding-gap 3,320).
+- **Tolerance-aware ledger** (every target element accounted for, reconciled), crosswalk applied:
+  **17,421 = EXACT 13,895 + TOLERATED 1,849 + GAP 1,677** (GAP = real-gap 866 / coding-gap 611 / unsure 200) —
+  **90.4% faithfully reconstructed**.
 
 ---
 
@@ -116,7 +117,7 @@ Regenerating `report/viewer/data*.json` requires the private source, which stays
 ## Layout
 
 ```
-ehi.sqlite               the EHI specimen (load via ../skills/reading-epic-ehi-export/scripts/load.ts)
+ehi.sqlite               the EHI specimen (load via my-ehi/skills/reading-epic-ehi-export/scripts/load.ts)
 fhir-target/             reference FHIR per resourceType (the evaluation reference target)
 lib/                     db.ts (read-only query + date helpers), ids.ts (deterministic id minting + ref),
                          gen.ts (emit + clean), profile.ts, q.ts
@@ -214,7 +215,7 @@ to be doable. That's why the log, not a vibe, decides when the loop ends.
 
 ### Reproduce / extend with a new agent
 
-1. Load the EHI: `bun ../skills/reading-epic-ehi-export/scripts/load.ts <rawDir> ehi.sqlite`.
+1. Load the EHI: `bun my-ehi/skills/reading-epic-ehi-export/scripts/load.ts my-ehi/raw ehi.sqlite`.
 2. Start a coordinator under `/goal` describing the target (e.g. "add resource X" or "reduce the residual
    for domain Y until justified").
 3. For each phase, author a small workflow script (see `workflow-*.js` for templates) that fans agents,
@@ -299,7 +300,7 @@ tolerance) so the same mistake couldn't recur silently. The residual we report i
 first pass was good, but because each wrong "it can't be done" was forced to prove itself and most didn't
 survive.
 
-## Honest residual (what's genuinely lost)
+## Residual (what's still missing)
 
 With the crosswalk on, the remaining GAP is, in priority order: **(1) terminology** Epic assigns
 server-side that has no EHI home (closed by the crosswalk where verified); **(2) FHIR-server

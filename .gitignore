@@ -65,3 +65,6 @@ report/viewer/data.json
 report/viewer/data-lean.json
 report/health-record-assistant/data/
 out-crosswalk/
+
+# Pages staging dir (CI regenerates from committed inputs)
+_site/

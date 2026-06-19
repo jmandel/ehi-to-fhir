@@ -29,8 +29,8 @@ export const content = {
       "How much of a hospital's clean FHIR API can you reconstruct from the messy “download everything” export the patient is legally entitled to?",
     premise: [
       "A US patient can get their Epic record two ways. One is a developer-friendly **FHIR API** — tidy, coded, the thing you build apps against. The other is a **bulk export**: their legal right-of-access copy of *everything*, delivered as hundreds of near-raw database tables. The export is the source data *behind* the API, but in the raw — few standardized codes, lots of internal keys, and the human-readable labels without the codes that name them.",
-      "We asked a concrete question: **starting from only the raw export, how faithfully can you rebuild the clean FHIR the API would have returned?** We wrote deterministic code to do the rebuild, then compared every single field of our output against Epic's *own* FHIR API output for the same patient — field by field, 16,120 of them.",
-      "This report is the answer, resource by resource, with every difference explained: what came out identical, what came out different-but-equivalent (and why that's fine), and what genuinely could not be reproduced (and the proof of why).",
+      "We asked a concrete question: **starting from only the raw export, how faithfully can you rebuild the clean FHIR the API would have returned?** We wrote deterministic code to do the rebuild, then compared every single field of our output against Epic's *own* FHIR API output for the same patient — field by field, 17,421 of them.",
+      "This report is the answer, resource by resource, with every difference explained: what came out identical, what came out different-but-equivalent (and why that's fine), and what could not be reproduced (and the proof of why).",
     ],
     whyCare:
       "That question is the gap between *the data you're entitled to* and *the data that's actually usable*. Where the export can be turned back into faithful FHIR, patient data is far more portable than it looks. Where it can't, this is a concrete, evidence-backed list of exactly what right-of-access loses — and why.",
@@ -69,7 +69,7 @@ export const content = {
   buckets: {
     heading: "How we score every field",
     intro:
-      "We compared all 16,120 fields Epic's FHIR API returned and put each into one of three buckets. The buckets are defined so that “we matched it” can never be faked, and “we couldn't” always carries evidence.",
+      "We compared all 17,421 fields Epic's FHIR API returned and put each into one of three buckets. The buckets are defined so that “we matched it” can never be faked, and “we couldn't” always carries evidence.",
     identical: {
       key: "identical",
       name: "Identical",
@@ -96,7 +96,7 @@ export const content = {
         "A “Couldn't reproduce” verdict is earned by searching the *whole* export — not just the obvious table — and showing it came up empty. Early on we repeatedly declared things missing that were actually sitting in another table (a billing code hiding in the claims data, marital status in a claims table). So the rule became: prove absence across the entire export, including the free-text notes, before claiming it.",
     },
     headline:
-      "Identical + Equivalent = **faithfully reconstructed**. For this record that's 88% (12,562 identical + 1,703 equivalent). The remaining 12% (1,855 fields) couldn't be reproduced — every one with a documented reason, grouped into a handful of root causes below.",
+      "Identical + Equivalent = **faithfully reconstructed**. For this record that's 90% (13,895 identical + 1,849 equivalent). The remaining 10% (1,677 fields) couldn't be reproduced — every one with a documented reason, grouped into a handful of root causes below.",
   },
 
   // S0b — what the raw export gives you vs. what the terminology bridge adds (hero decomposition)
@@ -111,7 +111,7 @@ export const content = {
       { key: "couldnt", label: "Couldn't reproduce", color: "#c2410c", note: "not in the raw data, even with the bridge" },
     ],
     takeaway:
-      "So from the **raw export alone**, about **59%** comes out identical-or-equivalent. The terminology bridge recovers **another ~30%** of Epic's standard codes — nearly a third of the whole record's fidelity rests on that one reconstructed lookup. Of the rest, a small slice (~1.6%) is a **deliberately different value** we emit instead of mimicking Epic, and ~10% is genuinely **blank** — couldn't reproduce. (You can see this field-by-field in the comparison tool's “raw export only” toggle.)",
+      "So from the **raw export alone**, about **61%** comes out identical-or-equivalent. The terminology bridge recovers **another ~29%** of Epic's standard codes — nearly a third of the whole record's fidelity rests on that one reconstructed lookup. Of the rest, a small slice (~1.9%) is a **deliberately different value** we emit instead of mimicking Epic, and ~8% is **blank** — couldn't reproduce. (You can see this field-by-field in the comparison tool's “raw export only” toggle.)",
   },
 
   // Families for the "Different value" group (we emitted something, just not byte-identical / not auto-verified)
@@ -156,7 +156,7 @@ export const content = {
       { title: "Care teams & care-plan templates", count: "CareTeam + 3 CarePlans", detail: "Care-team rosters and Epic's care-plan templates/narratives live in stores this export doesn't ship; the patient-instruction text survives inside the notes.", proof: "Whole-export search for the care-team and care-plan-template stores is empty." },
       { title: "Server-only documents", count: "21 DocumentReferences", detail: "Some documents in Epic's FHIR API are pure server-side metadata pointers — the document id and its body aren't in the export, so there's nothing to point at.", proof: "The note id is absent from the export's note tables and no file ships for it." },
     ],
-    note: "Everything here is genuinely absent from the patient's own download — the kind of gap right-of-access can't currently close, regardless of how good the translation code is.",
+    note: "Everything here is absent from the patient's own download — the kind of gap right-of-access can't currently close, regardless of how good the translation code is.",
   },
 
   // ---------------------------------------------------------------------------
@@ -195,7 +195,7 @@ export const content = {
       what:
         "Some timestamps in the export are recorded only to the minute, while Epic's FHIR API shows seconds. So our `…T21:09:00Z` vs Epic's `…T21:09:37Z`.",
       why:
-        "We tolerate this only when Epic's value equals ours once rounded to the minute — i.e. the difference is genuinely just the seconds the export never recorded.",
+        "We tolerate this only when Epic's value equals ours once rounded to the minute — i.e. the difference is just the seconds the export never recorded.",
       soWhat:
         "Sub-minute precision only; the event is pinned to the correct minute.",
       example: "an observation issued time: ours `21:09:00Z`, Epic `21:09:37Z`.",
@@ -226,7 +226,7 @@ export const content = {
         "A client gets the same attachment content — in fact ours is resolvable within the bundle, where Epic's points outside it.",
       example: "an attachment: Epic `Binary/eY9…` (bytes not in the export) vs ours `Binary/bin-<sha1>` (the actual note bytes).",
       guardOrProof:
-        "Swapping in a different note's bytes would change the fingerprint and be caught. (Note: we deliberately do NOT claim our attachment *URL* equals Epic's — that stays a real difference, since the IDs genuinely differ.)",
+        "Swapping in a different note's bytes would change the fingerprint and be caught. (Note: we deliberately do NOT claim our attachment *URL* equals Epic's — that stays a real difference, since the IDs differ.)",
     },
     "server-version-stamp": {
       title: "A version stamp Epic's FHIR server adds",
@@ -277,7 +277,7 @@ export const content = {
       why:
         "That name→code mapping is computed on Epic's servers from master files the download doesn't contain. For diagnoses, for instance, the export gives the diagnosis wording but no SNOMED code and no table pairing the two.",
       soWhat:
-        "We emit the concept as `text` (faithful) and omit the code rather than guess. Importantly, where a standard code *can* be recovered (we built a terminology bridge for drugs, vaccines, allergens, and billed procedures), it is — that bridge lifted coded coverage from ~10% to ~71%. What's left here is the part with no recoverable code.",
+        "We emit the concept as `text` (faithful) and omit the code rather than guess. Importantly, where a standard code *can* be recovered (we built a terminology bridge for drugs, vaccines, allergens, and billed procedures), it is — that bridge lifted coded coverage from ~10% to ~79%. What's left here is the part with no recoverable code.",
       example: "a medication-indication diagnosis: Epic carries the SNOMED code; the export keeps only the diagnosis text.",
       guardOrProof:
         "We searched for any table pairing the internal concept with a standard code; for these concepts the candidate tables are present but empty.",
@@ -329,7 +329,7 @@ export const content = {
       why:
         "When the mapping isn't a clean one-to-one, we refuse to assert equivalence (that would risk silently linking the wrong thing).",
       soWhat:
-        "We emit our best faithful reference/value, but don't claim it matches Epic's — honesty over a flattering score.",
+        "We emit our best faithful reference/value, but don't claim it matches Epic's — accuracy over a flattering score.",
       example: "an ordering-provider reference where the export can't disambiguate which of several identical-looking providers Epic meant.",
       guardOrProof:
         "Same fail-closed rule as the equivalent-references check: no unique natural key ⇒ we don't bless it.",
@@ -418,7 +418,7 @@ export const content = {
   // ---------------------------------------------------------------------------
   // S7 — method (kept light, collapsible)
   method: {
-    heading: "How it was built (and how we kept ourselves honest)",
+    heading: "How it was built (and how we checked it)",
     intro:
       "The tidy pipeline below is the result, not the path. Almost every rule here was learned by being wrong first — usually caught by a pointed question — and then turned into an automated gate so the same mistake couldn't recur quietly.",
     stories: [
@@ -444,14 +444,14 @@ export const content = {
       },
     ],
     recovered:
-      "The payoff of searching hard: a terminology bridge rebuilt the standard codes for drugs, vaccines, allergens, and billed procedures (coded coverage 10% → 71%); a public NPI registry filled in provider credentials; and the order→result links were recovered from the export's own order keys. Each “it can't be done” that got pushed on usually turned out to be doable.",
+      "The payoff of searching hard: a terminology bridge rebuilt the standard codes for drugs, vaccines, allergens, and billed procedures (coded coverage 10% → 79%); a public NPI registry filled in provider credentials; and the order→result links were recovered from the export's own order keys. Each “it can't be done” that got pushed on usually turned out to be doable.",
   },
 
   // ---------------------------------------------------------------------------
-  // S8 — honest residual
+  // S8 — residual
   residual: {
-    heading: "What's genuinely lost",
-    intro: "With the terminology bridge on, the irreducible 12% is, in priority order:",
+    heading: "What's still missing",
+    intro: "With the terminology bridge on, the irreducible 10% is, in priority order:",
     points: [
       {
         title: "Terminology Epic assigns on its servers, with no home in the export (the largest share)",
@@ -484,11 +484,11 @@ export const content = {
     { term: "Answer key", def: "Epic's own FHIR API output for this patient, used only to score our reconstruction against — never copied from." },
     { term: "Identical", def: "Our field is byte-for-byte the same as Epic's FHIR API. (Internally: EXACT.)" },
     { term: "Equivalent", def: "Our field differs on the surface but provably means the same thing, with a stated reason and an automated check. (Internally: TOLERATED.)" },
-    { term: "Couldn't reproduce", def: "The field genuinely isn't derivable from the export, shown with proof of what was searched. (Internally: GAP / “floor”.)" },
+    { term: "Couldn't reproduce", def: "The field isn't derivable from the export, shown with proof of what was searched. (Internally: GAP / “floor”.)" },
     { term: "Faithful reconstruction", def: "Identical + Equivalent together — the share of Epic's FHIR we rebuilt correctly from the raw export." },
     { term: "Natural key", def: "A stable real-world identifier (a medical-record number, a provider ID, a visit number) we use to prove two differently-IDed resources are the same entity." },
     { term: "Reference graph", def: "How resources point at each other. We rebuild a graph with the same shape as Epic's even though the IDs differ." },
-    { term: "Terminology bridge / crosswalk", def: "A lookup we reconstructed that restores standard codes (drugs, vaccines, allergens, billed procedures) where the export had a recoverable key — lifting coded coverage from ~10% to ~71%." },
+    { term: "Terminology bridge / crosswalk", def: "A lookup we reconstructed that restores standard codes (drugs, vaccines, allergens, billed procedures) where the export had a recoverable key — lifting coded coverage from ~10% to ~79%." },
     { term: "Label without a code", def: "The export's habit of giving a human-readable category name (“Married”, “Office Visit”) but not the coded value behind it." },
     { term: "Faithfulness over mimicry", def: "The project's core rule: emit the truthful value derived from the source, even when it differs from Epic's FHIR server rendering — never copy the answer key." },
     { term: "Floor / proof-carrying", def: "A “couldn't reproduce” that has been proven irreducible (searched-and-absent, not-anchorable, or infeasible) rather than merely unattempted." },

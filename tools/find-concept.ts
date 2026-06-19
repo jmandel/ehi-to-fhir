@@ -29,7 +29,7 @@
 import { Database } from "bun:sqlite";
 import { resolve } from "path";
 import { readFileSync } from "fs";
-import { rtfToText } from "../../lib/rtf2txt.ts";
+import { rtfToText } from "../my-ehi/lib/rtf2txt.ts";
 
 const DB = new Database(process.env.EHI_DB ?? resolve(import.meta.dir, "..", "ehi.sqlite"), { readonly: true });
 DB.run("PRAGMA busy_timeout = 8000");
@@ -75,7 +75,7 @@ if (term) {
 
 if (grepPat) {
   console.log(`\n=== VALUE SCAN for /${grepPat}/ across raw/EHITables/*.tsv ===`);
-  const rawDir = resolve(import.meta.dir, "..", "..", "raw", "EHITables");
+  const rawDir = resolve(import.meta.dir, "..", "my-ehi", "raw", "EHITables");
   // grep -lE: list files containing the pattern; then one sample line each.
   const proc = Bun.spawnSync(["bash", "-lc", `grep -rlE ${JSON.stringify(grepPat)} ${JSON.stringify(rawDir)} 2>/dev/null | head -40`], { stdout: "pipe" });
   const files = new TextDecoder().decode(proc.stdout).trim().split("\n").filter(Boolean);
@@ -93,7 +93,7 @@ if (wantNotes && notePat) {
   let re: RegExp;
   try { re = new RegExp(notePat, "i"); }
   catch { re = new RegExp(notePat.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i"); } // literal fallback
-  const rawRoot = resolve(import.meta.dir, "..", "..", "raw");
+  const rawRoot = resolve(import.meta.dir, "..", "my-ehi", "raw");
 
   // Map NOTE_ID → {type, csn} once, so RTF hits can be traced back to HNO_INFO.
   const hno = new Map<string, { type: string | null; csn: string | null }>();

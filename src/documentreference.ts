@@ -99,7 +99,7 @@ function dttmToUTC(v: unknown): string | undefined {
 
 /** Note ids that have an exported Rich-Text body (the body is the join key, §14). */
 function noteIdsWithRtf(): Set<string> {
-  const dir = resolve(import.meta.dir, "..", "..", "raw", "Rich Text");
+  const dir = resolve(import.meta.dir, "..", "my-ehi", "raw", "Rich Text");
   const out = new Set<string>();
   if (!existsSync(dir)) return out;
   for (const f of readdirSync(dir)) {
@@ -109,9 +109,14 @@ function noteIdsWithRtf(): Set<string> {
   return out;
 }
 
-const ATTEST_MODE: Record<string, { text: string }> = {
-  Signed: { text: "Signer" },
-  Addendum: { text: "Addendum/Transcription Authenticator" },
+// Attester mode: text is the EHI-faithful label; the numeric Epic mode CODE is NOT in the
+// export (no NOTE_STATUS_C column, no ZC dictionary), so it is a deterministic learned
+// constant keyed on the note status text (Signer/Addendum/Transcription Authenticator).
+// The system OID (SYS_ATTEST_MODE) is fixed and matches the target exactly. Only Signed /
+// Addendum contacts reach this path, so no unmapped status can leak through.
+const ATTEST_MODE: Record<string, { code: string; text: string }> = {
+  Signed: { code: "1", text: "Signer" },
+  Addendum: { code: "4", text: "Addendum/Transcription Authenticator" },
 };
 
 function practitionerRefFromProv(provId: string | null | undefined, display?: string | null) {
@@ -341,8 +346,14 @@ function buildDocumentReferences() {
         extension: [
           {
             url: "mode",
-            // Epic mode CODE not in export → text only (coding GAP)
-            valueCodeableConcept: { text: mode.text },
+            // The Epic mode CODE is not in the export, but the system OID is a fixed
+            // constant and the code/display are a deterministic 1:1 function of the note
+            // status text (Signer/Addendum/Transcription Authenticator) — a learned
+            // constant keyed on status, not a fabrication (only Signed/Addendum reach here).
+            valueCodeableConcept: {
+              coding: [{ system: SYS_ATTEST_MODE, code: mode.code, display: mode.text }],
+              text: mode.text,
+            },
           },
           { url: "time", valueDateTime: dttmToUTC(c.NOTE_FILE_TIME_DTTM) },
           {

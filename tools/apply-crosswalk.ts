@@ -449,6 +449,70 @@ function buildBridges(): Bridge[] {
       ).map((x) => ({ fhirId: `imm-${slug(x.IMMUNE_ID)}`, joinValue: String(x.LABEL) })),
   });
 
+  // DocumentReference.context.extension.valueCodeableConcept — author-provider-type.
+  // The numeric Epic provider-type code is NOT in the export (only the LABEL ships,
+  // NOTE_ENC_INFO.AUTHOR_PRVD_TYPE_C_NAME), so we anchor on that LABEL (keyBy
+  // concept_display). The translator's context.extension carries text-only; this lands
+  // the Epic provider-type OID coding (crosswalk 2.1). We replicate documentreference.ts's
+  // 'first signed/addendum contact per published NOTE_ID' selection (ORDER BY
+  // CONTACT_DATE_REAL) so the bridge keys on the exact contact the resource was built from.
+  bridges.push({
+    fhir_path: "DocumentReference.context.extension.valueCodeableConcept",
+    selector: "NOTE_ENC_INFO.AUTHOR_PRVD_TYPE_C_NAME",
+    keyBy: "concept_display",
+    pairs: () => {
+      const rows = q<{ NOTE_ID: string; CONTACT_DATE_REAL: string; NOTE_STATUS_C_NAME: string; AUTHOR_PRVD_TYPE_C_NAME: string }>(
+        `SELECT NOTE_ID, CONTACT_DATE_REAL, NOTE_STATUS_C_NAME, AUTHOR_PRVD_TYPE_C_NAME
+           FROM NOTE_ENC_INFO
+          WHERE NOTE_STATUS_C_NAME IN ('Signed','Addendum')
+          ORDER BY NOTE_ID, CAST(CONTACT_DATE_REAL AS REAL)`,
+      );
+      // first signed/addendum contact per NOTE_ID (matches documentreference.ts).
+      const firstByNote = new Map<string, string>();
+      for (const r of rows) {
+        if (!firstByNote.has(String(r.NOTE_ID))) {
+          firstByNote.set(String(r.NOTE_ID), r.AUTHOR_PRVD_TYPE_C_NAME == null ? "" : String(r.AUTHOR_PRVD_TYPE_C_NAME));
+        }
+      }
+      const out: { fhirId: string; joinValue: string }[] = [];
+      for (const [noteId, label] of firstByNote) {
+        if (label) out.push({ fhirId: `doc-${slug(noteId)}`, joinValue: label });
+      }
+      return out;
+    },
+  });
+
+  // Encounter.reasonCode — keyed enc-<CSN>; the admit diagnosis DX_ID feeds reasonCode
+  // via HSP_ADMIT_DIAG (a different table than Condition's PAT_ENC_DX/PROBLEM_LIST), which
+  // no other bridge covers. The crosswalk row (2.4) maps DX_ID 284018 -> SNOMED 429656004,
+  // SNOMED-only (the target reasonCode is SNOMED-only). targetCodingArray adds it as an
+  // additional coding on the existing text-only reasonCode.
+  bridges.push({
+    fhir_path: "Encounter.reasonCode",
+    selector: "HSP_ADMIT_DIAG.DX_ID",
+    keyBy: "epic_local_code",
+    pairs: () =>
+      q<{ PAT_ENC_CSN_ID: string; DX_ID: string }>(
+        `SELECT PAT_ENC_CSN_ID, DX_ID FROM HSP_ADMIT_DIAG WHERE DX_ID IS NOT NULL`,
+      ).map((x) => ({ fhirId: `enc-${slug(x.PAT_ENC_CSN_ID)}`, joinValue: String(x.DX_ID) })),
+  });
+
+  // Observation.code (survey-leaf) — keyed obs-flo-<FSD_ID>-<LINE>; the survey LOINCs are
+  // crosswalked on V_EHI_FLO_MEAS_VALUE.FLO_MEAS_ID (e.g. 16752->73831-0, 301060->3140-1,
+  // PHQ-2/AUDIT-C item LOINCs). Our survey Observation.code carries only the flowsheet-id
+  // coding (no loinc.org), so PRIMARY can't fire; this FALLBACK bridge maps the minted id's
+  // natural key (FSD_ID,LINE) to its FLO_MEAS_ID and appends the LOINC — which also realigns
+  // the classifier's LOINC natural key (terminology-gap-fixes 3.2 / 1.4).
+  bridges.push({
+    fhir_path: "Observation.code",
+    selector: "V_EHI_FLO_MEAS_VALUE.FLO_MEAS_ID",
+    keyBy: "epic_local_code",
+    pairs: () =>
+      q<{ FSD_ID: string; LINE: string; FLO_MEAS_ID: string }>(
+        `SELECT FSD_ID, LINE, FLO_MEAS_ID FROM V_EHI_FLO_MEAS_VALUE WHERE FLO_MEAS_ID IS NOT NULL`,
+      ).map((x) => ({ fhirId: `obs-flo-${slug(x.FSD_ID)}-${slug(x.LINE)}`, joinValue: String(x.FLO_MEAS_ID) })),
+  });
+
   // Coverage.type — keyed cov-<COVERAGE_ID>, crosswalk keys on COVERAGE.PAYOR_ID.
   bridges.push({
     fhir_path: "Coverage.type",

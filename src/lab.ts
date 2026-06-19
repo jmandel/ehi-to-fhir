@@ -511,10 +511,15 @@ function build() {
       } else if (r.COMPONENT_ID && componentLoinc.has(String(r.COMPONENT_ID))) {
         coding.push({ system: SYS_LOINC, code: componentLoinc.get(String(r.COMPONENT_ID))! });
       }
-      // Epic component identifier: code = COMPONENT_ID, system fixed. Display absent in the
-      // export (only the UPPERCASE COMPONENT_ID_NAME ships), so code-only.
+      // Epic component identifier: code = COMPONENT_ID, system fixed. The proper-case
+      // display ships only in the in-repo crosswalk (concept_display, keyed by COMPONENT_ID);
+      // attach it when present (clean() drops it when absent → code-only fallback).
       if (r.COMPONENT_ID) {
-        coding.push({ system: SYS_COMPON, code: String(r.COMPONENT_ID) });
+        coding.push({
+          system: SYS_COMPON,
+          code: String(r.COMPONENT_ID),
+          display: componentDisplay.get(String(r.COMPONENT_ID)),
+        });
       }
       // code.text: prefer the crosswalk proper-cased label (concept_display, in-repo) when the
       // crosswalk row matches this component; otherwise keep the ALL-CAPS source COMPONENT_ID_NAME.

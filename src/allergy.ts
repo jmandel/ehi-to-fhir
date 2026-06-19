@@ -21,11 +21,80 @@
  *
  * EVERYTHING in the EHI is TEXT — CAST before ORDER/MIN (§17).
  */
+import { readFileSync } from "fs";
+import { resolve } from "path";
 import { q } from "../lib/db";
 import { isoDate, localToUtcInstant } from "../lib/time";
 import { id, patientRef, PATIENT_PAT_ID } from "../lib/ids";
 import { emit, clean } from "../lib/gen";
 import { concept } from "../lib/cc";
+
+/**
+ * FHIR AllergyIntolerance.category — Epic's server-side allergen-class classification
+ * (food/medication/biologic). NO allergen-class column ships in the EHI (ALLERGY has none;
+ * CL_ELG carries only the name), so the only reconstruction is by ALLERGEN_ID pairing —
+ * the same pattern as the existing AllergyIntolerance.code crosswalk bridge. We read the
+ * verified pairs from crosswalk/ALL.csv (fhir_path=AllergyIntolerance.category, keyed on
+ * ALLERGEN_ID) and emit the plain `code[]` strings here in the baseline translator, because
+ * apply-crosswalk only appends Coding objects to coding[] and FHIR category is a code[]
+ * string array — a CSV-only add would silently do nothing. See terminology-gap-fixes 2.2/3.3.
+ *
+ * Returns ALLERGEN_ID -> ordered category codes (target order: e.g. TREE NUT={biologic,food}).
+ */
+function loadAllergyCategories(): Map<string, string[]> {
+  const m = new Map<string, string[]>();
+  let text: string;
+  try {
+    text = readFileSync(resolve(import.meta.dir, "..", "crosswalk", "ALL.csv"), "utf8");
+  } catch {
+    return m;
+  }
+  const rows = parseCsv(text);
+  if (!rows.length) return m;
+  const h = rows[0];
+  const iPath = h.indexOf("fhir_path");
+  const iCol = h.indexOf("ehi_join_column");
+  const iCode = h.indexOf("epic_local_code");
+  const iTgt = h.indexOf("target_code");
+  if (iPath < 0 || iCol < 0 || iCode < 0 || iTgt < 0) return m;
+  for (let r = 1; r < rows.length; r++) {
+    const row = rows[r];
+    if (row[iPath] !== "AllergyIntolerance.category") continue;
+    if (row[iCol] !== "ALLERGEN_ID") continue;
+    const allergenId = (row[iCode] ?? "").trim();
+    const cat = (row[iTgt] ?? "").trim();
+    if (!allergenId || !cat) continue;
+    const arr = m.get(allergenId) ?? [];
+    if (!arr.includes(cat)) arr.push(cat); // preserve CSV order, de-dupe
+    m.set(allergenId, arr);
+  }
+  return m;
+}
+
+/** Minimal RFC-4180 CSV parser (quoted fields with commas/quotes/newlines). */
+function parseCsv(text: string): string[][] {
+  const rows: string[][] = [];
+  let field = "";
+  let row: string[] = [];
+  let inQuotes = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (inQuotes) {
+      if (c === '"') {
+        if (text[i + 1] === '"') { field += '"'; i++; }
+        else inQuotes = false;
+      } else field += c;
+    } else {
+      if (c === '"') inQuotes = true;
+      else if (c === ",") { row.push(field); field = ""; }
+      else if (c === "\n") { row.push(field); rows.push(row); row = []; field = ""; }
+      else if (c === "\r") { /* skip */ }
+      else field += c;
+    }
+  }
+  if (field !== "" || row.length > 0) { row.push(field); rows.push(row); }
+  return rows;
+}
 
 /**
  * Local "M/D/YYYY h:mm:ss AM" entry instant -> UTC ISO (Z). Converts the wall-clock
@@ -95,6 +164,7 @@ function criticality(sev: string | null | undefined): string | undefined {
 
 interface AllergyRow {
   ALLERGY_ID: string;
+  ALLERGEN_ID: string | null;
   ALLERGEN_ID_ALLERGEN_NAME: string | null;
   SEVERITY_C_NAME: string | null;          // = allergy TYPE
   ALLERGY_SEVERITY_C_NAME: string | null;  // = criticality/severity
@@ -109,6 +179,7 @@ function buildAllergies(): any[] {
   // orphan stub, LINE 1 / 30689231, whose detail isn't exported — Gotcha 3).
   const rows = q<AllergyRow>(`
     SELECT a.ALLERGY_ID,
+           a.ALLERGEN_ID,
            a.ALLERGEN_ID_ALLERGEN_NAME,
            a.SEVERITY_C_NAME,
            a.ALLERGY_SEVERITY_C_NAME,
@@ -137,9 +208,12 @@ function buildAllergies(): any[] {
     reactionsByAllergy.set(r.ALLERGY_ID, arr);
   }
 
+  const categoriesByAllergen = loadAllergyCategories();
+
   const resources: any[] = [];
   for (const r of rows) {
     const reactions = reactionsByAllergy.get(r.ALLERGY_ID) ?? [];
+    const category = r.ALLERGEN_ID ? categoriesByAllergen.get(String(r.ALLERGEN_ID)) : undefined;
     const reaction = reactions.length
       ? reactions.map((name) => ({
           // manifestation.coding (SNOMED) is Epic-assigned and not in the export —
@@ -158,7 +232,9 @@ function buildAllergies(): any[] {
         clinicalStatus: clinicalStatus(r.ALRGY_STATUS_C_NAME),
         verificationStatus: VERIFICATION_CONFIRMED,
         type: allergyType(r.SEVERITY_C_NAME),
-        // category: Epic-derived allergen class, NOT in export — omitted (gap).
+        // category: Epic-derived allergen class — reconstructed by ALLERGEN_ID pairing
+        // (crosswalk AllergyIntolerance.category). FHIR category is a code[] string array.
+        category: category && category.length ? category : undefined,
         criticality: criticality(r.ALLERGY_SEVERITY_C_NAME),
         code: concept(allergen),
         patient: patientRef(),

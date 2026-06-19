@@ -31,12 +31,12 @@ import { existsSync, readdirSync, readFileSync } from "fs";
 import { resolve } from "path";
 import { q } from "../lib/db";
 import { emit } from "../lib/gen";
-import { rtfToText } from "../../lib/rtf2txt";
+import { rtfToText } from "../my-ehi/lib/rtf2txt";
 import { PATIENT_ID } from "../lib/ids";
 import { publishedNoteIds, publishedImagingOrderIds } from "./documentreference";
 
-const RICH_TEXT_DIR = resolve(import.meta.dir, "..", "..", "raw", "Rich Text");
-const MEDIA_DIR = resolve(import.meta.dir, "..", "..", "raw", "Media");
+const RICH_TEXT_DIR = resolve(import.meta.dir, "..", "my-ehi", "raw", "Rich Text");
+const MEDIA_DIR = resolve(import.meta.dir, "..", "my-ehi", "raw", "Media");
 
 /** FHIR Attachment metadata that points at one of our Binary resources. */
 export interface AttachmentMeta {

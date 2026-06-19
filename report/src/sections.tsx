@@ -42,7 +42,7 @@ export function Hero() {
           ))}
         </div>
       </div>
-      <p className="hero-headline">From the <b>raw export alone</b>, <b>{pct(exportAlone, tot)}%</b> of Epic's FHIR comes out identical or equivalent. A terminology bridge we reconstructed from the export's own keys recovers <b>another {d ? pct(d.bridgeVocab + d.bridgeIdentifier + d.bridgeOther, tot) : 0}%</b> of Epic's standard codes. Only <b>{pct(d ? d.absent : S.gap, tot)}%</b> is genuinely blank — couldn't reproduce — every field with a documented reason.</p>
+      <p className="hero-headline">From the <b>raw export alone</b>, <b>{pct(exportAlone, tot)}%</b> of Epic's FHIR comes out identical or equivalent. A terminology bridge we reconstructed from the export's own keys recovers <b>another {d ? pct(d.bridgeVocab + d.bridgeIdentifier + d.bridgeOther, tot) : 0}%</b> of Epic's standard codes. Only <b>{pct(d ? d.absent : S.gap, tot)}%</b> is blank — couldn't reproduce — every field with a documented reason.</p>
       <div className="hero-cta">
         <button className="chip on" onClick={() => { set({ section: "compare" }); jump("compare"); }}>Compare real resources →</button>
         <button className="chip" onClick={() => { set({ section: "scorecard" }); jump("scorecard"); }}>See the scorecard</button>
@@ -137,7 +137,7 @@ export function Families() {
   return (
     <section>
       <h2>Why fields differ</h2>
-      <p className="prose-inline">Every difference falls into one of three kinds: it <b>doesn't matter</b> (same meaning, different form), we <b>emitted a different value on purpose</b> (the export's truthful value, not Epic's rendering), or we genuinely <b>couldn't reproduce it</b> (the field came out blank — with the evidence why).</p>
+      <p className="prose-inline">Every difference falls into one of three kinds: it <b>doesn't matter</b> (same meaning, different form), we <b>emitted a different value on purpose</b> (the export's truthful value, not Epic's rendering), or we <b>couldn't reproduce it</b> (the field came out blank — with the evidence why).</p>
 
       <h3 className="fam-h" style={{ color: BUCKET.equivalent.color }}>Different, but equivalent <span className="fam-tot">{S.tolerated.toLocaleString()} fields</span></h3>
       <p className="fam-sub">Surface differences a FHIR consumer can ignore — verified to mean the same thing.</p>
